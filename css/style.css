@@ -121,7 +121,12 @@ body {
 
 .nav-actions button,
 .cv-button {
-    padding: 7px 13px;
+    width: 45px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border: 1px solid var(--border);
 
