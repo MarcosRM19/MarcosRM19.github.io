@@ -14,7 +14,7 @@ languageButton.addEventListener("click", () => {
         document.querySelector('a[href="#proyectos"]').textContent = "Projects";
         document.querySelector('a[href="#contacto"]').textContent = "Contact";
 
-        // Botón de idioma
+        // Botón: ahora permite volver al español
         languageButton.textContent = "ES";
 
     } else {
@@ -27,7 +27,7 @@ languageButton.addEventListener("click", () => {
         document.querySelector('a[href="#proyectos"]').textContent = "Proyectos";
         document.querySelector('a[href="#contacto"]').textContent = "Contacto";
 
-        // Botón de idioma
+        // Botón: ahora permite cambiar al inglés
         languageButton.textContent = "EN";
     }
 });
