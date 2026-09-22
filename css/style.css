@@ -187,24 +187,6 @@ section {
 }
 
 
-/* pequeño detalle tecnológico */
-
-.hero h1::before {
-    content: "<";
-
-    color: var(--cyan);
-
-    margin-right: 15px;
-}
-
-.hero h1::after {
-    content: "/>";
-
-    color: var(--purple);
-
-    margin-left: 15px;
-}
-
 
 /* ---------- TÍTULOS ---------- */
 
