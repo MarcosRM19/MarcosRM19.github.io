@@ -104,6 +104,20 @@ body {
     gap: 12px;
 }
 
+.nav-links a {
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
 
 /* ---------- BOTONES ---------- */
 
@@ -224,7 +238,7 @@ section {
 
     color: var(--cyan);
 
-    font-size: 1.75rem;
+    font-size: 3.00rem;
 
     letter-spacing: 3px;
 
