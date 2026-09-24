@@ -56,9 +56,8 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
-    padding: 18px 6%;
+    padding: 18px 5%;
 
     background: rgba(8, 11, 16, 0.92);
 
@@ -80,11 +79,12 @@ body {
     font-weight: bold;
 
     font-size: 1rem;
+
+    white-space: nowrap;
 }
 
 .logo::before {
-    content: "~/";
-    color: var(--text-muted);
+    content: "";
 }
 
 
@@ -93,7 +93,11 @@ body {
 .nav-links {
     display: flex;
 
-    gap: 30px;
+    gap: 25px;
+
+    margin-left: auto;
+
+    margin-right: 25px;
 }
 
 .nav-links a {
@@ -102,6 +106,8 @@ body {
     text-decoration: none;
 
     transition: color 0.2s ease;
+
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -120,13 +126,8 @@ body {
 }
 
 .nav-actions button,
-.cv-button {
-    width: 45px;
-    height: 34px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contact-button {
+    padding: 8px 14px;
 
     border: 1px solid var(--border);
 
@@ -143,13 +144,26 @@ body {
     transition: all 0.2s ease;
 }
 
-.nav-actions button:hover,
-.cv-button:hover {
+.nav-actions button:hover {
     border-color: var(--cyan);
 
     color: var(--cyan);
 }
 
+
+/* ---------- CONTACTO ---------- */
+
+.contact-button {
+    border-color: var(--purple);
+
+    color: var(--purple);
+}
+
+.contact-button:hover {
+    background: var(--purple);
+
+    color: #ffffff;
+}
 
 /* ---------- SECCIONES ---------- */
 
@@ -181,14 +195,58 @@ section {
     position: relative;
 }
 
+.hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
 .hero h1 {
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(3.5rem, 8vw, 7rem);
 
     color: #ffffff;
 
-    letter-spacing: 5px;
+    letter-spacing: 6px;
 
     font-weight: 600;
+
+    margin: 0;
+}
+
+.hero-subtitle {
+    margin-top: 10px;
+
+    color: var(--cyan);
+
+    font-size: 1.2rem;
+
+    letter-spacing: 3px;
+}
+
+.hero-cv {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 12px 60px;
+
+    border: 1px solid var(--cyan);
+
+    color: var(--cyan);
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    transition: all 0.25s ease;
+}
+
+.hero-cv:hover {
+    background: var(--cyan);
+
+    color: var(--background);
 }
 
 
