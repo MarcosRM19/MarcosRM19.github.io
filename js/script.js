@@ -14,7 +14,7 @@ const translations = {
 
         contactButton: "Contact me",
 
-        heroSubtitle: "Game Designer"
+        heroSubtitle: "Game Programmer"
     },
 
     es: {
@@ -28,7 +28,7 @@ const translations = {
 
         contactButton: "Contáctame",
 
-        heroSubtitle: "Diseñador de Videojuegos"
+        heroSubtitle: "Programador de Videojuegos"
     }
 };
 
