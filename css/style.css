@@ -511,6 +511,45 @@ section {
     color: #ffffff;
 }
 
+/* ---------- DOCUMENTOS ---------- */
+
+.documents-container {
+    max-width: 850px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.document {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.document:hover {
+    border-color: var(--cyan);
+
+    color: var(--cyan);
+
+    transform: translateX(5px);
+}
 
 /* ---------- CONTACTO ---------- */
 
