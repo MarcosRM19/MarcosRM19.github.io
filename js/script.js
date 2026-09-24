@@ -1,33 +1,82 @@
 const languageButton = document.getElementById("language-button");
 
-let currentLanguage = "es";
+let currentLanguage = "en";
+
+const translations = {
+    en: {
+        logo: "MarcosRuiz Portfolio",
+
+        home: "Home",
+        about: "About me",
+        experience: "Experience",
+        projects: "Projects",
+        contact: "Contact",
+
+        contactButton: "Contact me",
+
+        heroSubtitle: "Game Designer"
+    },
+
+    es: {
+        logo: "MarcosRuiz Portfolio",
+
+        home: "Inicio",
+        about: "Quién soy",
+        experience: "Experiencia",
+        projects: "Proyectos",
+        contact: "Contacto",
+
+        contactButton: "Contáctame",
+
+        heroSubtitle: "Diseñador de Videojuegos"
+    }
+};
+
+
+function updateLanguage() {
+
+    const language = translations[currentLanguage];
+
+    document.getElementById("logo").textContent =
+        language.logo;
+
+    document.getElementById("nav-home").textContent =
+        language.home;
+
+    document.getElementById("nav-about").textContent =
+        language.about;
+
+    document.getElementById("nav-experience").textContent =
+        language.experience;
+
+    document.getElementById("nav-projects").textContent =
+        language.projects;
+
+    document.getElementById("nav-contact").textContent =
+        language.contact;
+
+    document.getElementById("contact-button").textContent =
+        language.contactButton;
+
+    document.getElementById("hero-subtitle").textContent =
+        language.heroSubtitle;
+
+    // El botón muestra el idioma actual
+    languageButton.textContent =
+        currentLanguage === "en" ? "EN" : "ES";
+}
+
 
 languageButton.addEventListener("click", () => {
 
-    if (currentLanguage === "es") {
-
-        currentLanguage = "en";
-
-        // Navegación
-        document.querySelector('a[href="#sobre-mi"]').textContent = "About me";
-        document.querySelector('a[href="#experiencia"]').textContent = "Experience";
-        document.querySelector('a[href="#proyectos"]').textContent = "Projects";
-        document.querySelector('a[href="#contacto"]').textContent = "Contact";
-
-        // Botón: ahora permite volver al español
-        languageButton.textContent = "ES";
-
-    } else {
-
+    if (currentLanguage === "en") {
         currentLanguage = "es";
-
-        // Navegación
-        document.querySelector('a[href="#sobre-mi"]').textContent = "Quién soy";
-        document.querySelector('a[href="#experiencia"]').textContent = "Experiencia";
-        document.querySelector('a[href="#proyectos"]').textContent = "Proyectos";
-        document.querySelector('a[href="#contacto"]').textContent = "Contacto";
-
-        // Botón: ahora permite cambiar al inglés
-        languageButton.textContent = "EN";
+    } else {
+        currentLanguage = "en";
     }
+
+    updateLanguage();
 });
+
+
+updateLanguage();
