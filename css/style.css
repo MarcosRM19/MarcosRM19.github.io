@@ -107,10 +107,17 @@ body {
 
 /* ---------- BOTONES ---------- */
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
 .nav-actions button {
     min-width: 46px;
+    height: 40px;
 
-    padding: 9px 12px;
+    padding: 0 12px;
 
     border: 1px solid var(--border);
 
@@ -119,7 +126,6 @@ body {
     color: var(--text);
 
     font-family: inherit;
-
     font-size: 0.85rem;
 
     cursor: pointer;
@@ -129,14 +135,16 @@ body {
 
 .nav-actions button:hover {
     border-color: var(--cyan);
-
     color: var(--cyan);
 }
 
-/* ---------- CONTACTO ---------- */
-
 .contact-button {
-    padding: 10px 18px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
 
     background: var(--purple);
 
@@ -147,7 +155,6 @@ body {
     text-decoration: none;
 
     font-family: inherit;
-
     font-size: 0.85rem;
 
     transition: all 0.2s ease;
@@ -155,7 +162,6 @@ body {
 
 .contact-button:hover {
     background: transparent;
-
     color: var(--purple);
 }
 
@@ -218,7 +224,7 @@ section {
 
     color: var(--cyan);
 
-    font-size: 1.15rem;
+    font-size: 1.75rem;
 
     letter-spacing: 3px;
 
