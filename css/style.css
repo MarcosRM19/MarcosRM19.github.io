@@ -307,68 +307,46 @@ section {
 }
 
 .technical-grid {
+    width: 100%;
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-
-    max-width: 1200px;
-
-    margin: 0 auto;
+    margin: 0;
 }
 
 .technical-category {
-    padding: 28px;
-
-    background: var(--surface);
-
-    border: 1px solid var(--border);
-
-    transition: all 0.25s ease;
+    padding: 10px 35px;
+    border-left: 1px solid var(--border);
 }
 
-.technical-category:hover {
-    border-color: var(--cyan);
-
-    transform: translateY(-4px);
+.technical-category:first-child {
+    border-left: none;
 }
 
 .technical-category h3 {
     color: #ffffff;
-
     font-size: 1rem;
-
     font-weight: 500;
-
     margin-bottom: 22px;
-
-    min-height: 45px;
 }
 
 .technical-category h3::before {
     content: "> ";
-
     color: var(--cyan);
 }
 
 .technical-category ul {
     list-style: none;
-
     padding: 0;
 }
 
 .technical-category li {
     color: var(--text-muted);
-
     margin-bottom: 10px;
-
     font-size: 0.9rem;
 }
 
 .technical-category li::before {
     content: "— ";
-
     color: var(--cyan);
 }
 
