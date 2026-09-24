@@ -322,17 +322,47 @@ section {
     border-left: none;
 }
 
-.technical-category h3 {
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 22px;
+/* NÚMEROS */
+
+.technical-category::before {
+    display: block;
+
+    color: #1a3550;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
 }
 
-.technical-category h3::before {
-    content: "> ";
-    color: var(--cyan);
+.technical-category:nth-child(1)::before {
+    content: "01";
 }
+
+.technical-category:nth-child(2)::before {
+    content: "02";
+}
+
+.technical-category:nth-child(3)::before {
+    content: "03";
+}
+
+.technical-category:nth-child(4)::before {
+    content: "04";
+}
+
+/* TÍTULOS */
+
+.technical-category h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+/* INFORMACIÓN */
 
 .technical-category ul {
     list-style: none;
@@ -341,59 +371,15 @@ section {
 
 .technical-category li {
     color: var(--text-muted);
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 14px;
 }
 
 .technical-category li::before {
-    content: "— ";
-    color: var(--cyan);
+    content: none;
 }
-
-/* ---------- QUIÉN SOY ---------- */
-
-.about-container {
-    display: flex;
-
-    align-items: center;
-
-    gap: 70px;
-}
-
-.about-image img {
-    width: 240px;
-    height: 240px;
-
-    object-fit: cover;
-
-    border-radius: 8px;
-
-    border: 1px solid var(--border);
-
-    filter: grayscale(15%);
-
-    transition: all 0.3s ease;
-}
-
-.about-image img:hover {
-    border-color: var(--cyan);
-
-    filter: grayscale(0%);
-}
-
-.about-text {
-    max-width: 650px;
-
-    color: var(--text-muted);
-
-    font-size: 1rem;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-}
-
-
 /* ---------- EXPERIENCIA ---------- */
 
 .experience {
