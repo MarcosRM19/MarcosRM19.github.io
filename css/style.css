@@ -925,3 +925,211 @@ footer {
         align-items: flex-start;
     }
 }
+
+/* ---------- POPUP CONTACTO ---------- */
+
+.contact-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 1000;
+}
+
+
+/* ---------- VENTANA ---------- */
+
+.contact-modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 0 40px rgba(0, 217, 255, 0.08);
+}
+
+
+/* ---------- TITULO ---------- */
+
+.contact-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 35px;
+
+    color: #ffffff;
+
+    font-size: 1.8rem;
+}
+
+
+/* ---------- BOTON CERRAR ---------- */
+
+.contact-close {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    border: none;
+
+    background: none;
+
+    color: var(--text-muted);
+
+    font-family: inherit;
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.contact-close:hover {
+    color: var(--cyan);
+}
+
+
+/* ---------- FORMULARIO ---------- */
+
+#contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+#contact-form label {
+    margin-top: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    background: var(--background);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#contact-form input {
+    height: 48px;
+}
+
+
+#contact-form textarea {
+    min-height: 180px;
+
+    resize: vertical;
+}
+
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.08);
+}
+
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #56616b;
+}
+
+
+/* ---------- BOTON ENVIAR ---------- */
+
+.contact-submit {
+    margin-top: 20px;
+
+    padding: 14px 20px;
+
+    border: 1px solid var(--cyan);
+
+    background: transparent;
+
+    color: var(--cyan);
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.contact-submit:hover {
+    background: var(--cyan);
+
+    color: var(--background);
+}
+
+
+/* ---------- POPUP EN MOVIL ---------- */
+
+@media (max-width: 768px) {
+
+    .contact-modal {
+        padding: 15px;
+    }
+
+    .contact-modal-content {
+        padding: 35px 25px;
+
+        max-height: 90vh;
+    }
+
+}
