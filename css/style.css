@@ -294,12 +294,6 @@ section {
     color: #ffffff;
 }
 
-.section h2::before {
-    content: "// ";
-
-    color: var(--cyan);
-}
-
 /* ---------- CONOCIMIENTOS TÉCNICOS ---------- */
 
 .technical-section {
@@ -560,6 +554,14 @@ footer {
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 768px) {
+.technical-category li.highlight {
+    color: var(--cyan);
+}
+   .technical-section h2 {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 35px;
+}
 .technical-grid {
     grid-template-columns: 1fr;
 }
