@@ -438,7 +438,8 @@ section {
 
     color: var(--text-muted);
 
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
 
     margin-top: 35px;
     margin-bottom: 15px;
@@ -449,23 +450,26 @@ section {
     align-items: center;
     justify-content: center;
 
-    padding: 12px 25px;
+    height: 40px;
 
+    padding: 0 18px;
+
+    background: var(--purple);
     border: 1px solid var(--purple);
 
-    color: var(--purple);
+    color: #ffffff;
 
     text-decoration: none;
 
     font-family: inherit;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
 .about-contact-button:hover {
-    background: var(--purple);
-    color: #ffffff;
+    background: transparent;
+    color: var(--purple);
 }
 
 /* ---------- FOTO ---------- */
