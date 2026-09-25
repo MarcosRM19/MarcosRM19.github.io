@@ -383,6 +383,108 @@ section {
 .technical-category li::before {
     content: none;
 }
+
+/* ---------- QUIÉN SOY ---------- */
+
+.about-section {
+    min-height: auto;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-text {
+    max-width: 650px;
+}
+
+.about-label {
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.about-text h2 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+.about-text strong {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.about-contact-text {
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 0.9rem;
+
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.about-contact-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 25px;
+
+    border: 1px solid var(--purple);
+
+    color: var(--purple);
+
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    transition: all 0.25s ease;
+}
+
+.about-contact-button:hover {
+    background: var(--purple);
+    color: #ffffff;
+}
+
+/* ---------- FOTO ---------- */
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border: 1px solid var(--border);
+}
+
 /* ---------- EXPERIENCIA ---------- */
 
 .experience {
