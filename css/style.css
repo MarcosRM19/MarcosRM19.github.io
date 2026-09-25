@@ -586,44 +586,159 @@ section {
 
 /* ---------- DOCUMENTOS ---------- */
 
-.documents-container {
-    max-width: 850px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
+.documents-section {
+    min-height: auto;
 }
 
-.document {
+.documents-intro {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+
+    margin-top: -25px;
+    margin-bottom: 45px;
+}
+
+.documents-grid {
     display: flex;
+    justify-content: center;
+    gap: 35px;
 
-    align-items: center;
+    width: 100%;
+}
 
-    justify-content: space-between;
+.document-card {
+    position: relative;
 
-    padding: 18px 22px;
+    width: 280px;
+    height: 430px;
+
+    overflow: hidden;
 
     background: var(--surface);
 
     border: 1px solid var(--border);
 
-    color: var(--text);
-
     text-decoration: none;
 
-    transition: all 0.25s ease;
+    transition: transform 0.35s ease,
+                border-color 0.35s ease;
 }
 
-.document:hover {
+/* ---------- FONDOS ---------- */
+
+.document-background {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+/* Aquí podrás poner las imágenes que quieras */
+
+.document-1 {
+    background-image: url("../img/document-1.jpg");
+}
+
+.document-2 {
+    background-image: url("../img/document-2.jpg");
+}
+
+/* ---------- INFORMACIÓN ---------- */
+
+.document-info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 20px;
+
+    background: var(--cyan);
+
+    color: var(--background);
+
+    transition: all 0.4s ease;
+}
+
+.document-type {
+    display: block;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.document-info h3 {
+    margin: 0;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+.document-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: max-height 0.4s ease,
+                opacity 0.3s ease;
+}
+
+.document-details p {
+    margin-top: 14px;
+
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+/* ---------- IDIOMA ---------- */
+
+.document-language {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 18px;
+
+    padding: 5px 14px;
+
+    border: 1px solid var(--background);
+    border-radius: 50px;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+/* ---------- HOVER ---------- */
+
+.document-card:hover {
     border-color: var(--cyan);
-
-    color: var(--cyan);
-
-    transform: translateX(5px);
 }
 
+.document-card:hover .document-background {
+    transform: scale(1.08);
+}
+
+.document-card:hover .document-info {
+    padding-top: 25px;
+}
+
+.document-card:hover .document-details {
+    max-height: 180px;
+    opacity: 1;
+}
 /* ---------- CONTACTO ---------- */
 
 .contact-links {
