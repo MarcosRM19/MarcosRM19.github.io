@@ -842,8 +842,9 @@ section {
     font-weight: 600;
 }
 
-
-/* LOGO */
+/* =========================================================
+   LOGO ITCH.IO
+   ========================================================= */
 
 .itch-logo {
     display: inline-flex;
@@ -854,12 +855,16 @@ section {
     width: 48px;
     height: 22px;
 
-    border: 1px solid var(--cyan);
+    border: none;
+}
 
-    color: var(--cyan);
+.itch-logo img {
+    display: block;
 
-    font-size: 0.55rem;
-    font-weight: 700;
+    width: 48px;
+    height: 22px;
+
+    object-fit: contain;
 }
 
 
