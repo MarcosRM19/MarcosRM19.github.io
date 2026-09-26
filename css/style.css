@@ -712,7 +712,6 @@ section {
     );
 }
 
-
 /* =========================================================
    PANEL DE INFORMACIÓN
    ========================================================= */
@@ -732,9 +731,18 @@ section {
     padding: 20px 22px;
 
     /*
-       Normal:
-       solo quedan visibles los 60px inferiores
-       del panel, donde están título + subtítulo.
+       MUY IMPORTANTE:
+       Todo lo que quede fuera del panel
+       queda oculto.
+    */
+    overflow: hidden;
+
+    /*
+       ESTADO NORMAL:
+
+       El panel está desplazado hacia abajo.
+       Solo quedan visibles los últimos 62px,
+       donde está el título y subtítulo.
     */
     transform: translateY(calc(100% - 62px));
 
@@ -776,7 +784,7 @@ section {
 }
 
 
-/* Subtítulo cyan */
+/* Subtítulo */
 
 .other-project-header span {
     display: block;
@@ -799,24 +807,29 @@ section {
 .other-project-extra {
     position: absolute;
 
-    top: 20px;
+    /*
+       Cuando el panel está abierto,
+       la información empieza DEBAJO
+       del título + subtítulo.
+    */
+    top: 78px;
+
     left: 22px;
     right: 22px;
-    bottom: 18px;
+
+    bottom: 20px;
 
     display: flex;
 
     flex-direction: column;
 
-    /*
-       IMPORTANTE:
-       dejamos espacio inferior para Itch.io
-    */
-    padding-bottom: 32px;
+    padding: 0;
 }
 
 
-/* Descripción gris */
+/* =========================================================
+   DESCRIPCIÓN 1
+   ========================================================= */
 
 .other-project-description {
     margin: 0;
@@ -829,10 +842,12 @@ section {
 }
 
 
-/* Descripción en negrita */
+/* =========================================================
+   DESCRIPCIÓN 2
+   ========================================================= */
 
 .other-project-highlight {
-    margin: 10px 0 0;
+    margin: 12px 0 0;
 
     color: #ffffff;
 
@@ -898,10 +913,7 @@ section {
 }
 
 
-/*
-   La imagen se reduce ligeramente.
-   La tarjeta NO cambia de tamaño.
-*/
+/* Imagen ligeramente reducida */
 
 .other-project-card:hover .other-project-image {
     transform: scale(0.96);
@@ -911,13 +923,74 @@ section {
 
 
 /*
-   El panel sube completamente.
+   AQUÍ ESTÁ EL EFECTO PRINCIPAL:
+
+   El panel sube dentro de la misma tarjeta.
+   La tarjeta NO cambia de tamaño.
 */
 
 .other-project-card:hover .other-project-info {
     transform: translateY(0);
 }
 
+
+/*
+   Al hacer hover el header deja de estar
+   abajo y pasa a estar ARRIBA.
+*/
+
+.other-project-card:hover .other-project-header {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+}
+
+
+/*
+   La información aparece debajo del
+   título y subtítulo.
+*/
+
+.other-project-card:hover .other-project-extra {
+    top: 78px;
+}
+
+
+/* =========================================================
+   ORDEN FINAL
+   ========================================================= */
+
+/*
+
+   NORMAL:
+
+   ┌───────────────────────────────┐
+   │                               │
+   │            IMAGEN             │
+   │                               │
+   │  Barbaridad                   │
+   │  Visual Novel                 │
+   └───────────────────────────────┘
+
+
+   HOVER:
+
+   ┌───────────────────────────────┐
+   │  Barbaridad                   │
+   │  Visual Novel                 │
+   │                               │
+   │  Descripción gris...          │
+   │                               │
+   │  Descripción en NEGRITA       │
+   │                               │
+   │  [itch.io] Juega en Itch.io → │
+   └───────────────────────────────┘
+
+   La caja exterior mide exactamente
+   lo mismo en ambos estados.
+*/
 
 /* =========================================================
    RESPONSIVE
