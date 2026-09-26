@@ -285,8 +285,8 @@
                     </span>
 
 
-                    <a href="#" class="about-contact-button" id="about-contact">
-                        Contáctame
+                    <a href="#" class="about-contact-button" id="about-contact" data-open-contact> 
+                        Contáctame 
                     </a>
 
                 </div>
@@ -746,148 +746,106 @@
     <script src="js/script.js"></script>
 
 
-    <script>
+<script>
 
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
+    const contactModal = document.getElementById("contact-modal");
+    const closeContact = document.getElementById("close-contact");
+    const contactForm = document.getElementById("contact-form");
 
-            const contactModal =
-                document.getElementById("contact-modal");
-
-
-            const openContact =
-                document.getElementById("open-contact");
-
-
-            const aboutContact =
-                document.getElementById("about-contact");
+    const contactButtons =
+        document.querySelectorAll("[data-open-contact]");
 
 
-            const contactButton =
-                document.getElementById("contact-button");
+    // ==================== ABRIR POPUP ====================
+
+    function openContactModal(event) {
+
+        event.preventDefault();
+
+        contactModal.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+
+    }
 
 
-            const closeContact =
-                document.getElementById("close-contact");
+    // Todos los botones que abren el popup
+
+    contactButtons.forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            openContactModal
+        );
+
+    });
 
 
+    // ==================== CERRAR POPUP ====================
 
-            // ==================== ABRIR POPUP ====================
+    function closeContactModal() {
 
-            function openContactModal(event) {
+        contactModal.style.display = "none";
 
-                event.preventDefault();
+        document.body.style.overflow = "";
 
-                contactModal.style.display = "flex";
+        // Reiniciar formulario
 
-                document.body.style.overflow = "hidden";
+        if (contactForm) {
 
-            }
+            contactForm.reset();
 
+        }
 
-
-            // ==================== ENVIAME UN MENSAJE ====================
-
-            if (openContact) {
-
-                openContact.addEventListener(
-                    "click",
-                    openContactModal
-                );
-
-            }
+    }
 
 
+    // Botón X
 
-            // ==================== CONTACTAME ====================
-
-            if (aboutContact) {
-
-                aboutContact.addEventListener(
-                    "click",
-                    openContactModal
-                );
-
-            }
+    closeContact.addEventListener(
+        "click",
+        closeContactModal
+    );
 
 
+    // Click fuera de la ventana
 
-            // ==================== CONTACT ME ====================
+    contactModal.addEventListener(
+        "click",
+        function (event) {
 
-            if (contactButton) {
+            if (event.target === contactModal) {
 
-                contactButton.addEventListener(
-                    "click",
-                    openContactModal
-                );
-
-            }
-
-
-
-            // ==================== CERRAR CON X ====================
-
-            if (closeContact) {
-
-                closeContact.addEventListener(
-                    "click",
-                    function () {
-
-                        contactModal.style.display = "none";
-
-                        document.body.style.overflow = "";
-
-                    }
-                );
+                closeContactModal();
 
             }
 
+        }
+    );
 
 
-            // ==================== CERRAR FUERA ====================
+    // Tecla ESC
 
-            if (contactModal) {
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-                contactModal.addEventListener(
-                    "click",
-                    function (event) {
+            if (event.key === "Escape") {
 
-                        if (event.target === contactModal) {
-
-                            contactModal.style.display = "none";
-
-                            document.body.style.overflow = "";
-
-                        }
-
-                    }
-                );
+                closeContactModal();
 
             }
 
+        }
+    );
+
+});
+
+</script>
 
 
-            // ==================== CERRAR CON ESC ====================
-
-            document.addEventListener(
-                "keydown",
-                function (event) {
-
-                    if (event.key === "Escape") {
-
-                        contactModal.style.display = "none";
-
-                        document.body.style.overflow = "";
-
-                    }
-
-                }
-            );
-
-
-        });
-
-    </script>
 
 
 </body>
