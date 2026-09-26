@@ -584,6 +584,402 @@ section {
     color: #ffffff;
 }
 
+/* ========================================
+   OTROS PROYECTOS PERSONALES
+======================================== */
+
+
+/* ---------- CONTENEDOR ---------- */
+
+.other-projects {
+    width: 100%;
+
+    margin-top: 100px;
+}
+
+
+/* ---------- SEPARADOR ---------- */
+
+.other-projects-separator {
+    width: 100%;
+
+    border-top: 1px solid var(--border);
+
+    margin-bottom: 65px;
+}
+
+
+/* ---------- TITULO ---------- */
+
+.other-projects-title {
+    margin-bottom: 40px !important;
+
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    font-weight: 500;
+}
+
+
+/* ---------- GRID ---------- */
+
+.other-projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+/* ========================================
+   TARJETA
+======================================== */
+
+.other-project-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    height: 420px;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        height 0.45s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ========================================
+   IMAGEN
+======================================== */
+
+.other-project-image {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1);
+
+    transition:
+        height 0.5s ease,
+        transform 0.6s ease;
+}
+
+
+/* ---------- IMAGENES ---------- */
+
+.other-project-1 {
+    background-image: url("../img/project-1.jpg");
+}
+
+.other-project-2 {
+    background-image: url("../img/project-2.jpg");
+}
+
+.other-project-3 {
+    background-image: url("../img/project-3.jpg");
+}
+
+
+/* ---------- OSCURECER IMAGEN ---------- */
+
+.other-project-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 11, 16, 0.98) 0%,
+            rgba(8, 11, 16, 0.65) 45%,
+            rgba(8, 11, 16, 0.15) 100%
+        );
+
+    transition:
+        background 0.5s ease;
+}
+
+
+/* ========================================
+   CONTENIDO
+======================================== */
+
+.other-project-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 30px;
+
+    transition:
+        padding 0.4s ease;
+}
+
+
+/* ---------- TITULO ---------- */
+
+.other-project-main h3 {
+    margin: 0 0 7px;
+
+    color: #ffffff;
+
+    font-size: 1.45rem;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* ---------- SUBTITULO ---------- */
+
+.other-project-main span {
+    display: block;
+
+    color: var(--cyan);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* ========================================
+   INFORMACION EXTRA
+======================================== */
+
+.other-project-details {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        max-height 0.5s ease,
+        opacity 0.35s ease,
+        transform 0.45s ease;
+}
+
+
+/* ---------- TEXTO GRIS ---------- */
+
+.other-project-description {
+    margin-top: 20px;
+
+    color: var(--text-muted);
+
+    font-size: 0.78rem;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- TEXTO NEGRITA ---------- */
+
+.other-project-highlight {
+    margin-top: 10px;
+
+    color: #ffffff;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   ITCH.IO
+======================================== */
+
+.other-project-itch {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+
+    color: var(--cyan);
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+}
+
+
+/* ---------- LOGO ITCH ---------- */
+
+.itch-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 25px;
+
+    border: 1px solid var(--cyan);
+
+    color: var(--cyan);
+
+    font-size: 0.62rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.other-project-card:hover {
+    height: 520px;
+
+    border-color: var(--cyan);
+
+    transform: translateY(-4px);
+}
+
+
+/* La imagen se encoge */
+
+.other-project-card:hover .other-project-image {
+    height: 45%;
+
+    transform: scale(0.96);
+}
+
+
+/* Ajustamos el degradado */
+
+.other-project-card:hover .other-project-image::after {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8, 11, 16, 0.15),
+            rgba(8, 11, 16, 0.75)
+        );
+}
+
+
+/* El contenido deja espacio */
+
+.other-project-card:hover .other-project-content {
+    height: 100%;
+
+    padding-top: 25px;
+}
+
+
+/* Aparece la información */
+
+.other-project-card:hover .other-project-details {
+    max-height: 220px;
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .other-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .other-project-card {
+        height: 400px;
+    }
+
+    .other-project-card:hover {
+        height: 500px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .other-projects {
+        margin-top: 70px;
+    }
+
+    .other-projects-separator {
+        margin-bottom: 50px;
+    }
+
+    .other-projects-title {
+        font-size: 1.7rem;
+    }
+
+    .other-project-card {
+        height: 380px;
+    }
+
+    .other-project-card:hover {
+        height: 490px;
+    }
+
+    .other-project-content {
+        padding: 25px;
+    }
+
+}
+
 /* ---------- DOCUMENTOS ---------- */
 
 .documents-section {
