@@ -593,9 +593,6 @@ section {
     margin-top: 100px;
 }
 
-
-/* Línea separadora */
-
 .other-projects-separator {
     width: 100%;
     height: 1px;
@@ -603,14 +600,9 @@ section {
     margin-bottom: 55px;
 }
 
-
-/* Título de sección */
-
 .other-projects-title {
     margin-bottom: 35px !important;
-
     color: #ffffff;
-
     font-size: 2rem;
     font-weight: 500;
 }
@@ -622,11 +614,8 @@ section {
 
 .other-projects-grid {
     display: grid;
-
     grid-template-columns: repeat(3, minmax(0, 1fr));
-
     gap: 25px;
-
     width: 100%;
 }
 
@@ -637,7 +626,6 @@ section {
 
 .other-project-card {
     position: relative;
-
     display: block;
 
     width: 100%;
@@ -646,11 +634,9 @@ section {
     overflow: hidden;
 
     background: var(--surface);
-
     border: 1px solid var(--border);
 
     text-decoration: none;
-
     cursor: pointer;
 
     transition: border-color 0.3s ease;
@@ -663,7 +649,6 @@ section {
 
 .other-project-image {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
@@ -671,10 +656,13 @@ section {
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
 }
 
 
-/* Imágenes */
+/* ---------- IMÁGENES ---------- */
 
 .other-project-1 {
     background-image: url("../img/project-1.jpg");
@@ -689,13 +677,12 @@ section {
 }
 
 
-/* Oscurecimiento inferior */
+/* ---------- OSCURECIMIENTO ---------- */
 
 .other-project-image::after {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
     background: linear-gradient(
@@ -708,12 +695,11 @@ section {
 
 
 /* =========================================================
-   PANEL DE INFORMACIÓN
+   PANEL
    ========================================================= */
 
 .other-project-info {
     position: absolute;
-
     inset: 0;
 
     z-index: 2;
@@ -723,19 +709,17 @@ section {
 
     padding: 20px 22px;
 
-    /*
-       Dejamos visibles únicamente los últimos 62px
-       cuando NO hay hover.
-    */
-    transform: translateY(calc(100% - 62px));
-
-    background: rgba(8, 11, 16, 0.92);
-
-    backdrop-filter: blur(3px);
+    background: transparent;
 
     overflow: hidden;
 
-    transition: transform 0.45s ease;
+    transition: background 0.3s ease;
+
+    /*
+       IMPORTANTE:
+       El panel NO se mueve.
+       La tarjeta mantiene siempre el mismo tamaño.
+    */
 }
 
 
@@ -755,12 +739,12 @@ section {
     z-index: 3;
 
     transition:
-        top 0.45s ease,
-        bottom 0.45s ease;
+        top 0.3s ease,
+        bottom 0.3s ease;
 }
 
 
-/* Título */
+/* TÍTULO */
 
 .other-project-header h3 {
     margin: 0 0 5px;
@@ -774,7 +758,7 @@ section {
 }
 
 
-/* Subtítulo */
+/* SUBTÍTULO */
 
 .other-project-header span {
     display: block;
@@ -802,11 +786,16 @@ section {
     right: 22px;
     bottom: 20px;
 
-    display: block;
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 
-/* Descripción gris */
+/* DESCRIPCIÓN GRIS */
 
 .other-project-description {
     margin: 0;
@@ -814,12 +803,11 @@ section {
     color: var(--text-muted);
 
     font-size: 0.72rem;
-
     line-height: 1.5;
 }
 
 
-/* Descripción en negrita */
+/* DESCRIPCIÓN DESTACADA */
 
 .other-project-highlight {
     margin: 10px 0 0;
@@ -827,7 +815,6 @@ section {
     color: #ffffff;
 
     font-size: 0.72rem;
-
     font-weight: 700;
 
     line-height: 1.45;
@@ -845,7 +832,6 @@ section {
     bottom: 0;
 
     display: flex;
-
     align-items: center;
 
     gap: 9px;
@@ -853,12 +839,11 @@ section {
     color: var(--cyan);
 
     font-size: 0.7rem;
-
     font-weight: 600;
 }
 
 
-/* Logo provisional */
+/* LOGO */
 
 .itch-logo {
     display: inline-flex;
@@ -874,7 +859,6 @@ section {
     color: var(--cyan);
 
     font-size: 0.55rem;
-
     font-weight: 700;
 }
 
@@ -889,32 +873,33 @@ section {
 
 
 /*
-   IMPORTANTE:
-   NO tocamos la imagen en hover.
-   No scale.
-   No brightness.
-   No filter.
-   No transform.
-*/
+   AL HACER HOVER:
 
-
-/*
-   El panel sube y ocupa toda la tarjeta.
+   - La tarjeta NO cambia de tamaño.
+   - La imagen NO se mueve.
+   - La imagen NO se escala.
+   - La imagen NO cambia de brillo.
+   - Aparece el panel.
 */
 
 .other-project-card:hover .other-project-info {
-    transform: translateY(0);
+    background: rgba(8, 11, 16, 0.94);
 }
 
 
-/*
-   En hover el título y subtítulo pasan
-   a la parte superior.
-*/
+/* Título y subtítulo suben */
 
 .other-project-card:hover .other-project-header {
     top: 20px;
     bottom: auto;
+}
+
+
+/* Aparece la descripción */
+
+.other-project-card:hover .other-project-extra {
+    opacity: 1;
+    visibility: visible;
 }
 
 
@@ -948,7 +933,6 @@ section {
         height: 210px;
     }
 }
-
 
 /* ---------- DOCUMENTOS ---------- */
 
