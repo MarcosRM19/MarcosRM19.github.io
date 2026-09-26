@@ -796,6 +796,18 @@ section {
     }
 }
 
+/* =========================================================
+   SEGUNDA EXPERIENCIA
+   ========================================================= */
+
+.experience-entry-secondary {
+    margin-top: 90px;
+}
+
+.experience-entry-secondary .experience-header {
+    padding-top: 0;
+}
+
 /* ---------- PROYECTOS ---------- */
 
 .projects-container {
