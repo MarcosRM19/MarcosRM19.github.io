@@ -861,12 +861,14 @@ section {
 
 .itch-logo img {
     display: block;
-
     width: 32px;
     height: 22px;
-
     object-fit: contain;
     object-position: left center;
+    filter: brightness(0) saturate(100%)
+            invert(75%) sepia(97%)
+            saturate(1700%) hue-rotate(155deg)
+            brightness(105%) contrast(105%);
 }
 
 /* =========================================================
