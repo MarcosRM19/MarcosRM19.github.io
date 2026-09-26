@@ -584,115 +584,83 @@ section {
     color: #ffffff;
 }
 
-/* ========================================
-   OTROS PROYECTOS PERSONALES
-======================================== */
-
-
-/* ---------- CONTENEDOR ---------- */
+/* ==================== OTROS PROYECTOS PERSONALES ==================== */
 
 .other-projects {
     width: 100%;
-
     margin-top: 100px;
 }
 
-
-/* ---------- SEPARADOR ---------- */
-
 .other-projects-separator {
     width: 100%;
-
     border-top: 1px solid var(--border);
-
-    margin-bottom: 65px;
+    margin-bottom: 55px;
 }
 
-
-/* ---------- TITULO ---------- */
-
 .other-projects-title {
-    margin-bottom: 40px !important;
-
+    margin-bottom: 35px !important;
     color: #ffffff;
-
     font-size: 2rem;
-
     font-weight: 500;
 }
 
 
-/* ---------- GRID ---------- */
+/* ==================== GRID ==================== */
 
 .other-projects-grid {
     display: grid;
-
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-
     width: 100%;
 }
 
 
-/* ========================================
-   TARJETA
-======================================== */
+/* ==================== TARJETA ==================== */
 
 .other-project-card {
     position: relative;
-
-    display: flex;
-
-    flex-direction: column;
+    display: block;
 
     width: 100%;
-
-    height: 420px;
+    height: 270px;
 
     overflow: hidden;
 
     background: var(--surface);
-
     border: 1px solid var(--border);
 
     text-decoration: none;
-
     cursor: pointer;
 
     transition:
-        height 0.45s ease,
         border-color 0.3s ease,
         transform 0.3s ease;
 }
 
 
-/* ========================================
-   IMAGEN
-======================================== */
+/* ==================== IMAGEN ==================== */
 
 .other-project-image {
     position: absolute;
 
     top: 0;
     left: 0;
-    right: 0;
 
+    width: 100%;
     height: 100%;
 
     background-size: cover;
-
     background-position: center;
 
     transform: scale(1);
 
     transition:
-        height 0.5s ease,
-        transform 0.6s ease;
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
 
 
-/* ---------- IMAGENES ---------- */
+/* Imágenes */
 
 .other-project-1 {
     background-image: url("../img/project-1.jpg");
@@ -707,87 +675,79 @@ section {
 }
 
 
-/* ---------- OSCURECER IMAGEN ---------- */
+/* Oscurecimiento inicial */
 
 .other-project-image::after {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(8, 11, 16, 0.98) 0%,
-            rgba(8, 11, 16, 0.65) 45%,
-            rgba(8, 11, 16, 0.15) 100%
-        );
+    background: linear-gradient(
+        to top,
+        rgba(8, 11, 16, 0.95),
+        rgba(8, 11, 16, 0.25)
+    );
 
-    transition:
-        background 0.5s ease;
+    transition: opacity 0.4s ease;
 }
 
 
-/* ========================================
-   CONTENIDO
-======================================== */
+/* ==================== INFORMACIÓN SUPERPUESTA ==================== */
 
-.other-project-content {
-    position: relative;
+.other-project-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     z-index: 2;
 
-    display: flex;
+    padding: 25px;
 
-    flex-direction: column;
+    /*
+       La información está siempre encima
+       de la imagen, pero inicialmente solo
+       se muestra la parte principal.
+    */
 
-    justify-content: flex-end;
+    background: rgba(8, 11, 16, 0.72);
 
-    width: 100%;
-
-    height: 100%;
-
-    padding: 30px;
+    backdrop-filter: blur(2px);
 
     transition:
+        background 0.4s ease,
         padding 0.4s ease;
 }
 
 
-/* ---------- TITULO ---------- */
+/* ==================== TÍTULO ==================== */
 
 .other-project-main h3 {
-    margin: 0 0 7px;
+    margin: 0 0 6px;
 
     color: #ffffff;
 
-    font-size: 1.45rem;
-
+    font-size: 1.4rem;
     font-weight: 500;
 
     line-height: 1.2;
 }
-
-
-/* ---------- SUBTITULO ---------- */
 
 .other-project-main span {
     display: block;
 
     color: var(--cyan);
 
-    font-size: 0.7rem;
-
+    font-size: 0.68rem;
     font-weight: 600;
 
     letter-spacing: 1.5px;
 }
 
 
-/* ========================================
-   INFORMACION EXTRA
-======================================== */
+/* ==================== INFORMACIÓN EXTRA ==================== */
 
 .other-project-details {
     max-height: 0;
@@ -796,65 +756,56 @@ section {
 
     opacity: 0;
 
-    transform: translateY(15px);
+    transform: translateY(12px);
 
     transition:
-        max-height 0.5s ease,
+        max-height 0.45s ease,
         opacity 0.35s ease,
-        transform 0.45s ease;
+        transform 0.4s ease;
 }
 
 
-/* ---------- TEXTO GRIS ---------- */
+/* Texto gris */
 
 .other-project-description {
-    margin-top: 20px;
+    margin: 18px 0 0;
 
     color: var(--text-muted);
 
-    font-size: 0.78rem;
-
-    line-height: 1.6;
+    font-size: 0.77rem;
+    line-height: 1.55;
 }
 
 
-/* ---------- TEXTO NEGRITA ---------- */
+/* Texto destacado */
 
 .other-project-highlight {
-    margin-top: 10px;
+    margin: 9px 0 0;
 
     color: #ffffff;
 
-    font-size: 0.78rem;
+    font-size: 0.77rem;
+    font-weight: 700;
 
-    font-weight: 600;
-
-    line-height: 1.5;
+    line-height: 1.45;
 }
 
 
-/* ========================================
-   ITCH.IO
-======================================== */
+/* ==================== ITCH.IO ==================== */
 
 .other-project-itch {
     display: flex;
 
     align-items: center;
-
     gap: 10px;
 
-    margin-top: 22px;
+    margin-top: 18px;
 
     color: var(--cyan);
 
-    font-size: 0.75rem;
-
+    font-size: 0.74rem;
     font-weight: 600;
 }
-
-
-/* ---------- LOGO ITCH ---------- */
 
 .itch-icon {
     display: inline-flex;
@@ -863,67 +814,55 @@ section {
     justify-content: center;
 
     width: 52px;
-    height: 25px;
+    height: 24px;
 
     border: 1px solid var(--cyan);
 
     color: var(--cyan);
 
-    font-size: 0.62rem;
-
-    font-weight: bold;
-
-    letter-spacing: 0;
+    font-size: 0.6rem;
+    font-weight: 700;
 }
 
 
-/* ========================================
-   HOVER
-======================================== */
+/* ==================== HOVER ==================== */
 
 .other-project-card:hover {
-    height: 520px;
+    /*
+       IMPORTANTE:
+       no cambiamos width ni height.
+       La tarjeta mantiene exactamente
+       el mismo tamaño.
+    */
 
     border-color: var(--cyan);
 
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 
-/* La imagen se encoge */
+/* La imagen se encoge ligeramente */
 
 .other-project-card:hover .other-project-image {
-    height: 45%;
+    transform: scale(0.94);
 
-    transform: scale(0.96);
+    filter: brightness(0.7);
 }
 
 
-/* Ajustamos el degradado */
+/* El overlay se hace un poco más transparente */
 
-.other-project-card:hover .other-project-image::after {
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(8, 11, 16, 0.15),
-            rgba(8, 11, 16, 0.75)
-        );
-}
+.other-project-card:hover .other-project-overlay {
+    background: rgba(8, 11, 16, 0.78);
 
-
-/* El contenido deja espacio */
-
-.other-project-card:hover .other-project-content {
-    height: 100%;
-
-    padding-top: 25px;
+    padding-top: 20px;
 }
 
 
 /* Aparece la información */
 
 .other-project-card:hover .other-project-details {
-    max-height: 220px;
+    max-height: 180px;
 
     opacity: 1;
 
@@ -931,9 +870,7 @@ section {
 }
 
 
-/* ========================================
-   RESPONSIVE
-======================================== */
+/* ==================== RESPONSIVE ==================== */
 
 @media (max-width: 900px) {
 
@@ -942,13 +879,8 @@ section {
     }
 
     .other-project-card {
-        height: 400px;
+        height: 270px;
     }
-
-    .other-project-card:hover {
-        height: 500px;
-    }
-
 }
 
 
@@ -959,7 +891,7 @@ section {
     }
 
     .other-projects-separator {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
     }
 
     .other-projects-title {
@@ -967,17 +899,12 @@ section {
     }
 
     .other-project-card {
-        height: 380px;
+        height: 250px;
     }
 
-    .other-project-card:hover {
-        height: 490px;
+    .other-project-overlay {
+        padding: 22px;
     }
-
-    .other-project-content {
-        padding: 25px;
-    }
-
 }
 
 /* ---------- DOCUMENTOS ---------- */
