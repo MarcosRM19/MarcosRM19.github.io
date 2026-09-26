@@ -1116,6 +1116,41 @@ footer {
     color: var(--background);
 }
 
+/* ---------- ESTADO DEL FORMULARIO ---------- */
+
+.contact-status {
+    min-height: 20px;
+
+    margin: 10px 0 0;
+
+    font-size: 0.8rem;
+
+    text-align: center;
+}
+
+
+/* MENSAJE ENVIADO */
+
+.contact-status.success {
+    color: var(--cyan);
+}
+
+
+/* ERROR */
+
+.contact-status.error {
+    color: #ff6b6b;
+}
+
+
+/* BOTÓN DESACTIVADO */
+
+.contact-submit:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
 
 /* ---------- POPUP EN MOVIL ---------- */
 
@@ -1132,3 +1167,5 @@ footer {
     }
 
 }
+
+
