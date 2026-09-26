@@ -554,7 +554,7 @@ section {
 .experience-company {
     margin: 8px 0 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .experience-meta {
@@ -581,7 +581,7 @@ section {
 .experience-intro p {
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
@@ -634,7 +634,7 @@ section {
     max-width: 700px;
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     line-height: 1.6;
 }
 
@@ -683,7 +683,7 @@ section {
     max-width: 480px;
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.72rem;
+    font-size: 1rem;
     line-height: 1.65;
 }
 
@@ -731,7 +731,7 @@ section {
 
 .experience-footer strong {
     color: var(--text);
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 400;
 }
 
@@ -1066,8 +1066,8 @@ section {
 
     color: var(--text-muted);
 
-    font-size: 0.72rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 
@@ -1078,10 +1078,10 @@ section {
 
     color: #ffffff;
 
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 700;
 
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 /* =========================================================
@@ -1101,7 +1101,7 @@ section {
 
     color: var(--cyan);
 
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
