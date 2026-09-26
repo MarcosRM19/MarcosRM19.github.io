@@ -584,67 +584,85 @@ section {
     color: #ffffff;
 }
 
-/* ==================== OTROS PROYECTOS PERSONALES ==================== */
+/* =========================================================
+   OTROS PROYECTOS PERSONALES
+   ========================================================= */
 
 .other-projects {
     width: 100%;
     margin-top: 100px;
 }
 
+
+/* Línea separadora */
+
 .other-projects-separator {
     width: 100%;
-    border-top: 1px solid var(--border);
+    height: 1px;
+    background: var(--border);
     margin-bottom: 55px;
 }
 
+
+/* Título */
+
 .other-projects-title {
     margin-bottom: 35px !important;
+
     color: #ffffff;
+
     font-size: 2rem;
     font-weight: 500;
 }
 
 
-/* ==================== GRID ==================== */
+/* =========================================================
+   GRID
+   ========================================================= */
 
 .other-projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 25px;
+
     width: 100%;
 }
 
 
-/* ==================== TARJETA ==================== */
+/* =========================================================
+   TARJETA
+   ========================================================= */
 
 .other-project-card {
     position: relative;
+
     display: block;
 
     width: 100%;
-    height: 270px;
+    height: 190px;
 
     overflow: hidden;
 
     background: var(--surface);
+
     border: 1px solid var(--border);
 
     text-decoration: none;
-    cursor: pointer;
 
-    transition:
-        border-color 0.3s ease,
-        transform 0.3s ease;
+    cursor: pointer;
 }
 
 
-/* ==================== IMAGEN ==================== */
+/* =========================================================
+   IMAGEN
+   ========================================================= */
 
 .other-project-image {
     position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100%;
@@ -652,11 +670,9 @@ section {
     background-size: cover;
     background-position: center;
 
-    transform: scale(1);
-
     transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
+        transform 0.45s ease,
+        filter 0.45s ease;
 }
 
 
@@ -675,27 +691,38 @@ section {
 }
 
 
-/* Oscurecimiento inicial */
+/* Oscurecimiento de la imagen */
 
 .other-project-image::after {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
-    background: linear-gradient(
-        to top,
-        rgba(8, 11, 16, 0.95),
-        rgba(8, 11, 16, 0.25)
-    );
-
-    transition: opacity 0.4s ease;
+    background:
+        linear-gradient(
+            to top,
+            rgba(8, 11, 16, 0.95) 0%,
+            rgba(8, 11, 16, 0.30) 65%,
+            rgba(8, 11, 16, 0.05) 100%
+        );
 }
 
 
-/* ==================== INFORMACIÓN SUPERPUESTA ==================== */
+/* =========================================================
+   PANEL DE INFORMACIÓN
+   ========================================================= */
 
-.other-project-overlay {
+/*
+   ESTE es el elemento que se despliega.
+
+   Empieza abajo de la tarjeta.
+   En hover sube.
+   Nunca cambia el tamaño de la tarjeta.
+*/
+
+.other-project-info {
     position: absolute;
 
     left: 0;
@@ -704,173 +731,218 @@ section {
 
     z-index: 2;
 
-    padding: 25px;
+    /*
+       Altura del panel cuando está desplegado.
+    */
+    min-height: 100%;
+
+    padding: 20px 22px;
 
     /*
-       La información está siempre encima
-       de la imagen, pero inicialmente solo
-       se muestra la parte principal.
+       Inicialmente solo queremos ver
+       la parte inferior del panel.
     */
+    transform: translateY(
+        calc(100% - 66px)
+    );
 
-    background: rgba(8, 11, 16, 0.72);
+    background: rgba(8, 11, 16, 0.84);
 
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
 
     transition:
-        background 0.4s ease,
-        padding 0.4s ease;
+        transform 0.45s ease;
 }
 
 
-/* ==================== TÍTULO ==================== */
+/* =========================================================
+   TÍTULO + SUBTÍTULO
+   ========================================================= */
 
-.other-project-main h3 {
-    margin: 0 0 6px;
+.other-project-header {
+    position: absolute;
+
+    left: 22px;
+    right: 22px;
+
+    bottom: 20px;
+}
+
+
+/* Título */
+
+.other-project-header h3 {
+    margin: 0 0 5px;
 
     color: #ffffff;
 
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 500;
 
     line-height: 1.2;
 }
 
-.other-project-main span {
+
+/* Subtítulo */
+
+.other-project-header span {
     display: block;
 
     color: var(--cyan);
 
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 600;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
 }
 
 
-/* ==================== INFORMACIÓN EXTRA ==================== */
+/* =========================================================
+   INFORMACIÓN EXTRA
+   ========================================================= */
 
-.other-project-details {
-    max-height: 0;
+.other-project-extra {
+    position: absolute;
 
-    overflow: hidden;
+    left: 22px;
+    right: 22px;
 
-    opacity: 0;
+    top: 20px;
+    bottom: 20px;
 
-    transform: translateY(12px);
+    display: flex;
+    flex-direction: column;
 
-    transition:
-        max-height 0.45s ease,
-        opacity 0.35s ease,
-        transform 0.4s ease;
+    /*
+       Dejamos espacio para el título.
+    */
+    padding-bottom: 58px;
 }
 
 
 /* Texto gris */
 
 .other-project-description {
-    margin: 18px 0 0;
+    margin: 0;
 
     color: var(--text-muted);
 
-    font-size: 0.77rem;
-    line-height: 1.55;
+    font-size: 0.72rem;
+
+    line-height: 1.5;
 }
 
 
-/* Texto destacado */
+/* Texto en negrita */
 
 .other-project-highlight {
-    margin: 9px 0 0;
+    margin: 10px 0 0;
 
     color: #ffffff;
 
-    font-size: 0.77rem;
+    font-size: 0.72rem;
+
     font-weight: 700;
 
     line-height: 1.45;
 }
 
 
-/* ==================== ITCH.IO ==================== */
+/* =========================================================
+   ITCH.IO
+   ========================================================= */
 
 .other-project-itch {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
     display: flex;
 
     align-items: center;
-    gap: 10px;
 
-    margin-top: 18px;
+    gap: 9px;
 
     color: var(--cyan);
 
-    font-size: 0.74rem;
+    font-size: 0.7rem;
+
     font-weight: 600;
 }
 
-.itch-icon {
+
+/* Placeholder del logo */
+
+.itch-logo {
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    width: 52px;
-    height: 24px;
+    width: 48px;
+    height: 22px;
 
     border: 1px solid var(--cyan);
 
     color: var(--cyan);
 
-    font-size: 0.6rem;
+    font-size: 0.55rem;
+
     font-weight: 700;
 }
 
 
-/* ==================== HOVER ==================== */
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+/*
+   LA TARJETA NO SE TOCA.
+
+   No hay:
+       height
+       width
+       scale
+       translate
+
+   sobre .other-project-card.
+*/
+
 
 .other-project-card:hover {
-    /*
-       IMPORTANTE:
-       no cambiamos width ni height.
-       La tarjeta mantiene exactamente
-       el mismo tamaño.
-    */
-
     border-color: var(--cyan);
-
-    transform: translateY(-3px);
 }
 
 
-/* La imagen se encoge ligeramente */
+/*
+   La imagen se hace ligeramente más pequeña
+   visualmente, pero sigue dentro del mismo
+   rectángulo.
+*/
 
 .other-project-card:hover .other-project-image {
-    transform: scale(0.94);
+    transform: scale(0.96);
 
-    filter: brightness(0.7);
+    filter: brightness(0.55);
 }
 
 
-/* El overlay se hace un poco más transparente */
+/*
+   EL PANEL SUBE.
 
-.other-project-card:hover .other-project-overlay {
-    background: rgba(8, 11, 16, 0.78);
+   Esto es lo que produce exactamente el efecto
+   de "la información tapa la imagen".
+*/
 
-    padding-top: 20px;
-}
-
-
-/* Aparece la información */
-
-.other-project-card:hover .other-project-details {
-    max-height: 180px;
-
-    opacity: 1;
-
+.other-project-card:hover .other-project-info {
     transform: translateY(0);
 }
 
 
-/* ==================== RESPONSIVE ==================== */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -879,7 +951,7 @@ section {
     }
 
     .other-project-card {
-        height: 270px;
+        height: 190px;
     }
 }
 
@@ -890,20 +962,12 @@ section {
         margin-top: 70px;
     }
 
-    .other-projects-separator {
-        margin-bottom: 45px;
-    }
-
     .other-projects-title {
         font-size: 1.7rem;
     }
 
     .other-project-card {
-        height: 250px;
-    }
-
-    .other-project-overlay {
-        padding: 22px;
+        height: 190px;
     }
 }
 
