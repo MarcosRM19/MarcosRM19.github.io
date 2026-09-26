@@ -584,6 +584,7 @@ section {
     color: #ffffff;
 }
 
+```css
 /* =========================================================
    OTROS PROYECTOS PERSONALES
    ========================================================= */
@@ -641,8 +642,6 @@ section {
     display: block;
 
     width: 100%;
-
-    /* Un poco más alta que antes */
     height: 220px;
 
     overflow: hidden;
@@ -673,25 +672,21 @@ section {
 
     background-size: cover;
     background-position: center;
-
-    transition:
-        transform 0.45s ease,
-        filter 0.45s ease;
 }
 
 
 /* Imágenes */
 
 .other-project-1 {
-    background-image: url("../img/Barbaridad.png");
+    background-image: url("../img/project-1.jpg");
 }
 
 .other-project-2 {
-    background-image: url("../img/Kunai.png");
+    background-image: url("../img/project-2.jpg");
 }
 
 .other-project-3 {
-    background-image: url("../img/Circles.png");
+    background-image: url("../img/project-3.jpg");
 }
 
 
@@ -712,6 +707,7 @@ section {
     );
 }
 
+
 /* =========================================================
    PANEL DE INFORMACIÓN
    ========================================================= */
@@ -719,9 +715,7 @@ section {
 .other-project-info {
     position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
 
     z-index: 2;
 
@@ -731,24 +725,16 @@ section {
     padding: 20px 22px;
 
     /*
-       MUY IMPORTANTE:
-       Todo lo que quede fuera del panel
-       queda oculto.
-    */
-    overflow: hidden;
-
-    /*
-       ESTADO NORMAL:
-
-       El panel está desplazado hacia abajo.
-       Solo quedan visibles los últimos 62px,
-       donde está el título y subtítulo.
+       Dejamos visibles únicamente los últimos 62px
+       cuando NO hay hover.
     */
     transform: translateY(calc(100% - 62px));
 
-    background: rgba(8, 11, 16, 0.86);
+    background: rgba(8, 11, 16, 0.92);
 
     backdrop-filter: blur(3px);
+
+    overflow: hidden;
 
     transition: transform 0.45s ease;
 }
@@ -764,9 +750,14 @@ section {
     left: 22px;
     right: 22px;
 
+    top: auto;
     bottom: 18px;
 
     z-index: 3;
+
+    transition:
+        top 0.45s ease,
+        bottom 0.45s ease;
 }
 
 
@@ -807,29 +798,16 @@ section {
 .other-project-extra {
     position: absolute;
 
-    /*
-       Cuando el panel está abierto,
-       la información empieza DEBAJO
-       del título + subtítulo.
-    */
     top: 78px;
-
     left: 22px;
     right: 22px;
-
     bottom: 20px;
 
-    display: flex;
-
-    flex-direction: column;
-
-    padding: 0;
+    display: block;
 }
 
 
-/* =========================================================
-   DESCRIPCIÓN 1
-   ========================================================= */
+/* Descripción gris */
 
 .other-project-description {
     margin: 0;
@@ -842,12 +820,10 @@ section {
 }
 
 
-/* =========================================================
-   DESCRIPCIÓN 2
-   ========================================================= */
+/* Descripción en negrita */
 
 .other-project-highlight {
-    margin: 12px 0 0;
+    margin: 10px 0 0;
 
     color: #ffffff;
 
@@ -913,20 +889,18 @@ section {
 }
 
 
-/* Imagen ligeramente reducida */
-
-.other-project-card:hover .other-project-image {
-    transform: scale(0.96);
-
-    filter: brightness(0.5);
-}
+/*
+   IMPORTANTE:
+   NO tocamos la imagen en hover.
+   No scale.
+   No brightness.
+   No filter.
+   No transform.
+*/
 
 
 /*
-   AQUÍ ESTÁ EL EFECTO PRINCIPAL:
-
-   El panel sube dentro de la misma tarjeta.
-   La tarjeta NO cambia de tamaño.
+   El panel sube y ocupa toda la tarjeta.
 */
 
 .other-project-card:hover .other-project-info {
@@ -935,62 +909,15 @@ section {
 
 
 /*
-   Al hacer hover el header deja de estar
-   abajo y pasa a estar ARRIBA.
+   En hover el título y subtítulo pasan
+   a la parte superior.
 */
 
 .other-project-card:hover .other-project-header {
-    position: relative;
-
-    left: auto;
-    right: auto;
+    top: 20px;
     bottom: auto;
 }
 
-
-/*
-   La información aparece debajo del
-   título y subtítulo.
-*/
-
-.other-project-card:hover .other-project-extra {
-    top: 78px;
-}
-
-
-/* =========================================================
-   ORDEN FINAL
-   ========================================================= */
-
-/*
-
-   NORMAL:
-
-   ┌───────────────────────────────┐
-   │                               │
-   │            IMAGEN             │
-   │                               │
-   │  Barbaridad                   │
-   │  Visual Novel                 │
-   └───────────────────────────────┘
-
-
-   HOVER:
-
-   ┌───────────────────────────────┐
-   │  Barbaridad                   │
-   │  Visual Novel                 │
-   │                               │
-   │  Descripción gris...          │
-   │                               │
-   │  Descripción en NEGRITA       │
-   │                               │
-   │  [itch.io] Juega en Itch.io → │
-   └───────────────────────────────┘
-
-   La caja exterior mide exactamente
-   lo mismo en ambos estados.
-*/
 
 /* =========================================================
    RESPONSIVE
@@ -1022,6 +949,8 @@ section {
         height: 210px;
     }
 }
+```
+
 
 /* ---------- DOCUMENTOS ---------- */
 
