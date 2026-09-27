@@ -30,24 +30,23 @@
 
             <div class="nav-links">
 
-                <a href="#inicio" id="nav-home">
+                <a href="#inicio" id="nav-home" data-i18n="home">
                     Inicio
                 </a>
 
-                <a href="#sobre-mi" id="nav-about">
+                <a href="#sobre-mi" id="nav-about" data-i18n="about">
                     Quién soy
                 </a>
 
-                <a href="#experience" id="nav-experience">
+                <a href="#experience" id="nav-experience" data-i18n="experience">
                     Experiencia
                 </a>
 
-
-                <a href="#proyectos" id="nav-projects">
+                <a href="#proyectos" id="nav-projects" data-i18n="projects">
                     Proyectos
                 </a>
 
-                <a href="#documentos" id="nav-documents">
+                <a href="#documentos" id="nav-documents" data-i18n="documents">
                     Documentos
                 </a>
 
@@ -60,9 +59,9 @@
                     EN
                 </button>
 
-            <a href="#contacto" class="contact-button" id="contact-button">
-                Contact me
-            </a>
+                <a href="#contacto" class="contact-button" id="contact-button" data-i18n="contactButton">
+                    Contact me
+                </a>
 
             </div>
 
@@ -85,7 +84,7 @@
                     MARCOS RUIZ
                 </h1>
 
-                <p class="hero-subtitle" id="hero-subtitle">
+                <p class="hero-subtitle" id="hero-subtitle" data-i18n="heroSubtitle">
                     Game Programmer
                 </p>
 
@@ -103,7 +102,7 @@
 
         <section id="conocimientos" class="section technical-section">
 
-            <h2 id="technical-title">
+            <h2 id="technical-title" data-i18n="technicalTitle">
                 Conocimientos técnicos
             </h2>
 
@@ -113,7 +112,7 @@
 
                 <article class="technical-category">
 
-                    <h3>
+                    <h3 data-i18n="coreGraphics">
                         Core y Gráficos
                     </h3>
 
@@ -143,7 +142,7 @@
 
                 <article class="technical-category">
 
-                    <h3>
+                    <h3 data-i18n="enginesTools">
                         Motores y Herramientas
                     </h3>
 
@@ -157,7 +156,7 @@
                             Unity
                         </li>
 
-                        <li>
+                        <li data-i18n="visualStudio">
                             Visual Studio / Rider
                         </li>
 
@@ -173,7 +172,7 @@
 
                 <article class="technical-category">
 
-                    <h3>
+                    <h3 data-i18n="artificialIntelligence">
                         Inteligencia Artificial
                     </h3>
 
@@ -191,7 +190,7 @@
                             PathFinding
                         </li>
 
-                        <li>
+                        <li data-i18n="machineLearning">
                             Machine Learning
                         </li>
 
@@ -203,7 +202,7 @@
 
                 <article class="technical-category">
 
-                    <h3>
+                    <h3 data-i18n="production">
                         Producción
                     </h3>
 
@@ -221,7 +220,7 @@
                             Jira
                         </li>
 
-                        <li>
+                        <li data-i18n="confluenceNotion">
                             Confluence y Notion
                         </li>
 
@@ -245,17 +244,17 @@
 
                 <div class="about-text">
 
-                    <span class="about-label">
+                    <span class="about-label" data-i18n="aboutLabel">
                         GAME DEVELOPER ESPECIALIZADO EN GAME PROGRAMMER
                     </span>
 
 
-                    <h2>
+                    <h2 data-i18n="aboutTitle">
                         Hola! Soy Marcos!
                     </h2>
 
 
-                    <p>
+                    <p data-i18n="aboutParagraph1">
                         Especializado en <strong>sistemas de gameplay</strong> y
                         <strong>sistemas de inteligencia artificial para videojuegos</strong>.
                         Trabajo principalmente con <strong>C++</strong> y motores como
@@ -264,7 +263,7 @@
                     </p>
 
 
-                    <p>
+                    <p data-i18n="aboutParagraph2">
                         Lo que más me interesa de un videojuego es cómo el conjunto de
                         <strong>sistemas crea la base sobre la que se construye el juego</strong>.
                         Me gusta entender cómo interactúan entre ellos y cómo una buena
@@ -272,7 +271,7 @@
                     </p>
 
 
-                    <p>
+                    <p data-i18n="aboutParagraph3">
                         Antes de cada iteración utilizo <strong>UML</strong> y
                         <strong>documentación técnica</strong> para plantear y estructurar
                         los sistemas antes de comenzar su implementación. Esto me permite
@@ -281,13 +280,13 @@
                     </p>
 
 
-                    <span class="about-contact-text">
+                    <span class="about-contact-text" data-i18n="interested">
                         ¿Te interesa mi trabajo?
                     </span>
 
 
-                    <a href="#" class="about-contact-button" id="about-contact" data-open-contact> 
-                        Contáctame 
+                    <a href="#" class="about-contact-button" id="about-contact" data-open-contact data-i18n="contactMe">
+                        Contáctame
                     </a>
 
                 </div>
@@ -305,706 +304,967 @@
 
         </section>
 
-<!-- =========================================================
-     EXPERIENCIA
-     ========================================================= -->
 
-<section id="experience" class="section experience">
 
-    <div class="experience-separator"></div>
+        <!-- =========================================================
+             EXPERIENCIA
+             ========================================================= -->
 
-    <h2 class="experience-title">Experiencia</h2>
+        <section id="experience" class="section experience">
 
-    <div class="experience-entry">
+            <div class="experience-separator"></div>
 
-        <!-- CABECERA -->
-        <div class="experience-header">
+            <h2 class="experience-title" data-i18n="experienceTitle">
+                Experiencia
+            </h2>
 
-            <div class="experience-role">
-                <span class="experience-label">01 / EXPERIENCE</span>
 
-                <h3>Junior Game Programmer</h3>
+            <div class="experience-entry">
 
-                <p class="experience-company">
-                    The Breach Studios
-                </p>
-            </div>
+                <!-- CABECERA -->
+                <div class="experience-header">
 
-            <div class="experience-meta">
-                <span>JUL 2025 — JUN 2026</span>
-                <span>REMOTE · BARCELONA</span>
-                <span>~938 HOURS</span>
-            </div>
+                    <div class="experience-role">
 
-        </div>
-
-
-        <!-- DESCRIPCIÓN -->
-        <div class="experience-intro">
-
-            <p>
-                Contributed to the development of an unannounced game,
-                working as part of a distributed indie studio team across
-                gameplay, artificial intelligence, UI, animation integration
-                and internal Unity tooling.
-            </p>
-
-        </div>
-
-
-        <!-- NDA -->
-        <div class="experience-nda">
-
-            <div class="experience-nda-status">
-                <span class="experience-nda-dot"></span>
-                PROJECT UNDER NDA
-            </div>
-
-            <div class="experience-nda-content">
-                <strong>UNANNOUNCED TITLE</strong>
-
-                <p>
-                    Project details, gameplay footage and development assets
-                    cannot be publicly disclosed. The information presented
-                    here focuses exclusively on my technical contributions.
-                </p>
-            </div>
-
-        </div>
-
-
-        <!-- ÁREAS TÉCNICAS -->
-        <div class="experience-skills">
-
-            <!-- AI -->
-            <article class="experience-skill">
-
-                <span class="experience-skill-number">01</span>
-
-                <h4>AI &amp; Decision Systems</h4>
-
-                <p>
-                    Designed autonomous entity behaviour combining
-                    pathfinding and decision-making logic.
-                </p>
-
-                <div class="experience-tags">
-                    <span>PATHFINDING</span>
-                    <span>DECISION MAKING</span>
-                    <span>SCRIPTABLE OBJECTS</span>
-                </div>
-
-            </article>
-
-
-            <!-- GAMEPLAY -->
-            <article class="experience-skill">
-
-                <span class="experience-skill-number">02</span>
-
-                <h4>Gameplay Systems</h4>
-
-                <p>
-                    Developed gameplay mechanics including character
-                    progression, traps and special abilities.
-                </p>
-
-                <div class="experience-tags">
-                    <span>GAMEPLAY</span>
-                    <span>ABILITIES</span>
-                    <span>PROGRESSION</span>
-                </div>
-
-            </article>
-
-
-            <!-- UI -->
-            <article class="experience-skill">
-
-                <span class="experience-skill-number">03</span>
-
-                <h4>UI &amp; Multiplatform</h4>
-
-                <p>
-                    Built adaptive interfaces with Unity uGUI for different
-                    resolutions and target platforms.
-                </p>
-
-                <div class="experience-tags">
-                    <span>UNITY UGUI</span>
-                    <span>MOBILE</span>
-                    <span>PC</span>
-                </div>
-
-            </article>
-
-
-            <!-- ANIMATION -->
-            <article class="experience-skill">
-
-                <span class="experience-skill-number">04</span>
-
-                <h4>Animation Pipeline</h4>
-
-                <p>
-                    Integrated Spine skeletal animations into Unity,
-                    connecting animation states and transitions with
-                    gameplay logic.
-                </p>
-
-                <div class="experience-tags">
-                    <span>SPINE</span>
-                    <span>UNITY</span>
-                    <span>ANIMATION STATES</span>
-                </div>
-
-            </article>
-
-
-            <!-- TOOLING -->
-            <article class="experience-skill">
-
-                <span class="experience-skill-number">05</span>
-
-                <h4>Editor Tooling</h4>
-
-                <p>
-                    Developed custom Unity Editor tools to improve internal
-                    workflows and facilitate content iteration.
-                </p>
-
-                <div class="experience-tags">
-                    <span>EDITOR SCRIPTING</span>
-                    <span>TOOLS</span>
-                    <span>WORKFLOW</span>
-                </div>
-
-            </article>
-
-
-            <!-- ARCHITECTURE -->
-            <article class="experience-skill">
-
-                <span class="experience-skill-number">06</span>
-
-                <h4>Architecture &amp; Workflow</h4>
-
-                <p>
-                    Worked with data-driven systems and collaborative
-                    production workflows inside an active game project.
-                </p>
-
-                <div class="experience-tags">
-                    <span>SCRIPTABLE OBJECTS</span>
-                    <span>AGILE</span>
-                    <span>VERSION CONTROL</span>
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- ENTORNO PROFESIONAL -->
-        <div class="experience-footer">
-
-            <div>
-                <span class="experience-footer-label">ENVIRONMENT</span>
-                <strong>Unity · C# · Agile · Remote Development</strong>
-            </div>
-
-            <div>
-                <span class="experience-footer-label">ROLE</span>
-                <strong>Gameplay · AI · Tools · UI</strong>
-            </div>
-
-        </div>
-
-    </div>
-    
-<!-- =========================================================
-     SEGUNDA EXPERIENCIA
-     ========================================================= -->
-
-<div class="experience-entry experience-entry-secondary">
-
-    <!-- CABECERA -->
-    <div class="experience-header">
-
-        <div class="experience-role">
-            <span class="experience-label">02 / EXPERIENCE</span>
-
-            <h3>Macro Programmer / Quality Control</h3>
-
-            <p class="experience-company">
-                Fredenburg · Parets del Vallès
-            </p>
-        </div>
-
-        <div class="experience-meta">
-            <span>JUL 2023 — SEP 2023</span>
-            <span>ON-SITE · PARETS DEL VALLÈS</span>
-        </div>
-
-    </div>
-
-
-    <!-- DESCRIPCIÓN -->
-    <div class="experience-intro">
-
-        <p>
-            Prácticas profesionales en un entorno industrial, combinando
-            control de calidad, automatización de procesos mediante Excel
-            y Visual Basic, y trabajo operativo durante el traslado de la
-            fábrica a una nueva instalación.
-        </p>
-
-    </div>
-
-
-    <!-- ÁREAS TÉCNICAS -->
-    <div class="experience-skills">
-
-        <!-- VBA -->
-        <article class="experience-skill">
-
-            <span class="experience-skill-number">01</span>
-
-            <h4>Excel &amp; VBA Automation</h4>
-
-            <p>
-                Desarrollo de macros con Visual Basic para automatizar
-                tareas manuales y optimizar procesos de trabajo realizados
-                mediante Excel.
-            </p>
-
-            <div class="experience-tags">
-                <span>VBA</span>
-                <span>EXCEL</span>
-                <span>AUTOMATION</span>
-            </div>
-
-        </article>
-
-
-        <!-- QUALITY CONTROL -->
-        <article class="experience-skill">
-
-            <span class="experience-skill-number">02</span>
-
-            <h4>Quality Control</h4>
-
-            <p>
-                Trabajo de control y revisión de piezas dentro de un entorno
-                industrial, siguiendo los procesos establecidos de calidad.
-            </p>
-
-            <div class="experience-tags">
-                <span>QUALITY CONTROL</span>
-                <span>INDUSTRIAL</span>
-                <span>INSPECTION</span>
-            </div>
-
-        </article>
-
-
-        <!-- FACTORY TRANSFER -->
-        <article class="experience-skill">
-
-            <span class="experience-skill-number">03</span>
-
-            <h4>Factory Relocation</h4>
-
-            <p>
-                Participación en tareas manuales y de organización durante
-                el traslado de la producción y los procesos de trabajo hacia
-                una nueva instalación.
-            </p>
-
-            <div class="experience-tags">
-                <span>LOGISTICS</span>
-                <span>ORGANIZATION</span>
-                <span>RELOCATION</span>
-            </div>
-
-        </article>
-
-
-        <!-- PROCESSES -->
-        <article class="experience-skill">
-
-            <span class="experience-skill-number">04</span>
-
-            <h4>Process Optimization</h4>
-
-            <p>
-                Identificación de tareas repetitivas y creación de soluciones
-                automatizadas para reducir trabajo manual y mejorar el flujo
-                de trabajo con Excel.
-            </p>
-
-            <div class="experience-tags">
-                <span>PROCESS OPTIMIZATION</span>
-                <span>VBA</span>
-                <span>WORKFLOW</span>
-            </div>
-
-        </article>
-
-    </div>
-
-
-    <!-- ENTORNO PROFESIONAL -->
-    <div class="experience-footer">
-
-        <div>
-            <span class="experience-footer-label">ENVIRONMENT</span>
-            <strong>Industrial · On-Site · Quality Control</strong>
-        </div>
-
-        <div>
-            <span class="experience-footer-label">ROLE</span>
-            <strong>VBA · Excel · Automation · Production</strong>
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- ==================== PROYECTOS ==================== -->
-
-<section id="proyectos" class="section projects-section">
-
-    <h2 class="projects-main-title">
-        Proyectos Personales y Universitarios
-    </h2>
-
-    <div class="projects-timeline">
-
-        <!-- PROYECTO 01 -->
-        <article class="project-row">
-
-            <div class="project-dot"></div>
-
-            <div class="project-content">
-
-                <h3 class="project-title">
-                    Lyra
-                </h3>
-
-                <h4 class="project-role">
-                    AI Game Programmer
-                </h4>
-
-                <p class="project-team">
-                    La Mapachanda / TFG en ENTI - UB / 2025 - 2026
-                </p>
-
-                <p class="project-description">
-                    Aventura puzzle 3D wholesome en Unreal Engine 5.
-                    Ganador del Mejor TFG en ENTI DemoDay 2026.
-                </p>
-
-                <ul class="project-contributions">
-                    <li>
-                        Designed a custom <strong>Organic Locomotion System</strong> using Bézier 
-                        curves and NavMesh for fluid, animal-like AI movement.
-                    </li>
-                    
-                    <li>
-                        Built a <strong>Decoupled AI Architecture</strong> combining FSMs and 
-                        Behaviour Trees through Blueprint Interfaces.
-                    </li>
-                    
-                    <li>
-                        Developed <strong>Dynamic Navigation & Avoidance Systems</strong> for 
-                        coordinated multi-agent movement.
-                    </li>
-                </ul>
-
-                <a href="#" class="project-details-button">
-                    Ver detalles
-                </a>
-
-            </div>
-
-
-            <a href="#" class="project-visual">
-
-                <div class="project-image project-image-1"></div>
-
-                <div class="project-image-info">
-
-                    <span class="project-image-title">
-                        Lyra
-                    </span>
-
-                    <span class="project-image-role">
-                        La Mapachanda
-                    </span>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-        <!-- PROYECTO 02 -->
-        <article class="project-row">
-
-            <div class="project-dot"></div>
-
-            <div class="project-content">
-
-                <h3 class="project-title">
-                    Unity AI MachineLearning
-                </h3>
-
-                <h4 class="project-role">
-                    Designer & Programmer
-                </h4>
-
-                <p class="project-team">
-                    Proyecto Personal / 2025 - 2026
-                </p>
-
-                <p class="project-description">
-                    Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation. Trained through curriculum learning and competitive self-play.
-                </p>
-
-                <ul class="project-contributions">
-                    <li>
-                        Built a <strong>PPO Combat Agent</strong> with custom observations, hybrid action spaces and reward shaping.
-                    </li>
-                
-                    <li>
-                        Designed a <strong>4-Phase Curriculum Learning Pipeline</strong> for progressive autonomous training.
-                    </li>
-                
-                    <li>
-                        Implemented <strong>Self-Play & ELO Evaluation</strong> with a historical model pool.
-                    </li>
-                </ul>
-
-                <a href="#" class="project-details-button">
-                    Ver detalles
-                </a>
-
-            </div>
-
-
-            <a href="#" class="project-visual">
-
-                <div class="project-image project-image-2"></div>
-
-                <div class="project-image-info">
-
-                    <span class="project-image-title">
-                        Unity AI MachineLearning
-                    </span>
-
-                    <span class="project-image-role">
-                        Proyecto Personal
-                    </span>
-
-                </div>
-
-            </a>
-
-        </article>
-
-
-        <!-- PROYECTO 03 -->
-        <article class="project-row">
-
-            <div class="project-dot"></div>
-
-            <div class="project-content">
-
-                <h3 class="project-title">
-                    Juan Pieza
-                </h3>
-
-                <h4 class="project-role">
-                    Game Programmer & Level Designer
-                </h4>
-
-                <p class="project-team">
-                    La Mapachanda / Proyecto Universitario / 2024 - 2025
-                </p>
-
-                <p class="project-description">
-                    Co-op pirate adventure, focused on chaotic naval combat and cooperative gameplay.
-                </p>
-
-                <ul class="project-contributions">
-                    <li>
-                          Developed <strong>Core Gameplay Systems</strong> including ship controls, combat and environmental interactions.
-                    </li>
-
-                    <li>
-                        Developed <strong>Weather Systems</strong> to enhance the game's naval gameplay.
-                    </li>
-
-                    <li>
-                         Designed <strong>Enemy Wave Systems & Encounter Flow</strong> to structure the game's combat progression.
-                    </li>
-                </ul>
-
-                <a href="#" class="project-details-button">
-                    Ver detalles
-                </a>
-
-            </div>
-
-
-            <a href="#" class="project-visual">
-
-                <div class="project-image project-image-3"></div>
-
-                <div class="project-image-info">
-
-                    <span class="project-image-title">
-                        Juan Pieza
-                    </span>
-
-                    <span class="project-image-role">
-                        Game Programmer & Level Designer
-                    </span>
-
-                </div>
-
-            </a>
-
-        </article>
-
-    </div>
-    
-<!-- ==================== OTROS PROYECTOS PERSONALES ==================== -->
-
-<div class="other-projects">
-
-    <div class="other-projects-separator"></div>
-
-    <h2 class="other-projects-title">
-        Otros Proyectos Personales
-    </h2>
-
-    <div class="other-projects-grid">
-
-        <!-- PROYECTO 1 -->
-        <a href="https://gemix.itch.io/barbaridad" class="other-project-card">
-
-            <div class="other-project-image other-project-1"></div>
-
-            <div class="other-project-info">
-
-                <div class="other-project-header">
-                    <h3>Barbaridad</h3>
-                    <span>Visual Novel</span>
-                </div>
-
-                <div class="other-project-extra">
-
-                    <p class="other-project-description">
-                        Visual Novel donde asumes el rol de dueño del típico Bar Manolo durante una semana
-                    </p>
-
-                    <p class="other-project-highlight">
-                        Diseñe la progresión de los días y programé los sistemas de gameplay
-                    </p>
-
-                    <div class="other-project-itch">
-                        <span class="itch-logo">
-                            <img src="img/itch.io.svg" alt="itch.io">
+                        <span class="experience-label">
+                            01 / EXPERIENCE
                         </span>
-                        <span>Juega en Itch.io →</span>
+
+                        <h3>
+                            Junior Game Programmer
+                        </h3>
+
+                        <p class="experience-company">
+                            The Breach Studios
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-meta">
+
+                        <span>JUL 2025 — JUN 2026</span>
+
+                        <span data-i18n="remoteBarcelona">
+                            REMOTE · BARCELONA
+                        </span>
+
+                        <span>~938 HOURS</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <div class="experience-intro">
+
+                    <p data-i18n="breachDescription">
+                        Contributed to the development of an unannounced game,
+                        working as part of a distributed indie studio team across
+                        gameplay, artificial intelligence, UI, animation integration
+                        and internal Unity tooling.
+                    </p>
+
+                </div>
+
+
+
+                <!-- NDA -->
+
+                <div class="experience-nda">
+
+                    <div class="experience-nda-status">
+
+                        <span class="experience-nda-dot"></span>
+
+                        <span data-i18n="projectUnderNDA">
+                            PROJECT UNDER NDA
+                        </span>
+
+                    </div>
+
+
+                    <div class="experience-nda-content">
+
+                        <strong data-i18n="unannouncedTitle">
+                            UNANNOUNCED TITLE
+                        </strong>
+
+                        <p data-i18n="ndaDescription">
+                            Project details, gameplay footage and development assets
+                            cannot be publicly disclosed. The information presented
+                            here focuses exclusively on my technical contributions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ÁREAS TÉCNICAS -->
+
+                <div class="experience-skills">
+
+
+                    <!-- AI -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            01
+                        </span>
+
+                        <h4>
+                            AI &amp; Decision Systems
+                        </h4>
+
+                        <p data-i18n="aiDescription">
+                            Designed autonomous entity behaviour combining
+                            pathfinding and decision-making logic.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>PATHFINDING</span>
+                            <span>DECISION MAKING</span>
+                            <span>SCRIPTABLE OBJECTS</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- GAMEPLAY -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            02
+                        </span>
+
+                        <h4>
+                            Gameplay Systems
+                        </h4>
+
+                        <p data-i18n="gameplayDescription">
+                            Developed gameplay mechanics including character
+                            progression, traps and special abilities.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>GAMEPLAY</span>
+                            <span>ABILITIES</span>
+                            <span>PROGRESSION</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- UI -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            03
+                        </span>
+
+                        <h4>
+                            UI &amp; Multiplatform
+                        </h4>
+
+                        <p data-i18n="uiDescription">
+                            Built adaptive interfaces with Unity uGUI for different
+                            resolutions and target platforms.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>UNITY UGUI</span>
+                            <span>MOBILE</span>
+                            <span>PC</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ANIMATION -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            04
+                        </span>
+
+                        <h4>
+                            Animation Pipeline
+                        </h4>
+
+                        <p data-i18n="animationDescription">
+                            Integrated Spine skeletal animations into Unity,
+                            connecting animation states and transitions with
+                            gameplay logic.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>SPINE</span>
+                            <span>UNITY</span>
+                            <span>ANIMATION STATES</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TOOLING -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            05
+                        </span>
+
+                        <h4>
+                            Editor Tooling
+                        </h4>
+
+                        <p data-i18n="toolingDescription">
+                            Developed custom Unity Editor tools to improve internal
+                            workflows and facilitate content iteration.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>EDITOR SCRIPTING</span>
+                            <span>TOOLS</span>
+                            <span>WORKFLOW</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ARCHITECTURE -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            06
+                        </span>
+
+                        <h4>
+                            Architecture &amp; Workflow
+                        </h4>
+
+                        <p data-i18n="architectureDescription">
+                            Worked with data-driven systems and collaborative
+                            production workflows inside an active game project.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>SCRIPTABLE OBJECTS</span>
+                            <span>AGILE</span>
+                            <span>VERSION CONTROL</span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- ENTORNO PROFESIONAL -->
+
+                <div class="experience-footer">
+
+                    <div>
+
+                        <span class="experience-footer-label" data-i18n="environment">
+                            ENVIRONMENT
+                        </span>
+
+                        <strong>
+                            Unity · C# · Agile · Remote Development
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="experience-footer-label" data-i18n="role">
+                            ROLE
+                        </span>
+
+                        <strong>
+                            Gameplay · AI · Tools · UI
+                        </strong>
+
                     </div>
 
                 </div>
 
             </div>
 
-        </a>
 
 
-        <!-- PROYECTO 2 -->
-        <a href="https://marcos-ruiz.itch.io/ryuzuki-kunai-hits-twice" class="other-project-card">
+            <!-- =========================================================
+                 SEGUNDA EXPERIENCIA
+                 ========================================================= -->
 
-            <div class="other-project-image other-project-2"></div>
+            <div class="experience-entry experience-entry-secondary">
 
-            <div class="other-project-info">
 
-                <div class="other-project-header">
-                    <h3>Ryuzuki: Kunais Hits Twice</h3>
-                    <span>Juego de accion y combate en 2.5D</span>
+                <!-- CABECERA -->
+
+                <div class="experience-header">
+
+                    <div class="experience-role">
+
+                        <span class="experience-label">
+                            02 / EXPERIENCE
+                        </span>
+
+                        <h3>
+                            Macro Programmer / Quality Control
+                        </h3>
+
+                        <p class="experience-company">
+                            Fredenburg · Parets del Vallès
+                        </p>
+
+                    </div>
+
+
+                    <div class="experience-meta">
+
+                        <span>JUL 2023 — SEP 2023</span>
+
+                        <span data-i18n="onsiteParets">
+                            ON-SITE · PARETS DEL VALLÈS
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div class="other-project-extra">
 
-                    <p class="other-project-description">
-                        Un prototipo de combate a mele en 2.5D
+
+                <!-- DESCRIPCIÓN -->
+
+                <div class="experience-intro">
+
+                    <p data-i18n="fredenburgDescription">
+                        Prácticas profesionales en un entorno industrial, combinando
+                        control de calidad, automatización de procesos mediante Excel
+                        y Visual Basic, y trabajo operativo durante el traslado de la
+                        fábrica a una nueva instalación.
                     </p>
 
-                    <p class="other-project-highlight">
-                        Programe el comportamiento de los enemigos y boss y diseñe las oleadas del jeugo
-                    </p>
+                </div>
 
-                    <div class="other-project-itch">
-                        <span class="itch-logo">
-                            <img src="img/itch.io.svg" alt="itch.io">
+
+
+                <!-- ÁREAS TÉCNICAS -->
+
+                <div class="experience-skills">
+
+
+                    <!-- VBA -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            01
                         </span>
-                        <span>Juega en Itch.io →</span>
+
+                        <h4>
+                            Excel &amp; VBA Automation
+                        </h4>
+
+                        <p data-i18n="vbaDescription">
+                            Desarrollo de macros con Visual Basic para automatizar
+                            tareas manuales y optimizar procesos de trabajo realizados
+                            mediante Excel.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>VBA</span>
+                            <span>EXCEL</span>
+                            <span>AUTOMATION</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- QUALITY CONTROL -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            02
+                        </span>
+
+                        <h4>
+                            Quality Control
+                        </h4>
+
+                        <p data-i18n="qualityDescription">
+                            Trabajo de control y revisión de piezas dentro de un entorno
+                            industrial, siguiendo los procesos establecidos de calidad.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>QUALITY CONTROL</span>
+                            <span>INDUSTRIAL</span>
+                            <span>INSPECTION</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FACTORY TRANSFER -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            03
+                        </span>
+
+                        <h4>
+                            Factory Relocation
+                        </h4>
+
+                        <p data-i18n="relocationDescription">
+                            Participación en tareas manuales y de organización durante
+                            el traslado de la producción y los procesos de trabajo hacia
+                            una nueva instalación.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>LOGISTICS</span>
+                            <span>ORGANIZATION</span>
+                            <span>RELOCATION</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROCESSES -->
+
+                    <article class="experience-skill">
+
+                        <span class="experience-skill-number">
+                            04
+                        </span>
+
+                        <h4>
+                            Process Optimization
+                        </h4>
+
+                        <p data-i18n="processDescription">
+                            Identificación de tareas repetitivas y creación de soluciones
+                            automatizadas para reducir trabajo manual y mejorar el flujo
+                            de trabajo con Excel.
+                        </p>
+
+                        <div class="experience-tags">
+
+                            <span>PROCESS OPTIMIZATION</span>
+                            <span>VBA</span>
+                            <span>WORKFLOW</span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- ENTORNO PROFESIONAL -->
+
+                <div class="experience-footer">
+
+                    <div>
+
+                        <span class="experience-footer-label" data-i18n="environment">
+                            ENVIRONMENT
+                        </span>
+
+                        <strong>
+                            Industrial · On-Site · Quality Control
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="experience-footer-label" data-i18n="role">
+                            ROLE
+                        </span>
+
+                        <strong>
+                            VBA · Excel · Automation · Production
+                        </strong>
+
                     </div>
 
                 </div>
 
             </div>
 
-        </a>
+        </section>
 
 
-        <!-- PROYECTO 3 -->
-        <a href="https://cramitus.itch.io/circles-square-dodge-twice" class="other-project-card">
 
-            <div class="other-project-image other-project-3"></div>
+        <!-- ==================== PROYECTOS ==================== -->
 
-            <div class="other-project-info">
+        <section id="proyectos" class="section projects-section">
 
-                <div class="other-project-header">
-                    <h3>Circles: Square dodge Twice</h3>
-                    <span>Bullet Hell</span>
-                </div>
+            <h2 class="projects-main-title" data-i18n="projectsTitle">
+                Proyectos Personales y Universitarios
+            </h2>
 
-                <div class="other-project-extra">
 
-                    <p class="other-project-description">
-                        Bullet Hell donde estas encerrado en un ring y tienes que sobrevivir 1 minuto
-                    </p>
+            <div class="projects-timeline">
 
-                    <p class="other-project-highlight">
-                        Programé elementos mortales del ring y efectos visuales
-                    </p>
 
-                    <div class="other-project-itch">
-                        <span class="itch-logo">
-                            <img src="img/itch.io.svg" alt="itch.io">
-                        </span>
-                        <span>Juega en Itch.io →</span>
+                <!-- PROYECTO 01 -->
+
+                <article class="project-row">
+
+                    <div class="project-dot"></div>
+
+
+                    <div class="project-content">
+
+                        <h3 class="project-title">
+                            Lyra
+                        </h3>
+
+                        <h4 class="project-role">
+                            AI Game Programmer
+                        </h4>
+
+                        <p class="project-team" data-i18n="lyraTeam">
+                            La Mapachanda / TFG en ENTI - UB / 2025 - 2026
+                        </p>
+
+                        <p class="project-description" data-i18n="lyraDescription">
+                            Aventura puzzle 3D wholesome en Unreal Engine 5.
+                            Ganador del Mejor TFG en ENTI DemoDay 2026.
+                        </p>
+
+
+                        <ul class="project-contributions">
+
+                            <li>
+                                Designed a <strong>custom Organic Locomotion System</strong>
+                                using Bézier curves and NavMesh for fluid, animal-like AI movement.
+                            </li>
+
+                            <li>
+                                Built a <strong>Decoupled AI Architecture</strong>
+                                combining FSMs and Behaviour Trees through Blueprint Interfaces.
+                            </li>
+
+                            <li>
+                                Developed <strong>Dynamic Navigation &amp; Avoidance Systems</strong>
+                                for coordinated multi-agent movement.
+                            </li>
+
+                        </ul>
+
+
+                        <a href="#" class="project-details-button" data-i18n="viewDetails">
+                            Ver detalles
+                        </a>
+
                     </div>
+
+
+
+                    <a href="#" class="project-visual">
+
+                        <div class="project-image project-image-1"></div>
+
+                        <div class="project-image-info">
+
+                            <span class="project-image-title">
+                                Lyra
+                            </span>
+
+                            <span class="project-image-role">
+                                La Mapachanda
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PROYECTO 02 -->
+
+                <article class="project-row">
+
+                    <div class="project-dot"></div>
+
+
+                    <div class="project-content">
+
+                        <h3 class="project-title">
+                            Unity AI MachineLearning
+                        </h3>
+
+                        <h4 class="project-role">
+                            Designer &amp; Programmer
+                        </h4>
+
+                        <p class="project-team" data-i18n="personalProject2025">
+                            Proyecto Personal / 2025 - 2026
+                        </p>
+
+                        <p class="project-description">
+                            Engine-native autonomous combat agent built with Unity ML-Agents
+                            and PPO for a 3D tank combat simulation. Trained through curriculum
+                            learning and competitive self-play.
+                        </p>
+
+
+                        <ul class="project-contributions">
+
+                            <li>
+                                Built a <strong>PPO Combat Agent</strong> with custom observations,
+                                hybrid action spaces and reward shaping.
+                            </li>
+
+                            <li>
+                                Designed a <strong>4-Phase Curriculum Learning Pipeline</strong>
+                                for progressive autonomous training.
+                            </li>
+
+                            <li>
+                                Implemented <strong>Self-Play &amp; ELO Evaluation</strong>
+                                with a historical model pool.
+                            </li>
+
+                        </ul>
+
+
+                        <a href="#" class="project-details-button" data-i18n="viewDetails">
+                            Ver detalles
+                        </a>
+
+                    </div>
+
+
+
+                    <a href="#" class="project-visual">
+
+                        <div class="project-image project-image-2"></div>
+
+                        <div class="project-image-info">
+
+                            <span class="project-image-title">
+                                Unity AI MachineLearning
+                            </span>
+
+                            <span class="project-image-role" data-i18n="personalProject">
+                                Proyecto Personal
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+
+                <!-- PROYECTO 03 -->
+
+                <article class="project-row">
+
+                    <div class="project-dot"></div>
+
+
+                    <div class="project-content">
+
+                        <h3 class="project-title">
+                            Juan Pieza
+                        </h3>
+
+                        <h4 class="project-role">
+                            Game Programmer &amp; Level Designer
+                        </h4>
+
+                        <p class="project-team" data-i18n="universityProject">
+                            La Mapachanda / Proyecto Universitario / 2024 - 2025
+                        </p>
+
+                        <p class="project-description" data-i18n="juanDescription">
+                            Co-op pirate adventure, focused on chaotic naval combat and cooperative gameplay.
+                        </p>
+
+
+                        <ul class="project-contributions">
+
+                            <li>
+                                Developed <strong>Core Gameplay Systems</strong>
+                                including ship controls, combat and environmental interactions.
+                            </li>
+
+                            <li>
+                                Developed <strong>Weather Systems</strong>
+                                to enhance the game's naval gameplay.
+                            </li>
+
+                            <li>
+                                Designed <strong>Enemy Wave Systems &amp; Encounter Flow</strong>
+                                to structure the game's combat progression.
+                            </li>
+
+                        </ul>
+
+
+                        <a href="#" class="project-details-button" data-i18n="viewDetails">
+                            Ver detalles
+                        </a>
+
+                    </div>
+
+
+
+                    <a href="#" class="project-visual">
+
+                        <div class="project-image project-image-3"></div>
+
+                        <div class="project-image-info">
+
+                            <span class="project-image-title">
+                                Juan Pieza
+                            </span>
+
+                            <span class="project-image-role">
+                                Game Programmer &amp; Level Designer
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- ==================== OTROS PROYECTOS PERSONALES ==================== -->
+
+            <div class="other-projects">
+
+                <div class="other-projects-separator"></div>
+
+                <h2 class="other-projects-title" data-i18n="otherProjects">
+                    Otros Proyectos Personales
+                </h2>
+
+
+                <div class="other-projects-grid">
+
+
+                    <!-- PROYECTO 1 -->
+
+                    <a href="https://gemix.itch.io/barbaridad" class="other-project-card">
+
+                        <div class="other-project-image other-project-1"></div>
+
+
+                        <div class="other-project-info">
+
+                            <div class="other-project-header">
+
+                                <h3>
+                                    Barbaridad
+                                </h3>
+
+                                <span data-i18n="visualNovel">
+                                    Visual Novel
+                                </span>
+
+                            </div>
+
+
+                            <div class="other-project-extra">
+
+                                <p class="other-project-description" data-i18n="barbaridadDescription">
+                                    Visual Novel donde asumes el rol de dueño del típico Bar Manolo durante una semana
+                                </p>
+
+                                <p class="other-project-highlight" data-i18n="barbaridadHighlight">
+                                    Diseñé la progresión de los días y programé los sistemas de gameplay
+                                </p>
+
+
+                                <div class="other-project-itch">
+
+                                    <span class="itch-logo">
+                                        <img src="img/itch.io.svg" alt="itch.io">
+                                    </span>
+
+                                    <span data-i18n="playOnItch">
+                                        Juega en Itch.io →
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROYECTO 2 -->
+
+                    <a href="https://marcos-ruiz.itch.io/ryuzuki-kunai-hits-twice" class="other-project-card">
+
+                        <div class="other-project-image other-project-2"></div>
+
+
+                        <div class="other-project-info">
+
+                            <div class="other-project-header">
+
+                                <h3>
+                                    Ryuzuki: Kunais Hits Twice
+                                </h3>
+
+                                <span data-i18n="actionCombat25D">
+                                    Juego de acción y combate en 2.5D
+                                </span>
+
+                            </div>
+
+
+                            <div class="other-project-extra">
+
+                                <p class="other-project-description" data-i18n="ryuzukiDescription">
+                                    Un prototipo de combate a melee en 2.5D
+                                </p>
+
+                                <p class="other-project-highlight" data-i18n="ryuzukiHighlight">
+                                    Programé el comportamiento de los enemigos y boss y diseñé las oleadas del juego
+                                </p>
+
+
+                                <div class="other-project-itch">
+
+                                    <span class="itch-logo">
+                                        <img src="img/itch.io.svg" alt="itch.io">
+                                    </span>
+
+                                    <span data-i18n="playOnItch">
+                                        Juega en Itch.io →
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROYECTO 3 -->
+
+                    <a href="https://cramitus.itch.io/circles-square-dodge-twice" class="other-project-card">
+
+                        <div class="other-project-image other-project-3"></div>
+
+
+                        <div class="other-project-info">
+
+                            <div class="other-project-header">
+
+                                <h3>
+                                    Circles: Square dodge Twice
+                                </h3>
+
+                                <span>
+                                    Bullet Hell
+                                </span>
+
+                            </div>
+
+
+                            <div class="other-project-extra">
+
+                                <p class="other-project-description" data-i18n="circlesDescription">
+                                    Bullet Hell donde estás encerrado en un ring y tienes que sobrevivir 1 minuto
+                                </p>
+
+                                <p class="other-project-highlight" data-i18n="circlesHighlight">
+                                    Programé elementos mortales del ring y efectos visuales
+                                </p>
+
+
+                                <div class="other-project-itch">
+
+                                    <span class="itch-logo">
+                                        <img src="img/itch.io.svg" alt="itch.io">
+                                    </span>
+
+                                    <span data-i18n="playOnItch">
+                                        Juega en Itch.io →
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
 
                 </div>
 
             </div>
-
-        </a>
-
-    </div>
-
-</div>
 
         </section>
 
@@ -1015,12 +1275,12 @@
         <section id="documentos" class="section documents-section">
 
 
-            <h2>
+            <h2 data-i18n="documentsTitle">
                 Documentos de programación y análisis
             </h2>
 
 
-            <p class="documents-intro">
+            <p class="documents-intro" data-i18n="documentsIntro">
                 Selección de write-ups, GDDs y post-mortems de los proyectos de arriba.
             </p>
 
@@ -1039,7 +1299,7 @@
 
                     <div class="document-info">
 
-                        <span class="document-type">
+                        <span class="document-type" data-i18n="aiThesis">
                             TFG de Inteligencia Artificial
                         </span>
 
@@ -1051,12 +1311,12 @@
 
                         <div class="document-details">
 
-                            <p>
-                                Lee el diseño e implementacion detrás de la inteligencia artificial de Lyra, mi TFG.
+                            <p data-i18n="lyraDocumentDescription">
+                                Lee el diseño e implementación detrás de la inteligencia artificial de Lyra, mi TFG.
                             </p>
 
 
-                            <span class="document-language">
+                            <span class="document-language" data-i18n="spanish">
                                 CASTELLANO
                             </span>
 
@@ -1079,24 +1339,24 @@
 
                     <div class="document-info">
 
-                        <span class="document-type">
+                        <span class="document-type" data-i18n="research">
                             Investigación
                         </span>
 
 
-                        <h3>
-                            Self-Play como metodologia de aprendizaje en Unity
+                        <h3 data-i18n="selfPlayTitle">
+                            Self-Play como metodología de aprendizaje en Unity
                         </h3>
 
 
                         <div class="document-details">
 
-                            <p>
+                            <p data-i18n="selfPlayDescription">
                                 Lee mi estudio sobre el Machine Learning en Unity y el aprendizaje por Self-Play
                             </p>
 
 
-                            <span class="document-language">
+                            <span class="document-language" data-i18n="spanish">
                                 CASTELLANO
                             </span>
 
@@ -1123,7 +1383,7 @@
 
                 <div class="contact-item">
 
-                    <span class="contact-label">
+                    <span class="contact-label" data-i18n="location">
                         UBICACIÓN
                     </span>
 
@@ -1143,14 +1403,15 @@
                     </span>
 
 
-                          <a
-                            href="#"
-                            class="contact-email"
-                            id="open-contact"
-                            data-open-contact
-                        >
-                            Envíame un mensaje
-                        </a>
+                    <a
+                        href="#"
+                        class="contact-email"
+                        id="open-contact"
+                        data-open-contact
+                        data-i18n="sendMessage"
+                    >
+                        Envíame un mensaje
+                    </a>
 
                 </div>
 
@@ -1178,79 +1439,81 @@
                 </button>
 
 
-                <h2>
+                <h2 data-i18n="contactTitle">
                     Contacta conmigo
                 </h2>
 
 
-<form
-    id="contact-form"
-    action="https://formspree.io/f/xppwjgwr"
-    method="POST"
->
+                <form
+                    id="contact-form"
+                    action="https://formspree.io/f/xppwjgwr"
+                    method="POST"
+                >
 
-    <label for="contact-name">
-        Tu Nombre
-    </label>
+                    <label for="contact-name" data-i18n="yourName">
+                        Tu Nombre
+                    </label>
 
-    <input
-        type="text"
-        id="contact-name"
-        name="name"
-        placeholder="Escribe tu nombre"
-        required
-    >
-
-
-    <label for="contact-email">
-        Tu Mail
-    </label>
-
-    <input
-        type="email"
-        id="contact-email"
-        name="email"
-        placeholder="Escribe tu email"
-        required
-    >
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        placeholder="Escribe tu nombre"
+                        data-i18n-placeholder="namePlaceholder"
+                        required
+                    >
 
 
-    <label for="contact-message">
-        Mensaje
-    </label>
+                    <label for="contact-email" data-i18n="yourEmail">
+                        Tu Mail
+                    </label>
 
-    <textarea
-        id="contact-message"
-        name="message"
-        placeholder="Escribe tu mensaje..."
-        required
-    ></textarea>
-
-
-    <!-- Dirección a la que responderás desde Gmail -->
-    <input
-        type="hidden"
-        name="_replyto"
-        id="contact-reply"
-    >
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="Escribe tu email"
+                        data-i18n-placeholder="emailPlaceholder"
+                        required
+                    >
 
 
-    <button
-        type="submit"
-        class="contact-submit"
-        id="contact-submit"
-    >
-        Enviar mensaje
-    </button>
+                    <label for="contact-message" data-i18n="message">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="contact-message"
+                        name="message"
+                        placeholder="Escribe tu mensaje..."
+                        data-i18n-placeholder="messagePlaceholder"
+                        required
+                    ></textarea>
 
 
-    <p
-        id="contact-status"
-        class="contact-status"
-    ></p>
+                    <input
+                        type="hidden"
+                        name="_replyto"
+                        id="contact-reply"
+                    >
 
-</form>
 
+                    <button
+                        type="submit"
+                        class="contact-submit"
+                        id="contact-submit"
+                        data-i18n="sendMessageButton"
+                    >
+                        Enviar mensaje
+                    </button>
+
+
+                    <p
+                        id="contact-status"
+                        class="contact-status"
+                    ></p>
+
+                </form>
 
 
             </div>
@@ -1269,23 +1532,23 @@
 
         <div class="footer-navigation">
 
-            <a href="#inicio">
+            <a href="#inicio" data-i18n="home">
                 Inicio
             </a>
 
-            <a href="#sobre-mi">
+            <a href="#sobre-mi" data-i18n="about">
                 Quién soy
             </a>
 
-            <a href="#experiencia">
+            <a href="#experience" data-i18n="experience">
                 Experiencia
             </a>
 
-            <a href="#proyectos">
+            <a href="#proyectos" data-i18n="projects">
                 Proyectos
             </a>
 
-            <a href="#documentos">
+            <a href="#documentos" data-i18n="documents">
                 Documentos
             </a>
 
@@ -1294,7 +1557,6 @@
 
 
         <div class="footer-social">
-
 
             <a
                 href="https://www.linkedin.com/in/marcos-ruiz-muñoz-2243172a4/"
@@ -1319,7 +1581,6 @@
                 GitHub
             </a>
 
-
         </div>
 
 
@@ -1337,222 +1598,226 @@
 
     <script src="js/script.js"></script>
 
-<script>
 
-document.addEventListener("DOMContentLoaded", function () {
+    <script>
 
-    const contactModal =
-        document.getElementById("contact-modal");
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const closeContact =
-        document.getElementById("close-contact");
+        const contactModal =
+            document.getElementById("contact-modal");
 
-    const contactForm =
-        document.getElementById("contact-form");
+        const closeContact =
+            document.getElementById("close-contact");
 
-    const contactButtons =
-        document.querySelectorAll("[data-open-contact]");
+        const contactForm =
+            document.getElementById("contact-form");
 
-    const contactStatus =
-        document.getElementById("contact-status");
+        const contactButtons =
+            document.querySelectorAll("[data-open-contact]");
 
-    const contactSubmit =
-        document.getElementById("contact-submit");
+        const contactStatus =
+            document.getElementById("contact-status");
 
-    const contactEmail =
-        document.getElementById("contact-email");
+        const contactSubmit =
+            document.getElementById("contact-submit");
 
-    const contactReply =
-        document.getElementById("contact-reply");
+        const contactEmail =
+            document.getElementById("contact-email");
 
-
-    // ==================== ABRIR POPUP ====================
-
-    function openContactModal(event) {
-
-        event.preventDefault();
-
-        contactModal.style.display = "flex";
-
-        document.body.style.overflow = "hidden";
-
-    }
+        const contactReply =
+            document.getElementById("contact-reply");
 
 
-    // Todos los botones de contacto
+        // ==================== ABRIR POPUP ====================
 
-    contactButtons.forEach(function (button) {
+        function openContactModal(event) {
 
-        button.addEventListener(
+            event.preventDefault();
+
+            contactModal.style.display = "flex";
+
+            document.body.style.overflow = "hidden";
+
+        }
+
+
+        contactButtons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                openContactModal
+            );
+
+        });
+
+
+        // ==================== LIMPIAR FORMULARIO ====================
+
+        function resetContactForm() {
+
+            contactForm.reset();
+
+            contactStatus.textContent = "";
+
+            contactStatus.className = "contact-status";
+
+            contactSubmit.disabled = false;
+
+            contactSubmit.textContent =
+                currentLanguage === "en"
+                    ? "Send message"
+                    : "Enviar mensaje";
+
+        }
+
+
+        // ==================== CERRAR POPUP ====================
+
+        function closeContactModal() {
+
+            contactModal.style.display = "none";
+
+            document.body.style.overflow = "";
+
+            resetContactForm();
+
+        }
+
+
+        closeContact.addEventListener(
             "click",
-            openContactModal
+            closeContactModal
+        );
+
+
+        contactModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === contactModal) {
+
+                    closeContactModal();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    closeContactModal();
+
+                }
+
+            }
+        );
+
+
+        // ==================== ENVIAR FORMULARIO ====================
+
+        contactForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                contactReply.value =
+                    contactEmail.value;
+
+
+                contactSubmit.disabled = true;
+
+                contactSubmit.textContent =
+                    currentLanguage === "en"
+                        ? "Sending..."
+                        : "Enviando...";
+
+
+                contactStatus.textContent = "";
+
+                contactStatus.className =
+                    "contact-status";
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            contactForm.action,
+                            {
+                                method: "POST",
+
+                                body: new FormData(contactForm),
+
+                                headers: {
+                                    "Accept": "application/json"
+                                }
+                            }
+                        );
+
+
+                    if (response.ok) {
+
+                        contactStatus.textContent =
+                            currentLanguage === "en"
+                                ? "✓ Message sent successfully."
+                                : "✓ Mensaje enviado correctamente.";
+
+                        contactStatus.className =
+                            "contact-status success";
+
+                        contactForm.reset();
+
+                        contactSubmit.textContent =
+                            currentLanguage === "en"
+                                ? "Message sent"
+                                : "Mensaje enviado";
+
+                    } else {
+
+                        throw new Error(
+                            "Error al enviar el mensaje."
+                        );
+
+                    }
+
+
+                } catch (error) {
+
+                    contactStatus.textContent =
+                        currentLanguage === "en"
+                            ? "The message could not be sent. Please try again."
+                            : "No se ha podido enviar el mensaje. Inténtalo de nuevo.";
+
+                    contactStatus.className =
+                        "contact-status error";
+
+                    contactSubmit.disabled = false;
+
+                    contactSubmit.textContent =
+                        currentLanguage === "en"
+                            ? "Send message"
+                            : "Enviar mensaje";
+
+                }
+
+            }
         );
 
     });
 
-
-    // ==================== LIMPIAR FORMULARIO ====================
-
-    function resetContactForm() {
-
-        contactForm.reset();
-
-        contactStatus.textContent = "";
-
-        contactStatus.className = "contact-status";
-
-        contactSubmit.disabled = false;
-
-        contactSubmit.textContent = "Enviar mensaje";
-
-    }
-
-
-    // ==================== CERRAR POPUP ====================
-
-    function closeContactModal() {
-
-        contactModal.style.display = "none";
-
-        document.body.style.overflow = "";
-
-        resetContactForm();
-
-    }
-
-
-    // Botón X
-
-    closeContact.addEventListener(
-        "click",
-        closeContactModal
-    );
-
-
-    // Click fuera del popup
-
-    contactModal.addEventListener(
-        "click",
-        function (event) {
-
-            if (event.target === contactModal) {
-
-                closeContactModal();
-
-            }
-
-        }
-    );
-
-
-    // ESC
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                closeContactModal();
-
-            }
-
-        }
-    );
-
-
-    // ==================== ENVIAR FORMULARIO ====================
-
-    contactForm.addEventListener(
-        "submit",
-        async function (event) {
-
-            event.preventDefault();
-
-
-            // El email que escribe el visitante será
-            // el email al que podremos responder
-
-            contactReply.value =
-                contactEmail.value;
-
-
-            contactSubmit.disabled = true;
-
-            contactSubmit.textContent =
-                "Enviando...";
-
-
-            contactStatus.textContent = "";
-
-            contactStatus.className =
-                "contact-status";
-
-
-            try {
-
-                const response =
-                    await fetch(
-                        contactForm.action,
-                        {
-                            method: "POST",
-
-                            body: new FormData(contactForm),
-
-                            headers: {
-                                "Accept": "application/json"
-                            }
-                        }
-                    );
-
-
-                if (response.ok) {
-
-                    contactStatus.textContent =
-                        "✓ Mensaje enviado correctamente.";
-
-                    contactStatus.className =
-                        "contact-status success";
-
-                    contactForm.reset();
-
-                    contactSubmit.textContent =
-                        "Mensaje enviado";
-
-                } else {
-
-                    throw new Error(
-                        "Error al enviar el mensaje."
-                    );
-
-                }
-
-
-            } catch (error) {
-
-                contactStatus.textContent =
-                    "No se ha podido enviar el mensaje. Inténtalo de nuevo.";
-
-                contactStatus.className =
-                    "contact-status error";
-
-                contactSubmit.disabled = false;
-
-                contactSubmit.textContent =
-                    "Enviar mensaje";
-
-            }
-
-        }
-    );
-
-});
-
-</script>
-
-
+    </script>
 
 
 </body>
+
+</html>
+
 
 </html>
