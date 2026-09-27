@@ -174,6 +174,35 @@ const translations = {
         viewDetails:
             "View details",
 
+       /* ==================== PROJECT CONTRIBUTIONS ==================== */
+
+lyraContribution1:
+    `Designed a <strong>custom Organic Locomotion System</strong> using Bézier curves and NavMesh for fluid, animal-like AI movement.`,
+
+lyraContribution2:
+    `Built a <strong>Decoupled AI Architecture</strong> combining FSMs and Behaviour Trees through Blueprint Interfaces.`,
+
+lyraContribution3:
+    `Developed <strong>Dynamic Navigation &amp; Avoidance Systems</strong> for coordinated multi-agent movement.`,
+
+tankContribution1:
+    `Built a <strong>PPO Combat Agent</strong> with custom observations, hybrid action spaces and reward shaping.`,
+
+tankContribution2:
+    `Designed a <strong>4-Phase Curriculum Learning Pipeline</strong> for progressive autonomous training.`,
+
+tankContribution3:
+    `Implemented <strong>Self-Play &amp; ELO Evaluation</strong> with a historical model pool.`,
+
+juanContribution1:
+    `Developed <strong>Core Gameplay Systems</strong> including ship controls, combat and environmental interactions.`,
+
+juanContribution2:
+    `Developed <strong>Weather Systems</strong> to enhance the game's naval gameplay.`,
+
+juanContribution3:
+    `Designed <strong>Enemy Wave Systems &amp; Encounter Flow</strong> to structure the game's combat progression.`,
+
         /* ==================== OTHER PROJECTS ==================== */
 
         otherProjects:
@@ -471,6 +500,35 @@ const translations = {
         viewDetails:
             "Ver detalles",
 
+       /* ==================== CONTRIBUCIONES DE PROYECTOS ==================== */
+
+lyraContribution1:
+    `Diseñé un <strong>Organic Locomotion System</strong> personalizado utilizando curvas de Bézier y NavMesh para conseguir un movimiento de IA fluido y natural.`,
+
+lyraContribution2:
+    `Construí una <strong>Arquitectura de IA Desacoplada</strong> combinando FSMs y Behaviour Trees mediante Blueprint Interfaces.`,
+
+lyraContribution3:
+    `Desarrollé <strong>Sistemas de Navegación y Evasión Dinámicos</strong> para coordinar el movimiento de múltiples agentes.`,
+
+tankContribution1:
+    `Construí un <strong>Agente de Combate PPO</strong> con observaciones personalizadas, espacios de acción híbridos y reward shaping.`,
+
+tankContribution2:
+    `Diseñé un <strong>Pipeline de Curriculum Learning de 4 Fases</strong> para realizar un entrenamiento autónomo progresivo.`,
+
+tankContribution3:
+    `Implementé <strong>Self-Play y Evaluación mediante ELO</strong> utilizando un histórico de modelos.`,
+
+juanContribution1:
+    `Desarrollé <strong>Sistemas de Gameplay Principales</strong>, incluyendo controles del barco, combate e interacciones con el entorno.`,
+
+juanContribution2:
+    `Desarrollé <strong>Sistemas de Clima</strong> para mejorar el gameplay naval del juego.`,
+
+juanContribution3:
+    `Diseñé <strong>Sistemas de Oleadas de Enemigos y Flujo de Encuentros</strong> para estructurar la progresión del combate.`,
+
         /* ==================== OTHER PROJECTS ==================== */
 
         otherProjects:
@@ -675,11 +733,10 @@ function updateLanguageButton() {
         return;
     }
 
-
     languageButton.textContent =
         currentLanguage === "en"
-            ? "ES"
-            : "EN";
+            ? "EN"
+            : "ES";
 
 }
 
