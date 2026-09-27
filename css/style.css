@@ -807,6 +807,12 @@ experience-separator { display:none; }
 /* =========================================================
    PROYECTOS PERSONALES Y UNIVERSITARIOS
    ========================================================= */
+.projects-main-title 
+{ 
+   padding-bottom: 20px; 
+   border-bottom: 1px solid var(--border); 
+   margin-bottom: 25px !important; 
+}
 
 .projects-section {
     min-height: auto;
@@ -894,11 +900,11 @@ experience-separator { display:none; }
 
     border-radius: 50%;
 
-    background: #ff6b35;
+    background: var(--cyan);
 
     border: 2px solid var(--background);
 
-    box-shadow: 0 0 0 1px #ff6b35;
+    box-shadow: 0 0 0 1px var(--cyan);
 
     z-index: 5;
 }
@@ -941,9 +947,9 @@ experience-separator { display:none; }
 .project-role {
     margin: 12px 0 25px;
 
-    color: #ff6b35;
+    color: var(--cyan);
 
-    font-size: 1.05rem;
+font-size: 1.15rem;
 
     font-weight: 600;
 }
@@ -971,7 +977,7 @@ experience-separator { display:none; }
 
     color: var(--text-muted);
 
-    font-size: 1.05rem;
+font-size: 1.1rem;
 
     line-height: 1.7;
 }
@@ -996,7 +1002,7 @@ experience-separator { display:none; }
 .project-contributions li {
     padding-left: 2px;
 
-    font-size: 0.9rem;
+font-size: 0.95rem;
 
     line-height: 1.55;
 }
@@ -1018,9 +1024,9 @@ experience-separator { display:none; }
     align-items: center;
     justify-content: center;
 
-    min-height: 56px;
+min-height: 42px;
 
-    padding: 0 25px;
+padding: 0 18px;
 
     background: #fff;
 
@@ -1030,7 +1036,7 @@ experience-separator { display:none; }
 
     text-decoration: none;
 
-    font-size: 0.85rem;
+font-size: 0.78rem;
 
     font-family: inherit;
 
@@ -1151,7 +1157,7 @@ experience-separator { display:none; }
 }
 
 .project-image-role {
-    color: #ff6b35;
+    color: var(--cyan);
 
     font-size: 0.85rem;
 
@@ -1207,7 +1213,7 @@ experience-separator { display:none; }
     }
 
     .projects-main-title {
-        font-size: 1.7rem;
+font-size: 2.15rem;
     }
 
     .projects-timeline {
@@ -1223,7 +1229,7 @@ experience-separator { display:none; }
     }
 
     .project-title {
-        font-size: 2rem;
+font-size: 2.5rem;
     }
 
     .project-visual {
@@ -1245,6 +1251,7 @@ experience-separator { display:none; }
     width: 100%;
     height: 1px;
     background: var(--border);
+   margin-top: 120px;
     margin-bottom: 55px;
 }
 
