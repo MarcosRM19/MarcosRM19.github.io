@@ -34,36 +34,23 @@ const translations = {
 
 
 function updateLanguage() {
-
     const language = translations[currentLanguage];
 
-    document.getElementById("logo").textContent =
-        language.logo;
+    document.getElementById("logo").textContent = language.logo;
+    document.getElementById("nav-home").textContent = language.home;
+    document.getElementById("nav-about").textContent = language.about;
+    document.getElementById("nav-experience").textContent = language.experience;
+    document.getElementById("nav-projects").textContent = language.projects;
+    document.getElementById("nav-contact").textContent = language.contact;
+    document.getElementById("contact-button").textContent = language.contactButton;
+    document.getElementById("hero-subtitle").textContent = language.heroSubtitle;
 
-    document.getElementById("nav-home").textContent =
-        language.home;
-
-    document.getElementById("nav-about").textContent =
-        language.about;
-
-    document.getElementById("nav-experience").textContent =
-        language.experience;
-
-    document.getElementById("nav-projects").textContent =
-        language.projects;
-
-    document.getElementById("nav-contact").textContent =
-        language.contact;
-
-    document.getElementById("contact-button").textContent =
-        language.contactButton;
-
-    document.getElementById("hero-subtitle").textContent =
-        language.heroSubtitle;
-
-    // El botón muestra el idioma actual
     languageButton.textContent =
         currentLanguage === "en" ? "EN" : "ES";
+
+    console.log("Idioma:", currentLanguage);
+    console.log("Botón:", languageButton);
+    console.log("Texto botón:", languageButton.textContent);
 }
 
 
