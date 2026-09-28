@@ -1,0 +1,784 @@
+/* =========================================================
+   PROJECT PAGE
+========================================================= */
+
+.project-page {
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.project-page main {
+    width: 100%;
+}
+
+.project-page img {
+    display: block;
+    width: 100%;
+}
+
+.project-page a {
+    text-decoration: none;
+}
+
+.project-page p,
+.project-page h1,
+.project-page h2,
+.project-page h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.project-section-heading {
+    max-width: 1500px;
+    margin: 0 auto 55px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.project-section-heading span {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    opacity: 0.55;
+}
+
+.project-section-heading p {
+    margin: 0;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.project-hero {
+    position: relative;
+
+    min-height: 85vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.project-hero-video {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+.project-hero-video iframe {
+    position: absolute;
+
+    width: 100vw;
+    height: 56.25vw;
+
+    min-height: 100%;
+    min-width: 177.77vh;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(1.15);
+
+    border: 0;
+
+    pointer-events: none;
+}
+
+.project-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.55)
+        );
+
+    z-index: 1;
+}
+
+.project-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1000px, 90%);
+
+    text-align: center;
+
+    color: #fff;
+}
+
+.project-eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.project-hero-content h1 {
+    margin-bottom: 18px;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+
+    letter-spacing: -0.05em;
+}
+
+.project-hero-subtitle {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    font-size: clamp(1rem, 2vw, 1.35rem);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.project-itch-button,
+.project-outline-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 48px;
+
+    padding: 13px 22px;
+
+    border-radius: 2px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.project-itch-button {
+    background: #fff;
+    color: #111;
+}
+
+.project-outline-button {
+    border: 1px solid currentColor;
+    color: inherit;
+}
+
+.project-itch-button:hover,
+.project-outline-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+.itch-icon {
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.project-information {
+    padding: 130px 5vw;
+}
+
+.project-information-grid {
+    width: min(1500px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 1fr)
+        minmax(350px, 0.9fr)
+        minmax(250px, 0.75fr);
+
+    gap: 50px;
+
+    align-items: stretch;
+}
+
+
+/* LEFT */
+
+.project-info-left {
+    min-height: 650px;
+}
+
+.project-info-left img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* CENTER */
+
+.project-info-center {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.project-small-label {
+    margin-bottom: 15px;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+.project-info-center h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.project-info-subtitle {
+    margin-bottom: 35px;
+
+    font-size: 1rem;
+
+    opacity: 0.65;
+}
+
+.project-info-year {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-bottom: 35px;
+}
+
+.project-info-year span {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
+}
+
+.project-info-year strong {
+    font-size: 1.1rem;
+}
+
+.project-description {
+    margin-bottom: 35px;
+}
+
+.project-description p {
+    margin-bottom: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* RIGHT */
+
+.project-info-right {
+    display: grid;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.project-info-right img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 280px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   TASK OVERVIEW
+========================================================= */
+
+.project-overview {
+    padding: 130px 5vw;
+
+    background: rgba(127, 127, 127, 0.05);
+}
+
+.project-overview-inner {
+    width: min(1000px, 100%);
+
+    margin: 0 auto;
+}
+
+.project-overview h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.project-overview-description {
+    max-width: 800px;
+
+    margin-bottom: 45px;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+
+    opacity: 0.75;
+}
+
+.project-contribution-list,
+.my-contribution-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.project-contribution-list li,
+.my-contribution-list li {
+    position: relative;
+
+    padding: 22px 0 22px 35px;
+
+    border-top: 1px solid rgba(127, 127, 127, 0.25);
+
+    line-height: 1.7;
+}
+
+.project-contribution-list li:last-child,
+.my-contribution-list li:last-child {
+    border-bottom: 1px solid rgba(127, 127, 127, 0.25);
+}
+
+.project-contribution-list li::before,
+.my-contribution-list li::before {
+    content: "→";
+
+    position: absolute;
+
+    left: 0;
+    top: 22px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+.project-media {
+    padding: 130px 5vw;
+}
+
+.project-media-grid {
+    width: min(1500px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+
+/* TRAILER */
+
+.project-trailer {
+    min-width: 0;
+}
+
+.project-video-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.project-video-wrapper iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* GALLERY */
+
+.project-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 200px;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   MY CONTRIBUTION
+========================================================= */
+
+.project-contribution {
+    padding: 130px 5vw;
+}
+
+.project-contribution-inner {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+}
+
+.project-contribution-inner h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+.my-contribution-description {
+    max-width: 850px;
+
+    margin-bottom: 45px;
+
+    line-height: 1.8;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   LEARNING
+========================================================= */
+
+.project-learning {
+    margin-top: 100px;
+
+    padding-top: 70px;
+
+    border-top: 1px solid rgba(127, 127, 127, 0.3);
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+}
+
+.project-learning-heading span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+.project-learning-heading h3 {
+    margin: 0;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    line-height: 1;
+}
+
+.project-learning > p {
+    margin: 0;
+
+    line-height: 1.9;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   PROJECT NAVIGATION
+========================================================= */
+
+.project-navigation {
+    width: min(1500px, 90%);
+
+    margin: 0 auto;
+
+    padding: 70px 0 130px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top: 1px solid rgba(127, 127, 127, 0.25);
+}
+
+.project-back-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: inherit;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition: transform 0.2s ease;
+}
+
+.project-back-button:hover {
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.project-page .contact-section {
+    position: relative;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.project-page footer {
+    width: 100%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .project-information-grid {
+        grid-template-columns:
+            minmax(220px, 0.8fr)
+            minmax(300px, 1fr);
+
+        grid-template-areas:
+            "left center"
+            "right right";
+    }
+
+    .project-info-left {
+        grid-area: left;
+    }
+
+    .project-info-center {
+        grid-area: center;
+    }
+
+    .project-info-right {
+        grid-area: right;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .project-section-heading {
+        margin-bottom: 35px;
+    }
+
+    .project-hero {
+        min-height: 75vh;
+    }
+
+    .project-hero-content h1 {
+        font-size: clamp(3.5rem, 16vw, 7rem);
+    }
+
+
+    .project-information,
+    .project-overview,
+    .project-media,
+    .project-contribution {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+
+    .project-information-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .project-info-left {
+        min-height: auto;
+    }
+
+    .project-info-left img {
+        height: 550px;
+    }
+
+    .project-info-right {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 20px;
+    }
+
+    .project-info-right img {
+        min-height: 250px;
+    }
+
+
+    .project-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-learning {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-top: 70px;
+    }
+
+
+    .project-navigation {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .project-hero {
+        min-height: 70vh;
+    }
+
+    .project-hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+
+    .project-info-left img {
+        height: 400px;
+    }
+
+
+    .project-info-right {
+        grid-template-columns: 1fr;
+    }
+
+    .project-info-right img {
+        min-height: 300px;
+    }
+
+
+    .project-gallery {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .project-gallery img {
+        min-height: 140px;
+    }
+
+
+    .project-contribution-list li,
+    .my-contribution-list li {
+        padding-left: 28px;
+    }
+
+}
