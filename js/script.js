@@ -1,840 +1,340 @@
-const languageButton = document.getElementById("language-button");
-
-let currentLanguage = "en";
-
-
-/* =========================================================
-   TRADUCCIONES
-   ========================================================= */
-
-const translations = {
-
-    en: {
-
-        /* ==================== NAVBAR ==================== */
-
-        home: "Home",
-        about: "About me",
-        experience: "Experience",
-        projects: "Projects",
-        documents: "Documents",
-        contactButton: "Contact me",
-
-        /* ==================== HERO ==================== */
-
-        heroSubtitle: "Game Programmer",
-
-        /* ==================== TECHNICAL SKILLS ==================== */
-
-        technicalTitle: "Technical Skills",
-
-        coreGraphics: "Core & Graphics",
-        enginesTools: "Engines & Tools",
-        artificialIntelligence: "Artificial Intelligence",
-        production: "Production",
-
-        visualStudio: "Visual Studio / Rider",
-        machineLearning: "Machine Learning",
-        confluenceNotion: "Confluence & Notion",
-
-        /* ==================== ABOUT ==================== */
-
-        aboutLabel:
-            "GAME DEVELOPER SPECIALIZED IN GAME PROGRAMMING",
-
-        aboutTitle:
-            "Hi! I'm Marcos!",
-
-        aboutParagraph1:
-            `Specialized in <strong>gameplay systems</strong> and
-            <strong>artificial intelligence systems for video games</strong>.
-            I mainly work with <strong>C++</strong> and engines such as
-            <strong>Unreal Engine</strong> and <strong>Unity</strong>, and I
-            have worked on a project developed for
-            <strong>different devices</strong>.`,
-
-        aboutParagraph2:
-            `What interests me most about a video game is how a set of
-            <strong>systems creates the foundation on which the game is built</strong>.
-            I like understanding how they interact with each other and how
-            good architecture allows mechanics to be developed and expanded
-            in a solid way.`,
-
-        aboutParagraph3:
-            `Before each iteration I use <strong>UML</strong> and
-            <strong>technical documentation</strong> to plan and structure
-            systems before starting their implementation. This gives me a
-            clear vision of what needs to be built and helps reduce problems
-            during development.`,
-
-        interested:
-            "Interested in my work?",
-
-        contactMe:
-            "Contact me",
-
-        /* ==================== EXPERIENCE ==================== */
-
-        experienceTitle:
-            "Experience",
-
-        remoteBarcelona:
-            "REMOTE · BARCELONA",
-
-        onsiteParets:
-            "ON-SITE · PARETS DEL VALLÈS",
-
-        breachDescription:
-            `Contributed to the development of an unannounced game,
-            working as part of a distributed indie studio team across
-            gameplay, artificial intelligence, UI, animation integration
-            and internal Unity tooling.`,
-
-        projectUnderNDA:
-            "PROJECT UNDER NDA",
-
-        unannouncedTitle:
-            "UNANNOUNCED TITLE",
-
-        ndaDescription:
-            `Project details, gameplay footage and development assets
-            cannot be publicly disclosed. The information presented here
-            focuses exclusively on my technical contributions.`,
-
-        aiDescription:
-            "Designed autonomous entity behaviour combining pathfinding and decision-making logic.",
-
-        gameplayDescription:
-            "Developed gameplay mechanics including character progression, traps and special abilities.",
-
-        uiDescription:
-            "Built adaptive interfaces with Unity uGUI for different resolutions and target platforms.",
-
-        animationDescription:
-            "Integrated Spine skeletal animations into Unity, connecting animation states and transitions with gameplay logic.",
-
-        toolingDescription:
-            "Developed custom Unity Editor tools to improve internal workflows and facilitate content iteration.",
-
-        architectureDescription:
-            "Worked with data-driven systems and collaborative production workflows inside an active game project.",
-
-        environment:
-            "ENVIRONMENT",
-
-        role:
-            "ROLE",
-
-        fredenburgDescription:
-            `Professional internship in an industrial environment,
-            combining quality control, process automation through Excel
-            and Visual Basic, and operational work during the relocation
-            of the factory to a new facility.`,
-
-        vbaDescription:
-            `Developed Visual Basic macros to automate manual tasks
-            and optimize workflows carried out through Excel.`,
-
-        qualityDescription:
-            `Performed quality control and inspection of parts within
-            an industrial environment, following established quality
-            procedures.`,
-
-        relocationDescription:
-            `Participated in manual and organizational tasks during the
-            relocation of production and work processes to a new facility.`,
-
-        processDescription:
-            `Identified repetitive tasks and created automated solutions
-            to reduce manual work and improve the workflow with Excel.`,
-
-        /* ==================== PROJECTS ==================== */
-
-        projectsTitle:
-            "Personal & University Projects",
-
-        lyraTeam:
-            "La Mapachanda / Bachelor's Thesis at ENTI - UB / 2025 - 2026",
-
-        lyraDescription:
-            "Wholesome 3D puzzle adventure developed in Unreal Engine 5. Winner of Best TFG at ENTI DemoDay 2026.",
-
-        personalProject2025:
-            "Personal Project / 2025 - 2026",
-
-        personalProject:
-            "Personal Project",
-
-        universityProject:
-            "La Mapachanda / University Project / 2024 - 2025",
-
-        juanDescription:
-            "Co-op pirate adventure, focused on chaotic naval combat and cooperative gameplay.",
-
-        viewDetails:
-            "View details",
-
-       /* ==================== PROJECT CONTRIBUTIONS ==================== */
-
-lyraContribution1:
-    `Designed a <strong>custom Organic Locomotion System</strong> using Bézier curves and NavMesh for fluid, animal-like AI movement.`,
-
-lyraContribution2:
-    `Built a <strong>Decoupled AI Architecture</strong> combining FSMs and Behaviour Trees through Blueprint Interfaces.`,
-
-lyraContribution3:
-    `Developed <strong>Dynamic Navigation &amp; Avoidance Systems</strong> for coordinated multi-agent movement.`,
-
-tankContribution1:
-    `Built a <strong>PPO Combat Agent</strong> with custom observations, hybrid action spaces and reward shaping.`,
-
-tankContribution2:
-    `Designed a <strong>4-Phase Curriculum Learning Pipeline</strong> for progressive autonomous training.`,
-
-tankContribution3:
-    `Implemented <strong>Self-Play &amp; ELO Evaluation</strong> with a historical model pool.`,
-
-juanContribution1:
-    `Developed <strong>Core Gameplay Systems</strong> including ship controls, combat and environmental interactions.`,
-
-juanContribution2:
-    `Developed <strong>Weather Systems</strong> to enhance the game's naval gameplay.`,
-
-juanContribution3:
-    `Designed <strong>Enemy Wave Systems &amp; Encounter Flow</strong> to structure the game's combat progression.`,
-
-        /* ==================== OTHER PROJECTS ==================== */
-
-        otherProjects:
-            "Other Personal Projects",
-
-        visualNovel:
-            "Visual Novel",
-
-        barbaridadDescription:
-            "Visual Novel where you take on the role of the owner of the typical Bar Manolo for a week.",
-
-        barbaridadHighlight:
-            "Designed the day-to-day progression and programmed the gameplay systems.",
-
-        actionCombat25D:
-            "2.5D Action & Combat Game",
-
-        ryuzukiDescription:
-            "A 2.5D melee combat prototype.",
-
-        ryuzukiHighlight:
-            "Programmed enemy and boss behaviour and designed the enemy waves.",
-
-        circlesDescription:
-            "Bullet Hell where you are trapped inside a ring and have to survive for 1 minute.",
-
-        circlesHighlight:
-            "Programmed deadly elements of the ring and visual effects.",
-
-        playOnItch:
-            "Play on Itch.io →",
-
-        /* ==================== DOCUMENTS ==================== */
-
-        documentsTitle:
-            "Programming & Analysis Documents",
-
-        documentsIntro:
-            "A selection of write-ups, GDDs and post-mortems from the projects above.",
-
-        aiThesis:
-            "Artificial Intelligence Bachelor's Thesis",
-
-        lyraDocumentDescription:
-            "Read about the design and implementation behind Lyra's artificial intelligence, my Bachelor's Thesis.",
-
-        spanish:
-            "SPANISH",
-
-        research:
-            "Research",
-
-        selfPlayTitle:
-            "Self-Play as a Learning Methodology in Unity",
-
-        selfPlayDescription:
-            "Read my study on Machine Learning in Unity and learning through Self-Play.",
-
-        /* ==================== CONTACT ==================== */
-
-        location:
-            "LOCATION",
-
-        sendMessage:
-            "Send me a message",
-
-        contactTitle:
-            "Contact me",
-
-        yourName:
-            "Your Name",
-
-        yourEmail:
-            "Your Email",
-
-        message:
-            "Message",
-
-        namePlaceholder:
-            "Enter your name",
-
-        emailPlaceholder:
-            "Enter your email",
-
-        messagePlaceholder:
-            "Write your message...",
-
-        sendMessageButton:
-            "Send message",
-
-        sending:
-            "Sending...",
-
-        messageSent:
-            "✓ Message sent successfully.",
-
-        messageSentButton:
-            "Message sent",
-
-        messageError:
-            "The message could not be sent. Please try again."
-
+const projects = {
+    lyra: {
+        category: "GAME / LEVEL DESIGN",
+        title: "Lyra",
+        years: "2025 — 2026",
+        tagline: "A narrative-driven game focused on exploration, atmosphere and interaction.",
+        description: "Lyra is a university game project developed as part of La Mapachanda and my TFG at ENTI-UB. The project combines gameplay programming, level design and AI systems to create an interactive experience.",
+        role: "My role focused on gameplay programming, AI implementation, level design and the design and implementation of the game's core mechanics.",
+        taskTitle: "TASK OVERVIEW",
+        tasks: [
+            "Diseño e implementación de las mecánicas principales y sus interacciones.",
+            "Programación de sistemas de gameplay y comportamiento de los enemigos.",
+            "Diseño y construcción de niveles orientados a la exploración y progresión del jugador.",
+            "Implementación y ajuste de sistemas de inteligencia artificial.",
+            "Iteración de las mecánicas a partir de pruebas de juego y feedback.",
+            "Colaboración con el resto del equipo durante el desarrollo del proyecto."
+        ],
+        learningTitle: "Desarrollo de sistemas y diseño mediante iteración",
+        learning: [
+            "Aprendí a diseñar sistemas de gameplay teniendo en cuenta cómo interactúan entre ellos y cómo afectan a la experiencia del jugador.",
+            "Profundicé en la implementación de inteligencia artificial y en la creación de comportamientos para personajes y enemigos.",
+            "Mejoré mi capacidad para diseñar niveles a partir de objetivos de gameplay, ritmo y navegación del jugador.",
+            "Aprendí a iterar las mecánicas mediante pruebas de juego, detectando problemas y ajustando el diseño.",
+            "Trabajé en un proyecto de mayor escala dentro de un equipo, aprendiendo a coordinar programación y diseño con otras disciplinas."
+        ],
+        contributionsTitle: "Programación, IA y diseño de niveles",
+        contributions: [
+            {
+                title: "Gameplay Programming",
+                text: "Implementación de las principales mecánicas de gameplay y sistemas de interacción."
+            },
+            {
+                title: "Artificial Intelligence",
+                text: "Diseño e implementación de comportamientos de IA para los personajes y enemigos."
+            },
+            {
+                title: "Level Design",
+                text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
+            }
+        ],
+        trailerVideo: "vid/Lyra.mp4",       /* MP4 local para el Hero del Inicio */
+        youtubeId: "YIcgUIwu89U",         /* YouTube para el tráiler de la Zona 2 (Lyra) */
+        hero: "img/projects/lyra/hero.jpg",
+        infoRight1: "img/projects/lyra/info-right-1.jpg",
+        infoRight2: "img/projects/lyra/info-right-2.jpg",
+        screenshot1: "img/projects/lyra/screenshot-1.jpg",
+        screenshot2: "img/projects/lyra/screenshot-2.jpg",
+        screenshot3: "img/projects/lyra/screenshot-3.jpg",
+        screenshot4: "img/projects/lyra/screenshot-4.jpg",
+        itch: "#"
     },
 
-
-    es: {
-
-        /* ==================== NAVBAR ==================== */
-
-        home:
-            "Inicio",
-
-        about:
-            "Quién soy",
-
-        experience:
-            "Experiencia",
-
-        projects:
-            "Proyectos",
-
-        documents:
-            "Documentos",
-
-        contactButton:
-            "Contáctame",
-
-        /* ==================== HERO ==================== */
-
-        heroSubtitle:
-            "Programador de Videojuegos",
-
-        /* ==================== TECHNICAL SKILLS ==================== */
-
-        technicalTitle:
-            "Conocimientos técnicos",
-
-        coreGraphics:
-            "Core y Gráficos",
-
-        enginesTools:
-            "Motores y Herramientas",
-
-        artificialIntelligence:
-            "Inteligencia Artificial",
-
-        production:
-            "Producción",
-
-        visualStudio:
-            "Visual Studio / Rider",
-
-        machineLearning:
-            "Machine Learning",
-
-        confluenceNotion:
-            "Confluence y Notion",
-
-        /* ==================== ABOUT ==================== */
-
-        aboutLabel:
-            "GAME DEVELOPER ESPECIALIZADO EN GAME PROGRAMMER",
-
-        aboutTitle:
-            "¡Hola! ¡Soy Marcos!",
-
-        aboutParagraph1:
-            `Especializado en <strong>sistemas de gameplay</strong> y
-            <strong>sistemas de inteligencia artificial para videojuegos</strong>.
-            Trabajo principalmente con <strong>C++</strong> y motores como
-            <strong>Unreal Engine</strong> y <strong>Unity</strong>, y he
-            trabajado en un proyecto desarrollado para
-            <strong>diferentes dispositivos</strong>.`,
-
-        aboutParagraph2:
-            `Lo que más me interesa de un videojuego es cómo el conjunto de
-            <strong>sistemas crea la base sobre la que se construye el juego</strong>.
-            Me gusta entender cómo interactúan entre ellos y cómo una buena
-            arquitectura permite desarrollar y ampliar las mecánicas de forma
-            sólida.`,
-
-        aboutParagraph3:
-            `Antes de cada iteración utilizo <strong>UML</strong> y
-            <strong>documentación técnica</strong> para plantear y estructurar
-            los sistemas antes de comenzar su implementación. Esto me permite
-            tener una visión clara de lo que se quiere construir y reducir
-            problemas durante el desarrollo.`,
-
-        interested:
-            "¿Te interesa mi trabajo?",
-
-        contactMe:
-            "Contáctame",
-
-        /* ==================== EXPERIENCE ==================== */
-
-        experienceTitle:
-            "Experiencia",
-
-        remoteBarcelona:
-            "REMOTO · BARCELONA",
-
-        onsiteParets:
-            "PRESENCIAL · PARETS DEL VALLÈS",
-
-        breachDescription:
-            `Contribuí al desarrollo de un juego no anunciado, trabajando
-            como parte de un equipo indie distribuido en diferentes áreas
-            como gameplay, inteligencia artificial, UI, integración de
-            animaciones y herramientas internas de Unity.`,
-
-        projectUnderNDA:
-            "PROYECTO BAJO NDA",
-
-        unannouncedTitle:
-            "TÍTULO NO ANUNCIADO",
-
-        ndaDescription:
-            `Los detalles del proyecto, imágenes de gameplay y recursos de
-            desarrollo no pueden hacerse públicos. La información presentada
-            aquí se centra exclusivamente en mis contribuciones técnicas.`,
-
-        aiDescription:
-            "Diseñé el comportamiento de entidades autónomas combinando pathfinding y lógica de toma de decisiones.",
-
-        gameplayDescription:
-            "Desarrollé mecánicas de gameplay incluyendo progresión de personajes, trampas y habilidades especiales.",
-
-        uiDescription:
-            "Desarrollé interfaces adaptativas con Unity uGUI para diferentes resoluciones y plataformas objetivo.",
-
-        animationDescription:
-            "Integré animaciones esqueléticas de Spine en Unity, conectando estados y transiciones de animación con la lógica de gameplay.",
-
-        toolingDescription:
-            "Desarrollé herramientas personalizadas del Unity Editor para mejorar los flujos de trabajo internos y facilitar la iteración de contenido.",
-
-        architectureDescription:
-            "Trabajé con sistemas data-driven y flujos de producción colaborativos dentro de un proyecto de videojuegos activo.",
-
-        environment:
-            "ENTORNO",
-
-        role:
-            "ROL",
-
-        fredenburgDescription:
-            `Prácticas profesionales en un entorno industrial, combinando
-            control de calidad, automatización de procesos mediante Excel
-            y Visual Basic, y trabajo operativo durante el traslado de la
-            fábrica a una nueva instalación.`,
-
-        vbaDescription:
-            `Desarrollé macros con Visual Basic para automatizar tareas
-            manuales y optimizar procesos de trabajo realizados mediante Excel.`,
-
-        qualityDescription:
-            `Realicé tareas de control de calidad y revisión de piezas dentro
-            de un entorno industrial, siguiendo los procesos establecidos
-            de calidad.`,
-
-        relocationDescription:
-            `Participé en tareas manuales y de organización durante el
-            traslado de la producción y los procesos de trabajo hacia
-            una nueva instalación.`,
-
-        processDescription:
-            `Identifiqué tareas repetitivas y creé soluciones automatizadas
-            para reducir el trabajo manual y mejorar el flujo de trabajo
-            con Excel.`,
-
-        /* ==================== PROJECTS ==================== */
-
-        projectsTitle:
-            "Proyectos Personales y Universitarios",
-
-        lyraTeam:
-            "La Mapachanda / TFG en ENTI - UB / 2025 - 2026",
-
-        lyraDescription:
-            "Aventura de puzles 3D desarrollada en Unreal Engine 5. Ganadora del Mejor TFG en ENTI DemoDay 2026.",
-
-        personalProject2025:
-            "Proyecto Personal / 2025 - 2026",
-
-        personalProject:
-            "Proyecto Personal",
-
-        universityProject:
-            "La Mapachanda / Proyecto Universitario / 2024 - 2025",
-
-        juanDescription:
-            "Aventura pirata cooperativa centrada en combates navales caóticos y gameplay cooperativo.",
-
-        viewDetails:
-            "Ver detalles",
-
-       /* ==================== CONTRIBUCIONES DE PROYECTOS ==================== */
-
-lyraContribution1:
-    `Diseñé un <strong>Organic Locomotion System</strong> personalizado utilizando curvas de Bézier y NavMesh para conseguir un movimiento de IA fluido y natural.`,
-
-lyraContribution2:
-    `Construí una <strong>Arquitectura de IA Desacoplada</strong> combinando FSMs y Behaviour Trees mediante Blueprint Interfaces.`,
-
-lyraContribution3:
-    `Desarrollé <strong>Sistemas de Navegación y Evasión Dinámicos</strong> para coordinar el movimiento de múltiples agentes.`,
-
-tankContribution1:
-    `Construí un <strong>Agente de Combate PPO</strong> con observaciones personalizadas, espacios de acción híbridos y reward shaping.`,
-
-tankContribution2:
-    `Diseñé un <strong>Pipeline de Curriculum Learning de 4 Fases</strong> para realizar un entrenamiento autónomo progresivo.`,
-
-tankContribution3:
-    `Implementé <strong>Self-Play y Evaluación mediante ELO</strong> utilizando un histórico de modelos.`,
-
-juanContribution1:
-    `Desarrollé <strong>Sistemas de Gameplay Principales</strong>, incluyendo controles del barco, combate e interacciones con el entorno.`,
-
-juanContribution2:
-    `Desarrollé <strong>Sistemas de Clima</strong> para mejorar el gameplay naval del juego.`,
-
-juanContribution3:
-    `Diseñé <strong>Sistemas de Oleadas de Enemigos y Flujo de Encuentros</strong> para estructurar la progresión del combate.`,
-
-        /* ==================== OTHER PROJECTS ==================== */
-
-        otherProjects:
-            "Otros Proyectos Personales",
-
-        visualNovel:
-            "Visual Novel",
-
-        barbaridadDescription:
-            "Visual Novel donde asumes el rol de dueño del típico Bar Manolo durante una semana.",
-
-        barbaridadHighlight:
-            "Diseñé la progresión de los días y programé los sistemas de gameplay.",
-
-        actionCombat25D:
-            "Juego de acción y combate en 2.5D",
-
-        ryuzukiDescription:
-            "Un prototipo de combate melee en 2.5D.",
-
-        ryuzukiHighlight:
-            "Programé el comportamiento de los enemigos y bosses y diseñé las oleadas del juego.",
-
-        circlesDescription:
-            "Bullet Hell donde estás encerrado en un ring y tienes que sobrevivir durante 1 minuto.",
-
-        circlesHighlight:
-            "Programé elementos mortales del ring y efectos visuales.",
-
-        playOnItch:
-            "Juega en Itch.io →",
-
-        /* ==================== DOCUMENTS ==================== */
-
-        documentsTitle:
-            "Documentos de programación y análisis",
-
-        documentsIntro:
-            "Selección de write-ups, GDDs y post-mortems de los proyectos de arriba.",
-
-        aiThesis:
-            "TFG de Inteligencia Artificial",
-
-        lyraDocumentDescription:
-            "Lee el diseño e implementación detrás de la inteligencia artificial de Lyra, mi TFG.",
-
-        spanish:
-            "CASTELLANO",
-
-        research:
-            "Investigación",
-
-        selfPlayTitle:
-            "Self-Play como metodología de aprendizaje en Unity",
-
-        selfPlayDescription:
-            "Lee mi estudio sobre el Machine Learning en Unity y el aprendizaje mediante Self-Play.",
-
-        /* ==================== CONTACT ==================== */
-
-        location:
-            "UBICACIÓN",
-
-        sendMessage:
-            "Envíame un mensaje",
-
-        contactTitle:
-            "Contacta conmigo",
-
-        yourName:
-            "Tu Nombre",
-
-        yourEmail:
-            "Tu Mail",
-
-        message:
-            "Mensaje",
-
-        namePlaceholder:
-            "Escribe tu nombre",
-
-        emailPlaceholder:
-            "Escribe tu email",
-
-        messagePlaceholder:
-            "Escribe tu mensaje...",
-
-        sendMessageButton:
-            "Enviar mensaje",
-
-        sending:
-            "Enviando...",
-
-        messageSent:
-            "✓ Mensaje enviado correctamente.",
-
-        messageSentButton:
-            "Mensaje enviado",
-
-        messageError:
-            "No se ha podido enviar el mensaje. Inténtalo de nuevo."
-
+    "juan-pieza": {
+        category: "GAME / LEVEL DESIGN",
+        title: "Juan Pieza",
+        years: "2024 — 2025",
+        tagline: "A university game project focused on gameplay programming and level design.",
+        description: "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
+        role: "My role focused on gameplay programming, level design and the implementation and iteration of the game's main systems.",
+        taskTitle: "TASK OVERVIEW",
+        tasks: [
+            "Diseño e implementación de las mecánicas principales.",
+            "Programación de sistemas de gameplay e interacción.",
+            "Diseño y construcción de niveles.",
+            "Iteración del diseño a partir de pruebas de juego.",
+            "Colaboración con el equipo durante las diferentes fases de desarrollo."
+        ],
+        learningTitle: "Aprender mediante diseño e iteración",
+        learning: [
+            "Aprendí a transformar ideas de diseño en sistemas jugables.",
+            "Mejoré mi capacidad para diseñar niveles pensando en el flujo y la experiencia del jugador.",
+            "Aprendí a detectar problemas de gameplay mediante pruebas y a iterar rápidamente.",
+            "Trabajé en un entorno de desarrollo colaborativo y aprendí a coordinar diferentes áreas del proyecto."
+        ],
+        contributionsTitle: "Gameplay y Level Design",
+        contributions: [
+            {
+                title: "Gameplay Programming",
+                text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
+            },
+            {
+                title: "Level Design",
+                text: "Diseño y construcción de los niveles y espacios jugables."
+            },
+            {
+                title: "Iteration",
+                text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
+            }
+        ],
+        trailerVideo: "vid/JuanPieza.mp4",   /* MP4 local para el Hero del Inicio */
+        youtubeId: "u__7PUv9mbk",         /* YouTube corregido para Juan Pieza */
+        hero: "img/projects/juan-pieza/hero.jpg",
+        infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
+        infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
+        screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
+        screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
+        screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
+        screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
+        itch: "#"
     }
-
 };
 
+/* Alias por si la página se llama 'juanpieza.html' sin guion */
+projects["juanpieza"] = projects["juan-pieza"];
 
-/* =========================================================
-   FUNCIÓN PARA OBTENER UNA TRADUCCIÓN
-   ========================================================= */
+function getProjectId() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("project")) return params.get("project").toLowerCase();
+    if (params.get("id")) return params.get("id").toLowerCase();
 
-function translate(key) {
+    const pathName = window.location.pathname;
+    let pageName = pathName.split("/").pop().replace(".html", "").toLowerCase();
+    
+    if (pageName === "juanpieza") pageName = "juan-pieza";
 
-    return translations[currentLanguage][key];
-
+    return projects[pageName] ? pageName : "lyra";
 }
 
+function loadProject() {
+    const projectId = getProjectId();
+    const project = projects[projectId] || projects.lyra;
 
-/* =========================================================
-   ACTUALIZAR ELEMENTOS data-i18n
-   ========================================================= */
+    document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-function updateTextTranslations() {
-
-    const elements =
-        document.querySelectorAll("[data-i18n]");
-
-
-    elements.forEach(function (element) {
-
-        const key =
-            element.getAttribute("data-i18n");
-
-
-        if (
-            translations[currentLanguage][key] !== undefined
-        ) {
-
-            element.innerHTML =
-                translations[currentLanguage][key];
-
+    /* 1. TRÁILER 1 (INICIO / HERO): MP4 LOCAL EN AUTOPLAY */
+    const heroContainer = document.querySelector(".hero-video-container");
+    if (heroContainer && project.trailerVideo) {
+        heroContainer.innerHTML = `
+            <video autoplay loop muted playsinline id="hero-mp4-video">
+                <source src="${project.trailerVideo}" type="video/mp4">
+            </video>
+        `;
+        const heroVideo = heroContainer.querySelector("video");
+        if (heroVideo) {
+            heroVideo.play().catch(e => console.log("Autoplay prevenido en el hero:", e));
         }
+    }
 
+    /* 2. METADATA HERO */
+    const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
+    if (titleHero) titleHero.textContent = project.title;
+
+    const tagline = document.getElementById("project-tagline");
+    if (tagline) tagline.textContent = project.tagline;
+
+    const category = document.getElementById("project-category");
+    if (category) category.textContent = project.category;
+
+    const itch = document.getElementById("project-itch");
+    if (itch) itch.href = project.itch;
+
+    /* 3. MAIN INFORMATION (ZONA 1) */
+    const title = document.getElementById("project-title");
+    if (title) title.textContent = project.title;
+
+    const years = document.getElementById("project-years");
+    if (years) years.textContent = project.years;
+
+    const description = document.getElementById("project-description");
+    if (description) description.textContent = project.description;
+
+    const role = document.getElementById("project-role");
+    if (role) role.textContent = project.role;
+
+    const taskTitle = document.getElementById("project-task-title");
+    if (taskTitle) taskTitle.textContent = project.taskTitle;
+
+    /* TASKS (ZONA 1) */
+    const taskList = document.getElementById("project-tasks");
+    if (taskList) {
+        taskList.innerHTML = "";
+        project.tasks.forEach(task => {
+            const li = document.createElement("li");
+            li.textContent = task;
+            taskList.appendChild(li);
+        });
+    }
+
+    /* PLAY BUTTON */
+    const playButton = document.getElementById("project-play");
+    if (playButton) {
+        playButton.href = project.itch;
+        playButton.textContent = "Play on itch.io";
+    }
+
+    /* IMÁGENES ZONA 1 */
+    const infoRight1 = document.getElementById("project-info-right-1");
+    if (infoRight1) {
+        infoRight1.src = project.infoRight1;
+        infoRight1.alt = `${project.title} screenshot 1`;
+    }
+
+    const infoRight2 = document.getElementById("project-info-right-2");
+    if (infoRight2) {
+        infoRight2.src = project.infoRight2;
+        infoRight2.alt = `${project.title} screenshot 2`;
+    }
+
+    /* 4. TRÁILER 2 (ZONA 2): YOUTUBE INTERACTIVO CON CONTROLES */
+    const trailerFacade = document.querySelector(".trailer-facade");
+    if (trailerFacade && project.youtubeId) {
+        trailerFacade.innerHTML = `
+            <iframe 
+                src="https://www.youtube.com/embed/${project.youtubeId}?controls=1&rel=0&playsinline=1" 
+                title="Trailer de ${project.title}" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        `;
+    }
+
+    /* GALERÍA DE CAPTURAS ZONA 2 */
+    const screenshots = [
+        ["project-screenshot-1", project.screenshot1],
+        ["project-screenshot-2", project.screenshot2],
+        ["project-screenshot-3", project.screenshot3],
+        ["project-screenshot-4", project.screenshot4]
+    ];
+
+    screenshots.forEach(([id, src], index) => {
+        const image = document.getElementById(id);
+        if (image) {
+            image.src = src;
+            image.alt = `${project.title} screenshot ${index + 1}`;
+        }
     });
 
-}
+    /* 5. LEARNING (ZONA 3) */
+    const learningTitle = document.getElementById("learning-title") || document.getElementById("project-learning-title");
+    if (learningTitle) learningTitle.textContent = project.learningTitle;
 
-
-/* =========================================================
-   ACTUALIZAR PLACEHOLDERS
-   ========================================================= */
-
-function updatePlaceholderTranslations() {
-
-    const elements =
-        document.querySelectorAll(
-            "[data-i18n-placeholder]"
-        );
-
-
-    elements.forEach(function (element) {
-
-        const key =
-            element.getAttribute(
-                "data-i18n-placeholder"
-            );
-
-
-        if (
-            translations[currentLanguage][key] !== undefined
-        ) {
-
-            element.placeholder =
-                translations[currentLanguage][key];
-
+    const learningText = document.getElementById("learning-text") || document.getElementById("project-learning-text");
+    if (learningText) {
+        if (Array.isArray(project.learning)) {
+            learningText.innerHTML = project.learning.map(item => `• ${item}`).join("<br><br>");
+        } else {
+            learningText.textContent = project.learning;
         }
+    }
 
-    });
+    /* 6. CONTRIBUTIONS (ZONA 3) */
+    const contributionsTitle = document.getElementById("contributions-title") || document.getElementById("project-contributions-title");
+    if (contributionsTitle) contributionsTitle.textContent = project.contributionsTitle;
 
+    const contribList = document.getElementById("contribution-list");
+    if (contribList) {
+        contribList.innerHTML = "";
+        project.contributions.forEach(item => {
+            const li = document.createElement("li");
+            li.innerHTML = `<span class="contribution-title">${item.title}:</span> ${item.text}`;
+            contribList.appendChild(li);
+        });
+    }
+
+    const contribPlay = document.getElementById("contribution-play");
+    if (contribPlay) {
+        contribPlay.href = project.itch;
+        contribPlay.textContent = "Play on itch.io";
+    }
+
+    setupLightbox();
 }
 
+function setupLightbox() {
+    const lightbox = document.getElementById("project-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const closeButton = document.getElementById("lightbox-close");
+    const previousButton = document.getElementById("lightbox-prev");
+    const nextButton = document.getElementById("lightbox-next");
+    
+    // Seleccionamos solo elementos de imagen para la galería (omitiendo el trailer de YouTube)
+    const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"));
 
-/* =========================================================
-   ACTUALIZAR IDIOMA DEL HTML
-   ========================================================= */
-
-function updateDocumentLanguage() {
-
-    document.documentElement.lang =
-        currentLanguage;
-
-}
-
-
-/* =========================================================
-   ACTUALIZAR BOTÓN DE IDIOMA
-   ========================================================= */
-
-function updateLanguageButton() {
-
-    if (!languageButton) {
+    if (
+        !lightbox ||
+        !lightboxImage ||
+        !closeButton ||
+        !previousButton ||
+        !nextButton ||
+        imageButtons.length === 0
+    ) {
         return;
     }
 
-    languageButton.textContent =
-        currentLanguage === "en"
-            ? "EN"
-            : "ES";
+    let currentIndex = 0;
+    const images = imageButtons
+        .map(btn => btn.querySelector("img"))
+        .filter(Boolean);
 
-}
-
-
-/* =========================================================
-   ACTUALIZAR FORMULARIO DE CONTACTO
-   ========================================================= */
-
-function updateContactForm() {
-
-    const contactSubmit =
-        document.getElementById("contact-submit");
-
-
-    if (contactSubmit) {
-
-        /*
-         * Solo cambiamos el texto si el botón
-         * no está deshabilitado/enviando.
-         */
-
-        if (!contactSubmit.disabled) {
-
-            contactSubmit.textContent =
-                translate("sendMessageButton");
-
-        }
-
+    function updateLightbox(index) {
+        if (!images[index]) return;
+        currentIndex = index;
+        lightboxImage.src = images[currentIndex].src;
+        lightboxImage.alt = images[currentIndex].alt;
     }
 
+    function openLightbox(index) {
+        updateLightbox(index);
+        lightbox.classList.add("is-open", "active");
+        lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("is-open", "active");
+        lightbox.setAttribute("aria-hidden", "true");
+    }
+
+    function showPrev() {
+        if (images.length === 0) return;
+        const newIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightbox(newIndex);
+    }
+
+    function showNext() {
+        if (images.length === 0) return;
+        const newIndex = (currentIndex + 1) % images.length;
+        updateLightbox(newIndex);
+    }
+
+    imageButtons.forEach((button, index) => {
+        button.onclick = () => openLightbox(index);
+    });
+
+    closeButton.onclick = closeLightbox;
+    previousButton.onclick = showPrev;
+    nextButton.onclick = showNext;
+
+    lightbox.onclick = (e) => {
+        if (e.target === lightbox) closeLightbox();
+    };
+
+    document.onkeydown = (e) => {
+        if (!lightbox.classList.contains("is-open") && !lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") showPrev();
+        if (e.key === "ArrowRight") showNext();
+    };
 }
 
-
-/* =========================================================
-   ACTUALIZAR TODA LA PÁGINA
-   ========================================================= */
-
-function updateLanguage() {
-
-    updateTextTranslations();
-
-    updatePlaceholderTranslations();
-
-    updateDocumentLanguage();
-
-    updateLanguageButton();
-
-    updateContactForm();
-
-}
-
-
-/* =========================================================
-   CAMBIAR IDIOMA
-   ========================================================= */
-
-if (languageButton) {
-
-    languageButton.addEventListener(
-        "click",
-        function () {
-
-            if (currentLanguage === "en") {
-
-                currentLanguage = "es";
-
-            } else {
-
-                currentLanguage = "en";
-
-            }
-
-
-            updateLanguage();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   INICIALIZACIÓN
-   ========================================================= */
-
-updateLanguage();
-
-
-/* =========================================================
-   HACER LA TRADUCCIÓN ACCESIBLE PARA EL FORMULARIO
-   INLINE SCRIPT
-   ========================================================= */
-
-window.portfolioTranslate = translate;
-
-window.portfolioGetLanguage = function () {
-
-    return currentLanguage;
-
-};
-
+document.addEventListener("DOMContentLoaded", loadProject);
