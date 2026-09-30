@@ -15,31 +15,8 @@ const projects = {
             "Iteración de las mecánicas a partir de pruebas de juego y feedback.",
             "Colaboración con el resto del equipo durante el desarrollo del proyecto."
         ],
-        learningTitle: "Desarrollo de sistemas y diseño mediante iteración",
-        learning: [
-            "Aprendí a diseñar sistemas de gameplay teniendo en cuenta cómo interactúan entre ellos y cómo afectan a la experiencia del jugador.",
-            "Profundicé en la implementación de inteligencia artificial y en la creación de comportamientos para personajes y enemigos.",
-            "Mejoré mi capacidad para diseñar niveles a partir de objetivos de gameplay, ritmo y navegación del jugador.",
-            "Aprendí a iterar las mecánicas mediante pruebas de juego, detectando problemas y ajustando el diseño.",
-            "Trabajé en un proyecto de mayor escala dentro de un equipo, aprendiendo a coordinar programación y diseño con otras disciplinas."
-        ],
-        contributionsTitle: "Programación, IA y diseño de niveles",
-        contributions: [
-            {
-                title: "Gameplay Programming",
-                text: "Implementación de las principales mecánicas de gameplay y sistemas de interacción."
-            },
-            {
-                title: "Artificial Intelligence",
-                text: "Diseño e implementación de comportamientos de IA para los personajes y enemigos."
-            },
-            {
-                title: "Level Design",
-                text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
-            }
-        ],
-        trailerVideo: "vid/Lyra.mp4",       /* MP4 local para el Hero del Inicio */
-        youtubeId: "YIcgUIwu89U",         /* YouTube para el tráiler de la Zona 2 */
+        trailerVideo: "vid/Lyra.mp4",
+        youtubeId: "YIcgUIwu89U",
         hero: "img/projects/lyra/hero.jpg",
         infoRight1: "img/projects/lyra/info-right-1.jpg",
         infoRight2: "img/projects/lyra/info-right-2.jpg",
@@ -47,7 +24,39 @@ const projects = {
         screenshot2: "img/projects/lyra/screenshot-2.jpg",
         screenshot3: "img/projects/lyra/screenshot-3.jpg",
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
-        itch: "#"
+        itch: "#",
+
+        /* DATOS ACTUALIZADOS SEGÚN LA IMAGEN */
+        contributionsTitle: "Mis Contribuciones",
+        contributionsIntro: "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
+        contributions: [
+            {
+                title: "Pattern-Based Dictionary",
+                text: "Descompuse cada mecánica en interacciones atómicas (tiro de fuego, tiro de agua, lanzamiento de dragón) y catalogué los patrones que forman al combinarse, para que cada sala enseñara una combinación concreta y no un truco aislado."
+            },
+            {
+                title: "Estructura de niveles EDPV",
+                text: "Apliqué el modelo Exposure, Demonstration, Practice, Validation en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
+            },
+            {
+                title: "Pipeline de telemetría en C++",
+                text: "Instrumenté Unreal Engine 5 para capturar posición del jugador y acciones como CSV estructurado, dándome datos reales de comportamiento en vez de anécdotas."
+            },
+            {
+                title: "Test A/B controlado",
+                text: "Diseñé el experimento completo para el Puzzle 6: asignación aleatoria estratificada, criterios de inclusión, script de moderador y consentimiento informado, comparando el layout original con un rediseño con visual guidance más claro."
+            },
+            {
+                title: "Análisis estadístico en Python",
+                text: "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un p-valor no significativo junto con un tamaño de efecto grande en vez de solo el resultado que apoyaba mi hipótesis."
+            },
+            {
+                title: "Resultado medido",
+                text: "El rediseño redujo los errores de navegación en un 35% y mejoró el tiempo de resolución en un 33%, medido con el mismo pipeline de telemetría."
+            }
+        ],
+        learningTitle: "Lo que aprendí",
+        learningText: "Lo más valioso no fue confirmar mi hipótesis. Fue aprender a separar lo que se siente mejor de lo que es demostrablemente mejor, y a comunicar esa zona gris a un equipo de diseño sin inflarla ni descartarla."
     },
 
     "juan-pieza": {
@@ -65,14 +74,18 @@ const projects = {
             "Iteración del diseño a partir de pruebas de juego.",
             "Colaboración con el equipo durante las diferentes fases de desarrollo."
         ],
-        learningTitle: "Aprender mediante diseño e iteración",
-        learning: [
-            "Aprendí a transformar ideas de diseño en sistemas jugables.",
-            "Mejoré mi capacidad para diseñar niveles pensando en el flujo y la experiencia del jugador.",
-            "Aprendí a detectar problemas de gameplay mediante pruebas y a iterar rápidamente.",
-            "Trabajé en un entorno de desarrollo colaborativo y aprendí a coordinar diferentes áreas del proyecto."
-        ],
+        trailerVideo: "vid/JuanPieza.mp4",
+        youtubeId: "u__7PUv9mbk",
+        hero: "img/projects/juan-pieza/hero.jpg",
+        infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
+        infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
+        screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
+        screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
+        screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
+        screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
+        itch: "#",
         contributionsTitle: "Gameplay y Level Design",
+        contributionsIntro: "",
         contributions: [
             {
                 title: "Gameplay Programming",
@@ -87,16 +100,8 @@ const projects = {
                 text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
             }
         ],
-        trailerVideo: "vid/JuanPieza.mp4",   /* MP4 local para el Hero del Inicio */
-        youtubeId: "YIcgUIwu89U",         /* YouTube para el tráiler de la Zona 2 */
-        hero: "img/projects/juan-pieza/hero.jpg",
-        infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
-        infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
-        screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
-        screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
-        screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
-        screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
-        itch: "#"
+        learningTitle: "Lo que aprendí",
+        learningText: "Aprendí a transformar ideas de diseño en sistemas jugables, a detectar problemas de gameplay mediante pruebas y a iterar rápidamente en un entorno colaborativo."
     }
 };
 
@@ -122,7 +127,7 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* 1. TRÁILER 1 (INICIO / HERO): MP4 LOCAL EN AUTOPLAY */
+    /* HERO VIDEO LOCAL */
     const heroContainer = document.querySelector(".hero-video-container");
     if (heroContainer && project.trailerVideo) {
         heroContainer.innerHTML = `
@@ -132,11 +137,11 @@ function loadProject() {
         `;
         const heroVideo = heroContainer.querySelector("video");
         if (heroVideo) {
-            heroVideo.play().catch(e => console.log("Autoplay prevenido en el hero:", e));
+            heroVideo.play().catch(e => console.log("Autoplay prevenido:", e));
         }
     }
 
-    /* 2. METADATA HERO */
+    /* METADATA HERO */
     const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
     if (titleHero) titleHero.textContent = project.title;
 
@@ -149,7 +154,7 @@ function loadProject() {
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* 3. MAIN INFORMATION (ZONA 1) */
+    /* MAIN INFORMATION (ZONA 1) */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -165,7 +170,7 @@ function loadProject() {
     const taskTitle = document.getElementById("project-task-title");
     if (taskTitle) taskTitle.textContent = project.taskTitle;
 
-    /* TASKS (ZONA 1) */
+    /* TASKS */
     const taskList = document.getElementById("project-tasks");
     if (taskList) {
         taskList.innerHTML = "";
@@ -196,7 +201,7 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* 4. TRÁILER 2 (ZONA 2): YOUTUBE INTERACTIVO CON CONTROLES */
+    /* TRÁILER ZONA 2 (YOUTUBE) */
     const trailerFacade = document.querySelector(".trailer-facade");
     if (trailerFacade && project.youtubeId) {
         trailerFacade.innerHTML = `
@@ -225,31 +230,33 @@ function loadProject() {
         }
     });
 
-    /* 5. LEARNING (ZONA 3) */
-    const learningTitle = document.getElementById("learning-title") || document.getElementById("project-learning-title");
-    if (learningTitle) learningTitle.textContent = project.learningTitle;
+    /* CONTRIBUTIONS & LEARNING (ZONA 3) - FORMATO IMAGEN */
+    const contribTitle = document.getElementById("contributions-title") || document.getElementById("project-contributions-title");
+    if (contribTitle) contribTitle.textContent = project.contributionsTitle;
 
-    const learningText = document.getElementById("learning-text") || document.getElementById("project-learning-text");
-    if (learningText) {
-        if (Array.isArray(project.learning)) {
-            learningText.innerHTML = project.learning.map(item => `• ${item}`).join("<br><br>");
-        } else {
-            learningText.textContent = project.learning;
-        }
-    }
-
-    /* 6. CONTRIBUTIONS (ZONA 3) */
-    const contributionsTitle = document.getElementById("contributions-title") || document.getElementById("project-contributions-title");
-    if (contributionsTitle) contributionsTitle.textContent = project.contributionsTitle;
+    const contribIntro = document.getElementById("contributions-intro");
+    if (contribIntro) contribIntro.textContent = project.contributionsIntro || "";
 
     const contribList = document.getElementById("contribution-list");
     if (contribList) {
         contribList.innerHTML = "";
         project.contributions.forEach(item => {
             const li = document.createElement("li");
-            li.innerHTML = `<span class="contribution-title">${item.title}:</span> ${item.text}`;
+            li.className = "contrib-item";
+            li.innerHTML = `
+                <div class="contrib-item-title">${item.title}</div>
+                <div class="contrib-item-text">${item.text}</div>
+            `;
             contribList.appendChild(li);
         });
+    }
+
+    const learningTitle = document.getElementById("learning-title") || document.getElementById("project-learning-title");
+    if (learningTitle) learningTitle.textContent = project.learningTitle;
+
+    const learningText = document.getElementById("learning-text") || document.getElementById("project-learning-text");
+    if (learningText) {
+        learningText.textContent = project.learningText || (Array.isArray(project.learning) ? project.learning.join(" ") : "");
     }
 
     const contribPlay = document.getElementById("contribution-play");
@@ -268,24 +275,14 @@ function setupLightbox() {
     const previousButton = document.getElementById("lightbox-prev");
     const nextButton = document.getElementById("lightbox-next");
     
-    // Seleccionamos solo elementos de imagen para la galería (omitiendo el trailer de YouTube)
     const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"));
 
-    if (
-        !lightbox ||
-        !lightboxImage ||
-        !closeButton ||
-        !previousButton ||
-        !nextButton ||
-        imageButtons.length === 0
-    ) {
+    if (!lightbox || !lightboxImage || !closeButton || !previousButton || !nextButton || imageButtons.length === 0) {
         return;
     }
 
     let currentIndex = 0;
-    const images = imageButtons
-        .map(btn => btn.querySelector("img"))
-        .filter(Boolean);
+    const images = imageButtons.map(btn => btn.querySelector("img")).filter(Boolean);
 
     function updateLightbox(index) {
         if (!images[index]) return;
