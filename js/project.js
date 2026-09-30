@@ -116,11 +116,18 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* 1. VÍDEO DE FONDO DEL HERO */
-    const heroIframe = document.getElementById("hero-youtube-iframe");
-    if (heroIframe && project.heroVideoId) {
-        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1`;
-        heroIframe.style.opacity = "1";
+    /* 1. HERO VIDEO LOCAL (.mp4) */
+    const heroContainer = document.querySelector(".hero-video-container");
+    if (heroContainer && project.trailerVideo) {
+        heroContainer.innerHTML = `
+            <video autoplay loop muted playsinline id="hero-mp4-video">
+                <source src="${project.trailerVideo}" type="video/mp4">
+            </video>
+        `;
+        const heroVideo = heroContainer.querySelector("video");
+        if (heroVideo) {
+            heroVideo.play().catch(e => console.log("Autoplay hero:", e));
+        }
     }
 
     /* 2. METADATA HERO */
