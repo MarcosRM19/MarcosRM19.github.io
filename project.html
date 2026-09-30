@@ -1,421 +1,1087 @@
-<!DOCTYPE html>
-<html lang="es">
+/* =========================================================
+   PROJECT PAGE
+   ========================================================= */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
+    --project-max: 1450px;
+    --project-text-max: 1180px;
+}
 
-    <title>Project | Marcos RM</title>
+body {
+    overflow-x: hidden;
+}
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/project.css">
-</head>
+#project-content {
+    width: 100%;
+}
 
-<body>
+.project-wrap-wide {
+    width: min(88%, var(--project-max));
+    margin: 0 auto;
+}
 
-    <!-- =====================================================
-         NAVBAR
-    ====================================================== -->
+.project-wrap {
+    width: min(80%, var(--project-text-max));
+    margin: 0 auto;
+}
 
-    <header class="navbar">
 
-        <div class="navbar-logo">
-            <a href="index.html">MR</a>
-        </div>
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
-        <nav class="navbar-nav">
+.navbar {
+    position: fixed;
 
-            <a href="index.html#about" data-i18n="nav.about">
-                Sobre mí
-            </a>
+    top: 20px;
+    left: 5%;
 
-            <a href="index.html#experience" data-i18n="nav.experience">
-                Experiencia
-            </a>
+    width: 90%;
 
-            <a href="index.html#projects" data-i18n="nav.projects">
-                Proyectos
-            </a>
+    min-height: 64px;
 
-            <a href="index.html#documents" data-i18n="nav.documents">
-                Documentos
-            </a>
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
 
-        </nav>
+    align-items: center;
 
-        <div class="navbar-actions">
+    padding: 0 22px;
 
-            <button
-                id="language-button"
-                class="language-button"
-                type="button">
-                ES
-            </button>
+    background: rgba(25, 26, 21, 0.94);
 
-            <a
-                href="index.html#contact"
-                class="contact-button"
-                data-i18n="nav.contact">
-                Contacto
-            </a>
+    border: 1px solid var(--border);
 
-        </div>
+    border-radius: 6px;
 
-    </header>
+    z-index: 5000;
 
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
 
-    <!-- =====================================================
-         PROJECT
-    ====================================================== -->
+.navbar-logo {
+    justify-self: start;
+}
 
-    <main id="project-content">
+.navbar-logo a {
+    color: var(--cream);
 
-        <!-- HERO / PORTADA -->
+    text-decoration: none;
 
-        <section class="title-hero">
+    font-size: 1.25rem;
+    font-weight: 800;
 
-            <div
-                id="hero-image"
-                class="title-bg">
-            </div>
+    letter-spacing: 0.05em;
+}
 
-            <video
-                id="hero-video"
-                class="title-bg"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata">
-            </video>
+.navbar-nav {
+    display: flex;
 
-            <div class="title-veil"></div>
+    align-items: center;
+    justify-content: center;
 
-            <div class="title-inner">
+    gap: 30px;
+}
 
-                <img
-                    id="project-logo"
-                    class="game-logo"
-                    src=""
-                    alt="">
+.navbar-nav a {
+    color: var(--text-muted);
 
-                <h1
-                    id="project-logo-fallback"
-                    class="logo-fallback">
-                </h1>
+    text-decoration: none;
 
-                <p
-                    id="project-tagline"
-                    class="title-tagline">
-                </p>
+    font-size: 0.82rem;
+    font-weight: 600;
 
-                <div class="store-links">
+    transition: color 0.2s ease;
+}
 
-                    <a
-                        id="project-itch"
-                        class="store-link"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="itch.io">
+.navbar-nav a:hover {
+    color: var(--cream);
+}
 
-                        <img
-                            src="https://cdn.simpleicons.org/itchdotio/11120f"
-                            alt="">
-                    </a>
+.navbar-actions {
+    justify-self: end;
 
-                </div>
+    display: flex;
 
-            </div>
+    align-items: center;
 
-        </section>
+    gap: 14px;
+}
 
+.language-button {
+    border: 0;
 
-        <!-- =====================================================
-             PROJECT INTRO
-        ====================================================== -->
+    background: transparent;
 
-        <section class="project-hero-v2">
+    color: var(--cream);
 
-            <div class="project-wrap-wide">
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
 
-                <div class="ph-grid">
+    cursor: pointer;
+}
 
-                    <!-- LEFT -->
+.contact-button {
+    display: inline-flex;
 
-                    <div class="ph-mascot">
+    align-items: center;
+    justify-content: center;
 
-                        <img
-                            id="project-left-image"
-                            src=""
-                            alt=""
-                            loading="lazy">
+    min-height: 38px;
 
-                    </div>
+    padding: 0 17px;
 
+    border-radius: 4px;
 
-                    <!-- CENTER -->
+    background: var(--green);
 
-                    <div class="ph-intro">
+    color: #11120f;
 
-                        <span
-                            id="project-category"
-                            class="eyebrow">
-                        </span>
+    text-decoration: none;
 
-                        <h1 id="project-title"></h1>
+    font-size: 0.78rem;
+    font-weight: 700;
+}
 
-                        <p
-                            id="project-years"
-                            class="project-years">
-                        </p>
+.contact-button:hover {
+    background: var(--cream);
+}
 
-                        <p
-                            id="project-description"
-                            class="project-lede">
-                        </p>
 
-                        <p
-                            id="project-role"
-                            class="project-lede">
-                        </p>
+/* =========================================================
+   HERO
+   ========================================================= */
 
-                        <h3
-                            id="project-task-title"
-                            class="task-heading">
-                            Task Overview
-                        </h3>
+.title-hero {
+    position: relative;
 
-                        <ul
-                            id="project-tasks"
-                            class="task-list">
-                        </ul>
+    min-height: 800px;
+    height: 86vh;
 
-                        <div class="project-actions">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                            <a
-                                id="project-play"
-                                class="project-btn project-btn-solid"
-                                href="#"
-                                target="_blank"
-                                rel="noopener">
-                            </a>
+    overflow: hidden;
 
-                            <a
-                                class="project-btn project-btn-outline"
-                                href="index.html#projects">
-                                MORE PROJECTS
-                            </a>
+    isolation: isolate;
+}
 
-                        </div>
+.title-bg {
+    position: absolute;
+    inset: 0;
 
-                    </div>
+    width: 100%;
+    height: 100%;
 
+    object-fit: cover;
 
-                    <!-- RIGHT -->
+    z-index: -3;
+}
 
-                    <div class="ph-shots">
+#hero-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-                        <button
-                            class="ph-shot"
-                            type="button">
+.title-veil {
+    position: absolute;
+    inset: 0;
 
-                            <img
-                                id="project-right-image"
-                                src=""
-                                alt=""
-                                loading="lazy">
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 18, 15, 0.15) 0%,
+            rgba(17, 18, 15, 0.35) 45%,
+            rgba(17, 18, 15, 0.98) 100%
+        );
 
-                        </button>
+    z-index: -2;
+}
 
-                    </div>
+.title-inner {
+    position: relative;
 
-                </div>
+    width: min(90%, 1000px);
 
-            </div>
+    display: flex;
+    flex-direction: column;
 
-        </section>
+    align-items: center;
 
+    text-align: center;
 
-        <!-- =====================================================
-             TRAILER + GALLERY
-        ====================================================== -->
+    padding-top: 100px;
+}
 
-        <section class="trailer-gallery">
+.game-logo {
+    display: block;
 
-            <div class="project-wrap-wide">
+    width: min(60vw, 540px);
 
-                <div class="tg-grid">
+    max-height: 240px;
 
-                    <div class="tg-trailer">
+    object-fit: contain;
 
-                        <button
-                            id="trailer-button"
-                            class="trailer-facade"
-                            type="button">
+    margin-bottom: 30px;
+}
 
-                            <img
-                                id="trailer-image"
-                                src=""
-                                alt="">
+.logo-fallback {
+    margin: 0 0 30px;
 
-                            <span class="play-badge"></span>
+    color: var(--cream);
 
-                            <span class="tg-label">
-                                OFFICIAL TRAILER
-                            </span>
+    font-size: clamp(4rem, 9vw, 7rem);
+}
 
-                        </button>
+.title-tagline {
+    max-width: 720px;
 
-                    </div>
+    margin: 0;
 
-                    <div
-                        id="project-gallery"
-                        class="tg-gallery">
-                    </div>
+    color: var(--cream);
 
-                </div>
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
 
-            </div>
+    line-height: 1.7;
 
-        </section>
+    text-shadow:
+        0 3px 20px rgba(0, 0, 0, 0.7);
+}
 
+.store-links {
+    margin-top: 36px;
+}
 
-        <!-- =====================================================
-             CONTRIBUTIONS
-        ====================================================== -->
+.store-link {
+    width: 60px;
+    height: 60px;
 
-        <section class="contributions">
+    display: flex;
 
-            <div
-                id="contributions-image"
-                class="contrib-bg">
-            </div>
+    align-items: center;
+    justify-content: center;
 
-            <video
-                id="contributions-video"
-                class="contrib-bg"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="none"
-                aria-hidden="true">
-            </video>
+    border-radius: 50%;
 
-            <div class="contrib-veil"></div>
+    background: var(--cream);
 
-            <div class="project-wrap contributions-inner">
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
 
-                <!-- CONTRIBUTIONS -->
+.store-link:hover {
+    transform: translateY(-4px);
 
-                <div class="contrib-text">
+    background: var(--green);
+}
 
-                    <h2>
-                        Mis Contribuciones
-                    </h2>
+.store-link img {
+    width: 29px;
+    height: 29px;
+}
 
-                    <p id="contributions-intro">
-                    </p>
 
-                    <ul
-                        id="contribution-list"
-                        class="contribution-list">
-                    </ul>
+/* =========================================================
+   PROJECT INTRO
+   ========================================================= */
 
-                </div>
+.project-hero-v2 {
+    padding: 150px 0 165px;
 
+    background: var(--background);
+}
 
-                <!-- LEARNING: BELOW -->
+.ph-grid {
+    display: grid;
 
-                <div class="learning-block">
+    grid-template-columns:
+        minmax(230px, 0.7fr)
+        minmax(480px, 1.55fr)
+        minmax(280px, 0.85fr);
 
-                    <h2>
-                        Lo que aprendí
-                    </h2>
+    gap: clamp(50px, 5vw, 90px);
 
-                    <p id="learning-text">
-                    </p>
+    align-items: center;
+}
 
-                </div>
+.ph-mascot {
+    width: 100%;
 
+    min-height: 520px;
 
-                <!-- CTA -->
+    display: flex;
 
-                <div class="case-cta">
+    align-items: flex-end;
+    justify-content: center;
+}
 
-                    <a
-                        id="bottom-play"
-                        class="project-btn project-btn-solid"
-                        href="#"
-                        target="_blank"
-                        rel="noopener">
-                    </a>
+.ph-mascot img {
+    display: block;
 
-                    <a
-                        class="project-btn project-btn-outline"
-                        href="index.html#projects">
-                        MORE PROJECTS
-                    </a>
+    width: 100%;
 
-                </div>
+    max-width: 380px;
+    max-height: 640px;
 
-            </div>
+    object-fit: contain;
+    object-position: bottom center;
+}
 
-        </section>
+.ph-intro {
+    width: 100%;
+    max-width: 760px;
+}
 
-    </main>
+.ph-intro h1 {
+    margin: 8px 0 12px;
 
+    color: var(--cream);
 
-    <!-- =====================================================
-         LIGHTBOX
-    ====================================================== -->
+    font-size: clamp(3rem, 5vw, 5.2rem);
 
-    <div
-        id="project-lightbox"
-        class="project-lightbox"
-        aria-hidden="true">
+    line-height: 0.95;
 
-        <button
-            class="lightbox-close"
-            type="button">
-            ×
-        </button>
+    letter-spacing: -0.045em;
+}
 
-        <button
-            class="lightbox-prev"
-            type="button">
-            ‹
-        </button>
+.eyebrow {
+    display: block;
 
-        <div class="lightbox-content">
+    color: var(--green);
 
-            <img
-                id="lightbox-image"
-                src=""
-                alt="">
+    font-size: 0.78rem;
+    font-weight: 700;
 
-            <p id="lightbox-caption"></p>
+    letter-spacing: 0.12em;
 
-        </div>
+    text-transform: uppercase;
+}
 
-        <button
-            class="lightbox-next"
-            type="button">
-            ›
-        </button>
+.project-years {
+    margin: 0 0 30px;
 
-    </div>
+    color: var(--text-muted);
 
+    font-size: 0.9rem;
+}
 
-    <footer class="footer">
-        <p>© 2026 Marcos RM</p>
-    </footer>
+.project-lede {
+    max-width: 720px;
 
+    margin: 0 0 24px;
 
-    <script src="js/script.js"></script>
-    <script src="js/project.js"></script>
+    color: var(--text);
 
-</body>
+    font-size: 1.04rem;
 
-</html>
+    line-height: 1.85;
+}
+
+.task-heading {
+    margin: 46px 0 20px;
+
+    color: var(--cream);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.task-list li {
+    display: grid;
+
+    grid-template-columns: 145px 1fr;
+
+    gap: 18px;
+
+    color: var(--text-muted);
+
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+}
+
+.task-list strong {
+    color: var(--cream);
+}
+
+.project-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 42px;
+}
+
+.project-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    border-radius: 4px;
+
+    text-decoration: none;
+
+    font-size: 0.84rem;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    transition: 0.25s ease;
+}
+
+.project-btn:hover {
+    transform: translateY(-3px);
+}
+
+.project-btn-solid {
+    background: var(--green);
+
+    color: #11120f;
+}
+
+.project-btn-solid:hover {
+    background: var(--cream);
+}
+
+.project-btn-outline {
+    border: 1px solid var(--border);
+
+    color: var(--cream);
+
+    background: transparent;
+}
+
+.project-btn-outline:hover {
+    border-color: var(--green);
+
+    color: var(--green);
+}
+
+
+/* RIGHT IMAGE */
+
+.ph-shots {
+    width: 100%;
+}
+
+.ph-shot {
+    display: block;
+
+    width: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    cursor: pointer;
+}
+
+.ph-shot img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.ph-shot:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   TRAILER / GALLERY
+   ========================================================= */
+
+.trailer-gallery {
+    padding: 0 0 165px;
+
+    background: var(--background);
+}
+
+.tg-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 26px;
+}
+
+.trailer-facade {
+    position: relative;
+
+    width: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    cursor: pointer;
+}
+
+.trailer-facade img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.trailer-facade::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(17, 18, 15, 0.25);
+}
+
+.trailer-facade:hover img {
+    transform: scale(1.04);
+}
+
+.play-badge {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 76px;
+    height: 76px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    z-index: 2;
+}
+
+.play-badge::after {
+    content: "";
+
+    position: absolute;
+
+    left: 31px;
+    top: 25px;
+
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 19px solid #11120f;
+}
+
+.tg-label {
+    position: absolute;
+
+    left: 24px;
+    bottom: 20px;
+
+    z-index: 3;
+
+    color: var(--cream);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.tg-gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.tg-shot {
+    width: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    cursor: pointer;
+}
+
+.tg-shot img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.tg-shot:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CONTRIBUTIONS
+   ========================================================= */
+
+.contributions {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 155px 0 150px;
+
+    isolation: isolate;
+}
+
+.contrib-bg {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+}
+
+#contributions-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contrib-veil {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(17, 18, 15, 0.94);
+
+    z-index: -2;
+}
+
+.contributions-inner {
+    position: relative;
+}
+
+.contrib-text {
+    max-width: 900px;
+}
+
+.contrib-text h2,
+.learning-block h2 {
+    margin: 0 0 30px;
+
+    color: var(--cream);
+
+    font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+.contrib-text > p,
+.learning-block > p {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+}
+
+
+/* LIST */
+
+.contribution-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 34px;
+
+    margin: 52px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.contribution-list li {
+    display: block;
+
+    color: var(--text-muted);
+
+    font-size: 0.96rem;
+
+    line-height: 1.8;
+}
+
+.contribution-title {
+    display: inline;
+
+    margin-right: 6px;
+
+    color: var(--cream);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LEARNING
+   ========================================================= */
+
+.learning-block {
+    max-width: 900px;
+
+    margin-top: 115px;
+
+    padding-top: 0;
+}
+
+.learning-block h2 {
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.case-cta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 80px;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.project-lightbox {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+
+    background: rgba(5, 6, 5, 0.95);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 9999;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.project-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: min(1100px, 85vw);
+    max-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 78vh;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+#lightbox-caption {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    text-align: center;
+
+    font-size: 0.9rem;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    border: 0;
+
+    color: var(--cream);
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 30px;
+
+    font-size: 3rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 4rem;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1150px) {
+
+    .ph-grid {
+        grid-template-columns:
+            minmax(190px, 0.6fr)
+            minmax(400px, 1.45fr);
+    }
+
+    .ph-mascot {
+        grid-row: span 2;
+    }
+
+    .ph-shots {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .navbar {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .project-wrap-wide,
+    .project-wrap {
+        width: 90%;
+    }
+
+    .title-hero {
+        min-height: 650px;
+        height: 70vh;
+    }
+
+    .ph-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 55px;
+    }
+
+    .ph-mascot {
+        order: 1;
+
+        width: 100%;
+
+        height: 360px;
+
+        min-height: 0;
+    }
+
+    .ph-mascot img {
+        max-height: 360px;
+    }
+
+    .ph-intro {
+        order: 2;
+    }
+
+    .ph-shots {
+        order: 3;
+
+        width: 100%;
+    }
+
+    .ph-shot {
+        aspect-ratio: 16 / 10;
+    }
+
+    .tg-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contributions {
+        padding: 105px 0;
+    }
+
+    .learning-block {
+        margin-top: 90px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        top: 12px;
+        left: 4%;
+
+        width: 92%;
+
+        padding: 0 14px;
+    }
+
+    .navbar-actions {
+        gap: 8px;
+    }
+
+    .contact-button {
+        padding: 0 12px;
+    }
+
+    .title-hero {
+        min-height: 560px;
+        height: 560px;
+    }
+
+    .title-inner {
+        width: 90%;
+        padding-top: 70px;
+    }
+
+    .game-logo {
+        width: min(75vw, 340px);
+        max-height: 150px;
+    }
+
+    .ph-intro h1 {
+        font-size: 3rem;
+    }
+
+    .task-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .project-actions,
+    .case-cta {
+        flex-direction: column;
+    }
+
+    .project-btn {
+        width: 100%;
+    }
+
+    .tg-gallery {
+        gap: 10px;
+    }
+
+    .learning-block {
+        margin-top: 80px;
+    }
+
+    .project-lightbox {
+        padding: 25px;
+    }
+
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+    }
+}
