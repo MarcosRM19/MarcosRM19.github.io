@@ -113,55 +113,46 @@
              HERO
              ================================================= -->
 
-        <section class="title-hero">
+     <!-- =================================================
+     HERO INICIAL CON TRÁILER DE FONDO
+     ================================================= -->
+<section class="title-hero">
 
-            <img
-                id="project-hero"
-                class="title-bg"
-                src=""
-                alt=""
-                loading="eager">
+    <!-- Vídeo de fondo de YouTube (Autoplay, Loop, Muted) -->
+    <div class="hero-video-container">
+        <iframe 
+            id="hero-youtube-iframe"
+            src="https://www.youtube.com/embed/YIcgUIwu89U?autoplay=1&mute=1&loop=1&playlist=YIcgUIwu89U&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1" 
+            title="Trailer del juego" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
 
-            <div class="title-veil"></div>
+    <!-- Capa oscura de contraste sobre el vídeo -->
+    <div class="title-veil"></div>
 
-            <div class="title-inner">
+    <div class="title-inner">
 
-                <img
-                    id="project-logo"
-                    class="game-logo"
-                    src=""
-                    alt=""
-                    loading="eager">
+        <!-- Nombre del juego en grande en el centro -->
+        <h1 id="project-title-hero" class="game-title-hero">
+            Lyra
+        </h1>
 
-                <h1
-                    id="project-logo-fallback"
-                    class="logo-fallback">
-                </h1>
+        <p id="project-tagline" class="title-tagline">
+            A narrative-driven game focused on exploration, atmosphere and interaction.
+        </p>
 
-                <p
-                    id="project-tagline"
-                    class="title-tagline">
-                </p>
+        <!-- Botón verde con el logo SVG de Itch.io -->
+        <div class="store-links">
+            <a id="project-itch" class="store-link" href="#" target="_blank" rel="noopener" aria-label="Ver en Itch.io">
+                <img src="img/itch.io.svg" alt="Itch.io Logo">
+            </a>
+        </div>
 
-                <div class="store-links">
+    </div>
 
-                    <a
-                        id="project-itch"
-                        class="store-link"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Itch.io">
-
-                        <span>▶</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
+</section>
 
 
         <!-- =================================================
