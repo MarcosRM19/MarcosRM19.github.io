@@ -1,237 +1,377 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================
+   PROJECT PAGE
+   ========================================================= */
 
-    const projects = {
 
-        /* =====================================================
-           LYRA
-        ====================================================== */
+/* =========================================================
+   PROJECT DATA
+   ========================================================= */
 
-        lyra: {
+const projects = {
 
-            title: "Lyra",
+    lyra: {
 
-            category:
-                "GAME & LEVEL DESIGN · AI GAME PROGRAMMING",
+        slug: "lyra",
 
-            years:
-                "La Mapachanda · TFG · 2025–2026",
+        title: "Lyra",
 
-            logo:
-                "img/Lyra.png",
+        category: "AI Game Programmer / Game & Level Designer",
 
-            hero:
-                "img/projects/lyra/hero.jpg",
+        years: "La Mapachanda · TFG ENTI-UB · 2025–2026",
 
-            left:
-                "img/projects/lyra/left.jpg",
+        tagline:
+            "Un proyecto centrado en diseño de niveles, gameplay y análisis de comportamiento del jugador.",
 
-            right:
-                "img/projects/lyra/right.jpg",
+        description:
+            "Lyra fue mi TFG y el proyecto en el que combiné programación, diseño de mecánicas y diseño de niveles con un proceso de validación basado en datos.",
 
-            gallery: [
-                "img/projects/lyra/gallery-01.jpg",
-                "img/projects/lyra/gallery-02.jpg",
-                "img/projects/lyra/gallery-03.jpg",
-                "img/projects/lyra/gallery-04.jpg"
-            ],
+        role:
+            "Mi responsabilidad principal fue construir las mecánicas, diseñar los niveles y comprobar mediante telemetría y testing si las decisiones de diseño funcionaban realmente.",
 
-            tagline:
-                "A puzzle adventure about experimentation, observation and learning through play.",
+        taskTitle:
+            "Task Overview",
 
-            description:
-                "Lyra era mi TFG, un proyecto centrado en puzzles, experimentación y diseño de niveles. Mi trabajo se centró en construir las mecánicas, diseñar los niveles y demostrar mediante datos qué decisiones funcionaban realmente.",
+        tasks: [
+            {
+                title: "Gameplay",
+                text: "Diseño e implementación de las mecánicas principales y sus interacciones."
+            },
+            {
+                title: "Level Design",
+                text: "Diseño de las salas y progresión siguiendo una estructura EDPV."
+            },
+            {
+                title: "AI / C++",
+                text: "Programación y captura de datos dentro de Unreal Engine 5."
+            },
+            {
+                title: "Research",
+                text: "Diseño de pruebas, análisis estadístico y validación de decisiones de diseño."
+            }
+        ],
 
-            role:
-                "Mi responsabilidad fue conectar diseño e implementación: crear las mecánicas, estructurar la progresión de los niveles y desarrollar herramientas de telemetría para analizar el comportamiento de los jugadores.",
+        playText: "Jugar a Lyra",
 
-            itch:
-                "https://la-mapachanda-studio.itch.io/lyra",
+        itch:
+            "https://la-mapachanda-studio.itch.io/lyra",
 
-            trailer:
-                "YIcgUIwu89U",
+        trailer:
+            "https://www.youtube.com/watch?v=YIcgUIwu89U",
 
-            tasks: [
-                [
-                    "Game Design",
-                    "Diseño de mecánicas, interacciones y reglas de los puzzles."
-                ],
-                [
-                    "Level Design",
-                    "Diseño y estructuración de las tres zonas siguiendo una progresión EDPV."
-                ],
-                [
-                    "Programming",
-                    "Implementación de mecánicas y sistemas en Unreal Engine 5."
-                ],
-                [
-                    "Research",
-                    "Telemetría, experimentación A/B y análisis estadístico de resultados."
-                ]
-            ],
+        trailerLabel:
+            "OFFICIAL TRAILER",
 
-            contributionsIntro:
-                "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
+        images: {
 
-            contributions: [
-                [
-                    "Pattern-Based Dictionary",
-                    "Descompuse cada mecánica en interacciones atómicas (tiro de fuego, tiro de agua, lanzamiento de dragón) y catalogué los patrones que forman al combinarse, para que cada sala enseñara una combinación concreta y no un truco aislado."
-                ],
-                [
-                    "Estructura de niveles EDPV",
-                    "Apliqué el modelo <strong>Exposure, Demonstration, Practice, Validation</strong> en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
-                ],
-                [
-                    "Pipeline de telemetría en C++",
-                    "Instrumenté Unreal Engine 5 para capturar posición del jugador y acciones como CSV estructurado, dándome datos reales de comportamiento en vez de anécdotas."
-                ],
-                [
-                    "Test A/B controlado",
-                    "Diseñé el experimento completo para el Puzzle 6: asignación aleatoria estratificada, criterios de inclusión, script de moderador y consentimiento informado, comparando el layout original con un rediseño con visual guidance más claro."
-                ],
-                [
-                    "Análisis estadístico en Python",
-                    "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un <strong>p-valor no significativo junto con un tamaño de efecto grande</strong> en vez de solo el resultado que apoyaba mi hipótesis."
-                ],
-                [
-                    "Resultado medido",
-                    "El rediseño redujo los errores de navegación en un <strong>35%</strong> y mejoró el tiempo de resolución en un <strong>33%</strong>, medido con el mismo pipeline de telemetría."
-                ]
-            ],
+            hero: "img/lyra/hero.jpg",
 
-            learning:
-                "Lo más valioso no fue confirmar mi hipótesis. Fue aprender a separar lo que se siente mejor de lo que es demostrablemente mejor, y a comunicar esa zona gris a un equipo de diseño sin inflarla ni descartarla."
+            infoLeft: "img/lyra/info-left.jpg",
+
+            infoRight1: "img/lyra/info-right-1.jpg",
+
+            infoRight2: "img/lyra/info-right-2.jpg",
+
+            screenshot1: "img/lyra/screenshot-1.jpg",
+
+            screenshot2: "img/lyra/screenshot-2.jpg",
+
+            screenshot3: "img/lyra/screenshot-3.jpg",
+
+            screenshot4: "img/lyra/screenshot-4.jpg"
 
         },
 
+        contributionsTitle:
+            "Mis Contribuciones",
 
-        /* =====================================================
-           JUAN PIEZA
-        ====================================================== */
+        contributionsIntro:
+            "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
 
-        "juan-pieza": {
+        contributions: [
 
-            title: "Juan Pieza",
+            {
+                title: "Pattern-Based Dictionary",
+                text: "Descompuse cada mecánica en interacciones atómicas (tiro de fuego, tiro de agua, lanzamiento de dragón) y catalogué los patrones que forman al combinarse, para que cada sala enseñara una combinación concreta y no un truco aislado."
+            },
 
-            category:
-                "GAME PROGRAMMING · LEVEL DESIGN",
+            {
+                title: "Estructura de niveles EDPV",
+                text: "Apliqué el modelo Exposure, Demonstration, Practice, Validation en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
+            },
 
-            years:
-                "La Mapachanda · University Project · 2024–2025",
+            {
+                title: "Pipeline de telemetría en C++",
+                text: "Instrumenté Unreal Engine 5 para capturar posición del jugador y acciones como CSV estructurado, dándome datos reales de comportamiento en vez de anécdotas."
+            },
 
-            logo:
-                "img/Juan Pieza2.png",
+            {
+                title: "Test A/B controlado",
+                text: "Diseñé el experimento completo para el Puzzle 6: asignación aleatoria estratificada, criterios de inclusión, script de moderador y consentimiento informado, comparando el layout original con un rediseño con visual guidance más claro."
+            },
 
-            hero:
-                "img/projects/juan-pieza/hero.jpg",
+            {
+                title: "Análisis estadístico en Python",
+                text: "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un p-valor no significativo junto con un tamaño de efecto grande en vez de solo el resultado que apoyaba mi hipótesis."
+            },
 
-            left:
-                "img/projects/juan-pieza/left.jpg",
+            {
+                title: "Resultado medido",
+                text: "El rediseño redujo los errores de navegación en un 35% y mejoró el tiempo de resolución en un 33%, medido con el mismo pipeline de telemetría."
+            }
 
-            right:
-                "img/projects/juan-pieza/right.jpg",
+        ],
 
-            gallery: [
-                "img/projects/juan-pieza/gallery-01.jpg",
-                "img/projects/juan-pieza/gallery-02.jpg",
-                "img/projects/juan-pieza/gallery-03.jpg",
-                "img/projects/juan-pieza/gallery-04.jpg"
-            ],
+        learningTitle:
+            "Lo que aprendí",
 
-            tagline:
-                "A game project focused on gameplay programming, level design and player experience.",
+        learningText:
+            "Lo más valioso no fue confirmar mi hipótesis. Fue aprender a separar lo que se siente mejor de lo que es demostrablemente mejor, y a comunicar esa zona gris a un equipo de diseño sin inflarla ni descartarla."
 
-            description:
-                "Juan Pieza fue un proyecto universitario desarrollado dentro de La Mapachanda, donde trabajé en programación de gameplay y diseño de niveles.",
-
-            role:
-                "Mi trabajo estuvo centrado en implementar sistemas jugables, trabajar la estructura de los niveles y conectar las decisiones de diseño con la experiencia del jugador.",
-
-            itch:
-                "#",
-
-            trailer:
-                "",
-
-            tasks: [
-                [
-                    "Game Programming",
-                    "Implementación de sistemas y mecánicas de gameplay."
-                ],
-                [
-                    "Level Design",
-                    "Diseño y organización de los niveles."
-                ],
-                [
-                    "Gameplay",
-                    "Trabajo sobre las interacciones y el flujo del jugador."
-                ],
-                [
-                    "Teamwork",
-                    "Trabajo conjunto con el equipo de desarrollo."
-                ]
-            ],
-
-            contributionsIntro:
-                "En Juan Pieza participé en el desarrollo del juego desde una perspectiva principalmente centrada en programación de gameplay y diseño de niveles.",
-
-            contributions: [
-                [
-                    "Gameplay Programming",
-                    "Implementación de sistemas y mecánicas necesarias para construir la experiencia jugable."
-                ],
-                [
-                    "Level Design",
-                    "Diseño y organización de los espacios para controlar el ritmo y la progresión del jugador."
-                ],
-                [
-                    "Player Experience",
-                    "Iteración sobre las mecánicas y los niveles teniendo en cuenta cómo se comportaba el jugador."
-                ]
-            ],
-
-            learning:
-                "El proyecto me permitió entender mejor cómo conectar programación y diseño de niveles, y cómo pequeñas decisiones de implementación pueden afectar directamente a la experiencia del jugador."
-        }
-
-    };
+    },
 
 
     /* =====================================================
-       SELECT PROJECT
-    ====================================================== */
+       JUAN PIEZA
+    ===================================================== */
 
-    const params =
-        new URLSearchParams(window.location.search);
+    "juan-pieza": {
 
-    const key =
-        params.get("project") || "lyra";
+        slug: "juan-pieza",
 
-    const project =
-        projects[key] || projects.lyra;
+        title: "Juan Pieza",
+
+        category: "Game Programmer & Level Designer",
+
+        years: "La Mapachanda · Proyecto universitario · 2024–2025",
+
+        tagline:
+            "Proyecto universitario centrado en programación de gameplay y diseño de niveles.",
+
+        description:
+            "Juan Pieza fue un proyecto universitario desarrollado dentro de La Mapachanda, en el que trabajé principalmente en programación de gameplay y diseño de niveles.",
+
+        role:
+            "Mi trabajo combinó implementación de sistemas jugables con el diseño y estructuración de los niveles para conseguir una progresión clara y coherente.",
+
+        taskTitle:
+            "Task Overview",
+
+        tasks: [
+            {
+                title: "Gameplay",
+                text: "Programación de sistemas y mecánicas necesarias para la experiencia jugable."
+            },
+            {
+                title: "Level Design",
+                text: "Diseño y construcción de niveles y de su progresión."
+            },
+            {
+                title: "Iteration",
+                text: "Pruebas, ajustes y refinamiento de las decisiones de diseño."
+            },
+            {
+                title: "Teamwork",
+                text: "Trabajo coordinado con el resto del equipo durante el desarrollo."
+            }
+        ],
+
+        playText: "Ver proyecto",
+
+        itch: "#",
+
+        trailer: "#",
+
+        trailerLabel:
+            "PROJECT TRAILER",
+
+        images: {
+
+            hero: "img/juan-pieza/hero.jpg",
+
+            infoLeft: "img/juan-pieza/info-left.jpg",
+
+            infoRight1: "img/juan-pieza/info-right-1.jpg",
+
+            infoRight2: "img/juan-pieza/info-right-2.jpg",
+
+            screenshot1: "img/juan-pieza/screenshot-1.jpg",
+
+            screenshot2: "img/juan-pieza/screenshot-2.jpg",
+
+            screenshot3: "img/juan-pieza/screenshot-3.jpg",
+
+            screenshot4: "img/juan-pieza/screenshot-4.jpg"
+
+        },
+
+        contributionsTitle:
+            "Mis Contribuciones",
+
+        contributionsIntro:
+            "En Juan Pieza trabajé principalmente en programación y diseño de niveles, participando en la construcción de la experiencia jugable y en el proceso de iteración del proyecto.",
+
+        contributions: [
+
+            {
+                title: "Programación de gameplay",
+                text: "Implementación y ajuste de las mecánicas necesarias para construir la experiencia jugable."
+            },
+
+            {
+                title: "Diseño de niveles",
+                text: "Diseño de espacios, recorridos y progresión para guiar al jugador a través de la experiencia."
+            },
+
+            {
+                title: "Iteración",
+                text: "Pruebas y modificaciones de los niveles y sistemas a partir de los problemas encontrados durante el desarrollo."
+            },
+
+            {
+                title: "Trabajo en equipo",
+                text: "Coordinación con el resto del equipo para integrar programación, diseño y contenido."
+            }
+
+        ],
+
+        learningTitle:
+            "Lo que aprendí",
+
+        learningText:
+            "El proyecto me permitió entender mejor la relación entre programación y diseño de niveles, especialmente la importancia de iterar constantemente y comprobar cómo las decisiones técnicas afectan a la experiencia del jugador."
+
+    }
+
+};
 
 
-    /* =====================================================
-       TEXT
-    ====================================================== */
+/* =========================================================
+   GET PROJECT
+   ========================================================= */
 
-    const setText = (id, text) => {
+const params = new URLSearchParams(window.location.search);
 
-        const element =
-            document.getElementById(id);
+const projectKey =
+    params.get("project") || "lyra";
 
-        if (element) {
-            element.textContent = text || "";
+const project =
+    projects[projectKey] || projects.lyra;
+
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function setText(id, value) {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    element.textContent = value || "";
+}
+
+
+function setImage(id, source, alt = "") {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    element.src = source || "";
+    element.alt = alt;
+}
+
+
+function setLink(id, url) {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    element.href = url || "#";
+}
+
+
+/* =========================================================
+   BASIC PROJECT CONTENT
+   ========================================================= */
+
+function loadProjectContent() {
+
+    document.title =
+        `${project.title} | Marcos RM`;
+
+    document.documentElement.lang = "es";
+
+
+    /* HERO */
+
+    setImage(
+        "project-hero",
+        project.images.hero,
+        project.title
+    );
+
+    setImage(
+        "project-logo",
+        project.images.logo || "",
+        project.title
+    );
+
+    const logo =
+        document.getElementById("project-logo");
+
+    const fallback =
+        document.getElementById("project-logo-fallback");
+
+    if (!project.images.logo) {
+
+        if (logo) {
+            logo.style.display = "none";
         }
 
-    };
+        if (fallback) {
+            fallback.style.display = "block";
+            fallback.textContent = project.title;
+        }
+
+    } else {
+
+        if (logo) {
+            logo.style.display = "block";
+        }
+
+        if (fallback) {
+            fallback.style.display = "none";
+        }
+    }
 
 
-    setText("project-title", project.title);
+    setText(
+        "project-tagline",
+        project.tagline
+    );
+
+
+    /* ITCH */
+
+    setLink(
+        "project-itch",
+        project.itch
+    );
+
+
+    /* INFORMATION */
 
     setText(
         "project-category",
         project.category
+    );
+
+    setText(
+        "project-title",
+        project.title
     );
 
     setText(
@@ -250,91 +390,39 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     setText(
-        "project-tagline",
-        project.tagline
+        "project-task-title",
+        project.taskTitle
     );
 
 
-    /* =====================================================
-       LOGO
-    ====================================================== */
+    /* LEFT IMAGE */
 
-    const logo =
-        document.getElementById("project-logo");
-
-    const fallback =
-        document.getElementById(
-            "project-logo-fallback"
-        );
-
-    if (logo) {
-
-        logo.src = project.logo;
-
-        logo.onerror = () => {
-
-            logo.style.display = "none";
-
-            if (fallback) {
-
-                fallback.textContent =
-                    project.title;
-
-                fallback.style.display =
-                    "block";
-            }
-
-        };
-
-    }
+    setImage(
+        "project-info-left",
+        project.images.infoLeft,
+        `${project.title} - info`
+    );
 
 
-    /* =====================================================
-       HERO
-    ====================================================== */
+    /* RIGHT IMAGES */
 
-    const heroImage =
-        document.getElementById("hero-image");
+    setImage(
+        "project-info-right-1",
+        project.images.infoRight1,
+        `${project.title} - info 1`
+    );
 
-    if (heroImage) {
-
-        heroImage.style.backgroundImage =
-            `url("${project.hero}")`;
-
-    }
-
-
-    /* =====================================================
-       LEFT / RIGHT
-    ====================================================== */
-
-    const leftImage =
-        document.getElementById(
-            "project-left-image"
-        );
-
-    const rightImage =
-        document.getElementById(
-            "project-right-image"
-        );
-
-    if (leftImage) {
-        leftImage.src = project.left;
-    }
-
-    if (rightImage) {
-        rightImage.src = project.right;
-    }
+    setImage(
+        "project-info-right-2",
+        project.images.infoRight2,
+        `${project.title} - info 2`
+    );
 
 
-    /* =====================================================
-       TASKS
-    ====================================================== */
+    /* TASKS */
 
     const taskList =
-        document.getElementById(
-            "project-tasks"
-        );
+        document.getElementById("project-tasks");
 
     if (taskList) {
 
@@ -348,371 +436,384 @@ document.addEventListener("DOMContentLoaded", () => {
             const strong =
                 document.createElement("strong");
 
-            const span =
+            const text =
                 document.createElement("span");
 
-            strong.textContent = task[0];
+            strong.textContent =
+                task.title;
 
-            span.textContent = task[1];
+            text.textContent =
+                task.text;
 
             li.appendChild(strong);
-            li.appendChild(span);
+            li.appendChild(text);
 
             taskList.appendChild(li);
 
         });
-
     }
 
 
-    /* =====================================================
-       BUTTONS
-    ====================================================== */
+    /* PLAY BUTTON */
 
-    const play =
-        document.getElementById(
-            "project-play"
-        );
+    setText(
+        "project-play",
+        project.playText
+    );
 
-    const bottomPlay =
-        document.getElementById(
-            "bottom-play"
-        );
-
-    [play, bottomPlay].forEach(button => {
-
-        if (!button) return;
-
-        button.href = project.itch;
-
-        button.textContent =
-            project.itch === "#"
-                ? "PROJECT"
-                : "PLAY PROJECT";
-
-    });
+    setLink(
+        "project-play",
+        project.itch
+    );
 
 
-    const itch =
-        document.getElementById(
-            "project-itch"
-        );
+    /* SCREENSHOTS */
 
-    if (itch) {
-        itch.href = project.itch;
-    }
+    setImage(
+        "project-screenshot-1",
+        project.images.screenshot1,
+        `${project.title} - screenshot 1`
+    );
 
+    setImage(
+        "project-screenshot-2",
+        project.images.screenshot2,
+        `${project.title} - screenshot 2`
+    );
 
-    /* =====================================================
-       GALLERY
-    ====================================================== */
+    setImage(
+        "project-screenshot-3",
+        project.images.screenshot3,
+        `${project.title} - screenshot 3`
+    );
 
-    const gallery =
-        document.getElementById(
-            "project-gallery"
-        );
-
-    if (gallery) {
-
-        gallery.innerHTML = "";
-
-        project.gallery.forEach(
-            (src, index) => {
-
-                const button =
-                    document.createElement("button");
-
-                button.type = "button";
-
-                button.className =
-                    "tg-shot";
-
-                const image =
-                    document.createElement("img");
-
-                image.src = src;
-
-                image.alt =
-                    `${project.title} screenshot ${index + 1}`;
-
-                button.appendChild(image);
-
-                gallery.appendChild(button);
-
-            }
-        );
-
-    }
+    setImage(
+        "project-screenshot-4",
+        project.images.screenshot4,
+        `${project.title} - screenshot 4`
+    );
 
 
-    /* =====================================================
-       TRAILER IMAGE
-    ====================================================== */
+    /* TRAILER */
 
-    const trailerImage =
-        document.getElementById(
-            "trailer-image"
-        );
+    setImage(
+        "trailer-image",
+        project.images.screenshot1,
+        `${project.title} - trailer`
+    );
 
-    if (trailerImage) {
-
-        trailerImage.src =
-            project.right;
-
-    }
+    setText(
+        "trailer-label",
+        project.trailerLabel
+    );
 
 
-    const trailerButton =
-        document.getElementById(
-            "trailer-button"
-        );
+    /* CONTRIBUTIONS */
 
-    if (trailerButton) {
+    setImage(
+        "contributions-bg",
+        project.images.hero,
+        ""
+    );
 
-        if (!project.trailer) {
+    setText(
+        "contributions-title",
+        project.contributionsTitle
+    );
 
-            trailerButton.style.display =
-                "none";
-
-        } else {
-
-            trailerButton.addEventListener(
-                "click",
-                () => {
-
-                    window.open(
-                        `https://www.youtube.com/watch?v=${project.trailer}`,
-                        "_blank",
-                        "noopener"
-                    );
-
-                }
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       CONTRIBUTIONS
-    ====================================================== */
-
-    const intro =
-        document.getElementById(
-            "contributions-intro"
-        );
-
-    if (intro) {
-        intro.textContent =
-            project.contributionsIntro;
-    }
+    setText(
+        "contributions-intro",
+        project.contributionsIntro
+    );
 
 
     const contributionList =
-        document.getElementById(
-            "contribution-list"
-        );
+        document.getElementById("contribution-list");
 
     if (contributionList) {
 
         contributionList.innerHTML = "";
 
-        project.contributions.forEach(
-            contribution => {
+        project.contributions.forEach(item => {
 
-                const li =
-                    document.createElement("li");
+            const li =
+                document.createElement("li");
 
-                const strong =
-                    document.createElement("strong");
+            const title =
+                document.createElement("strong");
 
-                const text =
-                    document.createElement("span");
+            title.className =
+                "contribution-title";
 
-                strong.className =
-                    "contribution-title";
+            title.textContent =
+                item.title;
 
-                strong.textContent =
-                    contribution[0];
+            const text =
+                document.createTextNode(item.text);
 
-                text.innerHTML =
-                    contribution[1];
+            li.appendChild(title);
+            li.appendChild(text);
 
-                li.appendChild(strong);
+            contributionList.appendChild(li);
 
-                li.appendChild(text);
-
-                contributionList.appendChild(li);
-
-            }
-        );
-
+        });
     }
 
 
-    /* =====================================================
-       LEARNING
-    ====================================================== */
+    /* LEARNING */
+
+    setText(
+        "learning-title",
+        project.learningTitle
+    );
 
     setText(
         "learning-text",
-        project.learning
+        project.learningText
     );
 
 
-    /* =====================================================
-       LIGHTBOX
-    ====================================================== */
+    /* BOTTOM CTA */
 
-    const allImages = [
-        project.left,
-        project.right,
-        ...project.gallery
-    ];
+    setText(
+        "bottom-play",
+        project.playText
+    );
+
+    setLink(
+        "bottom-play",
+        project.itch
+    );
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+const galleryImages = [
+    "info-right-1",
+    "info-right-2",
+    "screenshot-1",
+    "screenshot-2",
+    "screenshot-3",
+    "screenshot-4"
+];
+
+let currentLightboxIndex = 0;
+
+let lightboxItems = [];
+
+
+function buildLightboxItems() {
+
+    lightboxItems = [];
+
+    galleryImages.forEach(key => {
+
+        let source = "";
+
+        switch (key) {
+
+            case "info-right-1":
+                source = project.images.infoRight1;
+                break;
+
+            case "info-right-2":
+                source = project.images.infoRight2;
+                break;
+
+            case "screenshot-1":
+                source = project.images.screenshot1;
+                break;
+
+            case "screenshot-2":
+                source = project.images.screenshot2;
+                break;
+
+            case "screenshot-3":
+                source = project.images.screenshot3;
+                break;
+
+            case "screenshot-4":
+                source = project.images.screenshot4;
+                break;
+        }
+
+        if (source) {
+            lightboxItems.push({
+                key,
+                source
+            });
+        }
+
+    });
+}
+
+
+function openLightbox(index) {
 
     const lightbox =
-        document.getElementById(
-            "project-lightbox"
-        );
+        document.getElementById("project-lightbox");
 
-    const lightboxImage =
-        document.getElementById(
-            "lightbox-image"
-        );
+    const image =
+        document.getElementById("lightbox-image");
 
-    const lightboxCaption =
-        document.getElementById(
-            "lightbox-caption"
-        );
+    if (!lightbox || !image) return;
 
-    const close =
-        document.querySelector(
-            ".lightbox-close"
-        );
+    if (!lightboxItems.length) return;
 
-    const previous =
-        document.querySelector(
-            ".lightbox-prev"
-        );
+    currentLightboxIndex =
+        (index + lightboxItems.length) %
+        lightboxItems.length;
 
-    const next =
-        document.querySelector(
-            ".lightbox-next"
-        );
+    const item =
+        lightboxItems[currentLightboxIndex];
 
-    let current = 0;
+    image.src = item.source;
 
+    image.alt =
+        `${project.title} - ${item.key}`;
 
-    const openLightbox = index => {
+    const caption =
+        document.getElementById("lightbox-caption");
 
-        current = index;
+    if (caption) {
 
-        lightboxImage.src =
-            allImages[current];
+        caption.textContent =
+            item.key
+                .replaceAll("-", " ")
+                .toUpperCase();
+    }
 
-        lightboxCaption.textContent =
-            `${project.title} — ${current + 1} / ${allImages.length}`;
+    lightbox.classList.add("active");
 
-        lightbox.classList.add("active");
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-        document.body.style.overflow =
-            "hidden";
-    };
-
-
-    const closeLightbox = () => {
-
-        lightbox.classList.remove(
-            "active"
-        );
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        document.body.style.overflow =
-            "";
-    };
-
-
-    document.addEventListener(
-        "click",
-        event => {
-
-            const shot =
-                event.target.closest(
-                    ".ph-shot, .tg-shot"
-                );
-
-            if (!shot) return;
-
-            const image =
-                shot.querySelector("img");
-
-            if (!image) return;
-
-            const index =
-                allImages.indexOf(
-                    image.src
-                );
-
-            if (index >= 0) {
-                openLightbox(index);
-            }
-
-        }
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
     );
 
+    document.body.style.overflow = "hidden";
+}
 
-    if (close) {
-        close.addEventListener(
+
+function closeLightbox() {
+
+    const lightbox =
+        document.getElementById("project-lightbox");
+
+    if (!lightbox) return;
+
+    lightbox.classList.remove("active");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow = "";
+}
+
+
+function changeLightbox(direction) {
+
+    openLightbox(
+        currentLightboxIndex + direction
+    );
+}
+
+
+/* =========================================================
+   LIGHTBOX EVENTS
+   ========================================================= */
+
+function setupLightbox() {
+
+    buildLightboxItems();
+
+    const triggers =
+        document.querySelectorAll(
+            "[data-project-image]"
+        );
+
+    triggers.forEach(trigger => {
+
+        trigger.addEventListener(
+            "click",
+            () => {
+
+                const key =
+                    trigger.dataset.projectImage;
+
+                const index =
+                    lightboxItems.findIndex(
+                        item => item.key === key
+                    );
+
+                if (index !== -1) {
+                    openLightbox(index);
+                }
+
+            }
+        );
+
+    });
+
+
+    const closeButton =
+        document.querySelector(".lightbox-close");
+
+    const previousButton =
+        document.querySelector(".lightbox-prev");
+
+    const nextButton =
+        document.querySelector(".lightbox-next");
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
             "click",
             closeLightbox
         );
     }
 
 
-    if (next) {
+    if (previousButton) {
 
-        next.addEventListener(
+        previousButton.addEventListener(
             "click",
-            () => {
-
-                current =
-                    (current + 1) %
-                    allImages.length;
-
-                openLightbox(current);
-
-            }
+            () => changeLightbox(-1)
         );
-
     }
 
 
-    if (previous) {
+    if (nextButton) {
 
-        previous.addEventListener(
+        nextButton.addEventListener(
             "click",
-            () => {
+            () => changeLightbox(1)
+        );
+    }
 
-                current =
-                    (current - 1 +
-                        allImages.length) %
-                    allImages.length;
 
-                openLightbox(current);
+    const lightbox =
+        document.getElementById("project-lightbox");
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === lightbox
+                ) {
+                    closeLightbox();
+                }
 
             }
         );
-
     }
 
 
@@ -720,10 +821,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "keydown",
         event => {
 
+            const lightbox =
+                document.getElementById(
+                    "project-lightbox"
+                );
+
             if (
-                !lightbox.classList.contains(
-                    "active"
-                )
+                !lightbox ||
+                !lightbox.classList.contains("active")
             ) {
                 return;
             }
@@ -732,28 +837,108 @@ document.addEventListener("DOMContentLoaded", () => {
                 closeLightbox();
             }
 
-            if (event.key === "ArrowRight") {
-
-                current =
-                    (current + 1) %
-                    allImages.length;
-
-                openLightbox(current);
-
+            if (event.key === "ArrowLeft") {
+                changeLightbox(-1);
             }
 
-            if (event.key === "ArrowLeft") {
-
-                current =
-                    (current - 1 +
-                        allImages.length) %
-                    allImages.length;
-
-                openLightbox(current);
-
+            if (event.key === "ArrowRight") {
+                changeLightbox(1);
             }
 
         }
     );
+}
 
-});
+
+/* =========================================================
+   TRAILER
+   ========================================================= */
+
+function setupTrailer() {
+
+    const button =
+        document.getElementById(
+            "trailer-button"
+        );
+
+    if (!button) return;
+
+    if (
+        !project.trailer ||
+        project.trailer === "#"
+    ) {
+
+        button.addEventListener(
+            "click",
+            () => {
+                const first =
+                    lightboxItems.findIndex(
+                        item => item.key === "screenshot-1"
+                    );
+
+                if (first !== -1) {
+                    openLightbox(first);
+                }
+            }
+        );
+
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            window.open(
+                project.trailer,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        }
+    );
+}
+
+
+/* =========================================================
+   BROKEN IMAGE HANDLING
+   ========================================================= */
+
+function setupImageFallbacks() {
+
+    const images =
+        document.querySelectorAll("img");
+
+    images.forEach(image => {
+
+        image.addEventListener(
+            "error",
+            () => {
+
+                image.style.opacity = "0";
+
+            }
+        );
+
+    });
+}
+
+
+/* =========================================================
+   INIT
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        loadProjectContent();
+
+        setupLightbox();
+
+        setupTrailer();
+
+        setupImageFallbacks();
+
+    }
+);
