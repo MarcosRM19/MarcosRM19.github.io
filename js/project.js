@@ -61,25 +61,16 @@ const projects = {
         trailerLabel:
             "OFFICIAL TRAILER",
 
-        images: {
-
-            hero: "img/lyra/hero.jpg",
-
-            infoLeft: "img/lyra/info-left.jpg",
-
-            infoRight1: "img/lyra/info-right-1.jpg",
-
-            infoRight2: "img/lyra/info-right-2.jpg",
-
-            screenshot1: "img/lyra/screenshot-1.jpg",
-
-            screenshot2: "img/lyra/screenshot-2.jpg",
-
-            screenshot3: "img/lyra/screenshot-3.jpg",
-
-            screenshot4: "img/lyra/screenshot-4.jpg"
-
-        },
+images: {
+    hero: "img/projects/lyra/hero.jpg",
+    infoLeft: "img/projects/lyra/info-left.jpg",
+    infoRight1: "img/projects/lyra/info-right-1.jpg",
+    infoRight2: "img/projects/lyra/info-right-2.jpg",
+    screenshot1: "img/projects/lyra/screenshot-1.jpg",
+    screenshot2: "img/projects/lyra/screenshot-2.jpg",
+    screenshot3: "img/projects/lyra/screenshot-3.jpg",
+    screenshot4: "img/projects/lyra/screenshot-4.jpg"
+},
 
         contributionsTitle:
             "Mis Contribuciones",
@@ -184,26 +175,16 @@ const projects = {
         trailerLabel:
             "PROJECT TRAILER",
 
-        images: {
-
-            hero: "img/juan-pieza/hero.jpg",
-
-            infoLeft: "img/juan-pieza/info-left.jpg",
-
-            infoRight1: "img/juan-pieza/info-right-1.jpg",
-
-            infoRight2: "img/juan-pieza/info-right-2.jpg",
-
-            screenshot1: "img/juan-pieza/screenshot-1.jpg",
-
-            screenshot2: "img/juan-pieza/screenshot-2.jpg",
-
-            screenshot3: "img/juan-pieza/screenshot-3.jpg",
-
-            screenshot4: "img/juan-pieza/screenshot-4.jpg"
-
-        },
-
+images: {
+    hero: "img/projects/juan-pieza/hero.jpg",
+    infoLeft: "img/projects/juan-pieza/info-left.jpg",
+    infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
+    infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
+    screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
+    screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
+    screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
+    screenshot4: "img/projects/juan-pieza/screenshot-4.jpg"
+},
         contributionsTitle:
             "Mis Contribuciones",
 
