@@ -1,5 +1,4 @@
 const projects = {
-
     lyra: {
         category: "GAME / LEVEL DESIGN",
         title: "Lyra",
@@ -40,7 +39,6 @@ const projects = {
             }
         ],
         heroVideoId: "YIcgUIwu89U",
-        /* Rutas de imágenes ajustadas con ../ */
         hero: "../img/projects/lyra/hero.jpg",
         infoRight1: "../img/projects/lyra/info-right-1.jpg",
         infoRight2: "../img/projects/lyra/info-right-2.jpg",
@@ -48,7 +46,7 @@ const projects = {
         screenshot2: "../img/projects/lyra/screenshot-2.jpg",
         screenshot3: "../img/projects/lyra/screenshot-3.jpg",
         screenshot4: "../img/projects/lyra/screenshot-4.jpg",
-        itch: "#"
+        itch: "https://itch.io"
     },
 
     "juan-pieza": {
@@ -89,7 +87,6 @@ const projects = {
             }
         ],
         heroVideoId: "YIcgUIwu89U",
-        /* Rutas de imágenes ajustadas con ../ */
         hero: "../img/projects/juan-pieza/hero.jpg",
         infoRight1: "../img/projects/juan-pieza/info-right-1.jpg",
         infoRight2: "../img/projects/juan-pieza/info-right-2.jpg",
@@ -97,9 +94,8 @@ const projects = {
         screenshot2: "../img/projects/juan-pieza/screenshot-2.jpg",
         screenshot3: "../img/projects/juan-pieza/screenshot-3.jpg",
         screenshot4: "../img/projects/juan-pieza/screenshot-4.jpg",
-        itch: "#"
+        itch: "https://itch.io"
     }
-
 };
 
 function getProjectId() {
@@ -122,14 +118,15 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* HERO VIDEO & METADATA */
-    const heroIframe = document.querySelector(".hero-video iframe");
+    /* 1. HERO VIDEO (Fondo en autoplay, loop y mute) */
+    const heroIframe = document.getElementById("hero-youtube-iframe") || document.querySelector(".hero-video iframe");
     if (heroIframe && project.heroVideoId) {
-        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&rel=0&modestbranding=1`;
+        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1`;
     }
 
-    const logoFallback = document.getElementById("project-logo-fallback");
-    if (logoFallback) logoFallback.textContent = project.title;
+    /* 2. HERO METADATA Y TÍTULO CENTRAL EN GRANDE */
+    const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
+    if (titleHero) titleHero.textContent = project.title;
 
     const tagline = document.getElementById("project-tagline");
     if (tagline) tagline.textContent = project.tagline;
@@ -137,10 +134,11 @@ function loadProject() {
     const category = document.getElementById("project-category");
     if (category) category.textContent = project.category;
 
+    /* Enlace del botón de Itch.io en el Hero */
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* MAIN INFORMATION */
+    /* 3. MAIN INFORMATION (Cuerpo del proyecto) */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -156,7 +154,7 @@ function loadProject() {
     const taskTitle = document.getElementById("project-task-title");
     if (taskTitle) taskTitle.textContent = project.taskTitle;
 
-    /* TASKS */
+    /* 4. TASKS LIST */
     const taskList = document.getElementById("project-tasks");
     if (taskList) {
         taskList.innerHTML = "";
@@ -167,14 +165,14 @@ function loadProject() {
         });
     }
 
-    /* PLAY BUTTON */
+    /* 5. PLAY BUTTON */
     const playButton = document.getElementById("project-play");
     if (playButton) {
         playButton.href = project.itch;
         playButton.textContent = "Play on itch.io";
     }
 
-    /* INFO IMAGES */
+    /* 6. INFO IMAGES */
     const infoRight1 = document.getElementById("project-info-right-1");
     if (infoRight1) {
         infoRight1.src = project.infoRight1;
@@ -187,7 +185,7 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot`;
     }
 
-    /* SCREENSHOTS */
+    /* 7. SCREENSHOTS GALLERY */
     const screenshots = [
         ["project-screenshot-1", project.screenshot1],
         ["project-screenshot-2", project.screenshot2],
@@ -203,7 +201,7 @@ function loadProject() {
         }
     });
 
-    /* LEARNING */
+    /* 8. LEARNING SECTION */
     const learningTitle = document.getElementById("project-learning-title");
     if (learningTitle) learningTitle.textContent = project.learningTitle;
 
@@ -217,7 +215,7 @@ function loadProject() {
         });
     }
 
-    /* CONTRIBUTIONS */
+    /* 9. CONTRIBUTIONS SECTION */
     const contributionsTitle = document.getElementById("project-contributions-title");
     if (contributionsTitle) contributionsTitle.textContent = project.contributionsTitle;
 
