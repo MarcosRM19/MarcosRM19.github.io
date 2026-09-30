@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Proyecto | MarcosRuiz Portfolio</title>
+    <title>Project | MarcosRuiz Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
@@ -15,58 +14,39 @@
 
 <header>
     <nav class="navbar">
-
         <a href="index.html#inicio" class="logo" id="logo">
             MarcosRuiz Portfolio
         </a>
 
         <div class="nav-links">
-
-            <a href="index.html#inicio" id="nav-home" data-i18n="home">
-                Inicio
-            </a>
-
-            <a href="index.html#sobre-mi" id="nav-about" data-i18n="about">
-                Quién soy
-            </a>
-
-            <a href="index.html#experience" id="nav-experience" data-i18n="experience">
-                Experiencia
-            </a>
-
-            <a href="index.html#proyectos" id="nav-projects" data-i18n="projects">
-                Proyectos
-            </a>
-
-            <a href="index.html#documentos" id="nav-documents" data-i18n="documents">
-                Documentos
-            </a>
-
+            <a href="index.html#inicio" id="nav-home" data-i18n="home">Inicio</a>
+            <a href="index.html#sobre-mi" id="nav-about" data-i18n="about">Quién soy</a>
+            <a href="index.html#experience" id="nav-experience" data-i18n="experience">Experiencia</a>
+            <a href="index.html#proyectos" id="nav-projects" data-i18n="projects">Proyectos</a>
+            <a href="index.html#documentos" id="nav-documents" data-i18n="documents">Documentos</a>
         </div>
 
         <div class="nav-actions">
-
-            <button id="language-button" type="button">
-                EN
-            </button>
+            <button id="language-button" type="button">EN</button>
 
             <a
                 href="index.html#contacto"
                 class="contact-button"
                 id="contact-button"
-                data-i18n="contactButton">
+                data-i18n="contactButton"
+            >
                 Contact me
             </a>
-
         </div>
-
     </nav>
 </header>
 
 
 <main>
 
-    <!-- HERO -->
+    <!-- =====================================================
+         TITLE / COVER
+    ====================================================== -->
 
     <section class="title-hero">
 
@@ -74,7 +54,8 @@
             id="project-hero"
             class="title-bg"
             src=""
-            alt="">
+            alt=""
+        >
 
         <div class="title-veil"></div>
 
@@ -82,13 +63,13 @@
 
             <h1
                 id="project-logo-fallback"
-                class="logo-fallback">
-            </h1>
+                class="logo-fallback"
+            ></h1>
 
             <p
                 id="project-tagline"
-                class="title-tagline">
-            </p>
+                class="title-tagline"
+            ></p>
 
             <div class="store-links">
 
@@ -98,12 +79,12 @@
                     href="#"
                     target="_blank"
                     rel="noopener"
-                    aria-label="Itch.io">
-
+                    aria-label="Itch.io"
+                >
                     <img
                         src="img/itchio.svg"
-                        alt="Itch.io">
-
+                        alt="Itch.io"
+                    >
                 </a>
 
             </div>
@@ -113,7 +94,9 @@
     </section>
 
 
-    <!-- PRIMER APARTADO -->
+    <!-- =====================================================
+         PROJECT INFORMATION
+    ====================================================== -->
 
     <section class="project-hero-v2">
 
@@ -121,39 +104,42 @@
 
             <div class="ph-grid">
 
+                <!-- LEFT -->
                 <div class="ph-intro">
 
                     <span
                         id="project-category"
-                        class="eyebrow">
-                    </span>
+                        class="eyebrow"
+                    ></span>
 
                     <h1 id="project-title"></h1>
 
                     <p
                         id="project-years"
-                        class="project-years">
-                    </p>
+                        class="project-years"
+                    ></p>
 
                     <p
                         id="project-description"
-                        class="project-lede">
-                    </p>
+                        class="project-lede"
+                    ></p>
 
                     <p
                         id="project-role"
-                        class="project-lede">
-                    </p>
+                        class="project-lede"
+                    ></p>
+
 
                     <h3
                         id="project-task-title"
-                        class="task-heading">
-                    </h3>
+                        class="task-heading"
+                    ></h3>
 
                     <ul
                         id="project-tasks"
-                        class="task-list">
-                    </ul>
+                        class="task-list"
+                    ></ul>
+
 
                     <div class="project-actions">
 
@@ -162,13 +148,14 @@
                             class="project-btn project-btn-solid"
                             href="#"
                             target="_blank"
-                            rel="noopener">
-                        </a>
+                            rel="noopener"
+                        ></a>
 
                         <a
                             class="project-btn project-btn-outline"
                             href="index.html#proyectos"
-                            data-i18n="projects">
+                            data-i18n="projects"
+                        >
                             Más proyectos
                         </a>
 
@@ -177,31 +164,31 @@
                 </div>
 
 
+                <!-- RIGHT -->
                 <div class="ph-shots">
 
                     <button
                         class="ph-shot"
                         type="button"
-                        data-project-image="info-right-1">
-
+                        data-project-image="info-right-1"
+                    >
                         <img
                             id="project-info-right-1"
                             src=""
-                            alt="">
-
+                            alt=""
+                        >
                     </button>
-
 
                     <button
                         class="ph-shot"
                         type="button"
-                        data-project-image="info-right-2">
-
+                        data-project-image="info-right-2"
+                    >
                         <img
                             id="project-info-right-2"
                             src=""
-                            alt="">
-
+                            alt=""
+                        >
                     </button>
 
                 </div>
@@ -213,7 +200,9 @@
     </section>
 
 
-    <!-- TRAILER -->
+    <!-- =====================================================
+         TRAILER + SCREENSHOTS
+    ====================================================== -->
 
     <section class="trailer-gallery">
 
@@ -221,6 +210,7 @@
 
             <div class="tg-grid">
 
+                <!-- TRAILER -->
                 <div class="trailer-facade">
 
                     <div class="youtube-wrapper">
@@ -236,60 +226,61 @@
 
                     <span
                         id="trailer-label"
-                        class="tg-label">
-                    </span>
+                        class="tg-label"
+                    ></span>
 
                 </div>
 
 
+                <!-- SCREENSHOTS -->
                 <div class="tg-gallery">
 
                     <button
                         class="tg-shot"
                         type="button"
-                        data-project-image="screenshot-1">
-
+                        data-project-image="screenshot-1"
+                    >
                         <img
                             id="project-screenshot-1"
                             src=""
-                            alt="">
-
+                            alt=""
+                        >
                     </button>
 
                     <button
                         class="tg-shot"
                         type="button"
-                        data-project-image="screenshot-2">
-
+                        data-project-image="screenshot-2"
+                    >
                         <img
                             id="project-screenshot-2"
                             src=""
-                            alt="">
-
+                            alt=""
+                        >
                     </button>
 
                     <button
                         class="tg-shot"
                         type="button"
-                        data-project-image="screenshot-3">
-
+                        data-project-image="screenshot-3"
+                    >
                         <img
                             id="project-screenshot-3"
                             src=""
-                            alt="">
-
+                            alt=""
+                        >
                     </button>
 
                     <button
                         class="tg-shot"
                         type="button"
-                        data-project-image="screenshot-4">
-
+                        data-project-image="screenshot-4"
+                    >
                         <img
                             id="project-screenshot-4"
                             src=""
-                            alt="">
-
+                            alt=""
+                        >
                     </button>
 
                 </div>
@@ -301,40 +292,70 @@
     </section>
 
 
-    <!-- CONTRIBUCIONES -->
+    <!-- =====================================================
+         WHAT I LEARNED
+    ====================================================== -->
 
-    <section class="contributions-section">
+    <section class="project-learning">
 
-        <div class="project-wrap">
+        <div class="project-wrap-wide">
 
-            <div class="contributions-grid">
+            <div class="learning-grid">
 
-                <div class="contribution-block">
+                <div class="learning-heading">
 
-                    <span class="eyebrow">
-                        Contributions
+                    <span
+                        class="eyebrow"
+                        data-i18n="learningEyebrow"
+                    >
+                        LO QUE HE APRENDIDO
                     </span>
 
-                    <h2 id="contributions-title"></h2>
-
-                    <div id="contributions-content"></div>
+                    <h2 id="project-learning-title"></h2>
 
                 </div>
 
+                <div>
 
-                <div class="contribution-block">
-
-                    <span class="eyebrow">
-                        Learning
-                    </span>
-
-                    <h2 id="learning-title"></h2>
-
-                    <div id="learning-content"></div>
+                    <ul
+                        id="project-learning-list"
+                        class="learning-list"
+                    ></ul>
 
                 </div>
 
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTRIBUTIONS
+    ====================================================== -->
+
+    <section class="project-contributions">
+
+        <div class="project-wrap-wide">
+
+            <div class="contributions-header">
+
+                <span
+                    class="eyebrow"
+                    data-i18n="contributionsEyebrow"
+                >
+                    CONTRIBUCIONES
+                </span>
+
+                <h2 id="project-contributions-title"></h2>
+
+            </div>
+
+            <div
+                id="project-contributions-grid"
+                class="contributions-grid"
+            ></div>
 
         </div>
 
@@ -343,51 +364,67 @@
 </main>
 
 
-<!-- LIGHTBOX -->
+<!-- =====================================================
+     LIGHTBOX
+====================================================== -->
 
 <div
-    class="lightbox"
-    id="lightbox"
-    aria-hidden="true">
+    id="project-lightbox"
+    class="project-lightbox"
+    aria-hidden="true"
+>
 
     <button
-        class="lightbox-close"
         id="lightbox-close"
-        type="button">
+        class="lightbox-close"
+        type="button"
+        aria-label="Close"
+    >
         ×
     </button>
 
     <button
-        class="lightbox-prev"
         id="lightbox-prev"
-        type="button">
+        class="lightbox-arrow lightbox-prev"
+        type="button"
+        aria-label="Previous image"
+    >
         ‹
     </button>
 
-    <img
-        id="lightbox-image"
-        src=""
-        alt="">
+    <div class="lightbox-content">
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+        >
+
+    </div>
 
     <button
-        class="lightbox-next"
         id="lightbox-next"
-        type="button">
+        class="lightbox-arrow lightbox-next"
+        type="button"
+        aria-label="Next image"
+    >
         ›
     </button>
 
 </div>
 
 
-<footer class="project-footer">
+<footer>
 
-    <div class="project-wrap">
+    <div class="footer-inner">
 
-        <a
-            href="index.html#proyectos"
-            class="footer-back">
-            ← Volver a proyectos
-        </a>
+        <span>
+            © 2026 Marcos Ruiz
+        </span>
+
+        <span>
+            Game Programmer · Game Designer
+        </span>
 
     </div>
 
