@@ -131,12 +131,12 @@ body {
 }
 
 /* =========================================================
-   ZONA 1 Y ZONA 2 — FONDO VERDE MÁS BLANQUINOSO Y SUAVE
+   ZONA 1 Y ZONA 2 — VERDE MUY BLANQUINOSO Y APAGADO
    ========================================================= */
 
 .project-hero-v2,
 .trailer-gallery {
-    background: #223026; /* Verde desaturado, más claro y suave */
+    background: #36443a; /* Verde muy desaturado con tono grisáceo/blanquinoso */
 }
 
 .project-hero-v2 {
