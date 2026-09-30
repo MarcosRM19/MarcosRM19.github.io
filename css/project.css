@@ -1,11 +1,22 @@
 /* =========================================================
-   MARCOS RM19 — PROJECT PAGE
+   MARCOSRUIZ PORTFOLIO
+   PROJECT PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
    ========================================================= */
 
 :root {
     --project-max: 1450px;
     --project-text-max: 1180px;
 }
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
 
 body {
     overflow-x: hidden;
@@ -27,7 +38,7 @@ body {
 
 
 /* =========================================================
-   HERO PRINCIPAL
+   HERO / PORTADA
    ========================================================= */
 
 .title-hero {
@@ -44,6 +55,15 @@ body {
     isolation: isolate;
 }
 
+
+/*
+   La imagen del trailer se coloca aquí mediante
+   project.js.
+
+   El hero sigue usando #project-hero para que
+   el JS pueda cambiar dinámicamente el proyecto.
+*/
+
 .title-bg {
     position: absolute;
     inset: 0;
@@ -55,7 +75,10 @@ body {
     object-position: center;
 
     z-index: -3;
+
+    transform: scale(1.02);
 }
+
 
 .title-veil {
     position: absolute;
@@ -64,13 +87,14 @@ body {
     background:
         linear-gradient(
             180deg,
-            rgba(17, 18, 15, 0.16) 0%,
-            rgba(17, 18, 15, 0.36) 45%,
+            rgba(17, 18, 15, 0.18) 0%,
+            rgba(17, 18, 15, 0.38) 45%,
             rgba(17, 18, 15, 0.98) 100%
         );
 
     z-index: -2;
 }
+
 
 .title-inner {
     position: relative;
@@ -86,16 +110,23 @@ body {
     padding-top: 100px;
 }
 
+
+/* =========================================================
+   LOGO DEL JUEGO
+   ========================================================= */
+
 .game-logo {
     display: block;
 
     width: min(60vw, 540px);
+
     max-height: 240px;
 
     object-fit: contain;
 
     margin-bottom: 30px;
 }
+
 
 .logo-fallback {
     display: none;
@@ -105,8 +136,14 @@ body {
     color: var(--cream);
 
     font-size: clamp(4rem, 9vw, 7rem);
+
     line-height: 0.9;
 }
+
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
 
 .title-tagline {
     max-width: 720px;
@@ -119,21 +156,30 @@ body {
 
     line-height: 1.7;
 
-    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
+    text-shadow:
+        0 3px 20px rgba(0, 0, 0, 0.7);
 }
+
+
+/* =========================================================
+   ITCH.IO
+   ========================================================= */
 
 .store-links {
     display: flex;
+
     justify-content: center;
 
     margin-top: 36px;
 }
+
 
 .store-link {
     width: 60px;
     height: 60px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -141,10 +187,13 @@ body {
 
     background: var(--cream);
 
+    text-decoration: none;
+
     transition:
         transform 0.25s ease,
         background 0.25s ease;
 }
+
 
 .store-link:hover {
     transform: translateY(-4px);
@@ -152,17 +201,19 @@ body {
     background: var(--green);
 }
 
+
 .store-link img {
     width: 29px;
     height: 29px;
 
     display: block;
+
+    object-fit: contain;
 }
 
 
 /* =========================================================
-   PRIMERA PARTE DEL PROYECTO
-   50% INFORMACIÓN / 50% IMÁGENES
+   PRIMERA PARTE
    ========================================================= */
 
 .project-hero-v2 {
@@ -170,6 +221,7 @@ body {
 
     background: var(--background);
 }
+
 
 .ph-grid {
     width: 100%;
@@ -180,21 +232,20 @@ body {
 
     gap: 60px;
 
-    align-items: stretch;
+    align-items: start;
 }
 
 
 /* =========================================================
-   INFORMACIÓN — MITAD IZQUIERDA
+   INFORMACIÓN
    ========================================================= */
 
 .ph-intro {
     width: 100%;
-    max-width: none;
 
-    display: flex;
-    flex-direction: column;
+    max-width: none;
 }
+
 
 .eyebrow {
     display: block;
@@ -202,12 +253,14 @@ body {
     color: var(--green);
 
     font-size: 0.78rem;
+
     font-weight: 700;
 
     letter-spacing: 0.12em;
 
     text-transform: uppercase;
 }
+
 
 .ph-intro h1 {
     margin: 8px 0 12px;
@@ -221,6 +274,7 @@ body {
     letter-spacing: -0.045em;
 }
 
+
 .project-years {
     margin: 0 0 30px;
 
@@ -228,6 +282,7 @@ body {
 
     font-size: 0.9rem;
 }
+
 
 .project-lede {
     max-width: 720px;
@@ -241,13 +296,14 @@ body {
     line-height: 1.85;
 }
 
+
 .project-lede strong {
     color: var(--cream);
 }
 
 
 /* =========================================================
-   RESUMEN DE TAREAS
+   TASK OVERVIEW
    ========================================================= */
 
 .task-heading {
@@ -262,8 +318,10 @@ body {
     text-transform: uppercase;
 }
 
+
 .task-list {
     display: flex;
+
     flex-direction: column;
 
     gap: 14px;
@@ -274,6 +332,7 @@ body {
 
     list-style-type: disc;
 }
+
 
 .task-list li {
     display: list-item;
@@ -289,14 +348,42 @@ body {
     line-height: 1.7;
 }
 
+
 .task-list li::marker {
     color: var(--green);
 
     font-size: 0.85em;
 }
 
+
 .task-list strong {
     color: var(--cream);
+
+    font-weight: 700;
+
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   DESTACAR LOS DOS PRIMEROS TASKS
+   ========================================================= */
+
+.task-list li:nth-child(1),
+.task-list li:nth-child(2) {
+    padding: 14px 16px;
+
+    margin-left: -16px;
+
+    background: var(--surface-light);
+
+    border-left: 3px solid var(--green);
+}
+
+
+.task-list li:nth-child(1)::marker,
+.task-list li:nth-child(2)::marker {
+    color: var(--green);
 }
 
 
@@ -306,12 +393,14 @@ body {
 
 .project-actions {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 14px;
 
     margin-top: 42px;
 }
+
 
 .project-btn {
     display: inline-flex;
@@ -328,6 +417,7 @@ body {
     text-decoration: none;
 
     font-size: 0.84rem;
+
     font-weight: 700;
 
     letter-spacing: 0.04em;
@@ -339,9 +429,11 @@ body {
         border-color 0.25s ease;
 }
 
+
 .project-btn:hover {
     transform: translateY(-3px);
 }
+
 
 .project-btn-solid {
     background: var(--green);
@@ -349,9 +441,11 @@ body {
     color: #11120f;
 }
 
+
 .project-btn-solid:hover {
     background: var(--cream);
 }
+
 
 .project-btn-outline {
     border: 1px solid var(--border);
@@ -361,6 +455,7 @@ body {
     background: transparent;
 }
 
+
 .project-btn-outline:hover {
     border-color: var(--green);
 
@@ -369,27 +464,35 @@ body {
 
 
 /* =========================================================
-   IMÁGENES — MITAD DERECHA
+   IMÁGENES DE LA PRIMERA PARTE
    =========================================================
 
-   IMPORTANTE:
-   No usamos aspect-ratio aquí.
+   Las imágenes son más bajas que el bloque completo.
 
-   La columna derecha se estira hasta tener exactamente
-   la misma altura que la columna izquierda.
+   No utilizamos aspect-ratio aquí porque queremos controlar
+   la altura mediante la columna de texto.
 
-   Las dos imágenes se reparten esa altura.
+   Las dos imágenes comparten la altura disponible.
    ========================================================= */
 
 .ph-shots {
     width: 100%;
-    height: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 24px;
+
+    /*
+       Hace que las imágenes terminen antes que
+       la zona de botones.
+    */
+    margin-top: 0;
+
+    height: calc(100% - 115px);
 }
+
 
 .ph-shot {
     display: block;
@@ -411,6 +514,7 @@ body {
     cursor: pointer;
 }
 
+
 .ph-shot img {
     width: 100%;
     height: 100%;
@@ -419,8 +523,10 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.5s ease;
+    transition:
+        transform 0.5s ease;
 }
+
 
 .ph-shot:hover img {
     transform: scale(1.04);
@@ -437,6 +543,7 @@ body {
     background: var(--background);
 }
 
+
 .tg-grid {
     display: grid;
 
@@ -444,6 +551,11 @@ body {
 
     gap: 26px;
 }
+
+
+/* =========================================================
+   TRAILER
+   ========================================================= */
 
 .trailer-facade {
     position: relative;
@@ -465,6 +577,7 @@ body {
     cursor: pointer;
 }
 
+
 .trailer-facade img {
     width: 100%;
     height: 100%;
@@ -473,27 +586,38 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.5s ease;
+    transition:
+        transform 0.5s ease;
 }
+
 
 .trailer-facade::after {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background: rgba(17, 18, 15, 0.25);
 
-    transition: background 0.25s ease;
+    transition:
+        background 0.25s ease;
 }
+
 
 .trailer-facade:hover img {
     transform: scale(1.04);
 }
 
+
 .trailer-facade:hover::after {
     background: rgba(17, 18, 15, 0.1);
 }
+
+
+/* =========================================================
+   BOTÓN PLAY DEL TRAILER
+   ========================================================= */
 
 .play-badge {
     position: absolute;
@@ -513,6 +637,7 @@ body {
     z-index: 2;
 }
 
+
 .play-badge::after {
     content: "";
 
@@ -525,9 +650,12 @@ body {
     height: 0;
 
     border-top: 13px solid transparent;
+
     border-bottom: 13px solid transparent;
+
     border-left: 19px solid #11120f;
 }
+
 
 .tg-label {
     position: absolute;
@@ -540,10 +668,16 @@ body {
     color: var(--cream);
 
     font-size: 0.72rem;
+
     font-weight: 700;
 
     letter-spacing: 0.12em;
 }
+
+
+/* =========================================================
+   GALERÍA
+   ========================================================= */
 
 .tg-gallery {
     display: grid;
@@ -552,6 +686,7 @@ body {
 
     gap: 22px;
 }
+
 
 .tg-shot {
     width: 100%;
@@ -569,6 +704,7 @@ body {
     cursor: pointer;
 }
 
+
 .tg-shot img {
     width: 100%;
     height: 100%;
@@ -577,8 +713,10 @@ body {
 
     object-fit: cover;
 
-    transition: transform 0.5s ease;
+    transition:
+        transform 0.5s ease;
 }
+
 
 .tg-shot:hover img {
     transform: scale(1.05);
@@ -594,6 +732,7 @@ body {
     display: none;
 }
 
+
 .contributions {
     position: relative;
 
@@ -604,15 +743,18 @@ body {
     background: var(--background);
 }
 
+
 .contributions-inner {
     position: relative;
 }
+
 
 .contrib-text {
     width: 100%;
 
     max-width: 900px;
 }
+
 
 .contrib-text h2,
 .learning-block h2 {
@@ -626,6 +768,7 @@ body {
 
     letter-spacing: -0.035em;
 }
+
 
 .contrib-text > p,
 .learning-block > p {
@@ -645,6 +788,7 @@ body {
 
 .contribution-list {
     display: flex;
+
     flex-direction: column;
 
     gap: 34px;
@@ -655,6 +799,7 @@ body {
 
     list-style-type: disc;
 }
+
 
 .contribution-list li {
     display: list-item;
@@ -668,11 +813,11 @@ body {
     padding-left: 5px;
 }
 
+
 .contribution-list li::marker {
     color: var(--green);
-
-    font-size: 0.9em;
 }
+
 
 .contribution-title {
     display: inline;
@@ -686,7 +831,7 @@ body {
 
 
 /* =========================================================
-   LO QUE APRENDÍ
+   LEARNING
    ========================================================= */
 
 .learning-block {
@@ -696,6 +841,7 @@ body {
 
     margin-top: 125px;
 }
+
 
 .learning-block h2 {
     margin-bottom: 30px;
@@ -708,6 +854,7 @@ body {
 
 .case-cta {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 14px;
@@ -735,6 +882,7 @@ body {
     background: rgba(5, 6, 5, 0.95);
 
     opacity: 0;
+
     visibility: hidden;
 
     z-index: 9999;
@@ -744,31 +892,39 @@ body {
         visibility 0.25s ease;
 }
 
+
 .project-lightbox.active {
     opacity: 1;
 
     visibility: visible;
 }
 
+
 .lightbox-content {
     max-width: min(1100px, 85vw);
+
     max-height: 85vh;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     gap: 18px;
 }
 
+
 .lightbox-content img {
     max-width: 100%;
+
     max-height: 78vh;
 
     display: block;
 
     object-fit: contain;
 }
+
 
 #lightbox-caption {
     max-width: 800px;
@@ -783,6 +939,7 @@ body {
 
     line-height: 1.6;
 }
+
 
 .lightbox-close,
 .lightbox-prev,
@@ -800,14 +957,17 @@ body {
     z-index: 2;
 }
 
+
 .lightbox-close {
     top: 25px;
+
     right: 30px;
 
     font-size: 3rem;
 
     line-height: 1;
 }
+
 
 .lightbox-prev,
 .lightbox-next {
@@ -818,13 +978,16 @@ body {
     font-size: 4rem;
 }
 
+
 .lightbox-prev {
     left: 30px;
 }
 
+
 .lightbox-next {
     right: 30px;
 }
+
 
 .lightbox-close:hover,
 .lightbox-prev:hover,
@@ -844,16 +1007,17 @@ body {
         width: 90%;
     }
 
+
+    /* HERO */
+
     .title-hero {
         min-height: 650px;
+
         height: 70vh;
     }
 
 
-    /* ---------------------------------------------
-       PRIMERA PARTE
-       En móvil pasa a una columna.
-       --------------------------------------------- */
+    /* PRIMERA PARTE */
 
     .ph-grid {
         display: flex;
@@ -863,23 +1027,28 @@ body {
         gap: 55px;
     }
 
+
     .ph-intro {
         width: 100%;
 
         order: 1;
     }
 
+
     .ph-shots {
         width: 100%;
+
         height: auto;
 
         order: 2;
 
         display: flex;
+
         flex-direction: column;
 
         gap: 24px;
     }
+
 
     .ph-shot {
         flex: none;
@@ -892,22 +1061,19 @@ body {
     }
 
 
-    /* ---------------------------------------------
-       TRAILER
-       --------------------------------------------- */
+    /* TRAILER */
 
     .tg-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /* ---------------------------------------------
-       CONTRIBUTIONS
-       --------------------------------------------- */
+    /* CONTRIBUTIONS */
 
     .contributions {
         padding: 105px 0;
     }
+
 
     .learning-block {
         margin-top: 95px;
@@ -922,11 +1088,14 @@ body {
 
 @media (max-width: 600px) {
 
+    /* HERO */
+
     .title-hero {
         min-height: 560px;
 
         height: 560px;
     }
+
 
     .title-inner {
         width: 90%;
@@ -934,44 +1103,74 @@ body {
         padding-top: 70px;
     }
 
+
     .game-logo {
         width: min(75vw, 340px);
 
         max-height: 150px;
     }
 
+
+    /* TÍTULO */
+
     .ph-intro h1 {
         font-size: 3rem;
     }
 
+
+    /* TASKS */
+
     .task-list {
         padding-left: 22px;
     }
+
+
+    .task-list li:nth-child(1),
+    .task-list li:nth-child(2) {
+        margin-left: -14px;
+
+        padding: 13px 14px;
+    }
+
+
+    /* BOTONES */
 
     .project-actions,
     .case-cta {
         flex-direction: column;
     }
 
+
     .project-btn {
         width: 100%;
     }
+
+
+    /* GALERÍA */
 
     .tg-gallery {
         gap: 10px;
     }
 
+
+    /* LEARNING */
+
     .learning-block {
         margin-top: 80px;
     }
+
+
+    /* LIGHTBOX */
 
     .project-lightbox {
         padding: 25px;
     }
 
+
     .lightbox-prev {
         left: 5px;
     }
+
 
     .lightbox-next {
         right: 5px;
