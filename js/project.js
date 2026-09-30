@@ -100,6 +100,78 @@ const projects = {
     }
 };
 
+/* --- CONTROL DEL REPRODUCTOR DE YOUTUBE MEDIANTE API --- */
+let ytPlayer = null;
+
+function loadYouTubeAPI() {
+    if (!window.YT) {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+}
+
+function setupHeroVideo(videoId) {
+    if (!videoId) return;
+
+    const iframe = document.getElementById("hero-youtube-iframe") || document.querySelector(".hero-video iframe");
+    if (!iframe) return;
+
+    // Aseguramos que el iframe tenga ID
+    if (!iframe.id) iframe.id = "hero-youtube-iframe";
+
+    // Ocultamos el iframe antes de iniciar
+    iframe.classList.remove("is-playing");
+
+    function createOrUpdatePlayer() {
+        if (ytPlayer && typeof ytPlayer.loadVideoById === "function") {
+            ytPlayer.loadVideoById({ videoId: videoId });
+            ytPlayer.mute();
+            return;
+        }
+
+        ytPlayer = new YT.Player(iframe.id, {
+            videoId: videoId,
+            playerVars: {
+                autoplay: 1,
+                controls: 0,
+                mute: 1,
+                loop: 1,
+                playlist: videoId,
+                showinfo: 0,
+                rel: 0,
+                iv_load_policy: 3,
+                disablekb: 1,
+                playsinline: 1,
+                enablejsapi: 1
+            },
+            events: {
+                onReady: (event) => {
+                    event.target.mute();
+                    event.target.playVideo();
+                },
+                onStateChange: (event) => {
+                    // Cuando el vídeo pasa a reproducción activa (PLAYING = 1)
+                    if (event.data === YT.PlayerState.PLAYING) {
+                        const targetIframe = document.getElementById(iframe.id);
+                        if (targetIframe) {
+                            targetIframe.classList.add("is-playing");
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    if (window.YT && window.YT.Player) {
+        createOrUpdatePlayer();
+    } else {
+        window.onYouTubeIframeAPIReady = createOrUpdatePlayer;
+        loadYouTubeAPI();
+    }
+}
+
 function getProjectId() {
     /* 1. Comprueba si hay parámetro en URL ?project=lyra */
     const params = new URLSearchParams(window.location.search);
@@ -120,10 +192,9 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* HERO VIDEO & PARÁMETROS LIMPIOS */
-    const heroIframe = document.getElementById("hero-youtube-iframe") || document.querySelector(".hero-video iframe");
-    if (heroIframe && project.heroVideoId) {
-        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1`;
+    /* HERO VIDEO VIA YOUTUBE API */
+    if (project.heroVideoId) {
+        setupHeroVideo(project.heroVideoId);
     }
 
     /* METADATA HERO */
