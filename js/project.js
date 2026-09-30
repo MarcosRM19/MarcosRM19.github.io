@@ -1,433 +1,512 @@
-const projects = {
+document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================================
-       LYRA
-       ========================================================= */
+    const projects = {
 
-    lyra: {
+        /* =====================================================
+           LYRA
+        ====================================================== */
 
-        title: "Lyra",
+        lyra: {
 
-        subtitle: "AI Game Programmer",
+            title: "Lyra",
 
-        heroSubtitle: "AI Game Programmer",
+            category:
+                "GAME & LEVEL DESIGN · AI GAME PROGRAMMING",
 
-        year: "2025 — 2026",
+            years:
+                "La Mapachanda · TFG · 2025–2026",
 
-        label: "UNIVERSITY PROJECT",
+            logo:
+                "img/Lyra.png",
 
-        description:
-            "Wholesome 3D puzzle adventure developed in Unreal Engine 5.",
+            hero:
+                "img/projects/lyra/hero.jpg",
 
-        description2:
-            "A project focused on intelligent animal-like AI behaviour, dynamic navigation and systemic gameplay.",
+            left:
+                "img/projects/lyra/left.jpg",
 
-        itch:
-            "",
+            right:
+                "img/projects/lyra/right.jpg",
 
-        heroVideo:
-            "",
+            gallery: [
+                "img/projects/lyra/gallery-01.jpg",
+                "img/projects/lyra/gallery-02.jpg",
+                "img/projects/lyra/gallery-03.jpg",
+                "img/projects/lyra/gallery-04.jpg"
+            ],
 
-        trailer:
-            "",
+            tagline:
+                "A puzzle adventure about experimentation, observation and learning through play.",
 
-        images: {
+            description:
+                "Lyra era mi TFG, un proyecto centrado en puzzles, experimentación y diseño de niveles. Mi trabajo se centró en construir las mecánicas, diseñar los niveles y demostrar mediante datos qué decisiones funcionaban realmente.",
 
-            infoLeft:
-                "img/projects/lyra/info-left.jpg",
+            role:
+                "Mi responsabilidad fue conectar diseño e implementación: crear las mecánicas, estructurar la progresión de los niveles y desarrollar herramientas de telemetría para analizar el comportamiento de los jugadores.",
 
-            infoRight1:
-                "img/projects/lyra/info-right-1.jpg",
+            itch:
+                "https://la-mapachanda-studio.itch.io/lyra",
 
-            infoRight2:
-                "img/projects/lyra/info-right-2.jpg",
+            trailer:
+                "YIcgUIwu89U",
 
-            gallery1:
-                "img/projects/lyra/screenshot-1.jpg",
+            tasks: [
+                [
+                    "Game Design",
+                    "Diseño de mecánicas, interacciones y reglas de los puzzles."
+                ],
+                [
+                    "Level Design",
+                    "Diseño y estructuración de las tres zonas siguiendo una progresión EDPV."
+                ],
+                [
+                    "Programming",
+                    "Implementación de mecánicas y sistemas en Unreal Engine 5."
+                ],
+                [
+                    "Research",
+                    "Telemetría, experimentación A/B y análisis estadístico de resultados."
+                ]
+            ],
 
-            gallery2:
-                "img/projects/lyra/screenshot-2.jpg",
+            contributionsIntro:
+                "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
 
-            gallery3:
-                "img/projects/lyra/screenshot-3.jpg",
+            contributions: [
+                [
+                    "Pattern-Based Dictionary",
+                    "Descompuse cada mecánica en interacciones atómicas (tiro de fuego, tiro de agua, lanzamiento de dragón) y catalogué los patrones que forman al combinarse, para que cada sala enseñara una combinación concreta y no un truco aislado."
+                ],
+                [
+                    "Estructura de niveles EDPV",
+                    "Apliqué el modelo <strong>Exposure, Demonstration, Practice, Validation</strong> en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
+                ],
+                [
+                    "Pipeline de telemetría en C++",
+                    "Instrumenté Unreal Engine 5 para capturar posición del jugador y acciones como CSV estructurado, dándome datos reales de comportamiento en vez de anécdotas."
+                ],
+                [
+                    "Test A/B controlado",
+                    "Diseñé el experimento completo para el Puzzle 6: asignación aleatoria estratificada, criterios de inclusión, script de moderador y consentimiento informado, comparando el layout original con un rediseño con visual guidance más claro."
+                ],
+                [
+                    "Análisis estadístico en Python",
+                    "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un <strong>p-valor no significativo junto con un tamaño de efecto grande</strong> en vez de solo el resultado que apoyaba mi hipótesis."
+                ],
+                [
+                    "Resultado medido",
+                    "El rediseño redujo los errores de navegación en un <strong>35%</strong> y mejoró el tiempo de resolución en un <strong>33%</strong>, medido con el mismo pipeline de telemetría."
+                ]
+            ],
 
-            gallery4:
-                "img/projects/lyra/screenshot-4.jpg"
-
-        },
-
-        contributionTitle:
-            "AI & Gameplay Systems",
-
-        contributionDescription:
-            "My main responsibility in Lyra was the development of the artificial intelligence systems and the technical foundations required for autonomous character behaviour.",
-
-        contributions: [
-
-            "Designed a custom <strong>Organic Locomotion System</strong> using Bézier curves and NavMesh for fluid, animal-like AI movement.",
-
-            "Built a <strong>Decoupled AI Architecture</strong> combining FSMs and Behaviour Trees through Blueprint Interfaces.",
-
-            "Developed <strong>Dynamic Navigation & Avoidance Systems</strong> for coordinated multi-agent movement."
-
-        ],
-
-        learningTitle:
-            "Building AI systems for production",
-
-        learningDescription:
-            "Through Lyra I learned how to design AI systems as reusable and scalable gameplay systems. I improved my understanding of navigation, behaviour architecture and how different systems can communicate without becoming tightly coupled."
-
-    },
-
-
-    /* =========================================================
-       UNITY AI MACHINE LEARNING
-       ========================================================= */
-
-    tank: {
-
-        title: "Unity AI MachineLearning",
-
-        subtitle: "Designer & Programmer",
-
-        heroSubtitle: "Autonomous Combat AI",
-
-        year: "2025 — 2026",
-
-        label: "PERSONAL PROJECT",
-
-        description:
-            "Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.",
-
-        description2:
-            "The project explores curriculum learning, reward shaping and competitive self-play to progressively train autonomous combat agents.",
-
-        itch:
-            "",
-
-        heroVideo:
-            "",
-
-        trailer:
-            "",
-
-        images: {
-
-            infoLeft:
-                "img/projects/tank/info-left.jpg",
-
-            infoRight1:
-                "img/projects/tank/info-right-1.jpg",
-
-            infoRight2:
-                "img/projects/tank/info-right-2.jpg",
-
-            gallery1:
-                "img/projects/tank/screenshot-1.jpg",
-
-            gallery2:
-                "img/projects/tank/screenshot-2.jpg",
-
-            gallery3:
-                "img/projects/tank/screenshot-3.jpg",
-
-            gallery4:
-                "img/projects/tank/screenshot-4.jpg"
+            learning:
+                "Lo más valioso no fue confirmar mi hipótesis. Fue aprender a separar lo que se siente mejor de lo que es demostrablemente mejor, y a comunicar esa zona gris a un equipo de diseño sin inflarla ni descartarla."
 
         },
 
-        contributionTitle:
-            "Machine Learning & Combat AI",
 
-        contributionDescription:
-            "I developed the complete training pipeline and the systems required to create, train and evaluate autonomous tank combat agents.",
+        /* =====================================================
+           JUAN PIEZA
+        ====================================================== */
 
-        contributions: [
+        "juan-pieza": {
 
-            "Built a <strong>PPO Combat Agent</strong> with custom observations, hybrid action spaces and reward shaping.",
+            title: "Juan Pieza",
 
-            "Designed a <strong>4-Phase Curriculum Learning Pipeline</strong> for progressive autonomous training.",
+            category:
+                "GAME PROGRAMMING · LEVEL DESIGN",
 
-            "Implemented <strong>Self-Play & ELO Evaluation</strong> with a historical model pool."
+            years:
+                "La Mapachanda · University Project · 2024–2025",
 
-        ],
+            logo:
+                "img/Juan Pieza2.png",
 
-        learningTitle:
-            "Training autonomous agents",
+            hero:
+                "img/projects/juan-pieza/hero.jpg",
 
-        learningDescription:
-            "This project taught me how to structure a machine learning problem for a game environment, from observation design and reward functions to curriculum learning and evaluation through self-play."
+            left:
+                "img/projects/juan-pieza/left.jpg",
 
-    },
+            right:
+                "img/projects/juan-pieza/right.jpg",
+
+            gallery: [
+                "img/projects/juan-pieza/gallery-01.jpg",
+                "img/projects/juan-pieza/gallery-02.jpg",
+                "img/projects/juan-pieza/gallery-03.jpg",
+                "img/projects/juan-pieza/gallery-04.jpg"
+            ],
+
+            tagline:
+                "A game project focused on gameplay programming, level design and player experience.",
+
+            description:
+                "Juan Pieza fue un proyecto universitario desarrollado dentro de La Mapachanda, donde trabajé en programación de gameplay y diseño de niveles.",
+
+            role:
+                "Mi trabajo estuvo centrado en implementar sistemas jugables, trabajar la estructura de los niveles y conectar las decisiones de diseño con la experiencia del jugador.",
+
+            itch:
+                "#",
+
+            trailer:
+                "",
+
+            tasks: [
+                [
+                    "Game Programming",
+                    "Implementación de sistemas y mecánicas de gameplay."
+                ],
+                [
+                    "Level Design",
+                    "Diseño y organización de los niveles."
+                ],
+                [
+                    "Gameplay",
+                    "Trabajo sobre las interacciones y el flujo del jugador."
+                ],
+                [
+                    "Teamwork",
+                    "Trabajo conjunto con el equipo de desarrollo."
+                ]
+            ],
+
+            contributionsIntro:
+                "En Juan Pieza participé en el desarrollo del juego desde una perspectiva principalmente centrada en programación de gameplay y diseño de niveles.",
+
+            contributions: [
+                [
+                    "Gameplay Programming",
+                    "Implementación de sistemas y mecánicas necesarias para construir la experiencia jugable."
+                ],
+                [
+                    "Level Design",
+                    "Diseño y organización de los espacios para controlar el ritmo y la progresión del jugador."
+                ],
+                [
+                    "Player Experience",
+                    "Iteración sobre las mecánicas y los niveles teniendo en cuenta cómo se comportaba el jugador."
+                ]
+            ],
+
+            learning:
+                "El proyecto me permitió entender mejor cómo conectar programación y diseño de niveles, y cómo pequeñas decisiones de implementación pueden afectar directamente a la experiencia del jugador."
+        }
+
+    };
 
 
-    /* =========================================================
-       JUAN PIEZA
-       ========================================================= */
+    /* =====================================================
+       SELECT PROJECT
+    ====================================================== */
 
-    "juan-pieza": {
+    const params =
+        new URLSearchParams(window.location.search);
 
-        title: "Juan Pieza",
+    const key =
+        params.get("project") || "lyra";
 
-        subtitle: "Game Programmer & Level Designer",
+    const project =
+        projects[key] || projects.lyra;
 
-        heroSubtitle: "Game Programmer & Level Designer",
 
-        year: "2024 — 2025",
+    /* =====================================================
+       TEXT
+    ====================================================== */
 
-        label: "UNIVERSITY PROJECT",
+    const setText = (id, text) => {
 
-        description:
-            "Co-op pirate adventure focused on chaotic naval combat and cooperative gameplay.",
+        const element =
+            document.getElementById(id);
 
-        description2:
-            "The project combines cooperative gameplay, naval combat, environmental systems and structured enemy encounters.",
+        if (element) {
+            element.textContent = text || "";
+        }
 
-        itch:
-            "",
+    };
 
-        heroVideo:
-            "",
 
-        trailer:
-            "",
+    setText("project-title", project.title);
 
-        images: {
+    setText(
+        "project-category",
+        project.category
+    );
 
-            infoLeft:
-                "img/projects/juan-pieza/info-left.jpg",
+    setText(
+        "project-years",
+        project.years
+    );
 
-            infoRight1:
-                "img/projects/juan-pieza/info-right-1.jpg",
+    setText(
+        "project-description",
+        project.description
+    );
 
-            infoRight2:
-                "img/projects/juan-pieza/info-right-2.jpg",
+    setText(
+        "project-role",
+        project.role
+    );
 
-            gallery1:
-                "img/projects/juan-pieza/screenshot-1.jpg",
+    setText(
+        "project-tagline",
+        project.tagline
+    );
 
-            gallery2:
-                "img/projects/juan-pieza/screenshot-2.jpg",
 
-            gallery3:
-                "img/projects/juan-pieza/screenshot-3.jpg",
+    /* =====================================================
+       LOGO
+    ====================================================== */
 
-            gallery4:
-                "img/projects/juan-pieza/screenshot-4.jpg"
+    const logo =
+        document.getElementById("project-logo");
 
-        },
+    const fallback =
+        document.getElementById(
+            "project-logo-fallback"
+        );
 
-        contributionTitle:
-            "Gameplay & Level Design",
+    if (logo) {
 
-        contributionDescription:
-            "My work focused on developing the core gameplay systems and designing the systems responsible for structuring naval encounters.",
+        logo.src = project.logo;
 
-        contributions: [
+        logo.onerror = () => {
 
-            "Developed <strong>Core Gameplay Systems</strong> including ship controls, combat and environmental interactions.",
+            logo.style.display = "none";
 
-            "Developed <strong>Weather Systems</strong> to enhance the game's naval gameplay.",
+            if (fallback) {
 
-            "Designed <strong>Enemy Wave Systems & Encounter Flow</strong> to structure the game's combat progression."
+                fallback.textContent =
+                    project.title;
 
-        ],
+                fallback.style.display =
+                    "block";
+            }
 
-        learningTitle:
-            "Designing gameplay systems",
-
-        learningDescription:
-            "Juan Pieza helped me understand how gameplay systems, level design and encounter structure need to work together to create a consistent player experience."
+        };
 
     }
 
-};
 
+    /* =====================================================
+       HERO
+    ====================================================== */
 
-/* =========================================================
-   OBTENER PROYECTO DE LA URL
-   ========================================================= */
+    const heroImage =
+        document.getElementById("hero-image");
 
-const params =
-    new URLSearchParams(window.location.search);
+    if (heroImage) {
 
-const projectId =
-    params.get("project");
+        heroImage.style.backgroundImage =
+            `url("${project.hero}")`;
 
+    }
 
-/* =========================================================
-   COMPROBAR PROYECTO
-   ========================================================= */
 
-if (!projects[projectId]) {
+    /* =====================================================
+       LEFT / RIGHT
+    ====================================================== */
 
-    console.error(
-        "Project not found:",
-        projectId
-    );
+    const leftImage =
+        document.getElementById(
+            "project-left-image"
+        );
 
-} else {
+    const rightImage =
+        document.getElementById(
+            "project-right-image"
+        );
 
-    loadProject(
-        projects[projectId]
-    );
+    if (leftImage) {
+        leftImage.src = project.left;
+    }
 
-}
+    if (rightImage) {
+        rightImage.src = project.right;
+    }
 
 
-/* =========================================================
-   CARGAR PROYECTO
-   ========================================================= */
+    /* =====================================================
+       TASKS
+    ====================================================== */
 
-function loadProject(project) {
+    const taskList =
+        document.getElementById(
+            "project-tasks"
+        );
 
+    if (taskList) {
 
-    /* ==================== TÍTULOS ==================== */
+        taskList.innerHTML = "";
 
-    document.title =
-        `Marcos RM19 | ${project.title}`;
+        project.tasks.forEach(task => {
 
+            const li =
+                document.createElement("li");
 
-    document.getElementById(
-        "project-hero-title"
-    ).textContent =
-        project.title;
+            const strong =
+                document.createElement("strong");
 
+            const span =
+                document.createElement("span");
 
-    document.getElementById(
-        "project-hero-subtitle"
-    ).textContent =
-        project.heroSubtitle;
+            strong.textContent = task[0];
 
+            span.textContent = task[1];
 
-    document.getElementById(
-        "project-info-label"
-    ).textContent =
-        project.label;
+            li.appendChild(strong);
+            li.appendChild(span);
 
+            taskList.appendChild(li);
 
-    document.getElementById(
-        "project-info-title"
-    ).textContent =
-        project.title;
+        });
 
+    }
 
-    document.getElementById(
-        "project-info-subtitle"
-    ).textContent =
-        project.subtitle;
 
+    /* =====================================================
+       BUTTONS
+    ====================================================== */
 
-    document.getElementById(
-        "project-info-year"
-    ).textContent =
-        project.year;
+    const play =
+        document.getElementById(
+            "project-play"
+        );
 
+    const bottomPlay =
+        document.getElementById(
+            "bottom-play"
+        );
 
+    [play, bottomPlay].forEach(button => {
 
-    /* ==================== DESCRIPCIONES ==================== */
+        if (!button) return;
 
-    document.getElementById(
-        "project-info-description"
-    ).textContent =
-        project.description;
+        button.href = project.itch;
 
+        button.textContent =
+            project.itch === "#"
+                ? "PROJECT"
+                : "PLAY PROJECT";
 
-    document.getElementById(
-        "project-info-description-2"
-    ).textContent =
-        project.description2;
+    });
 
 
+    const itch =
+        document.getElementById(
+            "project-itch"
+        );
 
-    /* ==================== ITCH ==================== */
+    if (itch) {
+        itch.href = project.itch;
+    }
 
-    document.getElementById(
-        "project-hero-itch"
-    ).href =
-        project.itch;
 
+    /* =====================================================
+       GALLERY
+    ====================================================== */
 
-    document.getElementById(
-        "project-info-itch"
-    ).href =
-        project.itch;
+    const gallery =
+        document.getElementById(
+            "project-gallery"
+        );
 
+    if (gallery) {
 
+        gallery.innerHTML = "";
 
-    /* ==================== IMAGENES ==================== */
+        project.gallery.forEach(
+            (src, index) => {
 
-    document.getElementById(
-        "project-info-image-left"
-    ).src =
-        project.images.infoLeft;
+                const button =
+                    document.createElement("button");
 
+                button.type = "button";
 
-    document.getElementById(
-        "project-info-image-right-1"
-    ).src =
-        project.images.infoRight1;
+                button.className =
+                    "tg-shot";
 
+                const image =
+                    document.createElement("img");
 
-    document.getElementById(
-        "project-info-image-right-2"
-    ).src =
-        project.images.infoRight2;
+                image.src = src;
 
+                image.alt =
+                    `${project.title} screenshot ${index + 1}`;
 
-    document.getElementById(
-        "project-gallery-1"
-    ).src =
-        project.images.gallery1;
+                button.appendChild(image);
 
+                gallery.appendChild(button);
 
-    document.getElementById(
-        "project-gallery-2"
-    ).src =
-        project.images.gallery2;
+            }
+        );
 
+    }
 
-    document.getElementById(
-        "project-gallery-3"
-    ).src =
-        project.images.gallery3;
 
+    /* =====================================================
+       TRAILER IMAGE
+    ====================================================== */
 
-    document.getElementById(
-        "project-gallery-4"
-    ).src =
-        project.images.gallery4;
+    const trailerImage =
+        document.getElementById(
+            "trailer-image"
+        );
 
+    if (trailerImage) {
 
+        trailerImage.src =
+            project.right;
 
-    /* ==================== VIDEOS ==================== */
+    }
 
-    document.getElementById(
-        "project-hero-youtube"
-    ).src =
-        project.heroVideo;
 
+    const trailerButton =
+        document.getElementById(
+            "trailer-button"
+        );
 
-    document.getElementById(
-        "project-trailer-youtube"
-    ).src =
-        project.trailer;
+    if (trailerButton) {
 
+        if (!project.trailer) {
 
+            trailerButton.style.display =
+                "none";
 
-    /* ==================== CONTRIBUCIÓN ==================== */
+        } else {
 
-    document.getElementById(
-        "contribution-title"
-    ).textContent =
-        project.contributionTitle;
+            trailerButton.addEventListener(
+                "click",
+                () => {
 
+                    window.open(
+                        `https://www.youtube.com/watch?v=${project.trailer}`,
+                        "_blank",
+                        "noopener"
+                    );
 
-    document.getElementById(
-        "contribution-description"
-    ).textContent =
-        project.contributionDescription;
+                }
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       CONTRIBUTIONS
+    ====================================================== */
+
+    const intro =
+        document.getElementById(
+            "contributions-intro"
+        );
+
+    if (intro) {
+        intro.textContent =
+            project.contributionsIntro;
+    }
 
 
     const contributionList =
@@ -435,37 +514,246 @@ function loadProject(project) {
             "contribution-list"
         );
 
+    if (contributionList) {
 
-    contributionList.innerHTML = "";
+        contributionList.innerHTML = "";
+
+        project.contributions.forEach(
+            contribution => {
+
+                const li =
+                    document.createElement("li");
+
+                const strong =
+                    document.createElement("strong");
+
+                const text =
+                    document.createElement("span");
+
+                strong.className =
+                    "contribution-title";
+
+                strong.textContent =
+                    contribution[0];
+
+                text.innerHTML =
+                    contribution[1];
+
+                li.appendChild(strong);
+
+                li.appendChild(text);
+
+                contributionList.appendChild(li);
+
+            }
+        );
+
+    }
 
 
-    project.contributions.forEach(
-        function (contribution) {
+    /* =====================================================
+       LEARNING
+    ====================================================== */
 
-            const li =
-                document.createElement("li");
+    setText(
+        "learning-text",
+        project.learning
+    );
 
-            li.innerHTML =
-                contribution;
 
-            contributionList.appendChild(li);
+    /* =====================================================
+       LIGHTBOX
+    ====================================================== */
+
+    const allImages = [
+        project.left,
+        project.right,
+        ...project.gallery
+    ];
+
+    const lightbox =
+        document.getElementById(
+            "project-lightbox"
+        );
+
+    const lightboxImage =
+        document.getElementById(
+            "lightbox-image"
+        );
+
+    const lightboxCaption =
+        document.getElementById(
+            "lightbox-caption"
+        );
+
+    const close =
+        document.querySelector(
+            ".lightbox-close"
+        );
+
+    const previous =
+        document.querySelector(
+            ".lightbox-prev"
+        );
+
+    const next =
+        document.querySelector(
+            ".lightbox-next"
+        );
+
+    let current = 0;
+
+
+    const openLightbox = index => {
+
+        current = index;
+
+        lightboxImage.src =
+            allImages[current];
+
+        lightboxCaption.textContent =
+            `${project.title} — ${current + 1} / ${allImages.length}`;
+
+        lightbox.classList.add("active");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+    };
+
+
+    const closeLightbox = () => {
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.style.overflow =
+            "";
+    };
+
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            const shot =
+                event.target.closest(
+                    ".ph-shot, .tg-shot"
+                );
+
+            if (!shot) return;
+
+            const image =
+                shot.querySelector("img");
+
+            if (!image) return;
+
+            const index =
+                allImages.indexOf(
+                    image.src
+                );
+
+            if (index >= 0) {
+                openLightbox(index);
+            }
 
         }
     );
 
 
+    if (close) {
+        close.addEventListener(
+            "click",
+            closeLightbox
+        );
+    }
 
-    /* ==================== APRENDIZAJE ==================== */
 
-    document.getElementById(
-        "learning-title"
-    ).textContent =
-        project.learningTitle;
+    if (next) {
+
+        next.addEventListener(
+            "click",
+            () => {
+
+                current =
+                    (current + 1) %
+                    allImages.length;
+
+                openLightbox(current);
+
+            }
+        );
+
+    }
 
 
-    document.getElementById(
-        "learning-description"
-    ).textContent =
-        project.learningDescription;
+    if (previous) {
 
-}
+        previous.addEventListener(
+            "click",
+            () => {
+
+                current =
+                    (current - 1 +
+                        allImages.length) %
+                    allImages.length;
+
+                openLightbox(current);
+
+            }
+        );
+
+    }
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                !lightbox.classList.contains(
+                    "active"
+                )
+            ) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+            if (event.key === "ArrowRight") {
+
+                current =
+                    (current + 1) %
+                    allImages.length;
+
+                openLightbox(current);
+
+            }
+
+            if (event.key === "ArrowLeft") {
+
+                current =
+                    (current - 1 +
+                        allImages.length) %
+                    allImages.length;
+
+                openLightbox(current);
+
+            }
+
+        }
+    );
+
+});
