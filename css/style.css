@@ -407,7 +407,7 @@ section {
 .technical-category::before {
     display: block;
 
-    color: #00d9ff;
+    color: var(--green);
 
     font-size: 0.9rem;
     font-weight: 600;
