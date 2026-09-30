@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project | Marco SRM</title>
+    <title>Project | Marcos RM</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
@@ -15,26 +15,19 @@
 
     <!-- =====================================================
          NAVBAR
-         ===================================================== -->
+    ====================================================== -->
 
     <header class="navbar">
 
-        <a href="index.html" class="navbar-logo">
-            MARCO SRM
-        </a>
+        <div class="navbar-logo">
+            <a href="index.html">MR</a>
+        </div>
 
         <nav class="navbar-nav">
-            <a href="index.html#about" data-i18n="nav.about">
-                ABOUT
-            </a>
-
-            <a href="index.html#experience" data-i18n="nav.experience">
-                EXPERIENCE
-            </a>
-
-            <a href="index.html#projects" data-i18n="nav.projects">
-                PROJECTS
-            </a>
+            <a href="index.html#about" data-i18n="nav.about">Sobre mí</a>
+            <a href="index.html#experience" data-i18n="nav.experience">Experiencia</a>
+            <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+            <a href="index.html#documents" data-i18n="nav.documents">Documentos</a>
         </nav>
 
         <div class="navbar-actions">
@@ -42,19 +35,16 @@
             <button
                 id="language-button"
                 class="language-button"
-                type="button"
-            >
-                EN
+                type="button">
+                ES
             </button>
 
-            <button
-                id="contact-button"
-                class="navbar-contact"
-                type="button"
-                data-i18n="nav.contact"
-            >
-                CONTACT
-            </button>
+            <a
+                href="index.html#contact"
+                class="contact-button"
+                data-i18n="nav.contact">
+                Contacto
+            </a>
 
         </div>
 
@@ -62,14 +52,14 @@
 
 
     <!-- =====================================================
-         PROJECT CONTENT
-         ===================================================== -->
+         PROJECT PAGE
+    ====================================================== -->
 
     <main id="project-content">
 
         <!-- =================================================
-             TITLE HERO
-             ================================================= -->
+             HERO
+        ================================================== -->
 
         <section class="title-hero">
 
@@ -78,34 +68,45 @@
                 class="title-bg"
                 src=""
                 alt=""
-            >
+                aria-hidden="true">
 
             <div class="title-veil"></div>
 
-            <div class="title-content">
+            <div class="title-inner">
 
                 <img
                     id="project-logo"
-                    class="project-logo"
+                    class="game-logo"
                     src=""
-                    alt=""
-                >
+                    alt="">
 
-                <h1 id="project-title-fallback">
-                    Project
+                <h1
+                    id="project-logo-fallback"
+                    class="logo-fallback">
                 </h1>
 
-                <p id="project-tagline"></p>
+                <p
+                    id="project-tagline"
+                    class="title-tagline">
+                </p>
 
-                <a
-                    id="project-itch"
-                    class="project-itch-button"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    VIEW ON ITCH.IO
-                </a>
+                <div class="store-links">
+
+                    <a
+                        id="project-itch"
+                        class="store-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="itch.io">
+
+                        <img
+                            src="https://cdn.simpleicons.org/itchdotio/11120f"
+                            alt="">
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -114,129 +115,116 @@
 
         <!-- =================================================
              PROJECT INFORMATION
-             ================================================= -->
+        ================================================== -->
 
         <section class="project-hero-v2">
 
-            <div class="ph-grid">
+            <div class="project-wrap-wide">
 
-                <!-- LEFT -->
+                <div class="ph-grid">
 
-                <div class="ph-left">
+                    <!-- LEFT -->
 
-                    <img
-                        id="project-info-left"
-                        src=""
-                        alt=""
-                    >
+                    <div class="ph-mascot">
 
-                </div>
+                        <img
+                            id="project-info-left"
+                            src=""
+                            alt=""
+                            loading="lazy">
+
+                    </div>
 
 
-                <!-- CENTER -->
+                    <!-- CENTER -->
 
-                <div class="ph-center">
+                    <div class="ph-intro">
 
-                    <p
-                        id="project-role"
-                        class="project-role"
-                    ></p>
+                        <span
+                            id="project-category"
+                            class="eyebrow">
+                        </span>
 
-                    <p
-                        id="project-description"
-                        class="project-description"
-                    ></p>
+                        <h1 id="project-title"></h1>
 
-                    <div class="project-meta">
+                        <p
+                            id="project-years"
+                            class="project-years">
+                        </p>
 
-                        <div class="meta-item">
-                            <span
-                                class="meta-label"
-                                data-i18n="project.platform"
-                            >
-                                PLATFORM
-                            </span>
+                        <p
+                            id="project-description"
+                            class="project-lede">
+                        </p>
 
-                            <span
-                                id="project-platform"
-                                class="meta-value"
-                            ></span>
-                        </div>
+                        <p
+                            id="project-role"
+                            class="project-lede">
+                        </p>
 
-                        <div class="meta-item">
-                            <span
-                                class="meta-label"
-                                data-i18n="project.engine"
-                            >
-                                ENGINE
-                            </span>
+                        <h3
+                            id="project-task-title"
+                            class="task-heading">
+                        </h3>
 
-                            <span
-                                id="project-engine"
-                                class="meta-value"
-                            ></span>
-                        </div>
+                        <ul
+                            id="project-tasks"
+                            class="task-list">
+                        </ul>
 
-                        <div class="meta-item">
-                            <span
-                                class="meta-label"
-                                data-i18n="project.team"
-                            >
-                                TEAM
-                            </span>
+                        <div class="project-actions">
 
-                            <span
-                                id="project-team"
-                                class="meta-value"
-                            ></span>
-                        </div>
+                            <a
+                                id="project-play"
+                                class="project-btn project-btn-solid"
+                                href="#"
+                                target="_blank"
+                                rel="noopener">
+                            </a>
 
-                        <div class="meta-item">
-                            <span
-                                class="meta-label"
-                                data-i18n="project.date"
-                            >
-                                DATE
-                            </span>
+                            <a
+                                class="project-btn project-btn-outline"
+                                href="index.html#projects"
+                                data-i18n="project.more">
+                                More projects
+                            </a>
 
-                            <span
-                                id="project-date"
-                                class="meta-value"
-                            ></span>
                         </div>
 
                     </div>
 
-                </div>
 
+                    <!-- RIGHT -->
 
-                <!-- RIGHT -->
+                    <div class="ph-shots">
 
-                <div class="ph-right">
+                        <button
+                            class="ph-shot"
+                            type="button"
+                            data-project-image="info-right-1">
 
-                    <button
-                        class="project-image-button"
-                        type="button"
-                        data-project-image="info-right-1"
-                    >
-                        <img
-                            id="project-info-right-1"
-                            src=""
-                            alt=""
-                        >
-                    </button>
+                            <img
+                                id="project-info-right-1"
+                                src=""
+                                alt=""
+                                loading="lazy">
 
-                    <button
-                        class="project-image-button"
-                        type="button"
-                        data-project-image="info-right-2"
-                    >
-                        <img
-                            id="project-info-right-2"
-                            src=""
-                            alt=""
-                        >
-                    </button>
+                        </button>
+
+                        <button
+                            class="ph-shot"
+                            type="button"
+                            data-project-image="info-right-2">
+
+                            <img
+                                id="project-info-right-2"
+                                src=""
+                                alt=""
+                                loading="lazy">
+
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -247,93 +235,97 @@
 
         <!-- =================================================
              TRAILER + SCREENSHOTS
-             ================================================= -->
+        ================================================== -->
 
         <section class="trailer-gallery">
 
-            <div class="trailer-block">
+            <div class="project-wrap-wide">
 
-                <button
-                    id="trailer-button"
-                    class="trailer-button"
-                    type="button"
-                >
+                <div class="tg-grid">
 
-                    <img
-                        id="trailer-image"
-                        src=""
-                        alt="Project trailer"
-                    >
+                    <div class="tg-trailer">
 
-                    <div class="trailer-overlay">
+                        <button
+                            id="trailer-button"
+                            class="trailer-facade"
+                            type="button">
 
-                        <span class="trailer-play">
-                            ▶
-                        </span>
+                            <img
+                                id="trailer-image"
+                                src=""
+                                alt=""
+                                loading="lazy">
 
-                        <span
-                            class="trailer-label"
-                            data-i18n="project.watchTrailer"
-                        >
-                            WATCH TRAILER
-                        </span>
+                            <span class="play-badge"></span>
+
+                            <span
+                                id="trailer-label"
+                                class="tg-label">
+                                OFFICIAL TRAILER
+                            </span>
+
+                        </button>
 
                     </div>
 
-                </button>
 
-            </div>
+                    <div class="tg-gallery">
 
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-project-image="screenshot-1">
 
-            <div class="screenshots-grid">
+                            <img
+                                id="project-screenshot-1"
+                                src=""
+                                alt=""
+                                loading="lazy">
 
-                <button
-                    class="screenshot-button"
-                    type="button"
-                    data-project-image="screenshot-1"
-                >
-                    <img
-                        id="project-screenshot-1"
-                        src=""
-                        alt="Project screenshot 1"
-                    >
-                </button>
+                        </button>
 
-                <button
-                    class="screenshot-button"
-                    type="button"
-                    data-project-image="screenshot-2"
-                >
-                    <img
-                        id="project-screenshot-2"
-                        src=""
-                        alt="Project screenshot 2"
-                    >
-                </button>
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-project-image="screenshot-2">
 
-                <button
-                    class="screenshot-button"
-                    type="button"
-                    data-project-image="screenshot-3"
-                >
-                    <img
-                        id="project-screenshot-3"
-                        src=""
-                        alt="Project screenshot 3"
-                    >
-                </button>
+                            <img
+                                id="project-screenshot-2"
+                                src=""
+                                alt=""
+                                loading="lazy">
 
-                <button
-                    class="screenshot-button"
-                    type="button"
-                    data-project-image="screenshot-4"
-                >
-                    <img
-                        id="project-screenshot-4"
-                        src=""
-                        alt="Project screenshot 4"
-                    >
-                </button>
+                        </button>
+
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-project-image="screenshot-3">
+
+                            <img
+                                id="project-screenshot-3"
+                                src=""
+                                alt=""
+                                loading="lazy">
+
+                        </button>
+
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-project-image="screenshot-4">
+
+                            <img
+                                id="project-screenshot-4"
+                                src=""
+                                alt=""
+                                loading="lazy">
+
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -342,59 +334,64 @@
 
         <!-- =================================================
              CONTRIBUTIONS
-             ================================================= -->
+        ================================================== -->
 
         <section class="contributions">
 
             <img
                 id="contributions-bg"
-                class="contributions-bg"
+                class="contrib-bg"
                 src=""
                 alt=""
-            >
+                aria-hidden="true">
 
-            <div class="contributions-overlay"></div>
+            <div class="contrib-veil"></div>
 
-            <div class="contributions-content">
+            <div class="project-wrap contributions-inner">
 
-                <h2 id="contributions-title">
-                    Mis Contribuciones
-                </h2>
+                <div class="contrib-text">
 
-                <p id="contributions-intro"></p>
+                    <h2 id="contributions-title"></h2>
 
-                <div id="contribution-list"></div>
+                    <p id="contributions-intro"></p>
+
+                    <ul
+                        id="contribution-list"
+                        class="contribution-list">
+                    </ul>
+
+                </div>
 
 
-                <!-- =========================================
-                     LEARNING
-                     ========================================= -->
+                <!-- IMPORTANTE:
+                     ESTO ESTÁ FUERA DEL BLOQUE DE CONTRIBUCIONES
+                     PARA QUE "LO QUE APRENDÍ" APAREZCA DEBAJO.
+                -->
 
                 <div class="learning-block">
 
-                    <h2 id="learning-title">
-                        Lo que aprendí
-                    </h2>
+                    <h2 id="learning-title"></h2>
 
                     <p id="learning-text"></p>
 
                 </div>
 
 
-                <!-- =========================================
-                     CTA
-                     ========================================= -->
-
-                <div class="project-cta">
+                <div class="case-cta">
 
                     <a
-                        id="project-cta-link"
-                        class="project-cta-button"
+                        id="bottom-play"
+                        class="project-btn project-btn-solid"
+                        href="#"
+                        target="_blank"
+                        rel="noopener">
+                    </a>
+
+                    <a
+                        class="project-btn project-btn-outline"
                         href="index.html#projects"
-                    >
-                        <span data-i18n="project.backToProjects">
-                            BACK TO PROJECTS
-                        </span>
+                        data-i18n="project.more">
+                        More projects
                     </a>
 
                 </div>
@@ -408,29 +405,24 @@
 
     <!-- =====================================================
          LIGHTBOX
-         ===================================================== -->
+    ====================================================== -->
 
     <div
-        id="lightbox"
-        class="lightbox"
-        aria-hidden="true"
-    >
+        id="project-lightbox"
+        class="project-lightbox"
+        aria-hidden="true">
 
         <button
-            id="lightbox-close"
             class="lightbox-close"
             type="button"
-            aria-label="Close"
-        >
+            aria-label="Cerrar">
             ×
         </button>
 
         <button
-            id="lightbox-prev"
-            class="lightbox-arrow lightbox-prev"
+            class="lightbox-prev"
             type="button"
-            aria-label="Previous image"
-        >
+            aria-label="Imagen anterior">
             ‹
         </button>
 
@@ -439,17 +431,16 @@
             <img
                 id="lightbox-image"
                 src=""
-                alt=""
-            >
+                alt="">
+
+            <p id="lightbox-caption"></p>
 
         </div>
 
         <button
-            id="lightbox-next"
-            class="lightbox-arrow lightbox-next"
+            class="lightbox-next"
             type="button"
-            aria-label="Next image"
-        >
+            aria-label="Imagen siguiente">
             ›
         </button>
 
@@ -458,93 +449,12 @@
 
     <!-- =====================================================
          FOOTER
-         ===================================================== -->
+    ====================================================== -->
 
     <footer class="footer">
-
-        <div class="footer-content">
-
-            <p>
-                © 2026 Marco SRM
-            </p>
-
-            <a href="index.html">
-                PORTFOLIO
-            </a>
-
-        </div>
-
+        <p>© 2026 Marcos RM</p>
     </footer>
 
-
-    <!-- =====================================================
-         CONTACT MODAL
-         ===================================================== -->
-
-    <div
-        id="contact-modal"
-        class="modal"
-        aria-hidden="true"
-    >
-
-        <div class="modal-overlay"></div>
-
-        <div class="modal-content">
-
-            <button
-                id="close-modal"
-                class="modal-close"
-                type="button"
-                aria-label="Close"
-            >
-                ×
-            </button>
-
-            <h2 data-i18n="contact.title">
-                CONTACT
-            </h2>
-
-            <p data-i18n="contact.text">
-                Let's talk.
-            </p>
-
-            <div class="contact-links">
-
-                <a
-                    href="mailto:"
-                    data-contact-email
-                >
-                    EMAIL
-                </a>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-contact-linkedin
-                >
-                    LINKEDIN
-                </a>
-
-                <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-contact-github
-                >
-                    GITHUB
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         SCRIPTS
-         ===================================================== -->
 
     <script src="js/script.js"></script>
     <script src="js/project.js"></script>
