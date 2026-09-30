@@ -46,9 +46,9 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Recorta todo lo que sobresalga */
     z-index: -3;
-    pointer-events: none;
+    pointer-events: none; /* Impide que el ratón active la interfaz de YouTube */
 }
 
 .hero-video-container iframe {
@@ -57,11 +57,12 @@ body {
     left: 50%;
     width: 100vw;
     height: 100vh;
-    /* Mantiene la relación de aspecto 16:9 cubriendo toda la pantalla */
     min-width: 177.77vh; 
     min-height: 56.25vw;
-    transform: translate(-50%, -50%);
+    /* Aumentamos la escala a 1.35 para 'sacar' el título y las flechas fuera de la pantalla */
+    transform: translate(-50%, -50%) scale(1.35);
     border: 0;
+    pointer-events: none;
 }
 .title-bg {
     position: absolute;
