@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project | Marcos RM</title>
+    <title>Lyra | Marcos RM</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
@@ -13,9 +13,7 @@
 
 <body>
 
-    <!-- =====================================================
-         NAVBAR ORIGINAL
-    ====================================================== -->
+    <!-- NAVBAR -->
 
     <header class="navbar">
 
@@ -24,23 +22,10 @@
         </div>
 
         <nav class="navbar-nav">
-
-            <a href="index.html#about" data-i18n="nav.about">
-                Sobre mí
-            </a>
-
-            <a href="index.html#experience" data-i18n="nav.experience">
-                Experiencia
-            </a>
-
-            <a href="index.html#projects" data-i18n="nav.projects">
-                Proyectos
-            </a>
-
-            <a href="index.html#documents" data-i18n="nav.documents">
-                Documentos
-            </a>
-
+            <a href="index.html#about" data-i18n="nav.about">Sobre mí</a>
+            <a href="index.html#experience" data-i18n="nav.experience">Experiencia</a>
+            <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+            <a href="index.html#documents" data-i18n="nav.documents">Documentos</a>
         </nav>
 
         <div class="navbar-actions">
@@ -48,16 +33,14 @@
             <button
                 id="language-button"
                 class="language-button"
-                type="button"
-            >
+                type="button">
                 ES
             </button>
 
             <a
                 href="index.html#contact"
                 class="contact-button"
-                data-i18n="nav.contact"
-            >
+                data-i18n="nav.contact">
                 Contacto
             </a>
 
@@ -66,14 +49,10 @@
     </header>
 
 
-    <!-- =====================================================
-         PROJECT
-    ====================================================== -->
-
     <main id="project-content">
 
-
         <!-- HERO -->
+
         <section class="title-hero">
 
             <video
@@ -83,8 +62,8 @@
                 muted
                 loop
                 playsinline
-                preload="metadata"
-            ></video>
+                poster="img/projects/lyra/lyra-key.jpg">
+            </video>
 
             <div class="title-veil"></div>
 
@@ -93,34 +72,34 @@
                 <img
                     id="project-logo"
                     class="game-logo"
-                    src=""
-                    alt=""
-                >
+                    src="img/Lyra.png"
+                    alt="Lyra">
 
                 <h1
                     id="project-logo-fallback"
-                    class="logo-fallback"
-                ></h1>
+                    class="logo-fallback">
+                    Lyra
+                </h1>
 
                 <p
                     id="project-tagline"
-                    class="title-tagline"
-                ></p>
+                    class="title-tagline">
+                    A puzzle adventure about experimentation, observation and learning through play.
+                </p>
 
                 <div class="store-links">
 
                     <a
                         id="project-itch"
                         class="store-link"
-                        href="#"
+                        href="https://la-mapachanda-studio.itch.io/lyra"
                         target="_blank"
                         rel="noopener"
-                        aria-label="itch.io"
-                    >
+                        aria-label="Lyra on itch.io">
+
                         <img
                             src="https://cdn.simpleicons.org/itchdotio/11120f"
-                            alt=""
-                        >
+                            alt="">
                     </a>
 
                 </div>
@@ -130,9 +109,7 @@
         </section>
 
 
-        <!-- =====================================================
-             PROJECT INTRO
-        ====================================================== -->
+        <!-- PROJECT INTRO -->
 
         <section class="project-hero-v2">
 
@@ -140,58 +117,88 @@
 
                 <div class="ph-grid">
 
-
                     <!-- CHARACTER -->
 
                     <div class="ph-mascot">
 
                         <img
                             id="project-character"
-                            src=""
-                            alt=""
-                            loading="lazy"
-                        >
+                            src="img/projects/lyra/char-lyra.png"
+                            alt="Lyra character"
+                            loading="lazy">
 
                     </div>
 
 
-                    <!-- TEXT -->
+                    <!-- INFORMATION -->
 
                     <div class="ph-intro">
 
-                        <h1 id="project-title"></h1>
-
                         <span
                             id="project-category"
-                            class="eyebrow"
-                        ></span>
+                            class="eyebrow">
+                            GAME & LEVEL DESIGN · AI GAME PROGRAMMING
+                        </span>
+
+                        <h1 id="project-title">
+                            Lyra
+                        </h1>
 
                         <p
                             id="project-years"
-                            class="project-years"
-                        ></p>
-
+                            class="project-years">
+                            La Mapachanda · TFG · 2025–2026
+                        </p>
 
                         <p
                             id="project-description"
-                            class="project-lede"
-                        ></p>
+                            class="project-lede">
+                            Lyra es un proyecto de desarrollo de videojuegos centrado en puzzles,
+                            experimentación y diseño de niveles. Como proyecto de TFG, mi trabajo
+                            se centró en construir las mecánicas, diseñar los niveles y validar
+                            las decisiones de diseño mediante datos reales de juego.
+                        </p>
 
                         <p
                             id="project-role"
-                            class="project-lede"
-                        ></p>
+                            class="project-lede">
+                            Mi responsabilidad principal fue conectar el diseño con la implementación:
+                            crear las mecánicas, estructurar la progresión de los niveles y desarrollar
+                            herramientas de telemetría que permitieran comprobar qué funcionaba realmente.
+                        </p>
 
 
                         <h3
                             id="project-task-title"
-                            class="task-heading"
-                        ></h3>
+                            class="task-heading">
+                            Task Overview
+                        </h3>
 
                         <ul
                             id="project-tasks"
-                            class="task-list"
-                        ></ul>
+                            class="task-list">
+
+                            <li>
+                                <strong>Game Design</strong>
+                                <span>Diseño de mecánicas, interacciones y reglas de los puzzles.</span>
+                            </li>
+
+                            <li>
+                                <strong>Level Design</strong>
+                                <span>Diseño y estructuración de las tres zonas siguiendo una progresión EDPV.</span>
+                            </li>
+
+                            <li>
+                                <strong>Programming</strong>
+                                <span>Implementación de mecánicas y sistemas en Unreal Engine 5.</span>
+                            </li>
+
+                            <li>
+                                <strong>Research</strong>
+                                <span>Telemetría, experimentación A/B y análisis estadístico de resultados.</span>
+                            </li>
+
+                        </ul>
 
 
                         <div class="project-actions">
@@ -199,17 +206,16 @@
                             <a
                                 id="project-play"
                                 class="project-btn project-btn-solid"
-                                href="#"
+                                href="https://la-mapachanda-studio.itch.io/lyra"
                                 target="_blank"
-                                rel="noopener"
-                            ></a>
+                                rel="noopener">
+                                PLAY LYRA
+                            </a>
 
                             <a
                                 class="project-btn project-btn-outline"
-                                href="index.html#projects"
-                                data-i18n="project.more"
-                            >
-                                More projects
+                                href="index.html#projects">
+                                MORE PROJECTS
                             </a>
 
                         </div>
@@ -217,12 +223,25 @@
                     </div>
 
 
-                    <!-- RIGHT IMAGES -->
+                    <!-- SIDE IMAGES -->
 
                     <div
                         id="project-side-images"
-                        class="ph-shots"
-                    ></div>
+                        class="ph-shots">
+
+                        <button class="ph-shot" type="button">
+                            <img
+                                src="img/projects/lyra/lyra-01.jpg"
+                                alt="Lyra gameplay screenshot">
+                        </button>
+
+                        <button class="ph-shot" type="button">
+                            <img
+                                src="img/projects/lyra/lyra-02.jpg"
+                                alt="Lyra gameplay screenshot">
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -231,9 +250,7 @@
         </section>
 
 
-        <!-- =====================================================
-             TRAILER + GALLERY
-        ====================================================== -->
+        <!-- TRAILER + GALLERY -->
 
         <section class="trailer-gallery">
 
@@ -246,21 +263,16 @@
                         <button
                             id="trailer-button"
                             class="trailer-facade"
-                            type="button"
-                        >
+                            type="button">
 
                             <img
                                 id="trailer-image"
-                                src=""
-                                alt=""
-                            >
+                                src="img/projects/lyra/lyra-03.jpg"
+                                alt="Lyra trailer">
 
                             <span class="play-badge"></span>
 
-                            <span
-                                id="trailer-label"
-                                class="tg-label"
-                            >
+                            <span class="tg-label">
                                 OFFICIAL TRAILER
                             </span>
 
@@ -271,8 +283,33 @@
 
                     <div
                         id="project-gallery"
-                        class="tg-gallery"
-                    ></div>
+                        class="tg-gallery">
+
+                        <button class="tg-shot" type="button">
+                            <img
+                                src="img/projects/lyra/lyra-04.jpg"
+                                alt="Lyra screenshot">
+                        </button>
+
+                        <button class="tg-shot" type="button">
+                            <img
+                                src="img/projects/lyra/lyra-05.jpg"
+                                alt="Lyra screenshot">
+                        </button>
+
+                        <button class="tg-shot" type="button">
+                            <img
+                                src="img/projects/lyra/lyra-06.jpg"
+                                alt="Lyra screenshot">
+                        </button>
+
+                        <button class="tg-shot" type="button">
+                            <img
+                                src="img/projects/lyra/lyra-01.jpg"
+                                alt="Lyra screenshot">
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -281,9 +318,7 @@
         </section>
 
 
-        <!-- =====================================================
-             CONTRIBUTIONS
-        ====================================================== -->
+        <!-- CONTRIBUTIONS -->
 
         <section class="contributions">
 
@@ -295,11 +330,10 @@
                 loop
                 playsinline
                 preload="none"
-                aria-hidden="true"
-            ></video>
+                aria-hidden="true">
+            </video>
 
             <div class="contrib-veil"></div>
-
 
             <div class="project-wrap contributions-inner">
 
@@ -307,23 +341,115 @@
 
                     <div class="contrib-text">
 
-                        <h2 id="contributions-title"></h2>
+                        <h2>
+                            Mis Contribuciones
+                        </h2>
 
-                        <p id="contributions-intro"></p>
+                        <p>
+                            Lyra era mi TFG, así que era el responsable de las mecánicas,
+                            los niveles y de demostrar que ambos funcionaban de verdad.
+                            El hilo conductor era negarme a fiarme de mi intuición sin
+                            datos detrás.
+                        </p>
 
-                        <ul
-                            id="contribution-list"
-                            class="contribution-list"
-                        ></ul>
+                        <ul class="contribution-list">
+
+                            <li>
+                                <strong class="contribution-title">
+                                    Pattern-Based Dictionary
+                                </strong>
+
+                                <span>
+                                    Descompuse cada mecánica en interacciones atómicas
+                                    (tiro de fuego, tiro de agua, lanzamiento de dragón)
+                                    y catalogué los patrones que forman al combinarse,
+                                    para que cada sala enseñara una combinación concreta
+                                    y no un truco aislado.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="contribution-title">
+                                    Estructura de niveles EDPV
+                                </strong>
+
+                                <span>
+                                    Apliqué el modelo Exposure, Demonstration, Practice,
+                                    Validation en las tres zonas temáticas, ordenando
+                                    dificultad y ritmo emocional de forma deliberada
+                                    y no por intuición.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="contribution-title">
+                                    Pipeline de telemetría en C++
+                                </strong>
+
+                                <span>
+                                    Instrumenté Unreal Engine 5 para capturar posición
+                                    del jugador y acciones como CSV estructurado,
+                                    dándome datos reales de comportamiento en vez
+                                    de anécdotas.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="contribution-title">
+                                    Test A/B controlado
+                                </strong>
+
+                                <span>
+                                    Diseñé el experimento completo para el Puzzle 6:
+                                    asignación aleatoria estratificada, criterios de
+                                    inclusión, script de moderador y consentimiento
+                                    informado, comparando el layout original con
+                                    un rediseño con visual guidance más claro.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="contribution-title">
+                                    Análisis estadístico en Python
+                                </strong>
+
+                                <span>
+                                    Ejecuté Shapiro-Wilk, t de Student y d de Cohen,
+                                    y reporté un p-valor no significativo junto con
+                                    un tamaño de efecto grande en vez de solo el
+                                    resultado que apoyaba mi hipótesis.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong class="contribution-title">
+                                    Resultado medido
+                                </strong>
+
+                                <span>
+                                    El rediseño redujo los errores de navegación en un
+                                    35% y mejoró el tiempo de resolución en un 33%,
+                                    medido con el mismo pipeline de telemetría.
+                                </span>
+                            </li>
+
+                        </ul>
 
                     </div>
 
 
                     <div class="learning-block">
 
-                        <h2 id="learning-title"></h2>
+                        <h2>
+                            Lo que aprendí
+                        </h2>
 
-                        <p id="learning-text"></p>
+                        <p>
+                            Lo más valioso no fue confirmar mi hipótesis. Fue aprender
+                            a separar lo que se siente mejor de lo que es demostrablemente
+                            mejor, y a comunicar esa zona gris a un equipo de diseño
+                            sin inflarla ni descartarla.
+                        </p>
 
                     </div>
 
@@ -333,19 +459,17 @@
                 <div class="case-cta">
 
                     <a
-                        id="bottom-play"
                         class="project-btn project-btn-solid"
-                        href="#"
+                        href="https://la-mapachanda-studio.itch.io/lyra"
                         target="_blank"
-                        rel="noopener"
-                    ></a>
+                        rel="noopener">
+                        PLAY LYRA
+                    </a>
 
                     <a
                         class="project-btn project-btn-outline"
-                        href="index.html#projects"
-                        data-i18n="project.more"
-                    >
-                        More projects
+                        href="index.html#projects">
+                        MORE PROJECTS
                     </a>
 
                 </div>
@@ -357,27 +481,22 @@
     </main>
 
 
-    <!-- =====================================================
-         LIGHTBOX
-    ====================================================== -->
+    <!-- LIGHTBOX -->
 
     <div
         id="project-lightbox"
         class="project-lightbox"
-        aria-hidden="true"
-    >
+        aria-hidden="true">
 
         <button
             class="lightbox-close"
-            type="button"
-        >
+            type="button">
             ×
         </button>
 
         <button
             class="lightbox-prev"
-            type="button"
-        >
+            type="button">
             ‹
         </button>
 
@@ -386,8 +505,7 @@
             <img
                 id="lightbox-image"
                 src=""
-                alt=""
-            >
+                alt="">
 
             <p id="lightbox-caption"></p>
 
@@ -395,15 +513,12 @@
 
         <button
             class="lightbox-next"
-            type="button"
-        >
+            type="button">
             ›
         </button>
 
     </div>
 
-
-    <!-- FOOTER -->
 
     <footer class="footer">
         <p>© 2026 Marcos RM</p>
