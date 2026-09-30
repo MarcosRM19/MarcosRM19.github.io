@@ -26,7 +26,7 @@ const projects = {
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
         itch: "#",
 
-        /* DATOS ACTUALIZADOS SEGÚN LA IMAGEN */
+        /* CONTRIBUCIONES Y APRENDIZAJE DE LYRA (TFG) */
         contributionsTitle: "Mis Contribuciones",
         contributionsIntro: "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
         contributions: [
@@ -84,6 +84,7 @@ const projects = {
         screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
         screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
         itch: "#",
+
         contributionsTitle: "Gameplay y Level Design",
         contributionsIntro: "",
         contributions: [
@@ -127,7 +128,7 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* HERO VIDEO LOCAL */
+    /* 1. HERO VIDEO LOCAL (.mp4) */
     const heroContainer = document.querySelector(".hero-video-container");
     if (heroContainer && project.trailerVideo) {
         heroContainer.innerHTML = `
@@ -141,7 +142,7 @@ function loadProject() {
         }
     }
 
-    /* METADATA HERO */
+    /* 2. METADATA HERO */
     const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
     if (titleHero) titleHero.textContent = project.title;
 
@@ -154,7 +155,7 @@ function loadProject() {
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* MAIN INFORMATION (ZONA 1) */
+    /* 3. MAIN INFORMATION (ZONA 1) */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -201,7 +202,7 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* TRÁILER ZONA 2 (YOUTUBE) */
+    /* 4. TRÁILER ZONA 2 (YOUTUBE INTERACTIVO) */
     const trailerFacade = document.querySelector(".trailer-facade");
     if (trailerFacade && project.youtubeId) {
         trailerFacade.innerHTML = `
@@ -230,7 +231,7 @@ function loadProject() {
         }
     });
 
-    /* CONTRIBUTIONS & LEARNING (ZONA 3) - FORMATO IMAGEN */
+    /* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
     const contribTitle = document.getElementById("contributions-title") || document.getElementById("project-contributions-title");
     if (contribTitle) contribTitle.textContent = project.contributionsTitle;
 
@@ -275,14 +276,16 @@ function setupLightbox() {
     const previousButton = document.getElementById("lightbox-prev");
     const nextButton = document.getElementById("lightbox-next");
     
-    const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"));
+    // Seleccionar únicamente contenedores con imágenes para evitar bugs con iframes/vídeos
+    const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"))
+        .filter(btn => btn.querySelector("img"));
 
     if (!lightbox || !lightboxImage || !closeButton || !previousButton || !nextButton || imageButtons.length === 0) {
         return;
     }
 
     let currentIndex = 0;
-    const images = imageButtons.map(btn => btn.querySelector("img")).filter(Boolean);
+    const images = imageButtons.map(btn => btn.querySelector("img"));
 
     function updateLightbox(index) {
         if (!images[index]) return;
