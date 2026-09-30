@@ -13,17 +13,21 @@
         Proyecto | MarcosRuiz Portfolio
     </title>
 
+    <!-- CSS PRINCIPAL -->
     <link
         rel="stylesheet"
         href="css/style.css">
 
+    <!-- CSS ESPECÍFICO DE PROYECTOS -->
     <link
         rel="stylesheet"
         href="css/project.css">
 
 </head>
 
+
 <body>
+
 
     <!-- =====================================================
          NAVBAR
@@ -39,6 +43,7 @@
                 id="logo">
                 MarcosRuiz Portfolio
             </a>
+
 
             <div class="nav-links">
 
@@ -79,6 +84,7 @@
 
             </div>
 
+
             <div class="nav-actions">
 
                 <button
@@ -102,18 +108,25 @@
     </header>
 
 
+
     <!-- =====================================================
-         CONTENIDO
+         CONTENIDO DEL PROYECTO
          ===================================================== -->
 
     <main id="project-content">
 
 
         <!-- =================================================
-             HERO
+             PORTADA
              ================================================= -->
 
         <section class="title-hero">
+
+
+            <!--
+                Esta imagen será sustituida por el trailer
+                desde project.js.
+            -->
 
             <img
                 id="project-hero"
@@ -122,9 +135,14 @@
                 alt=""
                 loading="eager">
 
+
             <div class="title-veil"></div>
 
+
             <div class="title-inner">
+
+
+                <!-- Logo del juego -->
 
                 <img
                     id="project-logo"
@@ -133,15 +151,24 @@
                     alt=""
                     loading="eager">
 
+
+                <!-- Fallback si no existe logo -->
+
                 <h1
                     id="project-logo-fallback"
                     class="logo-fallback">
                 </h1>
 
+
+                <!-- Tagline -->
+
                 <p
                     id="project-tagline"
                     class="title-tagline">
                 </p>
+
+
+                <!-- Itch.io -->
 
                 <div class="store-links">
 
@@ -153,7 +180,9 @@
                         rel="noopener"
                         aria-label="Itch.io">
 
-                        <span>▶</span>
+                        <img
+                            src="img/itchio.svg"
+                            alt="Itch.io">
 
                     </a>
 
@@ -164,9 +193,10 @@
         </section>
 
 
+
         <!-- =================================================
              PRIMERA PARTE
-             50% INFORMACIÓN / 50% IMÁGENES
+             INFORMACIÓN + DOS IMÁGENES
              ================================================= -->
 
         <section class="project-hero-v2">
@@ -177,10 +207,11 @@
 
 
                     <!-- =====================================
-                         IZQUIERDA — INFORMACIÓN
+                         COLUMNA IZQUIERDA
                          ===================================== -->
 
                     <div class="ph-intro">
+
 
                         <span
                             id="project-category"
@@ -211,6 +242,8 @@
                         </p>
 
 
+                        <!-- TASK OVERVIEW -->
+
                         <h3
                             id="project-task-title"
                             class="task-heading">
@@ -220,10 +253,65 @@
                         <ul
                             id="project-tasks"
                             class="task-list">
+
+
+                            <li>
+
+                                <strong>
+                                    Gameplay
+                                </strong>
+
+                                Diseño e implementación de las
+                                mecánicas principales y sus
+                                interacciones.
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Level Design
+                                </strong>
+
+                                Diseño de las salas y progresión
+                                siguiendo una estructura EDPV.
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    AI / C++
+                                </strong>
+
+                                Programación y captura de datos
+                                dentro de Unreal Engine 5.
+
+                            </li>
+
+
+                            <li>
+
+                                <strong>
+                                    Research
+                                </strong>
+
+                                Diseño de pruebas, análisis
+                                estadístico y validación de
+                                decisiones de diseño.
+
+                            </li>
+
+
                         </ul>
 
 
+                        <!-- BOTONES -->
+
                         <div class="project-actions">
+
 
                             <a
                                 id="project-play"
@@ -241,13 +329,15 @@
                                 More projects
                             </a>
 
+
                         </div>
 
                     </div>
 
 
+
                     <!-- =====================================
-                         DERECHA — IMÁGENES
+                         COLUMNA DERECHA
                          ===================================== -->
 
                     <div class="ph-shots">
@@ -290,6 +380,7 @@
         </section>
 
 
+
         <!-- =================================================
              TRAILER + GALERÍA
              ================================================= -->
@@ -301,32 +392,42 @@
                 <div class="tg-grid">
 
 
-                    <!-- TRAILER -->
+                    <!-- =====================================
+                         TRAILER
+                         ===================================== -->
 
                     <button
                         class="trailer-facade"
                         type="button"
                         data-project-image="trailer">
 
+
                         <img
                             id="project-trailer-image"
                             src=""
-                            alt=""
+                            alt="Project trailer"
                             loading="lazy">
 
+
                         <span class="play-badge"></span>
+
 
                         <span
                             class="tg-label"
                             id="trailer-label">
                         </span>
 
+
                     </button>
 
 
-                    <!-- GALERÍA -->
+
+                    <!-- =====================================
+                         GALERÍA
+                         ===================================== -->
 
                     <div class="tg-gallery">
+
 
                         <button
                             class="tg-shot"
@@ -383,6 +484,7 @@
 
                         </button>
 
+
                     </div>
 
                 </div>
@@ -390,6 +492,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -400,45 +503,56 @@
 
             <div class="project-wrap">
 
+
                 <div class="contributions-inner">
 
 
                     <div class="contrib-text">
 
+
                         <h2
                             id="contributions-title">
                         </h2>
 
+
                         <p
                             id="contributions-intro">
                         </p>
+
 
                         <ul
                             id="contribution-list"
                             class="contribution-list">
                         </ul>
 
+
                     </div>
+
 
 
                     <!-- LO QUE APRENDÍ -->
 
                     <div class="learning-block">
 
+
                         <h2
                             id="learning-title">
                         </h2>
+
 
                         <p
                             id="learning-text">
                         </p>
 
+
                     </div>
 
 
-                    <!-- BOTONES -->
+
+                    <!-- CTA -->
 
                     <div class="case-cta">
+
 
                         <a
                             id="contribution-play"
@@ -456,7 +570,9 @@
                             More projects
                         </a>
 
+
                     </div>
+
 
                 </div>
 
@@ -465,6 +581,7 @@
         </section>
 
     </main>
+
 
 
     <!-- =====================================================
@@ -497,14 +614,17 @@
 
         <div class="lightbox-content">
 
+
             <img
                 id="lightbox-image"
                 src=""
                 alt="">
 
+
             <p
                 id="lightbox-caption">
             </p>
+
 
         </div>
 
@@ -517,7 +637,9 @@
             ›
         </button>
 
+
     </div>
+
 
 
     <!-- =====================================================
@@ -529,7 +651,8 @@
         <div class="footer-inner">
 
             <p>
-                © <span id="footer-year"></span>
+                ©
+                <span id="footer-year"></span>
                 MarcosRuiz Portfolio
             </p>
 
@@ -538,8 +661,15 @@
     </footer>
 
 
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
     <script src="js/script.js"></script>
+
     <script src="js/project.js"></script>
+
 
 </body>
 
