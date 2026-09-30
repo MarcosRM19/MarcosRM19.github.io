@@ -38,14 +38,15 @@ const projects = {
                 text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
             }
         ],
-        trailerVideo: "../vid/Lyra.mp4",
-        hero: "../img/projects/lyra/hero.jpg",
-        infoRight1: "../img/projects/lyra/info-right-1.jpg",
-        infoRight2: "../img/projects/lyra/info-right-2.jpg",
-        screenshot1: "../img/projects/lyra/screenshot-1.jpg",
-        screenshot2: "../img/projects/lyra/screenshot-2.jpg",
-        screenshot3: "../img/projects/lyra/screenshot-3.jpg",
-        screenshot4: "../img/projects/lyra/screenshot-4.jpg",
+        heroVideoId: "YIcgUIwu89U",
+        trailerVideo: "vid/Lyra.mp4",
+        hero: "img/projects/lyra/hero.jpg",
+        infoRight1: "img/projects/lyra/info-right-1.jpg",
+        infoRight2: "img/projects/lyra/info-right-2.jpg",
+        screenshot1: "img/projects/lyra/screenshot-1.jpg",
+        screenshot2: "img/projects/lyra/screenshot-2.jpg",
+        screenshot3: "img/projects/lyra/screenshot-3.jpg",
+        screenshot4: "img/projects/lyra/screenshot-4.jpg",
         itch: "#"
     },
 
@@ -86,14 +87,15 @@ const projects = {
                 text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
             }
         ],
-        trailerVideo: "../vid/JuanPieza.mp4",
-        hero: "../img/projects/juan-pieza/hero.jpg",
-        infoRight1: "../img/projects/juan-pieza/info-right-1.jpg",
-        infoRight2: "../img/projects/juan-pieza/info-right-2.jpg",
-        screenshot1: "../img/projects/juan-pieza/screenshot-1.jpg",
-        screenshot2: "../img/projects/juan-pieza/screenshot-2.jpg",
-        screenshot3: "../img/projects/juan-pieza/screenshot-3.jpg",
-        screenshot4: "../img/projects/juan-pieza/screenshot-4.jpg",
+        heroVideoId: "YIcgUIwu89U",
+        trailerVideo: "vid/JuanPieza.mp4",
+        hero: "img/projects/juan-pieza/hero.jpg",
+        infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
+        infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
+        screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
+        screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
+        screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
+        screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
         itch: "#"
     }
 };
@@ -114,7 +116,14 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* METADATA HERO */
+    /* 1. VÍDEO DE FONDO DEL HERO */
+    const heroIframe = document.getElementById("hero-youtube-iframe");
+    if (heroIframe && project.heroVideoId) {
+        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1`;
+        heroIframe.style.opacity = "1";
+    }
+
+    /* 2. METADATA HERO */
     const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
     if (titleHero) titleHero.textContent = project.title;
 
@@ -127,7 +136,7 @@ function loadProject() {
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* MAIN INFORMATION (ZONA 1) */
+    /* 3. MAIN INFORMATION (ZONA 1) */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -174,7 +183,7 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* TRÁILER EN ZONA 2 (.trailer-gallery) */
+    /* 4. TRÁILER MP4 EN ZONA 2 (.trailer-gallery) */
     const trailerFacade = document.querySelector(".trailer-facade");
     if (trailerFacade && project.trailerVideo) {
         trailerFacade.innerHTML = `
@@ -185,7 +194,7 @@ function loadProject() {
         `;
         const video = trailerFacade.querySelector("video");
         if (video) {
-            video.play().catch(e => console.log("Autoplay prevenido por el navegador:", e));
+            video.play().catch(e => console.log("Autoplay prevenido:", e));
         }
     }
 
@@ -205,21 +214,20 @@ function loadProject() {
         }
     });
 
-    /* LEARNING (ZONA 3) */
+    /* 5. LEARNING (ZONA 3) */
     const learningTitle = document.getElementById("learning-title") || document.getElementById("project-learning-title");
     if (learningTitle) learningTitle.textContent = project.learningTitle;
 
-    const learningList = document.getElementById("learning-list") || document.getElementById("project-learning-list");
-    if (learningList) {
-        learningList.innerHTML = "";
-        project.learning.forEach(item => {
-            const li = document.createElement("li");
-            li.textContent = item;
-            learningList.appendChild(li);
-        });
+    const learningText = document.getElementById("learning-text") || document.getElementById("project-learning-text");
+    if (learningText) {
+        if (Array.isArray(project.learning)) {
+            learningText.innerHTML = project.learning.map(item => `• ${item}`).join("<br><br>");
+        } else {
+            learningText.textContent = project.learning;
+        }
     }
 
-    /* CONTRIBUTIONS (ZONA 3) */
+    /* 6. CONTRIBUTIONS (ZONA 3) */
     const contributionsTitle = document.getElementById("contributions-title") || document.getElementById("project-contributions-title");
     if (contributionsTitle) contributionsTitle.textContent = project.contributionsTitle;
 
@@ -248,7 +256,10 @@ function setupLightbox() {
     const closeButton = document.getElementById("lightbox-close");
     const previousButton = document.getElementById("lightbox-prev");
     const nextButton = document.getElementById("lightbox-next");
-    const imageButtons = Array.from(document.querySelectorAll("[data-project-image]"));
+    
+    // Seleccionamos solo elementos interactivos que tengan un <img> en su interior
+    const imageButtons = Array.from(document.querySelectorAll("[data-project-image]"))
+        .filter(btn => btn.querySelector("img"));
 
     if (
         !lightbox ||
