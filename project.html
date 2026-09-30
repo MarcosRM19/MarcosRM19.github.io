@@ -119,15 +119,11 @@
 <section class="title-hero">
 
     <!-- Vídeo de fondo de YouTube (Autoplay, Loop, Muted) -->
-    <div class="hero-video-container">
-        <iframe 
-            id="hero-youtube-iframe"
-            src="https://www.youtube.com/embed/YIcgUIwu89U?autoplay=1&mute=1&loop=1&playlist=YIcgUIwu89U&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1" 
-            title="Trailer del juego" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
+<div class="hero-video-container">
+    <video autoplay loop muted playsinline id="hero-mp4-video">
+        <source src="vid/Lyra.mp4" type="video/mp4">
+    </video>
+</div>
 
     <!-- Capa oscura de contraste sobre el vídeo -->
     <div class="title-veil"></div>
