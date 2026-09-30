@@ -1,7 +1,3 @@
-/* =========================================================
-   PROJECT DATA
-========================================================= */
-
 const projects = {
 
     lyra: {
@@ -12,7 +8,8 @@ const projects = {
 
         years: "2025 — 2026",
 
-        tagline: "A narrative-driven game focused on exploration, atmosphere and interaction.",
+        tagline:
+            "A narrative-driven game focused on exploration, atmosphere and interaction.",
 
         description:
             "Lyra is a university game project developed as part of La Mapachanda and my TFG at ENTI-UB. The project combines gameplay programming, level design and AI systems to create an interactive experience.",
@@ -49,15 +46,18 @@ const projects = {
         contributions: [
             {
                 title: "Gameplay Programming",
-                text: "Implementación de las principales mecánicas de gameplay y sistemas de interacción."
+                text:
+                    "Implementación de las principales mecánicas de gameplay y sistemas de interacción."
             },
             {
                 title: "Artificial Intelligence",
-                text: "Diseño e implementación de comportamientos de IA para los personajes y enemigos."
+                text:
+                    "Diseño e implementación de comportamientos de IA para los personajes y enemigos."
             },
             {
                 title: "Level Design",
-                text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
+                text:
+                    "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
             }
         ],
 
@@ -84,7 +84,6 @@ const projects = {
 
         itch:
             "#"
-
     },
 
 
@@ -96,7 +95,8 @@ const projects = {
 
         years: "2024 — 2025",
 
-        tagline: "A university game project focused on gameplay programming and level design.",
+        tagline:
+            "A university game project focused on gameplay programming and level design.",
 
         description:
             "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
@@ -131,15 +131,18 @@ const projects = {
         contributions: [
             {
                 title: "Gameplay Programming",
-                text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
+                text:
+                    "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
             },
             {
                 title: "Level Design",
-                text: "Diseño y construcción de los niveles y espacios jugables."
+                text:
+                    "Diseño y construcción de los niveles y espacios jugables."
             },
             {
                 title: "Iteration",
-                text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
+                text:
+                    "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
             }
         ],
 
@@ -166,134 +169,160 @@ const projects = {
 
         itch:
             "#"
-
     }
 
 };
 
 
-/* =========================================================
-   GET PROJECT
-========================================================= */
-
 function getProjectId() {
 
-    const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(
+        window.location.search
+    );
 
     return params.get("project") || "lyra";
 }
 
 
-/* =========================================================
-   LOAD PROJECT
-========================================================= */
-
 function loadProject() {
 
     const projectId = getProjectId();
 
-    const project = projects[projectId] || projects.lyra;
+    const project =
+        projects[projectId] || projects.lyra;
+
 
     document.title =
         `${project.title} | MarcosRuiz Portfolio`;
 
 
-    /* -----------------------------------------------------
-       TITLE HERO
-    ----------------------------------------------------- */
-
-    const hero = document.getElementById("project-hero");
-
-    if (hero) {
-        hero.src = project.hero;
-        hero.alt = project.title;
-    }
+    /* -----------------------------------------
+       HERO
+       ----------------------------------------- */
 
     const logoFallback =
-        document.getElementById("project-logo-fallback");
+        document.getElementById(
+            "project-logo-fallback"
+        );
 
     if (logoFallback) {
-        logoFallback.textContent = project.title;
+        logoFallback.textContent =
+            project.title;
     }
+
 
     const tagline =
-        document.getElementById("project-tagline");
+        document.getElementById(
+            "project-tagline"
+        );
 
     if (tagline) {
-        tagline.textContent = project.tagline;
+        tagline.textContent =
+            project.tagline;
     }
 
-    const itch =
-        document.getElementById("project-itch");
-
-    if (itch) {
-        itch.href = project.itch;
-    }
-
-
-    /* -----------------------------------------------------
-       MAIN INFORMATION
-    ----------------------------------------------------- */
 
     const category =
-        document.getElementById("project-category");
+        document.getElementById(
+            "project-category"
+        );
 
     if (category) {
-        category.textContent = project.category;
+        category.textContent =
+            project.category;
     }
+
+
+    const itch =
+        document.getElementById(
+            "project-itch"
+        );
+
+    if (itch) {
+        itch.href =
+            project.itch;
+    }
+
+
+    /* -----------------------------------------
+       MAIN INFORMATION
+       ----------------------------------------- */
 
     const title =
-        document.getElementById("project-title");
+        document.getElementById(
+            "project-title"
+        );
 
     if (title) {
-        title.textContent = project.title;
+        title.textContent =
+            project.title;
     }
+
 
     const years =
-        document.getElementById("project-years");
+        document.getElementById(
+            "project-years"
+        );
 
     if (years) {
-        years.textContent = project.years;
+        years.textContent =
+            project.years;
     }
+
 
     const description =
-        document.getElementById("project-description");
+        document.getElementById(
+            "project-description"
+        );
 
     if (description) {
-        description.textContent = project.description;
+        description.textContent =
+            project.description;
     }
+
 
     const role =
-        document.getElementById("project-role");
+        document.getElementById(
+            "project-role"
+        );
 
     if (role) {
-        role.textContent = project.role;
+        role.textContent =
+            project.role;
     }
+
 
     const taskTitle =
-        document.getElementById("project-task-title");
+        document.getElementById(
+            "project-task-title"
+        );
 
     if (taskTitle) {
-        taskTitle.textContent = project.taskTitle;
+        taskTitle.textContent =
+            project.taskTitle;
     }
 
 
-    /* -----------------------------------------------------
+    /* -----------------------------------------
        TASKS
-    ----------------------------------------------------- */
+       ----------------------------------------- */
 
     const taskList =
-        document.getElementById("project-tasks");
+        document.getElementById(
+            "project-tasks"
+        );
 
     if (taskList) {
 
         taskList.innerHTML = "";
 
-        project.tasks.forEach((task) => {
+        project.tasks.forEach(task => {
 
-            const li = document.createElement("li");
+            const li =
+                document.createElement("li");
 
-            li.textContent = task;
+            li.textContent =
+                task;
 
             taskList.appendChild(li);
 
@@ -302,114 +331,143 @@ function loadProject() {
     }
 
 
-    /* -----------------------------------------------------
-       BUTTON
-    ----------------------------------------------------- */
+    /* -----------------------------------------
+       PLAY BUTTON
+       ----------------------------------------- */
 
     const playButton =
-        document.getElementById("project-play");
+        document.getElementById(
+            "project-play"
+        );
 
     if (playButton) {
 
-        playButton.href = project.itch;
+        playButton.href =
+            project.itch;
 
-        playButton.textContent = "Play on itch.io";
+        playButton.textContent =
+            "Play on itch.io";
 
     }
 
 
-    /* -----------------------------------------------------
-       INFORMATION IMAGES
-    ----------------------------------------------------- */
+    /* -----------------------------------------
+       INFO IMAGES
+       ----------------------------------------- */
 
     const infoRight1 =
-        document.getElementById("project-info-right-1");
+        document.getElementById(
+            "project-info-right-1"
+        );
 
     if (infoRight1) {
 
-        infoRight1.src = project.infoRight1;
-        infoRight1.alt = `${project.title} screenshot`;
+        infoRight1.src =
+            project.infoRight1;
+
+        infoRight1.alt =
+            `${project.title} screenshot`;
 
     }
 
 
     const infoRight2 =
-        document.getElementById("project-info-right-2");
+        document.getElementById(
+            "project-info-right-2"
+        );
 
     if (infoRight2) {
 
-        infoRight2.src = project.infoRight2;
-        infoRight2.alt = `${project.title} screenshot`;
+        infoRight2.src =
+            project.infoRight2;
+
+        infoRight2.alt =
+            `${project.title} screenshot`;
 
     }
 
 
-    /* -----------------------------------------------------
-       TRAILER LABEL
-    ----------------------------------------------------- */
-
-    const trailerLabel =
-        document.getElementById("trailer-label");
-
-    if (trailerLabel) {
-        trailerLabel.textContent = "TRAILER";
-    }
-
-
-    /* -----------------------------------------------------
+    /* -----------------------------------------
        SCREENSHOTS
-    ----------------------------------------------------- */
+       ----------------------------------------- */
 
     const screenshots = [
-        ["project-screenshot-1", project.screenshot1],
-        ["project-screenshot-2", project.screenshot2],
-        ["project-screenshot-3", project.screenshot3],
-        ["project-screenshot-4", project.screenshot4]
+
+        [
+            "project-screenshot-1",
+            project.screenshot1
+        ],
+
+        [
+            "project-screenshot-2",
+            project.screenshot2
+        ],
+
+        [
+            "project-screenshot-3",
+            project.screenshot3
+        ],
+
+        [
+            "project-screenshot-4",
+            project.screenshot4
+        ]
+
     ];
 
-    screenshots.forEach(([id, src], index) => {
 
-        const image =
-            document.getElementById(id);
+    screenshots.forEach(
+        ([id, src], index) => {
 
-        if (image) {
+            const image =
+                document.getElementById(id);
 
-            image.src = src;
+            if (image) {
 
-            image.alt =
-                `${project.title} screenshot ${index + 1}`;
+                image.src = src;
+
+                image.alt =
+                    `${project.title} screenshot ${index + 1}`;
+
+            }
 
         }
+    );
 
-    });
 
-
-    /* -----------------------------------------------------
+    /* -----------------------------------------
        LEARNING
-    ----------------------------------------------------- */
+       ----------------------------------------- */
 
     const learningTitle =
-        document.getElementById("project-learning-title");
+        document.getElementById(
+            "project-learning-title"
+        );
 
     if (learningTitle) {
+
         learningTitle.textContent =
             project.learningTitle;
+
     }
 
 
     const learningList =
-        document.getElementById("project-learning-list");
+        document.getElementById(
+            "project-learning-list"
+        );
 
     if (learningList) {
 
         learningList.innerHTML = "";
 
-        project.learning.forEach((item) => {
+        project.learning.forEach(item => {
 
             const li =
                 document.createElement("li");
 
-            li.textContent = item;
+            li.textContent =
+                item;
 
             learningList.appendChild(li);
 
@@ -418,9 +476,9 @@ function loadProject() {
     }
 
 
-    /* -----------------------------------------------------
+    /* -----------------------------------------
        CONTRIBUTIONS
-    ----------------------------------------------------- */
+       ----------------------------------------- */
 
     const contributionsTitle =
         document.getElementById(
@@ -428,8 +486,10 @@ function loadProject() {
         );
 
     if (contributionsTitle) {
+
         contributionsTitle.textContent =
             project.contributionsTitle;
+
     }
 
 
@@ -442,7 +502,7 @@ function loadProject() {
 
         contributionsGrid.innerHTML = "";
 
-        project.contributions.forEach((item) => {
+        project.contributions.forEach(item => {
 
             const card =
                 document.createElement("article");
@@ -450,10 +510,20 @@ function loadProject() {
             card.className =
                 "contribution-card";
 
-            card.innerHTML = `
-                <h3>${item.title}</h3>
-                <p>${item.text}</p>
-            `;
+            const heading =
+                document.createElement("h3");
+
+            heading.textContent =
+                item.title;
+
+            const paragraph =
+                document.createElement("p");
+
+            paragraph.textContent =
+                item.text;
+
+            card.appendChild(heading);
+            card.appendChild(paragraph);
 
             contributionsGrid.appendChild(card);
 
@@ -462,35 +532,37 @@ function loadProject() {
     }
 
 
-    /* -----------------------------------------------------
-       LIGHTBOX
-    ----------------------------------------------------- */
-
     setupLightbox();
 
 }
 
 
-/* =========================================================
-   LIGHTBOX
-========================================================= */
-
 function setupLightbox() {
 
     const lightbox =
-        document.getElementById("project-lightbox");
+        document.getElementById(
+            "project-lightbox"
+        );
 
     const lightboxImage =
-        document.getElementById("lightbox-image");
+        document.getElementById(
+            "lightbox-image"
+        );
 
     const closeButton =
-        document.getElementById("lightbox-close");
+        document.getElementById(
+            "lightbox-close"
+        );
 
     const previousButton =
-        document.getElementById("lightbox-prev");
+        document.getElementById(
+            "lightbox-prev"
+        );
 
     const nextButton =
-        document.getElementById("lightbox-next");
+        document.getElementById(
+            "lightbox-next"
+        );
 
     const imageButtons =
         Array.from(
@@ -529,24 +601,34 @@ function setupLightbox() {
             return;
         }
 
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
 
-        lightbox.classList.add("is-open");
+        lightboxImage.src =
+            image.src;
+
+        lightboxImage.alt =
+            image.alt;
+
+
+        lightbox.classList.add(
+            "is-open"
+        );
 
         lightbox.setAttribute(
             "aria-hidden",
             "false"
         );
 
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow =
+            "hidden";
 
     }
 
 
     function closeLightbox() {
 
-        lightbox.classList.remove("is-open");
+        lightbox.classList.remove(
+            "is-open"
+        );
 
         lightbox.setAttribute(
             "aria-hidden",
@@ -555,7 +637,8 @@ function setupLightbox() {
 
         lightboxImage.src = "";
 
-        document.body.style.overflow = "";
+        document.body.style.overflow =
+            "";
 
     }
 
@@ -563,10 +646,16 @@ function setupLightbox() {
     function showPrevious() {
 
         currentIndex =
-            (currentIndex - 1 + imageButtons.length)
-            % imageButtons.length;
+            (
+                currentIndex -
+                1 +
+                imageButtons.length
+            ) %
+            imageButtons.length;
 
-        openLightbox(currentIndex);
+        openLightbox(
+            currentIndex
+        );
 
     }
 
@@ -574,22 +663,29 @@ function setupLightbox() {
     function showNext() {
 
         currentIndex =
-            (currentIndex + 1)
-            % imageButtons.length;
+            (
+                currentIndex +
+                1
+            ) %
+            imageButtons.length;
 
-        openLightbox(currentIndex);
+        openLightbox(
+            currentIndex
+        );
 
     }
 
 
-    imageButtons.forEach((button, index) => {
+    imageButtons.forEach(
+        (button, index) => {
 
-        button.addEventListener(
-            "click",
-            () => openLightbox(index)
-        );
+            button.addEventListener(
+                "click",
+                () => openLightbox(index)
+            );
 
-    });
+        }
+    );
 
 
     closeButton.addEventListener(
@@ -612,9 +708,11 @@ function setupLightbox() {
 
     lightbox.addEventListener(
         "click",
-        (event) => {
+        event => {
 
-            if (event.target === lightbox) {
+            if (
+                event.target === lightbox
+            ) {
                 closeLightbox();
             }
 
@@ -624,23 +722,34 @@ function setupLightbox() {
 
     document.addEventListener(
         "keydown",
-        (event) => {
+        event => {
 
             if (
-                !lightbox.classList.contains("is-open")
+                !lightbox.classList.contains(
+                    "is-open"
+                )
             ) {
                 return;
             }
 
-            if (event.key === "Escape") {
+
+            if (
+                event.key === "Escape"
+            ) {
                 closeLightbox();
             }
 
-            if (event.key === "ArrowLeft") {
+
+            if (
+                event.key === "ArrowLeft"
+            ) {
                 showPrevious();
             }
 
-            if (event.key === "ArrowRight") {
+
+            if (
+                event.key === "ArrowRight"
+            ) {
                 showNext();
             }
 
@@ -649,10 +758,6 @@ function setupLightbox() {
 
 }
 
-
-/* =========================================================
-   INIT
-========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
