@@ -39,6 +39,7 @@ const projects = {
             }
         ],
         heroVideoId: "YIcgUIwu89U",
+        /* Rutas de imágenes ajustadas con ../ */
         hero: "../img/projects/lyra/hero.jpg",
         infoRight1: "../img/projects/lyra/info-right-1.jpg",
         infoRight2: "../img/projects/lyra/info-right-2.jpg",
@@ -46,7 +47,7 @@ const projects = {
         screenshot2: "../img/projects/lyra/screenshot-2.jpg",
         screenshot3: "../img/projects/lyra/screenshot-3.jpg",
         screenshot4: "../img/projects/lyra/screenshot-4.jpg",
-        itch: "https://itch.io"
+        itch: "#"
     },
 
     "juan-pieza": {
@@ -87,6 +88,7 @@ const projects = {
             }
         ],
         heroVideoId: "YIcgUIwu89U",
+        /* Rutas de imágenes ajustadas con ../ */
         hero: "../img/projects/juan-pieza/hero.jpg",
         infoRight1: "../img/projects/juan-pieza/info-right-1.jpg",
         infoRight2: "../img/projects/juan-pieza/info-right-2.jpg",
@@ -94,7 +96,7 @@ const projects = {
         screenshot2: "../img/projects/juan-pieza/screenshot-2.jpg",
         screenshot3: "../img/projects/juan-pieza/screenshot-3.jpg",
         screenshot4: "../img/projects/juan-pieza/screenshot-4.jpg",
-        itch: "https://itch.io"
+        itch: "#"
     }
 };
 
@@ -118,13 +120,13 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* 1. HERO VIDEO (Fondo en autoplay, loop y mute) */
+    /* HERO VIDEO & PARÁMETROS LIMPIOS */
     const heroIframe = document.getElementById("hero-youtube-iframe") || document.querySelector(".hero-video iframe");
-if (heroIframe && project.heroVideoId) {
-    heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1`;
-}
+    if (heroIframe && project.heroVideoId) {
+        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1`;
+    }
 
-    /* 2. HERO METADATA Y TÍTULO CENTRAL EN GRANDE */
+    /* METADATA HERO */
     const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
     if (titleHero) titleHero.textContent = project.title;
 
@@ -134,11 +136,10 @@ if (heroIframe && project.heroVideoId) {
     const category = document.getElementById("project-category");
     if (category) category.textContent = project.category;
 
-    /* Enlace del botón de Itch.io en el Hero */
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* 3. MAIN INFORMATION (Cuerpo del proyecto) */
+    /* MAIN INFORMATION */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -154,7 +155,7 @@ if (heroIframe && project.heroVideoId) {
     const taskTitle = document.getElementById("project-task-title");
     if (taskTitle) taskTitle.textContent = project.taskTitle;
 
-    /* 4. TASKS LIST */
+    /* TASKS */
     const taskList = document.getElementById("project-tasks");
     if (taskList) {
         taskList.innerHTML = "";
@@ -165,14 +166,14 @@ if (heroIframe && project.heroVideoId) {
         });
     }
 
-    /* 5. PLAY BUTTON */
+    /* PLAY BUTTON */
     const playButton = document.getElementById("project-play");
     if (playButton) {
         playButton.href = project.itch;
         playButton.textContent = "Play on itch.io";
     }
 
-    /* 6. INFO IMAGES */
+    /* INFO IMAGES */
     const infoRight1 = document.getElementById("project-info-right-1");
     if (infoRight1) {
         infoRight1.src = project.infoRight1;
@@ -185,7 +186,7 @@ if (heroIframe && project.heroVideoId) {
         infoRight2.alt = `${project.title} screenshot`;
     }
 
-    /* 7. SCREENSHOTS GALLERY */
+    /* SCREENSHOTS */
     const screenshots = [
         ["project-screenshot-1", project.screenshot1],
         ["project-screenshot-2", project.screenshot2],
@@ -201,7 +202,7 @@ if (heroIframe && project.heroVideoId) {
         }
     });
 
-    /* 8. LEARNING SECTION */
+    /* LEARNING */
     const learningTitle = document.getElementById("project-learning-title");
     if (learningTitle) learningTitle.textContent = project.learningTitle;
 
@@ -215,7 +216,7 @@ if (heroIframe && project.heroVideoId) {
         });
     }
 
-    /* 9. CONTRIBUTIONS SECTION */
+    /* CONTRIBUTIONS */
     const contributionsTitle = document.getElementById("project-contributions-title");
     if (contributionsTitle) contributionsTitle.textContent = project.contributionsTitle;
 
