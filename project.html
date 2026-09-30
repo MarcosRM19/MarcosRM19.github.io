@@ -52,7 +52,7 @@
 
 
     <!-- =====================================================
-         PROJECT
+         PROJECT PAGE
     ====================================================== -->
 
     <main id="project-content">
@@ -63,13 +63,12 @@
 
         <section class="title-hero">
 
-            <div class="title-bg-wrap">
-                <img
-                    id="project-hero"
-                    class="title-bg"
-                    src=""
-                    alt="">
-            </div>
+            <img
+                id="project-hero"
+                class="title-bg"
+                src=""
+                alt=""
+                aria-hidden="true">
 
             <div class="title-veil"></div>
 
@@ -124,7 +123,7 @@
 
                 <div class="ph-grid">
 
-                    <!-- LEFT IMAGE -->
+                    <!-- LEFT -->
 
                     <div class="ph-mascot">
 
@@ -137,7 +136,7 @@
                     </div>
 
 
-                    <!-- INFORMATION -->
+                    <!-- CENTER -->
 
                     <div class="ph-intro">
 
@@ -195,7 +194,7 @@
                     </div>
 
 
-                    <!-- RIGHT IMAGES -->
+                    <!-- RIGHT -->
 
                     <div class="ph-shots">
 
@@ -254,7 +253,8 @@
                             <img
                                 id="trailer-image"
                                 src=""
-                                alt="">
+                                alt=""
+                                loading="lazy">
 
                             <span class="play-badge"></span>
 
@@ -338,45 +338,41 @@
 
         <section class="contributions">
 
-            <div class="contrib-bg-wrap">
-                <img
-                    id="contributions-bg"
-                    class="contrib-bg"
-                    src=""
-                    alt="">
-            </div>
+            <img
+                id="contributions-bg"
+                class="contrib-bg"
+                src=""
+                alt=""
+                aria-hidden="true">
 
             <div class="contrib-veil"></div>
 
             <div class="project-wrap contributions-inner">
 
-                <div class="contrib-grid">
+                <div class="contrib-text">
 
-                    <div class="contrib-text">
+                    <h2 id="contributions-title"></h2>
 
-                        <h2 id="contributions-title">
-                        </h2>
+                    <p id="contributions-intro"></p>
 
-                        <p id="contributions-intro">
-                        </p>
+                    <ul
+                        id="contribution-list"
+                        class="contribution-list">
+                    </ul>
 
-                        <ul
-                            id="contribution-list"
-                            class="contribution-list">
-                        </ul>
-
-                    </div>
+                </div>
 
 
-                    <div class="learning-block">
+                <!-- IMPORTANTE:
+                     ESTO ESTÁ FUERA DEL BLOQUE DE CONTRIBUCIONES
+                     PARA QUE "LO QUE APRENDÍ" APAREZCA DEBAJO.
+                -->
 
-                        <h2 id="learning-title">
-                        </h2>
+                <div class="learning-block">
 
-                        <p id="learning-text">
-                        </p>
+                    <h2 id="learning-title"></h2>
 
-                    </div>
+                    <p id="learning-text"></p>
 
                 </div>
 
@@ -418,13 +414,15 @@
 
         <button
             class="lightbox-close"
-            type="button">
+            type="button"
+            aria-label="Cerrar">
             ×
         </button>
 
         <button
             class="lightbox-prev"
-            type="button">
+            type="button"
+            aria-label="Imagen anterior">
             ‹
         </button>
 
@@ -441,7 +439,8 @@
 
         <button
             class="lightbox-next"
-            type="button">
+            type="button"
+            aria-label="Imagen siguiente">
             ›
         </button>
 
