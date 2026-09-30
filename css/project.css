@@ -88,13 +88,45 @@ body {
     font-size: 1.05rem;
 }
 
+/* =========================================================
+   HERO TRAILER
+========================================================= */
+
+.hero-trailer {
+    width: min(900px, 100%);
+    margin: 38px auto 0;
+}
+
+.hero-trailer .youtube-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #000000;
+}
+
+.hero-trailer .youtube-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .store-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 32px;
+    margin-top: 24px;
+}
+.lightbox-arrow {
+    display: none;
 }
 
+.project-lightbox.is-open .lightbox-arrow {
+    display: block;
+}
 .store-link {
     width: 52px;
     height: 52px;
