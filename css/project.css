@@ -23,7 +23,7 @@ body {
 
 
 /* =========================================================
-   HERO
+   HERO PRINCIPAL
    ========================================================= */
 
 .title-hero {
@@ -157,8 +157,8 @@ body {
 
 
 /* =========================================================
-   PROJECT INTRO
-   2 COLUMNAS
+   PRIMERA PARTE DEL PROYECTO
+   50% INFORMACIÓN / 50% IMÁGENES
    ========================================================= */
 
 .project-hero-v2 {
@@ -170,23 +170,21 @@ body {
 .ph-grid {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(420px, 0.85fr);
+    grid-template-columns: 1fr 1fr;
 
-    gap: clamp(60px, 7vw, 120px);
+    gap: 60px;
 
     align-items: start;
 }
 
 
 /* =========================================================
-   INFORMACIÓN — IZQUIERDA
+   INFORMACIÓN — MITAD IZQUIERDA
    ========================================================= */
 
 .ph-intro {
     width: 100%;
-    max-width: 760px;
+    max-width: none;
 }
 
 .eyebrow {
@@ -362,7 +360,7 @@ body {
 
 
 /* =========================================================
-   IMÁGENES — DERECHA
+   IMÁGENES — MITAD DERECHA
    ========================================================= */
 
 .ph-shots {
@@ -383,7 +381,7 @@ body {
 
     border: 0;
 
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10;
 
     overflow: hidden;
 
@@ -570,6 +568,11 @@ body {
    CONTRIBUTIONS
    ========================================================= */
 
+.contrib-bg,
+.contrib-veil {
+    display: none;
+}
+
 .contributions {
     position: relative;
 
@@ -578,19 +581,6 @@ body {
     padding: 155px 0 150px;
 
     background: var(--background);
-
-    isolation: isolate;
-}
-
-
-/*
-   La sección de contribuciones ya no utiliza
-   una imagen de fondo.
-*/
-
-.contrib-bg,
-.contrib-veil {
-    display: none;
 }
 
 .contributions-inner {
@@ -640,7 +630,7 @@ body {
 
     margin: 52px 0 0;
 
-    padding: 0 0 0 30px;
+    padding: 0 0 0 28px;
 
     list-style-type: disc;
 }
@@ -648,21 +638,17 @@ body {
 .contribution-list li {
     display: list-item;
 
-    margin: 0;
-
-    padding-left: 6px;
-
     color: var(--text);
 
     font-size: 0.96rem;
 
     line-height: 1.8;
+
+    padding-left: 5px;
 }
 
 .contribution-list li::marker {
     color: var(--green);
-
-    font-size: 0.9em;
 }
 
 .contribution-title {
@@ -686,8 +672,6 @@ body {
     max-width: 900px;
 
     margin-top: 125px;
-
-    padding-top: 0;
 }
 
 .learning-block h2 {
@@ -696,7 +680,7 @@ body {
 
 
 /* =========================================================
-   BOTONES FINALES
+   CTA FINAL
    ========================================================= */
 
 .case-cta {
@@ -827,23 +811,6 @@ body {
 
 
 /* =========================================================
-   RESPONSIVE — 1150px
-   ========================================================= */
-
-@media (max-width: 1150px) {
-
-    .ph-grid {
-        grid-template-columns:
-            minmax(0, 1fr)
-            minmax(340px, 0.85fr);
-
-        gap: 55px;
-    }
-
-}
-
-
-/* =========================================================
    RESPONSIVE — 850px
    ========================================================= */
 
@@ -856,9 +823,13 @@ body {
 
     .title-hero {
         min-height: 650px;
-
         height: 70vh;
     }
+
+    /*
+       En móvil dejamos de lado a lado
+       y pasamos a una sola columna.
+    */
 
     .ph-grid {
         display: flex;
@@ -907,7 +878,6 @@ body {
 
     .title-hero {
         min-height: 560px;
-
         height: 560px;
     }
 
