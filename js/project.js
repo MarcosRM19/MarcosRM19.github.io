@@ -120,9 +120,9 @@ function loadProject() {
 
     /* 1. HERO VIDEO (Fondo en autoplay, loop y mute) */
     const heroIframe = document.getElementById("hero-youtube-iframe") || document.querySelector(".hero-video iframe");
-    if (heroIframe && project.heroVideoId) {
-        heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&playsinline=1&enablejsapi=1`;
-    }
+if (heroIframe && project.heroVideoId) {
+    heroIframe.src = `https://www.youtube.com/embed/${project.heroVideoId}?autoplay=1&mute=1&loop=1&playlist=${project.heroVideoId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1`;
+}
 
     /* 2. HERO METADATA Y TÍTULO CENTRAL EN GRANDE */
     const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
