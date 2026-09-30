@@ -1,201 +1,186 @@
+/* =========================================================
+   PROJECT DATA
+========================================================= */
+
 const projects = {
 
     lyra: {
 
+        category: "GAME / LEVEL DESIGN",
+
         title: "Lyra",
 
-        category: "AI GAME PROGRAMMER / GAME & LEVEL DESIGNER",
+        years: "2025 — 2026",
 
-        years: "La Mapachanda · TFG ENTI-UB · 2025-2026",
-
-        tagline:
-            "Proyecto de investigación centrado en IA, diseño de niveles y análisis del comportamiento del jugador.",
+        tagline: "A narrative-driven game focused on exploration, atmosphere and interaction.",
 
         description:
-            "Lyra es un proyecto desarrollado en Unreal Engine 5 que explora la relación entre inteligencia artificial, diseño de niveles y comportamiento del jugador. El proyecto combina programación, diseño y análisis de datos para estudiar cómo diferentes decisiones de diseño afectan a la experiencia del jugador.",
+            "Lyra is a university game project developed as part of La Mapachanda and my TFG at ENTI-UB. The project combines gameplay programming, level design and AI systems to create an interactive experience.",
 
         role:
-            "Mi trabajo se centró principalmente en el diseño e implementación de las mecánicas, el diseño de niveles, la programación de sistemas de IA y la captura y análisis de datos.",
+            "My role focused on gameplay programming, AI implementation, level design and the design and implementation of the game's core mechanics.",
 
         taskTitle:
-            "Áreas de trabajo",
+            "TASK OVERVIEW",
 
         tasks: [
             "Diseño e implementación de las mecánicas principales y sus interacciones.",
-            "Diseño de las salas y progresión siguiendo una estructura EDPV.",
-            "Programación y captura de datos dentro de Unreal Engine 5.",
-            "Diseño de pruebas, análisis estadístico y validación de decisiones de diseño."
+            "Programación de sistemas de gameplay y comportamiento de los enemigos.",
+            "Diseño y construcción de niveles orientados a la exploración y progresión del jugador.",
+            "Implementación y ajuste de sistemas de inteligencia artificial.",
+            "Iteración de las mecánicas a partir de pruebas de juego y feedback.",
+            "Colaboración con el resto del equipo durante el desarrollo del proyecto."
         ],
 
-        playText:
-            "Jugar en Itch.io",
+        learningTitle:
+            "Desarrollo de sistemas y diseño mediante iteración",
 
-        itch:
-            "#",
-
-        trailerLabel:
-            "Trailer",
+        learning: [
+            "Aprendí a diseñar sistemas de gameplay teniendo en cuenta cómo interactúan entre ellos y cómo afectan a la experiencia del jugador.",
+            "Profundicé en la implementación de inteligencia artificial y en la creación de comportamientos para personajes y enemigos.",
+            "Mejoré mi capacidad para diseñar niveles a partir de objetivos de gameplay, ritmo y navegación del jugador.",
+            "Aprendí a iterar las mecánicas mediante pruebas de juego, detectando problemas y ajustando el diseño.",
+            "Trabajé en un proyecto de mayor escala dentro de un equipo, aprendiendo a coordinar programación y diseño con otras disciplinas."
+        ],
 
         contributionsTitle:
-            "Contribuciones",
+            "Programación, IA y diseño de niveles",
 
-        contributions:
-            `
-            <p>
-                Diseño e implementación de sistemas de gameplay,
-                diseño de niveles y programación de IA dentro de Unreal Engine 5.
-            </p>
+        contributions: [
+            {
+                title: "Gameplay Programming",
+                text: "Implementación de las principales mecánicas de gameplay y sistemas de interacción."
+            },
+            {
+                title: "Artificial Intelligence",
+                text: "Diseño e implementación de comportamientos de IA para los personajes y enemigos."
+            },
+            {
+                title: "Level Design",
+                text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
+            }
+        ],
 
-            <p>
-                También participé en la planificación de pruebas,
-                captura de datos y análisis de los resultados obtenidos.
-            </p>
-            `,
+        hero:
+            "img/projects/lyra/hero.jpg",
 
-        learningTitle:
-            "Aprendizaje",
+        infoRight1:
+            "img/projects/lyra/info-right-1.jpg",
 
-        learning:
-            `
-            <p>
-                El proyecto me permitió profundizar en el desarrollo
-                de sistemas de IA, diseño de niveles y análisis de comportamiento.
-            </p>
+        infoRight2:
+            "img/projects/lyra/info-right-2.jpg",
 
-            <p>
-                También reforcé mi experiencia trabajando con datos
-                para validar decisiones de diseño.
-            </p>
-            `,
+        screenshot1:
+            "img/projects/lyra/screenshot-1.jpg",
 
-        images: {
+        screenshot2:
+            "img/projects/lyra/screenshot-2.jpg",
 
-            hero:
-                "img/projects/lyra/screenshot-1.jpg",
+        screenshot3:
+            "img/projects/lyra/screenshot-3.jpg",
 
-            infoRight1:
-                "img/projects/lyra/info-right-1.jpg",
+        screenshot4:
+            "img/projects/lyra/screenshot-4.jpg",
 
-            infoRight2:
-                "img/projects/lyra/info-right-2.jpg",
+        itch:
+            "#"
 
-            screenshot1:
-                "img/projects/lyra/screenshot-1.jpg",
-
-            screenshot2:
-                "img/projects/lyra/screenshot-2.jpg",
-
-            screenshot3:
-                "img/projects/lyra/screenshot-3.jpg",
-
-            screenshot4:
-                "img/projects/lyra/screenshot-4.jpg"
-        }
     },
 
 
     "juan-pieza": {
 
+        category: "GAME / LEVEL DESIGN",
+
         title: "Juan Pieza",
 
-        category: "GAME PROGRAMMER / LEVEL DESIGNER",
+        years: "2024 — 2025",
 
-        years: "La Mapachanda · Proyecto universitario · 2024-2025",
-
-        tagline:
-            "Proyecto universitario centrado en programación, gameplay y diseño de niveles.",
+        tagline: "A university game project focused on gameplay programming and level design.",
 
         description:
-            "Juan Pieza es un proyecto desarrollado dentro de La Mapachanda como parte de mi formación universitaria, combinando programación de gameplay y diseño de niveles.",
+            "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
 
         role:
-            "Participé en la programación de gameplay y en el diseño y construcción de niveles.",
+            "My role focused on gameplay programming, level design and the implementation and iteration of the game's main systems.",
 
         taskTitle:
-            "Áreas de trabajo",
+            "TASK OVERVIEW",
 
         tasks: [
             "Diseño e implementación de las mecánicas principales.",
+            "Programación de sistemas de gameplay e interacción.",
             "Diseño y construcción de niveles.",
-            "Programación de sistemas de gameplay.",
-            "Iteración y ajuste de la experiencia de juego."
+            "Iteración del diseño a partir de pruebas de juego.",
+            "Colaboración con el equipo durante las diferentes fases de desarrollo."
         ],
 
-        playText:
-            "Ver proyecto",
+        learningTitle:
+            "Aprender mediante diseño e iteración",
 
-        itch:
-            "#",
-
-        trailerLabel:
-            "Trailer",
+        learning: [
+            "Aprendí a transformar ideas de diseño en sistemas jugables.",
+            "Mejoré mi capacidad para diseñar niveles pensando en el flujo y la experiencia del jugador.",
+            "Aprendí a detectar problemas de gameplay mediante pruebas y a iterar rápidamente.",
+            "Trabajé en un entorno de desarrollo colaborativo y aprendí a coordinar diferentes áreas del proyecto."
+        ],
 
         contributionsTitle:
-            "Contribuciones",
+            "Gameplay y Level Design",
 
-        contributions:
-            `
-            <p>
-                Programación de sistemas de gameplay y participación
-                en el diseño y construcción de niveles.
-            </p>
-            `,
+        contributions: [
+            {
+                title: "Gameplay Programming",
+                text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
+            },
+            {
+                title: "Level Design",
+                text: "Diseño y construcción de los niveles y espacios jugables."
+            },
+            {
+                title: "Iteration",
+                text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
+            }
+        ],
 
-        learningTitle:
-            "Aprendizaje",
+        hero:
+            "img/projects/juan-pieza/hero.jpg",
 
-        learning:
-            `
-            <p>
-                El proyecto permitió mejorar mis conocimientos de
-                programación de gameplay y diseño de niveles.
-            </p>
-            `,
+        infoRight1:
+            "img/projects/juan-pieza/info-right-1.jpg",
 
-        images: {
+        infoRight2:
+            "img/projects/juan-pieza/info-right-2.jpg",
 
-            hero:
-                "img/projects/juan-pieza/screenshot-1.jpg",
+        screenshot1:
+            "img/projects/juan-pieza/screenshot-1.jpg",
 
-            infoRight1:
-                "img/projects/juan-pieza/info-right-1.jpg",
+        screenshot2:
+            "img/projects/juan-pieza/screenshot-2.jpg",
 
-            infoRight2:
-                "img/projects/juan-pieza/info-right-2.jpg",
+        screenshot3:
+            "img/projects/juan-pieza/screenshot-3.jpg",
 
-            screenshot1:
-                "img/projects/juan-pieza/screenshot-1.jpg",
+        screenshot4:
+            "img/projects/juan-pieza/screenshot-4.jpg",
 
-            screenshot2:
-                "img/projects/juan-pieza/screenshot-2.jpg",
+        itch:
+            "#"
 
-            screenshot3:
-                "img/projects/juan-pieza/screenshot-3.jpg",
-
-            screenshot4:
-                "img/projects/juan-pieza/screenshot-4.jpg"
-        }
     }
+
 };
 
 
 /* =========================================================
-   PROJECT ID
+   GET PROJECT
 ========================================================= */
 
 function getProjectId() {
 
-    const params =
-        new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
 
-    const id =
-        params.get("project");
-
-    if (projects[id]) {
-        return id;
-    }
-
-    return "lyra";
+    return params.get("project") || "lyra";
 }
 
 
@@ -205,263 +190,241 @@ function getProjectId() {
 
 function loadProject() {
 
-    const project =
-        projects[getProjectId()];
+    const projectId = getProjectId();
 
-    if (!project) {
-        return;
-    }
-
-
-    /* TITLE */
+    const project = projects[projectId] || projects.lyra;
 
     document.title =
         `${project.title} | MarcosRuiz Portfolio`;
 
 
-    /* HERO */
+    /* -----------------------------------------------------
+       TITLE HERO
+    ----------------------------------------------------- */
 
-    const hero =
-        document.getElementById("project-hero");
+    const hero = document.getElementById("project-hero");
 
     if (hero) {
-        hero.src = project.images.hero;
+        hero.src = project.hero;
         hero.alt = project.title;
     }
 
+    const logoFallback =
+        document.getElementById("project-logo-fallback");
 
-    /* HERO TITLE */
-
-    const heroTitle =
-        document.getElementById(
-            "project-logo-fallback"
-        );
-
-    if (heroTitle) {
-        heroTitle.textContent =
-            project.title;
+    if (logoFallback) {
+        logoFallback.textContent = project.title;
     }
-
-
-    /* TAGLINE */
 
     const tagline =
-        document.getElementById(
-            "project-tagline"
-        );
+        document.getElementById("project-tagline");
 
     if (tagline) {
-        tagline.textContent =
-            project.tagline;
+        tagline.textContent = project.tagline;
     }
 
-
-    /* ITCH */
-
     const itch =
-        document.getElementById(
-            "project-itch"
-        );
+        document.getElementById("project-itch");
 
     if (itch) {
         itch.href = project.itch;
     }
 
 
-    /* CATEGORY */
+    /* -----------------------------------------------------
+       MAIN INFORMATION
+    ----------------------------------------------------- */
 
     const category =
-        document.getElementById(
-            "project-category"
-        );
+        document.getElementById("project-category");
 
     if (category) {
-        category.textContent =
-            project.category;
+        category.textContent = project.category;
     }
-
-
-    /* TITLE */
 
     const title =
-        document.getElementById(
-            "project-title"
-        );
+        document.getElementById("project-title");
 
     if (title) {
-        title.textContent =
-            project.title;
+        title.textContent = project.title;
     }
-
-
-    /* YEARS */
 
     const years =
-        document.getElementById(
-            "project-years"
-        );
+        document.getElementById("project-years");
 
     if (years) {
-        years.textContent =
-            project.years;
+        years.textContent = project.years;
     }
-
-
-    /* DESCRIPTION */
 
     const description =
-        document.getElementById(
-            "project-description"
-        );
+        document.getElementById("project-description");
 
     if (description) {
-        description.textContent =
-            project.description;
+        description.textContent = project.description;
     }
-
-
-    /* ROLE */
 
     const role =
-        document.getElementById(
-            "project-role"
-        );
+        document.getElementById("project-role");
 
     if (role) {
-        role.textContent =
-            project.role;
+        role.textContent = project.role;
     }
-
-
-    /* TASK TITLE */
 
     const taskTitle =
-        document.getElementById(
-            "project-task-title"
-        );
+        document.getElementById("project-task-title");
 
     if (taskTitle) {
-        taskTitle.textContent =
-            project.taskTitle;
+        taskTitle.textContent = project.taskTitle;
     }
 
 
-    /* TASKS */
+    /* -----------------------------------------------------
+       TASKS
+    ----------------------------------------------------- */
 
     const taskList =
-        document.getElementById(
-            "project-tasks"
-        );
+        document.getElementById("project-tasks");
 
     if (taskList) {
 
         taskList.innerHTML = "";
 
-        project.tasks.forEach(function(task) {
+        project.tasks.forEach((task) => {
 
-            const li =
-                document.createElement("li");
+            const li = document.createElement("li");
 
             li.textContent = task;
 
             taskList.appendChild(li);
+
         });
+
     }
 
 
-    /* PLAY BUTTON */
+    /* -----------------------------------------------------
+       BUTTON
+    ----------------------------------------------------- */
 
-    const play =
-        document.getElementById(
-            "project-play"
-        );
+    const playButton =
+        document.getElementById("project-play");
 
-    if (play) {
+    if (playButton) {
 
-        play.textContent =
-            project.playText;
+        playButton.href = project.itch;
 
-        play.href =
-            project.itch;
+        playButton.textContent = "Play on itch.io";
+
     }
 
 
-    /* IMAGE 1 */
+    /* -----------------------------------------------------
+       INFORMATION IMAGES
+    ----------------------------------------------------- */
 
     const infoRight1 =
-        document.getElementById(
-            "project-info-right-1"
-        );
+        document.getElementById("project-info-right-1");
 
     if (infoRight1) {
 
-        infoRight1.src =
-            project.images.infoRight1;
+        infoRight1.src = project.infoRight1;
+        infoRight1.alt = `${project.title} screenshot`;
 
-        infoRight1.alt =
-            project.title;
     }
 
 
-    /* IMAGE 2 */
-
     const infoRight2 =
-        document.getElementById(
-            "project-info-right-2"
-        );
+        document.getElementById("project-info-right-2");
 
     if (infoRight2) {
 
-        infoRight2.src =
-            project.images.infoRight2;
+        infoRight2.src = project.infoRight2;
+        infoRight2.alt = `${project.title} screenshot`;
 
-        infoRight2.alt =
-            project.title;
     }
 
 
-    /* SCREENSHOTS */
+    /* -----------------------------------------------------
+       TRAILER LABEL
+    ----------------------------------------------------- */
+
+    const trailerLabel =
+        document.getElementById("trailer-label");
+
+    if (trailerLabel) {
+        trailerLabel.textContent = "TRAILER";
+    }
+
+
+    /* -----------------------------------------------------
+       SCREENSHOTS
+    ----------------------------------------------------- */
 
     const screenshots = [
-        ["project-screenshot-1", project.images.screenshot1],
-        ["project-screenshot-2", project.images.screenshot2],
-        ["project-screenshot-3", project.images.screenshot3],
-        ["project-screenshot-4", project.images.screenshot4]
+        ["project-screenshot-1", project.screenshot1],
+        ["project-screenshot-2", project.screenshot2],
+        ["project-screenshot-3", project.screenshot3],
+        ["project-screenshot-4", project.screenshot4]
     ];
 
-
-    screenshots.forEach(function(item) {
+    screenshots.forEach(([id, src], index) => {
 
         const image =
-            document.getElementById(item[0]);
+            document.getElementById(id);
 
-        if (!image) {
-            return;
+        if (image) {
+
+            image.src = src;
+
+            image.alt =
+                `${project.title} screenshot ${index + 1}`;
+
         }
 
-        image.src = item[1];
-        image.alt = project.title;
     });
 
 
-    /* TRAILER LABEL */
+    /* -----------------------------------------------------
+       LEARNING
+    ----------------------------------------------------- */
 
-    const trailerLabel =
-        document.getElementById(
-            "trailer-label"
-        );
+    const learningTitle =
+        document.getElementById("project-learning-title");
 
-    if (trailerLabel) {
-        trailerLabel.textContent =
-            project.trailerLabel;
+    if (learningTitle) {
+        learningTitle.textContent =
+            project.learningTitle;
     }
 
 
-    /* CONTRIBUTIONS */
+    const learningList =
+        document.getElementById("project-learning-list");
+
+    if (learningList) {
+
+        learningList.innerHTML = "";
+
+        project.learning.forEach((item) => {
+
+            const li =
+                document.createElement("li");
+
+            li.textContent = item;
+
+            learningList.appendChild(li);
+
+        });
+
+    }
+
+
+    /* -----------------------------------------------------
+       CONTRIBUTIONS
+    ----------------------------------------------------- */
 
     const contributionsTitle =
         document.getElementById(
-            "contributions-title"
+            "project-contributions-title"
         );
 
     if (contributionsTitle) {
@@ -470,42 +433,41 @@ function loadProject() {
     }
 
 
-    const contributions =
+    const contributionsGrid =
         document.getElementById(
-            "contributions-content"
+            "project-contributions-grid"
         );
 
-    if (contributions) {
-        contributions.innerHTML =
-            project.contributions;
+    if (contributionsGrid) {
+
+        contributionsGrid.innerHTML = "";
+
+        project.contributions.forEach((item) => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "contribution-card";
+
+            card.innerHTML = `
+                <h3>${item.title}</h3>
+                <p>${item.text}</p>
+            `;
+
+            contributionsGrid.appendChild(card);
+
+        });
+
     }
 
 
-    /* LEARNING */
-
-    const learningTitle =
-        document.getElementById(
-            "learning-title"
-        );
-
-    if (learningTitle) {
-        learningTitle.textContent =
-            project.learningTitle;
-    }
-
-
-    const learning =
-        document.getElementById(
-            "learning-content"
-        );
-
-    if (learning) {
-        learning.innerHTML =
-            project.learning;
-    }
-
+    /* -----------------------------------------------------
+       LIGHTBOX
+    ----------------------------------------------------- */
 
     setupLightbox();
+
 }
 
 
@@ -513,21 +475,52 @@ function loadProject() {
    LIGHTBOX
 ========================================================= */
 
-let galleryImages = [];
-let currentImage = 0;
-
-
 function setupLightbox() {
 
-    const buttons =
-        document.querySelectorAll(
-            "[data-project-image]"
+    const lightbox =
+        document.getElementById("project-lightbox");
+
+    const lightboxImage =
+        document.getElementById("lightbox-image");
+
+    const closeButton =
+        document.getElementById("lightbox-close");
+
+    const previousButton =
+        document.getElementById("lightbox-prev");
+
+    const nextButton =
+        document.getElementById("lightbox-next");
+
+    const imageButtons =
+        Array.from(
+            document.querySelectorAll(
+                "[data-project-image]"
+            )
         );
 
-    galleryImages = [];
+
+    if (
+        !lightbox ||
+        !lightboxImage ||
+        !closeButton ||
+        !previousButton ||
+        !nextButton ||
+        imageButtons.length === 0
+    ) {
+        return;
+    }
 
 
-    buttons.forEach(function(button) {
+    let currentIndex = 0;
+
+
+    function openLightbox(index) {
+
+        currentIndex = index;
+
+        const button =
+            imageButtons[currentIndex];
 
         const image =
             button.querySelector("img");
@@ -536,248 +529,129 @@ function setupLightbox() {
             return;
         }
 
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
 
-        const src =
-            image.src;
+        lightbox.classList.add("is-open");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow = "hidden";
+
+    }
 
 
-        if (!src) {
-            return;
-        }
+    function closeLightbox() {
+
+        lightbox.classList.remove("is-open");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        lightboxImage.src = "";
+
+        document.body.style.overflow = "";
+
+    }
 
 
-        if (!galleryImages.includes(src)) {
+    function showPrevious() {
 
-            galleryImages.push(src);
-        }
+        currentIndex =
+            (currentIndex - 1 + imageButtons.length)
+            % imageButtons.length;
+
+        openLightbox(currentIndex);
+
+    }
 
 
-        button.onclick = function() {
+    function showNext() {
 
-            currentImage =
-                galleryImages.indexOf(src);
+        currentIndex =
+            (currentIndex + 1)
+            % imageButtons.length;
 
-            openLightbox();
-        };
+        openLightbox(currentIndex);
+
+    }
+
+
+    imageButtons.forEach((button, index) => {
+
+        button.addEventListener(
+            "click",
+            () => openLightbox(index)
+        );
+
     });
 
 
-    const close =
-        document.getElementById(
-            "lightbox-close"
-        );
-
-    const previous =
-        document.getElementById(
-            "lightbox-prev"
-        );
-
-    const next =
-        document.getElementById(
-            "lightbox-next"
-        );
-
-
-    if (close) {
-        close.onclick =
-            closeLightbox;
-    }
-
-    if (previous) {
-        previous.onclick =
-            previousImage;
-    }
-
-    if (next) {
-        next.onclick =
-            nextImage;
-    }
-}
-
-
-/* =========================================================
-   OPEN
-========================================================= */
-
-function openLightbox() {
-
-    const lightbox =
-        document.getElementById(
-            "lightbox"
-        );
-
-    const image =
-        document.getElementById(
-            "lightbox-image"
-        );
-
-
-    if (!lightbox || !image) {
-        return;
-    }
-
-
-    image.src =
-        galleryImages[currentImage];
-
-
-    lightbox.classList.add(
-        "is-open"
+    closeButton.addEventListener(
+        "click",
+        closeLightbox
     );
 
-    lightbox.setAttribute(
-        "aria-hidden",
-        "false"
+
+    previousButton.addEventListener(
+        "click",
+        showPrevious
     );
 
-    document.body.style.overflow =
-        "hidden";
-}
 
-
-/* =========================================================
-   CLOSE
-========================================================= */
-
-function closeLightbox() {
-
-    const lightbox =
-        document.getElementById(
-            "lightbox"
-        );
-
-
-    if (!lightbox) {
-        return;
-    }
-
-
-    lightbox.classList.remove(
-        "is-open"
+    nextButton.addEventListener(
+        "click",
+        showNext
     );
 
-    lightbox.setAttribute(
-        "aria-hidden",
-        "true"
+
+    lightbox.addEventListener(
+        "click",
+        (event) => {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        }
     );
 
-    document.body.style.overflow =
-        "";
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                !lightbox.classList.contains("is-open")
+            ) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+            if (event.key === "ArrowLeft") {
+                showPrevious();
+            }
+
+            if (event.key === "ArrowRight") {
+                showNext();
+            }
+
+        }
+    );
+
 }
 
 
 /* =========================================================
-   NEXT
-========================================================= */
-
-function nextImage() {
-
-    if (!galleryImages.length) {
-        return;
-    }
-
-
-    currentImage++;
-
-    if (
-        currentImage >=
-        galleryImages.length
-    ) {
-        currentImage = 0;
-    }
-
-
-    updateLightbox();
-}
-
-
-/* =========================================================
-   PREVIOUS
-========================================================= */
-
-function previousImage() {
-
-    if (!galleryImages.length) {
-        return;
-    }
-
-
-    currentImage--;
-
-    if (currentImage < 0) {
-
-        currentImage =
-            galleryImages.length - 1;
-    }
-
-
-    updateLightbox();
-}
-
-
-/* =========================================================
-   UPDATE LIGHTBOX
-========================================================= */
-
-function updateLightbox() {
-
-    const image =
-        document.getElementById(
-            "lightbox-image"
-        );
-
-
-    if (!image) {
-        return;
-    }
-
-
-    image.src =
-        galleryImages[currentImage];
-}
-
-
-/* =========================================================
-   KEYBOARD
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        const lightbox =
-            document.getElementById(
-                "lightbox"
-            );
-
-
-        if (
-            !lightbox ||
-            !lightbox.classList.contains(
-                "is-open"
-            )
-        ) {
-            return;
-        }
-
-
-        if (event.key === "Escape") {
-            closeLightbox();
-        }
-
-        if (event.key === "ArrowRight") {
-            nextImage();
-        }
-
-        if (event.key === "ArrowLeft") {
-            previousImage();
-        }
-    }
-);
-
-
-/* =========================================================
-   START
+   INIT
 ========================================================= */
 
 document.addEventListener(
