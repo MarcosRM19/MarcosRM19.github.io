@@ -40,13 +40,14 @@ const projects = {
             }
         ],
         heroVideoId: "YIcgUIwu89U",
-        hero: "img/projects/lyra/hero.jpg",
-        infoRight1: "img/projects/lyra/info-right-1.jpg",
-        infoRight2: "img/projects/lyra/info-right-2.jpg",
-        screenshot1: "img/projects/lyra/screenshot-1.jpg",
-        screenshot2: "img/projects/lyra/screenshot-2.jpg",
-        screenshot3: "img/projects/lyra/screenshot-3.jpg",
-        screenshot4: "img/projects/lyra/screenshot-4.jpg",
+        /* Rutas de imágenes ajustadas con ../ */
+        hero: "../img/projects/lyra/hero.jpg",
+        infoRight1: "../img/projects/lyra/info-right-1.jpg",
+        infoRight2: "../img/projects/lyra/info-right-2.jpg",
+        screenshot1: "../img/projects/lyra/screenshot-1.jpg",
+        screenshot2: "../img/projects/lyra/screenshot-2.jpg",
+        screenshot3: "../img/projects/lyra/screenshot-3.jpg",
+        screenshot4: "../img/projects/lyra/screenshot-4.jpg",
         itch: "#"
     },
 
@@ -87,22 +88,32 @@ const projects = {
                 text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
             }
         ],
-        heroVideoId: "YIcgUIwu89U", // Cambiar por la ID de YouTube del proyecto
-        hero: "img/projects/juan-pieza/hero.jpg",
-        infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
-        infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
-        screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
-        screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
-        screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
-        screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
+        heroVideoId: "YIcgUIwu89U",
+        /* Rutas de imágenes ajustadas con ../ */
+        hero: "../img/projects/juan-pieza/hero.jpg",
+        infoRight1: "../img/projects/juan-pieza/info-right-1.jpg",
+        infoRight2: "../img/projects/juan-pieza/info-right-2.jpg",
+        screenshot1: "../img/projects/juan-pieza/screenshot-1.jpg",
+        screenshot2: "../img/projects/juan-pieza/screenshot-2.jpg",
+        screenshot3: "../img/projects/juan-pieza/screenshot-3.jpg",
+        screenshot4: "../img/projects/juan-pieza/screenshot-4.jpg",
         itch: "#"
     }
 
 };
 
 function getProjectId() {
+    /* 1. Comprueba si hay parámetro en URL ?project=lyra */
     const params = new URLSearchParams(window.location.search);
-    return params.get("project") || "lyra";
+    if (params.get("project")) {
+        return params.get("project");
+    }
+
+    /* 2. Si no hay parámetro, detecta por el nombre del archivo (ej. lyra.html -> lyra) */
+    const pathName = window.location.pathname;
+    const pageName = pathName.split("/").pop().replace(".html", "");
+
+    return projects[pageName] ? pageName : "lyra";
 }
 
 function loadProject() {
@@ -129,7 +140,7 @@ function loadProject() {
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* MAIN INFO */
+    /* MAIN INFORMATION */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -303,5 +314,4 @@ function setupLightbox() {
     };
 }
 
-/* Inicialización */
 document.addEventListener("DOMContentLoaded", loadProject);
