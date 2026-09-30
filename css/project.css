@@ -46,23 +46,37 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Recorta todo lo que sobresalga */
+    overflow: hidden;
     z-index: -3;
-    pointer-events: none; /* Impide que el ratón active la interfaz de YouTube */
 }
 
+/* El iframe empieza INVISIBLE */
 .hero-video-container iframe {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 100vh;
-    min-width: 177.77vh; 
-    min-height: 56.25vw;
-    /* Aumentamos la escala a 1.35 para 'sacar' el título y las flechas fuera de la pantalla */
-    transform: translate(-50%, -50%) scale(1.35);
+    height: 56.25vw; /* Proporción 16:9 exacta */
+    min-height: 100vh;
+    min-width: 177.77vh;
+    transform: translate(-50%, -50%);
     border: 0;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.8s ease-in-out; /* Transición suave */
     pointer-events: none;
+}
+
+/* Esta clase se añade por JS solo cuando el vídeo ya está corriendo */
+.hero-video-container iframe.is-playing {
+    opacity: 1;
+}
+
+/* Capa transparente encima para bloquear HOVER del ratón */
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: auto; /* Bloquea cualquier interacción con el vídeo */
 }
 .title-bg {
     position: absolute;
