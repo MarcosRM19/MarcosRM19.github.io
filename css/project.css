@@ -1,15 +1,17 @@
 /* =========================================================
    PROJECT PAGE
+   Lyra + Juan Pieza
 ========================================================= */
-
-.project-page {
-    overflow-x: hidden;
-}
 
 
 /* =========================================================
    GENERAL
 ========================================================= */
+
+.project-page {
+    background: var(--background);
+    color: var(--text);
+}
 
 .project-page main {
     width: 100%;
@@ -24,41 +26,43 @@
     text-decoration: none;
 }
 
-.project-page p,
-.project-page h1,
-.project-page h2,
-.project-page h3 {
-    margin-top: 0;
-}
-
 
 /* =========================================================
-   SECTION HEADINGS
+   SECTION LABEL
 ========================================================= */
 
 .project-section-heading {
-    max-width: 1500px;
-    margin: 0 auto 55px;
+    width: 100%;
 
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 15px;
+
+    margin-bottom: 45px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
 }
 
 .project-section-heading span {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    opacity: 0.55;
+    color: var(--green);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
 }
 
 .project-section-heading p {
     margin: 0;
 
-    font-size: 0.75rem;
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
     font-weight: 600;
 
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 
@@ -69,144 +73,205 @@
 .project-hero {
     position: relative;
 
-    min-height: 85vh;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     overflow: hidden;
+
+    border-bottom: 1px solid var(--border);
 }
+
+
+/* ---------- VIDEO ---------- */
 
 .project-hero-video {
     position: absolute;
+
     inset: 0;
 
     overflow: hidden;
 
     z-index: 0;
+
+    background: var(--background);
 }
 
 .project-hero-video iframe {
     position: absolute;
 
-    width: 100vw;
-    height: 56.25vw;
-
-    min-height: 100%;
-    min-width: 177.77vh;
-
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%) scale(1.15);
+    width: 100vw;
+    height: 56.25vw;
 
-    border: 0;
+    min-width: 177.77vh;
+    min-height: 100vh;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.15);
+
+    border: none;
 
     pointer-events: none;
 }
 
+
+/* ---------- OSCURECER VIDEO ---------- */
+
 .project-hero-overlay {
     position: absolute;
+
     inset: 0;
+
+    z-index: 1;
 
     background:
         linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.55)
+            180deg,
+            rgba(8, 11, 16, 0.35) 0%,
+            rgba(8, 11, 16, 0.45) 45%,
+            rgba(8, 11, 16, 0.92) 100%
         );
-
-    z-index: 1;
 }
+
+
+/* ---------- CONTENIDO ---------- */
 
 .project-hero-content {
     position: relative;
 
     z-index: 2;
 
-    width: min(1000px, 90%);
+    width: 90%;
+    max-width: 1500px;
 
     text-align: center;
 
-    color: #fff;
+    padding-top: 80px;
 }
 
 .project-eyebrow {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    color: var(--green);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
     text-transform: uppercase;
 }
 
+
+/* ---------- TITULO GRANDE ---------- */
+
 .project-hero-content h1 {
-    margin-bottom: 18px;
+    margin: 0;
 
-    font-size: clamp(4rem, 10vw, 9rem);
-    line-height: 0.9;
+    color: #ffffff;
 
-    letter-spacing: -0.05em;
+    font-size: clamp(6rem, 15vw, 14rem);
+
+    font-weight: 600;
+
+    line-height: 0.8;
+
+    letter-spacing: -5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.45);
 }
 
-.project-hero-subtitle {
-    max-width: 700px;
 
-    margin: 0 auto 35px;
+/* ---------- SUBTITULO ---------- */
+
+.project-hero-subtitle {
+    max-width: 800px;
+
+    margin: 40px auto 0;
+
+    color: var(--cream);
 
     font-size: clamp(1rem, 2vw, 1.35rem);
+
+    line-height: 1.7;
 }
 
 
 /* =========================================================
-   BUTTONS
+   ITCH BUTTON — SOLO LOGO
 ========================================================= */
 
-.project-itch-button,
-.project-outline-button {
+.project-itch-button {
+    width: 68px;
+    height: 68px;
+
+    margin-top: 35px;
+
     display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    border-radius: 50%;
 
-    min-height: 48px;
+    background: var(--green);
 
-    padding: 13px 22px;
+    border: 1px solid var(--green);
 
-    border-radius: 2px;
-
-    font-size: 0.8rem;
-    font-weight: 600;
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    color: var(--background);
 
     transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        background-color 0.2s ease;
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
-.project-itch-button {
-    background: #fff;
-    color: #111;
+.project-itch-button:hover {
+    transform: translateY(-4px);
+
+    background: var(--orange);
+
+    border-color: var(--orange);
+
+    color: #ffffff;
 }
 
-.project-outline-button {
-    border: 1px solid currentColor;
-    color: inherit;
+
+/* ocultamos el texto */
+
+.project-itch-button span:not(.itch-icon) {
+    display: none;
 }
 
-.project-itch-button:hover,
-.project-outline-button:hover {
-    transform: translateY(-3px);
-    opacity: 0.85;
-}
 
-.itch-icon {
-    font-size: 0.7rem;
+/* Logo */
+
+.project-itch-button .itch-icon {
+    width: 32px;
+    height: 32px;
+
+    display: block;
+
+    font-size: 0;
+
+    background-image: url("../img/itch-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    /*
+       Si tu logo tiene otro nombre/ruta,
+       cambia solamente esta URL.
+    */
 }
 
 
@@ -215,13 +280,13 @@
 ========================================================= */
 
 .project-information {
-    padding: 130px 5vw;
+    padding: 120px 10%;
+
+    border-bottom: 1px solid var(--border);
 }
 
 .project-information-grid {
-    width: min(1500px, 100%);
-
-    margin: 0 auto;
+    width: 100%;
 
     display: grid;
 
@@ -230,16 +295,20 @@
         minmax(350px, 0.9fr)
         minmax(250px, 0.75fr);
 
-    gap: 50px;
+    gap: 45px;
 
     align-items: stretch;
 }
 
 
-/* LEFT */
+/* ---------- IZQUIERDA ---------- */
 
 .project-info-left {
-    min-height: 650px;
+    min-height: 680px;
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
 }
 
 .project-info-left img {
@@ -250,190 +319,183 @@
 }
 
 
-/* CENTER */
+/* ---------- CENTRO ---------- */
 
 .project-info-center {
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
+    padding: 10px 10px;
 }
 
 .project-small-label {
     margin-bottom: 15px;
 
-    font-size: 0.75rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    color: var(--green);
 
-    opacity: 0.55;
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
 .project-info-center h2 {
     margin-bottom: 15px;
 
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    color: #ffffff;
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    font-weight: 500;
 
     line-height: 0.95;
-    letter-spacing: -0.04em;
+
+    letter-spacing: -2px;
 }
 
 .project-info-subtitle {
     margin-bottom: 35px;
 
-    font-size: 1rem;
+    color: var(--text-muted);
 
-    opacity: 0.65;
+    font-size: 0.9rem;
 }
 
 .project-info-year {
     display: flex;
+
     flex-direction: column;
 
-    gap: 5px;
+    gap: 4px;
 
     margin-bottom: 35px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
 }
 
 .project-info-year span {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    opacity: 0.5;
+    color: var(--text-muted);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 2px;
 }
 
 .project-info-year strong {
-    font-size: 1.1rem;
+    color: var(--cream);
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
 }
 
-.project-description {
-    margin-bottom: 35px;
-}
+.project-info-center .project-description {
+    margin-bottom: 30px;
 
-.project-description p {
-    margin-bottom: 18px;
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
 
     line-height: 1.8;
 }
 
+.project-info-center .project-description p {
+    margin-bottom: 18px;
+}
 
-/* RIGHT */
+
+/* ---------- BOTON SECUNDARIO ---------- */
+
+.project-outline-button {
+    align-self: flex-start;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+
+    padding: 0 17px;
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 1px;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.project-outline-button:hover {
+    border-color: var(--green);
+
+    background: var(--green);
+
+    color: var(--background);
+}
+
+
+/* ---------- DERECHA ---------- */
 
 .project-info-right {
     display: grid;
 
     grid-template-rows: 1fr 1fr;
 
-    gap: 30px;
+    gap: 25px;
 }
 
 .project-info-right img {
     width: 100%;
     height: 100%;
 
-    min-height: 280px;
+    min-height: 300px;
 
     object-fit: cover;
-}
 
-
-/* =========================================================
-   TASK OVERVIEW
-========================================================= */
-
-.project-overview {
-    padding: 130px 5vw;
-
-    background: rgba(127, 127, 127, 0.05);
-}
-
-.project-overview-inner {
-    width: min(1000px, 100%);
-
-    margin: 0 auto;
-}
-
-.project-overview h2 {
-    margin-bottom: 30px;
-
-    font-size: clamp(2.5rem, 5vw, 5rem);
-
-    line-height: 1;
-    letter-spacing: -0.04em;
-}
-
-.project-overview-description {
-    max-width: 800px;
-
-    margin-bottom: 45px;
-
-    font-size: 1.05rem;
-    line-height: 1.8;
-
-    opacity: 0.75;
-}
-
-.project-contribution-list,
-.my-contribution-list {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.project-contribution-list li,
-.my-contribution-list li {
-    position: relative;
-
-    padding: 22px 0 22px 35px;
-
-    border-top: 1px solid rgba(127, 127, 127, 0.25);
-
-    line-height: 1.7;
-}
-
-.project-contribution-list li:last-child,
-.my-contribution-list li:last-child {
-    border-bottom: 1px solid rgba(127, 127, 127, 0.25);
-}
-
-.project-contribution-list li::before,
-.my-contribution-list li::before {
-    content: "→";
-
-    position: absolute;
-
-    left: 0;
-    top: 22px;
-
-    opacity: 0.5;
+    border: 1px solid var(--border);
 }
 
 
 /* =========================================================
    MEDIA
+   VA ANTES DE TASK OVERVIEW
 ========================================================= */
 
 .project-media {
-    padding: 130px 5vw;
+    padding: 120px 10%;
+
+    border-bottom: 1px solid var(--border);
 }
 
 .project-media-grid {
-    width: min(1500px, 100%);
-
-    margin: 0 auto;
+    width: 100%;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 30px;
+    gap: 25px;
 }
 
 
-/* TRAILER */
+/* ---------- TRAILER ---------- */
 
 .project-trailer {
-    min-width: 0;
+    width: 100%;
 }
 
 .project-video-wrapper {
@@ -445,7 +507,9 @@
 
     overflow: hidden;
 
-    background: #111;
+    background: var(--surface);
+
+    border: 1px solid var(--border);
 }
 
 .project-video-wrapper iframe {
@@ -456,18 +520,18 @@
     width: 100%;
     height: 100%;
 
-    border: 0;
+    border: none;
 }
 
 
-/* GALLERY */
+/* ---------- GALERIA ---------- */
 
 .project-gallery {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
-    gap: 20px;
+    gap: 15px;
 }
 
 .project-gallery img {
@@ -478,83 +542,155 @@
 
     object-fit: cover;
 
-    transition: transform 0.3s ease;
+    border: 1px solid var(--border);
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.3s ease;
 }
 
 .project-gallery img:hover {
-    transform: scale(1.02);
+    border-color: var(--green);
+
+    transform: scale(1.015);
 }
 
 
 /* =========================================================
-   MY CONTRIBUTION
+   TASK OVERVIEW + CONTRIBUTION + LEARNING
+   TODO JUNTO
 ========================================================= */
 
-.project-contribution {
-    padding: 130px 5vw;
+.project-overview {
+    padding: 120px 10%;
+
+    border-bottom: 1px solid var(--border);
 }
 
-.project-contribution-inner {
-    width: min(1100px, 100%);
+.project-overview-inner {
+    width: 100%;
+    max-width: 1100px;
 
     margin: 0 auto;
 }
 
-.project-contribution-inner h2 {
+
+/* ---------- TITULO ---------- */
+
+.project-overview h2 {
     margin-bottom: 25px;
 
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    color: #ffffff;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+    font-weight: 500;
 
     line-height: 1;
 
-    letter-spacing: -0.04em;
+    letter-spacing: -2px;
 }
 
-.my-contribution-description {
-    max-width: 850px;
+
+/* ---------- DESCRIPCION ---------- */
+
+.project-overview-description {
+    max-width: 900px;
 
     margin-bottom: 45px;
 
-    line-height: 1.8;
+    color: var(--text-muted);
 
-    opacity: 0.75;
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* ---------- LISTA ---------- */
+
+.project-contribution-list {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.project-contribution-list li {
+    position: relative;
+
+    padding: 25px 0 25px 35px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+.project-contribution-list li:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.project-contribution-list li::before {
+    content: "→";
+
+    position: absolute;
+
+    left: 0;
+    top: 25px;
+
+    color: var(--green);
+}
+
+.project-contribution-list strong {
+    color: #ffffff;
+
+    font-weight: 600;
 }
 
 
 /* =========================================================
-   LEARNING
+   WHAT I LEARNED
 ========================================================= */
 
 .project-learning {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 70px;
+
     margin-top: 100px;
 
     padding-top: 70px;
 
-    border-top: 1px solid rgba(127, 127, 127, 0.3);
-
-    display: grid;
-
-    grid-template-columns: 0.8fr 1.2fr;
-
-    gap: 70px;
+    border-top: 1px solid var(--border);
 }
 
 .project-learning-heading span {
     display: block;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+
+    color: var(--green);
 
     font-size: 0.7rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    font-weight: 600;
 
-    opacity: 0.55;
+    letter-spacing: 2px;
 }
 
 .project-learning-heading h3 {
     margin: 0;
 
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #ffffff;
+
+    font-size: clamp(2rem, 4vw, 3.4rem);
+
+    font-weight: 500;
 
     line-height: 1;
 }
@@ -562,9 +698,11 @@
 .project-learning > p {
     margin: 0;
 
-    line-height: 1.9;
+    color: var(--text-muted);
 
-    opacity: 0.75;
+    font-size: 1rem;
+
+    line-height: 1.9;
 }
 
 
@@ -573,20 +711,20 @@
 ========================================================= */
 
 .project-navigation {
-    width: min(1500px, 90%);
+    width: 80%;
 
     margin: 0 auto;
 
-    padding: 70px 0 130px;
+    padding: 65px 0;
 
     display: flex;
 
     align-items: center;
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 25px;
 
-    border-top: 1px solid rgba(127, 127, 127, 0.25);
+    border-bottom: 1px solid var(--border);
 }
 
 .project-back-button {
@@ -594,21 +732,29 @@
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
-    color: inherit;
+    color: var(--text-muted);
 
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
 
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: 1px;
 
-    transition: transform 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .project-back-button:hover {
-    transform: translateX(-4px);
+    color: var(--green);
+}
+
+
+/* El botón inferior sí puede mantener el círculo */
+
+.project-navigation .project-itch-button {
+    width: 55px;
+    height: 55px;
+
+    margin-top: 0;
 }
 
 
@@ -617,16 +763,7 @@
 ========================================================= */
 
 .project-page .contact-section {
-    position: relative;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.project-page footer {
-    width: 100%;
+    border-bottom: 1px solid var(--border);
 }
 
 
@@ -664,36 +801,40 @@
 }
 
 
-@media (max-width: 800px) {
-
-    .project-section-heading {
-        margin-bottom: 35px;
-    }
-
-    .project-hero {
-        min-height: 75vh;
-    }
+@media (max-width: 850px) {
 
     .project-hero-content h1 {
-        font-size: clamp(3.5rem, 16vw, 7rem);
-    }
+        font-size: clamp(5rem, 18vw, 9rem);
 
+        letter-spacing: -3px;
+    }
 
     .project-information,
-    .project-overview,
     .project-media,
-    .project-contribution {
-        padding-top: 90px;
-        padding-bottom: 90px;
+    .project-overview {
+        padding-left: 8%;
+        padding-right: 8%;
     }
 
+    .project-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-learning {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
 
     .project-information-grid {
         display: flex;
 
         flex-direction: column;
-
-        gap: 30px;
     }
 
     .project-info-left {
@@ -701,84 +842,74 @@
     }
 
     .project-info-left img {
-        height: 550px;
+        height: 450px;
     }
 
     .project-info-right {
-        display: grid;
-
         grid-template-columns: 1fr 1fr;
-
-        gap: 20px;
     }
 
     .project-info-right img {
-        min-height: 250px;
+        min-height: 220px;
     }
 
-
-    .project-media-grid {
-        grid-template-columns: 1fr;
+    .project-hero {
+        min-height: 85vh;
     }
 
-
-    .project-learning {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        margin-top: 70px;
-    }
-
-
-    .project-navigation {
-        flex-direction: column;
-
-        align-items: flex-start;
+    .project-hero-content h1 {
+        font-size: clamp(4rem, 19vw, 7rem);
     }
 
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
 
-    .project-hero {
-        min-height: 70vh;
+    .project-information,
+    .project-media,
+    .project-overview {
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .project-hero-content {
+        width: 94%;
+    }
+
+    .project-hero-content h1 {
+        font-size: 4rem;
+
+        letter-spacing: -2px;
     }
 
     .project-hero-subtitle {
-        font-size: 0.95rem;
+        margin-top: 30px;
+
+        font-size: 0.9rem;
     }
-
-
-    .project-info-left img {
-        height: 400px;
-    }
-
 
     .project-info-right {
         grid-template-columns: 1fr;
     }
 
-    .project-info-right img {
-        min-height: 300px;
-    }
-
-
     .project-gallery {
-        grid-template-columns: 1fr 1fr;
-
         gap: 10px;
     }
 
     .project-gallery img {
-        min-height: 140px;
+        min-height: 130px;
     }
 
+    .project-navigation {
+        width: 88%;
 
-    .project-contribution-list li,
-    .my-contribution-list li {
-        padding-left: 28px;
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 
 }
