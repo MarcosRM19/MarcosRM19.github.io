@@ -190,10 +190,9 @@ body {
    50% INFORMACIÓN / 50% IMÁGENES
    ========================================================= */
 
-.project-hero-v2 {
-    padding: 150px 0 165px;
-
-    background: var(--background);
+.project-hero-v2,
+.trailer-gallery {
+    background: #14241a; /* Tono verde oscuro elegante y más Intenso */
 }
 
 .ph-grid {
@@ -470,24 +469,11 @@ body {
     gap: 26px;
 }
 
-.trailer-facade {
-    position: relative;
-
-    display: block;
-
+.trailer-facade video {
     width: 100%;
-
-    padding: 0;
-
-    border: 0;
-
-    aspect-ratio: 16 / 10;
-
-    overflow: hidden;
-
-    background: var(--surface);
-
-    cursor: pointer;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .trailer-facade img {
