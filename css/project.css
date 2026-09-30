@@ -1,25 +1,16 @@
-/* =========================================================
-   PROJECT PAGE
-========================================================= */
-
 :root {
     --project-max: 1450px;
     --project-text-max: 1180px;
 }
 
 
-/* =========================================================
-   BASE
-========================================================= */
+/* =========================
+   GENERAL
+========================= */
 
 body {
     overflow-x: hidden;
 }
-
-
-/* =========================================================
-   COMMON WRAPPERS
-========================================================= */
 
 .project-wrap {
     width: min(var(--project-text-max), calc(100% - 80px));
@@ -32,9 +23,9 @@ body {
 }
 
 
-/* =========================================================
-   TITLE HERO
-========================================================= */
+/* =========================
+   HERO
+========================= */
 
 .title-hero {
     position: relative;
@@ -46,7 +37,6 @@ body {
     justify-content: center;
 
     overflow: hidden;
-
     background: var(--background);
 }
 
@@ -58,8 +48,6 @@ body {
     height: 100%;
 
     object-fit: cover;
-
-    z-index: 0;
 }
 
 .title-veil {
@@ -69,16 +57,13 @@ body {
     background:
         linear-gradient(
             to bottom,
-            rgba(8, 11, 16, 0.35),
+            rgba(8, 11, 16, 0.25),
             rgba(8, 11, 16, 0.88)
         );
-
-    z-index: 1;
 }
 
 .title-inner {
     position: relative;
-
     z-index: 2;
 
     width: min(900px, calc(100% - 40px));
@@ -92,36 +77,21 @@ body {
     padding-top: 100px;
 }
 
-.game-logo {
-    display: block;
-
-    max-width: min(520px, 80%);
-    max-height: 220px;
-
-    object-fit: contain;
-
-    margin-bottom: 28px;
-}
-
 .logo-fallback {
-    display: none;
-
     margin: 0 0 25px;
 
     color: var(--cream);
 
     font-size: clamp(3rem, 8vw, 7rem);
     line-height: 0.9;
-
-    text-transform: uppercase;
     letter-spacing: 4px;
+    text-transform: uppercase;
 
     text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
 }
 
 .title-tagline {
     max-width: 760px;
-
     margin: 0;
 
     color: var(--text);
@@ -132,9 +102,6 @@ body {
 
 .store-links {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
     margin-top: 30px;
 }
 
@@ -150,35 +117,27 @@ body {
 
     background: rgba(25, 26, 21, 0.85);
 
-    transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .store-link:hover {
     border-color: var(--green);
     background: var(--surface-light);
-
     transform: translateY(-3px);
 }
 
 .store-link img {
     width: 25px;
     height: 25px;
-
     object-fit: contain;
 }
 
 
-/* =========================================================
-   FIRST PROJECT SECTION
-   FONDO MÁS FUERTE
-========================================================= */
+/* =========================
+   PRIMER APARTADO
+========================= */
 
 .project-hero-v2 {
-    position: relative;
-
     width: 100%;
 
     padding: 110px 0;
@@ -189,16 +148,10 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
-
-/* =========================================================
-   FIRST SECTION GRID
-========================================================= */
-
 .ph-grid {
     width: 100%;
 
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
     gap: 60px;
@@ -206,14 +159,8 @@ body {
     align-items: start;
 }
 
-
-/* =========================================================
-   PROJECT INFORMATION
-========================================================= */
-
 .ph-intro {
     width: 100%;
-
     min-width: 0;
 }
 
@@ -273,10 +220,9 @@ body {
 }
 
 
-/* =========================================================
-   TASK BULLETS
-   SIN NEGRITA / SIN LABELS
-========================================================= */
+/* =========================
+   BULLET POINTS
+========================= */
 
 .task-list {
     display: flex;
@@ -287,14 +233,14 @@ body {
     margin: 0;
     padding: 0 0 0 24px;
 
-    list-style-type: disc;
+    list-style: disc;
 }
 
 .task-list li {
     display: list-item;
 
     margin: 0;
-    padding: 0 0 0 6px;
+    padding-left: 6px;
 
     color: var(--text-muted);
 
@@ -304,26 +250,12 @@ body {
 
 .task-list li::marker {
     color: var(--green);
-    font-size: 0.85em;
 }
 
 
-/*
-   IMPORTANTE:
-   No ponemos font-weight, background ni bloques
-   diferentes en los bullets.
-*/
-
-.task-list strong {
-    color: inherit;
-    font-weight: inherit;
-    margin: 0;
-}
-
-
-/* =========================================================
-   PROJECT BUTTONS
-========================================================= */
+/* =========================
+   BOTONES
+========================= */
 
 .project-actions {
     display: flex;
@@ -349,23 +281,12 @@ body {
 
     text-decoration: none;
 
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.project-btn:hover {
-    transform: translateY(-2px);
+    transition: 0.2s ease;
 }
 
 .project-btn-solid {
     background: var(--orange);
     border: 1px solid var(--orange);
-
     color: #ffffff;
 }
 
@@ -377,7 +298,6 @@ body {
 .project-btn-outline {
     background: transparent;
     border: 1px solid var(--border);
-
     color: var(--text);
 }
 
@@ -387,9 +307,9 @@ body {
 }
 
 
-/* =========================================================
-   PROJECT IMAGES
-========================================================= */
+/* =========================
+   IMÁGENES DERECHA
+========================= */
 
 .ph-shots {
     width: 100%;
@@ -399,12 +319,6 @@ body {
 
     gap: 24px;
 
-    margin-top: 0;
-
-    /*
-       Las imágenes son más cortas para alinearlas
-       con la parte principal del texto.
-    */
     height: calc(100% - 115px);
 }
 
@@ -444,10 +358,9 @@ body {
 }
 
 
-/* =========================================================
-   SECOND SECTION / TRAILER
-   FONDO MÁS FUERTE
-========================================================= */
+/* =========================
+   TRAILER
+========================= */
 
 .trailer-gallery {
     width: 100%;
@@ -459,11 +372,6 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
-
-/* =========================================================
-   TRAILER GRID
-========================================================= */
-
 .tg-grid {
     width: 100%;
 
@@ -472,18 +380,9 @@ body {
     grid-template-columns: 1.25fr 0.75fr;
 
     gap: 30px;
-
-    align-items: stretch;
 }
 
-
-/* =========================================================
-   YOUTUBE
-========================================================= */
-
 .trailer-facade {
-    position: relative;
-
     width: 100%;
 
     overflow: hidden;
@@ -499,8 +398,6 @@ body {
     width: 100%;
 
     aspect-ratio: 16 / 9;
-
-    overflow: hidden;
 }
 
 .youtube-wrapper iframe {
@@ -510,8 +407,6 @@ body {
 
     width: 100%;
     height: 100%;
-
-    display: block;
 
     border: 0;
 }
@@ -529,9 +424,9 @@ body {
 }
 
 
-/* =========================================================
-   SCREENSHOT GALLERY
-========================================================= */
+/* =========================
+   GALERÍA
+========================= */
 
 .tg-gallery {
     display: grid;
@@ -542,8 +437,6 @@ body {
 }
 
 .tg-shot {
-    display: block;
-
     width: 100%;
 
     min-height: 0;
@@ -575,13 +468,12 @@ body {
 }
 
 
-/* =========================================================
-   CONTRIBUTIONS
-========================================================= */
+/* =========================
+   CONTRIBUCIONES
+========================= */
 
 .contributions-section {
     padding: 110px 0;
-
     background: var(--background);
 }
 
@@ -591,10 +483,6 @@ body {
     grid-template-columns: 1fr 1fr;
 
     gap: 80px;
-}
-
-.contribution-block {
-    min-width: 0;
 }
 
 .contribution-block h2 {
@@ -615,9 +503,9 @@ body {
 }
 
 
-/* =========================================================
+/* =========================
    LIGHTBOX
-========================================================= */
+========================= */
 
 .lightbox {
     position: fixed;
@@ -641,10 +529,8 @@ body {
 }
 
 .lightbox img {
-    max-width: min(1200px, 90vw);
+    max-width: 90vw;
     max-height: 85vh;
-
-    display: block;
 
     object-fit: contain;
 
@@ -673,11 +559,6 @@ body {
     font-size: 1.5rem;
 
     cursor: pointer;
-
-    transition:
-        border-color 0.2s ease,
-        color 0.2s ease,
-        background 0.2s ease;
 }
 
 .lightbox-close:hover,
@@ -685,7 +566,6 @@ body {
 .lightbox-next:hover {
     border-color: var(--green);
     color: var(--green);
-    background: var(--surface-light);
 }
 
 .lightbox-close {
@@ -706,9 +586,9 @@ body {
 }
 
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 .project-footer {
     padding: 35px 0;
@@ -720,12 +600,8 @@ body {
 
 .footer-back {
     color: var(--text-muted);
-
     text-decoration: none;
-
     font-size: 0.8rem;
-
-    transition: color 0.2s ease;
 }
 
 .footer-back:hover {
@@ -733,38 +609,27 @@ body {
 }
 
 
-/* =========================================================
+/* =========================
    RESPONSIVE
-========================================================= */
+========================= */
 
 @media (max-width: 850px) {
 
     .project-wrap,
     .project-wrap-wide {
-        width: min(100% - 40px, var(--project-max));
+        width: calc(100% - 40px);
     }
-
-
-    /* PROJECT INTRO */
 
     .ph-grid {
         grid-template-columns: 1fr;
-
         gap: 45px;
     }
 
-
-    /* IMAGES */
-
     .ph-shots {
         width: 100%;
-
         height: auto;
 
         order: 2;
-
-        display: flex;
-        flex-direction: column;
 
         gap: 24px;
     }
@@ -775,27 +640,14 @@ body {
         width: 100%;
 
         aspect-ratio: 16 / 10;
-
-        min-height: auto;
     }
-
-
-    /* TRAILER */
 
     .tg-grid {
         grid-template-columns: 1fr;
     }
 
-    .tg-gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    /* CONTRIBUTIONS */
-
     .contributions-grid {
         grid-template-columns: 1fr;
-
         gap: 60px;
     }
 }
@@ -808,7 +660,6 @@ body {
         width: calc(100% - 30px);
     }
 
-
     .title-hero {
         min-height: 560px;
     }
@@ -817,15 +668,9 @@ body {
         padding-top: 80px;
     }
 
-    .game-logo {
-        max-width: 85%;
-        max-height: 160px;
-    }
-
     .logo-fallback {
         font-size: 3rem;
     }
-
 
     .project-hero-v2,
     .trailer-gallery,
@@ -833,11 +678,9 @@ body {
         padding: 75px 0;
     }
 
-
     .ph-intro h1 {
         font-size: 2.8rem;
     }
-
 
     .project-actions {
         flex-direction: column;
@@ -847,11 +690,9 @@ body {
         width: 100%;
     }
 
-
     .tg-gallery {
         grid-template-columns: 1fr;
     }
-
 
     .lightbox {
         padding: 20px;
