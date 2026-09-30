@@ -38,8 +38,8 @@ const projects = {
                 text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
             }
         ],
-        heroVideoId: "YIcgUIwu89U",
-        trailerVideo: "vid/Lyra.mp4",
+        trailerVideo: "vid/Lyra.mp4",       /* MP4 local para el Hero del Inicio */
+        youtubeId: "YIcgUIwu89U",         /* YouTube para el tráiler de la Zona 2 */
         hero: "img/projects/lyra/hero.jpg",
         infoRight1: "img/projects/lyra/info-right-1.jpg",
         infoRight2: "img/projects/lyra/info-right-2.jpg",
@@ -87,8 +87,8 @@ const projects = {
                 text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
             }
         ],
-        heroVideoId: "YIcgUIwu89U",
-        trailerVideo: "vid/JuanPieza.mp4",
+        trailerVideo: "vid/JuanPieza.mp4",   /* MP4 local para el Hero del Inicio */
+        youtubeId: "YIcgUIwu89U",         /* YouTube para el tráiler de la Zona 2 */
         hero: "img/projects/juan-pieza/hero.jpg",
         infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
         infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
@@ -100,13 +100,19 @@ const projects = {
     }
 };
 
+/* Alias por si la página se llama 'juanpieza.html' sin guion */
+projects["juanpieza"] = projects["juan-pieza"];
+
 function getProjectId() {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("project")) {
-        return params.get("project");
-    }
+    if (params.get("project")) return params.get("project").toLowerCase();
+    if (params.get("id")) return params.get("id").toLowerCase();
+
     const pathName = window.location.pathname;
-    const pageName = pathName.split("/").pop().replace(".html", "");
+    let pageName = pathName.split("/").pop().replace(".html", "").toLowerCase();
+    
+    if (pageName === "juanpieza") pageName = "juan-pieza";
+
     return projects[pageName] ? pageName : "lyra";
 }
 
@@ -116,7 +122,7 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* 1. HERO VIDEO LOCAL (.mp4) */
+    /* 1. TRÁILER 1 (INICIO / HERO): MP4 LOCAL EN AUTOPLAY */
     const heroContainer = document.querySelector(".hero-video-container");
     if (heroContainer && project.trailerVideo) {
         heroContainer.innerHTML = `
@@ -126,7 +132,7 @@ function loadProject() {
         `;
         const heroVideo = heroContainer.querySelector("video");
         if (heroVideo) {
-            heroVideo.play().catch(e => console.log("Autoplay hero:", e));
+            heroVideo.play().catch(e => console.log("Autoplay prevenido en el hero:", e));
         }
     }
 
@@ -190,19 +196,17 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* 4. TRÁILER MP4 EN ZONA 2 (.trailer-gallery) */
+    /* 4. TRÁILER 2 (ZONA 2): YOUTUBE INTERACTIVO CON CONTROLES */
     const trailerFacade = document.querySelector(".trailer-facade");
-    if (trailerFacade && project.trailerVideo) {
+    if (trailerFacade && project.youtubeId) {
         trailerFacade.innerHTML = `
-            <video autoplay loop muted playsinline id="project-trailer-video">
-                <source src="${project.trailerVideo}" type="video/mp4">
-            </video>
-            <span class="tg-label" id="trailer-label">OFFICIAL TRAILER</span>
+            <iframe 
+                src="https://www.youtube.com/embed/${project.youtubeId}?controls=1&rel=0&playsinline=1" 
+                title="Trailer de ${project.title}" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         `;
-        const video = trailerFacade.querySelector("video");
-        if (video) {
-            video.play().catch(e => console.log("Autoplay prevenido:", e));
-        }
     }
 
     /* GALERÍA DE CAPTURAS ZONA 2 */
@@ -264,9 +268,8 @@ function setupLightbox() {
     const previousButton = document.getElementById("lightbox-prev");
     const nextButton = document.getElementById("lightbox-next");
     
-    // Seleccionamos solo elementos interactivos que tengan un <img> en su interior
-    const imageButtons = Array.from(document.querySelectorAll("[data-project-image]"))
-        .filter(btn => btn.querySelector("img"));
+    // Seleccionamos solo elementos de imagen para la galería (omitiendo el trailer de YouTube)
+    const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"));
 
     if (
         !lightbox ||
