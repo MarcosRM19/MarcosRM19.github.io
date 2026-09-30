@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Project | MarcosRuiz Portfolio</title>
+    <title>Lyra | MarcosRuiz Portfolio</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/project.css">
+    <!-- Corregido con ../ para salir de la carpeta 'proyectos' -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
 </head>
 
 <body>
@@ -15,8 +16,9 @@
 <header>
     <nav class="navbar">
 
+        <!-- Corregido: ../index.html -->
         <a
-            href="index.html#inicio"
+            href="../index.html#inicio"
             class="logo"
             id="logo"
         >
@@ -26,7 +28,7 @@
         <div class="nav-links">
 
             <a
-                href="index.html#inicio"
+                href="../index.html#inicio"
                 id="nav-home"
                 data-i18n="home"
             >
@@ -34,7 +36,7 @@
             </a>
 
             <a
-                href="index.html#sobre-mi"
+                href="../index.html#sobre-mi"
                 id="nav-about"
                 data-i18n="about"
             >
@@ -42,7 +44,7 @@
             </a>
 
             <a
-                href="index.html#experience"
+                href="../index.html#experience"
                 id="nav-experience"
                 data-i18n="experience"
             >
@@ -50,7 +52,7 @@
             </a>
 
             <a
-                href="index.html#proyectos"
+                href="../index.html#proyectos"
                 id="nav-projects"
                 data-i18n="projects"
             >
@@ -58,7 +60,7 @@
             </a>
 
             <a
-                href="index.html#documentos"
+                href="../index.html#documentos"
                 id="nav-documents"
                 data-i18n="documents"
             >
@@ -77,7 +79,7 @@
             </button>
 
             <a
-                href="index.html#contacto"
+                href="../index.html#contacto"
                 class="contact-button"
                 id="contact-button"
                 data-i18n="contactButton"
@@ -94,38 +96,26 @@
 <main>
 
     <!-- HERO / TRAILER DE FONDO -->
-
     <section class="title-hero">
 
         <div class="hero-video">
-
             <iframe
                 src="https://www.youtube.com/embed/YIcgUIwu89U?autoplay=1&mute=1&loop=1&playlist=YIcgUIwu89U&controls=0&rel=0&modestbranding=1"
                 title="Lyra Trailer"
                 allow="autoplay; encrypted-media"
                 frameborder="0">
             </iframe>
-
         </div>
 
         <div class="title-veil"></div>
 
         <div class="title-inner">
 
-            <p
-                id="project-category"
-                class="project-category"
-            ></p>
+            <p id="project-category" class="project-category"></p>
 
-            <h1
-                id="project-logo-fallback"
-                class="logo-fallback"
-            ></h1>
+            <h1 id="project-logo-fallback" class="logo-fallback"></h1>
 
-            <p
-                id="project-tagline"
-                class="title-tagline"
-            ></p>
+            <p id="project-tagline" class="title-tagline"></p>
 
             <div class="store-links">
 
@@ -137,8 +127,9 @@
                     rel="noopener"
                     aria-label="Itch.io"
                 >
+                    <!-- Corregido: ../img/itchio.svg -->
                     <img
-                        src="img/itchio.svg"
+                        src="../img/itchio.svg"
                         alt="Itch.io"
                     >
                 </a>
@@ -151,41 +142,24 @@
 
 
     <!-- INFORMACIÓN PRINCIPAL -->
-
     <section class="project-intro">
 
         <div class="project-intro-grid">
 
             <div class="project-intro-main">
-
-                <p
-                    class="section-label"
-                    id="project-years"
-                ></p>
-
+                <p class="section-label" id="project-years"></p>
                 <h2 id="project-title"></h2>
-
-                <p
-                    id="project-description"
-                    class="project-description"
-                ></p>
-
+                <p id="project-description" class="project-description"></p>
             </div>
 
             <div class="project-intro-side">
 
                 <div class="project-role">
-
-                    <span class="section-label">
-                        ROLE
-                    </span>
-
+                    <span class="section-label">ROLE</span>
                     <p id="project-role"></p>
-
                 </div>
 
                 <div class="project-play-wrapper">
-
                     <a
                         id="project-play"
                         class="project-play"
@@ -195,7 +169,6 @@
                     >
                         Play on itch.io
                     </a>
-
                 </div>
 
             </div>
@@ -206,50 +179,26 @@
 
 
     <!-- INFORMACIÓN VISUAL -->
-
     <section class="project-info">
 
         <div class="project-info-grid">
 
             <div class="project-info-left">
-
                 <div class="project-info-block">
-
-                    <span class="section-label">
-                        TASK OVERVIEW
-                    </span>
-
+                    <span class="section-label">TASK OVERVIEW</span>
                     <h2 id="project-task-title"></h2>
-
                     <ul id="project-tasks"></ul>
-
                 </div>
-
             </div>
 
-
             <div class="project-info-right">
-
                 <figure class="project-image">
-
-                    <img
-                        id="project-info-right-1"
-                        src=""
-                        alt=""
-                    >
-
+                    <img id="project-info-right-1" src="" alt="">
                 </figure>
 
                 <figure class="project-image">
-
-                    <img
-                        id="project-info-right-2"
-                        src=""
-                        alt=""
-                    >
-
+                    <img id="project-info-right-2" src="" alt="">
                 </figure>
-
             </div>
 
         </div>
@@ -258,65 +207,28 @@
 
 
     <!-- SCREENSHOTS -->
-
     <section class="project-screenshots">
 
         <div class="section-heading">
-
-            <span class="section-label">
-                SCREENSHOTS
-            </span>
-
+            <span class="section-label">SCREENSHOTS</span>
         </div>
 
         <div class="screenshots-grid">
 
-            <button
-                type="button"
-                class="project-image-button"
-                data-project-image
-            >
-                <img
-                    id="project-screenshot-1"
-                    src=""
-                    alt=""
-                >
+            <button type="button" class="project-image-button" data-project-image>
+                <img id="project-screenshot-1" src="" alt="">
             </button>
 
-            <button
-                type="button"
-                class="project-image-button"
-                data-project-image
-            >
-                <img
-                    id="project-screenshot-2"
-                    src=""
-                    alt=""
-                >
+            <button type="button" class="project-image-button" data-project-image>
+                <img id="project-screenshot-2" src="" alt="">
             </button>
 
-            <button
-                type="button"
-                class="project-image-button"
-                data-project-image
-            >
-                <img
-                    id="project-screenshot-3"
-                    src=""
-                    alt=""
-                >
+            <button type="button" class="project-image-button" data-project-image>
+                <img id="project-screenshot-3" src="" alt="">
             </button>
 
-            <button
-                type="button"
-                class="project-image-button"
-                data-project-image
-            >
-                <img
-                    id="project-screenshot-4"
-                    src=""
-                    alt=""
-                >
+            <button type="button" class="project-image-button" data-project-image>
+                <img id="project-screenshot-4" src="" alt="">
             </button>
 
         </div>
@@ -325,25 +237,17 @@
 
 
     <!-- LEARNING -->
-
     <section class="project-learning">
 
         <div class="project-learning-grid">
 
             <div>
-
-                <span class="section-label">
-                    LEARNING
-                </span>
-
+                <span class="section-label">LEARNING</span>
                 <h2 id="project-learning-title"></h2>
-
             </div>
 
             <div>
-
                 <ul id="project-learning-list"></ul>
-
             </div>
 
         </div>
@@ -352,23 +256,14 @@
 
 
     <!-- CONTRIBUTIONS -->
-
     <section class="project-contributions">
 
         <div class="section-heading">
-
-            <span class="section-label">
-                CONTRIBUTIONS
-            </span>
-
+            <span class="section-label">CONTRIBUTIONS</span>
             <h2 id="project-contributions-title"></h2>
-
         </div>
 
-        <div
-            id="project-contributions-grid"
-            class="contributions-grid"
-        ></div>
+        <div id="project-contributions-grid" class="contributions-grid"></div>
 
     </section>
 
@@ -376,54 +271,21 @@
 
 
 <!-- LIGHTBOX -->
+<div id="project-lightbox" class="project-lightbox" aria-hidden="true">
 
-<div
-    id="project-lightbox"
-    class="project-lightbox"
-    aria-hidden="true"
->
-
-    <button
-        id="lightbox-close"
-        class="lightbox-close"
-        type="button"
-        aria-label="Close image"
-    >
-        ×
-    </button>
-
-    <button
-        id="lightbox-prev"
-        class="lightbox-arrow lightbox-prev"
-        type="button"
-        aria-label="Previous image"
-    >
-        ‹
-    </button>
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <button id="lightbox-prev" class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous image">‹</button>
 
     <div class="lightbox-content">
-
-        <img
-            id="lightbox-image"
-            src=""
-            alt=""
-        >
-
+        <img id="lightbox-image" src="" alt="">
     </div>
 
-    <button
-        id="lightbox-next"
-        class="lightbox-arrow lightbox-next"
-        type="button"
-        aria-label="Next image"
-    >
-        ›
-    </button>
+    <button id="lightbox-next" class="lightbox-arrow lightbox-next" type="button" aria-label="Next image">›</button>
 
 </div>
 
-
-<script src="js/project.js"></script>
+<!-- Corregido: ../js/project.js -->
+<script src="../js/project.js"></script>
 
 </body>
 </html>
