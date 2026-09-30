@@ -45,7 +45,8 @@ body {
     z-index: -3;
 }
 
-.hero-video-container iframe {
+.hero-video-container iframe,
+.hero-video-container video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -55,30 +56,9 @@ body {
     min-width: 177.77vh;
     transform: translate(-50%, -50%);
     border: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    pointer-events: none;
-}
-
-.hero-video-container iframe.is-playing {
-    opacity: 1;
-}
-
-.hero-video-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: auto;
-}
-
-.title-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    object-position: center;
-    z-index: -3;
+    opacity: 1; /* Visibilidad garantizada */
+    pointer-events: none;
 }
 
 .title-veil {
@@ -111,22 +91,6 @@ body {
     line-height: 0.9;
     letter-spacing: -0.03em;
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-}
-
-.game-logo {
-    display: block;
-    width: min(60vw, 540px);
-    max-height: 240px;
-    object-fit: contain;
-    margin-bottom: 30px;
-}
-
-.logo-fallback {
-    display: none;
-    margin: 0 0 30px;
-    color: var(--cream);
-    font-size: clamp(4rem, 9vw, 7rem);
-    line-height: 0.9;
 }
 
 .title-tagline {
@@ -170,12 +134,12 @@ body {
 }
 
 /* =========================================================
-   ZONA 1 Y ZONA 2 — FONDO VERDE MÁS FUERTE
+   ZONA 1 Y ZONA 2 — FONDO VERDE MÁS FUERTE (#122217)
    ========================================================= */
 
 .project-hero-v2,
 .trailer-gallery {
-    background: #14241a; /* Verde oscuro más intenso */
+    background: #122217; /* Verde oscuro más marcado y elegante */
 }
 
 .project-hero-v2 {
@@ -228,10 +192,6 @@ body {
     line-height: 1.85;
 }
 
-.project-lede strong {
-    color: var(--cream);
-}
-
 .task-heading {
     margin: 48px 0 22px;
     color: var(--cream);
@@ -261,10 +221,6 @@ body {
 .task-list li::marker {
     color: var(--green);
     font-size: 0.85em;
-}
-
-.task-list strong {
-    color: var(--cream);
 }
 
 .project-actions {
@@ -345,7 +301,7 @@ body {
 }
 
 /* =========================================================
-   TRAILER + GALERÍA (ZONA 2)
+   ZONA 2 — TRAILER MP4 + GALERÍA
    ========================================================= */
 
 .trailer-gallery {
@@ -367,7 +323,7 @@ body {
     aspect-ratio: 16 / 10;
     overflow: hidden;
     background: var(--surface);
-    cursor: pointer;
+    border-radius: 6px;
 }
 
 .trailer-facade video {
@@ -375,56 +331,6 @@ body {
     height: 100%;
     display: block;
     object-fit: cover;
-}
-
-.trailer-facade img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.trailer-facade::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(17, 18, 15, 0.25);
-    transition: background 0.25s ease;
-    pointer-events: none;
-}
-
-.trailer-facade:hover img {
-    transform: scale(1.04);
-}
-
-.trailer-facade:hover::after {
-    background: rgba(17, 18, 15, 0.1);
-}
-
-.play-badge {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 76px;
-    height: 76px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: var(--cream);
-    z-index: 2;
-    pointer-events: none;
-}
-
-.play-badge::after {
-    content: "";
-    position: absolute;
-    left: 31px;
-    top: 25px;
-    width: 0;
-    height: 0;
-    border-top: 13px solid transparent;
-    border-bottom: 13px solid transparent;
-    border-left: 19px solid #11120f;
 }
 
 .tg-label {
@@ -436,6 +342,9 @@ body {
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.12em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 10px;
+    border-radius: 4px;
 }
 
 .tg-gallery {
@@ -467,13 +376,8 @@ body {
 }
 
 /* =========================================================
-   CONTRIBUTIONS (ZONA 3)
+   ZONA 3 — CONTRIBUTIONS & LEARNING
    ========================================================= */
-
-.contrib-bg,
-.contrib-veil {
-    display: none;
-}
 
 .contributions {
     position: relative;
@@ -498,14 +402,6 @@ body {
     font-size: clamp(2.2rem, 3.8vw, 3.8rem);
     line-height: 1;
     letter-spacing: -0.035em;
-}
-
-.contrib-text > p,
-.learning-block > p {
-    margin: 0;
-    color: var(--text);
-    font-size: 1rem;
-    line-height: 1.9;
 }
 
 .contribution-list {
@@ -543,8 +439,10 @@ body {
     margin-top: 125px;
 }
 
-.learning-block h2 {
-    margin-bottom: 30px;
+.learning-block p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.9;
 }
 
 .case-cta {
@@ -642,7 +540,7 @@ body {
     color: var(--green);
 }
 
-/* RESPONSIVE — 850px */
+/* RESPONSIVE */
 @media (max-width: 850px) {
     .project-wrap-wide,
     .project-wrap {
@@ -694,7 +592,6 @@ body {
     }
 }
 
-/* RESPONSIVE — 600px */
 @media (max-width: 600px) {
     .title-hero {
         min-height: 560px;
@@ -704,11 +601,6 @@ body {
     .title-inner {
         width: 90%;
         padding-top: 70px;
-    }
-
-    .game-logo {
-        width: min(75vw, 340px);
-        max-height: 150px;
     }
 
     .ph-intro h1 {
