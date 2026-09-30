@@ -38,7 +38,6 @@ const projects = {
                 text: "Diseño y construcción de niveles teniendo en cuenta exploración, navegación y ritmo."
             }
         ],
-        /* Tráiler MP4 para Zona 2 */
         trailerVideo: "../vid/Lyra.mp4",
         hero: "../img/projects/lyra/hero.jpg",
         infoRight1: "../img/projects/lyra/info-right-1.jpg",
@@ -87,7 +86,6 @@ const projects = {
                 text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
             }
         ],
-        /* Tráiler MP4 para Zona 2 */
         trailerVideo: "../vid/JuanPieza.mp4",
         hero: "../img/projects/juan-pieza/hero.jpg",
         infoRight1: "../img/projects/juan-pieza/info-right-1.jpg",
@@ -101,16 +99,12 @@ const projects = {
 };
 
 function getProjectId() {
-    /* 1. Comprueba si hay parámetro en URL ?project=lyra */
     const params = new URLSearchParams(window.location.search);
     if (params.get("project")) {
         return params.get("project");
     }
-
-    /* 2. Detecta por nombre de archivo (ej. lyra.html -> lyra, juan-pieza.html -> juan-pieza) */
     const pathName = window.location.pathname;
     const pageName = pathName.split("/").pop().replace(".html", "");
-
     return projects[pageName] ? pageName : "lyra";
 }
 
@@ -273,6 +267,7 @@ function setupLightbox() {
         .filter(Boolean);
 
     function updateLightbox(index) {
+        if (!images[index]) return;
         currentIndex = index;
         lightboxImage.src = images[currentIndex].src;
         lightboxImage.alt = images[currentIndex].alt;
@@ -290,17 +285,19 @@ function setupLightbox() {
     }
 
     function showPrev() {
+        if (images.length === 0) return;
         const newIndex = (currentIndex - 1 + images.length) % images.length;
         updateLightbox(newIndex);
     }
 
     function showNext() {
+        if (images.length === 0) return;
         const newIndex = (currentIndex + 1) % images.length;
         updateLightbox(newIndex);
     }
 
     imageButtons.forEach((button, index) => {
-        button.addEventListener("click", () => openLightbox(index));
+        button.onclick = () => openLightbox(index);
     });
 
     closeButton.onclick = closeLightbox;
