@@ -7,11 +7,6 @@
     --project-text-max: 1180px;
 }
 
-
-/* =========================================================
-   GENERAL
-   ========================================================= */
-
 body {
     overflow-x: hidden;
 }
@@ -32,14 +27,14 @@ body {
 
 
 /* =========================================================
-   TITLE HERO
+   HERO
    ========================================================= */
 
 .title-hero {
     position: relative;
 
-    min-height: 720px;
-    height: 78vh;
+    min-height: 760px;
+    height: 82vh;
 
     display: flex;
     align-items: center;
@@ -68,16 +63,16 @@ body {
     background:
         linear-gradient(
             180deg,
-            rgba(17, 18, 15, 0.30) 0%,
-            rgba(17, 18, 15, 0.42) 42%,
-            rgba(17, 18, 15, 0.96) 100%
+            rgba(17, 18, 15, 0.25) 0%,
+            rgba(17, 18, 15, 0.38) 45%,
+            rgba(17, 18, 15, 0.97) 100%
         );
 
     z-index: -2;
 }
 
 .title-inner {
-    width: min(80%, 900px);
+    width: min(90%, 900px);
 
     display: flex;
     flex-direction: column;
@@ -85,50 +80,39 @@ body {
 
     text-align: center;
 
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 .game-logo {
     display: block;
 
-    width: min(55vw, 420px);
-    max-height: 170px;
+    width: min(58vw, 480px);
+    max-height: 210px;
 
     object-fit: contain;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 .logo-fallback {
     display: none;
-
-    margin: 0 0 25px;
-
-    color: var(--cream);
-
-    font-size: clamp(3.5rem, 8vw, 6.5rem);
-    line-height: 0.9;
 }
 
 .title-tagline {
-    max-width: 650px;
+    max-width: 700px;
 
     margin: 0;
 
     color: var(--cream);
 
     font-size: clamp(1rem, 1.5vw, 1.3rem);
-    line-height: 1.6;
+    line-height: 1.65;
 
-    text-shadow:
-        0 3px 18px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
 }
 
 .store-links {
-    display: flex;
-    justify-content: center;
-
-    margin-top: 32px;
+    margin-top: 34px;
 }
 
 .store-link {
@@ -143,9 +127,7 @@ body {
 
     background: var(--cream);
 
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .store-link:hover {
@@ -156,8 +138,6 @@ body {
 .store-link img {
     width: 29px;
     height: 29px;
-
-    display: block;
 }
 
 
@@ -166,9 +146,7 @@ body {
    ========================================================= */
 
 .project-hero-v2 {
-    position: relative;
-
-    padding: 135px 0 150px;
+    padding: 125px 0 145px;
 
     background: var(--background);
 }
@@ -176,29 +154,22 @@ body {
 .ph-grid {
     display: grid;
 
-    /*
-       IZQUIERDA       CENTRO             DERECHA
-       personaje       información        imágenes
-    */
-
     grid-template-columns:
-        minmax(220px, 0.68fr)
-        minmax(500px, 1.55fr)
-        minmax(280px, 0.82fr);
+        minmax(230px, 0.7fr)
+        minmax(480px, 1.5fr)
+        minmax(280px, 0.85fr);
 
-    gap: clamp(50px, 5vw, 90px);
+    gap: clamp(45px, 5vw, 85px);
 
     align-items: center;
 }
 
 
-/* =========================================================
-   LEFT CHARACTER
-   ========================================================= */
+/* CHARACTER */
 
 .ph-mascot {
     width: 100%;
-    min-height: 500px;
+    min-height: 520px;
 
     display: flex;
     align-items: flex-end;
@@ -209,17 +180,15 @@ body {
     display: block;
 
     width: 100%;
-    max-width: 360px;
-    max-height: 620px;
+    max-width: 380px;
+    max-height: 640px;
 
     object-fit: contain;
     object-position: bottom center;
 }
 
 
-/* =========================================================
-   CENTER TEXT
-   ========================================================= */
+/* TEXT */
 
 .ph-intro {
     width: 100%;
@@ -227,27 +196,22 @@ body {
 }
 
 .ph-intro h1 {
-    margin: 0 0 12px;
+    margin: 8px 0 12px;
 
     color: var(--cream);
 
-    /*
-       MÁS PEQUEÑO QUE ANTES
-    */
-
-    font-size: clamp(2.4rem, 4vw, 4.2rem);
-
+    font-size: clamp(3rem, 5vw, 5.2rem);
     line-height: 0.95;
 
-    letter-spacing: -0.035em;
+    letter-spacing: -0.045em;
 }
 
 .eyebrow {
-    display: inline-block;
+    display: block;
 
     color: var(--green);
 
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
 
     letter-spacing: 0.12em;
@@ -255,7 +219,7 @@ body {
 }
 
 .project-years {
-    margin: 12px 0 28px;
+    margin: 0 0 28px;
 
     color: var(--text-muted);
 
@@ -269,28 +233,21 @@ body {
 
     color: var(--text);
 
-    font-size: 1.05rem;
+    font-size: 1.04rem;
     line-height: 1.8;
 }
 
-.project-lede strong {
-    color: var(--cream);
-}
 
-
-/* =========================================================
-   TASK OVERVIEW
-   ========================================================= */
+/* TASK */
 
 .task-heading {
-    margin: 44px 0 18px;
+    margin: 42px 0 18px;
 
     color: var(--cream);
 
-    font-size: 0.95rem;
-    font-weight: 700;
+    font-size: 0.9rem;
 
-    letter-spacing: 0.09em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
@@ -309,11 +266,9 @@ body {
 .task-list li {
     display: grid;
 
-    grid-template-columns:
-        minmax(155px, 0.35fr)
-        1fr;
+    grid-template-columns: 145px 1fr;
 
-    gap: 20px;
+    gap: 18px;
 
     color: var(--text-muted);
 
@@ -326,17 +281,20 @@ body {
 }
 
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* BUTTONS */
 
-.project-actions {
+.project-actions,
+.case-cta {
     display: flex;
     flex-wrap: wrap;
 
     gap: 14px;
 
     margin-top: 38px;
+}
+
+.case-cta {
+    margin-top: 70px;
 }
 
 .project-btn {
@@ -352,10 +310,10 @@ body {
 
     text-decoration: none;
 
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     font-weight: 700;
 
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 
     transition:
         transform 0.25s ease,
@@ -390,9 +348,7 @@ body {
 }
 
 
-/* =========================================================
-   RIGHT PROJECT IMAGES
-   ========================================================= */
+/* SIDE IMAGES */
 
 .ph-shots {
     width: 100%;
@@ -406,15 +362,17 @@ body {
 .ph-shot {
     width: 100%;
 
-    /*
-       MISMA PROPORCIÓN PARA LAS DOS
-       */
+    padding: 0;
+
+    border: 0;
 
     aspect-ratio: 16 / 10;
 
     overflow: hidden;
 
     background: var(--surface);
+
+    cursor: pointer;
 }
 
 .ph-shot img {
@@ -438,7 +396,7 @@ body {
    ========================================================= */
 
 .trailer-gallery {
-    padding: 0 0 150px;
+    padding: 0 0 145px;
 
     background: var(--background);
 }
@@ -446,39 +404,29 @@ body {
 .tg-grid {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     gap: 26px;
-}
-
-
-/* =========================================================
-   TRAILER
-   ========================================================= */
-
-.tg-trailer {
-    width: 100%;
 }
 
 .trailer-facade {
     position: relative;
 
-    display: block;
-
     width: 100%;
-    aspect-ratio: 16 / 10;
+
+    display: block;
 
     padding: 0;
 
     border: 0;
 
+    aspect-ratio: 16 / 10;
+
     overflow: hidden;
 
-    cursor: pointer;
-
     background: var(--surface);
+
+    cursor: pointer;
 }
 
 .trailer-facade img {
@@ -500,8 +448,7 @@ body {
 
     background: rgba(17, 18, 15, 0.28);
 
-    transition:
-        background 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .trailer-facade:hover img {
@@ -538,9 +485,6 @@ body {
     left: 31px;
     top: 25px;
 
-    width: 0;
-    height: 0;
-
     border-top: 13px solid transparent;
     border-bottom: 13px solid transparent;
     border-left: 19px solid #11120f;
@@ -556,21 +500,19 @@ body {
 
     color: var(--cream);
 
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
 
     letter-spacing: 0.12em;
 }
 
 
-/* =========================================================
-   GALLERY
-   ========================================================= */
+/* GALLERY */
 
 .tg-gallery {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 22px;
 }
@@ -578,10 +520,11 @@ body {
 .tg-shot {
     width: 100%;
 
-    aspect-ratio: 16 / 10;
-
     padding: 0;
+
     border: 0;
+
+    aspect-ratio: 16 / 10;
 
     overflow: hidden;
 
@@ -615,7 +558,7 @@ body {
 
     overflow: hidden;
 
-    padding: 150px 0 130px;
+    padding: 145px 0 125px;
 
     isolation: isolate;
 }
@@ -636,37 +579,22 @@ body {
     position: absolute;
     inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(17, 18, 15, 0.97) 0%,
-            rgba(17, 18, 15, 0.91) 55%,
-            rgba(17, 18, 15, 0.95) 100%
-        );
+    background: rgba(17, 18, 15, 0.92);
 
     z-index: -2;
-}
-
-.contributions-inner {
-    position: relative;
 }
 
 .contrib-grid {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.45fr)
+        minmax(0, 1.5fr)
         minmax(280px, 0.65fr);
 
-    column-gap: clamp(70px, 9vw, 150px);
+    gap: clamp(60px, 9vw, 140px);
 
     align-items: start;
 }
-
-
-/* =========================================================
-   CONTRIBUTION TEXT
-   ========================================================= */
 
 .contrib-text h2,
 .learning-block h2 {
@@ -691,18 +619,13 @@ body {
     line-height: 1.85;
 }
 
-
-/* =========================================================
-   CONTRIBUTION LIST
-   ========================================================= */
-
 .contribution-list {
     display: flex;
     flex-direction: column;
 
-    gap: 34px;
+    gap: 32px;
 
-    margin: 50px 0 0;
+    margin: 48px 0 0;
     padding: 0;
 
     list-style: none;
@@ -727,27 +650,8 @@ body {
     font-weight: 700;
 }
 
-
-/* =========================================================
-   LEARNING
-   ========================================================= */
-
 .learning-block {
     padding-top: 4px;
-}
-
-
-/* =========================================================
-   BOTTOM CTA
-   ========================================================= */
-
-.case-cta {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 14px;
-
-    margin-top: 75px;
 }
 
 
@@ -765,7 +669,7 @@ body {
 
     padding: 50px;
 
-    background: rgba(5, 6, 5, 0.94);
+    background: rgba(5, 6, 5, 0.95);
 
     opacity: 0;
     visibility: hidden;
@@ -794,17 +698,15 @@ body {
 }
 
 .lightbox-content img {
-    display: block;
-
     max-width: 100%;
     max-height: 78vh;
+
+    display: block;
 
     object-fit: contain;
 }
 
 #lightbox-caption {
-    max-width: 800px;
-
     margin: 0;
 
     color: var(--text-muted);
@@ -835,7 +737,6 @@ body {
     right: 30px;
 
     font-size: 3rem;
-    line-height: 1;
 }
 
 .lightbox-prev,
@@ -870,16 +771,12 @@ body {
 
     .ph-grid {
         grid-template-columns:
-            minmax(180px, 0.6fr)
-            minmax(420px, 1.45fr);
-
-        gap: 50px;
+            minmax(190px, 0.65fr)
+            minmax(400px, 1.45fr);
     }
 
     .ph-mascot {
         grid-row: span 2;
-
-        min-height: 450px;
     }
 
     .ph-shots {
@@ -889,22 +786,14 @@ body {
 
     .contrib-grid {
         grid-template-columns: 1fr;
-
-        gap: 75px;
-    }
-
-    .learning-block {
-        max-width: 760px;
+        gap: 70px;
     }
 }
 
 
 @media (max-width: 850px) {
 
-    .project-wrap-wide {
-        width: 90%;
-    }
-
+    .project-wrap-wide,
     .project-wrap {
         width: 90%;
     }
@@ -914,23 +803,10 @@ body {
         height: 70vh;
     }
 
-    .title-inner {
-        width: 90%;
-    }
-
-    .game-logo {
-        width: min(70vw, 400px);
-    }
-
-    .project-hero-v2 {
-        padding: 100px 0;
-    }
-
     .ph-grid {
         display: flex;
         flex-direction: column;
-
-        gap: 55px;
+        gap: 50px;
     }
 
     .ph-mascot {
@@ -947,23 +823,14 @@ body {
 
     .ph-intro {
         order: 2;
-
-        width: 100%;
-        max-width: none;
     }
 
     .ph-shots {
         order: 3;
-
-        width: 100%;
     }
 
     .tg-grid {
         grid-template-columns: 1fr;
-    }
-
-    .trailer-gallery {
-        padding-bottom: 100px;
     }
 
     .contributions {
@@ -986,41 +853,20 @@ body {
 
     .title-inner {
         width: 90%;
-
         padding-top: 60px;
     }
 
     .game-logo {
         width: min(75vw, 330px);
-
         max-height: 140px;
-    }
-
-    .title-tagline {
-        font-size: 0.95rem;
-    }
-
-    .store-link {
-        width: 52px;
-        height: 52px;
-    }
-
-    .store-link img {
-        width: 26px;
-        height: 26px;
     }
 
     .ph-intro h1 {
         font-size: 3rem;
     }
 
-    .project-lede {
-        font-size: 1rem;
-    }
-
     .task-list li {
         grid-template-columns: 1fr;
-
         gap: 4px;
     }
 
@@ -1038,7 +884,7 @@ body {
     }
 
     .contribution-list {
-        gap: 28px;
+        gap: 27px;
     }
 
     .contrib-text h2,
