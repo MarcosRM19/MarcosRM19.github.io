@@ -1,16 +1,7 @@
-/* =========================================================
-   PROJECT PAGE
-   ========================================================= */
-
 :root {
     --project-max: 1450px;
     --project-text-max: 1180px;
 }
-
-
-/* =========================================================
-   GENERAL
-   ========================================================= */
 
 body {
     overflow-x: hidden;
@@ -46,7 +37,6 @@ body {
     justify-content: center;
 
     overflow: hidden;
-
     isolation: isolate;
 }
 
@@ -111,7 +101,6 @@ body {
     color: var(--cream);
 
     font-size: clamp(4rem, 9vw, 7rem);
-
     line-height: 0.9;
 }
 
@@ -126,8 +115,7 @@ body {
 
     line-height: 1.7;
 
-    text-shadow:
-        0 3px 20px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
 }
 
 .store-links {
@@ -170,6 +158,7 @@ body {
 
 /* =========================================================
    PROJECT INTRO
+   2 COLUMNAS
    ========================================================= */
 
 .project-hero-v2 {
@@ -182,43 +171,17 @@ body {
     display: grid;
 
     grid-template-columns:
-        minmax(230px, 0.7fr)
-        minmax(480px, 1.55fr)
-        minmax(280px, 0.85fr);
+        minmax(0, 1fr)
+        minmax(420px, 0.85fr);
 
-    gap: clamp(50px, 5vw, 90px);
+    gap: clamp(60px, 7vw, 120px);
 
-    align-items: center;
+    align-items: start;
 }
 
 
 /* =========================================================
-   LEFT IMAGE
-   ========================================================= */
-
-.ph-mascot {
-    width: 100%;
-    min-height: 520px;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.ph-mascot img {
-    display: block;
-
-    width: 100%;
-    max-width: 380px;
-    max-height: 640px;
-
-    object-fit: contain;
-    object-position: bottom center;
-}
-
-
-/* =========================================================
-   CENTER INFORMATION
+   INFORMACIÓN — IZQUIERDA
    ========================================================= */
 
 .ph-intro {
@@ -277,11 +240,11 @@ body {
 
 
 /* =========================================================
-   TASKS
+   RESUMEN DE TAREAS
    ========================================================= */
 
 .task-heading {
-    margin: 46px 0 20px;
+    margin: 48px 0 22px;
 
     color: var(--cream);
 
@@ -296,20 +259,21 @@ body {
     display: flex;
     flex-direction: column;
 
-    gap: 16px;
+    gap: 14px;
 
     margin: 0;
-    padding: 0;
 
-    list-style: none;
+    padding: 0 0 0 24px;
+
+    list-style-type: disc;
 }
 
 .task-list li {
-    display: grid;
+    display: list-item;
 
-    grid-template-columns: 145px 1fr;
+    margin: 0;
 
-    gap: 18px;
+    padding-left: 6px;
 
     color: var(--text-muted);
 
@@ -318,13 +282,19 @@ body {
     line-height: 1.7;
 }
 
+.task-list li::marker {
+    color: var(--green);
+
+    font-size: 0.85em;
+}
+
 .task-list strong {
     color: var(--cream);
 }
 
 
 /* =========================================================
-   BUTTONS
+   BOTONES
    ========================================================= */
 
 .project-actions {
@@ -338,6 +308,7 @@ body {
 
 .project-btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -367,6 +338,7 @@ body {
 
 .project-btn-solid {
     background: var(--green);
+
     color: #11120f;
 }
 
@@ -384,12 +356,13 @@ body {
 
 .project-btn-outline:hover {
     border-color: var(--green);
+
     color: var(--green);
 }
 
 
 /* =========================================================
-   RIGHT INFORMATION IMAGES
+   IMÁGENES — DERECHA
    ========================================================= */
 
 .ph-shots {
@@ -398,7 +371,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    gap: 22px;
+    gap: 24px;
 }
 
 .ph-shot {
@@ -436,7 +409,7 @@ body {
 
 
 /* =========================================================
-   TRAILER + GALLERY
+   TRAILER + GALERÍA
    ========================================================= */
 
 .trailer-gallery {
@@ -452,11 +425,6 @@ body {
 
     gap: 26px;
 }
-
-
-/* =========================================================
-   TRAILER
-   ========================================================= */
 
 .trailer-facade {
     position: relative;
@@ -505,7 +473,7 @@ body {
 }
 
 .trailer-facade:hover::after {
-    background: rgba(17, 18, 15, 0.10);
+    background: rgba(17, 18, 15, 0.1);
 }
 
 .play-badge {
@@ -557,11 +525,6 @@ body {
 
     letter-spacing: 0.12em;
 }
-
-
-/* =========================================================
-   SCREENSHOTS
-   ========================================================= */
 
 .tg-gallery {
     display: grid;
@@ -615,12 +578,14 @@ body {
     padding: 155px 0 150px;
 
     background: var(--background);
+
+    isolation: isolate;
 }
 
 
 /*
-   El HTML conserva estas capas para no tocar project.html,
-   pero no se muestran porque esta sección debe ir limpia.
+   La sección de contribuciones ya no utiliza
+   una imagen de fondo.
 */
 
 .contrib-bg,
@@ -632,13 +597,9 @@ body {
     position: relative;
 }
 
-
-/* =========================================================
-   CONTRIBUTION CONTENT
-   ========================================================= */
-
 .contrib-text {
     width: 100%;
+
     max-width: 900px;
 }
 
@@ -668,7 +629,7 @@ body {
 
 
 /* =========================================================
-   CONTRIBUTION LIST
+   LISTA DE CONTRIBUCIONES
    ========================================================= */
 
 .contribution-list {
@@ -679,7 +640,7 @@ body {
 
     margin: 52px 0 0;
 
-    padding: 0 0 0 28px;
+    padding: 0 0 0 30px;
 
     list-style-type: disc;
 }
@@ -687,13 +648,21 @@ body {
 .contribution-list li {
     display: list-item;
 
+    margin: 0;
+
+    padding-left: 6px;
+
     color: var(--text);
 
     font-size: 0.96rem;
 
     line-height: 1.8;
+}
 
-    padding-left: 5px;
+.contribution-list li::marker {
+    color: var(--green);
+
+    font-size: 0.9em;
 }
 
 .contribution-title {
@@ -708,11 +677,12 @@ body {
 
 
 /* =========================================================
-   LEARNING
+   LO QUE APRENDÍ
    ========================================================= */
 
 .learning-block {
     width: 100%;
+
     max-width: 900px;
 
     margin-top: 125px;
@@ -726,7 +696,7 @@ body {
 
 
 /* =========================================================
-   BOTTOM CTA
+   BOTONES FINALES
    ========================================================= */
 
 .case-cta {
@@ -745,9 +715,11 @@ body {
 
 .project-lightbox {
     position: fixed;
+
     inset: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -767,6 +739,7 @@ body {
 
 .project-lightbox.active {
     opacity: 1;
+
     visibility: visible;
 }
 
@@ -854,27 +827,25 @@ body {
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE — 1150px
    ========================================================= */
 
 @media (max-width: 1150px) {
 
     .ph-grid {
         grid-template-columns:
-            minmax(190px, 0.6fr)
-            minmax(400px, 1.45fr);
+            minmax(0, 1fr)
+            minmax(340px, 0.85fr);
+
+        gap: 55px;
     }
 
-    .ph-mascot {
-        grid-row: span 2;
-    }
-
-    .ph-shots {
-        grid-column: 2;
-        grid-row: 2;
-    }
 }
 
+
+/* =========================================================
+   RESPONSIVE — 850px
+   ========================================================= */
 
 @media (max-width: 850px) {
 
@@ -885,37 +856,28 @@ body {
 
     .title-hero {
         min-height: 650px;
+
         height: 70vh;
     }
 
     .ph-grid {
         display: flex;
+
         flex-direction: column;
 
         gap: 55px;
     }
 
-    .ph-mascot {
-        order: 1;
-
-        width: 100%;
-        height: 360px;
-
-        min-height: 0;
-    }
-
-    .ph-mascot img {
-        max-height: 360px;
-    }
-
     .ph-intro {
-        order: 2;
+        width: 100%;
+
+        order: 1;
     }
 
     .ph-shots {
-        order: 3;
-
         width: 100%;
+
+        order: 2;
     }
 
     .ph-shot {
@@ -933,13 +895,19 @@ body {
     .learning-block {
         margin-top: 95px;
     }
+
 }
 
+
+/* =========================================================
+   RESPONSIVE — 600px
+   ========================================================= */
 
 @media (max-width: 600px) {
 
     .title-hero {
         min-height: 560px;
+
         height: 560px;
     }
 
@@ -959,10 +927,8 @@ body {
         font-size: 3rem;
     }
 
-    .task-list li {
-        grid-template-columns: 1fr;
-
-        gap: 4px;
+    .task-list {
+        padding-left: 22px;
     }
 
     .project-actions,
@@ -993,4 +959,5 @@ body {
     .lightbox-next {
         right: 5px;
     }
+
 }
