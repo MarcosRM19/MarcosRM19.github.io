@@ -1,326 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title id="project-page-title">
-        Project
-    </title>
+    <title>Lyra — Project</title>
 
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/project.css"
-    >
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
+<body>
 
-<body class="project-page">
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <a href="index.html">MR</a>
+        </div>
 
-
-    <!-- =====================================================
-         NAVBAR
-    ====================================================== -->
-
-    <header>
-
-        <nav class="navbar">
-
-            <a
-                href="index.html#inicio"
-                class="logo"
-                id="logo"
-            >
-                MarcosRuiz Portfolio
-            </a>
-
-
-            <div class="nav-links">
-
-                <a
-                    href="index.html#inicio"
-                    id="nav-home"
-                >
-                    Inicio
-                </a>
-
-                <a
-                    href="index.html#sobre-mi"
-                    id="nav-about"
-                >
-                    Quién soy
-                </a>
-
-                <a
-                    href="index.html#experience"
-                    id="nav-experience"
-                >
-                    Experiencia
-                </a>
-
-                <a
-                    href="index.html#proyectos"
-                    id="nav-projects"
-                >
-                    Proyectos
-                </a>
-
-                <a
-                    href="index.html#documentos"
-                    id="nav-documents"
-                >
-                    Documentos
-                </a>
-
-            </div>
-
-
-            <div class="nav-actions">
-
-                <button
-                    id="language-button"
-                    type="button"
-                >
-                    ES
-                </button>
-
-
-                <a
-                    href="#contacto"
-                    class="contact-button"
-                    id="contact-button"
-                >
-                    Contact me
-                </a>
-
-            </div>
-
+        <nav class="navbar-nav">
+            <a href="index.html#about" data-i18n="nav.about">Sobre mí</a>
+            <a href="index.html#experience" data-i18n="nav.experience">Experiencia</a>
+            <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+            <a href="index.html#documents" data-i18n="nav.documents">Documentos</a>
         </nav>
 
+        <div class="navbar-actions">
+            <button id="language-button" class="language-button">ES</button>
+            <a href="index.html#contact" class="contact-button" data-i18n="nav.contact">
+                Contacto
+            </a>
+        </div>
     </header>
 
 
-
-    <main id="project-page">
-
+    <main id="project-content">
 
         <!-- =====================================================
-             01 — HERO
+             01 — TITLE HERO
         ====================================================== -->
+        <section class="title-hero">
 
-        <section class="project-hero">
+            <video
+                class="title-bg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="img/projects/lyra/lyra-key.jpg"
+            >
+                <source src="img/projects/lyra/lyra-bg.webm" type="video/webm">
+                <source src="img/projects/lyra/lyra-bg.mp4" type="video/mp4">
+            </video>
 
+            <div class="title-veil"></div>
 
-            <!-- YOUTUBE BACKGROUND -->
+            <div class="title-inner">
 
-            <div class="project-hero-video">
-
-                <iframe
-                    id="project-hero-youtube"
-                    src=""
-                    title="Project background video"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    allowfullscreen
+                <img
+                    class="game-logo"
+                    src="img/projects/lyra/logo-lyra.png"
+                    alt="Lyra"
                 >
-                </iframe>
 
-            </div>
+                <h1 class="logo-fallback">Lyra</h1>
 
-
-            <!-- DARK OVERLAY -->
-
-            <div class="project-hero-overlay"></div>
-
-
-            <!-- HERO CONTENT -->
-
-            <div class="project-hero-content">
-
-
-                <p
-                    class="project-eyebrow"
-                    id="project-hero-label"
-                >
+                <p class="title-tagline" data-project="tagline">
+                    Resuelve puzles junto a Mochi y Pochi.
                 </p>
 
-
-                <h1 id="project-hero-title">
-                    LYRA
-                </h1>
-
-
-                <p
-                    class="project-hero-subtitle"
-                    id="project-hero-subtitle"
-                >
-                </p>
-
-
-                <!-- ITCH BUTTON -->
-
-                <a
-                    href="#"
-                    id="project-hero-itch"
-                    class="project-itch-button"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Play project on itch.io"
-                >
-
-                    <span
-                        class="itch-icon"
-                        aria-hidden="true"
-                    >
-                    </span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             02 — PROJECT INFORMATION
-        ====================================================== -->
-
-        <section class="project-information">
-
-
-            <div class="project-section-heading">
-
-                <span>
-                    01
-                </span>
-
-                <p id="project-information-label">
-                    PROJECT INFORMATION
-                </p>
-
-            </div>
-
-
-
-            <div class="project-information-grid">
-
-
-                <!-- LEFT IMAGE -->
-
-                <div class="project-info-left">
-
-                    <img
-                        id="project-info-image-left"
-                        src=""
-                        alt="Project screenshot"
-                    >
-
-                </div>
-
-
-
-                <!-- CENTER INFORMATION -->
-
-                <div class="project-info-center">
-
-
-                    <p
-                        class="project-small-label"
-                        id="project-info-label"
-                    >
-                    </p>
-
-
-                    <h2 id="project-info-title">
-                    </h2>
-
-
-                    <p
-                        class="project-info-subtitle"
-                        id="project-info-subtitle"
-                    >
-                    </p>
-
-
-
-                    <div class="project-info-year">
-
-                        <span>
-                            YEAR
-                        </span>
-
-                        <strong id="project-info-year">
-                        </strong>
-
-                    </div>
-
-
-
-                    <div class="project-description">
-
-                        <p id="project-info-description">
-                        </p>
-
-                        <p id="project-info-description-2">
-                        </p>
-
-                    </div>
-
-
-
-                    <!-- ITCH OUTLINE BUTTON -->
+                <div class="store-links">
 
                     <a
-                        href="#"
-                        id="project-info-itch"
-                        class="project-outline-button"
+                        class="store-link"
+                        href="https://la-mapachanda-studio.itch.io/lyra"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
+                        aria-label="itch.io"
                     >
-
-                        <span
-                            class="itch-outline-icon"
-                            aria-hidden="true"
+                        <img
+                            src="https://cdn.simpleicons.org/itchdotio/11120f"
+                            alt=""
                         >
-                        </span>
-
-                        <span id="project-info-itch-text">
-                            Play on itch.io
-                        </span>
-
                     </a>
 
                 </div>
 
+            </div>
+
+        </section>
 
 
-                <!-- RIGHT IMAGES -->
+        <!-- =====================================================
+             02 — PROJECT INTRO
+        ====================================================== -->
+        <section class="project-hero-v2">
 
-                <div class="project-info-right">
+            <div class="project-wrap-wide">
 
-                    <img
-                        id="project-info-image-right-1"
-                        src=""
-                        alt="Project screenshot"
-                    >
+                <div class="ph-grid">
 
-                    <img
-                        id="project-info-image-right-2"
-                        src=""
-                        alt="Project screenshot"
-                    >
+                    <!-- CHARACTER -->
+                    <div class="ph-mascot">
+
+                        <img
+                            src="img/projects/lyra/char-lyra.png"
+                            alt="Lyra protagonist"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <!-- TEXT -->
+                    <div class="ph-intro">
+
+                        <h1 data-project="title">Lyra</h1>
+
+                        <span
+                            class="eyebrow"
+                            data-project="category"
+                        >
+                            Puzzle-Adventure / Unreal Engine 5
+                        </span>
+
+                        <p
+                            class="project-years"
+                            data-project="years"
+                        >
+                            2025 - 2026
+                        </p>
+
+
+                        <p
+                            class="project-lede"
+                            data-project="description"
+                        >
+                            Lyra es una aventura de puzles 3D de tono wholesome
+                            protagonizada por dos dragones bebés, desarrollada
+                            en Unreal Engine 5.
+                        </p>
+
+                        <p
+                            class="project-lede"
+                            data-project="role"
+                        >
+                            Trabajé como Game and Level Designer, diseñando cada
+                            mecánica y validando la guía de los niveles con datos
+                            reales de jugadores. Ganó el premio al Mejor TFG en
+                            ENTI DemoDay 2026.
+                        </p>
+
+
+                        <h3
+                            class="task-heading"
+                            data-i18n="project.taskOverview"
+                        >
+                            Task Overview
+                        </h3>
+
+                        <ul class="task-list">
+
+                            <li>
+                                <strong>Pattern-Based Dictionary</strong>
+                                <span data-i18n="project.task1">
+                                    Diseñé y documenté cada mecánica mediante un
+                                    Pattern-Based Dictionary.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong>EDPV</strong>
+                                <span data-i18n="project.task2">
+                                    Construí tres niveles temáticos estructurados
+                                    mediante curvas de aprendizaje EDPV.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong>C++ Telemetry</strong>
+                                <span data-i18n="project.task3">
+                                    Instrumenté telemetría en C++ en Unreal Engine 5,
+                                    exportando datos estructurados en CSV.
+                                </span>
+                            </li>
+
+                            <li>
+                                <strong>A/B Test</strong>
+                                <span data-i18n="project.task4">
+                                    Realicé un test A/B completo y el análisis
+                                    estadístico en Python.
+                                </span>
+                            </li>
+
+                        </ul>
+
+
+                        <div class="project-actions">
+
+                            <a
+                                class="project-btn project-btn-solid"
+                                href="https://la-mapachanda-studio.itch.io/lyra"
+                                target="_blank"
+                                rel="noopener"
+                                data-i18n="project.play"
+                            >
+                                Play on itch.io
+                            </a>
+
+                            <a
+                                class="project-btn project-btn-outline"
+                                href="index.html#projects"
+                                data-i18n="project.more"
+                            >
+                                More projects
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT IMAGES -->
+                    <div class="ph-shots">
+
+                        <div class="ph-shot">
+                            <img
+                                src="img/projects/lyra/lyra-01.jpg"
+                                alt="Lyra main menu"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="ph-shot">
+                            <img
+                                src="img/projects/lyra/lyra-02.jpg"
+                                alt="Lyra gameplay"
+                                loading="lazy"
+                            >
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -329,437 +250,374 @@
         </section>
 
 
-
         <!-- =====================================================
-             03 — MEDIA
+             03 — TRAILER + GALLERY
         ====================================================== -->
+        <section class="trailer-gallery">
 
-        <section class="project-media">
+            <div class="project-wrap-wide">
+
+                <div class="tg-grid">
+
+                    <!-- TRAILER -->
+                    <div class="tg-trailer">
+
+                        <button
+                            class="trailer-facade"
+                            type="button"
+                            data-yt="YIcgUIwu89U"
+                            aria-label="Play Lyra trailer"
+                        >
+
+                            <img
+                                src="img/projects/lyra/lyra-key.jpg"
+                                alt="Lyra trailer"
+                                loading="lazy"
+                            >
+
+                            <span class="play-badge"></span>
+
+                            <span
+                                class="tg-label"
+                                data-i18n="project.trailer"
+                            >
+                                OFFICIAL TRAILER
+                            </span>
+
+                        </button>
+
+                    </div>
 
 
-            <div class="project-section-heading">
+                    <!-- GALLERY -->
+                    <div class="tg-gallery">
 
-                <span>
-                    02
-                </span>
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-index="0"
+                            data-full="img/projects/lyra/lyra-05.jpg"
+                            data-caption="Lyra en el nivel de la cueva, montando en un carro para atravesar el túnel."
+                        >
+                            <img
+                                src="img/projects/lyra/lyra-05.jpg"
+                                alt="Lyra cave level"
+                                loading="lazy"
+                            >
+                        </button>
 
-                <p id="project-media-label">
-                    MEDIA
-                </p>
+
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-index="1"
+                            data-full="img/projects/lyra/lyra-06.jpg"
+                            data-caption="Lyra encontrando a la madre de Mochi y Pochi en el nivel final."
+                        >
+                            <img
+                                src="img/projects/lyra/lyra-06.jpg"
+                                alt="Lyra final level"
+                                loading="lazy"
+                            >
+                        </button>
+
+
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-index="2"
+                            data-full="img/projects/lyra/lyra-03.jpg"
+                            data-caption="Lyra en la zona de la puerta en ruinas, con cascadas y estructuras de puzzle."
+                        >
+                            <img
+                                src="img/projects/lyra/lyra-03.jpg"
+                                alt="Lyra gameplay"
+                                loading="lazy"
+                            >
+                        </button>
+
+
+                        <button
+                            class="tg-shot"
+                            type="button"
+                            data-index="3"
+                            data-full="img/projects/lyra/lyra-04.jpg"
+                            data-caption="Lyra durante la escena en la que conoce a Mochi y Pochi."
+                        >
+                            <img
+                                src="img/projects/lyra/lyra-04.jpg"
+                                alt="Lyra cutscene"
+                                loading="lazy"
+                            >
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
+        </section>
 
 
-            <div class="project-media-grid">
+        <!-- =====================================================
+             04 — CONTRIBUTIONS
+        ====================================================== -->
+        <section class="contributions">
+
+            <video
+                class="contrib-bg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-hidden="true"
+            >
+                <source
+                    src="img/projects/lyra/lyra-bg.mp4"
+                    type="video/mp4"
+                >
+            </video>
+
+            <div class="contrib-veil"></div>
 
 
-                <!-- TRAILER -->
+            <div class="project-wrap contributions-inner">
 
-                <div class="project-trailer">
+                <div class="contrib-grid">
 
-                    <div class="project-video-wrapper">
+                    <div class="contrib-text">
 
-                        <iframe
-                            id="project-trailer-youtube"
-                            src=""
-                            title="Project trailer"
-                            frameborder="0"
-                            allow="autoplay; encrypted-media; picture-in-picture"
-                            allowfullscreen
-                        >
-                        </iframe>
+                        <h2 data-i18n="project.contributions">
+                            Mis Contribuciones
+                        </h2>
+
+                        <p data-i18n="project.contributionsIntro">
+                            Lyra era mi TFG, así que era el responsable de las
+                            mecánicas, los niveles y de demostrar que ambos
+                            funcionaban de verdad. El hilo conductor era negarme
+                            a fiarme de mi intuición sin datos detrás.
+                        </p>
+
+
+                        <ul class="contribution-list">
+
+                            <li>
+                                <strong
+                                    class="contribution-title"
+                                    data-i18n="project.contribution1Title"
+                                >
+                                    Pattern-Based Dictionary
+                                </strong>
+
+                                <span data-i18n="project.contribution1Text">
+                                    Descompuse cada mecánica en interacciones
+                                    atómicas (tiro de fuego, tiro de agua,
+                                    lanzamiento de dragón) y catalogué los
+                                    patrones que forman al combinarse, para que
+                                    cada sala enseñara una combinación concreta
+                                    y no un truco aislado.
+                                </span>
+                            </li>
+
+
+                            <li>
+                                <strong
+                                    class="contribution-title"
+                                    data-i18n="project.contribution2Title"
+                                >
+                                    Estructura de niveles EDPV
+                                </strong>
+
+                                <span data-i18n="project.contribution2Text">
+                                    Apliqué el modelo Exposure, Demonstration,
+                                    Practice, Validation en las tres zonas
+                                    temáticas, ordenando dificultad y ritmo
+                                    emocional de forma deliberada y no por
+                                    intuición.
+                                </span>
+                            </li>
+
+
+                            <li>
+                                <strong
+                                    class="contribution-title"
+                                    data-i18n="project.contribution3Title"
+                                >
+                                    Pipeline de telemetría en C++
+                                </strong>
+
+                                <span data-i18n="project.contribution3Text">
+                                    Instrumenté Unreal Engine 5 para capturar
+                                    posición del jugador y acciones como CSV
+                                    estructurado, dándome datos reales de
+                                    comportamiento en vez de anécdotas.
+                                </span>
+                            </li>
+
+
+                            <li>
+                                <strong
+                                    class="contribution-title"
+                                    data-i18n="project.contribution4Title"
+                                >
+                                    Test A/B controlado
+                                </strong>
+
+                                <span data-i18n="project.contribution4Text">
+                                    Diseñé el experimento completo para el
+                                    Puzzle 6: asignación aleatoria estratificada,
+                                    criterios de inclusión, script de moderador
+                                    y consentimiento informado, comparando el
+                                    layout original con un rediseño con visual
+                                    guidance más claro.
+                                </span>
+                            </li>
+
+
+                            <li>
+                                <strong
+                                    class="contribution-title"
+                                    data-i18n="project.contribution5Title"
+                                >
+                                    Análisis estadístico en Python
+                                </strong>
+
+                                <span data-i18n="project.contribution5Text">
+                                    Ejecuté Shapiro-Wilk, t de Student y d de
+                                    Cohen, y reporté un p-valor no significativo
+                                    junto con un tamaño de efecto grande en vez
+                                    de solo el resultado que apoyaba mi hipótesis.
+                                </span>
+                            </li>
+
+
+                            <li>
+                                <strong
+                                    class="contribution-title"
+                                    data-i18n="project.contribution6Title"
+                                >
+                                    Resultado medido
+                                </strong>
+
+                                <span data-i18n="project.contribution6Text">
+                                    El rediseño redujo los errores de navegación
+                                    en un <strong>35%</strong> y mejoró el tiempo
+                                    de resolución en un <strong>33%</strong>,
+                                    medido con el mismo pipeline de telemetría.
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- LEARNING -->
+                    <div class="learning-block">
+
+                        <h2 data-i18n="project.learning">
+                            Lo que aprendí
+                        </h2>
+
+                        <p data-i18n="project.learningText">
+                            Lo más valioso no fue confirmar mi hipótesis. Fue
+                            aprender a separar lo que se siente mejor de lo que
+                            es demostrablemente mejor, y a comunicar esa zona
+                            gris a un equipo de diseño sin inflarla ni descartarla.
+                        </p>
 
                     </div>
 
                 </div>
 
 
+                <div class="case-cta">
 
-                <!-- GALLERY -->
-
-                <div class="project-gallery">
-
-
-                    <img
-                        id="project-gallery-1"
-                        src=""
-                        alt="Project screenshot"
+                    <a
+                        class="project-btn project-btn-solid"
+                        href="https://la-mapachanda-studio.itch.io/lyra"
+                        target="_blank"
+                        rel="noopener"
+                        data-i18n="project.play"
                     >
+                        Play on itch.io
+                    </a>
 
-
-                    <img
-                        id="project-gallery-2"
-                        src=""
-                        alt="Project screenshot"
+                    <a
+                        class="project-btn project-btn-outline"
+                        href="index.html#projects"
+                        data-i18n="project.more"
                     >
-
-
-                    <img
-                        id="project-gallery-3"
-                        src=""
-                        alt="Project screenshot"
-                    >
-
-
-                    <img
-                        id="project-gallery-4"
-                        src=""
-                        alt="Project screenshot"
-                    >
+                        More projects
+                    </a>
 
                 </div>
 
             </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             04 — TASK OVERVIEW / CONTRIBUTIONS / LEARNING
-        ====================================================== -->
-
-<section class="project-overview">
-
-    <div class="project-overview-inner">
-
-        <div class="project-section-heading">
-
-            <span>03</span>
-
-            <p id="project-overview-label">
-                TASK OVERVIEW
-            </p>
-
-        </div>
-
-
-        <h2 id="contribution-title">
-            Mis Contribuciones
-        </h2>
-
-
-        <p
-            class="project-overview-description"
-            id="contribution-description">
-        </p>
-
-
-        <ul
-            class="project-contribution-list"
-            id="contribution-list">
-        </ul>
-
-
-        <div class="project-learning">
-
-            <div class="project-learning-heading">
-
-                <span id="learning-label">
-                    LO QUE APRENDÍ
-                </span>
-
-                <h3 id="learning-title">
-                </h3>
-
-            </div>
-
-
-            <p id="learning-description">
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-        <!-- =====================================================
-             PROJECT NAVIGATION
-        ====================================================== -->
-
-        <section class="project-navigation">
-
-
-            <!-- BACK -->
-
-            <a
-                href="index.html#proyectos"
-                class="project-back-button"
-            >
-
-                <span>
-                    ←
-                </span>
-
-                <span id="project-back-text">
-                    Back to projects
-                </span>
-
-            </a>
-
-
-
-            <!-- ITCH -->
-
-            <a
-                href="#"
-                id="project-bottom-itch"
-                class="project-itch-button"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Play project on itch.io"
-            >
-
-                <span
-                    class="itch-icon"
-                    aria-hidden="true"
-                >
-                </span>
-
-            </a>
 
         </section>
 
     </main>
 
 
-
     <!-- =====================================================
-         CONTACT
+         LIGHTBOX
     ====================================================== -->
-
-    <section
-        id="contacto"
-        class="contact-section"
-    >
-
-        <div class="contact-container">
-
-
-            <div class="contact-info">
-
-
-                <p
-                    class="section-label"
-                    id="contact-label"
-                >
-                    CONTACT
-                </p>
-
-
-                <h2 id="contact-title">
-                    Let's work together.
-                </h2>
-
-
-                <p id="contact-description">
-                    Interested in working together or have a project in mind?
-                    Get in touch.
-                </p>
-
-            </div>
-
-
-
-            <button
-                class="contact-main-button"
-                id="open-contact-modal"
-                type="button"
-            >
-
-                <span id="contact-button-text">
-                    Contact me
-                </span>
-
-                <span>
-                    →
-                </span>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CONTACT MODAL
-    ====================================================== -->
-
     <div
-        class="contact-modal"
-        id="contact-modal"
+        class="project-lightbox"
+        id="project-lightbox"
         aria-hidden="true"
     >
 
+        <button
+            class="lightbox-close"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
 
-        <div class="contact-modal-overlay"></div>
+        <button
+            class="lightbox-prev"
+            type="button"
+            aria-label="Previous image"
+        >
+            ‹
+        </button>
 
+        <div class="lightbox-content">
 
-        <div class="contact-modal-content">
-
-
-            <button
-                class="contact-modal-close"
-                id="close-contact-modal"
-                type="button"
-                aria-label="Close"
+            <img
+                id="lightbox-image"
+                src=""
+                alt=""
             >
-                ×
-            </button>
 
-
-            <p class="section-label">
-                CONTACT
-            </p>
-
-
-            <h2 id="modal-contact-title">
-                Get in touch.
-            </h2>
-
-
-
-            <form id="contact-form">
-
-
-                <div class="form-group">
-
-                    <label
-                        for="contact-name"
-                        id="contact-name-label"
-                    >
-                        Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="contact-name"
-                        name="name"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="form-group">
-
-                    <label
-                        for="contact-email"
-                        id="contact-email-label"
-                    >
-                        Email
-                    </label>
-
-                    <input
-                        type="email"
-                        id="contact-email"
-                        name="email"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="form-group">
-
-                    <label
-                        for="contact-message"
-                        id="contact-message-label"
-                    >
-                        Message
-                    </label>
-
-                    <textarea
-                        id="contact-message"
-                        name="message"
-                        rows="5"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-
-                <button
-                    type="submit"
-                    class="contact-submit-button"
-                    id="contact-submit-button"
-                >
-                    Send message
-                </button>
-
-
-            </form>
+            <p id="lightbox-caption"></p>
 
         </div>
+
+        <button
+            class="lightbox-next"
+            type="button"
+            aria-label="Next image"
+        >
+            ›
+        </button>
 
     </div>
 
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-        <div class="footer-content">
-
-
-            <div class="footer-left">
-
-                <span>
-                    © 2026 Marcos Ruiz
-                </span>
-
-            </div>
-
-
-
-            <div class="footer-links">
-
-
-                <a
-                    href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                </a>
-
-
-                <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    LinkedIn
-                </a>
-
-
-            </div>
-
-        </div>
-
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Marcos RM</p>
     </footer>
 
-
-
-    <!-- =====================================================
-         SCRIPTS
-    ====================================================== -->
 
     <script src="js/script.js"></script>
     <script src="js/project.js"></script>
 
 </body>
-
 </html>
