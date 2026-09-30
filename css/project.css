@@ -1,11 +1,5 @@
 /* =========================================================
    PROJECT PAGE
-   Lyra + Juan Pieza
-========================================================= */
-
-
-/* =========================================================
-   GENERAL
 ========================================================= */
 
 .project-page {
@@ -13,56 +7,54 @@
     color: var(--text);
 }
 
-.project-page main {
-    width: 100%;
+
+/* =========================================================
+   GENERAL PROJECT LAYOUT
+========================================================= */
+
+.project-information,
+.project-media,
+.project-overview,
+.project-navigation {
+    width: min(82%, 1500px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.project-page img {
-    display: block;
-    width: 100%;
-}
-
-.project-page a {
-    text-decoration: none;
+.project-information,
+.project-media,
+.project-overview {
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 
 
 /* =========================================================
-   SECTION LABEL
+   SECTION HEADINGS
 ========================================================= */
 
 .project-section-heading {
-    width: 100%;
-
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 
-    margin-bottom: 45px;
+    margin-bottom: 65px;
 
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
 }
 
 .project-section-heading span {
+    font-size: 0.75rem;
+    font-family: monospace;
     color: var(--green);
-
-    font-size: 0.7rem;
-    font-weight: 600;
-
-    letter-spacing: 2px;
 }
 
 .project-section-heading p {
     margin: 0;
 
-    color: var(--text-muted);
-
-    font-size: 0.7rem;
-    font-weight: 600;
-
+    font-size: 0.75rem;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 
@@ -73,30 +65,23 @@
 .project-hero {
     position: relative;
 
-    min-height: 100vh;
+    min-height: 92vh;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
 
     overflow: hidden;
 
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
 }
-
-
-/* ---------- VIDEO ---------- */
 
 .project-hero-video {
     position: absolute;
-
     inset: 0;
 
     overflow: hidden;
 
-    z-index: 0;
-
-    background: var(--background);
+    pointer-events: none;
 }
 
 .project-hero-video iframe {
@@ -105,173 +90,117 @@
     top: 50%;
     left: 50%;
 
-    width: 100vw;
-    height: 56.25vw;
+    width: 120vw;
+    height: 67.5vw;
 
-    min-width: 177.77vh;
-    min-height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
 
-    transform:
-        translate(-50%, -50%)
-        scale(1.15);
+    transform: translate(-50%, -50%);
 
-    border: none;
-
-    pointer-events: none;
+    border: 0;
 }
-
-
-/* ---------- OSCURECER VIDEO ---------- */
 
 .project-hero-overlay {
     position: absolute;
-
     inset: 0;
-
-    z-index: 1;
 
     background:
         linear-gradient(
-            180deg,
-            rgba(8, 11, 16, 0.35) 0%,
-            rgba(8, 11, 16, 0.45) 45%,
-            rgba(8, 11, 16, 0.92) 100%
+            to top,
+            rgba(17, 18, 15, 0.98) 0%,
+            rgba(17, 18, 15, 0.65) 35%,
+            rgba(17, 18, 15, 0.15) 75%,
+            rgba(17, 18, 15, 0.25) 100%
         );
 }
 
-
-/* ---------- CONTENIDO ---------- */
-
 .project-hero-content {
     position: relative;
-
     z-index: 2;
 
-    width: 90%;
-    max-width: 1500px;
+    width: min(82%, 1500px);
 
-    text-align: center;
+    margin: 0 auto;
 
-    padding-top: 80px;
+    padding-bottom: 100px;
 }
 
 .project-eyebrow {
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 
     color: var(--green);
 
     font-size: 0.75rem;
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
-
-
-/* ---------- TITULO GRANDE ---------- */
 
 .project-hero-content h1 {
     margin: 0;
 
-    color: #ffffff;
-
     font-size: clamp(6rem, 15vw, 14rem);
-
     font-weight: 600;
-
     line-height: 0.8;
-
     letter-spacing: -5px;
 
     text-transform: uppercase;
 
-    text-shadow:
-        0 5px 25px rgba(0, 0, 0, 0.45);
+    color: var(--cream);
 }
 
-
-/* ---------- SUBTITULO ---------- */
-
 .project-hero-subtitle {
-    max-width: 800px;
+    max-width: 650px;
 
-    margin: 40px auto 0;
+    margin: 45px 0 30px;
 
-    color: var(--cream);
+    color: var(--text-muted);
 
-    font-size: clamp(1rem, 2vw, 1.35rem);
-
+    font-size: 1rem;
     line-height: 1.7;
 }
 
 
 /* =========================================================
-   ITCH BUTTON — SOLO LOGO
+   ITCH BUTTON
 ========================================================= */
 
 .project-itch-button {
-    width: 68px;
-    height: 68px;
-
-    margin-top: 35px;
+    width: 72px;
+    height: 72px;
 
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
     background: var(--green);
-
     border: 1px solid var(--green);
 
-    color: var(--background);
+    text-decoration: none;
 
     transition:
         transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease;
+        background 0.25s ease;
 }
 
 .project-itch-button:hover {
-    transform: translateY(-4px);
+    transform: scale(1.08);
 
-    background: var(--orange);
-
-    border-color: var(--orange);
-
-    color: #ffffff;
+    background: var(--cream);
 }
-
-
-/* ocultamos el texto */
-
-.project-itch-button span:not(.itch-icon) {
-    display: none;
-}
-
-
-/* Logo */
 
 .project-itch-button .itch-icon {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 
     display: block;
 
-    font-size: 0;
-
     background-image: url("../img/itch-logo.png");
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: contain;
-
-    /*
-       Si tu logo tiene otro nombre/ruta,
-       cambia solamente esta URL.
-    */
 }
 
 
@@ -279,34 +208,24 @@
    INFORMATION
 ========================================================= */
 
-.project-information {
-    padding: 120px 10%;
-
-    border-bottom: 1px solid var(--border);
-}
-
 .project-information-grid {
-    width: 100%;
-
     display: grid;
 
     grid-template-columns:
-        minmax(250px, 1fr)
-        minmax(350px, 0.9fr)
-        minmax(250px, 0.75fr);
+        minmax(250px, 0.9fr)
+        minmax(450px, 1.35fr)
+        minmax(250px, 0.9fr);
 
-    gap: 45px;
+    gap: 55px;
 
     align-items: stretch;
 }
 
 
-/* ---------- IZQUIERDA ---------- */
+/* LEFT */
 
 .project-info-left {
-    min-height: 680px;
-
-    border: 1px solid var(--border);
+    min-height: 720px;
 
     overflow: hidden;
 }
@@ -315,187 +234,184 @@
     width: 100%;
     height: 100%;
 
+    display: block;
+
     object-fit: cover;
 }
 
 
-/* ---------- CENTRO ---------- */
+/* CENTER */
 
 .project-info-center {
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 
-    padding: 10px 10px;
+    padding: 25px 20px;
 }
 
 .project-small-label {
-    margin-bottom: 15px;
+    margin: 0 0 22px;
 
     color: var(--green);
 
     font-size: 0.7rem;
-    font-weight: 600;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
 }
 
 .project-info-center h2 {
-    margin-bottom: 15px;
+    max-width: 100%;
 
-    color: #ffffff;
+    margin: 0 0 22px;
 
-    font-size: clamp(2.8rem, 5vw, 5rem);
-
+    font-size: clamp(3rem, 5vw, 5.5rem);
     font-weight: 500;
-
     line-height: 0.95;
-
     letter-spacing: -2px;
 }
 
 .project-info-subtitle {
-    margin-bottom: 35px;
+    max-width: 800px;
+
+    margin: 0 0 35px;
 
     color: var(--text-muted);
 
-    font-size: 0.9rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 .project-info-year {
     display: flex;
+    align-items: center;
+    gap: 18px;
 
-    flex-direction: column;
+    margin-bottom: 40px;
 
-    gap: 4px;
-
-    margin-bottom: 35px;
-
-    padding-bottom: 20px;
-
-    border-bottom: 1px solid var(--border);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
 }
 
 .project-info-year span {
     color: var(--text-muted);
-
-    font-size: 0.6rem;
-
-    letter-spacing: 2px;
 }
 
 .project-info-year strong {
-    color: var(--cream);
-
-    font-size: 0.95rem;
+    color: var(--green);
 
     font-weight: 500;
 }
 
-.project-info-center .project-description {
-    margin-bottom: 30px;
+.project-description {
+    max-width: 850px;
+
+    margin-bottom: 40px;
+}
+
+.project-description p {
+    margin: 0 0 22px;
 
     color: var(--text-muted);
 
     font-size: 0.95rem;
-
-    line-height: 1.8;
+    line-height: 1.85;
 }
 
-.project-info-center .project-description p {
-    margin-bottom: 18px;
+.project-description p:last-child {
+    margin-bottom: 0;
 }
 
 
-/* ---------- BOTON SECUNDARIO ---------- */
+/* INFO ITCH BUTTON */
 
 .project-outline-button {
-    align-self: flex-start;
+    width: fit-content;
 
     display: inline-flex;
-
     align-items: center;
-    justify-content: center;
+    gap: 12px;
 
-    min-height: 40px;
-
-    padding: 0 17px;
+    padding: 13px 20px;
 
     border: 1px solid var(--border);
 
     color: var(--text);
 
-    font-size: 0.7rem;
+    text-decoration: none;
 
+    font-size: 0.75rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 
     transition:
-        border-color 0.2s ease,
-        color 0.2s ease,
-        background 0.2s ease;
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
 }
 
 .project-outline-button:hover {
     border-color: var(--green);
 
-    background: var(--green);
+    color: var(--green);
 
-    color: var(--background);
+    background: rgba(168, 198, 134, 0.05);
+}
+
+.itch-outline-icon {
+    width: 18px;
+    height: 18px;
+
+    display: block;
+
+    background-image: url("../img/itch-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 
-/* ---------- DERECHA ---------- */
+/* RIGHT */
 
 .project-info-right {
     display: grid;
 
     grid-template-rows: 1fr 1fr;
 
-    gap: 25px;
+    gap: 24px;
+
+    min-height: 720px;
 }
 
 .project-info-right img {
     width: 100%;
     height: 100%;
 
-    min-height: 300px;
+    display: block;
 
     object-fit: cover;
-
-    border: 1px solid var(--border);
 }
 
 
 /* =========================================================
    MEDIA
-   VA ANTES DE TASK OVERVIEW
 ========================================================= */
 
-.project-media {
-    padding: 120px 10%;
-
-    border-bottom: 1px solid var(--border);
-}
-
 .project-media-grid {
-    width: 100%;
-
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 25px;
+    gap: 35px;
+
+    align-items: stretch;
 }
 
 
-/* ---------- TRAILER ---------- */
+/* TRAILER */
 
 .project-trailer {
-    width: 100%;
+    min-width: 0;
 }
 
 .project-video-wrapper {
@@ -508,147 +424,129 @@
     overflow: hidden;
 
     background: var(--surface);
-
-    border: 1px solid var(--border);
 }
 
 .project-video-wrapper iframe {
-    position: absolute;
-
-    inset: 0;
-
     width: 100%;
     height: 100%;
 
-    border: none;
+    display: block;
+
+    border: 0;
 }
 
 
-/* ---------- GALERIA ---------- */
+/* GALLERY */
 
 .project-gallery {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 15px;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 18px;
+
+    aspect-ratio: 16 / 9;
 }
 
 .project-gallery img {
     width: 100%;
     height: 100%;
 
-    min-height: 200px;
+    display: block;
 
     object-fit: cover;
-
-    border: 1px solid var(--border);
-
-    transition:
-        border-color 0.2s ease,
-        transform 0.3s ease;
-}
-
-.project-gallery img:hover {
-    border-color: var(--green);
-
-    transform: scale(1.015);
 }
 
 
 /* =========================================================
-   TASK OVERVIEW + CONTRIBUTION + LEARNING
-   TODO JUNTO
+   TASK OVERVIEW
 ========================================================= */
 
 .project-overview {
-    padding: 120px 10%;
-
-    border-bottom: 1px solid var(--border);
+    padding-top: 170px;
+    padding-bottom: 190px;
 }
 
 .project-overview-inner {
-    width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
 
     margin: 0 auto;
 }
 
 
-/* ---------- TITULO ---------- */
+/* Remove decorative horizontal lines */
 
-.project-overview h2 {
-    margin-bottom: 25px;
-
-    color: #ffffff;
-
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-
-    font-weight: 500;
-
-    line-height: 1;
-
-    letter-spacing: -2px;
+.project-overview .project-section-heading {
+    margin-bottom: 85px;
 }
 
 
-/* ---------- DESCRIPCION ---------- */
+/* MAIN TITLE */
+
+.project-overview h2 {
+    margin: 0 0 35px;
+
+    color: var(--cream);
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -3px;
+}
+
+
+/* INTRO */
 
 .project-overview-description {
     max-width: 900px;
 
-    margin-bottom: 45px;
+    margin: 0 0 70px;
 
     color: var(--text-muted);
 
-    font-size: 1rem;
-
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.9;
 }
 
 
-/* ---------- LISTA ---------- */
+/* CONTRIBUTION LIST */
 
 .project-contribution-list {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
 
     margin: 0;
     padding: 0;
+
+    list-style: none;
 }
 
 .project-contribution-list li {
-    position: relative;
+    max-width: 1050px;
 
-    padding: 25px 0 25px 35px;
+    margin: 0;
 
-    border-top: 1px solid var(--border);
+    padding: 30px 0;
 
     color: var(--text-muted);
 
-    font-size: 0.95rem;
-
-    line-height: 1.8;
+    font-size: 0.98rem;
+    line-height: 1.85;
 }
 
-.project-contribution-list li:last-child {
-    border-bottom: 1px solid var(--border);
-}
+.project-contribution-list li strong {
+    display: block;
 
-.project-contribution-list li::before {
-    content: "→";
+    margin-bottom: 8px;
 
-    position: absolute;
+    color: var(--cream);
 
-    left: 0;
-    top: 25px;
-
-    color: var(--green);
-}
-
-.project-contribution-list strong {
-    color: #ffffff;
-
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 500;
 }
 
 
@@ -659,49 +557,50 @@
 .project-learning {
     display: grid;
 
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: minmax(250px, 0.8fr) minmax(400px, 1.2fr);
 
-    gap: 70px;
+    gap: 80px;
 
-    margin-top: 100px;
+    margin-top: 130px;
+    padding-top: 0;
 
-    padding-top: 70px;
+    border-top: none;
+}
 
-    border-top: 1px solid var(--border);
+.project-learning-heading {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
 }
 
 .project-learning-heading span {
-    display: block;
-
-    margin-bottom: 18px;
-
     color: var(--green);
 
     font-size: 0.7rem;
-    font-weight: 600;
-
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .project-learning-heading h3 {
     margin: 0;
 
-    color: #ffffff;
+    color: var(--cream);
 
-    font-size: clamp(2rem, 4vw, 3.4rem);
-
+    font-size: clamp(2.2rem, 4vw, 4rem);
     font-weight: 500;
-
     line-height: 1;
+    letter-spacing: -2px;
 }
 
 .project-learning > p {
+    max-width: 800px;
+
     margin: 0;
 
     color: var(--text-muted);
 
     font-size: 1rem;
-
     line-height: 1.9;
 }
 
@@ -711,59 +610,35 @@
 ========================================================= */
 
 .project-navigation {
-    width: 80%;
-
-    margin: 0 auto;
-
-    padding: 65px 0;
-
     display: flex;
 
     align-items: center;
     justify-content: space-between;
 
-    gap: 25px;
+    padding-top: 40px;
+    padding-bottom: 150px;
 
-    border-bottom: 1px solid var(--border);
+    border-top: none;
 }
 
 .project-back-button {
     display: inline-flex;
-
     align-items: center;
-
-    gap: 10px;
+    gap: 15px;
 
     color: var(--text-muted);
 
-    font-size: 0.75rem;
+    text-decoration: none;
 
+    font-size: 0.8rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 
-    transition: color 0.2s ease;
+    transition: color 0.25s ease;
 }
 
 .project-back-button:hover {
     color: var(--green);
-}
-
-
-/* El botón inferior sí puede mantener el círculo */
-
-.project-navigation .project-itch-button {
-    width: 55px;
-    height: 55px;
-
-    margin-top: 0;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.project-page .contact-section {
-    border-bottom: 1px solid var(--border);
 }
 
 
@@ -773,51 +648,60 @@
 
 @media (max-width: 1100px) {
 
+    .project-information,
+    .project-media,
+    .project-overview,
+    .project-navigation {
+        width: 88%;
+    }
+
+    .project-hero-content {
+        width: 88%;
+    }
+
     .project-information-grid {
         grid-template-columns:
             minmax(220px, 0.8fr)
-            minmax(300px, 1fr);
+            minmax(400px, 1.2fr)
+            minmax(220px, 0.8fr);
 
-        grid-template-areas:
-            "left center"
-            "right right";
+        gap: 30px;
     }
 
-    .project-info-left {
-        grid-area: left;
-    }
-
-    .project-info-center {
-        grid-area: center;
-    }
-
+    .project-info-left,
     .project-info-right {
-        grid-area: right;
-
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
+        min-height: 600px;
     }
 
+    .project-learning {
+        gap: 50px;
+    }
 }
 
 
 @media (max-width: 850px) {
 
-    .project-hero-content h1 {
-        font-size: clamp(5rem, 18vw, 9rem);
-
-        letter-spacing: -3px;
+    .project-information-grid {
+        grid-template-columns: 1fr;
     }
 
-    .project-information,
-    .project-media,
-    .project-overview {
-        padding-left: 8%;
-        padding-right: 8%;
+    .project-info-left {
+        min-height: 500px;
+    }
+
+    .project-info-right {
+        min-height: auto;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px;
     }
 
     .project-media-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-gallery {
+        aspect-ratio: 16 / 9;
     }
 
     .project-learning {
@@ -825,91 +709,77 @@
 
         gap: 35px;
     }
-
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    .project-information-grid {
-        display: flex;
-
-        flex-direction: column;
+    .project-information,
+    .project-media,
+    .project-overview,
+    .project-navigation {
+        width: 90%;
     }
 
-    .project-info-left {
-        min-height: auto;
-    }
-
-    .project-info-left img {
-        height: 450px;
-    }
-
-    .project-info-right {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .project-info-right img {
-        min-height: 220px;
+    .project-hero-content {
+        width: 90%;
     }
 
     .project-hero {
         min-height: 85vh;
     }
 
-    .project-hero-content h1 {
-        font-size: clamp(4rem, 19vw, 7rem);
+    .project-hero-content {
+        padding-bottom: 70px;
     }
 
-}
-
-
-@media (max-width: 500px) {
+    .project-hero-content h1 {
+        font-size: clamp(4rem, 20vw, 7rem);
+        letter-spacing: -3px;
+    }
 
     .project-information,
     .project-media,
     .project-overview {
-        padding-top: 80px;
-        padding-bottom: 80px;
-
-        padding-left: 6%;
-        padding-right: 6%;
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 
-    .project-hero-content {
-        width: 94%;
+    .project-section-heading {
+        margin-bottom: 45px;
     }
 
-    .project-hero-content h1 {
-        font-size: 4rem;
-
-        letter-spacing: -2px;
-    }
-
-    .project-hero-subtitle {
-        margin-top: 30px;
-
-        font-size: 0.9rem;
+    .project-info-center {
+        padding: 0;
     }
 
     .project-info-right {
         grid-template-columns: 1fr;
+
+        grid-template-rows:
+            300px
+            300px;
     }
 
     .project-gallery {
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
-    .project-gallery img {
-        min-height: 130px;
+    .project-overview h2 {
+        letter-spacing: -2px;
+    }
+
+    .project-contribution-list li {
+        padding: 25px 0;
+    }
+
+    .project-learning {
+        margin-top: 90px;
     }
 
     .project-navigation {
-        width: 88%;
-
-        flex-direction: column;
-
-        align-items: flex-start;
+        padding-bottom: 100px;
     }
 
 }
