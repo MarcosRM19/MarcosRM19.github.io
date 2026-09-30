@@ -13,470 +13,389 @@
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+<header>
+    <nav class="navbar">
 
-    <header>
-        <nav class="navbar">
+        <a href="index.html#inicio" class="logo" id="logo">
+            MarcosRuiz Portfolio
+        </a>
 
-            <a href="index.html#inicio" class="logo" id="logo">
-                MarcosRuiz Portfolio
+        <div class="nav-links">
+
+            <a href="index.html#inicio" id="nav-home" data-i18n="home">
+                Inicio
             </a>
 
-            <div class="nav-links">
-
-                <a href="index.html#inicio" id="nav-home" data-i18n="home">
-                    Inicio
-                </a>
-
-                <a href="index.html#sobre-mi" id="nav-about" data-i18n="about">
-                    Quién soy
-                </a>
-
-                <a href="index.html#experience" id="nav-experience" data-i18n="experience">
-                    Experiencia
-                </a>
-
-                <a href="index.html#proyectos" id="nav-projects" data-i18n="projects">
-                    Proyectos
-                </a>
-
-                <a href="index.html#documentos" id="nav-documents" data-i18n="documents">
-                    Documentos
-                </a>
-
-            </div>
-
-            <div class="nav-actions">
-
-                <button id="language-button" type="button">
-                    EN
-                </button>
-
-                <a href="index.html#contacto"
-                   class="contact-button"
-                   id="contact-button"
-                   data-i18n="contactButton">
-                    Contact me
-                </a>
-
-            </div>
-
-        </nav>
-    </header>
-
-
-    <!-- =========================
-         PROJECT TITLE / HERO
-    ========================== -->
-
-    <main>
-
-        <section class="title-hero">
-
-            <img
-                id="project-hero"
-                class="title-bg"
-                src=""
-                alt=""
-                loading="eager"
-            >
-
-            <div class="title-veil"></div>
-
-            <div class="title-inner">
-
-                <img
-                    id="project-logo"
-                    class="game-logo"
-                    src=""
-                    alt=""
-                    loading="eager"
-                >
-
-                <h1
-                    id="project-logo-fallback"
-                    class="logo-fallback">
-                </h1>
-
-                <p
-                    id="project-tagline"
-                    class="title-tagline">
-                </p>
-
-                <div class="store-links">
-
-                    <a
-                        id="project-itch"
-                        class="store-link"
-                        href="#"
-                        target="_blank"
-                        rel="noopener"
-                        aria-label="Itch.io">
-
-                        <img
-                            src="img/itchio.svg"
-                            alt="Itch.io"
-                        >
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             APARTADO 1
-        ========================== -->
-
-        <section class="project-hero-v2">
-
-            <div class="project-wrap-wide">
-
-                <div class="ph-grid">
-
-                    <!-- INFORMACIÓN -->
-
-                    <div class="ph-intro">
-
-                        <span
-                            id="project-category"
-                            class="eyebrow">
-                        </span>
-
-                        <h1 id="project-title"></h1>
-
-                        <p
-                            id="project-years"
-                            class="project-years">
-                        </p>
-
-                        <p
-                            id="project-description"
-                            class="project-lede">
-                        </p>
-
-                        <p
-                            id="project-role"
-                            class="project-lede">
-                        </p>
-
-                        <h3
-                            id="project-task-title"
-                            class="task-heading">
-                        </h3>
-
-                        <!-- SOLO TEXTO. SIN NOMBRES EN NEGRITA -->
-
-                        <ul
-                            id="project-tasks"
-                            class="task-list">
-
-                            <li>
-                                Diseño e implementación de las mecánicas principales y sus interacciones.
-                            </li>
-
-                            <li>
-                                Diseño de las salas y progresión siguiendo una estructura EDPV.
-                            </li>
-
-                            <li>
-                                Programación y captura de datos dentro de Unreal Engine 5.
-                            </li>
-
-                            <li>
-                                Diseño de pruebas, análisis estadístico y validación de decisiones de diseño.
-                            </li>
-
-                        </ul>
-
-                        <div class="project-actions">
-
-                            <a
-                                id="project-play"
-                                class="project-btn project-btn-solid"
-                                href="#"
-                                target="_blank"
-                                rel="noopener">
-                            </a>
-
-                            <a
-                                class="project-btn project-btn-outline"
-                                href="index.html#proyectos"
-                                data-i18n="projects">
-                                More projects
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- DOS IMÁGENES -->
-
-                    <div class="ph-shots">
-
-                        <button
-                            class="ph-shot"
-                            type="button"
-                            data-project-image="info-right-1">
-
-                            <img
-                                id="project-info-right-1"
-                                src=""
-                                alt=""
-                                loading="lazy"
-                            >
-
-                        </button>
-
-
-                        <button
-                            class="ph-shot"
-                            type="button"
-                            data-project-image="info-right-2">
-
-                            <img
-                                id="project-info-right-2"
-                                src=""
-                                alt=""
-                                loading="lazy"
-                            >
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             APARTADO 2 / TRAILER
-        ========================== -->
-
-        <section class="trailer-gallery">
-
-            <div class="project-wrap-wide">
-
-                <div class="tg-grid">
-
-                    <!-- TRAILER -->
-
-                    <div class="trailer-facade">
-
-                        <div class="youtube-wrapper">
-
-                            <iframe
-                                src="https://www.youtube.com/embed/YIcgUIwu89U"
-                                title="Lyra Trailer"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
-
-                        </div>
-
-                        <span
-                            class="tg-label"
-                            id="trailer-label">
-                        </span>
-
-                    </div>
-
-
-                    <!-- GALERÍA -->
-
-                    <div class="tg-gallery">
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-1">
-
-                            <img
-                                id="project-screenshot-1"
-                                src=""
-                                alt=""
-                                loading="lazy"
-                            >
-
-                        </button>
-
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-2">
-
-                            <img
-                                id="project-screenshot-2"
-                                src=""
-                                alt=""
-                                loading="lazy"
-                            >
-
-                        </button>
-
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-3">
-
-                            <img
-                                id="project-screenshot-3"
-                                src=""
-                                alt=""
-                                loading="lazy"
-                            >
-
-                        </button>
-
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-4">
-
-                            <img
-                                id="project-screenshot-4"
-                                src=""
-                                alt=""
-                                loading="lazy"
-                            >
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTRIBUCIONES
-        ========================== -->
-
-        <section class="contributions-section">
-
-            <div class="project-wrap">
-
-                <div class="contributions-grid">
-
-                    <div class="contribution-block">
-
-                        <span class="eyebrow">
-                            Contributions
-                        </span>
-
-                        <h2 id="contributions-title">
-                        </h2>
-
-                        <div id="contributions-content">
-                        </div>
-
-                    </div>
-
-
-                    <div class="contribution-block">
-
-                        <span class="eyebrow">
-                            Learning
-                        </span>
-
-                        <h2 id="learning-title">
-                        </h2>
-
-                        <div id="learning-content">
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         LIGHTBOX
-    ========================== -->
-
-    <div
-        class="lightbox"
-        id="lightbox"
-        aria-hidden="true">
-
-        <button
-            class="lightbox-close"
-            id="lightbox-close"
-            type="button"
-            aria-label="Close">
-            ×
-        </button>
-
-        <button
-            class="lightbox-prev"
-            id="lightbox-prev"
-            type="button"
-            aria-label="Previous">
-            ‹
-        </button>
-
-        <img
-            id="lightbox-image"
-            src=""
-            alt=""
-        >
-
-        <button
-            class="lightbox-next"
-            id="lightbox-next"
-            type="button"
-            aria-label="Next">
-            ›
-        </button>
-
-    </div>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="project-footer">
-
-        <div class="project-wrap">
-
-            <a
-                href="index.html#proyectos"
-                class="footer-back"
-                data-i18n="projects">
-                ← Volver a proyectos
+            <a href="index.html#sobre-mi" id="nav-about" data-i18n="about">
+                Quién soy
+            </a>
+
+            <a href="index.html#experience" id="nav-experience" data-i18n="experience">
+                Experiencia
+            </a>
+
+            <a href="index.html#proyectos" id="nav-projects" data-i18n="projects">
+                Proyectos
+            </a>
+
+            <a href="index.html#documentos" id="nav-documents" data-i18n="documents">
+                Documentos
             </a>
 
         </div>
 
-    </footer>
+        <div class="nav-actions">
+
+            <button id="language-button" type="button">
+                EN
+            </button>
+
+            <a
+                href="index.html#contacto"
+                class="contact-button"
+                id="contact-button"
+                data-i18n="contactButton">
+                Contact me
+            </a>
+
+        </div>
+
+    </nav>
+</header>
 
 
-    <script src="js/script.js"></script>
-    <script src="js/project.js"></script>
+<main>
+
+    <!-- HERO -->
+
+    <section class="title-hero">
+
+        <img
+            id="project-hero"
+            class="title-bg"
+            src=""
+            alt="">
+
+        <div class="title-veil"></div>
+
+        <div class="title-inner">
+
+            <h1
+                id="project-logo-fallback"
+                class="logo-fallback">
+            </h1>
+
+            <p
+                id="project-tagline"
+                class="title-tagline">
+            </p>
+
+            <div class="store-links">
+
+                <a
+                    id="project-itch"
+                    class="store-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Itch.io">
+
+                    <img
+                        src="img/itchio.svg"
+                        alt="Itch.io">
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRIMER APARTADO -->
+
+    <section class="project-hero-v2">
+
+        <div class="project-wrap-wide">
+
+            <div class="ph-grid">
+
+                <div class="ph-intro">
+
+                    <span
+                        id="project-category"
+                        class="eyebrow">
+                    </span>
+
+                    <h1 id="project-title"></h1>
+
+                    <p
+                        id="project-years"
+                        class="project-years">
+                    </p>
+
+                    <p
+                        id="project-description"
+                        class="project-lede">
+                    </p>
+
+                    <p
+                        id="project-role"
+                        class="project-lede">
+                    </p>
+
+                    <h3
+                        id="project-task-title"
+                        class="task-heading">
+                    </h3>
+
+                    <ul
+                        id="project-tasks"
+                        class="task-list">
+                    </ul>
+
+                    <div class="project-actions">
+
+                        <a
+                            id="project-play"
+                            class="project-btn project-btn-solid"
+                            href="#"
+                            target="_blank"
+                            rel="noopener">
+                        </a>
+
+                        <a
+                            class="project-btn project-btn-outline"
+                            href="index.html#proyectos"
+                            data-i18n="projects">
+                            Más proyectos
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ph-shots">
+
+                    <button
+                        class="ph-shot"
+                        type="button"
+                        data-project-image="info-right-1">
+
+                        <img
+                            id="project-info-right-1"
+                            src=""
+                            alt="">
+
+                    </button>
+
+
+                    <button
+                        class="ph-shot"
+                        type="button"
+                        data-project-image="info-right-2">
+
+                        <img
+                            id="project-info-right-2"
+                            src=""
+                            alt="">
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRAILER -->
+
+    <section class="trailer-gallery">
+
+        <div class="project-wrap-wide">
+
+            <div class="tg-grid">
+
+                <div class="trailer-facade">
+
+                    <div class="youtube-wrapper">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/YIcgUIwu89U"
+                            title="Lyra Trailer"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <span
+                        id="trailer-label"
+                        class="tg-label">
+                    </span>
+
+                </div>
+
+
+                <div class="tg-gallery">
+
+                    <button
+                        class="tg-shot"
+                        type="button"
+                        data-project-image="screenshot-1">
+
+                        <img
+                            id="project-screenshot-1"
+                            src=""
+                            alt="">
+
+                    </button>
+
+                    <button
+                        class="tg-shot"
+                        type="button"
+                        data-project-image="screenshot-2">
+
+                        <img
+                            id="project-screenshot-2"
+                            src=""
+                            alt="">
+
+                    </button>
+
+                    <button
+                        class="tg-shot"
+                        type="button"
+                        data-project-image="screenshot-3">
+
+                        <img
+                            id="project-screenshot-3"
+                            src=""
+                            alt="">
+
+                    </button>
+
+                    <button
+                        class="tg-shot"
+                        type="button"
+                        data-project-image="screenshot-4">
+
+                        <img
+                            id="project-screenshot-4"
+                            src=""
+                            alt="">
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTRIBUCIONES -->
+
+    <section class="contributions-section">
+
+        <div class="project-wrap">
+
+            <div class="contributions-grid">
+
+                <div class="contribution-block">
+
+                    <span class="eyebrow">
+                        Contributions
+                    </span>
+
+                    <h2 id="contributions-title"></h2>
+
+                    <div id="contributions-content"></div>
+
+                </div>
+
+
+                <div class="contribution-block">
+
+                    <span class="eyebrow">
+                        Learning
+                    </span>
+
+                    <h2 id="learning-title"></h2>
+
+                    <div id="learning-content"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- LIGHTBOX -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true">
+
+    <button
+        class="lightbox-close"
+        id="lightbox-close"
+        type="button">
+        ×
+    </button>
+
+    <button
+        class="lightbox-prev"
+        id="lightbox-prev"
+        type="button">
+        ‹
+    </button>
+
+    <img
+        id="lightbox-image"
+        src=""
+        alt="">
+
+    <button
+        class="lightbox-next"
+        id="lightbox-next"
+        type="button">
+        ›
+    </button>
+
+</div>
+
+
+<footer class="project-footer">
+
+    <div class="project-wrap">
+
+        <a
+            href="index.html#proyectos"
+            class="footer-back">
+            ← Volver a proyectos
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="js/project.js"></script>
 
 </body>
-
 </html>
