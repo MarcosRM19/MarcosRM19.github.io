@@ -1,7 +1,3 @@
-/* =========================================================
-   MARCOS RM19 — PROJECT PAGE
-   ========================================================= */
-
 :root {
     --project-max: 1450px;
     --project-text-max: 1180px;
@@ -24,7 +20,6 @@ body {
     width: min(80%, var(--project-text-max));
     margin: 0 auto;
 }
-
 
 /* =========================================================
    HERO PRINCIPAL
@@ -50,46 +45,42 @@ body {
     z-index: -3;
 }
 
-/* El iframe empieza INVISIBLE */
 .hero-video-container iframe {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 56.25vw; /* Proporción 16:9 exacta */
+    height: 56.25vw;
     min-height: 100vh;
     min-width: 177.77vh;
     transform: translate(-50%, -50%);
     border: 0;
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 0.8s ease-in-out; /* Transición suave */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
     pointer-events: none;
 }
 
-/* Esta clase se añade por JS solo cuando el vídeo ya está corriendo */
 .hero-video-container iframe.is-playing {
     opacity: 1;
 }
 
-/* Capa transparente encima para bloquear HOVER del ratón */
 .hero-video-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
-    pointer-events: auto; /* Bloquea cualquier interacción con el vídeo */
+    pointer-events: auto;
 }
+
 .title-bg {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
     z-index: -3;
 }
+
 .title-veil {
     position: absolute;
     inset: 0;
@@ -111,6 +102,7 @@ body {
     text-align: center;
     padding-top: 60px;
 }
+
 .game-title-hero {
     margin: 0 0 16px;
     color: var(--cream);
@@ -123,22 +115,16 @@ body {
 
 .game-logo {
     display: block;
-
     width: min(60vw, 540px);
     max-height: 240px;
-
     object-fit: contain;
-
     margin-bottom: 30px;
 }
 
 .logo-fallback {
     display: none;
-
     margin: 0 0 30px;
-
     color: var(--cream);
-
     font-size: clamp(4rem, 9vw, 7rem);
     line-height: 0.9;
 }
@@ -165,7 +151,6 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    /* Fondo verde por defecto */
     background: var(--green);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
@@ -184,84 +169,62 @@ body {
     object-fit: contain;
 }
 
-
 /* =========================================================
-   PRIMERA PARTE DEL PROYECTO
-   50% INFORMACIÓN / 50% IMÁGENES
+   ZONA 1 Y ZONA 2 — FONDO VERDE MÁS FUERTE
    ========================================================= */
 
 .project-hero-v2,
 .trailer-gallery {
-    background: #14241a; /* Tono verde oscuro elegante y más Intenso */
+    background: #14241a; /* Verde oscuro más intenso */
+}
+
+.project-hero-v2 {
+    padding: 150px 0 165px;
 }
 
 .ph-grid {
     width: 100%;
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 60px;
-
     align-items: stretch;
 }
-
-
-/* =========================================================
-   INFORMACIÓN — MITAD IZQUIERDA
-   ========================================================= */
 
 .ph-intro {
     width: 100%;
     max-width: none;
-
     display: flex;
     flex-direction: column;
 }
 
 .eyebrow {
     display: block;
-
     color: var(--green);
-
     font-size: 0.78rem;
     font-weight: 700;
-
     letter-spacing: 0.12em;
-
     text-transform: uppercase;
 }
 
 .ph-intro h1 {
     margin: 8px 0 12px;
-
     color: var(--cream);
-
     font-size: clamp(3rem, 5vw, 5.2rem);
-
     line-height: 0.95;
-
     letter-spacing: -0.045em;
 }
 
 .project-years {
     margin: 0 0 30px;
-
     color: var(--text-muted);
-
     font-size: 0.9rem;
 }
 
 .project-lede {
     max-width: 720px;
-
     margin: 0 0 24px;
-
     color: var(--text);
-
     font-size: 1.04rem;
-
     line-height: 1.85;
 }
 
@@ -269,53 +232,34 @@ body {
     color: var(--cream);
 }
 
-
-/* =========================================================
-   RESUMEN DE TAREAS
-   ========================================================= */
-
 .task-heading {
     margin: 48px 0 22px;
-
     color: var(--cream);
-
     font-size: 0.9rem;
-
     letter-spacing: 0.1em;
-
     text-transform: uppercase;
 }
 
 .task-list {
     display: flex;
     flex-direction: column;
-
     gap: 14px;
-
     margin: 0;
-
     padding: 0 0 0 24px;
-
     list-style-type: disc;
 }
 
 .task-list li {
     display: list-item;
-
     margin: 0;
-
     padding-left: 6px;
-
     color: var(--text-muted);
-
     font-size: 0.94rem;
-
     line-height: 1.7;
 }
 
 .task-list li::marker {
     color: var(--green);
-
     font-size: 0.85em;
 }
 
@@ -323,44 +267,25 @@ body {
     color: var(--cream);
 }
 
-
-/* =========================================================
-   BOTONES
-   ========================================================= */
-
 .project-actions {
     display: flex;
     flex-wrap: wrap;
-
     gap: 14px;
-
     margin-top: 42px;
 }
 
 .project-btn {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     min-height: 48px;
-
     padding: 0 25px;
-
     border-radius: 4px;
-
     text-decoration: none;
-
     font-size: 0.84rem;
     font-weight: 700;
-
     letter-spacing: 0.04em;
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .project-btn:hover {
@@ -369,7 +294,6 @@ body {
 
 .project-btn-solid {
     background: var(--green);
-
     color: #11120f;
 }
 
@@ -379,70 +303,40 @@ body {
 
 .project-btn-outline {
     border: 1px solid var(--border);
-
     color: var(--cream);
-
     background: transparent;
 }
 
 .project-btn-outline:hover {
     border-color: var(--green);
-
     color: var(--green);
 }
-
-
-/* =========================================================
-   IMÁGENES — MITAD DERECHA
-   =========================================================
-
-   IMPORTANTE:
-   No usamos aspect-ratio aquí.
-
-   La columna derecha se estira hasta tener exactamente
-   la misma altura que la columna izquierda.
-
-   Las dos imágenes se reparten esa altura.
-   ========================================================= */
 
 .ph-shots {
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-
     gap: 24px;
 }
 
 .ph-shot {
     display: block;
-
     width: 100%;
-
     flex: 1 1 0;
-
     min-height: 0;
-
     padding: 0;
-
     border: 0;
-
     overflow: hidden;
-
     background: var(--surface);
-
     cursor: pointer;
 }
 
 .ph-shot img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
     transition: transform 0.5s ease;
 }
 
@@ -450,23 +344,30 @@ body {
     transform: scale(1.04);
 }
 
-
 /* =========================================================
-   TRAILER + GALERÍA
+   TRAILER + GALERÍA (ZONA 2)
    ========================================================= */
 
 .trailer-gallery {
     padding: 0 0 165px;
-
-    background: var(--background);
 }
 
 .tg-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 26px;
+}
+
+.trailer-facade {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--surface);
+    cursor: pointer;
 }
 
 .trailer-facade video {
@@ -479,23 +380,18 @@ body {
 .trailer-facade img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
     transition: transform 0.5s ease;
 }
 
 .trailer-facade::after {
     content: "";
-
     position: absolute;
     inset: 0;
-
     background: rgba(17, 18, 15, 0.25);
-
     transition: background 0.25s ease;
+    pointer-events: none;
 }
 
 .trailer-facade:hover img {
@@ -508,33 +404,24 @@ body {
 
 .play-badge {
     position: absolute;
-
     left: 50%;
     top: 50%;
-
     width: 76px;
     height: 76px;
-
     transform: translate(-50%, -50%);
-
     border-radius: 50%;
-
     background: var(--cream);
-
     z-index: 2;
+    pointer-events: none;
 }
 
 .play-badge::after {
     content: "";
-
     position: absolute;
-
     left: 31px;
     top: 25px;
-
     width: 0;
     height: 0;
-
     border-top: 13px solid transparent;
     border-bottom: 13px solid transparent;
     border-left: 19px solid #11120f;
@@ -542,52 +429,36 @@ body {
 
 .tg-label {
     position: absolute;
-
     left: 24px;
     bottom: 20px;
-
     z-index: 3;
-
     color: var(--cream);
-
     font-size: 0.72rem;
     font-weight: 700;
-
     letter-spacing: 0.12em;
 }
 
 .tg-gallery {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 22px;
 }
 
 .tg-shot {
     width: 100%;
-
     padding: 0;
-
     border: 0;
-
     aspect-ratio: 16 / 10;
-
     overflow: hidden;
-
     background: var(--surface);
-
     cursor: pointer;
 }
 
 .tg-shot img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
     transition: transform 0.5s ease;
 }
 
@@ -595,9 +466,8 @@ body {
     transform: scale(1.05);
 }
 
-
 /* =========================================================
-   CONTRIBUTIONS
+   CONTRIBUTIONS (ZONA 3)
    ========================================================= */
 
 .contrib-bg,
@@ -607,11 +477,8 @@ body {
 
 .contributions {
     position: relative;
-
     overflow: hidden;
-
     padding: 155px 0 150px;
-
     background: var(--background);
 }
 
@@ -621,90 +488,58 @@ body {
 
 .contrib-text {
     width: 100%;
-
     max-width: 900px;
 }
 
 .contrib-text h2,
 .learning-block h2 {
     margin: 0 0 30px;
-
     color: var(--cream);
-
     font-size: clamp(2.2rem, 3.8vw, 3.8rem);
-
     line-height: 1;
-
     letter-spacing: -0.035em;
 }
 
 .contrib-text > p,
 .learning-block > p {
     margin: 0;
-
     color: var(--text);
-
     font-size: 1rem;
-
     line-height: 1.9;
 }
-
-
-/* =========================================================
-   LISTA DE CONTRIBUCIONES
-   ========================================================= */
 
 .contribution-list {
     display: flex;
     flex-direction: column;
-
     gap: 34px;
-
     margin: 52px 0 0;
-
     padding: 0 0 0 28px;
-
     list-style-type: disc;
 }
 
 .contribution-list li {
     display: list-item;
-
     color: var(--text);
-
     font-size: 0.96rem;
-
     line-height: 1.8;
-
     padding-left: 5px;
 }
 
 .contribution-list li::marker {
     color: var(--green);
-
     font-size: 0.9em;
 }
 
 .contribution-title {
     display: inline;
-
     margin-right: 6px;
-
     color: var(--cream);
-
     font-weight: 700;
 }
 
-
-/* =========================================================
-   LO QUE APRENDÍ
-   ========================================================= */
-
 .learning-block {
     width: 100%;
-
     max-width: 900px;
-
     margin-top: 125px;
 }
 
@@ -712,20 +547,12 @@ body {
     margin-bottom: 30px;
 }
 
-
-/* =========================================================
-   CTA FINAL
-   ========================================================= */
-
 .case-cta {
     display: flex;
     flex-wrap: wrap;
-
     gap: 14px;
-
     margin-top: 80px;
 }
-
 
 /* =========================================================
    LIGHTBOX
@@ -733,65 +560,46 @@ body {
 
 .project-lightbox {
     position: fixed;
-
     inset: 0;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     padding: 50px;
-
     background: rgba(5, 6, 5, 0.95);
-
     opacity: 0;
     visibility: hidden;
-
     z-index: 9999;
-
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
-.project-lightbox.active {
+.project-lightbox.active,
+.project-lightbox.is-open {
     opacity: 1;
-
     visibility: visible;
 }
 
 .lightbox-content {
     max-width: min(1100px, 85vw);
     max-height: 85vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 18px;
 }
 
 .lightbox-content img {
     max-width: 100%;
     max-height: 78vh;
-
     display: block;
-
     object-fit: contain;
 }
 
 #lightbox-caption {
     max-width: 800px;
-
     margin: 0;
-
     color: var(--text-muted);
-
     text-align: center;
-
     font-size: 0.9rem;
-
     line-height: 1.6;
 }
 
@@ -799,33 +607,24 @@ body {
 .lightbox-prev,
 .lightbox-next {
     position: absolute;
-
     border: 0;
-
     color: var(--cream);
-
     background: transparent;
-
     cursor: pointer;
-
     z-index: 2;
 }
 
 .lightbox-close {
     top: 25px;
     right: 30px;
-
     font-size: 3rem;
-
     line-height: 1;
 }
 
 .lightbox-prev,
 .lightbox-next {
     top: 50%;
-
     transform: translateY(-50%);
-
     font-size: 4rem;
 }
 
@@ -843,13 +642,8 @@ body {
     color: var(--green);
 }
 
-
-/* =========================================================
-   RESPONSIVE — 850px
-   ========================================================= */
-
+/* RESPONSIVE — 850px */
 @media (max-width: 850px) {
-
     .project-wrap-wide,
     .project-wrap {
         width: 90%;
@@ -860,61 +654,36 @@ body {
         height: 70vh;
     }
 
-
-    /* ---------------------------------------------
-       PRIMERA PARTE
-       En móvil pasa a una columna.
-       --------------------------------------------- */
-
     .ph-grid {
         display: flex;
-
         flex-direction: column;
-
         gap: 55px;
     }
 
     .ph-intro {
         width: 100%;
-
         order: 1;
     }
 
     .ph-shots {
         width: 100%;
         height: auto;
-
         order: 2;
-
         display: flex;
         flex-direction: column;
-
         gap: 24px;
     }
 
     .ph-shot {
         flex: none;
-
         width: 100%;
-
         aspect-ratio: 16 / 10;
-
         min-height: auto;
     }
-
-
-    /* ---------------------------------------------
-       TRAILER
-       --------------------------------------------- */
 
     .tg-grid {
         grid-template-columns: 1fr;
     }
-
-
-    /* ---------------------------------------------
-       CONTRIBUTIONS
-       --------------------------------------------- */
 
     .contributions {
         padding: 105px 0;
@@ -923,31 +692,22 @@ body {
     .learning-block {
         margin-top: 95px;
     }
-
 }
 
-
-/* =========================================================
-   RESPONSIVE — 600px
-   ========================================================= */
-
+/* RESPONSIVE — 600px */
 @media (max-width: 600px) {
-
     .title-hero {
         min-height: 560px;
-
         height: 560px;
     }
 
     .title-inner {
         width: 90%;
-
         padding-top: 70px;
     }
 
     .game-logo {
         width: min(75vw, 340px);
-
         max-height: 150px;
     }
 
@@ -987,5 +747,4 @@ body {
     .lightbox-next {
         right: 5px;
     }
-
 }
