@@ -58,7 +58,6 @@ body {
     height: 100%;
 
     object-fit: cover;
-
     object-position: center;
 
     z-index: -3;
@@ -620,8 +619,8 @@ body {
 
 
 /*
-   La imagen de fondo de esta sección queda desactivada.
-   El HTML puede conservar el elemento sin afectar al diseño.
+   El HTML conserva estas capas para no tocar project.html,
+   pero no se muestran porque esta sección debe ir limpia.
 */
 
 .contrib-bg,
@@ -680,7 +679,7 @@ body {
 
     margin: 52px 0 0;
 
-    padding: 0 0 0 30px;
+    padding: 0 0 0 28px;
 
     list-style-type: disc;
 }
@@ -688,21 +687,13 @@ body {
 .contribution-list li {
     display: list-item;
 
-    margin: 0;
-
-    padding-left: 6px;
-
     color: var(--text);
 
     font-size: 0.96rem;
 
     line-height: 1.8;
-}
 
-.contribution-list li::marker {
-    color: var(--green);
-
-    font-size: 0.9em;
+    padding-left: 5px;
 }
 
 .contribution-title {
@@ -859,31 +850,6 @@ body {
 .lightbox-prev:hover,
 .lightbox-next:hover {
     color: var(--green);
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-    width: 100%;
-
-    padding: 30px 5%;
-
-    background: var(--background);
-
-    border-top: 1px solid var(--border);
-
-    text-align: center;
-}
-
-.footer p {
-    margin: 0;
-
-    color: var(--text-muted);
-
-    font-size: 0.75rem;
 }
 
 
