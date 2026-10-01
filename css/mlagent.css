@@ -1,0 +1,652 @@
+/* =========================================================
+   MLAGENT.CSS - ESTILOS DEDICADOS PARA PÁGINA TÉCNICA / TFG
+   ========================================================= */
+
+:root {
+    --ml-green: #00ff88;
+    --ml-green-glow: rgba(0, 255, 136, 0.25);
+    --ml-green-dark: rgba(0, 255, 136, 0.08);
+    --ml-cyan: #38bdf8;
+    --ml-red: #ff5555;
+    --ml-bg: #0b0f17;
+    --ml-card-bg: rgba(15, 23, 42, 0.75);
+    --ml-card-border: rgba(255, 255, 255, 0.08);
+    --ml-text-main: #f1f5f9;
+    --ml-text-muted: #94a3b8;
+    --ml-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ml-font-mono: 'Fira Code', monospace;
+}
+
+body.mlagent-page {
+    background-color: var(--ml-bg);
+    color: var(--ml-text-main);
+    font-family: var(--ml-font-sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.ml-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ---------------------------------------------------------
+   HERO SECTION
+   --------------------------------------------------------- */
+.ml-hero {
+    position: relative;
+    padding: 140px 0 70px 0;
+    border-bottom: 1px solid var(--ml-card-border);
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.08) 0%, transparent 60%);
+}
+
+.ml-badge-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.ml-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ml-green-dark);
+    border: 1px solid var(--ml-green);
+    color: var(--ml-green);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.ml-badge-dot {
+    width: 7px;
+    height: 7px;
+    background-color: var(--ml-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--ml-green);
+}
+
+.ml-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--ml-card-border);
+    color: var(--ml-text-muted);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.ml-hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, var(--ml-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ml-hero-description {
+    font-size: 1.15rem;
+    color: var(--ml-text-muted);
+    max-width: 800px;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+/* META GRID */
+.ml-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.ml-meta-card {
+    background: var(--ml-card-bg);
+    border: 1px solid var(--ml-card-border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    backdrop-filter: blur(10px);
+}
+
+.ml-meta-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ml-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.ml-meta-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ml-text-main);
+}
+
+/* BOTONES */
+.ml-hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.ml-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ml-btn-primary {
+    background: var(--ml-green);
+    color: #0b0f17;
+    box-shadow: 0 0 20px var(--ml-green-glow);
+}
+
+.ml-btn-primary:hover {
+    background: #00cc6a;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+}
+
+.ml-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--ml-text-main);
+    border: 1px solid var(--ml-card-border);
+}
+
+.ml-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   STICKY JUMP NAVIGATION
+   --------------------------------------------------------- */
+.ml-sticky-nav {
+    position: sticky;
+    top: 70px;
+    z-index: 90;
+    background: rgba(11, 15, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ml-card-border);
+    padding: 12px 0;
+}
+
+.ml-jump-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+}
+
+.ml-jump-links a {
+    color: var(--ml-text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.ml-jump-links a:hover, .ml-jump-links a.active {
+    color: var(--ml-green);
+}
+
+/* ---------------------------------------------------------
+   SECCIONES Y TARJETAS
+   --------------------------------------------------------- */
+.ml-main-content {
+    padding: 60px 0 100px 0;
+}
+
+.ml-section {
+    margin-bottom: 80px;
+    scroll-margin-top: 130px;
+}
+
+.ml-section-header {
+    margin-bottom: 35px;
+}
+
+.ml-section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.ml-section-sub {
+    color: var(--ml-text-muted);
+    font-size: 1rem;
+}
+
+.ml-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.ml-card {
+    background: var(--ml-card-bg);
+    border: 1px solid var(--ml-card-border);
+    border-radius: 12px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
+}
+
+.ml-card h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.ml-tech-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ml-tech-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    color: var(--ml-text-muted);
+}
+
+.ml-tech-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--ml-green);
+}
+
+.ml-tech-list strong {
+    color: var(--ml-text-main);
+}
+
+/* ---------------------------------------------------------
+   DIAGRAMAS Y INTERACTIVIDAD DE ARQUITECTURA
+   --------------------------------------------------------- */
+.ml-diagram-card {
+    background: var(--ml-card-bg);
+    border: 1px solid var(--ml-card-border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.ml-diagram-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.ml-diagram-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ml-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ml-status-dot {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--ml-text-muted);
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--ml-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--ml-green);
+}
+
+.ml-architecture-interactive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.arch-box {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid var(--ml-card-border);
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arch-box:hover, .arch-box.active {
+    border-color: var(--ml-green);
+    background: var(--ml-green-dark);
+    transform: translateY(-3px);
+}
+
+.arch-box h4 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.arch-box p {
+    font-size: 0.8rem;
+    color: var(--ml-text-muted);
+}
+
+.arch-arrow {
+    color: var(--ml-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.ml-detail-panel {
+    background: rgba(2, 6, 23, 0.8);
+    border-left: 3px solid var(--ml-green);
+    padding: 18px 24px;
+    border-radius: 0 8px 8px 0;
+}
+
+.ml-detail-panel h4 {
+    font-size: 0.95rem;
+    color: var(--ml-green);
+    margin-bottom: 6px;
+}
+
+.ml-detail-panel p {
+    font-size: 0.9rem;
+    color: var(--ml-text-muted);
+}
+
+/* ---------------------------------------------------------
+   CURRICULUM LEARNING INTERACTIVO
+   --------------------------------------------------------- */
+.ml-curriculum-container {
+    background: var(--ml-card-bg);
+    border: 1px solid var(--ml-card-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ml-pipeline-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    border-bottom: 1px solid var(--ml-card-border);
+    background: rgba(11, 15, 23, 0.5);
+}
+
+.ml-stage-btn {
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--ml-card-border);
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ml-stage-btn:last-child {
+    border-right: none;
+}
+
+.ml-stage-btn .stage-num {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ml-text-muted);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.ml-stage-btn .stage-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ml-text-main);
+}
+
+.ml-stage-btn:hover, .ml-stage-btn.active {
+    background: var(--ml-green-dark);
+}
+
+.ml-stage-btn.active .stage-num,
+.ml-stage-btn.active .stage-name {
+    color: var(--ml-green);
+}
+
+.ml-stage-viewer {
+    padding: 30px;
+}
+
+.stage-card-detail h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.stage-card-detail p {
+    color: var(--ml-text-muted);
+    font-size: 0.98rem;
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------
+   MATEMÁTICAS Y TABLAS DE RECOMPENSA
+   --------------------------------------------------------- */
+.ml-math-container {
+    background: rgba(2, 6, 23, 0.9);
+    border: 1px solid var(--ml-card-border);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.ml-math-equation {
+    font-family: var(--ml-font-mono);
+    font-size: 1.1rem;
+    color: var(--ml-cyan);
+}
+
+.ml-table-wrapper {
+    overflow-x: auto;
+}
+
+.ml-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--ml-card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--ml-card-border);
+}
+
+.ml-custom-table th, .ml-custom-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--ml-card-border);
+    font-size: 0.9rem;
+}
+
+.ml-custom-table th {
+    background: rgba(30, 41, 59, 0.8);
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+}
+
+.ml-tag-green { color: var(--ml-green); font-weight: 600; }
+.ml-tag-red { color: var(--ml-red); font-weight: 600; }
+
+/* ---------------------------------------------------------
+   GRÁFICO CANVAS EN SELF-PLAY
+   --------------------------------------------------------- */
+.ml-chart-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ml-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ml-small-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--ml-card-border);
+    color: var(--ml-text-muted);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.ml-small-btn:hover {
+    color: #ffffff;
+    border-color: var(--ml-text-muted);
+}
+
+.ml-canvas-container {
+    width: 100%;
+    height: 220px;
+    position: relative;
+}
+
+#eloChartCanvas {
+    width: 100%;
+    height: 100%;
+}
+
+.ml-chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--ml-text-muted);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.legend-color.green { background-color: var(--ml-green); }
+.legend-color.gray { background-color: #64748b; }
+
+/* ---------------------------------------------------------
+   CÓDIGO Y YAML
+   --------------------------------------------------------- */
+.ml-code-wrapper {
+    background: #020617;
+    border: 1px solid var(--ml-card-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ml-code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(30, 41, 59, 0.5);
+    border-bottom: 1px solid var(--ml-card-border);
+    font-family: var(--ml-font-mono);
+    font-size: 0.8rem;
+    color: var(--ml-text-muted);
+}
+
+.ml-copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--ml-green);
+    font-family: var(--ml-font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ml-code-wrapper pre {
+    padding: 20px;
+    margin: 0;
+    overflow-x: auto;
+    font-family: var(--ml-font-mono);
+    font-size: 0.88rem;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+/* ---------------------------------------------------------
+   CALL TO ACTION FINAL
+   --------------------------------------------------------- */
+.ml-cta-box {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+    border: 1px solid var(--ml-green);
+    border-radius: 16px;
+    padding: 50px 30px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.ml-cta-box h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.ml-cta-box p {
+    color: var(--ml-text-muted);
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .ml-architecture-interactive {
+        flex-direction: column;
+    }
+    .arch-arrow {
+        transform: rotate(90deg);
+    }
+    .ml-hero-title {
+        font-size: 2.2rem;
+    }
+}
