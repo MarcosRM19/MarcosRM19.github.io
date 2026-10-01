@@ -2,25 +2,12 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Proyecto | MarcosRuiz Portfolio</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <title id="page-title">
-        Proyecto | MarcosRuiz Portfolio
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="css/style.css">
-
-    <link
-        rel="stylesheet"
-        href="css/project.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
 <body>
@@ -28,476 +15,182 @@
     <!-- =====================================================
          NAVBAR
          ===================================================== -->
-
     <header>
-
         <nav class="navbar">
-
-            <a
-                href="index.html#inicio"
-                class="logo"
-                id="logo">
+            <a href="index.html#inicio" class="logo" id="logo">
                 MarcosRuiz Portfolio
             </a>
 
             <div class="nav-links">
-
-                <a
-                    href="index.html#inicio"
-                    id="nav-home"
-                    data-i18n="home">
-                    Inicio
-                </a>
-
-                <a
-                    href="index.html#sobre-mi"
-                    id="nav-about"
-                    data-i18n="about">
-                    Quién soy
-                </a>
-
-                <a
-                    href="index.html#experience"
-                    id="nav-experience"
-                    data-i18n="experience">
-                    Experiencia
-                </a>
-
-                <a
-                    href="index.html#proyectos"
-                    id="nav-projects"
-                    data-i18n="projects">
-                    Proyectos
-                </a>
-
-                <a
-                    href="index.html#documentos"
-                    id="nav-documents"
-                    data-i18n="documents">
-                    Documentos
-                </a>
-
+                <a href="index.html#inicio" id="nav-home" data-i18n="home">Inicio</a>
+                <a href="index.html#sobre-mi" id="nav-about" data-i18n="about">Quién soy</a>
+                <a href="index.html#experience" id="nav-experience" data-i18n="experience">Experiencia</a>
+                <a href="index.html#proyectos" id="nav-projects" data-i18n="projects">Proyectos</a>
+                <a href="index.html#documentos" id="nav-documents" data-i18n="documents">Documentos</a>
             </div>
 
             <div class="nav-actions">
-
-                <button
-                    id="language-button"
-                    type="button">
-                    EN
-                </button>
-
-                <a
-                    href="index.html#contacto"
-                    class="contact-button"
-                    id="contact-button"
-                    data-i18n="contactButton">
+                <button id="language-button" type="button">EN</button>
+                <a href="index.html#contacto" class="contact-button" id="contact-button" data-i18n="contactButton">
                     Contact me
                 </a>
-
             </div>
-
         </nav>
-
     </header>
 
-
     <!-- =====================================================
-         CONTENIDO
+         CONTENIDO PRINCIPAL
          ===================================================== -->
-
     <main id="project-content">
 
+        <!-- HERO INICIAL CON TRÁILER DE FONDO -->
+        <section class="title-hero">
+            <div class="hero-video-container">
+                <video autoplay loop muted playsinline id="hero-mp4-video">
+                    <source src="vid/Lyra.mp4" type="video/mp4">
+                </video>
+            </div>
 
-        <!-- =================================================
-             HERO
-             ================================================= -->
+            <div class="title-veil"></div>
 
-     <!-- =================================================
-     HERO INICIAL CON TRÁILER DE FONDO
-     ================================================= -->
-<section class="title-hero">
+            <div class="title-inner">
+                <h1 id="project-title-hero" class="game-title-hero">Lyra</h1>
+                <p id="project-tagline" class="title-tagline">
+                    A narrative-driven game focused on exploration, atmosphere and interaction.
+                </p>
 
-    <!-- Vídeo de fondo de YouTube (Autoplay, Loop, Muted) -->
-<div class="hero-video-container">
-    <video autoplay loop muted playsinline id="hero-mp4-video">
-        <source src="vid/Lyra.mp4" type="video/mp4">
-    </video>
-</div>
+                <div class="store-links">
+                    <a id="project-itch" class="store-link" href="#" target="_blank" rel="noopener" aria-label="Ver en Itch.io">
+                        <img src="img/itch.io.svg" alt="Itch.io Logo">
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Capa oscura de contraste sobre el vídeo -->
-    <div class="title-veil"></div>
-
-    <div class="title-inner">
-
-        <!-- Nombre del juego en grande en el centro -->
-        <h1 id="project-title-hero" class="game-title-hero">
-            Lyra
-        </h1>
-
-        <p id="project-tagline" class="title-tagline">
-            A narrative-driven game focused on exploration, atmosphere and interaction.
-        </p>
-
-        <!-- Botón verde con el logo SVG de Itch.io -->
-        <div class="store-links">
-            <a id="project-itch" class="store-link" href="#" target="_blank" rel="noopener" aria-label="Ver en Itch.io">
-                <img src="img/itch.io.svg" alt="Itch.io Logo">
-            </a>
-        </div>
-
-    </div>
-
-</section>
-
-
-        <!-- =================================================
-             PRIMERA PARTE
-             50% INFORMACIÓN / 50% IMÁGENES
-             ================================================= -->
-
+        <!-- PRIMERA PARTE: INFO + IMÁGENES -->
         <section class="project-hero-v2">
-
             <div class="project-wrap-wide">
-
                 <div class="ph-grid">
 
-
-                    <!-- =====================================
-                         IZQUIERDA — INFORMACIÓN
-                         ===================================== -->
-
                     <div class="ph-intro">
+                        <span id="project-category" class="eyebrow"></span>
+                        <h1 id="project-title"></h1>
+                        <p id="project-years" class="project-years"></p>
+                        <p id="project-description" class="project-lede"></p>
+                        <p id="project-role" class="project-lede"></p>
 
-                        <span
-                            id="project-category"
-                            class="eyebrow">
-                        </span>
-
-
-                        <h1
-                            id="project-title">
-                        </h1>
-
-
-                        <p
-                            id="project-years"
-                            class="project-years">
-                        </p>
-
-
-                        <p
-                            id="project-description"
-                            class="project-lede">
-                        </p>
-
-
-                        <p
-                            id="project-role"
-                            class="project-lede">
-                        </p>
-
-
-                        <h3
-                            id="project-task-title"
-                            class="task-heading">
-                        </h3>
-
-
-                        <ul
-                            id="project-tasks"
-                            class="task-list">
-                        </ul>
-
+                        <h3 id="project-task-title" class="task-heading"></h3>
+                        <ul id="project-tasks" class="task-list"></ul>
 
                         <div class="project-actions">
-
-                            <a
-                                id="project-play"
-                                class="project-btn project-btn-solid"
-                                href="#"
-                                target="_blank"
-                                rel="noopener">
-                            </a>
-
-
-                            <a
-                                class="project-btn project-btn-outline"
-                                href="index.html#proyectos"
-                                data-i18n="projects">
+                            <a id="project-play" class="project-btn project-btn-solid" href="#" target="_blank" rel="noopener"></a>
+                            <a class="project-btn project-btn-outline" href="index.html#proyectos" data-i18n="projects">
                                 More projects
                             </a>
-
                         </div>
-
                     </div>
-
-
-                    <!-- =====================================
-                         DERECHA — IMÁGENES
-                         ===================================== -->
 
                     <div class="ph-shots">
-
-
-                        <button
-                            class="ph-shot"
-                            type="button"
-                            data-project-image="info-right-1">
-
-                            <img
-                                id="project-info-right-1"
-                                src=""
-                                alt=""
-                                loading="lazy">
-
+                        <button class="ph-shot" type="button" data-project-image="info-right-1">
+                            <img id="project-info-right-1" src="" alt="" loading="lazy">
                         </button>
-
-
-                        <button
-                            class="ph-shot"
-                            type="button"
-                            data-project-image="info-right-2">
-
-                            <img
-                                id="project-info-right-2"
-                                src=""
-                                alt=""
-                                loading="lazy">
-
+                        <button class="ph-shot" type="button" data-project-image="info-right-2">
+                            <img id="project-info-right-2" src="" alt="" loading="lazy">
                         </button>
-
-
                     </div>
 
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =================================================
-             TRAILER + GALERÍA
-             ================================================= -->
-
+        <!-- TRAILER + GALERÍA -->
         <section class="trailer-gallery">
-
             <div class="project-wrap-wide">
-
                 <div class="tg-grid">
 
-
-                    <!-- TRAILER -->
-
-                    <button
-                        class="trailer-facade"
-                        type="button"
-                        data-project-image="trailer">
-
-                        <img
-                            id="project-trailer-image"
-                            src=""
-                            alt=""
-                            loading="lazy">
-
+                    <button class="trailer-facade" type="button" data-project-image="trailer">
+                        <img id="project-trailer-image" src="" alt="" loading="lazy">
                         <span class="play-badge"></span>
-
-                        <span
-                            class="tg-label"
-                            id="trailer-label">
-                        </span>
-
+                        <span class="tg-label" id="trailer-label"></span>
                     </button>
 
-
-                    <!-- GALERÍA -->
-
                     <div class="tg-gallery">
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-1">
-
-                            <img
-                                id="project-screenshot-1"
-                                src=""
-                                alt=""
-                                loading="lazy">
-
+                        <button class="tg-shot" type="button" data-project-image="screenshot-1">
+                            <img id="project-screenshot-1" src="" alt="" loading="lazy">
                         </button>
-
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-2">
-
-                            <img
-                                id="project-screenshot-2"
-                                src=""
-                                alt=""
-                                loading="lazy">
-
+                        <button class="tg-shot" type="button" data-project-image="screenshot-2">
+                            <img id="project-screenshot-2" src="" alt="" loading="lazy">
                         </button>
-
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-3">
-
-                            <img
-                                id="project-screenshot-3"
-                                src=""
-                                alt=""
-                                loading="lazy">
-
+                        <button class="tg-shot" type="button" data-project-image="screenshot-3">
+                            <img id="project-screenshot-3" src="" alt="" loading="lazy">
                         </button>
-
-
-                        <button
-                            class="tg-shot"
-                            type="button"
-                            data-project-image="screenshot-4">
-
-                            <img
-                                id="project-screenshot-4"
-                                src=""
-                                alt=""
-                                loading="lazy">
-
+                        <button class="tg-shot" type="button" data-project-image="screenshot-4">
+                            <img id="project-screenshot-4" src="" alt="" loading="lazy">
                         </button>
-
                     </div>
 
                 </div>
-
             </div>
-
         </section>
 
+        <!-- CONTRIBUCIONES -->
+        <section class="contributions">
+            <div class="project-wrap">
+                <div class="contributions-inner">
 
-        <!-- =================================================
-             CONTRIBUCIONES
-             ================================================= -->
+                    <h2 id="contributions-title">Mis Contribuciones</h2>
+                    <p id="contributions-intro"></p>
+                    <ul id="contribution-list" class="contribution-list"></ul>
 
-<section class="contributions">
-    <div class="project-wrap">
-        <div class="contributions-inner">
+                    <div class="learning-block">
+                        <h2 id="learning-title">Lo que aprendí</h2>
+                        <p id="learning-text"></p>
+                    </div>
 
-            <!-- 1. TÍTULO: Mis Contribuciones -->
-            <h2 id="contributions-title">Mis Contribuciones</h2>
+                    <div class="case-cta">
+                        <a id="contribution-play" class="project-btn project-btn-solid" href="#">Juega en itch.io</a>
+                        <a class="project-btn project-btn-outline" href="index.html#proyectos">Más proyectos</a>
+                    </div>
 
-            <!-- 2. DESCRIPCIÓN CORTA ABAJO -->
-            <p id="contributions-intro"></p>
-
-            <!-- 3. LISTA DE BULLET POINTS -->
-            <ul id="contribution-list" class="contribution-list">
-                <!-- Cada <li> genera:
-                     • NOMBRE EN NEGRITA
-                       Descripción abajo
-                -->
-            </ul>
-
-            <!-- 4. TÍTULO: Lo que aprendí (justo debajo) -->
-            <div class="learning-block">
-                <h2 id="learning-title">Lo que aprendí</h2>
-                
-                <!-- 5. DESCRIPCIÓN CORTA ABAJO -->
-                <p id="learning-text"></p>
+                </div>
             </div>
-
-            <!-- Línea horizontal y botones (que ya tienes bien) -->
-            <div class="case-cta">
-                <a id="contribution-play" class="project-btn project-btn-solid" href="#">Juega en itch.io</a>
-                <a class="project-btn project-btn-outline" href="index.html#proyectos">Más proyectos</a>
-            </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
 
-
-    <!-- =====================================================
-         LIGHTBOX
-         ===================================================== -->
-
-    <div
-        id="project-lightbox"
-        class="project-lightbox"
-        aria-hidden="true">
-
-
-        <button
-            class="lightbox-close"
-            id="lightbox-close"
-            type="button"
-            aria-label="Close">
-            ×
-        </button>
-
-
-        <button
-            class="lightbox-prev"
-            id="lightbox-prev"
-            type="button"
-            aria-label="Previous image">
-            ‹
-        </button>
-
+    <!-- LIGHTBOX -->
+    <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+        <button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
 
         <div class="lightbox-content">
-
-            <img
-                id="lightbox-image"
-                src=""
-                alt="">
-
-            <p
-                id="lightbox-caption">
-            </p>
-
+            <img id="lightbox-image" src="" alt="">
+            <p id="lightbox-caption"></p>
         </div>
 
-
-        <button
-            class="lightbox-next"
-            id="lightbox-next"
-            type="button"
-            aria-label="Next image">
-            ›
-        </button>
-
+        <button class="lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
     </div>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-navigation">
+            <a href="index.html#inicio" data-i18n="home">Inicio</a>
+            <a href="index.html#sobre-mi" data-i18n="about">Quién soy</a>
+            <a href="index.html#experience" data-i18n="experience">Experiencia</a>
+            <a href="index.html#proyectos" data-i18n="projects">Proyectos</a>
+            <a href="index.html#documentos" data-i18n="documents">Documentos</a>
+        </div>
 
-<!-- ==================== FOOTER ==================== -->
-<footer>
-    <div class="footer-navigation">
-        <a href="#inicio" data-i18n="home">Inicio</a>
-        <a href="#sobre-mi" data-i18n="about">Quién soy</a>
-        <a href="#experience" data-i18n="experience">Experiencia</a>
-        <a href="#proyectos" data-i18n="projects">Proyectos</a>
-        <a href="#documentos" data-i18n="documents">Documentos</a>
-    </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/marcos-ruiz-mu%C3%B1oz-2243172a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://marcos-ruiz.itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a>
+            <a href="https://github.com/MarcosRM19" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
 
-    <div class="footer-social">
-        <a href="https://www.linkedin.com/in/marcos-ruiz-mu%C3%B1oz-2243172a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://marcos-ruiz.itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a>
-        <a href="https://github.com/MarcosRM19" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
-
-    <p class="footer-copyright">
-        © 2026 Marcos RM19
-    </p>
-</footer>
-</body>
-</html>
+        <p class="footer-copyright">
+            © 2026 Marcos RM19
+        </p>
+    </footer>
 
 </body>
-
 </html>
