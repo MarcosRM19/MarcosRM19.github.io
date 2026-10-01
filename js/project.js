@@ -1,20 +1,8 @@
 const projects = {
     lyra: {
-        category: "GAME / LEVEL DESIGN",
+        category: "AI / GAME PROGRAMMING",
         title: "Lyra",
         years: "2025 — 2026",
-        tagline: "A narrative-driven game focused on exploration, atmosphere and interaction.",
-        description: "Lyra is a university game project developed as part of La Mapachanda and my TFG at ENTI-UB. The project combines gameplay programming, level design and AI systems to create an interactive experience.",
-        role: "My role focused on gameplay programming, AI implementation, level design and the design and implementation of the game's core mechanics.",
-        taskTitle: "TASK OVERVIEW",
-        tasks: [
-            "Diseño e implementación de las mecánicas principales y sus interacciones.",
-            "Programación de sistemas de gameplay y comportamiento de los enemigos.",
-            "Diseño y construcción de niveles orientados a la exploración y progresión del jugador.",
-            "Implementación y ajuste de sistemas de inteligencia artificial.",
-            "Iteración de las mecánicas a partir de pruebas de juego y feedback.",
-            "Colaboración con el resto del equipo durante el desarrollo del proyecto."
-        ],
         trailerVideo: "vid/Lyra.mp4",
         youtubeId: "YIcgUIwu89U",
         hero: "img/projects/lyra/hero.jpg",
@@ -26,38 +14,91 @@ const projects = {
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
         itch: "#",
 
-        /* DATOS DE LA IMAGEN DE CONTRIBUCIONES CON NEGRITAS */
-        contributionsTitle: "Mis Contribuciones",
-        contributionsIntro: "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
-        contributions: [
-            {
-                title: "Pattern-Based Dictionary",
-                text: "Descompuse cada mecánica en interacciones atómicas (tiro de fuego, tiro de agua, lanzamiento de dragón) y catalogué los patrones que forman al combinarse, para que cada sala enseñara una combinación concreta y no un truco aislado."
-            },
-            {
-                title: "Estructura de niveles EDPV",
-                text: "Apliqué el modelo <strong>Exposure, Demonstration, Practice, Validation</strong> en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
-            },
-            {
-                title: "Pipeline de telemetría en C++",
-                text: "Instrumenté Unreal Engine 5 para capturar posición del jugador y acciones como CSV estructurado, dándome datos reales de comportamiento en vez de anécdotas."
-            },
-            {
-                title: "Test A/B controlado",
-                text: "Diseñé el experimento completo para el Puzzle 6: asignación aleatoria estratificada, criterios de inclusión, script de moderador y consentimiento informado, comparando el layout original con un rediseño con visual guidance más claro."
-            },
-            {
-                title: "Análisis estadístico en Python",
-                text: "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un <strong>p-valor no significativo junto con un tamaño de efecto grande</strong> en vez de solo el resultado que apoyaba mi hipótesis."
-            },
-            {
-                title: "Resultado medido",
-                text: "El rediseño redujo los errores de navegación en un <strong>35%</strong> y mejoró el tiempo de resolución en un <strong>33%</strong>, medido con el mismo pipeline de telemetría."
-            }
-        ],
-        learningTitle: "Lo que aprendí",
-        learningText: "Lo más valioso no fue confirmar mi hipótesis. Fue aprender a separar lo que se siente mejor de lo que es demostrablemente mejor, y a comunicar esa zona gris a un equipo de diseño sin inflarla ni descartarla."
-    },
+        en: {
+            tagline: "A 3D wholesome puzzle-adventure about two baby dragons, built in Unreal Engine 5.",
+            description: "Lyra is a 3D wholesome puzzle-adventure developed in Unreal Engine 5 as my Bachelor's Thesis (TFG) at ENTI-UB. I worked as an AI Game Programmer, designing and implementing custom AI systems and an organic locomotion model for the two baby dragon companions. The project won Best TFG at ENTI DemoDay 2026.",
+            role: "My role focused on AI gameplay programming, custom locomotion design, multi-agent navigation, and decoupling cognitive logic from physical execution.",
+            taskTitle: "TASK OVERVIEW",
+            tasks: [
+                "Designed a custom Organic Locomotion System using Bézier curves to eliminate rigid pathfinding.",
+                "Programmed a NavMesh detection and terrain validation system tailored for organic curve paths.",
+                "Built a Decoupled AI Architecture combining FSMs, Behavior Trees, and Blueprint Interfaces.",
+                "Developed dynamic navigation and avoidance systems for coordinated multi-agent movement."
+            ],
+
+            /* ZONA 3: MIS CONTRIBUCIONES (MY CONTRIBUTIONS) */
+            contributionsTitle: "My Contributions",
+            contributionsIntro: "Lyra was my Bachelor's Thesis (TFG), where I took full ownership of the AI design and programming for the two baby dragon companions. The core objective was to break away from standard, linear pathfinding defaults in engines like Unity or Unreal, creating a fluid and expressive sense of life.",
+            contributions: [
+                {
+                    title: "Custom Organic Locomotion System",
+                    text: "Designed and programmed S-curve motion paths using Bézier curves, replacing rigid linear interpolation with fluid, lifelike agent movements."
+                },
+                {
+                    title: "Terrain & NavMesh Validation",
+                    text: "Developed a real-time point validation pipeline that constantly samples the NavMesh to guarantee agents never step outside walkable boundaries during curve evaluation."
+                },
+                {
+                    title: "Velocity Blending",
+                    text: "Implemented dynamic speed blending along procedural curves, ensuring natural acceleration and deceleration through sharp turns and procedural paths."
+                },
+                {
+                    title: "Dual Architecture (Mind & Body)",
+                    text: "Engineered a decoupled system separating cognitive decision-making (FSMs & Behavior Trees) from physical locomotion execution, communicating seamlessly via Blueprint Interfaces."
+                },
+                {
+                    title: "Dynamic Navigation & Avoidance",
+                    text: "Programmed a centralized manager to process spatial data globally, eliminating redundant per-agent queries and broadcasting pre-processed avoidance data for coordinated movement."
+                }
+            ],
+
+            /* ZONA 3: LO QUE APRENDÍ (WHAT I LEARNED) */
+            learningTitle: "What I Learned",
+            learningText: "Developing Lyra pushed me to bridge complex mathematical concepts with practical AI architecture in Unreal Engine 5. I learned how to build custom locomotion models from scratch rather than relying on stock engine defaults, how to decouple cognitive AI logic from physical execution for modular maintainability, and how to optimize multi-agent spatial queries. Winning Best TFG at ENTI DemoDay 2026 validated the importance of combining technical rigor with expressive, organic agent behavior.",
+            playBtn: "Play on itch.io"
+        },
+
+        es: {
+            tagline: "Una aventura de puzles en 3D sobre dos bebés dragón, desarrollada en Unreal Engine 5.",
+            description: "Lyra es un juego de aventura y puzles en 3D desarrollado en Unreal Engine 5 como mi Trabajo de Fin de Grado (TFG) en ENTI-UB. Trabajé como AI Game Programmer, diseñando e implementando sistemas de IA y una locomoción orgánica para los dos dragones. Ganó el premio a Mejor TFG en el ENTI DemoDay 2026.",
+            role: "Mi rol se centró en la programación de IA, diseño de locomoción personalizada, navegación multi-agente y la separación de la lógica cognitiva de la ejecución física.",
+            taskTitle: "RESUMEN DE TAREAS",
+            tasks: [
+                "Diseño de un sistema de locomoción orgánica personalizado mediante curvas de Bézier.",
+                "Programación de un sistema de detección y validación en NavMesh para rutas curvas.",
+                "Construcción de una arquitectura de IA desacoplada combinando FSMs y Behavior Trees.",
+                "Desarrollo de sistemas de navegación dinámica y evitación de colisiones multi-agente."
+            ],
+            contributionsTitle: "Mis Contribuciones",
+            contributionsIntro: "Lyra fue mi TFG, donde fui responsable del diseño y programación de la inteligencia artificial de los dos dragones. El objetivo principal era alejarse de los movimientos lineales por defecto de motores como Unity o Unreal para lograr una sensación de vida orgánica.",
+            contributions: [
+                {
+                    title: "Sistema de Locomoción Orgánica",
+                    text: "Diseñé y programé trayectorias en forma de S mediante curvas de Bézier, sustituyendo la interpolación lineal rígida por movimientos fluidos y naturales."
+                },
+                {
+                    title: "Validación de Terreno y NavMesh",
+                    text: "Desarrollé un sistema de validación de puntos a lo largo de las curvas para garantizar que el recorrido del agente no se salga de las zonas transitables del NavMesh."
+                },
+                {
+                    title: "Blend de Velocidades",
+                    text: "Implementé un sistema de aceleración y desaceleración dinámica en curvas para mantener un ritmo natural en los giros y cambios de dirección."
+                },
+                {
+                    title: "Arquitectura Dual (Mente y Cuerpo)",
+                    text: "Diseñé una arquitectura desacoplada que separa la toma de decisiones (FSMs y Behavior Trees) de la ejecución física, comunicadas mediante interfaces en Blueprints."
+                },
+                {
+                    title: "Navegación Dinámica y Evitación",
+                    text: "Programé un sistema centralizado para evitar consultas repetidas por agente, enviando información procesada para coordinar el movimiento de múltiples agentes."
+                }
+            ],
+            learningTitle: "Lo que aprendí",
+            learningText: "Desarrollar Lyra me permitió conectar conceptos matemáticos avanzados con la arquitectura de IA en Unreal Engine 5. Aprendí a construir modelos de locomoción propios en lugar de depender de los componentes por defecto, a desacoplar la mente de la ejecución física para mantener un código limpio y a optimizar consultas espaciales en tiempo real. Ganar el premio a Mejor TFG en el ENTI DemoDay 2026 confirmó el valor de combinar rigor técnico con comportamientos vivos y expresivos.",
+            playBtn: "Juega en itch.io"
+        }
+    }
+};
 
     "juan-pieza": {
         category: "GAME / LEVEL DESIGN",
