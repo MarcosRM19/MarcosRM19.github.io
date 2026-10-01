@@ -1,3 +1,10 @@
+/* =========================================================
+   SISTEMA DE IDIOMAS Y DATOS DE PROYECTOS
+   ========================================================= */
+
+// Idioma por defecto (lee de localStorage o usa 'es')
+let currentLang = localStorage.getItem("preferredLanguage") || "es";
+
 const projects = {
     lyra: {
         category: "AI / GAME PROGRAMMING",
@@ -25,8 +32,6 @@ const projects = {
                 "Built a Decoupled AI Architecture combining FSMs, Behavior Trees, and Blueprint Interfaces.",
                 "Developed dynamic navigation and avoidance systems for coordinated multi-agent movement."
             ],
-
-            /* ZONA 3: MIS CONTRIBUCIONES (MY CONTRIBUTIONS) */
             contributionsTitle: "My Contributions",
             contributionsIntro: "Lyra was my Bachelor's Thesis (TFG), where I took full ownership of the AI design and programming for the two baby dragon companions. The core objective was to break away from standard, linear pathfinding defaults in engines like Unity or Unreal, creating a fluid and expressive sense of life.",
             contributions: [
@@ -51,8 +56,6 @@ const projects = {
                     text: "Programmed a centralized manager to process spatial data globally, eliminating redundant per-agent queries and broadcasting pre-processed avoidance data for coordinated movement."
                 }
             ],
-
-            /* ZONA 3: LO QUE APRENDÍ (WHAT I LEARNED) */
             learningTitle: "What I Learned",
             learningText: "Developing Lyra pushed me to bridge complex mathematical concepts with practical AI architecture in Unreal Engine 5. I learned how to build custom locomotion models from scratch rather than relying on stock engine defaults, how to decouple cognitive AI logic from physical execution for modular maintainability, and how to optimize multi-agent spatial queries. Winning Best TFG at ENTI DemoDay 2026 validated the importance of combining technical rigor with expressive, organic agent behavior.",
             playBtn: "Play on itch.io"
@@ -97,24 +100,12 @@ const projects = {
             learningText: "Desarrollar Lyra me permitió conectar conceptos matemáticos avanzados con la arquitectura de IA en Unreal Engine 5. Aprendí a construir modelos de locomoción propios en lugar de depender de los componentes por defecto, a desacoplar la mente de la ejecución física para mantener un código limpio y a optimizar consultas espaciales en tiempo real. Ganar el premio a Mejor TFG en el ENTI DemoDay 2026 confirmó el valor de combinar rigor técnico con comportamientos vivos y expresivos.",
             playBtn: "Juega en itch.io"
         }
-    }
-};
+    },
 
     "juan-pieza": {
         category: "GAME / LEVEL DESIGN",
         title: "Juan Pieza",
         years: "2024 — 2025",
-        tagline: "A university game project focused on gameplay programming and level design.",
-        description: "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
-        role: "My role focused on gameplay programming, level design and the implementation and iteration of the game's main systems.",
-        taskTitle: "TASK OVERVIEW",
-        tasks: [
-            "Diseño e implementación de las mecánicas principales.",
-            "Programación de sistemas de gameplay e interacción.",
-            "Diseño y construcción de niveles.",
-            "Iteración del diseño a partir de pruebas de juego.",
-            "Colaboración con el equipo durante las diferentes fases de desarrollo."
-        ],
         trailerVideo: "vid/JuanPieza.mp4",
         youtubeId: "u__7PUv9mbk",
         hero: "img/projects/juan-pieza/hero.jpg",
@@ -126,24 +117,70 @@ const projects = {
         screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
         itch: "#",
 
-        contributionsTitle: "Gameplay y Level Design",
-        contributionsIntro: "",
-        contributions: [
-            {
-                title: "Gameplay Programming",
-                text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
-            },
-            {
-                title: "Level Design",
-                text: "Diseño y construcción de los niveles y espacios jugables."
-            },
-            {
-                title: "Iteration",
-                text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
-            }
-        ],
-        learningTitle: "Lo que aprendí",
-        learningText: "Aprendí a transformar ideas de diseño en sistemas jugables, a detectar problemas de gameplay mediante pruebas y a iterar rápidamente en un entorno colaborativo."
+        es: {
+            tagline: "Un proyecto universitario enfocado en la programación de gameplay y el diseño de niveles.",
+            description: "Juan Pieza es un proyecto de juego universitario desarrollado como parte de La Mapachanda. Me permitió trabajar en programación de gameplay, diseño de niveles y experiencia del jugador.",
+            role: "Mi rol se centró en la programación de gameplay, diseño de niveles y la implementación e iteración de los sistemas principales del juego.",
+            taskTitle: "RESUMEN DE TAREAS",
+            tasks: [
+                "Diseño e implementación de las mecánicas principales.",
+                "Programación de sistemas de gameplay e interacción.",
+                "Diseño y construcción de niveles.",
+                "Iteración del diseño a partir de pruebas de juego.",
+                "Colaboración con el equipo durante las diferentes fases de desarrollo."
+            ],
+            contributionsTitle: "Gameplay y Level Design",
+            contributionsIntro: "",
+            contributions: [
+                {
+                    title: "Gameplay Programming",
+                    text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
+                },
+                {
+                    title: "Level Design",
+                    text: "Diseño y construcción de los niveles y espacios jugables."
+                },
+                {
+                    title: "Iteration",
+                    text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
+                }
+            ],
+            learningTitle: "Lo que aprendí",
+            learningText: "Aprendí a transformar ideas de diseño en sistemas jugables, a detectar problemas de gameplay mediante pruebas y a iterar rápidamente en un entorno colaborativo.",
+            playBtn: "Juega en itch.io"
+        },
+        en: {
+            tagline: "A university game project focused on gameplay programming and level design.",
+            description: "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
+            role: "My role focused on gameplay programming, level design and the implementation and iteration of the game's main systems.",
+            taskTitle: "TASK OVERVIEW",
+            tasks: [
+                "Design and implementation of main mechanics.",
+                "Programming gameplay and interaction systems.",
+                "Level design and construction.",
+                "Design iteration based on playtests.",
+                "Team collaboration throughout development phases."
+            ],
+            contributionsTitle: "Gameplay & Level Design",
+            contributionsIntro: "",
+            contributions: [
+                {
+                    title: "Gameplay Programming",
+                    text: "Implementation of mechanics and systems needed for game performance."
+                },
+                {
+                    title: "Level Design",
+                    text: "Design and building of playable spaces and levels."
+                },
+                {
+                    title: "Iteration",
+                    text: "Testing, gameplay analysis, and tuning to enhance player experience."
+                }
+            ],
+            learningTitle: "What I Learned",
+            learningText: "I learned to translate design ideas into playable systems, spot gameplay bottlenecks through testing, and iterate quickly in a team environment.",
+            playBtn: "Play on itch.io"
+        }
     }
 };
 
@@ -165,12 +202,21 @@ function getProjectId() {
 function loadProject() {
     const projectId = getProjectId();
     const project = projects[projectId] || projects.lyra;
+    
+    // Obtenemos los textos traducidos según el idioma actual (fallback a español)
+    const langData = project[currentLang] || project.es;
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
+    /* Actualizar botón de idioma si existe */
+    const langBtn = document.getElementById("language-button");
+    if (langBtn) {
+        langBtn.textContent = currentLang === "es" ? "EN" : "ES";
+    }
+
     /* 1. HERO VIDEO LOCAL (.mp4) */
     const heroContainer = document.querySelector(".hero-video-container");
-    if (heroContainer && project.trailerVideo) {
+    if (heroContainer && project.trailerVideo && !heroContainer.querySelector("video")) {
         heroContainer.innerHTML = `
             <video autoplay loop muted playsinline id="hero-mp4-video">
                 <source src="${project.trailerVideo}" type="video/mp4">
@@ -187,7 +233,7 @@ function loadProject() {
     if (titleHero) titleHero.textContent = project.title;
 
     const tagline = document.getElementById("project-tagline");
-    if (tagline) tagline.textContent = project.tagline;
+    if (tagline) tagline.textContent = langData.tagline;
 
     const category = document.getElementById("project-category");
     if (category) category.textContent = project.category;
@@ -203,19 +249,19 @@ function loadProject() {
     if (years) years.textContent = project.years;
 
     const description = document.getElementById("project-description");
-    if (description) description.textContent = project.description;
+    if (description) description.textContent = langData.description;
 
     const role = document.getElementById("project-role");
-    if (role) role.textContent = project.role;
+    if (role) role.textContent = langData.role;
 
     const taskTitle = document.getElementById("project-task-title");
-    if (taskTitle) taskTitle.textContent = project.taskTitle;
+    if (taskTitle) taskTitle.textContent = langData.taskTitle;
 
     /* TASKS */
     const taskList = document.getElementById("project-tasks");
     if (taskList) {
         taskList.innerHTML = "";
-        project.tasks.forEach(task => {
+        langData.tasks.forEach(task => {
             const li = document.createElement("li");
             li.textContent = task;
             taskList.appendChild(li);
@@ -226,7 +272,7 @@ function loadProject() {
     const playButton = document.getElementById("project-play");
     if (playButton) {
         playButton.href = project.itch;
-        playButton.textContent = "Juega en itch.io";
+        playButton.textContent = langData.playBtn;
     }
 
     /* IMÁGENES ZONA 1 */
@@ -242,9 +288,9 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* 4. TRÁILER ZONA 2 */
+    /* 4. TRÁILER ZONA 2 (YOUTUBE INTERACTIVO) */
     const trailerFacade = document.querySelector(".trailer-facade");
-    if (trailerFacade && project.youtubeId) {
+    if (trailerFacade && project.youtubeId && !trailerFacade.querySelector("iframe")) {
         trailerFacade.innerHTML = `
             <iframe 
                 src="https://www.youtube.com/embed/${project.youtubeId}?controls=1&rel=0&playsinline=1" 
@@ -271,16 +317,13 @@ function loadProject() {
         }
     });
 
-/* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
-    
-    // Título y descripción de "Mis Contribuciones"
+    /* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
     const contribTitle = document.getElementById("contributions-title");
     if (contribTitle) contribTitle.textContent = langData.contributionsTitle;
 
     const contribIntro = document.getElementById("contributions-intro");
     if (contribIntro) contribIntro.textContent = langData.contributionsIntro || "";
 
-    // Renderizado de los bullet points
     const contribList = document.getElementById("contribution-list");
     if (contribList) {
         contribList.innerHTML = "";
@@ -295,7 +338,6 @@ function loadProject() {
         });
     }
 
-    // Título y descripción de "Lo que aprendí"
     const learningTitle = document.getElementById("learning-title");
     if (learningTitle) learningTitle.textContent = langData.learningTitle;
 
@@ -307,10 +349,21 @@ function loadProject() {
     const contribPlay = document.getElementById("contribution-play");
     if (contribPlay) {
         contribPlay.href = project.itch;
-        contribPlay.textContent = "Juega en itch.io";
+        contribPlay.textContent = langData.playBtn;
     }
 
     setupLightbox();
+}
+
+function setupLanguageToggle() {
+    const langBtn = document.getElementById("language-button");
+    if (!langBtn) return;
+
+    langBtn.addEventListener("click", () => {
+        currentLang = currentLang === "es" ? "en" : "es";
+        localStorage.setItem("preferredLanguage", currentLang);
+        loadProject();
+    });
 }
 
 function setupLightbox() {
@@ -380,4 +433,7 @@ function setupLightbox() {
     };
 }
 
-document.addEventListener("DOMContentLoaded", loadProject);
+document.addEventListener("DOMContentLoaded", () => {
+    loadProject();
+    setupLanguageToggle();
+});
