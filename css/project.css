@@ -359,47 +359,54 @@ body {
 }
 
 /* =========================================================
-   CONTRIBUCIONES Y LO QUE APRENDÍ (FORMATO IMAGEN EXACTO)
+   ZONA 3 — MIS CONTRIBUCIONES & LO QUE APRENDÍ
    ========================================================= */
 
 .contributions {
     background: var(--background);
-    padding: 120px 0 100px;
+    padding: 100px 0 80px;
+}
+
+#contributions-title {
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    color: var(--cream);
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
 #contributions-intro {
-    margin-top: 16px;
-    margin-bottom: 40px;
     color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 36px;
 }
 
+/* LISTA DE BULLET POINTS */
 .contribution-list {
     display: flex;
     flex-direction: column;
-    gap: 26px;
-    margin: 30px 0 0;
+    gap: 24px;
+    margin: 0 0 48px;
     padding-left: 20px;
     list-style-type: disc;
 }
 
 .contribution-list li::marker {
-    color: #e35335; /* Punto naranja/rojo de la captura */
-    font-size: 1.1em;
+    color: var(--green); /* Punto verde del bullet */
+    font-size: 1em;
 }
 
 .contrib-item-title {
     color: var(--cream);
     font-weight: 700;
     font-size: 1.05rem;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .contrib-item-text {
     color: var(--text-muted);
-    font-size: 0.98rem;
-    line-height: 1.75;
+    font-size: 0.96rem;
+    line-height: 1.7;
 }
 
 .contrib-item-text strong {
@@ -407,20 +414,22 @@ body {
     font-weight: 700;
 }
 
+/* TÍTULO: LO QUE APRENDÍ (Pegado abajo de la lista) */
 .learning-block {
-    margin-top: 60px;
+    margin-top: 48px;
 }
 
-.learning-block h2 {
-    font-size: 2.2rem;
+#learning-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     color: var(--cream);
-    margin-bottom: 16px;
+    font-weight: 800;
+    margin-bottom: 12px;
 }
 
-.learning-block p {
+#learning-text {
     color: var(--text-muted);
-    font-size: 1.02rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.75;
 }
 
 /* LÍNEA DIVISORIA Y BOTONES */
@@ -428,9 +437,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
-    margin-top: 80px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Línea horizontal sutil */
+    margin-top: 50px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* =========================================================
