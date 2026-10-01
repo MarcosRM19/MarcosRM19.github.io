@@ -270,9 +270,22 @@ function loadProject() {
     const langBtn = getEl("language-button");
     if (langBtn) langBtn.textContent = currentLang.toUpperCase();
 
-    /* 1. HERO VIDEO */
-    const heroContainer = document.querySelector(".hero-video-container");
-    if (heroContainer && project.trailerVideo && !heroContainer.querySelector("video")) {
+  /* 1. HERO VIDEO */
+const heroContainer = document.querySelector(".hero-video-container");
+if (heroContainer && project.trailerVideo) {
+    // Si ya existe un video, comprobamos si la ruta es diferente
+    const existingVideo = heroContainer.querySelector("video");
+    const existingSource = existingVideo ? existingVideo.querySelector("source") : null;
+
+    if (existingSource) {
+        // Si la ruta cambió, la actualizamos y recargamos el reproductor
+        if (existingSource.getAttribute("src") !== project.trailerVideo) {
+            existingSource.src = project.trailerVideo;
+            existingVideo.load();
+            existingVideo.play().catch(e => console.log("Autoplay prevenido:", e));
+        }
+    } else {
+        // Si no había video, lo creamos de cero
         heroContainer.innerHTML = `
             <video autoplay loop muted playsinline id="hero-mp4-video">
                 <source src="${project.trailerVideo}" type="video/mp4">
@@ -281,7 +294,7 @@ function loadProject() {
         const heroVideo = heroContainer.querySelector("video");
         if (heroVideo) heroVideo.play().catch(e => console.log("Autoplay prevenido:", e));
     }
-
+}
     /* 2. METADATA HERO */
     const titleHero = getEl("project-title-hero") || getEl("project-logo-fallback");
     if (titleHero) titleHero.textContent = project.title;
