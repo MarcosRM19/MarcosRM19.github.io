@@ -1,20 +1,8 @@
 const projects = {
     lyra: {
-        category: "GAME / LEVEL DESIGN",
+        category: "AI / GAME PROGRAMMING",
         title: "Lyra",
         years: "2025 — 2026",
-        tagline: "A narrative-driven game focused on exploration, atmosphere and interaction.",
-        description: "Lyra is a university game project developed as part of La Mapachanda and my TFG at ENTI-UB. The project combines gameplay programming, level design and AI systems to create an interactive experience.",
-        role: "My role focused on gameplay programming, AI implementation, level design and the design and implementation of the game's core mechanics.",
-        taskTitle: "TASK OVERVIEW",
-        tasks: [
-            "Diseño e implementación de las mecánicas principales y sus interacciones.",
-            "Programación de sistemas de gameplay y comportamiento de los enemigos.",
-            "Diseño y construcción de niveles orientados a la exploración y progresión del jugador.",
-            "Implementación y ajuste de sistemas de inteligencia artificial.",
-            "Iteración de las mecánicas a partir de pruebas de juego y feedback.",
-            "Colaboración con el resto del equipo durante el desarrollo del proyecto."
-        ],
         trailerVideo: "vid/Lyra.mp4",
         youtubeId: "YIcgUIwu89U",
         hero: "img/projects/lyra/hero.jpg",
@@ -26,317 +14,88 @@ const projects = {
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
         itch: "#",
 
-        /* DATOS DE LA IMAGEN DE CONTRIBUCIONES CON NEGRITAS */
-        contributionsTitle: "Mis Contribuciones",
-        contributionsIntro: "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
-        contributions: [
-            {
-                title: "Pattern-Based Dictionary",
-                text: "Descompuse cada mecánica en interacciones atómicas (tiro de fuego, tiro de agua, lanzamiento de dragón) y catalogué los patrones que forman al combinarse, para que cada sala enseñara una combinación concreta y no un truco aislado."
-            },
-            {
-                title: "Estructura de niveles EDPV",
-                text: "Apliqué el modelo <strong>Exposure, Demonstration, Practice, Validation</strong> en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
-            },
-            {
-                title: "Pipeline de telemetría en C++",
-                text: "Instrumenté Unreal Engine 5 para capturar posición del jugador y acciones como CSV estructurado, dándome datos reales de comportamiento en vez de anécdotas."
-            },
-            {
-                title: "Test A/B controlado",
-                text: "Diseñé el experimento completo para el Puzzle 6: asignación aleatoria estratificada, criterios de inclusión, script de moderador y consentimiento informado, comparando el layout original con un rediseño con visual guidance más claro."
-            },
-            {
-                title: "Análisis estadístico en Python",
-                text: "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un <strong>p-valor no significativo junto con un tamaño de efecto grande</strong> en vez de solo el resultado que apoyaba mi hipótesis."
-            },
-            {
-                title: "Resultado medido",
-                text: "El rediseño redujo los errores de navegación en un <strong>35%</strong> y mejoró el tiempo de resolución en un <strong>33%</strong>, medido con el mismo pipeline de telemetría."
-            }
-        ],
-        learningTitle: "Lo que aprendí",
-        learningText: "Lo más valioso no fue confirmar mi hipótesis. Fue aprender a separar lo que se siente mejor de lo que es demostrablemente mejor, y a comunicar esa zona gris a un equipo de diseño sin inflarla ni descartarla."
-    },
+        en: {
+            tagline: "A 3D wholesome puzzle-adventure about two baby dragons, built in Unreal Engine 5.",
+            description: "Lyra is a 3D wholesome puzzle-adventure developed in Unreal Engine 5 as my Bachelor's Thesis (TFG) at ENTI-UB. I worked as an AI Game Programmer, designing and implementing custom AI systems and an organic locomotion model for the two baby dragon companions. The project won Best TFG at ENTI DemoDay 2026.",
+            role: "My role focused on AI gameplay programming, custom locomotion design, multi-agent navigation, and decoupling cognitive logic from physical execution.",
+            taskTitle: "TASK OVERVIEW",
+            tasks: [
+                "Designed a custom Organic Locomotion System using Bézier curves to eliminate rigid pathfinding.",
+                "Programmed a NavMesh detection and terrain validation system tailored for organic curve paths.",
+                "Built a Decoupled AI Architecture combining FSMs, Behavior Trees, and Blueprint Interfaces.",
+                "Developed dynamic navigation and avoidance systems for coordinated multi-agent movement."
+            ],
 
-    "juan-pieza": {
-        category: "GAME / LEVEL DESIGN",
-        title: "Juan Pieza",
-        years: "2024 — 2025",
-        tagline: "A university game project focused on gameplay programming and level design.",
-        description: "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
-        role: "My role focused on gameplay programming, level design and the implementation and iteration of the game's main systems.",
-        taskTitle: "TASK OVERVIEW",
-        tasks: [
-            "Diseño e implementación de las mecánicas principales.",
-            "Programación de sistemas de gameplay e interacción.",
-            "Diseño y construcción de niveles.",
-            "Iteración del diseño a partir de pruebas de juego.",
-            "Colaboración con el equipo durante las diferentes fases de desarrollo."
-        ],
-        trailerVideo: "vid/JuanPieza.mp4",
-        youtubeId: "u__7PUv9mbk",
-        hero: "img/projects/juan-pieza/hero.jpg",
-        infoRight1: "img/projects/juan-pieza/info-right-1.jpg",
-        infoRight2: "img/projects/juan-pieza/info-right-2.jpg",
-        screenshot1: "img/projects/juan-pieza/screenshot-1.jpg",
-        screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
-        screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
-        screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
-        itch: "#",
+            /* ZONA 3: MIS CONTRIBUCIONES (MY CONTRIBUTIONS) */
+            contributionsTitle: "My Contributions",
+            contributionsIntro: "Lyra was my Bachelor's Thesis (TFG), where I took full ownership of the AI design and programming for the two baby dragon companions. The core objective was to break away from standard, linear pathfinding defaults in engines like Unity or Unreal, creating a fluid and expressive sense of life.",
+            contributions: [
+                {
+                    title: "Custom Organic Locomotion System",
+                    text: "Designed and programmed S-curve motion paths using Bézier curves, replacing rigid linear interpolation with fluid, lifelike agent movements."
+                },
+                {
+                    title: "Terrain & NavMesh Validation",
+                    text: "Developed a real-time point validation pipeline that constantly samples the NavMesh to guarantee agents never step outside walkable boundaries during curve evaluation."
+                },
+                {
+                    title: "Velocity Blending",
+                    text: "Implemented dynamic speed blending along procedural curves, ensuring natural acceleration and deceleration through sharp turns and procedural paths."
+                },
+                {
+                    title: "Dual Architecture (Mind & Body)",
+                    text: "Engineered a decoupled system separating cognitive decision-making (FSMs & Behavior Trees) from physical locomotion execution, communicating seamlessly via Blueprint Interfaces."
+                },
+                {
+                    title: "Dynamic Navigation & Avoidance",
+                    text: "Programmed a centralized manager to process spatial data globally, eliminating redundant per-agent queries and broadcasting pre-processed avoidance data for coordinated movement."
+                }
+            ],
 
-        contributionsTitle: "Gameplay y Level Design",
-        contributionsIntro: "",
-        contributions: [
-            {
-                title: "Gameplay Programming",
-                text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
-            },
-            {
-                title: "Level Design",
-                text: "Diseño y construcción de los niveles y espacios jugables."
-            },
-            {
-                title: "Iteration",
-                text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
-            }
-        ],
-        learningTitle: "Lo que aprendí",
-        learningText: "Aprendí a transformar ideas de diseño en sistemas jugables, a detectar problemas de gameplay mediante pruebas y a iterar rápidamente en un entorno colaborativo."
+            /* ZONA 3: LO QUE APRENDÍ (WHAT I LEARNED) */
+            learningTitle: "What I Learned",
+            learningText: "Developing Lyra pushed me to bridge complex mathematical concepts with practical AI architecture in Unreal Engine 5. I learned how to build custom locomotion models from scratch rather than relying on stock engine defaults, how to decouple cognitive AI logic from physical execution for modular maintainability, and how to optimize multi-agent spatial queries. Winning Best TFG at ENTI DemoDay 2026 validated the importance of combining technical rigor with expressive, organic agent behavior.",
+            playBtn: "Play on itch.io"
+        },
+
+        es: {
+            tagline: "Una aventura de puzles en 3D sobre dos bebés dragón, desarrollada en Unreal Engine 5.",
+            description: "Lyra es un juego de aventura y puzles en 3D desarrollado en Unreal Engine 5 como mi Trabajo de Fin de Grado (TFG) en ENTI-UB. Trabajé como AI Game Programmer, diseñando e implementando sistemas de IA y una locomoción orgánica para los dos dragones. Ganó el premio a Mejor TFG en el ENTI DemoDay 2026.",
+            role: "Mi rol se centró en la programación de IA, diseño de locomoción personalizada, navegación multi-agente y la separación de la lógica cognitiva de la ejecución física.",
+            taskTitle: "RESUMEN DE TAREAS",
+            tasks: [
+                "Diseño de un sistema de locomoción orgánica personalizado mediante curvas de Bézier.",
+                "Programación de un sistema de detección y validación en NavMesh para rutas curvas.",
+                "Construcción de una arquitectura de IA desacoplada combinando FSMs y Behavior Trees.",
+                "Desarrollo de sistemas de navegación dinámica y evitación de colisiones multi-agente."
+            ],
+            contributionsTitle: "Mis Contribuciones",
+            contributionsIntro: "Lyra fue mi TFG, donde fui responsable del diseño y programación de la inteligencia artificial de los dos dragones. El objetivo principal era alejarse de los movimientos lineales por defecto de motores como Unity o Unreal para lograr una sensación de vida orgánica.",
+            contributions: [
+                {
+                    title: "Sistema de Locomoción Orgánica",
+                    text: "Diseñé y programé trayectorias en forma de S mediante curvas de Bézier, sustituyendo la interpolación lineal rígida por movimientos fluidos y naturales."
+                },
+                {
+                    title: "Validación de Terreno y NavMesh",
+                    text: "Desarrollé un sistema de validación de puntos a lo largo de las curvas para garantizar que el recorrido del agente no se salga de las zonas transitables del NavMesh."
+                },
+                {
+                    title: "Blend de Velocidades",
+                    text: "Implementé un sistema de aceleración y desaceleración dinámica en curvas para mantener un ritmo natural en los giros y cambios de dirección."
+                },
+                {
+                    title: "Arquitectura Dual (Mente y Cuerpo)",
+                    text: "Diseñé una arquitectura desacoplada que separa la toma de decisiones (FSMs y Behavior Trees) de la ejecución física, comunicadas mediante interfaces en Blueprints."
+                },
+                {
+                    title: "Navegación Dinámica y Evitación",
+                    text: "Programé un sistema centralizado para evitar consultas repetidas por agente, enviando información procesada para coordinar el movimiento de múltiples agentes."
+                }
+            ],
+            learningTitle: "Lo que aprendí",
+            learningText: "Desarrollar Lyra me permitió conectar conceptos matemáticos avanzados con la arquitectura de IA en Unreal Engine 5. Aprendí a construir modelos de locomoción propios en lugar de depender de los componentes por defecto, a desacoplar la mente de la ejecución física para mantener un código limpio y a optimizar consultas espaciales en tiempo real. Ganar el premio a Mejor TFG en el ENTI DemoDay 2026 confirmó el valor de combinar rigor técnico con comportamientos vivos y expresivos.",
+            playBtn: "Juega en itch.io"
+        }
     }
 };
-
-projects["juanpieza"] = projects["juan-pieza"];
-
-function getProjectId() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("project")) return params.get("project").toLowerCase();
-    if (params.get("id")) return params.get("id").toLowerCase();
-
-    const pathName = window.location.pathname;
-    let pageName = pathName.split("/").pop().replace(".html", "").toLowerCase();
-    
-    if (pageName === "juanpieza") pageName = "juan-pieza";
-
-    return projects[pageName] ? pageName : "lyra";
-}
-
-function loadProject() {
-    const projectId = getProjectId();
-    const project = projects[projectId] || projects.lyra;
-
-    document.title = `${project.title} | MarcosRuiz Portfolio`;
-
-    /* 1. HERO VIDEO LOCAL (.mp4) */
-    const heroContainer = document.querySelector(".hero-video-container");
-    if (heroContainer && project.trailerVideo) {
-        heroContainer.innerHTML = `
-            <video autoplay loop muted playsinline id="hero-mp4-video">
-                <source src="${project.trailerVideo}" type="video/mp4">
-            </video>
-        `;
-        const heroVideo = heroContainer.querySelector("video");
-        if (heroVideo) {
-            heroVideo.play().catch(e => console.log("Autoplay prevenido:", e));
-        }
-    }
-
-    /* 2. METADATA HERO */
-    const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
-    if (titleHero) titleHero.textContent = project.title;
-
-    const tagline = document.getElementById("project-tagline");
-    if (tagline) tagline.textContent = project.tagline;
-
-    const category = document.getElementById("project-category");
-    if (category) category.textContent = project.category;
-
-    const itch = document.getElementById("project-itch");
-    if (itch) itch.href = project.itch;
-
-    /* 3. MAIN INFORMATION (ZONA 1) */
-    const title = document.getElementById("project-title");
-    if (title) title.textContent = project.title;
-
-    const years = document.getElementById("project-years");
-    if (years) years.textContent = project.years;
-
-    const description = document.getElementById("project-description");
-    if (description) description.textContent = project.description;
-
-    const role = document.getElementById("project-role");
-    if (role) role.textContent = project.role;
-
-    const taskTitle = document.getElementById("project-task-title");
-    if (taskTitle) taskTitle.textContent = project.taskTitle;
-
-    /* TASKS */
-    const taskList = document.getElementById("project-tasks");
-    if (taskList) {
-        taskList.innerHTML = "";
-        project.tasks.forEach(task => {
-            const li = document.createElement("li");
-            li.textContent = task;
-            taskList.appendChild(li);
-        });
-    }
-
-    /* PLAY BUTTON */
-    const playButton = document.getElementById("project-play");
-    if (playButton) {
-        playButton.href = project.itch;
-        playButton.textContent = "Juega en itch.io";
-    }
-
-    /* IMÁGENES ZONA 1 */
-    const infoRight1 = document.getElementById("project-info-right-1");
-    if (infoRight1) {
-        infoRight1.src = project.infoRight1;
-        infoRight1.alt = `${project.title} screenshot 1`;
-    }
-
-    const infoRight2 = document.getElementById("project-info-right-2");
-    if (infoRight2) {
-        infoRight2.src = project.infoRight2;
-        infoRight2.alt = `${project.title} screenshot 2`;
-    }
-
-    /* 4. TRÁILER ZONA 2 */
-    const trailerFacade = document.querySelector(".trailer-facade");
-    if (trailerFacade && project.youtubeId) {
-        trailerFacade.innerHTML = `
-            <iframe 
-                src="https://www.youtube.com/embed/${project.youtubeId}?controls=1&rel=0&playsinline=1" 
-                title="Trailer de ${project.title}" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        `;
-    }
-
-    /* GALERÍA DE CAPTURAS ZONA 2 */
-    const screenshots = [
-        ["project-screenshot-1", project.screenshot1],
-        ["project-screenshot-2", project.screenshot2],
-        ["project-screenshot-3", project.screenshot3],
-        ["project-screenshot-4", project.screenshot4]
-    ];
-
-    screenshots.forEach(([id, src], index) => {
-        const image = document.getElementById(id);
-        if (image) {
-            image.src = src;
-            image.alt = `${project.title} screenshot ${index + 1}`;
-        }
-    });
-
-/* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
-    
-    // Título y descripción de "Mis Contribuciones"
-    const contribTitle = document.getElementById("contributions-title");
-    if (contribTitle) contribTitle.textContent = langData.contributionsTitle;
-
-    const contribIntro = document.getElementById("contributions-intro");
-    if (contribIntro) contribIntro.textContent = langData.contributionsIntro || "";
-
-    // Renderizado de los bullet points
-    const contribList = document.getElementById("contribution-list");
-    if (contribList) {
-        contribList.innerHTML = "";
-        langData.contributions.forEach(item => {
-            const li = document.createElement("li");
-            li.className = "contrib-item";
-            li.innerHTML = `
-                <div class="contrib-item-title">${item.title}</div>
-                <div class="contrib-item-text">${item.text}</div>
-            `;
-            contribList.appendChild(li);
-        });
-    }
-
-    // Título y descripción de "Lo que aprendí"
-    const learningTitle = document.getElementById("learning-title");
-    if (learningTitle) learningTitle.textContent = langData.learningTitle;
-
-    const learningText = document.getElementById("learning-text");
-    if (learningText) {
-        learningText.textContent = langData.learningText || "";
-    }
-
-    const contribPlay = document.getElementById("contribution-play");
-    if (contribPlay) {
-        contribPlay.href = project.itch;
-        contribPlay.textContent = "Juega en itch.io";
-    }
-
-    setupLightbox();
-}
-
-function setupLightbox() {
-    const lightbox = document.getElementById("project-lightbox");
-    const lightboxImage = document.getElementById("lightbox-image");
-    const closeButton = document.getElementById("lightbox-close");
-    const previousButton = document.getElementById("lightbox-prev");
-    const nextButton = document.getElementById("lightbox-next");
-    
-    const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"))
-        .filter(btn => btn.querySelector("img"));
-
-    if (!lightbox || !lightboxImage || !closeButton || !previousButton || !nextButton || imageButtons.length === 0) {
-        return;
-    }
-
-    let currentIndex = 0;
-    const images = imageButtons.map(btn => btn.querySelector("img"));
-
-    function updateLightbox(index) {
-        if (!images[index]) return;
-        currentIndex = index;
-        lightboxImage.src = images[currentIndex].src;
-        lightboxImage.alt = images[currentIndex].alt;
-    }
-
-    function openLightbox(index) {
-        updateLightbox(index);
-        lightbox.classList.add("is-open", "active");
-        lightbox.setAttribute("aria-hidden", "false");
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove("is-open", "active");
-        lightbox.setAttribute("aria-hidden", "true");
-    }
-
-    function showPrev() {
-        if (images.length === 0) return;
-        const newIndex = (currentIndex - 1 + images.length) % images.length;
-        updateLightbox(newIndex);
-    }
-
-    function showNext() {
-        if (images.length === 0) return;
-        const newIndex = (currentIndex + 1) % images.length;
-        updateLightbox(newIndex);
-    }
-
-    imageButtons.forEach((button, index) => {
-        button.onclick = () => openLightbox(index);
-    });
-
-    closeButton.onclick = closeLightbox;
-    previousButton.onclick = showPrev;
-    nextButton.onclick = showNext;
-
-    lightbox.onclick = (e) => {
-        if (e.target === lightbox) closeLightbox();
-    };
-
-    document.onkeydown = (e) => {
-        if (!lightbox.classList.contains("is-open") && !lightbox.classList.contains("active")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft") showPrev();
-        if (e.key === "ArrowRight") showNext();
-    };
-}
-
-document.addEventListener("DOMContentLoaded", loadProject);
