@@ -1,361 +1,430 @@
 /* =========================================================
-   PROJECT-TANK.JS - JS EXCLUSIVO PARA EL PROYECTO ML-AGENTS
+   MLAGENT.JS - SCRIPT EXCLUSIVO Y DEDICADO PARA MLAgent
    ========================================================= */
 
-// 1. Estado de Idioma
-let currentLang = "es";
-try {
-    const savedLang = localStorage.getItem("preferredLanguage");
-    if (savedLang === "en" || savedLang === "es") {
-        currentLang = savedLang;
-    }
-} catch (e) {
-    console.warn("No se pudo acceder a localStorage:", e);
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-// 2. Traducciones de Interfaz (Navbar y Footer)
-const uiTranslations = {
-    es: {
-        home: "Inicio",
-        about: "Quién soy",
-        experience: "Experiencia",
-        projects: "Proyectos",
-        documents: "Documentos",
-        contactButton: "Contacto",
-        moreProjects: "Más proyectos"
-    },
-    en: {
-        home: "Home",
-        about: "About Me",
-        experience: "Experience",
-        projects: "Projects",
-        documents: "Documents",
-        contactButton: "Contact me",
-        moreProjects: "More projects"
-    }
-};
-
-// 3. Contenido Completo y Detallado del Proyecto (Basado en la Memoria)
-const tankData = {
-    category: "AI & GAMEPLAY PROGRAMMER",
-    title: "Unity AI MachineLearning",
-    years: "2025 — 2026",
-    trailerVideo: "vid/Tank.mp4",
-    pdfUrl: "https://marcosrm19.github.io/documents/MLAgent.pdf",
-    
-    infoRight1: "img/projects/tank/info-right-1.jpg",
-    infoRight2: "img/projects/tank/info-right-2.jpg",
-    screenshot1: "img/projects/tank/screenshot-1.jpg",
-    screenshot2: "img/projects/tank/screenshot-2.jpg",
-    screenshot3: "img/projects/tank/screenshot-3.jpg",
-    screenshot4: "img/projects/tank/screenshot-4.jpg",
-
-    es: {
-        tagline: "Agente de combate autónomo en 3D desarrollado con Unity ML-Agents y PPO.",
-        description: "Investigación y desarrollo de un agente de combate autónomo en un entorno de simulación física 3D en Unity utilizando Aprendizaje por Refuerzo Profundo (Deep Reinforcement Learning). El proyecto prescinde de arquitecturas tradicionales como Máquinas de Estados Finitos (FSM) o Behavior Trees, haciendo uso del algoritmo Proximal Policy Optimization (PPO), Curriculum Learning progresivo de 4 fases y un ecosistema competitivo de Self-Play.",
-        role: "Mi rol abarcó el diseño integral del entorno de simulación, codificación de observaciones vectoriales C#, ingeniería de recompensas (Reward Shaping), pipeline de Curriculum Learning y entrenamiento supervisado mediante TensorBoard.",
-        taskTitle: "RESUMEN TÉCNICO Y OBJETIVOS",
-        tasks: [
-            "Diseño de un Espacio de Observaciones Vectorial 3D combinando 15 Raycasts de percepción y sensores de orientación.",
-            "Construcción de un Espacio de Acciones Híbrido (3 salidas continuas para física y 1 discreta para disparo).",
-            "Formulación de la función de recompensa equilibrando incentivos densos y dispersos.",
-            "Diseño de un pipeline de Curriculum Learning en 4 fases para evitar mínimos locales.",
-            "Implementación de Competitive Self-Play con pool de modelos históricos y evaluación ELO."
-        ],
-        contributionsTitle: "Desglose Técnico Extenso del Trabajo de Investigación",
-        contributionsIntro: "El proyecto profundiza en cómo entrenar agentes autónomos complejos dentro de motores de juego modernos sin depender de scripts rígidos. A continuación se desglosan las contribuciones algorítmicas y de arquitectura desarrolladas en la memoria:",
-        contributions: [
-            {
-                title: "1. Arquitectura del Agente, Sensores y Espacios de Entrada/Salida",
-                text: "Se diseñó una representación vectorial eficiente para alimentar la red neuronal Actor-Critic en PyTorch. El vector de observaciones incluye 15 Raycasts 3D en abanico para percepción de obstáculos y proyectiles enemigos, vectores de velocidad lineal y angular del chasis, distancia euclídea normalizada al oponente, diferencia angular entre el cañón y la posición enemiga, cooldown de recarga y salud actual. Las salidas son híbridas: 3 acciones continuas para aceleración, giro de chasis y rotación independiente de torreta, y 1 acción discreta para accionar el disparo."
-            },
-            {
-                title: "2. Ingeniería de Recompensas (Reward Shaping Matemático)",
-                text: "Para guiar el aprendizaje en las fases iniciales y evitar comportamientos indeseados (como girar sin sentido o hacer spam de disparos) se formuló una función de recompensa equilibrada: R_total = R_hit (+1.0) + R_align (+0.05 * cos(theta)) - R_time (-0.001/step) - R_wall (-0.25) - R_miss (-0.05). Las recompensas densas guían al agente antes de conseguir sus primeros impactos, mientras que las recompensas dispersas dictan la prioridad estratégica final."
-            },
-            {
-                title: "3. Pipeline de Curriculum Learning Progresivo (4 Fases)",
-                text: "Se estructuró un pipeline jerárquico de entrenamiento guiado: Fase 1 (Navegación Básica) con objetivo estático; Fase 2 (Apuntado y Tiempo de Vuelo) con objetivo en movimiento no hostil; Fase 3 (Obstáculos y Cobertura Dinámica) con muros opacos; y Fase 4 (Combate Completo y Duelo) con un oponente activo con disparo libre."
-            },
-            {
-                title: "4. Competitive Self-Play y Evaluación ELO",
-                text: "En la etapa final se implementó un sistema de Self-Play donde la red entrena contra versiones anteriores de sí misma guardadas en un Model Pool histórico. Se configuró una tasa de actualización del 50% contra la versión más reciente y un 50% contra oponentes aleatorios. Se alcanzó una puntuación final de 1820 puntos ELO tras 5 millones de pasos de simulación."
-            },
-            {
-                title: "5. Configuración de Hiperparámetros y Monitoreo con TensorBoard",
-                text: "Ajuste preciso del archivo YAML en Unity ML-Agents: batch_size: 2048, buffer_size: 20480, learning_rate: 0.0003 con decay lineal, entropy_beta: 0.005 para exploración, y clip_epsilon: 0.2 para estabilizar las actualizaciones PPO. Análisis constante de curvas de pérdida en TensorBoard."
-            }
-        ],
-        learningTitle: "Lo que aprendí",
-        learningText: "Desarrollar este estudio técnico me permitió conectar la teoría del Aprendizaje por Refuerzo Profundo con la simulación física en tiempo real dentro de Unity. Aprendí la importancia crítica de la formulación de recompensas (Reward Shaping) para evitar comportamientos degenerados, cómo utilizar Curriculum Learning para acelerar el entrenamiento de políticas complejas, y cómo estructurar ecosistemas competitivos mediante Self-Play para lograr que emerjan tácticas de combate orgánicas e impredecibles sin necesidad de programarlas línea a línea en C#.",
-        pdfBtnText: "Leer Memoria Técnica (PDF)"
-    },
-
-    en: {
-        tagline: "3D autonomous combat agent developed with Unity ML-Agents and PPO.",
-        description: "Research and development of an autonomous combat agent in a 3D physical simulation environment in Unity using Deep Reinforcement Learning. The project bypasses traditional architectures like FSMs or Behavior Trees, leveraging PPO, 4-phase Curriculum Learning, and Self-Play.",
-        role: "My role covered simulation environment design, C# vector observation coding, Reward Shaping engineering, Curriculum Learning pipeline, and TensorBoard supervised training.",
-        taskTitle: "TECHNICAL OVERVIEW & OBJECTIVES",
-        tasks: [
-            "3D Vector Observation Space design combining 15 perception Raycasts and orientation sensors.",
-            "Hybrid Action Space construction (3 continuous outputs for movement and 1 discrete for shooting).",
-            "Reward function formulation balancing dense and sparse incentives.",
-            "4-phase Curriculum Learning pipeline design to avoid local minima.",
-            "Competitive Self-Play implementation with historical model pool and ELO evaluation."
-        ],
-        contributionsTitle: "Extensive Technical Breakdown of the Research Work",
-        contributionsIntro: "The project delves into training complex autonomous agents within modern game engines without relying on rigid scripts. Below is the breakdown of algorithmic and architectural contributions:",
-        contributions: [
-            {
-                title: "1. Agent Architecture, Sensors, and Input/Output Spaces",
-                text: "Designed an efficient vector representation to feed the Actor-Critic neural network in PyTorch. The observation vector includes 15 3D Raycasts for obstacle/bullet detection, linear/angular velocity, normalized Euclidean distance, turret angle differential, cannon cooldown, and health. Output is hybrid: 3 continuous actions for physical drive and 1 discrete action for firing."
-            },
-            {
-                title: "2. Reward Engineering (Mathematical Reward Shaping)",
-                text: "Formulated a balanced reward function to guide early learning and prevent degenerate behavior: R_total = R_hit (+1.0) + R_align (+0.05 * cos(theta)) - R_time (-0.001/step) - R_wall (-0.25) - R_miss (-0.05). Dense rewards guide aiming early on, while sparse rewards set the ultimate strategic goal."
-            },
-            {
-                title: "3. Progressive Curriculum Learning Pipeline (4 Phases)",
-                text: "Structured a hierarchical guided training pipeline: Phase 1 (Basic Navigation) with a static target; Phase 2 (Aiming & Flight Time) with a moving non-hostile target; Phase 3 (Obstacles & Dynamic Cover) with opaque walls; and Phase 4 (Full Combat & Duel) facing an active shooting opponent."
-            },
-            {
-                title: "4. Competitive Self-Play and ELO Evaluation",
-                text: "Implemented a Self-Play system where the policy trains against historical versions stored in a Model Pool. Configured with a 50% update rate vs latest model and 50% vs random historical opponents, reaching a final score of 1820 ELO points after 5M simulation steps."
-            },
-            {
-                title: "5. Hyperparameter Tuning and TensorBoard Monitoring",
-                text: "Precise YAML tuning in Unity ML-Agents: batch_size: 2048, buffer_size: 20480, learning_rate: 0.0003 with linear decay, entropy_beta: 0.005, and clip_epsilon: 0.2 to stabilize PPO updates."
-            }
-        ],
-        learningTitle: "What I Learned",
-        learningText: "Developing this technical study allowed me to bridge Deep Reinforcement Learning theory with real-time physical simulation in Unity. I learned the critical importance of Reward Shaping, how to use Curriculum Learning to accelerate policy convergence, and how to structure competitive Self-Play ecosystems so that dynamic combat tactics emerge naturally without hardcoding them in C#.",
-        pdfBtnText: "Read Technical Paper (PDF)"
-    }
-};
-
-// Helper para seleccionar elementos por ID
-function getEl(id) {
-    return document.getElementById(id);
-}
-
-// Carga y renderizado del contenido
-function loadTankProject() {
-    const langData = tankData[currentLang] || tankData.es;
-    const ui = uiTranslations[currentLang] || uiTranslations.es;
-
-    // Document Title & Lang Button
-    document.title = `${tankData.title} | MarcosRuiz Portfolio`;
-    const langBtn = getEl("language-button");
-    if (langBtn) langBtn.textContent = currentLang.toUpperCase();
-
-    // UI (Navbar / Footer data-i18n)
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (ui[key]) el.textContent = ui[key];
-    });
-
-    // 1. Hero Video
-    const heroContainer = document.querySelector(".hero-video-container");
-    if (heroContainer && tankData.trailerVideo) {
-        const existingVideo = heroContainer.querySelector("video");
-        if (!existingVideo) {
-            heroContainer.innerHTML = `
-                <video autoplay loop muted playsinline id="hero-mp4-video">
-                    <source src="${tankData.trailerVideo}" type="video/mp4">
-                </video>
-            `;
+    /* ---------------------------------------------------------
+       1. SISTEMA DE IDIOMAS Y DICCIONARIO
+       --------------------------------------------------------- */
+    let currentLang = "es";
+    try {
+        const savedLang = localStorage.getItem("preferredLanguage");
+        if (savedLang === "en" || savedLang === "es") {
+            currentLang = savedLang;
         }
+    } catch (e) {
+        console.warn("localStorage no disponible:", e);
     }
 
-    // 2. Hero Metadata
-    const titleHero = getEl("project-title-hero");
-    if (titleHero) titleHero.textContent = tankData.title;
+    const i18nDict = {
+        es: {
+            home: "Inicio",
+            about: "Quién soy",
+            experience: "Experiencia",
+            projects: "Proyectos",
+            documents: "Documentos",
+            contactButton: "Contacto",
+            
+            navOverview: "1. Resumen & MDP",
+            navSensors: "2. Sensores & Vectores",
+            navArch: "3. Arquitectura PPO",
+            navRewards: "4. Reward Shaping",
+            navCurriculum: "5. Curriculum 4 Fases",
+            navSelfPlay: "6. Self-Play & ELO",
+            navHyper: "7. Hiperparámetros",
 
-    const tagline = getEl("project-tagline");
-    if (tagline) tagline.textContent = langData.tagline;
+            summaryHeading: "Agente Autónomo de Combate 3D Mediante Aprendizaje por Refuerzo Profundo",
+            summaryDesc: "Este trabajo aborda el diseño, formulación matemática y entrenamiento de un agente de combate vehicular autónomo operando en simulación física 3D. Prescindiendo por completo de scripts rígidos o árboles de comportamiento (Behavior Trees), el sistema genera tácticas de combate emergentes mediante la optimización de políticas estocásticas con Proximal Policy Optimization (PPO), acelerado por un pipeline jerárquico de Curriculum Learning y consolidado mediante Competitive Self-Play.",
+            
+            statStepsLabel: "Environment Steps",
+            statStepsSub: "Pasos de simulación física",
+            statEloLabel: "Peak ELO Rating",
+            statEloSub: "Vs pool histórico de modelos",
+            statRaycastsLabel: "Perception Sensors",
+            statRaycastsSub: "Abanico 3D en tiempo real",
+            statCurriculumLabel: "Curriculum Stages",
+            statCurriculumSub: "Progresión jerárquica",
 
-    const category = getEl("project-category");
-    if (category) category.textContent = tankData.category;
+            sec1Title: "Formulación del Problema y Proceso de Decisión de Markov (MDP)",
+            sec1P1: "En el desarrollo de Inteligencia Artificial para videojuegos de combate 3D, las arquitecturas tradicionales basadas en Máquinas de Estados Finitos (FSM) o Behavior Trees (BT) sufren de extrema rigidez y predictibilidad. Ante entornos donde intervienen la física de tracción, el tiempo de vuelo de los proyectiles y la balística parabólica, codificar manualmente cada reacción resulta inviable o produce agentes fácilmente explotables por un jugador humano.",
+            sec1P2: "Para resolver este desafío, el escenario de combate tanque vs. tanque se modeló rigurosamente como un Proceso de Decisión de Markov Parcialmente Observable (POMDP) definido por la tupla <S, A, P, R, gamma>:",
+            
+            sec2Title: "Espacio de Observaciones Vectoriales y Percepción Sensorial 3D",
+            sec2P1: "El agente no utiliza información global ni tramposa del mapa. Toda la percepción del entorno proviene exclusivamente de sensores locales montados sobre el chasis y la torreta del tanque, garantizando un comportamiento realista y transferible.",
+            
+            sec3Title: "Algoritmo PPO y Arquitectura de la Red Neuronal (Actor-Critic)",
+            sec3P1: "Se utilizó el algoritmo Proximal Policy Optimization (PPO) debido a su excepcional estabilidad en espacios de acción continuos y acoplados físicamente. PPO restringe las actualizaciones de la política mediante una función de recorte (clipping), evitando cambios drásticos que destruyan el comportamiento aprendido en iteraciones previas.",
+            
+            sec4Title: "Ingeniería de Recompensas (Reward Shaping Matemático)",
+            sec4P1: "El mayor reto en el Aprendizaje por Refuerzo es prevenir el 'Reward Hacking' o la caída en mínimos locales degenerados (por ejemplo, el agente girando en círculos infinitos para evitar ser golpeado o disparando sin parar). Para lograr la convergencia, se formuló una función de recompensa continua muy cuidada:",
+            
+            sec5Title: "Pipeline de Curriculum Learning Progresivo (4 Fases)",
+            sec5P1: "Intentar entrenar al agente directamente en un combate abierto resulta en un fracaso absoluto por la baja probabilidad de encontrar recompensas aleatorias. Se diseñó un Curriculum Learning dinámico donde las condiciones del mapa evolucionan según el porcentaje de victorias del modelo.",
+            
+            sec6Title: "Competitive Self-Play y Sistema de Evaluación ELO",
+            sec6P1: "Al alcanzar la Fase 4, el agente ya es capaz de derrotar con facilidad a cualquier bot basado en reglas fijas. Para garantizar una mejora continua y evitar el sobreajuste a tácticas concretas, se activó el módulo de Competitive Self-Play.",
+            
+            sec7Title: "Configuración de Hiperparámetros y Reproducibilidad (YAML)",
+            sec7P1: "A continuación se adjunta la configuración exacta del archivo YAML utilizado por el trainer de Unity ML-Agents para garantizar la total reproducibilidad de los resultados expresados en la memoria:",
 
-    const itch = getEl("project-itch");
-    if (itch) itch.href = tankData.pdfUrl;
+            ctaTitle: "¿Quieres consultar el documento académico completo de 40 páginas?",
+            ctaDesc: "Accede al desglose exhaustivo con análisis teóricos, capturas de pantalla de TensorBoard, esquemas de entrenamiento y anexos de código.",
+            ctaBtn: "Descargar Trabajo en PDF completo →",
 
-    // 3. Info Principal
-    const title = getEl("project-title");
-    if (title) title.textContent = tankData.title;
+            btnReloadChart: "Reanimar Gráfico",
+            btnCopyCode: "Copiar Configuración"
+        },
+        en: {
+            home: "Home",
+            about: "About Me",
+            experience: "Experience",
+            projects: "Projects",
+            documents: "Documents",
+            contactButton: "Contact me",
 
-    const years = getEl("project-years");
-    if (years) years.textContent = tankData.years;
+            navOverview: "1. Overview & MDP",
+            navSensors: "2. Sensors & Vectors",
+            navArch: "3. PPO Architecture",
+            navRewards: "4. Reward Shaping",
+            navCurriculum: "5. 4-Stage Curriculum",
+            navSelfPlay: "6. Self-Play & ELO",
+            navHyper: "7. Hyperparameters",
 
-    const description = getEl("project-description");
-    if (description) description.textContent = langData.description;
+            summaryHeading: "3D Autonomous Combat Agent via Deep Reinforcement Learning",
+            summaryDesc: "This research addresses the design, mathematical formulation, and training of an autonomous vehicular combat agent in 3D physics simulation. Bypassing rigid scripts or Behavior Trees, the system fosters emergent tactical behaviors through stochastic policy optimization via Proximal Policy Optimization (PPO), accelerated by a 4-phase Curriculum Learning pipeline and consolidated via Competitive Self-Play.",
 
-    const role = getEl("project-role");
-    if (role) role.textContent = langData.role;
+            statStepsLabel: "Environment Steps",
+            statStepsSub: "Physical simulation steps",
+            statEloLabel: "Peak ELO Rating",
+            statEloSub: "Vs historical model pool",
+            statRaycastsLabel: "Perception Sensors",
+            statRaycastsSub: "Real-time 3D Raycasts",
+            statCurriculumLabel: "Curriculum Stages",
+            statCurriculumSub: "Hierarchical progression",
 
-    const taskTitle = getEl("project-task-title");
-    if (taskTitle) taskTitle.textContent = langData.taskTitle;
+            sec1Title: "Problem Formulation & Markov Decision Process (MDP)",
+            sec1P1: "In 3D combat game AI, traditional Finite State Machines (FSM) or Behavior Trees (BT) suffer from rigidity and predictability. In environments with traction physics, projectile flight times, and parabolic ballistics, manually coding reactions is infeasible or leads to easily exploitable agents.",
+            sec1P2: "To solve this, the tank vs tank duel was modeled as a Partially Observable Markov Decision Process (POMDP) defined by <S, A, P, R, gamma>:",
 
-    // Tareas
-    const taskList = getEl("project-tasks");
-    if (taskList && Array.isArray(langData.tasks)) {
-        taskList.innerHTML = "";
-        langData.tasks.forEach(task => {
-            const li = document.createElement("li");
-            li.textContent = task;
-            taskList.appendChild(li);
-        });
-    }
+            sec2Title: "Vector Observation Space & 3D Sensory Perception",
+            sec2P1: "The agent uses no global or omniscient map data. All perception stems strictly from local sensors mounted on the chassis and turret, guaranteeing realistic and transferable behaviors.",
 
-    // Botones
-    const playButton = getEl("project-play");
-    if (playButton) {
-        playButton.href = tankData.pdfUrl;
-        playButton.textContent = langData.pdfBtnText;
-    }
+            sec3Title: "PPO Algorithm & Neural Network Architecture (Actor-Critic)",
+            sec3P1: "Proximal Policy Optimization (PPO) was chosen for its exceptional stability in continuous, physics-coupled action spaces. PPO clips policy updates to prevent destructive step changes.",
 
-    document.querySelectorAll('a[id^="more-projects-btn"]').forEach(btn => {
-        btn.textContent = ui.moreProjects;
-    });
+            sec4Title: "Reward Engineering (Mathematical Reward Shaping)",
+            sec4P1: "The primary challenge in DRL is preventing Reward Hacking or local minima traps. A continuous, balanced reward function was formulated to ensure steady convergence:",
 
-    // Imágenes
-    const infoRight1 = getEl("project-info-right-1");
-    if (infoRight1) infoRight1.src = tankData.infoRight1;
+            sec5Title: "Progressive Curriculum Learning Pipeline (4 Stages)",
+            sec5P1: "Training directly in open combat causes complete failure due to sparse random rewards. A dynamic Curriculum Learning pipeline was designed, evolving map complexity based on win rates.",
 
-    const infoRight2 = getEl("project-info-right-2");
-    if (infoRight2) infoRight2.src = tankData.infoRight2;
+            sec6Title: "Competitive Self-Play & ELO Evaluation System",
+            sec6P1: "Upon reaching Stage 4, the agent easily defeats rule-based bots. To guarantee continuous adaptation and prevent overfitting, Competitive Self-Play was enabled.",
 
-    const screenshots = [
-        ["project-screenshot-1", tankData.screenshot1],
-        ["project-screenshot-2", tankData.screenshot2],
-        ["project-screenshot-3", tankData.screenshot3],
-        ["project-screenshot-4", tankData.screenshot4]
-    ];
+            sec7Title: "Hyperparameter Tuning & Reproducibility (YAML)",
+            sec7P1: "Below is the exact YAML trainer configuration used in Unity ML-Agents to guarantee full reproducibility of the research findings:",
 
-    screenshots.forEach(([id, src]) => {
-        const img = getEl(id);
-        if (img) img.src = src;
-    });
+            ctaTitle: "Want to read the full 40-page research paper?",
+            ctaDesc: "Access the exhaustive study complete with theoretical analysis, TensorBoard loss curves, training diagrams, and code appendixes.",
+            ctaBtn: "Download Full Paper PDF →",
 
-    // 4. Contribuciones y Aprendizaje
-    const contribTitle = getEl("contributions-title");
-    if (contribTitle) contribTitle.textContent = langData.contributionsTitle;
-
-    const contribIntro = getEl("contributions-intro");
-    if (contribIntro) contribIntro.textContent = langData.contributionsIntro;
-
-    const contribList = getEl("contribution-list");
-    if (contribList && Array.isArray(langData.contributions)) {
-        contribList.innerHTML = "";
-        langData.contributions.forEach(item => {
-            const li = document.createElement("li");
-            li.className = "contrib-item";
-            li.innerHTML = `
-                <div class="contrib-item-title">${item.title}</div>
-                <div class="contrib-item-text">${item.text}</div>
-            `;
-            contribList.appendChild(li);
-        });
-    }
-
-    const learningTitle = getEl("learning-title");
-    if (learningTitle) learningTitle.textContent = langData.learningTitle;
-
-    const learningText = getEl("learning-text");
-    if (learningText) learningText.textContent = langData.learningText;
-
-    const contribPlay = getEl("contribution-play");
-    if (contribPlay) {
-        contribPlay.href = tankData.pdfUrl;
-        contribPlay.textContent = langData.pdfBtnText;
-    }
-
-    setupLightbox();
-}
-
-// Evento de Cambio de Idioma
-function setupLanguageToggle() {
-    const langBtn = getEl("language-button");
-    if (!langBtn) return;
-
-    langBtn.addEventListener("click", () => {
-        currentLang = currentLang === "es" ? "en" : "es";
-        try {
-            localStorage.setItem("preferredLanguage", currentLang);
-        } catch (e) {
-            console.warn("No se pudo guardar en localStorage:", e);
-        }
-        loadTankProject();
-    });
-}
-
-// Lightbox para la Galería
-function setupLightbox() {
-    const lightbox = document.getElementById("project-lightbox");
-    const lightboxImage = document.getElementById("lightbox-image");
-    const closeButton = document.getElementById("lightbox-close");
-    const previousButton = document.getElementById("lightbox-prev");
-    const nextButton = document.getElementById("lightbox-next");
-
-    const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot, .trailer-facade"))
-        .filter(btn => btn.querySelector("img"));
-
-    if (!lightbox || !lightboxImage || imageButtons.length === 0) return;
-
-    let currentIndex = 0;
-    const images = imageButtons.map(btn => btn.querySelector("img"));
-
-    function updateLightbox(index) {
-        if (!images[index]) return;
-        currentIndex = index;
-        lightboxImage.src = images[currentIndex].src;
-        lightboxImage.alt = images[currentIndex].alt;
-    }
-
-    imageButtons.forEach((button, index) => {
-        button.onclick = () => {
-            updateLightbox(index);
-            lightbox.classList.add("is-open", "active");
-            lightbox.setAttribute("aria-hidden", "false");
-        };
-    });
-
-    if (closeButton) {
-        closeButton.onclick = () => {
-            lightbox.classList.remove("is-open", "active");
-            lightbox.setAttribute("aria-hidden", "true");
-        };
-    }
-
-    if (previousButton) {
-        previousButton.onclick = () => {
-            const newIndex = (currentIndex - 1 + images.length) % images.length;
-            updateLightbox(newIndex);
-        };
-    }
-
-    if (nextButton) {
-        nextButton.onclick = () => {
-            const newIndex = (currentIndex + 1) % images.length;
-            updateLightbox(newIndex);
-        };
-    }
-
-    lightbox.onclick = (e) => {
-        if (e.target === lightbox) {
-            lightbox.classList.remove("is-open", "active");
-            lightbox.setAttribute("aria-hidden", "true");
+            btnReloadChart: "Reanimate Chart",
+            btnCopyCode: "Copy Configuration"
         }
     };
-}
 
-// Inicialización
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-        loadTankProject();
-        setupLanguageToggle();
+    function updateLanguage() {
+        const dict = i18nDict[currentLang] || i18nDict.es;
+        const langBtn = document.getElementById("language-button");
+        if (langBtn) langBtn.textContent = currentLang.toUpperCase();
+
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (dict[key]) el.textContent = dict[key];
+        });
+    }
+
+    const langBtn = document.getElementById("language-button");
+    if (langBtn) {
+        langBtn.addEventListener("click", () => {
+            currentLang = currentLang === "es" ? "en" : "es";
+            try {
+                localStorage.setItem("preferredLanguage", currentLang);
+            } catch (e) {
+                console.warn(e);
+            }
+            updateLanguage();
+            renderCurriculumPanel(currentCurriculumPhase);
+        });
+    }
+
+    /* ---------------------------------------------------------
+       2. PESTAÑAS INTERACTIVAS DEL CURRICULUM LEARNING
+       --------------------------------------------------------- */
+    let currentCurriculumPhase = "1";
+    const curriculumData = {
+        es: {
+            "1": {
+                title: "Fase 01: Locomoción y Orientación Básica",
+                desc: "Escenario libre sin obstáculos. El agente debe aprender a acelerar, frenar y rotar el chasis para aproximarse a un objetivo estático.",
+                target: "Alcanzar el objetivo en < 5 segundos",
+                steps: "0.5M Steps",
+                shaping: "Recompensa densa por reducción de distancia euclídea."
+            },
+            "2": {
+                title: "Fase 02: Apuntado y Balística con Objetivo en Movimiento",
+                desc: "Se introduce la torreta orientable de 360°. El objetivo se mueve en patrones no hostiles. El agente aprende a calcular el tiempo de vuelo del proyectil.",
+                target: "Alineación de torreta > 85% del tiempo",
+                steps: "1.2M Steps",
+                shaping: "Recompensa densa por producto escalar cos(theta) de alineación."
+            },
+            "3": {
+                title: "Fase 03: Evasión de Obstáculos y Cobertura Dinámica",
+                desc: "Se añaden muros y coberturas opacas. El agente utiliza sus 15 Raycasts para rodear esquinas y buscar líneas de visión despejadas.",
+                target: "Superar obstáculos sin colisión en > 90% partidas",
+                steps: "2.5M Steps",
+                shaping: "Penalización por colisión (-0.25) y bonus por visión directa."
+            },
+            "4": {
+                title: "Fase 04: Duelo Activo y Transición a Competitive Self-Play",
+                desc: "Enfrentamiento completo contra oponentes activos con disparo libre. Transición hacia el entrenamiento simétrico contra versiones pasadas del modelo.",
+                target: "Winrate > 65% contra el pool histórico",
+                steps: "5.0M Steps",
+                shaping: "Recompensa dispersa (+1.0 por baja, -0.05 por disparo fallado)."
+            }
+        },
+        en: {
+            "1": {
+                title: "Stage 01: Locomotion & Basic Orientation",
+                desc: "Open arena without obstacles. The agent learns throttle, braking, and chassis rotation to reach a static target.",
+                target: "Reach target in < 5 seconds",
+                steps: "0.5M Steps",
+                shaping: "Dense reward for Euclidean distance reduction."
+            },
+            "2": {
+                title: "Stage 02: Aiming & Ballistics with Moving Target",
+                desc: "Introduces 360° turret control. The target moves in non-hostile patterns. The agent calculates projectile flight time.",
+                target: "Turret alignment > 85% of episode time",
+                steps: "1.2M Steps",
+                shaping: "Dense reward for cos(theta) alignment product."
+            },
+            "3": {
+                title: "Stage 03: Obstacle Avoidance & Dynamic Cover",
+                desc: "Adds walls and opaque obstacles. The agent uses its 15 Raycasts to navigate corners and secure clear line of sight.",
+                target: "Navigate obstacles without collision in > 90% matches",
+                steps: "2.5M Steps",
+                shaping: "Collision penalty (-0.25) and line of sight bonus."
+            },
+            "4": {
+                title: "Stage 04: Full Combat & Competitive Self-Play",
+                desc: "Unrestricted duels against active shooting opponents. Transition to symmetric training against historical model snapshots.",
+                target: "Winrate > 65% vs historical pool",
+                steps: "5.0M Steps",
+                shaping: "Sparse reward (+1.0 per kill, -0.05 per missed shot)."
+            }
+        }
+    };
+
+    function renderCurriculumPanel(phase) {
+        currentCurriculumPhase = phase;
+        const panel = document.getElementById("curriculum-content-panel");
+        const lang = currentLang === "en" ? "en" : "es";
+        const data = curriculumData[lang][phase];
+
+        if (panel && data) {
+            panel.innerHTML = `
+                <h3 class="panel-title">${data.title}</h3>
+                <p class="panel-desc">${data.desc}</p>
+                <div class="tech-stats-grid">
+                    <div class="tech-stat-card">
+                        <span class="stat-label">Criterio de Éxito</span>
+                        <span class="stat-sub" style="color:#00ff88; font-weight:bold; font-size:0.95rem;">${data.target}</span>
+                    </div>
+                    <div class="tech-stat-card">
+                        <span class="stat-label">Pasos de Entrenamiento</span>
+                        <span class="stat-sub" style="color:#ffffff; font-weight:bold; font-size:0.95rem;">${data.steps}</span>
+                    </div>
+                    <div class="tech-stat-card">
+                        <span class="stat-label">Reward Shaping</span>
+                        <span class="stat-sub" style="color:#38bdf8; font-weight:bold; font-size:0.95rem;">${data.shaping}</span>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    const currTabBtns = document.querySelectorAll(".curr-tab-btn");
+    currTabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            currTabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderCurriculumPanel(btn.getAttribute("data-phase"));
+        });
     });
-} else {
-    loadTankProject();
-    setupLanguageToggle();
-}
+
+    /* ---------------------------------------------------------
+       3. GRÁFICO DINÁMICO EN CANVAS (CURVA ELO TENSORBOARD)
+       --------------------------------------------------------- */
+    const canvas = document.getElementById("eloCanvas");
+    const reloadChartBtn = document.getElementById("btn-reload-chart");
+
+    if (canvas) {
+        const ctx = canvas.getContext("2d");
+        let animProgress = 0;
+        let animId;
+
+        const ppoData = [
+            { x: 10, y: 190 }, // 1000 ELO
+            { x: 120, y: 160 }, // 1180 ELO
+            { x: 230, y: 110 }, // 1450 ELO
+            { x: 350, y: 60 },  // 1720 ELO
+            { x: 460, y: 30 }   // 1820 ELO
+        ];
+
+        const fsmData = [
+            { x: 10, y: 190 },
+            { x: 120, y: 185 },
+            { x: 230, y: 180 },
+            { x: 350, y: 178 },
+            { x: 460, y: 175 }
+        ];
+
+        function drawChart() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Rejilla
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+            ctx.lineWidth = 1;
+            for (let y = 20; y < canvas.height; y += 40) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+
+            // Línea FSM Bot (Gris)
+            ctx.strokeStyle = "#64748b";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(fsmData[0].x, fsmData[0].y);
+            for (let i = 1; i < fsmData.length; i++) {
+                ctx.lineTo(fsmData[i].x, fsmData[i].y);
+            }
+            ctx.stroke();
+
+            // Línea PPO Agent (Verde con animación)
+            ctx.strokeStyle = "#00ff88";
+            ctx.lineWidth = 3;
+            ctx.shadowColor = "rgba(0, 255, 136, 0.5)";
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+
+            const currentX = 10 + (450 * animProgress);
+            ctx.moveTo(ppoData[0].x, ppoData[0].y);
+
+            for (let i = 1; i < ppoData.length; i++) {
+                if (ppoData[i].x <= currentX) {
+                    ctx.lineTo(ppoData[i].x, ppoData[i].y);
+                } else {
+                    const prev = ppoData[i - 1];
+                    const factor = (currentX - prev.x) / (ppoData[i].x - prev.x);
+                    const interpY = prev.y + factor * (ppoData[i].y - prev.y);
+                    ctx.lineTo(currentX, interpY);
+                    break;
+                }
+            }
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+
+            if (animProgress < 1) {
+                animProgress += 0.025;
+                animId = requestAnimationFrame(drawChart);
+            }
+        }
+
+        drawChart();
+
+        if (reloadChartBtn) {
+            reloadChartBtn.addEventListener("click", () => {
+                cancelAnimationFrame(animId);
+                animProgress = 0;
+                drawChart();
+            });
+        }
+    }
+
+    /* ---------------------------------------------------------
+       4. BOTÓN COPIAR CÓDIGO YAML
+       --------------------------------------------------------- */
+    const copyBtn = document.getElementById("btn-copy-code");
+    const yamlBlock = document.getElementById("code-yaml-block");
+
+    if (copyBtn && yamlBlock) {
+        copyBtn.addEventListener("click", () => {
+            navigator.clipboard.writeText(yamlBlock.textContent).then(() => {
+                copyBtn.textContent = "✓ Copiado";
+                setTimeout(() => {
+                    copyBtn.textContent = currentLang === "en" ? "Copy Configuration" : "Copiar Configuración";
+                }, 2000);
+            });
+        });
+    }
+
+    /* ---------------------------------------------------------
+       5. LIGHTBOX DE GALERÍA DE IMÁGENES
+       --------------------------------------------------------- */
+    const lightbox = document.getElementById("project-lightbox");
+    const lightboxImg = document.getElementById("lightbox-image");
+    const closeBtn = document.getElementById("lightbox-close");
+    const prevBtn = document.getElementById("lightbox-prev");
+    const nextBtn = document.getElementById("lightbox-next");
+
+    const imageTriggers = Array.from(document.querySelectorAll(".trailer-facade"))
+        .filter(btn => btn.querySelector("img"));
+
+    if (lightbox && lightboxImg && imageTriggers.length > 0) {
+        let currentIndex = 0;
+        const images = imageTriggers.map(btn => btn.querySelector("img"));
+
+        function updateLightbox(index) {
+            if (!images[index]) return;
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex].src;
+            lightboxImg.alt = images[currentIndex].alt || "";
+        }
+
+        imageTriggers.forEach((btn, index) => {
+            btn.onclick = () => {
+                updateLightbox(index);
+                lightbox.classList.add("is-open", "active");
+                lightbox.setAttribute("aria-hidden", "false");
+            };
+        });
+
+        if (closeBtn) {
+            closeBtn.onclick = () => {
+                lightbox.classList.remove("is-open", "active");
+                lightbox.setAttribute("aria-hidden", "true");
+            };
+        }
+
+        if (prevBtn) {
+            prevBtn.onclick = () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightbox(currentIndex);
+            };
+        }
+
+        if (nextBtn) {
+            nextBtn.onclick = () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightbox(currentIndex);
+            };
+        }
+    }
+
+    // Inicializar traducción y curriculum por defecto
+    updateLanguage();
+    renderCurriculumPanel("1");
+});
