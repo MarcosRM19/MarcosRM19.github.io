@@ -1,11 +1,11 @@
 /* =========================================================
-   MLAGENT.JS - TRADUCCIÓN Y LÓGICA COMPLETA
+   MLAGENT.JS - CON ESTRUCTURA DE DICCIONARIO SEPARADA
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ---------------------------------------------------------
-       1. DICCIONARIO TRADUCTOR COMPLETO (ESPAÑOL / INGLÉS)
+       1. DICCIONARIO DE TRADUCCIÓN (DESAGREGADO)
        --------------------------------------------------------- */
     let currentLang = "es";
     try {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contacto",
             moreProjects: "Más proyectos",
             btnPdf: "Leer Memoria Técnica (PDF)",
-            heroTagline: "Agente autónomo de combate 3D en Unity entrenado con ML-Agents y PPO.",
+            heroTagline: "Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.",
 
             summaryTitle: "Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo",
             objectivesTitle: "Objetivos del Proyecto",
@@ -45,10 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Title: "Formulación del Problema y Proceso de Decisión de Markov (POMDP)",
             sec1Intro: "Para lograr que el agente aprenda sin reglas codificadas a mano, el escenario de combate vehicular se modeló rigurosamente como un Proceso de Decisión de Markov Parcialmente Observable (POMDP) definido por la tupla <S, A, P, R, gamma>:",
             sec1MdpTitle: "Formulación del Entorno",
-            sec1Mdp1: "Espacio de Estados (S): Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.",
-            sec1Mdp2: "Espacio de Acciones (A): Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).",
-            sec1Mdp3: "Transiciones (P): Dinámica física de tracción en Unity acelerada para entrenamiento masivo.",
-            sec1Mdp4: "Recompensas (R): Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).",
+            
+            sec1Mdp1Label: "Espacio de Estados (S):",
+            sec1Mdp1Desc: "Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.",
+            sec1Mdp2Label: "Espacio de Acciones (A):",
+            sec1Mdp2Desc: "Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).",
+            sec1Mdp3Label: "Transiciones (P):",
+            sec1Mdp3Desc: "Dinámica física de tracción en Unity acelerada para entrenamiento masivo.",
+            sec1Mdp4Label: "Recompensas (R):",
+            sec1Mdp4Desc: "Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).",
+
             sec1OptTitle: "Objetivo de Optimización",
             sec1OptText: "El agente optimiza una política estocástica parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:",
 
@@ -75,10 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             sec3Title: "Algoritmo PPO y Arquitectura Actor-Critic",
             sec3MlpTitle: "Red Neuronal Multicapa (MLP)",
-            sec3Mlp1: "Input: Vector normalizado de 27 observaciones.",
-            sec3Mlp2: "Capas Ocultas: 2 capas densas de 256 neuronas cada una.",
-            sec3Mlp3: "Actor: Genera acciones continuas de conducción y decisión discreta de disparo.",
-            sec3Mlp4: "Critic: Estima el valor del estado para calcular ventajas acumuladas.",
+            sec3Mlp1Label: "Input:",
+            sec3Mlp1Desc: "Vector normalizado de 27 observaciones.",
+            sec3Mlp2Label: "Capas Ocultas:",
+            sec3Mlp2Desc: "2 capas densas de 256 neuronas cada una.",
+            sec3Mlp3Label: "Actor:",
+            sec3Mlp3Desc: "Genera acciones continuas de conducción y decisión discreta de disparo.",
+            sec3Mlp4Label: "Critic:",
+            sec3Mlp4Desc: "Estima el valor del estado para calcular ventajas acumuladas.",
+
             sec3PpoTitle: "Optimización PPO Clipped",
             sec3PpoText: "PPO acota las actualizaciones mediante un margen epsilon = 0.2 para garantizar que el entrenamiento no destruya comportamientos útiles previamente consolidados:",
 
@@ -113,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contact me",
             moreProjects: "More projects",
             btnPdf: "Read Technical Paper (PDF)",
-            heroTagline: "Engine-native autonomous combat agent built with Unity ML-Agents and PPO.",
+            heroTagline: "Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.",
 
             summaryTitle: "3D Autonomous Combat Agent via Deep Reinforcement Learning",
             objectivesTitle: "Project Objectives",
@@ -131,10 +142,16 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Title: "Problem Formulation & Markov Decision Process (POMDP)",
             sec1Intro: "To enable the agent to learn without manual rules, the vehicular duel was formally modeled as a Partially Observable Markov Decision Process (POMDP) defined by <S, A, P, R, gamma>:",
             sec1MdpTitle: "Environment Formulation",
-            sec1Mdp1: "State Space (S): Multidimensional continuous representation with local kinematics, Raycasts, and orientation sensors.",
-            sec1Mdp2: "Action Space (A): Hybrid control of 3 continuous actions (drive, steer, turret) and 1 discrete (fire).",
-            sec1Mdp3: "Transitions (P): Physical traction dynamics in Unity accelerated for mass training.",
-            sec1Mdp4: "Rewards (R): Continuous shaping function via Reward Shaping engineering.",
+
+            sec1Mdp1Label: "State Space (S):",
+            sec1Mdp1Desc: "Multidimensional continuous representation with local kinematics, Raycasts, and orientation sensors.",
+            sec1Mdp2Label: "Action Space (A):",
+            sec1Mdp2Desc: "Hybrid control of 3 continuous actions (drive, steer, turret) and 1 discrete (fire).",
+            sec1Mdp3Label: "Transitions (P):",
+            sec1Mdp3Desc: "Physical traction dynamics in Unity accelerated for mass training.",
+            sec1Mdp4Label: "Rewards (R):",
+            sec1Mdp4Desc: "Continuous shaping function via Reward Shaping engineering.",
+
             sec1OptTitle: "Optimization Objective",
             sec1OptText: "The agent optimizes a parameterized stochastic policy via a neural network to maximize discounted cumulative return:",
 
@@ -161,10 +178,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             sec3Title: "PPO Algorithm & Actor-Critic Architecture",
             sec3MlpTitle: "Multilayer Perceptron (MLP)",
-            sec3Mlp1: "Input: Normalized vector of 27 observations.",
-            sec3Mlp2: "Hidden Layers: 2 dense layers of 256 units each.",
-            sec3Mlp3: "Actor: Outputs continuous driving actions and discrete firing decision.",
-            sec3Mlp4: "Critic: Estimates state value to calculate advantage functions.",
+            sec3Mlp1Label: "Input:",
+            sec3Mlp1Desc: "Normalized vector of 27 observations.",
+            sec3Mlp2Label: "Hidden Layers:",
+            sec3Mlp2Desc: "2 dense layers of 256 units each.",
+            sec3Mlp3Label: "Actor:",
+            sec3Mlp3Desc: "Outputs continuous driving actions and discrete firing decision.",
+            sec3Mlp4Label: "Critic:",
+            sec3Mlp4Desc: "Estimates state value to calculate advantage functions.",
+
             sec3PpoTitle: "Clipped PPO Optimization",
             sec3PpoText: "PPO constrains policy updates within an epsilon = 0.2 margin to ensure training does not destroy previously consolidated behaviors:",
 
@@ -220,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       2. PESTAÑAS INTERACTIVAS CURRICULUM LEARNING
+       2. PESTAÑAS CURRICULUM
        --------------------------------------------------------- */
     let currentCurriculumPhase = "1";
     const curriculumData = {
