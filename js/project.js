@@ -7,7 +7,7 @@ let currentLang = localStorage.getItem("preferredLanguage") || "es";
 
 const projects = {
     lyra: {
-        category: "AI / GAME PROGRAMMING",
+        category: "AI GAME PROGRAMMER",
         title: "Lyra",
         years: "2025 — 2026",
         trailerVideo: "vid/Lyra.mp4",
@@ -57,7 +57,7 @@ const projects = {
                 }
             ],
             learningTitle: "What I Learned",
-            learningText: "Developing Lyra pushed me to bridge complex mathematical concepts with practical AI architecture in Unreal Engine 5. I learned how to build custom locomotion models from scratch rather than relying on stock engine defaults, how to decouple cognitive AI logic from physical execution for modular maintainability, and how to optimize multi-agent spatial queries. Winning Best TFG at ENTI DemoDay 2026 validated the importance of combining technical rigor with expressive, organic agent behavior.",
+            learningText: "Developing Lyra pushed me to bridge complex mathematical concepts with practical AI architecture in Unreal Engine 5. I learned how to build custom locomotion models from scratch rather than relying on stock engine defaults, how to decouple cognitive AI logic from physical execution for modular maintainability, and how to optimize multi-agent spatial queries.",
             playBtn: "Play on itch.io"
         },
 
@@ -97,7 +97,7 @@ const projects = {
                 }
             ],
             learningTitle: "Lo que aprendí",
-            learningText: "Desarrollar Lyra me permitió conectar conceptos matemáticos avanzados con la arquitectura de IA en Unreal Engine 5. Aprendí a construir modelos de locomoción propios en lugar de depender de los componentes por defecto, a desacoplar la mente de la ejecución física para mantener un código limpio y a optimizar consultas espaciales en tiempo real. Ganar el premio a Mejor TFG en el ENTI DemoDay 2026 confirmó el valor de combinar rigor técnico con comportamientos vivos y expresivos.",
+            learningText: "Desarrollar Lyra me permitió conectar conceptos matemáticos avanzados con la arquitectura de IA en Unreal Engine 5. Aprendí a construir modelos de locomoción propios en lugar de depender de los componentes por defecto, a desacoplar la mente de la ejecución física para mantener un código limpio y a optimizar consultas espaciales en tiempo real.",
             playBtn: "Juega en itch.io"
         }
     },
@@ -203,15 +203,14 @@ function loadProject() {
     const projectId = getProjectId();
     const project = projects[projectId] || projects.lyra;
     
-    // Obtenemos los textos traducidos según el idioma actual (fallback a español)
     const langData = project[currentLang] || project.es;
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* Actualizar botón de idioma si existe */
+    /* Actualizar el texto del botón según el idioma activo (ES si es español, EN si es inglés) */
     const langBtn = document.getElementById("language-button");
     if (langBtn) {
-        langBtn.textContent = currentLang === "es" ? "EN" : "ES";
+        langBtn.textContent = currentLang.toUpperCase();
     }
 
     /* 1. HERO VIDEO LOCAL (.mp4) */
