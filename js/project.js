@@ -26,7 +26,7 @@ const projects = {
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
         itch: "#",
 
-        /* CONTRIBUCIONES Y APRENDIZAJE DE LYRA (TFG) */
+        /* DATOS DE LA IMAGEN DE CONTRIBUCIONES CON NEGRITAS */
         contributionsTitle: "Mis Contribuciones",
         contributionsIntro: "Lyra era mi TFG, así que era el responsable de las mecánicas, los niveles y de demostrar que ambos funcionaban de verdad. El hilo conductor era negarme a fiarme de mi intuición sin datos detrás.",
         contributions: [
@@ -36,7 +36,7 @@ const projects = {
             },
             {
                 title: "Estructura de niveles EDPV",
-                text: "Apliqué el modelo Exposure, Demonstration, Practice, Validation en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
+                text: "Apliqué el modelo <strong>Exposure, Demonstration, Practice, Validation</strong> en las tres zonas temáticas, ordenando dificultad y ritmo emocional de forma deliberada y no por intuición."
             },
             {
                 title: "Pipeline de telemetría en C++",
@@ -48,11 +48,11 @@ const projects = {
             },
             {
                 title: "Análisis estadístico en Python",
-                text: "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un p-valor no significativo junto con un tamaño de efecto grande en vez de solo el resultado que apoyaba mi hipótesis."
+                text: "Ejecuté Shapiro-Wilk, t de Student y d de Cohen, y reporté un <strong>p-valor no significativo junto con un tamaño de efecto grande</strong> en vez de solo el resultado que apoyaba mi hipótesis."
             },
             {
                 title: "Resultado medido",
-                text: "El rediseño redujo los errores de navegación en un 35% y mejoró el tiempo de resolución en un 33%, medido con el mismo pipeline de telemetría."
+                text: "El rediseño redujo los errores de navegación en un <strong>35%</strong> y mejoró el tiempo de resolución en un <strong>33%</strong>, medido con el mismo pipeline de telemetría."
             }
         ],
         learningTitle: "Lo que aprendí",
@@ -106,7 +106,6 @@ const projects = {
     }
 };
 
-/* Alias por si la página se llama 'juanpieza.html' sin guion */
 projects["juanpieza"] = projects["juan-pieza"];
 
 function getProjectId() {
@@ -186,7 +185,7 @@ function loadProject() {
     const playButton = document.getElementById("project-play");
     if (playButton) {
         playButton.href = project.itch;
-        playButton.textContent = "Play on itch.io";
+        playButton.textContent = "Juega en itch.io";
     }
 
     /* IMÁGENES ZONA 1 */
@@ -202,7 +201,7 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* 4. TRÁILER ZONA 2 (YOUTUBE INTERACTIVO) */
+    /* 4. TRÁILER ZONA 2 */
     const trailerFacade = document.querySelector(".trailer-facade");
     if (trailerFacade && project.youtubeId) {
         trailerFacade.innerHTML = `
@@ -257,13 +256,13 @@ function loadProject() {
 
     const learningText = document.getElementById("learning-text") || document.getElementById("project-learning-text");
     if (learningText) {
-        learningText.textContent = project.learningText || (Array.isArray(project.learning) ? project.learning.join(" ") : "");
+        learningText.textContent = project.learningText || "";
     }
 
     const contribPlay = document.getElementById("contribution-play");
     if (contribPlay) {
         contribPlay.href = project.itch;
-        contribPlay.textContent = "Play on itch.io";
+        contribPlay.textContent = "Juega en itch.io";
     }
 
     setupLightbox();
@@ -276,7 +275,6 @@ function setupLightbox() {
     const previousButton = document.getElementById("lightbox-prev");
     const nextButton = document.getElementById("lightbox-next");
     
-    // Seleccionar únicamente contenedores con imágenes para evitar bugs con iframes/vídeos
     const imageButtons = Array.from(document.querySelectorAll(".ph-shot, .tg-shot"))
         .filter(btn => btn.querySelector("img"));
 
