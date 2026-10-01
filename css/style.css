@@ -1597,9 +1597,10 @@ font-size: 2.5rem;
     height: 22px;
     object-fit: contain;
     object-position: left center;
+    /* Cambiamos hue-rotate(155deg) por ~85deg */
     filter: brightness(0) saturate(100%)
             invert(75%) sepia(97%)
-            saturate(1700%) hue-rotate(155deg)
+            saturate(1700%) hue-rotate(85deg) 
             brightness(105%) contrast(105%);
 }
 
