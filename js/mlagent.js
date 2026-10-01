@@ -1,11 +1,11 @@
 /* =========================================================
-   MLAGENT.JS - LÓGICA DEDICADA Y REVISADA
+   MLAGENT.JS - TRADUCCIÓN Y LÓGICA COMPLETA
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ---------------------------------------------------------
-       1. SISTEMA DE IDIOMAS Y TEXTOS
+       1. DICCIONARIO TRADUCTOR COMPLETO (ESPAÑOL / INGLÉS)
        --------------------------------------------------------- */
     let currentLang = "es";
     try {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn(e);
     }
 
-    const uiTexts = {
+    const dict = {
         es: {
             home: "Inicio",
             about: "Quién soy",
@@ -26,7 +26,83 @@ document.addEventListener("DOMContentLoaded", () => {
             documents: "Documentos",
             contactButton: "Contacto",
             moreProjects: "Más proyectos",
-            objectives: "El objetivo de este proyecto es el de desarrollar un agente capaz de dominar las mecánicas de un simple juego de tanques 3D mediante la herramienta de ML-Agent. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin la necesidad de programar comportamientos lógicos manuales o sistemas basados en reglas.\n\nA su vez se pretende investigar como el Self-Play permite la emergencia de estrategias tácticas complejas en el entorno que serían complejas de codificar de manera tradicional. Enfatizando en una IA que evoluciona adaptándose durante el proceso de entrenamiento."
+            btnPdf: "Leer Memoria Técnica (PDF)",
+            heroTagline: "Agente autónomo de combate 3D en Unity entrenado con ML-Agents y PPO.",
+
+            summaryTitle: "Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo",
+            objectivesTitle: "Objetivos del Proyecto",
+            objectivesBody: "El objetivo de este proyecto es el de desarrollar un agente capaz de dominar las mecánicas de un simple juego de tanques 3D mediante la herramienta de ML-Agent. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin la necesidad de programar comportamientos lógicos manuales o sistemas basados en reglas.\n\nA su vez se pretende investigar como el Self-Play permite la emergencia de estrategias tácticas complejas en el entorno que serían complejas de codificar de manera tradicional. Enfatizando en una IA que evoluciona adaptándose durante el proceso de entrenamiento.",
+
+            statStepsLabel: "Environment Steps",
+            statStepsSub: "Pasos de simulación física",
+            statEloLabel: "Peak ELO Rating",
+            statEloSub: "Vs pool histórico de modelos",
+            statRaycastsLabel: "Perception Sensors",
+            statRaycastsSub: "Abanico 3D en tiempo real",
+            statCurriculumLabel: "Curriculum Stages",
+            statCurriculumSub: "Progresión jerárquica",
+
+            sec1Title: "Formulación del Problema y Proceso de Decisión de Markov (POMDP)",
+            sec1Intro: "Para lograr que el agente aprenda sin reglas codificadas a mano, el escenario de combate vehicular se modeló rigurosamente como un Proceso de Decisión de Markov Parcialmente Observable (POMDP) definido por la tupla <S, A, P, R, gamma>:",
+            sec1MdpTitle: "Formulación del Entorno",
+            sec1Mdp1: "Espacio de Estados (S): Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.",
+            sec1Mdp2: "Espacio de Acciones (A): Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).",
+            sec1Mdp3: "Transiciones (P): Dinámica física de tracción en Unity acelerada para entrenamiento masivo.",
+            sec1Mdp4: "Recompensas (R): Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).",
+            sec1OptTitle: "Objetivo de Optimización",
+            sec1OptText: "El agente optimiza una política estocástica parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:",
+
+            sec2Title: "Espacio de Observaciones Vectoriales y Sensores 3D",
+            sec2Intro: "Toda la percepción del entorno proviene de sensores locales sobre el tanque, sin acceder a datos globales o tramposos de la simulación.",
+            tblCol1: "Índice Vector",
+            tblCol2: "Variable Observada",
+            tblCol3: "Tipo / Rango",
+            tblCol4: "Propósito Técnico",
+            tblR1Name: "3D Raycast Perception",
+            tblR1Desc: "Detección en abanico de muros, límites y proyectiles.",
+            tblR2Name: "Velocidad Lineal Local",
+            tblR2Desc: "Inercia cinemática del chasis en ejes locales.",
+            tblR3Name: "Velocidad Angular",
+            tblR3Desc: "Velocidad de rotación al maniobrar el vehículo.",
+            tblR4Name: "Posición Relativa",
+            tblR4Desc: "Distancia y vector de posición hacia el oponente.",
+            tblR5Name: "Alineación Torreta",
+            tblR5Desc: "Diferencial angular entre el cañón y el objetivo.",
+            tblR6Name: "Cooldown de Disparo",
+            tblR6Desc: "Estado de recarga del cañón principal.",
+            tblR7Name: "Salud / Blindaje",
+            tblR7Desc: "Porcentaje de salud restante del vehículo.",
+
+            sec3Title: "Algoritmo PPO y Arquitectura Actor-Critic",
+            sec3MlpTitle: "Red Neuronal Multicapa (MLP)",
+            sec3Mlp1: "Input: Vector normalizado de 27 observaciones.",
+            sec3Mlp2: "Capas Ocultas: 2 capas densas de 256 neuronas cada una.",
+            sec3Mlp3: "Actor: Genera acciones continuas de conducción y decisión discreta de disparo.",
+            sec3Mlp4: "Critic: Estima el valor del estado para calcular ventajas acumuladas.",
+            sec3PpoTitle: "Optimización PPO Clipped",
+            sec3PpoText: "PPO acota las actualizaciones mediante un margen epsilon = 0.2 para garantizar que el entrenamiento no destruya comportamientos útiles previamente consolidados:",
+
+            sec4Title: "Ingeniería de Recompensas (Reward Shaping)",
+            formulaTitle: "Función de Recompensa General",
+
+            sec5Title: "Pipeline de Curriculum Learning (4 Fases)",
+            phase1Btn: "Fase 1: Locomoción",
+            phase2Btn: "Fase 2: Balística",
+            phase3Btn: "Fase 3: Coberturas",
+            phase4Btn: "Fase 4: Duelo Activo",
+
+            sec6Title: "Competitive Self-Play y Ranking ELO",
+            selfplayTitle: "Emergencia de Estrategias con Self-Play",
+            selfplayText: "Al enfrentar al agente contra un 'Model Pool' de sus versiones pasadas, se evita la memorización de patrones rígidos. Esto permite la aparición autónoma de tácticas avanzadas como disparar tras muros (peek-a-boo) y mantener ángulos de evasión.",
+            chartTitle: "Progreso ELO Rating vs Iteraciones",
+            btnReloadChart: "Reanimar",
+
+            sec7Title: "Configuración YAML de Entrenamiento",
+            btnCopyCode: "Copiar YAML",
+
+            ctaTitle: "Descarga la Memoria Técnica Completa (PDF)",
+            ctaText: "Accede al documento académico con todo el desglose gráfico, curvas de pérdida de TensorBoard y anexos de código en C#.",
+            ctaBtn: "Ver Documento PDF Completo →"
         },
         en: {
             home: "Home",
@@ -36,22 +112,97 @@ document.addEventListener("DOMContentLoaded", () => {
             documents: "Documents",
             contactButton: "Contact me",
             moreProjects: "More projects",
-            objectives: "The objective of this project is to develop an agent capable of mastering the mechanics of a simple 3D tank game using the ML-Agents toolkit. The challenge lies in enabling the agent to acquire competitive skills autonomously, without hardcoding logical behaviors or rule-based systems.\n\nFurthermore, it aims to investigate how Self-Play facilitates the emergence of complex tactical strategies that would be difficult to code traditionally, emphasizing an AI that adapts and evolves throughout training."
+            btnPdf: "Read Technical Paper (PDF)",
+            heroTagline: "Engine-native autonomous combat agent built with Unity ML-Agents and PPO.",
+
+            summaryTitle: "3D Autonomous Combat Agent via Deep Reinforcement Learning",
+            objectivesTitle: "Project Objectives",
+            objectivesBody: "The objective of this project is to develop an agent capable of mastering the mechanics of a simple 3D tank game using the ML-Agents toolkit. The challenge lies in enabling the agent to acquire competitive skills autonomously, without hardcoding logical behaviors or rule-based systems.\n\nFurthermore, it aims to investigate how Self-Play facilitates the emergence of complex tactical strategies that would be difficult to code traditionally, emphasizing an AI that adapts and evolves throughout training.",
+
+            statStepsLabel: "Environment Steps",
+            statStepsSub: "Physical simulation steps",
+            statEloLabel: "Peak ELO Rating",
+            statEloSub: "Vs historical model pool",
+            statRaycastsLabel: "Perception Sensors",
+            statRaycastsSub: "Real-time 3D Raycasts",
+            statCurriculumLabel: "Curriculum Stages",
+            statCurriculumSub: "Hierarchical progression",
+
+            sec1Title: "Problem Formulation & Markov Decision Process (POMDP)",
+            sec1Intro: "To enable the agent to learn without manual rules, the vehicular duel was formally modeled as a Partially Observable Markov Decision Process (POMDP) defined by <S, A, P, R, gamma>:",
+            sec1MdpTitle: "Environment Formulation",
+            sec1Mdp1: "State Space (S): Multidimensional continuous representation with local kinematics, Raycasts, and orientation sensors.",
+            sec1Mdp2: "Action Space (A): Hybrid control of 3 continuous actions (drive, steer, turret) and 1 discrete (fire).",
+            sec1Mdp3: "Transitions (P): Physical traction dynamics in Unity accelerated for mass training.",
+            sec1Mdp4: "Rewards (R): Continuous shaping function via Reward Shaping engineering.",
+            sec1OptTitle: "Optimization Objective",
+            sec1OptText: "The agent optimizes a parameterized stochastic policy via a neural network to maximize discounted cumulative return:",
+
+            sec2Title: "Vector Observation Space & 3D Sensors",
+            sec2Intro: "All perception stems strictly from local sensors on the tank, with no access to global or omniscient simulation data.",
+            tblCol1: "Vector Index",
+            tblCol2: "Observed Variable",
+            tblCol3: "Type / Range",
+            tblCol4: "Technical Purpose",
+            tblR1Name: "3D Raycast Perception",
+            tblR1Desc: "Fan array detection of walls, boundaries, and projectiles.",
+            tblR2Name: "Local Linear Velocity",
+            tblR2Desc: "Kinematic inertia of the chassis on local axes.",
+            tblR3Name: "Angular Velocity",
+            tblR3Desc: "Rotational velocity when maneuvering the vehicle.",
+            tblR4Name: "Relative Position",
+            tblR4Desc: "Distance and position vector relative to the opponent.",
+            tblR5Name: "Turret Alignment",
+            tblR5Desc: "Angular differential between cannon and target.",
+            tblR6Name: "Shot Cooldown",
+            tblR6Desc: "Reload state of the main cannon.",
+            tblR7Name: "Health / Armor",
+            tblR7Desc: "Percentage of remaining vehicle health.",
+
+            sec3Title: "PPO Algorithm & Actor-Critic Architecture",
+            sec3MlpTitle: "Multilayer Perceptron (MLP)",
+            sec3Mlp1: "Input: Normalized vector of 27 observations.",
+            sec3Mlp2: "Hidden Layers: 2 dense layers of 256 units each.",
+            sec3Mlp3: "Actor: Outputs continuous driving actions and discrete firing decision.",
+            sec3Mlp4: "Critic: Estimates state value to calculate advantage functions.",
+            sec3PpoTitle: "Clipped PPO Optimization",
+            sec3PpoText: "PPO constrains policy updates within an epsilon = 0.2 margin to ensure training does not destroy previously consolidated behaviors:",
+
+            sec4Title: "Reward Engineering (Reward Shaping)",
+            formulaTitle: "General Reward Function",
+
+            sec5Title: "Progressive Curriculum Learning Pipeline (4 Stages)",
+            phase1Btn: "Stage 1: Locomotion",
+            phase2Btn: "Stage 2: Ballistics",
+            phase3Btn: "Stage 3: Cover",
+            phase4Btn: "Stage 4: Active Duel",
+
+            sec6Title: "Competitive Self-Play & ELO Ranking",
+            selfplayTitle: "Emergence of Strategies with Self-Play",
+            selfplayText: "By matching the agent against a Model Pool of past snapshots, pattern memorization is prevented. This enables the autonomous emergence of advanced tactics like peek-a-boo shooting and evasion angles.",
+            chartTitle: "ELO Rating Progress vs Iterations",
+            btnReloadChart: "Reanimate",
+
+            sec7Title: "YAML Training Configuration",
+            btnCopyCode: "Copy YAML",
+
+            ctaTitle: "Download the Full Technical Paper (PDF)",
+            ctaText: "Access the academic document complete with TensorBoard loss curves, training diagrams, and C# code appendixes.",
+            ctaBtn: "View Full PDF Document →"
         }
     };
 
     function applyLanguage() {
-        const dict = uiTexts[currentLang] || uiTexts.es;
+        const langData = dict[currentLang] || dict.es;
         const langBtn = document.getElementById("language-button");
         if (langBtn) langBtn.textContent = currentLang.toUpperCase();
 
         document.querySelectorAll("[data-i18n]").forEach(el => {
             const key = el.getAttribute("data-i18n");
-            if (dict[key]) el.textContent = dict[key];
+            if (langData[key]) {
+                el.innerText = langData[key];
+            }
         });
-
-        const objText = document.getElementById("project-objectives-text");
-        if (objText) objText.innerText = dict.objectives;
     }
 
     const langBtn = document.getElementById("language-button");
@@ -69,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       2. CURRICULUM LEARNING PESTAÑAS
+       2. PESTAÑAS INTERACTIVAS CURRICULUM LEARNING
        --------------------------------------------------------- */
     let currentCurriculumPhase = "1";
     const curriculumData = {
@@ -160,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       3. GRÁFICO ELO CANVAS
+       3. GRÁFICO ELO EN CANVAS
        --------------------------------------------------------- */
     const canvas = document.getElementById("eloCanvas");
     const reloadBtn = document.getElementById("btn-reload-chart");
@@ -181,7 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
         function drawChart() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Rejilla
             ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
             ctx.lineWidth = 1;
             for (let y = 20; y < canvas.height; y += 35) {
@@ -191,7 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ctx.stroke();
             }
 
-            // Línea PPO
             ctx.strokeStyle = "#00ff88";
             ctx.lineWidth = 2.5;
             ctx.beginPath();
@@ -230,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       4. COPIAR CÓDIGO YAML
+       4. COPIAR YAML
        --------------------------------------------------------- */
     const copyBtn = document.getElementById("btn-copy-code");
     const codeBlock = document.getElementById("code-yaml-block");
@@ -238,9 +387,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (copyBtn && codeBlock) {
         copyBtn.addEventListener("click", () => {
             navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-                copyBtn.textContent = "¡Copiado!";
+                copyBtn.textContent = currentLang === "en" ? "Copied!" : "¡Copiado!";
                 setTimeout(() => {
-                    copyBtn.textContent = "Copiar YAML";
+                    copyBtn.textContent = currentLang === "en" ? "Copy YAML" : "Copiar YAML";
                 }, 2000);
             });
         });
