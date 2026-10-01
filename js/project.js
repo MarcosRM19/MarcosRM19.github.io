@@ -19,7 +19,7 @@ const projects = {
         screenshot2: "img/projects/lyra/screenshot-2.jpg",
         screenshot3: "img/projects/lyra/screenshot-3.jpg",
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
-        itch: "#",
+         itch: "https://la-mapachanda-studio.itch.io/lyra",
 
         en: {
             tagline: "A 3D wholesome puzzle-adventure about two baby dragons, built in Unreal Engine 5.",
