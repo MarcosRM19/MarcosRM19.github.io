@@ -1,12 +1,9 @@
 /* =========================================================
-   MLAGENT.JS - CON ESTRUCTURA DE DICCIONARIO SEPARADA
+   MLAGENT.JS - TRADUCCIÓN COMPLETA DE TAGLINE Y SECCIONES
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ---------------------------------------------------------
-       1. DICCIONARIO DE TRADUCCIÓN (DESAGREGADO)
-       --------------------------------------------------------- */
     let currentLang = "es";
     try {
         const savedLang = localStorage.getItem("preferredLanguage");
@@ -27,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contacto",
             moreProjects: "Más proyectos",
             btnPdf: "Leer Memoria Técnica (PDF)",
-            heroTagline: "Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.",
+            heroTagline: "Agente de combate autónomo nativo del motor desarrollado con Unity ML-Agents y PPO para simulación 3D de tanques.",
 
             summaryTitle: "Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo",
             objectivesTitle: "Objetivos del Proyecto",
@@ -58,11 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1OptTitle: "Objetivo de Optimización",
             sec1OptText: "El agente optimiza una política estocástica parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:",
 
-            sec2Title: "Espacio de Observaciones Vectoriales y Sensores 3D",
-            sec2Intro: "Toda la percepción del entorno proviene de sensores locales sobre el tanque, sin acceder a datos globales o tramposos de la simulación.",
+            sec2Title: "Arquitectura Perceptual y Espacio de Observaciones Vectoriales (27D)",
+            sec2Intro: "El vector de estado St pertenece a R^27 y captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.",
+            diagramTitle: "Diagrama de Sensores 3D Raycast y Canalizado Neural Actor-Critic",
             tblCol1: "Índice Vector",
             tblCol2: "Variable Observada",
-            tblCol3: "Tipo / Rango",
+            tblCol3: "Rango Normalizado",
             tblCol4: "Propósito Técnico",
             tblR1Name: "3D Raycast Perception",
             tblR1Desc: "Detección en abanico de muros, límites y proyectiles.",
@@ -155,11 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1OptTitle: "Optimization Objective",
             sec1OptText: "The agent optimizes a parameterized stochastic policy via a neural network to maximize discounted cumulative return:",
 
-            sec2Title: "Vector Observation Space & 3D Sensors",
-            sec2Intro: "All perception stems strictly from local sensors on the tank, with no access to global or omniscient simulation data.",
+            sec2Title: "Perceptual Architecture & Vector Observation Space (27D)",
+            sec2Intro: "State vector St belongs to R^27 and captures the spatial kinematic information of the vehicle and arena geometry in local coordinates without global variables.",
+            diagramTitle: "3D Raycast Perception Sensor Diagram and Actor-Critic Neural Pipeline",
             tblCol1: "Vector Index",
             tblCol2: "Observed Variable",
-            tblCol3: "Type / Range",
+            tblCol3: "Normalized Range",
             tblCol4: "Technical Purpose",
             tblR1Name: "3D Raycast Perception",
             tblR1Desc: "Fan array detection of walls, boundaries, and projectiles.",
