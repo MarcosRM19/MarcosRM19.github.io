@@ -66,7 +66,8 @@ const projects = {
             ],
             learningTitle: "What I Learned",
             learningText: "Developing Lyra pushed me to bridge complex mathematical concepts with practical AI architecture in Unreal Engine 5. I learned how to build custom locomotion models from scratch rather than relying on stock engine defaults, how to decouple cognitive AI logic from physical execution for modular maintainability, and how to optimize multi-agent spatial queries.",
-            playBtn: "Play on itch.io"
+            playBtn: "Play on itch.io",
+            moreProjectsBtn: "More projects"
         },
 
         es: {
@@ -106,7 +107,8 @@ const projects = {
             ],
             learningTitle: "Lo que aprendí",
             learningText: "Desarrollar Lyra me permitió conectar conceptos matemáticos avanzados con la arquitectura de IA en Unreal Engine 5. Aprendí a construir modelos de locomoción propios en lugar de depender de los componentes por defecto, a desacoplar la mente de la ejecución física para mantener un código limpio y a optimizar consultas espaciales en tiempo real.",
-            playBtn: "Juega en itch.io"
+            playBtn: "Juega en itch.io",
+            moreProjectsBtn: "Más proyectos"
         }
     },
 
@@ -158,7 +160,8 @@ const projects = {
             ],
             learningTitle: "Lo que aprendí",
             learningText: "Desarrollar Juan Pieza me enseñó a conectar la programación de sistemas con la sensibilidad del diseño de niveles. Aprendí a construir mecánicas sistémicas (como el clima dinámico) para generar jugabilidad emergente en juegos multijugador, a balancear encuentros mediante iteración de oleadas, y a estructurar una progresión en la que la introducción de nuevas herramientas se sienta natural y estimulante dentro de un party game.",
-            playBtn: "Juega en itch.io"
+            playBtn: "Juega en itch.io",
+            moreProjectsBtn: "Más proyectos"
         },
 
         en: {
@@ -194,7 +197,8 @@ const projects = {
             ],
             learningTitle: "What I Learned",
             learningText: "Working on Juan Pieza taught me to bridge gameplay programming with level design sensibilities. I learned how to build systemic features like dynamic weather to foster emergent multiplayer moments, balance challenge through iterative wave design, and structure progression so that learning new mechanics feels rewarding and intuitive in a party game setting.",
-            playBtn: "Play on itch.io"
+            playBtn: "Play on itch.io",
+            moreProjectsBtn: "More projects"
         }
     }
 };
@@ -291,11 +295,16 @@ function loadProject() {
         });
     }
 
-    /* BOTÓN DE JUGAR */
+    /* BOTÓN DE JUGAR Y MÁS PROYECTOS (SECCIÓN PRINCIPAL) */
     const playButton = getEl("project-play");
     if (playButton) {
         playButton.href = project.itch;
         playButton.textContent = langData.playBtn;
+    }
+
+    const moreProjectsBtn1 = getEl("more-projects-btn-1");
+    if (moreProjectsBtn1) {
+        moreProjectsBtn1.textContent = langData.moreProjectsBtn;
     }
 
     /* IMÁGENES ZONA 1 */
@@ -367,10 +376,16 @@ function loadProject() {
     const learningText = getEl("learning-text");
     if (learningText) learningText.textContent = langData.learningText || "";
 
+    /* BOTÓN DE JUGAR Y MÁS PROYECTOS (SECCIÓN CONTRIBUCIONES) */
     const contribPlay = getEl("contribution-play");
     if (contribPlay) {
         contribPlay.href = project.itch;
         contribPlay.textContent = langData.playBtn;
+    }
+
+    const moreProjectsBtn2 = getEl("more-projects-btn-2");
+    if (moreProjectsBtn2) {
+        moreProjectsBtn2.textContent = langData.moreProjectsBtn;
     }
 
     setupLightbox();
