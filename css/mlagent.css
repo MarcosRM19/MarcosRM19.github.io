@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - CON HOVER DE BOTÓN PDF EN BLANCO
+   MLAGENT.CSS - SIN GLOW/RESPLANDOR EN HOVER
    ========================================================= */
 
 /* OCULTAR LIGHTBOX PARA EVITAR FLECHAS EN EL FOOTER */
@@ -18,7 +18,7 @@
     display: flex !important;
 }
 
-/* BOTONES CON HOVER EN BLANCO PARA EL BOTÓN SÓLIDO */
+/* BOTONES SIN GLOW NI SHADOWS EN HOVER */
 .project-btn {
     display: inline-flex;
     align-items: center;
@@ -28,9 +28,10 @@
     font-weight: 700;
     font-size: 0.92rem;
     text-decoration: none;
-    transition: all 0.25s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     cursor: pointer;
     border: 1px solid transparent;
+    box-shadow: none !important; /* Eliminado brillo/sombra */
 }
 
 .project-btn-solid {
@@ -39,9 +40,9 @@
 }
 
 .project-btn-solid:hover {
-    background-color: #ffffff !important; /* HOVER CAMBIADO A BLANCO */
+    background-color: #ffffff !important; /* Hover en blanco sin resplandor */
     color: #0b0f17 !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    box-shadow: none !important;
 }
 
 .project-btn-outline {
@@ -53,6 +54,36 @@
 .project-btn-outline:hover {
     border-color: #ffffff !important;
     color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* ESTILOS DEL DIAGRAMA SVG */
+.diagram-card-container {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.diagram-top-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green, #00ff88);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.svg-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tech-svg-diagram {
+    width: 100%;
+    min-width: 650px;
+    height: auto;
 }
 
 /* CONTENEDOR TÉCNICO */
@@ -103,7 +134,6 @@
     height: 6px;
     background: var(--green, #00ff88);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--green, #00ff88);
 }
 
 .tech-pill-tag {
