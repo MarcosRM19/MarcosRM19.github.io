@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - ESTILOS TÉCNICOS CORREGIDOS
+   MLAGENT.CSS - CON HOVER DE BOTÓN PDF EN BLANCO
    ========================================================= */
 
 /* OCULTAR LIGHTBOX PARA EVITAR FLECHAS EN EL FOOTER */
@@ -18,7 +18,7 @@
     display: flex !important;
 }
 
-/* ESTILOS ROBUSTOS PARA BOTONES EN EL CASO DE QUE FALLEN OTRAS HOJAS */
+/* BOTONES CON HOVER EN BLANCO PARA EL BOTÓN SÓLIDO */
 .project-btn {
     display: inline-flex;
     align-items: center;
@@ -39,8 +39,9 @@
 }
 
 .project-btn-solid:hover {
-    background-color: #00cc6a;
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+    background-color: #ffffff !important; /* HOVER CAMBIADO A BLANCO */
+    color: #0b0f17 !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .project-btn-outline {
@@ -50,11 +51,11 @@
 }
 
 .project-btn-outline:hover {
-    border-color: var(--green, #00ff88);
-    color: var(--green, #00ff88) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
 }
 
-/* CONTENEDOR DE ARTÍCULO TÉCNICO */
+/* CONTENEDOR TÉCNICO */
 .tech-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -65,7 +66,7 @@
     padding: 40px 0 80px 0;
 }
 
-/* RESUMEN EJECUTIVO Y OBJETIVOS */
+/* RESUMEN Y OBJETIVOS */
 .tech-summary-box {
     background: rgba(15, 23, 42, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -236,7 +237,6 @@
     margin-bottom: 12px;
 }
 
-/* RESET COMPLETO DE LISTAS */
 .tech-clean-list {
     list-style: none;
     padding: 0;
@@ -255,7 +255,7 @@
     content: none !important;
 }
 
-/* FORMULAS Y TABLAS */
+/* FÓRMULAS Y TABLAS */
 .math-block {
     background: rgba(2, 6, 23, 0.9);
     border-left: 3px solid #38bdf8;
@@ -361,7 +361,7 @@
     padding: 24px;
 }
 
-/* CANVAS Y YAML */
+/* CANVAS Y CODE */
 .chart-card {
     display: flex;
     flex-direction: column;
