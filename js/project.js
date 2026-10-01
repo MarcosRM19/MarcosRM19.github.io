@@ -230,17 +230,20 @@ function loadProject() {
         }
     });
 
-    /* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
-    const contribTitle = document.getElementById("contributions-title") || document.getElementById("project-contributions-title");
-    if (contribTitle) contribTitle.textContent = project.contributionsTitle;
+/* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
+    
+    // Título y descripción de "Mis Contribuciones"
+    const contribTitle = document.getElementById("contributions-title");
+    if (contribTitle) contribTitle.textContent = langData.contributionsTitle;
 
     const contribIntro = document.getElementById("contributions-intro");
-    if (contribIntro) contribIntro.textContent = project.contributionsIntro || "";
+    if (contribIntro) contribIntro.textContent = langData.contributionsIntro || "";
 
+    // Renderizado de los bullet points
     const contribList = document.getElementById("contribution-list");
     if (contribList) {
         contribList.innerHTML = "";
-        project.contributions.forEach(item => {
+        langData.contributions.forEach(item => {
             const li = document.createElement("li");
             li.className = "contrib-item";
             li.innerHTML = `
@@ -251,12 +254,13 @@ function loadProject() {
         });
     }
 
-    const learningTitle = document.getElementById("learning-title") || document.getElementById("project-learning-title");
-    if (learningTitle) learningTitle.textContent = project.learningTitle;
+    // Título y descripción de "Lo que aprendí"
+    const learningTitle = document.getElementById("learning-title");
+    if (learningTitle) learningTitle.textContent = langData.learningTitle;
 
-    const learningText = document.getElementById("learning-text") || document.getElementById("project-learning-text");
+    const learningText = document.getElementById("learning-text");
     if (learningText) {
-        learningText.textContent = project.learningText || "";
+        learningText.textContent = langData.learningText || "";
     }
 
     const contribPlay = document.getElementById("contribution-play");
