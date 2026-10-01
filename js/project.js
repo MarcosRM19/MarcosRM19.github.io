@@ -1,9 +1,17 @@
 /* =========================================================
-   SISTEMA DE IDIOMAS Y DATOS DE PROYECTOS
+   SISTEMA DE IDIOMAS Y DATOS DE PROYECTOS (ROBUSTO)
    ========================================================= */
 
-// Idioma por defecto (lee de localStorage o usa 'es')
-let currentLang = localStorage.getItem("preferredLanguage") || "es";
+// Manejo seguro de localStorage contra bloqueos de navegador
+let currentLang = "es";
+try {
+    const savedLang = localStorage.getItem("preferredLanguage");
+    if (savedLang === "en" || savedLang === "es") {
+        currentLang = savedLang;
+    }
+} catch (e) {
+    console.warn("No se pudo acceder a localStorage:", e);
+}
 
 const projects = {
     lyra: {
@@ -181,7 +189,7 @@ const projects = {
                 },
                 {
                     title: "Progression & Pacing",
-                    text: "Planned the overarching level progression, pacing the introduction of new weapons and weather events to ensure intuitive mechanic learning."
+                    text: "Planned the overarching level progression, pacing the introduction of new weapons and weather hazards to ensure intuitive mechanic learning."
                 }
             ],
             learningTitle: "What I Learned",
@@ -195,12 +203,15 @@ projects["juanpieza"] = projects["juan-pieza"];
 
 function getProjectId() {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("project")) return params.get("project").toLowerCase();
-    if (params.get("id")) return params.get("id").toLowerCase();
+    let id = params.get("project") || params.get("id");
+    if (id) {
+        id = id.toLowerCase();
+        if (id === "juanpieza") id = "juan-pieza";
+        return projects[id] ? id : "lyra";
+    }
 
     const pathName = window.location.pathname;
     let pageName = pathName.split("/").pop().replace(".html", "").toLowerCase();
-    
     if (pageName === "juanpieza") pageName = "juan-pieza";
 
     return projects[pageName] ? pageName : "lyra";
@@ -209,18 +220,14 @@ function getProjectId() {
 function loadProject() {
     const projectId = getProjectId();
     const project = projects[projectId] || projects.lyra;
-    
     const langData = project[currentLang] || project.es;
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* Actualizar el texto del botón según el idioma activo (ES / EN) */
     const langBtn = document.getElementById("language-button");
-    if (langBtn) {
-        langBtn.textContent = currentLang.toUpperCase();
-    }
+    if (langBtn) langBtn.textContent = currentLang.toUpperCase();
 
-    /* 1. HERO VIDEO LOCAL (.mp4) */
+    /* 1. HERO VIDEO */
     const heroContainer = document.querySelector(".hero-video-container");
     if (heroContainer && project.trailerVideo && !heroContainer.querySelector("video")) {
         heroContainer.innerHTML = `
@@ -229,9 +236,7 @@ function loadProject() {
             </video>
         `;
         const heroVideo = heroContainer.querySelector("video");
-        if (heroVideo) {
-            heroVideo.play().catch(e => console.log("Autoplay prevenido:", e));
-        }
+        if (heroVideo) heroVideo.play().catch(e => console.log("Autoplay prevenido:", e));
     }
 
     /* 2. METADATA HERO */
@@ -247,7 +252,7 @@ function loadProject() {
     const itch = document.getElementById("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* 3. MAIN INFORMATION (ZONA 1) */
+    /* 3. MAIN INFORMATION */
     const title = document.getElementById("project-title");
     if (title) title.textContent = project.title;
 
@@ -265,7 +270,7 @@ function loadProject() {
 
     /* TASKS */
     const taskList = document.getElementById("project-tasks");
-    if (taskList) {
+    if (taskList && Array.isArray(langData.tasks)) {
         taskList.innerHTML = "";
         langData.tasks.forEach(task => {
             const li = document.createElement("li");
@@ -294,7 +299,7 @@ function loadProject() {
         infoRight2.alt = `${project.title} screenshot 2`;
     }
 
-    /* 4. TRÁILER ZONA 2 (YOUTUBE INTERACTIVO) */
+    /* 4. TRÁILER YOUTUBE */
     const trailerFacade = document.querySelector(".trailer-facade");
     if (trailerFacade && project.youtubeId && !trailerFacade.querySelector("iframe")) {
         trailerFacade.innerHTML = `
@@ -307,7 +312,7 @@ function loadProject() {
         `;
     }
 
-    /* GALERÍA DE CAPTURAS ZONA 2 */
+    /* GALERÍA DE CAPTURAS */
     const screenshots = [
         ["project-screenshot-1", project.screenshot1],
         ["project-screenshot-2", project.screenshot2],
@@ -323,7 +328,7 @@ function loadProject() {
         }
     });
 
-    /* 5. CONTRIBUTIONS & LEARNING (ZONA 3) */
+    /* 5. CONTRIBUTIONS & LEARNING */
     const contribTitle = document.getElementById("contributions-title");
     if (contribTitle) contribTitle.textContent = langData.contributionsTitle;
 
@@ -331,7 +336,7 @@ function loadProject() {
     if (contribIntro) contribIntro.textContent = langData.contributionsIntro || "";
 
     const contribList = document.getElementById("contribution-list");
-    if (contribList) {
+    if (contribList && Array.isArray(langData.contributions)) {
         contribList.innerHTML = "";
         langData.contributions.forEach(item => {
             const li = document.createElement("li");
@@ -348,9 +353,7 @@ function loadProject() {
     if (learningTitle) learningTitle.textContent = langData.learningTitle;
 
     const learningText = document.getElementById("learning-text");
-    if (learningText) {
-        learningText.textContent = langData.learningText || "";
-    }
+    if (learningText) learningText.textContent = langData.learningText || "";
 
     const contribPlay = document.getElementById("contribution-play");
     if (contribPlay) {
@@ -367,7 +370,11 @@ function setupLanguageToggle() {
 
     langBtn.addEventListener("click", () => {
         currentLang = currentLang === "es" ? "en" : "es";
-        localStorage.setItem("preferredLanguage", currentLang);
+        try {
+            localStorage.setItem("preferredLanguage", currentLang);
+        } catch (e) {
+            console.warn("No se pudo guardar en localStorage:", e);
+        }
         loadProject();
     });
 }
@@ -431,15 +438,21 @@ function setupLightbox() {
         if (e.target === lightbox) closeLightbox();
     };
 
-    document.onkeydown = (e) => {
+    document.addEventListener("keydown", (e) => {
         if (!lightbox.classList.contains("is-open") && !lightbox.classList.contains("active")) return;
         if (e.key === "Escape") closeLightbox();
         if (e.key === "ArrowLeft") showPrev();
         if (e.key === "ArrowRight") showNext();
-    };
+    });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// Inicialización segura sin importar cuándo cargue el script
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+        loadProject();
+        setupLanguageToggle();
+    });
+} else {
     loadProject();
     setupLanguageToggle();
-});
+}
