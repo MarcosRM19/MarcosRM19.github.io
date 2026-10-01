@@ -128,7 +128,7 @@ const projects = {
                 "Diseño y balanceo de las oleadas enemigas para calibrar la dificultad de cada nivel.",
                 "Estructuración de la progresión de niveles y de la introducción gradual de nuevas armas y amenazas climáticas."
             ],
-            contributionsTitle: "Sistemas de Juego, Clima y Level Design",
+            contributionsTitle: "Mis Contribuciones",
             contributionsIntro: "En Juan Pieza combiné la programación de gameplay con el diseño de niveles y el ritmo de progresión, asegurándome de crear una experiencia cooperativa caótica, fluida y divertida.",
             contributions: [
                 {
@@ -164,7 +164,7 @@ const projects = {
                 "Designed and balanced enemy wave spawns across levels to fine-tune the difficulty curve.",
                 "Structured level progression and the gradual rollout of new weapons and weather hazards."
             ],
-            contributionsTitle: "Gameplay Systems, Weather & Level Design",
+            contributionsTitle: "My Contributions",
             contributionsIntro: "In Juan Pieza, I bridged system programming with level design and progression planning, focusing on delivering a seamless, balanced, and chaotic cooperative experience.",
             contributions: [
                 {
