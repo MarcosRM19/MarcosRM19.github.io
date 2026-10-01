@@ -15,15 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 2. DICCIONARIO COMPLETO DE TRADUCCIONES
+    // (Añade aquí las claves de data-i18n que tengas en tu index.html)
     const translations = {
         es: {
-            // Navegación y UI General
+            // Navegación
             home: "Inicio",
             about: "Quién soy",
             experience: "Experiencia",
             projects: "Proyectos",
             documents: "Documentos",
             contactButton: "Contacto",
+
+            // Hero / Presentación (Añade aquí las claves de tu HTML)
+            // heroTitle: "Hola, soy Marcos",
+            // heroSubtitle: "AI Game Programmer",
 
             // Pop-Up de Contacto
             contactTitle: "Contacta conmigo",
@@ -41,13 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
             statusError: "Hubo un error al enviar el mensaje. Inténtalo de nuevo."
         },
         en: {
-            // Navigation and General UI
+            // Navigation
             home: "Home",
             about: "About Me",
             experience: "Experience",
             projects: "Projects",
             documents: "Documents",
             contactButton: "Contact",
+
+            // Hero / Intro
+            // heroTitle: "Hi, I'm Marcos",
+            // heroSubtitle: "AI Game Programmer",
 
             // Contact Pop-Up
             contactTitle: "Contact Me",
@@ -74,29 +83,30 @@ document.addEventListener("DOMContentLoaded", () => {
             console.warn("No se pudo guardar la preferencia en localStorage:", e);
         }
 
+        // Actualizar texto del botón de idioma
         const langBtn = document.getElementById("language-button");
         if (langBtn) {
             langBtn.textContent = currentLang.toUpperCase();
         }
 
-        // Traducir elementos de texto (data-i18n)
+        // 1. Traducir elementos de texto (data-i18n)
         document.querySelectorAll("[data-i18n]").forEach((element) => {
             const key = element.getAttribute("data-i18n");
-            if (translations[currentLang] && translations[currentLang][key]) {
-                element.textContent = translations[currentLang][key];
+            if (translations[currentLang] && translations[currentLang][key] !== undefined) {
+                element.innerHTML = translations[currentLang][key];
             }
         });
 
-        // Traducir placeholders (data-i18n-placeholder)
+        // 2. Traducir placeholders (data-i18n-placeholder)
         document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
             const key = element.getAttribute("data-i18n-placeholder");
-            if (translations[currentLang] && translations[currentLang][key]) {
+            if (translations[currentLang] && translations[currentLang][key] !== undefined) {
                 element.placeholder = translations[currentLang][key];
             }
         });
     }
 
-    // Listener para cambiar de idioma
+    // Listener para el botón de cambio de idioma
     const langBtn = document.getElementById("language-button");
     if (langBtn) {
         langBtn.addEventListener("click", () => {
@@ -105,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Aplicar traducción inicial
+    // Aplicar traducción inicial al cargar la página
     updatePageLanguage();
 
     // 4. LÓGICA DEL MODAL DE CONTACTO
@@ -129,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Abrir modal con los botones asignados
     openContactBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -137,12 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Cerrar modal con el botón X
     if (closeContactBtn) {
         closeContactBtn.addEventListener("click", closeModal);
     }
 
-    // Cerrar modal al hacer clic fuera del contenido
     if (contactModal) {
         contactModal.addEventListener("click", (e) => {
             if (e.target === contactModal) {
@@ -151,19 +158,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Cerrar modal con la tecla Escape
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && contactModal && (contactModal.classList.contains("is-open") || contactModal.classList.contains("active"))) {
             closeModal();
         }
     });
 
-    // 5. ENVÍO DEL FORMULARIO CON FORMSPREE Y RESPUESTA DINÁMICA DE IDIOMA
+    // 5. ENVÍO DEL FORMULARIO CON FORMSPREE Y RESPUESTA DINÁMICA
     if (contactForm) {
         contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            // Copiar email al campo _replyto
             const emailInput = document.getElementById("contact-email");
             const replyInput = document.getElementById("contact-reply");
             if (emailInput && replyInput) {
