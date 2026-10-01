@@ -44,7 +44,7 @@
         </nav>
     </header>
 
-    <!-- HERO (Sin botones ni enlaces) -->
+    <!-- HERO -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -59,7 +59,7 @@
             <div class="title-inner">
                 <h1 id="project-title-hero" class="game-title-hero">Unity AI MachineLearning</h1>
                 <p id="project-tagline" class="title-tagline" data-i18n="heroTagline">
-                    Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.
+                    Agente de combate autónomo nativo del motor desarrollado con Unity ML-Agents y PPO para simulación 3D de tanques.
                 </p>
             </div>
         </section>
@@ -167,24 +167,69 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 02: SENSORES Y TABLA DE VECTORES -->
+                <!-- SECCIÓN 02: DIAGRAMA SVG Y ESPACIO DE OBSERVACIONES DETALLADO -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">02</span>
-                        <h2 data-i18n="sec2Title">Espacio de Observaciones Vectoriales y Sensores 3D</h2>
+                        <h2 data-i18n="sec2Title">Arquitectura Perceptual y Espacio de Observaciones Vectoriales (27D)</h2>
                     </div>
 
                     <p data-i18n="sec2Intro">
-                        Toda la percepción del entorno proviene de sensores locales sobre el tanque, sin acceder a datos globales o tramposos de la simulación.
+                        El vector de estado $S_t \in \mathbb{R}^{27}$ captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.
                     </p>
 
+                    <!-- DIAGRAMA VISUAL SVG EMBEBIDO -->
+                    <div class="diagram-card-container">
+                        <div class="diagram-top-title" data-i18n="diagramTitle">Diagrama de Sensores 3D Raycast y Canalizado Neural Actor-Critic</div>
+                        <div class="svg-wrapper">
+                            <svg viewBox="0 0 800 280" class="tech-svg-diagram">
+                                <rect x="10" y="10" width="780" height="260" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
+                                
+                                <!-- Tanque Agente -->
+                                <g transform="translate(130, 140)">
+                                    <rect x="-35" y="-25" width="70" height="50" rx="6" fill="#1e293b" stroke="#00ff88" stroke-width="2"/>
+                                    <circle cx="0" cy="0" r="15" fill="#00ff88" opacity="0.3" stroke="#00ff88" stroke-width="1.5"/>
+                                    <line x1="0" y1="0" x2="35" y2="0" stroke="#00ff88" stroke-width="4" stroke-linecap="round"/>
+                                    <!-- Rays Fan -->
+                                    <path d="M 0 0 L 140 -60 M 0 0 L 150 -30 M 0 0 L 160 0 M 0 0 L 150 30 M 0 0 L 140 60" stroke="#00ff88" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.8"/>
+                                    <text x="0" y="42" fill="#00ff88" font-size="11" text-anchor="middle" font-weight="bold">Agente PPO (3D Tank)</text>
+                                </g>
+
+                                <!-- Conector Tensor Input -->
+                                <path d="M 290 140 L 340 140" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+                                <!-- Vector Tensor Box -->
+                                <rect x="345" y="60" width="120" height="160" rx="8" fill="#090d16" stroke="#38bdf8" stroke-width="1.5"/>
+                                <text x="405" y="85" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Vector Tensor (27D)</text>
+                                <text x="355" y="110" fill="#cbd5e1" font-size="10">• 15 Raycasts 3D</text>
+                                <text x="355" y="130" fill="#cbd5e1" font-size="10">• Vel Lineal (Vx,Vy,Vz)</text>
+                                <text x="355" y="150" fill="#cbd5e1" font-size="10">• Vel Angular (Wx,Wy,Wz)</text>
+                                <text x="355" y="170" fill="#cbd5e1" font-size="10">• Vector Rel (Dx,Dy,Dz)</text>
+                                <text x="355" y="190" fill="#cbd5e1" font-size="10">• Angle &amp; Reload State</text>
+
+                                <!-- Conector PPO -->
+                                <path d="M 470 140 L 520 140" stroke="#00ff88" stroke-width="2"/>
+
+                                <!-- PPO Net Box -->
+                                <rect x="525" y="60" width="235" height="160" rx="8" fill="#111827" stroke="#00ff88" stroke-width="2"/>
+                                <text x="642" y="88" fill="#ffffff" font-size="13" text-anchor="middle" font-weight="bold">PyTorch PPO Network</text>
+                                <rect x="540" y="105" width="205" height="40" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+                                <text x="642" y="129" fill="#00ff88" font-size="11" text-anchor="middle">Actor: 3 Continuous + 1 Discrete Action</text>
+                                <rect x="540" y="155" width="205" height="40" rx="4" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
+                                <text x="642" y="179" fill="#38bdf8" font-size="11" text-anchor="middle">Critic: State Value Baseline V(s)</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- TABLA COMPLETA CON EJES X, Y, Z Y RANGOS -->
                     <div class="tech-table-wrapper">
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
                                     <th data-i18n="tblCol1">Índice Vector</th>
                                     <th data-i18n="tblCol2">Variable Observada</th>
-                                    <th data-i18n="tblCol3">Tipo / Rango</th>
+                                    <th>Eje / Componente</th>
+                                    <th data-i18n="tblCol3">Rango Normalizado</th>
                                     <th data-i18n="tblCol4">Propósito Técnico</th>
                                 </tr>
                             </thead>
@@ -192,44 +237,125 @@
                                 <tr>
                                     <td><code>[0 - 14]</code></td>
                                     <td><strong data-i18n="tblR1Name">3D Raycast Perception</strong></td>
-                                    <td>Continuo <code>[0.0, 1.0]</code></td>
+                                    <td>Abanico 3D horizontal (XZ)</td>
+                                    <td><code>[0.0, 1.0]</code></td>
                                     <td data-i18n="tblR1Desc">Detección en abanico de muros, límites y proyectiles.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>[15 - 17]</code></td>
-                                    <td><strong data-i18n="tblR2Name">Velocidad Lineal Local</strong></td>
-                                    <td>Continuo <code>[-1.0, 1.0]</code></td>
-                                    <td data-i18n="tblR2Desc">Inercia cinemática del chasis en ejes locales.</td>
+                                    <td><code>[15]</code></td>
+                                    <td><strong>Velocidad Lineal Local $V_x$</strong></td>
+                                    <td>Eje X (Lateral)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Inercia de derrape o desplazamiento lateral.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[16]</code></td>
+                                    <td><strong>Velocidad Lineal Local $V_y$</strong></td>
+                                    <td>Eje Y (Vertical)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Detección de saltos o desniveles de terreno.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[17]</code></td>
+                                    <td><strong>Velocidad Lineal Local $V_z$</strong></td>
+                                    <td>Eje Z (Frontal)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Aceleración y velocidad de avance/retroceso.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[18 - 20]</code></td>
-                                    <td><strong data-i18n="tblR3Name">Velocidad Angular</strong></td>
-                                    <td>Continuo <code>[-1.0, 1.0]</code></td>
+                                    <td><strong data-i18n="tblR3Name">Velocidad Angular $\vec{\omega}$</strong></td>
+                                    <td>Ejes $W_x, W_y, W_z$</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
                                     <td data-i18n="tblR3Desc">Velocidad de rotación al maniobrar el vehículo.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>[21 - 23]</code></td>
-                                    <td><strong data-i18n="tblR4Name">Posición Relativa</strong></td>
-                                    <td>Continuo <code>[-1.0, 1.0]</code></td>
-                                    <td data-i18n="tblR4Desc">Distancia y vector de posición hacia el oponente.</td>
+                                    <td><code>[21]</code></td>
+                                    <td><strong>Posición Relativa $\Delta X$</strong></td>
+                                    <td>Desplazamiento X al enemigo</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Coordenada relativa X normalizada por el diámetro de la arena.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[22]</code></td>
+                                    <td><strong>Posición Relativa $\Delta Y$</strong></td>
+                                    <td>Desplazamiento Y al enemigo</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Diferencia de altura vertical con el objetivo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[23]</code></td>
+                                    <td><strong>Posición Relativa $\Delta Z$</strong></td>
+                                    <td>Desplazamiento Z al enemigo</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Distancia frontal/trasera relativa al oponente.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[24]</code></td>
                                     <td><strong data-i18n="tblR5Name">Alineación Torreta</strong></td>
-                                    <td>Continuo <code>[-1.0, 1.0]</code></td>
+                                    <td>$\cos(\theta_{turret})$</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
                                     <td data-i18n="tblR5Desc">Diferencial angular entre el cañón y el objetivo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[25]</code></td>
                                     <td><strong data-i18n="tblR6Name">Cooldown de Disparo</strong></td>
-                                    <td>Continuo <code>[0.0, 1.0]</code></td>
+                                    <td>Timer $T_{reload}$</td>
+                                    <td><code>[0.0, 1.0]</code></td>
                                     <td data-i18n="tblR6Desc">Estado de recarga del cañón principal.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[26]</code></td>
                                     <td><strong data-i18n="tblR7Name">Salud / Blindaje</strong></td>
-                                    <td>Continuo <code>[0.0, 1.0]</code></td>
+                                    <td>HP / MaxHP</td>
+                                    <td><code>[0.0, 1.0]</code></td>
                                     <td data-i18n="tblR7Desc">Porcentaje de salud restante del vehículo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- TABLA DEL ESPACIO DE ACCIONES -->
+                    <div class="tech-table-wrapper" style="margin-top: 30px;">
+                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Espacio de Acciones Híbrido ($A \in \mathbb{R}^3 \times \{0,1\}$)</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Índice Acción</th>
+                                    <th>Mapeo de Control</th>
+                                    <th>Tipo de Acción</th>
+                                    <th>Rango / Dominio</th>
+                                    <th>Efecto Cinemático en Unity PhysX</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Acción Continuo [0]</code></td>
+                                    <td>Acelerador / Freno</td>
+                                    <td>Continuo (Gaussiano)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Aplica fuerza motriz longitudinal en las orugas.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Acción Continuo [1]</code></td>
+                                    <td>Dirección del Chasis</td>
+                                    <td>Continuo (Gaussiano)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Aplica torque de rotación diferencial sobre el vehículo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Acción Continuo [2]</code></td>
+                                    <td>Giro de Torreta</td>
+                                    <td>Continuo (Gaussiano)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Rotación independiente de la torreta a 180°/s.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Acción Discreta [0]</code></td>
+                                    <td>Gatillo de Cañón</td>
+                                    <td>Discreto (Bernoulli)</td>
+                                    <td><code>{0: Esperar, 1: Disparar}</code></td>
+                                    <td>Instancia un proyectil físico con velocidad inicial $V_0$.</td>
                                 </tr>
                             </tbody>
                         </table>
