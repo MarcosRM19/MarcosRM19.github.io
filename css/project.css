@@ -359,38 +359,18 @@ body {
 }
 
 /* =========================================================
-   ZONA 3 — CONTRIBUTIONS & LEARNING
+   CONTRIBUCIONES Y LO QUE APRENDÍ (FORMATO IMAGEN EXACTO)
    ========================================================= */
 
 .contributions {
-    position: relative;
-    overflow: hidden;
-    padding: 155px 0 150px;
     background: var(--background);
-}
-
-.contributions-inner {
-    position: relative;
-}
-
-.contrib-text {
-    width: 100%;
-    max-width: 900px;
-}
-
-.contrib-text h2,
-.learning-block h2 {
-    margin: 0 0 30px;
-    color: var(--cream);
-    font-size: clamp(2.2rem, 3.8vw, 3.8rem);
-    line-height: 1;
-    letter-spacing: -0.035em;
+    padding: 120px 0 100px;
 }
 
 #contributions-intro {
-    margin-top: 12px;
-    margin-bottom: 35px;
-    color: var(--text);
+    margin-top: 16px;
+    margin-bottom: 40px;
+    color: var(--text-muted);
     font-size: 1.05rem;
     line-height: 1.8;
 }
@@ -398,37 +378,17 @@ body {
 .contribution-list {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 26px;
     margin: 30px 0 0;
-    padding-left: 24px;
+    padding-left: 20px;
     list-style-type: disc;
 }
 
-.contribution-list li {
-    display: list-item;
-    color: var(--text);
-    font-size: 0.96rem;
-    line-height: 1.8;
-    padding-left: 5px;
-}
-
 .contribution-list li::marker {
-    color: #e35335; /* O el color de acento de tu web, ej: var(--green) */
+    color: #e35335; /* Punto naranja/rojo de la captura */
     font-size: 1.1em;
 }
 
-.contribution-title {
-    display: inline;
-    margin-right: 6px;
-    color: var(--cream);
-    font-weight: 700;
-}
-
-.learning-block {
-    width: 100%;
-    max-width: 900px;
-    margin-top: 125px;
-}
 .contrib-item-title {
     color: var(--cream);
     font-weight: 700;
@@ -441,17 +401,36 @@ body {
     font-size: 0.98rem;
     line-height: 1.75;
 }
-.learning-block p {
-    color: var(--text);
-    font-size: 1.05rem;
-    line-height: 1.85;
+
+.contrib-item-text strong {
+    color: var(--cream);
+    font-weight: 700;
 }
 
+.learning-block {
+    margin-top: 60px;
+}
+
+.learning-block h2 {
+    font-size: 2.2rem;
+    color: var(--cream);
+    margin-bottom: 16px;
+}
+
+.learning-block p {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+/* LÍNEA DIVISORIA Y BOTONES */
 .case-cta {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12); /* Línea horizontal sutil */
 }
 
 /* =========================================================
