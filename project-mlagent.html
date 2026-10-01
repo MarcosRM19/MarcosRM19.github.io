@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- 3 Hojas de estilo esenciales -->
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project.css">
     <link rel="stylesheet" href="css/mlagent.css">
@@ -44,7 +44,7 @@
         </nav>
     </header>
 
-    <!-- HERO ORIGINAL (Limpio, con vídeo de fondo y sin imágenes flotantes) -->
+    <!-- HERO (Sin botones ni enlaces) -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -61,12 +61,6 @@
                 <p id="project-tagline" class="title-tagline" data-i18n="heroTagline">
                     Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.
                 </p>
-
-                <div class="store-links">
-                    <a id="project-itch" class="store-link" href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" rel="noopener" aria-label="Ver Memoria Técnica en PDF">
-                        <img src="img/pdf-icon.svg" alt="PDF Icon">
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -74,7 +68,7 @@
         <div class="tech-article-body">
             <div class="tech-container">
 
-                <!-- RESUMEN Y OBJETIVOS EXACTOS -->
+                <!-- RESUMEN Y OBJETIVOS -->
                 <div class="tech-summary-box">
                     <div class="tech-badge-row">
                         <span class="tech-pill-badge"><span class="pulse-dot"></span> Investigación DRL / Mini-TFG</span>
@@ -142,10 +136,22 @@
                         <div class="tech-card">
                             <h3 data-i18n="sec1MdpTitle">Formulación del Entorno</h3>
                             <ul class="tech-clean-list">
-                                <li><strong data-i18n="sec1Mdp1">Espacio de Estados (S):</strong> Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.</li>
-                                <li><strong data-i18n="sec1Mdp2">Espacio de Acciones (A):</strong> Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).</li>
-                                <li><strong data-i18n="sec1Mdp3">Transiciones (P):</strong> Dinámica física de tracción en Unity acelerada para entrenamiento masivo.</li>
-                                <li><strong data-i18n="sec1Mdp4">Recompensas (R):</strong> Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).</li>
+                                <li>
+                                    <strong data-i18n="sec1Mdp1Label">Espacio de Estados (S):</strong> 
+                                    <span data-i18n="sec1Mdp1Desc">Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.</span>
+                                </li>
+                                <li>
+                                    <strong data-i18n="sec1Mdp2Label">Espacio de Acciones (A):</strong> 
+                                    <span data-i18n="sec1Mdp2Desc">Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).</span>
+                                </li>
+                                <li>
+                                    <strong data-i18n="sec1Mdp3Label">Transiciones (P):</strong> 
+                                    <span data-i18n="sec1Mdp3Desc">Dinámica física de tracción en Unity acelerada para entrenamiento masivo.</span>
+                                </li>
+                                <li>
+                                    <strong data-i18n="sec1Mdp4Label">Recompensas (R):</strong> 
+                                    <span data-i18n="sec1Mdp4Desc">Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).</span>
+                                </li>
                             </ul>
                         </div>
 
@@ -241,10 +247,22 @@
                         <div class="tech-card">
                             <h3 data-i18n="sec3MlpTitle">Red Neuronal Multicapa (MLP)</h3>
                             <ul class="tech-clean-list">
-                                <li><strong data-i18n="sec3Mlp1">Input:</strong> Vector normalizado de 27 observaciones.</li>
-                                <li><strong data-i18n="sec3Mlp2">Capas Ocultas:</strong> 2 capas densas de 256 neuronas cada una.</li>
-                                <li><strong data-i18n="sec3Mlp3">Actor:</strong> Genera acciones continuas de conducción y decisión discreta de disparo.</li>
-                                <li><strong data-i18n="sec3Mlp4">Critic:</strong> Estima el valor del estado para calcular ventajas acumuladas.</li>
+                                <li>
+                                    <strong data-i18n="sec3Mlp1Label">Input:</strong> 
+                                    <span data-i18n="sec3Mlp1Desc">Vector normalizado de 27 observaciones.</span>
+                                </li>
+                                <li>
+                                    <strong data-i18n="sec3Mlp2Label">Capas Ocultas:</strong> 
+                                    <span data-i18n="sec3Mlp2Desc">2 capas densas de 256 neuronas cada una.</span>
+                                </li>
+                                <li>
+                                    <strong data-i18n="sec3Mlp3Label">Actor:</strong> 
+                                    <span data-i18n="sec3Mlp3Desc">Genera acciones continuas de conducción y decisión discreta de disparo.</span>
+                                </li>
+                                <li>
+                                    <strong data-i18n="sec3Mlp4Label">Critic:</strong> 
+                                    <span data-i18n="sec3Mlp4Desc">Estima el valor del estado para calcular ventajas acumuladas.</span>
+                                </li>
                             </ul>
                         </div>
 
@@ -378,7 +396,7 @@
 
     </main>
 
-    <!-- LIGHTBOX OCULTO CORRECTAMENTE -->
+    <!-- LIGHTBOX OCULTO -->
     <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
         <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
         <button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
