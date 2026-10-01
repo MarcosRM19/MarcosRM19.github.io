@@ -1652,22 +1652,20 @@
 
         // ==================== LIMPIAR FORMULARIO ====================
 
-        function resetContactForm() {
+function resetContactForm() {
+    contactForm.reset();
+    contactStatus.textContent = "";
+    contactStatus.className = "contact-status";
+    contactSubmit.disabled = false;
 
-            contactForm.reset();
+    // Usamos currentLang de forma segura
+    const lang = (typeof currentLang !== "undefined") ? currentLang : "es";
 
-            contactStatus.textContent = "";
-
-            contactStatus.className = "contact-status";
-
-            contactSubmit.disabled = false;
-
-            contactSubmit.textContent =
-                currentLanguage === "en"
-                    ? "Send message"
-                    : "Enviar mensaje";
-
-        }
+    contactSubmit.textContent =
+        lang === "en"
+            ? "Send message"
+            : "Enviar mensaje";
+}
 
 
         // ==================== CERRAR POPUP ====================
