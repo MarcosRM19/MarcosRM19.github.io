@@ -2,6 +2,59 @@
    MLAGENT.CSS - ESTILOS TÉCNICOS CORREGIDOS
    ========================================================= */
 
+/* OCULTAR LIGHTBOX PARA EVITAR FLECHAS EN EL FOOTER */
+.project-lightbox {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.project-lightbox.is-open,
+.project-lightbox.active {
+    display: flex !important;
+}
+
+/* ESTILOS ROBUSTOS PARA BOTONES EN EL CASO DE QUE FALLEN OTRAS HOJAS */
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.project-btn-solid {
+    background-color: var(--green, #00ff88);
+    color: #0b0f17 !important;
+}
+
+.project-btn-solid:hover {
+    background-color: #00cc6a;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+.project-btn-outline {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+}
+
+.project-btn-outline:hover {
+    border-color: var(--green, #00ff88);
+    color: var(--green, #00ff88) !important;
+}
+
+/* CONTENEDOR DE ARTÍCULO TÉCNICO */
 .tech-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -129,7 +182,7 @@
     flex-wrap: wrap;
 }
 
-/* SECCIONES Y PARÁGRAFOS */
+/* SECCIONES Y TARJETAS */
 .tech-section {
     margin-bottom: 60px;
 }
@@ -183,7 +236,7 @@
     margin-bottom: 12px;
 }
 
-/* LISTAS LIMPIAS (SIN FLECHAS EXTRAÑAS) */
+/* RESET COMPLETO DE LISTAS */
 .tech-clean-list {
     list-style: none;
     padding: 0;
@@ -199,10 +252,10 @@
 }
 
 .tech-clean-list li::before {
-    content: none !important; /* Asegurar que no aparezcan flechas o viñetas heredadas */
+    content: none !important;
 }
 
-/* BLOQUES MATEMÁTICOS Y TABLAS */
+/* FORMULAS Y TABLAS */
 .math-block {
     background: rgba(2, 6, 23, 0.9);
     border-left: 3px solid #38bdf8;
@@ -274,7 +327,7 @@
     color: #38bdf8;
 }
 
-/* CURRICULUM PESTAÑAS Y BOTONES */
+/* CURRICULUM PESTAÑAS */
 .interactive-curriculum-box {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -301,14 +354,14 @@
 
 .curr-tab-btn.active {
     background: var(--green, #00ff88);
-    color: #0b0f17;
+    color: #0b0f17 !important;
 }
 
 .curriculum-panel {
     padding: 24px;
 }
 
-/* GRÁFICO CANVAS ELO */
+/* CANVAS Y YAML */
 .chart-card {
     display: flex;
     flex-direction: column;
@@ -337,7 +390,6 @@
     height: 100%;
 }
 
-/* CÓDIGO YAML Y CTA FINAL */
 .tech-code-box {
     background: #020617;
     border: 1px solid rgba(255, 255, 255, 0.08);
