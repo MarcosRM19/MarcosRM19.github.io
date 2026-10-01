@@ -581,6 +581,63 @@ body {
         margin-top: 95px;
     }
 }
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: #0b0c10; /* Ajusta a tu color de fondo primario */
+    color: #c5c6c7;
+    padding: 3rem 2rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-brand .footer-logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: #8892b0;
+    margin-top: 0.25rem;
+}
+
+.footer-nav, .footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-nav a, .footer-socials a, .footer-back-to-top a {
+    color: #a8b2d1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover, .footer-socials a:hover, .footer-back-to-top a:hover {
+    color: #64ffda; /* Tu color de acento */
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #8892b0;
+}
 
 @media (max-width: 600px) {
     .title-hero {
