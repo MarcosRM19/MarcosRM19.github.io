@@ -1,371 +1,270 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity AI Machine Learning | Technical Showcase</title>
-    
-    <!-- Fuentes Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS Principal del sitio y CSS Dedicado para MLAgent -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mlagent.css">
-</head>
-<body class="mlagent-page">
+    <title id="page-title">Unity AI MachineLearning | MarcosRuiz Portfolio</title>
 
-    <!-- NAVBAR (Mantenida intacta) -->
-    <header class="navbar">
-        <nav class="nav-container">
-            <a href="index.html" class="nav-logo">PORTFOLIO</a>
-            <ul class="nav-links">
-                <li><a href="index.html#projects">Proyectos</a></li>
-                <li><a href="index.html#about">Sobre mí</a></li>
-                <li><a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="nav-highlight">PDF TFG</a></li>
-            </ul>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR ORIGINAL
+         ===================================================== -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html#inicio" class="logo" id="logo">
+                MarcosRuiz Portfolio
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#inicio" id="nav-home" data-i18n="home">Inicio</a>
+                <a href="index.html#sobre-mi" id="nav-about" data-i18n="about">Quién soy</a>
+                <a href="index.html#experience" id="nav-experience" data-i18n="experience">Experiencia</a>
+                <a href="index.html#proyectos" id="nav-projects" data-i18n="projects">Proyectos</a>
+                <a href="index.html#documentos" id="nav-documents" data-i18n="documents">Documentos</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="language-button" type="button">EN</button>
+                <a href="index.html#contacto" class="contact-button" id="contact-button" data-i18n="contactButton">
+                    Contact me
+                </a>
+            </div>
         </nav>
     </header>
 
-    <!-- HÉROE DEL PROYECTO TÉCNICO -->
-    <section class="ml-hero">
-        <div class="ml-hero-bg"></div>
-        <div class="ml-container">
-            <div class="ml-badge-wrapper">
-                <span class="ml-badge"><span class="ml-badge-dot"></span> Proyecto de Investigación DRL</span>
-                <span class="ml-tag">Unity ML-Agents v2.0</span>
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         ===================================================== -->
+    <main id="project-content">
+
+        <!-- HERO INICIAL TIPO PROYECTO ORIGINAL -->
+        <section class="title-hero">
+            <div class="hero-video-container">
+                <video autoplay loop muted playsinline id="hero-mp4-video">
+                    <source src="vid/Tank.mp4" type="video/mp4">
+                </video>
             </div>
 
-            <h1 class="ml-hero-title">Autonomous Combat Agent <br><span class="gradient-text">Deep Reinforcement Learning</span></h1>
-            
-            <p class="ml-hero-description">
-                Agente autónomo de combate 3D en Unity entrenado mediante <strong>Proximal Policy Optimization (PPO)</strong>, 
-                curriculum learning interactivo de 4 fases y un ecosistema competitivo de <strong>Self-Play</strong> con evaluación ELO.
-            </p>
+            <div class="title-veil"></div>
 
-            <!-- METADATOS TÉCNICOS EN GRID -->
-            <div class="ml-meta-grid">
-                <div class="ml-meta-card">
-                    <span class="ml-meta-label">Desarrollador &amp; Rol</span>
-                    <span class="ml-meta-value">Marcos Ruiz (Designer & Programmer)</span>
-                </div>
-                <div class="ml-meta-card">
-                    <span class="ml-meta-label">Algoritmo / Core</span>
-                    <span class="ml-meta-value">PPO (Actor-Critic Architecture)</span>
-                </div>
-                <div class="ml-meta-card">
-                    <span class="ml-meta-label">Tecnologías</span>
-                    <span class="ml-meta-value">Unity, C#, PyTorch, TensorBoard</span>
-                </div>
-                <div class="ml-meta-card">
-                    <span class="ml-meta-label">Entrenamiento Total</span>
-                    <span class="ml-meta-value">5.0M Environment Steps</span>
+            <div class="title-inner">
+                <h1 id="project-title-hero" class="game-title-hero">Unity AI MachineLearning</h1>
+                <p id="project-tagline" class="title-tagline">
+                    Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.
+                </p>
+
+                <div class="store-links">
+                    <a id="project-itch" class="store-link" href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" rel="noopener" aria-label="Ver Memoria Técnica en PDF">
+                        <img src="img/pdf-icon.svg" alt="PDF Icon">
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <div class="ml-hero-actions">
-                <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="ml-btn ml-btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    Descargar Memoria Técnica (PDF)
-                </a>
-                <a href="#architecture" class="ml-btn ml-btn-secondary">Explorar Arquitectura &darr;</a>
-            </div>
-        </div>
-    </section>
+        <!-- PRIMERA PARTE: INFO + IMÁGENES DE GALERÍA -->
+        <section class="project-hero-v2">
+            <div class="project-wrap-wide">
+                <div class="ph-grid">
 
-    <!-- NAVEGACIÓN RÁPIDA PEGAJOSA (STICKY JUMP NAV) -->
-    <div class="ml-sticky-nav">
-        <div class="ml-container">
-            <ul class="ml-jump-links">
-                <li><a href="#overview" class="active">Visión General</a></li>
-                <li><a href="#architecture">Arquitectura & Sensorica</a></li>
-                <li><a href="#curriculum">Curriculum Learning</a></li>
-                <li><a href="#rewards">Reward Shaping</a></li>
-                <li><a href="#selfplay">Self-Play & ELO</a></li>
-                <li><a href="#hyperparameters">Hiperparámetros</a></li>
-            </ul>
-        </div>
-    </div>
+                    <div class="ph-intro">
+                        <span id="project-category" class="eyebrow">AI & GAMEPLAY PROGRAMMER</span>
+                        <h1 id="project-title">Unity AI MachineLearning</h1>
+                        <p id="project-years" class="project-years">2025 — 2026</p>
+                        <p id="project-description" class="project-lede">
+                            Investigación y desarrollo de un agente de combate autónomo en un entorno de simulación física 3D en Unity utilizando aprendizaje por refuerzo profundo (Deep Reinforcement Learning). El proyecto prescinde de arquitecturas tradicionales como Máquinas de Estados Finitos (FSM) o Behavior Trees, haciendo uso del algoritmo Proximal Policy Optimization (PPO), Curriculum Learning progresivo de 4 fases y un sistema competitivo de Self-Play.
+                        </p>
+                        <p id="project-role" class="project-lede">
+                            <strong>Rol:</strong> Responsable único del diseño del entorno de simulación, codificación de observaciones vectoriales C#, ingeniería de recompensas (Reward Shaping), pipeline de Curriculum Learning y entrenamiento supervisado mediante TensorBoard.
+                        </p>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="ml-main-content">
-        <div class="ml-container">
+                        <h3 id="project-task-title" class="task-heading">RESUMEN TÉCNICO Y OBJETIVOS</h3>
+                        <ul id="project-tasks" class="task-list">
+                            <li>Diseño de un Espacio de Observaciones Vectorial 3D combinando 15 Raycasts de percepción y sensores de orientación/velocidad.</li>
+                            <li>Construcción de un Espacio de Acciones Híbrido (3 salidas continuas para física y 1 discreta para disparo).</li>
+                            <li>Formulación de la función de recompensa equilibrando incentivos densos (alineación de torreta) y dispersos (destrucción de objetivo).</li>
+                            <li>Diseño de un pipeline de Curriculum Learning en 4 fases para evitar mínimos locales y acelerar la convergencia.</li>
+                            <li>Implementación de Competitive Self-Play con pool de modelos históricos y evaluación de rendimiento mediante el sistema ELO.</li>
+                        </ul>
 
-            <!-- SECCIÓN 1: OVERVIEW -->
-            <section id="overview" class="ml-section">
-                <div class="ml-section-header">
-                    <h2>01. Objetivos del Proyecto & Contexto</h2>
-                    <p class="ml-section-sub">Superando las limitaciones de la IA convencional basada en reglas (FSM / Behavior Trees).</p>
+                        <div class="project-actions">
+                            <a id="project-play" class="project-btn project-btn-solid" href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" rel="noopener">
+                                Leer Memoria Técnica (PDF)
+                            </a>
+                            <a id="more-projects-btn-1" class="project-btn project-btn-outline" href="index.html#proyectos" data-i18n="moreProjects">
+                                Más proyectos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ph-shots">
+                        <button class="ph-shot" type="button" data-project-image="info-right-1">
+                            <img id="project-info-right-1" src="img/projects/tank/info-right-1.jpg" alt="MLAgent Screenshot 1" loading="lazy">
+                        </button>
+                        <button class="ph-shot" type="button" data-project-image="info-right-2">
+                            <img id="project-info-right-2" src="img/projects/tank/info-right-2.jpg" alt="MLAgent Screenshot 2" loading="lazy">
+                        </button>
+                    </div>
+
                 </div>
+            </div>
+        </section>
 
-                <div class="ml-grid-2">
-                    <div class="ml-card">
-                        <h3>El Desafío</h3>
-                        <p>
-                            Las IAs de combate tradicionales en videojuegos sufren de comportamientos predecibles y poco adaptativos. Este proyecto personal explora la creación de un vehículo de combate autónomo capaz de aprender tácticas complejas de navegación, apuntado balístico y cobertura sin ser programado explícitamente mediante código heurístico.
+        <!-- SECCIÓN DE DEMOSTRACIÓN Y GALERÍA -->
+        <section class="trailer-gallery">
+            <div class="project-wrap-wide">
+                <div class="tg-grid">
+
+                    <button class="trailer-facade" type="button" data-project-image="trailer">
+                        <img id="project-trailer-image" src="img/projects/tank/hero.jpg" alt="Demo de combate Tank AI" loading="lazy">
+                        <span class="play-badge"></span>
+                        <span class="tg-label" id="trailer-label">Ver Galería de Simulación</span>
+                    </button>
+
+                    <div class="tg-gallery">
+                        <button class="tg-shot" type="button" data-project-image="screenshot-1">
+                            <img id="project-screenshot-1" src="img/projects/tank/screenshot-1.jpg" alt="Curriculum Phase 1" loading="lazy">
+                        </button>
+                        <button class="tg-shot" type="button" data-project-image="screenshot-2">
+                            <img id="project-screenshot-2" src="img/projects/tank/screenshot-2.jpg" alt="Curriculum Phase 2" loading="lazy">
+                        </button>
+                        <button class="tg-shot" type="button" data-project-image="screenshot-3">
+                            <img id="project-screenshot-3" src="img/projects/tank/screenshot-3.jpg" alt="Curriculum Phase 3" loading="lazy">
+                        </button>
+                        <button class="tg-shot" type="button" data-project-image="screenshot-4">
+                            <img id="project-screenshot-4" src="img/projects/tank/screenshot-4.jpg" alt="Self-Play ELO Arena" loading="lazy">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN EXTREMADAMENTE DETALLADA BASADA EN LA MEMORIA DE 40 PÁGINAS -->
+        <section class="contributions">
+            <div class="project-wrap">
+                <div class="contributions-inner">
+
+                    <h2 id="contributions-title">Desglose Técnico Extenso del Trabajo de Investigación</h2>
+                    <p id="contributions-intro">
+                        El proyecto profundiza en cómo entrenar agentes autónomos complejos dentro de motores de juego modernos sin depender de scripts rígidos. A continuación se desglosan las contribuciones algorítmicas y de arquitectura desarrolladas en la memoria:
+                    </p>
+
+                    <ul id="contribution-list" class="contribution-list">
+                        
+                        <li class="contrib-item">
+                            <div class="contrib-item-title">1. Arquitectura del Agente, Sensores y Espacios de Entrada/Salida</div>
+                            <div class="contrib-item-text">
+                                Se diseñó una representación vectorial eficiente para alimentar la red neuronal Actor-Critic en PyTorch. El vector de observaciones incluye 15 Raycasts 3D en abanico para percepción de obstáculos y proyectiles enemigos, vectores de velocidad lineal y angular del chasis, distancia euclídea normalizada al oponente, diferencia angular entre el frontal de la torreta y la posición enemiga, cooldown del cañón y nivel de blindaje actual. Las salidas son híbridas: 3 acciones continuas (fuerza de tracción longitudinal, velocidad de giro del chasis y rotación independiente de la torreta) y 1 acción discreta binaria encargada de accionar el disparo.
+                            </div>
+                        </li>
+
+                        <li class="contrib-item">
+                            <div class="contrib-item-title">2. Ingeniería de Recompensas (Reward Shaping Matemático)</div>
+                            <div class="contrib-item-text">
+                                Para guiar el aprendizaje en las fases iniciales y evitar comportamientos indeseados (como girar sobre sí mismo indefinidamente o hacer 'spam' de disparos), se formuló una función de recompensa continua y equilibrada:
+                                <br><br>
+                                <code>R_total = R_hit (+1.0) + R_align (+0.05 * cos(theta)) - R_time (-0.001/step) - R_wall (-0.25) - R_miss (-0.05)</code>
+                                <br><br>
+                                Las recompensas densas (alineación de torreta con el objetivo) guían al agente antes de conseguir sus primeros impactos, mientras que las recompensas dispersas (+1.0 por impacto directo y victoria) dictan la prioridad estratégica final.
+                            </div>
+                        </li>
+
+                        <li class="contrib-item">
+                            <div class="contrib-item-title">3. Pipeline de Curriculum Learning Progresivo (4 Fases)</div>
+                            <div class="contrib-item-text">
+                                Se estructuró un pipeline jerárquico de entrenamiento guiado para acelerar la convergencia y evitar mínimos locales:
+                                <br>
+                                • <strong>Fase 01 (Navegación Básica):</strong> Escenario diáfano con un objetivo estático para enseñar aceleración, frenado y alineación.
+                                <br>
+                                • <strong>Fase 02 (Apuntado y Tiempo de Vuelo):</strong> Objetivo en movimiento no hostil. El agente aprende a predecir la trayectoria enemiga e interceptar con el proyectil.
+                                <br>
+                                • <strong>Fase 03 (Obstáculos y Cobertura Dinámica):</strong> Inclusión de muros opacos. El agente aprende a utilizar Raycasts para rodear paredes y buscar líneas de visión limpias.
+                                <br>
+                                • <strong>Fase 04 (Combate Completo y Duelo):</strong> Enfrentamiento directo con un oponente activo con capacidad de disparo libre.
+                            </div>
+                        </li>
+
+                        <li class="contrib-item">
+                            <div class="contrib-item-title">4. Competitive Self-Play y Evaluación ELO</div>
+                            <div class="contrib-item-text">
+                                En la etapa final se implementó un sistema de Self-Play para evitar que el agente memorice patrones de un bot heurístico fijo. La red entrena contra versiones anteriores de sí misma guardadas en un 'Model Pool' histórico. Se configuró una tasa de actualización del 50% contra la versión más reciente y un 50% contra oponentes aleatorios del histórico. El rendimiento se monitoreó mediante una métrica de ELO Rating, alcanzando una puntuación final de 1820 puntos tras 5 millones de pasos de simulación.
+                            </div>
+                        </li>
+
+                        <li class="contrib-item">
+                            <div class="contrib-item-title">5. Configuración de Hiperparámetros y Monitoreo con TensorBoard</div>
+                            <div class="contrib-item-text">
+                                La configuración del archivo YAML en Unity ML-Agents se ajustó minuciosamente: <code>batch_size: 2048</code>, <code>buffer_size: 20480</code>, <code>learning_rate: 0.0003</code> con decay lineal, <code>entropy_beta: 0.005</code> para fomentar la exploración inicial, y <code>clip_epsilon: 0.2</code> para estabilizar las actualizaciones de la política PPO. Se analizaron las curvas de 'Policy Loss', 'Value Loss' y 'Entropy' en TensorBoard para asegurar que la red no colapsara en sobreajuste.
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <div class="learning-block">
+                        <h2 id="learning-title">Lo que aprendí</h2>
+                        <p id="learning-text">
+                            Desarrollar este estudio técnico me permitió conectar la teoría del Aprendizaje por Refuerzo Profundo con la simulación física en tiempo real dentro de Unity. Aprendí la importancia crítica de la formulación de recompensas (Reward Shaping) para evitar comportamientos degenerados, cómo utilizar Curriculum Learning para acelerar el entrenamiento de políticas complejas, y cómo estructurar ecosistemas competitivos mediante Self-Play para lograr que emerjan tácticas de combate orgánicas e impredecibles sin necesidad de programarlas línea a línea en C#.
                         </p>
                     </div>
-                    <div class="ml-card">
-                        <h3>La Solución</h3>
-                        <p>
-                            Implementación de aprendizaje por refuerzo profundo (DRL) utilizando el toolkit <strong>Unity ML-Agents</strong>. La combinación de percepción vectorial en tiempo real, un diseño cuidadoso de recompensas y un entrenamiento jerárquico permite la emergencia de tácticas de combate avanzadas como el uso dinámico de coberturas y la predicción de tiro.
-                        </p>
-                    </div>
-                </div>
-            </section>
 
-            <!-- SECCIÓN 2: ARQUITECTURA -->
-            <section id="architecture" class="ml-section">
-                <div class="ml-section-header">
-                    <h2>02. Arquitectura del Agente y Espacios</h2>
-                    <p class="ml-section-sub">Definición de entradas sensoriales, procesamiento interno y salidas de control.</p>
-                </div>
-
-                <!-- DIAGRAMA INTERACTIVO SVG DE ARQUITECTURA -->
-                <div class="ml-diagram-card">
-                    <div class="ml-diagram-header">
-                        <span class="ml-diagram-title">Diagrama del Sistema Perceptual y Acciones</span>
-                        <div class="ml-status-dot"><span class="pulse"></span> Interactivo</div>
+                    <div class="case-cta">
+                        <a id="contribution-play" class="project-btn project-btn-solid" href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" rel="noopener">
+                            Descargar Memoria Técnica (PDF)
+                        </a>
+                        <a class="project-btn project-btn-outline" href="index.html#proyectos" data-i18n="moreProjects">
+                            Más proyectos
+                        </a>
                     </div>
 
-                    <div class="ml-architecture-interactive">
-                        <div class="arch-box arch-input" data-target="info-observations">
-                            <h4>Entradas (Observaciones)</h4>
-                            <p>3D Raycasts + Vectores Continuos</p>
-                        </div>
-                        <div class="arch-arrow">&rarr;</div>
-                        <div class="arch-box arch-core" data-target="info-ppo">
-                            <h4>Red Neuronal (PPO)</h4>
-                            <p>Actor-Critic (2 Layer MLP / 256 Units)</p>
-                        </div>
-                        <div class="arch-arrow">&rarr;</div>
-                        <div class="arch-box arch-output" data-target="info-actions">
-                            <h4>Salidas (Acciones)</h4>
-                            <p>Híbridas: Continuas + Discretas</p>
-                        </div>
-                    </div>
-
-                    <div id="arch-detail-display" class="ml-detail-panel">
-                        <h4 id="arch-panel-title">Haga clic o pase el cursor sobre un módulo para inspeccionar sus especificaciones.</h4>
-                        <p id="arch-panel-desc">El agente procesa datos sensoriales del entorno en cada paso de simulación (FixedUpdate).</p>
-                    </div>
                 </div>
-
-                <div class="ml-grid-2">
-                    <div class="ml-card">
-                        <h3>Espacio de Observaciones (Input Vector)</h3>
-                        <ul class="ml-tech-list">
-                            <li><strong>Raycast Perception 3D:</strong> 15 Rayos dirigidos en abanico frontal y lateral para detección de obstáculos y proyectiles enemigos.</li>
-                            <li><strong>Posición y Vel. Relativa:</strong> Coordenadas locales normalizadas respecto al objetivo.</li>
-                            <li><strong>Orientación de Torreta / Chasis:</strong> Ángulo diferencial de apuntado ($\Delta\theta$).</li>
-                            <li><strong>Estado Interno:</strong> Cooldown de disparo (0 a 1) y nivel de blindaje/salud.</li>
-                        </ul>
-                    </div>
-                    <div class="ml-card">
-                        <h3>Espacio de Acciones (Action Vector)</h3>
-                        <ul class="ml-tech-list">
-                            <li><strong>Acción Continua 0:</strong> Tracción Longitudinal (Avance / Reversa [-1, 1]).</li>
-                            <li><strong>Acción Continua 1:</strong> Rotación del Chasis (Giro [-1, 1]).</li>
-                            <li><strong>Acción Continua 2:</strong> Rotación Independiente de la Torreta [-1, 1].</li>
-                            <li><strong>Acción Discreta 0:</strong> Disparo de cañón principal [0: No disparar, 1: Disparar].</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 3: CURRICULUM LEARNING -->
-            <section id="curriculum" class="ml-section">
-                <div class="ml-section-header">
-                    <h2>03. Pipeline de Curriculum Learning (4 Fases)</h2>
-                    <p class="ml-section-sub">Evolución progresiva de la complejidad del entorno para evitar el colapso de la política.</p>
-                </div>
-
-                <!-- SELECTOR DE FASES INTERACTIVO POR JS -->
-                <div class="ml-curriculum-container">
-                    <div class="ml-pipeline-nav">
-                        <button class="ml-stage-btn active" data-stage="1">
-                            <span class="stage-num">01</span>
-                            <span class="stage-name">Navegación</span>
-                        </button>
-                        <button class="ml-stage-btn" data-stage="2">
-                            <span class="stage-num">02</span>
-                            <span class="stage-name">Apuntado</span>
-                        </button>
-                        <button class="ml-stage-btn" data-stage="3">
-                            <span class="stage-num">03</span>
-                            <span class="stage-name">Cobertura</span>
-                        </button>
-                        <button class="ml-stage-btn" data-stage="4">
-                            <span class="stage-num">04</span>
-                            <span class="stage-name">Duelo Activo</span>
-                        </button>
-                    </div>
-
-                    <div class="ml-stage-viewer">
-                        <div id="stage-content-display">
-                            <!-- JS cargará dinámicamente la información de la etapa activa -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 4: REWARD SHAPING -->
-            <section id="rewards" class="ml-section">
-                <div class="ml-section-header">
-                    <h2>04. Función de Recompensa y Reward Shaping</h2>
-                    <p class="ml-section-sub">Modelado matemático para promover comportamientos eficientes y prevenir mínimos locales.</p>
-                </div>
-
-                <div class="ml-math-container">
-                    <div class="ml-math-equation">
-                        R_{\text{total}} = R_{\text{impacto}} + \alpha \cdot R_{\text{alineación}} - \beta \cdot \Delta t - \gamma \cdot R_{\text{colisión}} - \delta \cdot R_{\text{fallo}}
-                    </div>
-                </div>
-
-                <div class="ml-table-wrapper">
-                    <table class="ml-custom-table">
-                        <thead>
-                            <tr>
-                                <th>Componente</th>
-                                <th>Tipo</th>
-                                <th>Valor / Ecuación</th>
-                                <th>Propósito Estratégico</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="ml-tag-green">Hit Target</span></td>
-                                <td>Dispersa (Sparse)</td>
-                                <td><code>+1.00</code></td>
-                                <td>Incentivo primario: Impactar al oponente.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="ml-tag-green">Turret Alignment</span></td>
-                                <td>Densa (Dense)</td>
-                                <td><code>+0.05 * cos(&theta;)</code></td>
-                                <td>Guía el apuntado antes de tener precisión de disparo.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="ml-tag-red">Time Penalty</span></td>
-                                <td>Densa (Dense)</td>
-                                <td><code>-0.001 / step</code></td>
-                                <td>Evita pasividad y fuerza la resolución rápida del combate.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="ml-tag-red">Miss Shot</span></td>
-                                <td>Dispersa (Sparse)</td>
-                                <td><code>-0.05</code></td>
-                                <td>Penaliza el desperdicio de munición e incentiva ráfagas controladas.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="ml-tag-red">Wall Collision</span></td>
-                                <td>Dispersa (Sparse)</td>
-                                <td><code>-0.25</code></td>
-                                <td>Desincentiva encallarse contra la geometría de la arena.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 5: SELF-PLAY Y GRÁFICO ELO -->
-            <section id="selfplay" class="ml-section">
-                <div class="ml-section-header">
-                    <h2>05. Evaluación con Self-Play y Métricas ELO</h2>
-                    <p class="ml-section-sub">Entrenamiento competitivo iterativo mediante pool de versiones históricas del agente.</p>
-                </div>
-
-                <div class="ml-grid-2">
-                    <div class="ml-card">
-                        <h3>Mecanismo de Self-Play</h3>
-                        <p>
-                            Al alcanzar la Fase 4 del curriculum, el agente ya no entrena contra bots heurísticos predecibles. En su lugar, el entorno de Unity clona la política actual y la enfrenta contra versiones pasadas guardadas en un <strong>Model Pool</strong>.
-                        </p>
-                        <ul class="ml-tech-list" style="margin-top: 15px;">
-                            <li><strong>Probabilidad de oponente:</strong> 50% vs versión más reciente, 50% vs oponente histórico aleatorio.</li>
-                            <li><strong>Prevención de olvido:</strong> Garantiza que la política no se vuelva vulnerable a tácticas simples descartadas anteriormente.</li>
-                        </ul>
-                    </div>
-
-                    <!-- GRÁFICO TENSORBOARD DIBUJADO DINÁMICAMENTE POR JS EN CANVAS -->
-                    <div class="ml-card ml-chart-card">
-                        <div class="ml-chart-header">
-                            <h4>Curva de Aprendizaje ELO (TensorBoard)</h4>
-                            <button id="reset-chart-btn" class="ml-small-btn">Reiniciar Animación</button>
-                        </div>
-                        <div class="ml-canvas-container">
-                            <canvas id="eloChartCanvas" width="500" height="260"></canvas>
-                        </div>
-                        <div class="ml-chart-legend">
-                            <span class="legend-item"><span class="legend-color green"></span> Agente PPO (Propuesto)</span>
-                            <span class="legend-item"><span class="legend-color gray"></span> Bot Heurístico Base</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECCIÓN 6: HIPERPARÁMETROS Y CÓDIGO -->
-            <section id="hyperparameters" class="ml-section">
-                <div class="ml-section-header">
-                    <h2>06. Configuración de Hiperparámetros (YAML)</h2>
-                    <p class="ml-section-sub">Configuración exacta del trainer en Unity ML-Agents para reproducibilidad.</p>
-                </div>
-
-                <div class="ml-code-wrapper">
-                    <div class="ml-code-header">
-                        <span>trainer_config.yaml</span>
-                        <button id="copy-code-btn" class="ml-copy-btn">Copiar Código</button>
-                    </div>
-                    <pre><code id="yaml-code-block" class="language-yaml">behaviors:
-  TankAgent:
-    trainer_type: ppo
-    hyperparameters:
-      batch_size: 2048
-      buffer_size: 20480
-      learning_rate: 0.0003
-      beta: 0.005
-      epsilon: 0.2
-      lambd: 0.95
-      num_epoch: 3
-      learning_rate_schedule: linear
-    network_settings:
-      normalize: true
-      hidden_units: 256
-      num_layers: 2
-      vis_encode_type: simple
-    reward_signals:
-      extrinsic:
-        gamma: 0.99
-        strength: 1.0
-    self_play:
-      save_steps: 50000
-      team_change: 200000
-      swap_steps: 2000
-      window: 10</code></pre>
-                </div>
-            </section>
-
-            <!-- FOOTER DE DESCARGA FINAL -->
-            <div class="ml-cta-box">
-                <h2>¿Quieres profundizar en los detalles matemáticos e implementación?</h2>
-                <p>La memoria técnica completa del proyecto abarca el análisis detallado de curvas de convergencia, código C# e investigación teórica.</p>
-                <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="ml-btn ml-btn-primary">
-                    Ver Proyecto Completo en PDF &rarr;
-                </a>
             </div>
+        </section>
 
-        </div>
     </main>
 
-    <!-- FOOTER (Mantenido intacto) -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2026 Marcos Ruiz - Game Designer &amp; Programmer</p>
+    <!-- LIGHTBOX ORIGINAL -->
+    <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+        <button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
+
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <p id="lightbox-caption"></p>
         </div>
+
+        <button class="lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
+    </div>
+
+    <!-- =====================================================
+         FOOTER ORIGINAL
+         ===================================================== -->
+    <footer>
+        <div class="footer-navigation">
+            <a href="index.html#inicio" data-i18n="home">Inicio</a>
+            <a href="index.html#sobre-mi" data-i18n="about">Quién soy</a>
+            <a href="index.html#experience" data-i18n="experience">Experiencia</a>
+            <a href="index.html#proyectos" data-i18n="projects">Proyectos</a>
+            <a href="index.html#documentos" data-i18n="documents">Documentos</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/marcos-ruiz-mu%C3%B1oz-2243172a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://marcos-ruiz.itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a>
+            <a href="https://github.com/MarcosRM19" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+
+        <p class="footer-copyright">
+            © 2026 Marcos RM19
+        </p>
     </footer>
 
-    <!-- JS Dedicado para MLAgent -->
-    <script src="js/mlagent.js"></script>
+    <script src="js/project.js"></script>
 </body>
 </html>
