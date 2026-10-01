@@ -199,7 +199,17 @@ const projects = {
     }
 };
 
+// Alias para evitar fallos por guiones
 projects["juanpieza"] = projects["juan-pieza"];
+
+// Helper para obtener elementos e informar si faltan en el HTML
+function getEl(id) {
+    const el = document.getElementById(id);
+    if (!el) {
+        console.warn(`⚠️ [Portfolio] Elemento no encontrado en HTML: #${id}`);
+    }
+    return el;
+}
 
 function getProjectId() {
     const params = new URLSearchParams(window.location.search);
@@ -222,9 +232,11 @@ function loadProject() {
     const project = projects[projectId] || projects.lyra;
     const langData = project[currentLang] || project.es;
 
+    console.log(`🚀 [Portfolio] Cargando proyecto: ${project.title} (${currentLang.toUpperCase()})`);
+
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    const langBtn = document.getElementById("language-button");
+    const langBtn = getEl("language-button");
     if (langBtn) langBtn.textContent = currentLang.toUpperCase();
 
     /* 1. HERO VIDEO */
@@ -240,36 +252,36 @@ function loadProject() {
     }
 
     /* 2. METADATA HERO */
-    const titleHero = document.getElementById("project-title-hero") || document.getElementById("project-logo-fallback");
+    const titleHero = getEl("project-title-hero") || getEl("project-logo-fallback");
     if (titleHero) titleHero.textContent = project.title;
 
-    const tagline = document.getElementById("project-tagline");
+    const tagline = getEl("project-tagline");
     if (tagline) tagline.textContent = langData.tagline;
 
-    const category = document.getElementById("project-category");
+    const category = getEl("project-category");
     if (category) category.textContent = project.category;
 
-    const itch = document.getElementById("project-itch");
+    const itch = getEl("project-itch");
     if (itch) itch.href = project.itch;
 
-    /* 3. MAIN INFORMATION */
-    const title = document.getElementById("project-title");
+    /* 3. INFORMACIÓN PRINCIPAL */
+    const title = getEl("project-title");
     if (title) title.textContent = project.title;
 
-    const years = document.getElementById("project-years");
+    const years = getEl("project-years");
     if (years) years.textContent = project.years;
 
-    const description = document.getElementById("project-description");
+    const description = getEl("project-description");
     if (description) description.textContent = langData.description;
 
-    const role = document.getElementById("project-role");
+    const role = getEl("project-role");
     if (role) role.textContent = langData.role;
 
-    const taskTitle = document.getElementById("project-task-title");
+    const taskTitle = getEl("project-task-title");
     if (taskTitle) taskTitle.textContent = langData.taskTitle;
 
-    /* TASKS */
-    const taskList = document.getElementById("project-tasks");
+    /* TAREAS */
+    const taskList = getEl("project-tasks");
     if (taskList && Array.isArray(langData.tasks)) {
         taskList.innerHTML = "";
         langData.tasks.forEach(task => {
@@ -279,21 +291,21 @@ function loadProject() {
         });
     }
 
-    /* PLAY BUTTON */
-    const playButton = document.getElementById("project-play");
+    /* BOTÓN DE JUGAR */
+    const playButton = getEl("project-play");
     if (playButton) {
         playButton.href = project.itch;
         playButton.textContent = langData.playBtn;
     }
 
     /* IMÁGENES ZONA 1 */
-    const infoRight1 = document.getElementById("project-info-right-1");
+    const infoRight1 = getEl("project-info-right-1");
     if (infoRight1) {
         infoRight1.src = project.infoRight1;
         infoRight1.alt = `${project.title} screenshot 1`;
     }
 
-    const infoRight2 = document.getElementById("project-info-right-2");
+    const infoRight2 = getEl("project-info-right-2");
     if (infoRight2) {
         infoRight2.src = project.infoRight2;
         infoRight2.alt = `${project.title} screenshot 2`;
@@ -321,7 +333,7 @@ function loadProject() {
     ];
 
     screenshots.forEach(([id, src], index) => {
-        const image = document.getElementById(id);
+        const image = getEl(id);
         if (image) {
             image.src = src;
             image.alt = `${project.title} screenshot ${index + 1}`;
@@ -329,13 +341,13 @@ function loadProject() {
     });
 
     /* 5. CONTRIBUTIONS & LEARNING */
-    const contribTitle = document.getElementById("contributions-title");
+    const contribTitle = getEl("contributions-title");
     if (contribTitle) contribTitle.textContent = langData.contributionsTitle;
 
-    const contribIntro = document.getElementById("contributions-intro");
+    const contribIntro = getEl("contributions-intro");
     if (contribIntro) contribIntro.textContent = langData.contributionsIntro || "";
 
-    const contribList = document.getElementById("contribution-list");
+    const contribList = getEl("contribution-list");
     if (contribList && Array.isArray(langData.contributions)) {
         contribList.innerHTML = "";
         langData.contributions.forEach(item => {
@@ -349,13 +361,13 @@ function loadProject() {
         });
     }
 
-    const learningTitle = document.getElementById("learning-title");
+    const learningTitle = getEl("learning-title");
     if (learningTitle) learningTitle.textContent = langData.learningTitle;
 
-    const learningText = document.getElementById("learning-text");
+    const learningText = getEl("learning-text");
     if (learningText) learningText.textContent = langData.learningText || "";
 
-    const contribPlay = document.getElementById("contribution-play");
+    const contribPlay = getEl("contribution-play");
     if (contribPlay) {
         contribPlay.href = project.itch;
         contribPlay.textContent = langData.playBtn;
@@ -365,7 +377,7 @@ function loadProject() {
 }
 
 function setupLanguageToggle() {
-    const langBtn = document.getElementById("language-button");
+    const langBtn = getEl("language-button");
     if (!langBtn) return;
 
     langBtn.addEventListener("click", () => {
@@ -446,7 +458,7 @@ function setupLightbox() {
     });
 }
 
-// Inicialización segura sin importar cuándo cargue el script
+// Inicialización
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
         loadProject();
