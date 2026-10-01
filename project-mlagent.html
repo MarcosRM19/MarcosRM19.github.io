@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Unity AI MachineLearning | MarcosRuiz Portfolio</title>
 
-    <!-- Fuentes y Hojas de Estilo -->
+    <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- 3 Hojas de estilo esenciales -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project.css">
     <link rel="stylesheet" href="css/mlagent.css">
     <link rel="icon" href="data:,">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         NAVBAR ORIGINAL
-         ===================================================== -->
+    <!-- NAVBAR ORIGINAL -->
     <header>
         <nav class="navbar">
             <a href="index.html#inicio" class="logo" id="logo">
@@ -44,9 +44,7 @@
         </nav>
     </header>
 
-    <!-- =====================================================
-         HERO CON VÍDEO Y TÍTULO (Sin imágenes)
-         ===================================================== -->
+    <!-- HERO ORIGINAL (Limpio, con vídeo de fondo y sin imágenes flotantes) -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -60,7 +58,7 @@
 
             <div class="title-inner">
                 <h1 id="project-title-hero" class="game-title-hero">Unity AI MachineLearning</h1>
-                <p id="project-tagline" class="title-tagline">
+                <p id="project-tagline" class="title-tagline" data-i18n="heroTagline">
                     Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.
                 </p>
 
@@ -72,27 +70,24 @@
             </div>
         </section>
 
-        <!-- =====================================================
-         DOCUMENTACIÓN TÉCNICA DETALLADA
-         ===================================================== -->
+        <!-- ARTÍCULO TÉCNICO COMPLETO -->
         <div class="tech-article-body">
             <div class="tech-container">
 
-                <!-- TARJETA DE RESUMEN Y METADATOS TÉCNICOS -->
+                <!-- RESUMEN Y OBJETIVOS EXACTOS -->
                 <div class="tech-summary-box">
                     <div class="tech-badge-row">
                         <span class="tech-pill-badge"><span class="pulse-dot"></span> Investigación DRL / Mini-TFG</span>
                         <span class="tech-pill-tag">Unity ML-Agents v2.0 + PyTorch</span>
                     </div>
 
-                    <h2 class="tech-summary-heading">
+                    <h2 class="tech-summary-heading" data-i18n="summaryTitle">
                         Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo
                     </h2>
 
-                    <!-- OBJETIVOS EXACTOS SOLICITADOS -->
                     <div class="tech-objectives-box">
-                        <h3 class="objectives-title">Objetivos del Proyecto</h3>
-                        <p class="tech-summary-desc" id="project-objectives-text">
+                        <h3 class="objectives-title" data-i18n="objectivesTitle">Objetivos del Proyecto</h3>
+                        <p class="tech-summary-desc" id="project-objectives-text" data-i18n="objectivesBody">
                             El objetivo de este proyecto es el de desarrollar un agente capaz de dominar las mecánicas de un simple juego de tanques 3D mediante la herramienta de ML-Agent. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin la necesidad de programar comportamientos lógicos manuales o sistemas basados en reglas.
                             <br><br>
                             A su vez se pretende investigar como el Self-Play permite la emergencia de estrategias tácticas complejas en el entorno que serían complejas de codificar de manera tradicional. Enfatizando en una IA que evoluciona adaptándose durante el proceso de entrenamiento.
@@ -101,29 +96,29 @@
 
                     <div class="tech-stats-grid">
                         <div class="tech-stat-card">
-                            <span class="stat-label">Environment Steps</span>
+                            <span class="stat-label" data-i18n="statStepsLabel">Environment Steps</span>
                             <span class="stat-value">5.0M</span>
-                            <span class="stat-sub">Pasos de simulación física</span>
+                            <span class="stat-sub" data-i18n="statStepsSub">Pasos de simulación física</span>
                         </div>
                         <div class="tech-stat-card">
-                            <span class="stat-label">Peak ELO Rating</span>
+                            <span class="stat-label" data-i18n="statEloLabel">Peak ELO Rating</span>
                             <span class="stat-value">1820</span>
-                            <span class="stat-sub">Vs pool histórico de modelos</span>
+                            <span class="stat-sub" data-i18n="statEloSub">Vs pool histórico de modelos</span>
                         </div>
                         <div class="tech-stat-card">
-                            <span class="stat-label">Perception Sensors</span>
+                            <span class="stat-label" data-i18n="statRaycastsLabel">Perception Sensors</span>
                             <span class="stat-value">15 Rays</span>
-                            <span class="stat-sub">Abanico 3D en tiempo real</span>
+                            <span class="stat-sub" data-i18n="statRaycastsSub">Abanico 3D en tiempo real</span>
                         </div>
                         <div class="tech-stat-card">
-                            <span class="stat-label">Curriculum Stages</span>
+                            <span class="stat-label" data-i18n="statCurriculumLabel">Curriculum Stages</span>
                             <span class="stat-value">4 Fases</span>
-                            <span class="stat-sub">Progresión jerárquica</span>
+                            <span class="stat-sub" data-i18n="statCurriculumSub">Progresión jerárquica</span>
                         </div>
                     </div>
 
                     <div class="tech-action-row">
-                        <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="project-btn project-btn-solid">
+                        <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="project-btn project-btn-solid" data-i18n="btnPdf">
                             Leer Memoria Técnica (PDF)
                         </a>
                         <a href="index.html#proyectos" class="project-btn project-btn-outline" data-i18n="moreProjects">
@@ -132,48 +127,48 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 1: FORMULACIÓN MDP -->
+                <!-- SECCIÓN 01: FORMULACIÓN POMDP -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">01</span>
-                        <h2>Formulación del Problema y Proceso de Decisión de Markov (POMDP)</h2>
+                        <h2 data-i18n="sec1Title">Formulación del Problema y Proceso de Decisión de Markov (POMDP)</h2>
                     </div>
 
-                    <p>
-                        Para lograr que el agente aprenda sin reglas codificadas a mano, el escenario de combate vehicular se modeló rigurosamente como un <strong>Proceso de Decisión de Markov Parcialmente Observable (POMDP)</strong> definido por la tupla $\langle S, A, P, R, \gamma \rangle$:
+                    <p data-i18n="sec1Intro">
+                        Para lograr que el agente aprenda sin reglas codificadas a mano, el escenario de combate vehicular se modeló rigurosamente como un Proceso de Decisión de Markov Parcialmente Observable (POMDP) definido por la tupla &lt;S, A, P, R, &gamma;&gt;:
                     </p>
 
                     <div class="tech-grid-2">
                         <div class="tech-card">
-                            <h3>Formulación del Entorno</h3>
+                            <h3 data-i18n="sec1MdpTitle">Formulación del Entorno</h3>
                             <ul class="tech-clean-list">
-                                <li><strong>Espacio de Estados ($S$):</strong> Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.</li>
-                                <li><strong>Espacio de Acciones ($A$):</strong> Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).</li>
-                                <li><strong>Transiciones ($P$):</strong> Dinámica física de tracción en Unity acelerada para entrenamiento masivo.</li>
-                                <li><strong>Recompensas ($R$):</strong> Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).</li>
+                                <li><strong data-i18n="sec1Mdp1">Espacio de Estados (S):</strong> Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.</li>
+                                <li><strong data-i18n="sec1Mdp2">Espacio de Acciones (A):</strong> Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).</li>
+                                <li><strong data-i18n="sec1Mdp3">Transiciones (P):</strong> Dinámica física de tracción en Unity acelerada para entrenamiento masivo.</li>
+                                <li><strong data-i18n="sec1Mdp4">Recompensas (R):</strong> Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).</li>
                             </ul>
                         </div>
 
                         <div class="tech-card">
-                            <h3>Objetivo de Optimización</h3>
-                            <p>
-                                El agente optimiza una política estocástica $\pi_\theta(a|s)$ parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:
+                            <h3 data-i18n="sec1OptTitle">Objetivo de Optimización</h3>
+                            <p data-i18n="sec1OptText">
+                                El agente optimiza una política estocástica parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:
                             </p>
                             <div class="math-block">
-                                J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^{T} \gamma^t R(s_t, a_t) \right] \quad \text{con } \gamma = 0.99
+                                J(&theta;) = E [ &Sigma; &gamma;^t R(s_t, a_t) ] con &gamma; = 0.99
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 2: PERCEPCIÓN Y VECTORES -->
+                <!-- SECCIÓN 02: SENSORES Y TABLA DE VECTORES -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">02</span>
-                        <h2>Espacio de Observaciones Vectoriales y Sensores 3D</h2>
+                        <h2 data-i18n="sec2Title">Espacio de Observaciones Vectoriales y Sensores 3D</h2>
                     </div>
 
-                    <p>
+                    <p data-i18n="sec2Intro">
                         Toda la percepción del entorno proviene de sensores locales sobre el tanque, sin acceder a datos globales o tramposos de la simulación.
                     </p>
 
@@ -181,118 +176,118 @@
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Índice Vector</th>
-                                    <th>Variable Observada</th>
-                                    <th>Tipo / Rango</th>
-                                    <th>Propósito Técnico</th>
+                                    <th data-i18n="tblCol1">Índice Vector</th>
+                                    <th data-i18n="tblCol2">Variable Observada</th>
+                                    <th data-i18n="tblCol3">Tipo / Rango</th>
+                                    <th data-i18n="tblCol4">Propósito Técnico</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>[0 - 14]</code></td>
-                                    <td><strong>3D Raycast Perception</strong></td>
+                                    <td><strong data-i18n="tblR1Name">3D Raycast Perception</strong></td>
                                     <td>Continuo <code>[0.0, 1.0]</code></td>
-                                    <td>Detección en abanico de muros, límites y proyectiles.</td>
+                                    <td data-i18n="tblR1Desc">Detección en abanico de muros, límites y proyectiles.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[15 - 17]</code></td>
-                                    <td><strong>Velocidad Lineal Local ($\vec{v}$)</strong></td>
+                                    <td><strong data-i18n="tblR2Name">Velocidad Lineal Local</strong></td>
                                     <td>Continuo <code>[-1.0, 1.0]</code></td>
-                                    <td>Inercia cinemática del chasis en ejes locales.</td>
+                                    <td data-i18n="tblR2Desc">Inercia cinemática del chasis en ejes locales.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[18 - 20]</code></td>
-                                    <td><strong>Velocidad Angular ($\vec{\omega}$)</strong></td>
+                                    <td><strong data-i18n="tblR3Name">Velocidad Angular</strong></td>
                                     <td>Continuo <code>[-1.0, 1.0]</code></td>
-                                    <td>Velocidad de rotación al maniobrar el vehículo.</td>
+                                    <td data-i18n="tblR3Desc">Velocidad de rotación al maniobrar el vehículo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[21 - 23]</code></td>
-                                    <td><strong>Posición Relativa ($\Delta \vec{p}$)</strong></td>
+                                    <td><strong data-i18n="tblR4Name">Posición Relativa</strong></td>
                                     <td>Continuo <code>[-1.0, 1.0]</code></td>
-                                    <td>Distancia y vector de posición hacia el oponente.</td>
+                                    <td data-i18n="tblR4Desc">Distancia y vector de posición hacia el oponente.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[24]</code></td>
-                                    <td><strong>Alineación Torreta ($\theta_{turret}$)</strong></td>
+                                    <td><strong data-i18n="tblR5Name">Alineación Torreta</strong></td>
                                     <td>Continuo <code>[-1.0, 1.0]</code></td>
-                                    <td>Diferencial angular entre el cañón y el objetivo.</td>
+                                    <td data-i18n="tblR5Desc">Diferencial angular entre el cañón y el objetivo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[25]</code></td>
-                                    <td><strong>Cooldown de Disparo ($t_{reload}$)</strong></td>
+                                    <td><strong data-i18n="tblR6Name">Cooldown de Disparo</strong></td>
                                     <td>Continuo <code>[0.0, 1.0]</code></td>
-                                    <td>Estado de recarga del cañón principal.</td>
+                                    <td data-i18n="tblR6Desc">Estado de recarga del cañón principal.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[26]</code></td>
-                                    <td><strong>Salud / Blindaje ($HP$)</strong></td>
+                                    <td><strong data-i18n="tblR7Name">Salud / Blindaje</strong></td>
                                     <td>Continuo <code>[0.0, 1.0]</code></td>
-                                    <td>Porcentaje de salud restante del vehículo.</td>
+                                    <td data-i18n="tblR7Desc">Porcentaje de salud restante del vehículo.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 3: ARQUITECTURA PPO -->
+                <!-- SECCIÓN 03: ARQUITECTURA PPO -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">03</span>
-                        <h2>Algoritmo PPO y Arquitectura Actor-Critic</h2>
+                        <h2 data-i18n="sec3Title">Algoritmo PPO y Arquitectura Actor-Critic</h2>
                     </div>
 
                     <div class="tech-grid-2">
                         <div class="tech-card">
-                            <h3>Red Neuronal Multicapa (MLP)</h3>
+                            <h3 data-i18n="sec3MlpTitle">Red Neuronal Multicapa (MLP)</h3>
                             <ul class="tech-clean-list">
-                                <li><strong>Input:</strong> Vector normalizado de 27 observaciones.</li>
-                                <li><strong>Capas Ocultas:</strong> 2 capas densas de 256 neuronas cada una.</li>
-                                <li><strong>Actor ($\pi_\theta$):</strong> Genera acciones continuas de conducción y decisión discreta de disparo.</li>
-                                <li><strong>Critic ($V_\phi$):</strong> Estima el valor del estado para calcular ventajas acumuladas.</li>
+                                <li><strong data-i18n="sec3Mlp1">Input:</strong> Vector normalizado de 27 observaciones.</li>
+                                <li><strong data-i18n="sec3Mlp2">Capas Ocultas:</strong> 2 capas densas de 256 neuronas cada una.</li>
+                                <li><strong data-i18n="sec3Mlp3">Actor:</strong> Genera acciones continuas de conducción y decisión discreta de disparo.</li>
+                                <li><strong data-i18n="sec3Mlp4">Critic:</strong> Estima el valor del estado para calcular ventajas acumuladas.</li>
                             </ul>
                         </div>
 
                         <div class="tech-card">
-                            <h3>Optimización PPO Clipped</h3>
-                            <p>
-                                PPO acota las actualizaciones mediante un margen $\epsilon = 0.2$ para garantizar que el entrenamiento no destruya comportamientos útiles previamente consolidados:
+                            <h3 data-i18n="sec3PpoTitle">Optimización PPO Clipped</h3>
+                            <p data-i18n="sec3PpoText">
+                                PPO acota las actualizaciones mediante un margen &epsilon; = 0.2 para garantizar que el entrenamiento no destruya comportamientos útiles previamente consolidados:
                             </p>
                             <div class="math-block">
-                                L^{CLIP}(\theta) = \hat{\mathbb{E}}_t \left[ \min(r_t(\theta)\hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_t) \right]
+                                L_CLIP(&theta;) = E [ min(r_t A_t, clip(r_t, 1-&epsilon;, 1+&epsilon;) A_t) ]
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 4: REWARD SHAPING -->
+                <!-- SECCIÓN 04: REWARD SHAPING -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">04</span>
-                        <h2>Ingeniería de Recompensas (Reward Shaping)</h2>
+                        <h2 data-i18n="sec4Title">Ingeniería de Recompensas (Reward Shaping)</h2>
                     </div>
 
                     <div class="math-formula-card">
-                        <div class="formula-title">Función de Recompensa General</div>
+                        <div class="formula-title" data-i18n="formulaTitle">Función de Recompensa General</div>
                         <div class="formula-body">
-                            R_{\text{total}} = R_{\text{impacto}} (+1.0) + R_{\text{alineación}} (+0.05 \cdot \cos\theta) - R_{\text{tiempo}} (-0.001) - R_{\text{muro}} (-0.25) - R_{\text{fallo}} (-0.05)
+                            R_total = R_impacto (+1.0) + R_alineación (+0.05 * cos&theta;) - R_tiempo (-0.001) - R_muro (-0.25) - R_fallo (-0.05)
                         </div>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 5: CURRICULUM LEARNING -->
+                <!-- SECCIÓN 05: CURRICULUM LEARNING -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">05</span>
-                        <h2>Pipeline de Curriculum Learning (4 Fases)</h2>
+                        <h2 data-i18n="sec5Title">Pipeline de Curriculum Learning (4 Fases)</h2>
                     </div>
 
                     <div class="interactive-curriculum-box">
                         <div class="curriculum-tabs">
-                            <button class="curr-tab-btn project-btn project-btn-outline active" data-phase="1">Fase 1: Locomoción</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="2">Fase 2: Balística</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="3">Fase 3: Coberturas</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="4">Fase 4: Duelo Activo</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline active" data-phase="1" data-i18n="phase1Btn">Fase 1: Locomoción</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="2" data-i18n="phase2Btn">Fase 2: Balística</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="3" data-i18n="phase3Btn">Fase 3: Coberturas</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="4" data-i18n="phase4Btn">Fase 4: Duelo Activo</button>
                         </div>
 
                         <div id="curriculum-content-panel" class="curriculum-panel">
@@ -301,25 +296,25 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 6: SELF-PLAY Y GRÁFICO ELO -->
+                <!-- SECCIÓN 06: SELF-PLAY -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">06</span>
-                        <h2>Competitive Self-Play y Ranking ELO</h2>
+                        <h2 data-i18n="sec6Title">Competitive Self-Play y Ranking ELO</h2>
                     </div>
 
                     <div class="tech-grid-2">
                         <div class="tech-card">
-                            <h3>Emergencia de Estrategias con Self-Play</h3>
-                            <p>
+                            <h3 data-i18n="selfplayTitle">Emergencia de Estrategias con Self-Play</h3>
+                            <p data-i18n="selfplayText">
                                 Al enfrentar al agente contra un "Model Pool" de sus versiones pasadas, se evita la memorización de patrones rígidos. Esto permite la aparición autónoma de tácticas avanzadas como disparar tras muros (peek-a-boo) y mantener ángulos de evasión.
                             </p>
                         </div>
 
                         <div class="tech-card chart-card">
                             <div class="chart-header">
-                                <h4>Progreso ELO Rating vs Iteraciones</h4>
-                                <button id="btn-reload-chart" class="project-btn project-btn-outline" style="padding: 4px 10px; font-size:0.75rem;">Reanimar</button>
+                                <h4 data-i18n="chartTitle">Progreso ELO Rating vs Iteraciones</h4>
+                                <button id="btn-reload-chart" class="project-btn project-btn-outline" style="padding: 4px 10px; font-size:0.75rem;" data-i18n="btnReloadChart">Reanimar</button>
                             </div>
                             <div class="canvas-wrapper">
                                 <canvas id="eloCanvas" width="480" height="200"></canvas>
@@ -328,17 +323,17 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 7: YAML Y BOTÓN DE DESCARGA -->
+                <!-- SECCIÓN 07: YAML DE CONFIGURACIÓN -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">07</span>
-                        <h2>Configuración YAML de Entrenamiento</h2>
+                        <h2 data-i18n="sec7Title">Configuración YAML de Entrenamiento</h2>
                     </div>
 
                     <div class="tech-code-box">
                         <div class="code-box-header">
                             <span>trainer_config_tank_ppo.yaml</span>
-                            <button id="btn-copy-code" class="project-btn project-btn-outline" style="padding: 4px 12px; font-size:0.75rem;">Copiar YAML</button>
+                            <button id="btn-copy-code" class="project-btn project-btn-outline" style="padding: 4px 12px; font-size:0.75rem;" data-i18n="btnCopyCode">Copiar YAML</button>
                         </div>
                         <pre><code id="code-yaml-block">behaviors:
   TankAgent:
@@ -367,12 +362,13 @@
                     </div>
                 </section>
 
+                <!-- DESCARGA FINAL CTA -->
                 <div class="tech-download-cta">
-                    <h2>Descarga la Memoria Técnica Completa (PDF)</h2>
-                    <p>
+                    <h2 data-i18n="ctaTitle">Descarga la Memoria Técnica Completa (PDF)</h2>
+                    <p data-i18n="ctaText">
                         Accede al documento académico con todo el desglose gráfico, curvas de pérdida de TensorBoard y anexos de código en C#.
                     </p>
-                    <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="project-btn project-btn-solid">
+                    <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="project-btn project-btn-solid" data-i18n="ctaBtn">
                         Ver Documento PDF Completo &rarr;
                     </a>
                 </div>
@@ -382,7 +378,7 @@
 
     </main>
 
-    <!-- LIGHTBOX ORIGINAL -->
+    <!-- LIGHTBOX OCULTO CORRECTAMENTE -->
     <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
         <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
         <button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
@@ -395,9 +391,7 @@
         <button class="lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
     </div>
 
-    <!-- =====================================================
-         FOOTER ORIGINAL
-         ===================================================== -->
+    <!-- FOOTER ORIGINAL -->
     <footer>
         <div class="footer-navigation">
             <a href="index.html#inicio" data-i18n="home">Inicio</a>
@@ -418,7 +412,7 @@
         </p>
     </footer>
 
-    <!-- SCRIPT EXCLUSIVO PARA ESTA PÁGINA -->
+    <!-- JS EXCLUSIVO -->
     <script src="js/mlagent.js"></script>
 </body>
 </html>
