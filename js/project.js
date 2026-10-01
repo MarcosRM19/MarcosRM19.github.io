@@ -19,7 +19,7 @@ const projects = {
         screenshot2: "img/projects/lyra/screenshot-2.jpg",
         screenshot3: "img/projects/lyra/screenshot-3.jpg",
         screenshot4: "img/projects/lyra/screenshot-4.jpg",
-         itch: "https://la-mapachanda-studio.itch.io/lyra",
+        itch: "https://la-mapachanda-studio.itch.io/lyra",
 
         en: {
             tagline: "A 3D wholesome puzzle-adventure about two baby dragons, built in Unreal Engine 5.",
@@ -103,7 +103,7 @@ const projects = {
     },
 
     "juan-pieza": {
-        category: "GAME / LEVEL DESIGN",
+        category: "GAME PROGRAMMER / LEVEL DESIGNER",
         title: "Juan Pieza",
         years: "2024 — 2025",
         trailerVideo: "vid/JuanPieza.mp4",
@@ -115,70 +115,77 @@ const projects = {
         screenshot2: "img/projects/juan-pieza/screenshot-2.jpg",
         screenshot3: "img/projects/juan-pieza/screenshot-3.jpg",
         screenshot4: "img/projects/juan-pieza/screenshot-4.jpg",
-        itch: "#",
+        itch: "https://lamapachanda.itch.io/juan-pieza",
 
         es: {
-            tagline: "Un proyecto universitario enfocado en la programación de gameplay y el diseño de niveles.",
-            description: "Juan Pieza es un proyecto de juego universitario desarrollado como parte de La Mapachanda. Me permitió trabajar en programación de gameplay, diseño de niveles y experiencia del jugador.",
-            role: "Mi rol se centró en la programación de gameplay, diseño de niveles y la implementación e iteración de los sistemas principales del juego.",
+            tagline: "Un party game 3D multijugador sobre batallas navales, cooperación y caos en alta mar.",
+            description: "Juan Pieza es un party game 3D en el que te pones en la piel de un tripulante de barco junto a tus amigos para colaborar, combatir y hundir las naves enemigas en frenéticas batallas en el mar.",
+            role: "Mi rol se centró en la programación de las mecánicas e interactivos clave del juego, así como en el diseño de niveles, balanceo de oleadas y la estructuración de la progresión jugable.",
             taskTitle: "RESUMEN DE TAREAS",
             tasks: [
-                "Diseño e implementación de las mecánicas principales.",
-                "Programación de sistemas de gameplay e interacción.",
-                "Diseño y construcción de niveles.",
-                "Iteración del diseño a partir de pruebas de juego.",
-                "Colaboración con el equipo durante las diferentes fases de desarrollo."
+                "Programación de los sistemas base del barco, incluyendo la salud de la nave y las mecánicas de combate.",
+                "Diseño e implementación de un sistema de clima dinámico que varía según el nivel, aportando capas adicionales al gameplay.",
+                "Diseño y balanceo de las oleadas enemigas para calibrar la dificultad de cada nivel.",
+                "Estructuración de la progresión de niveles y de la introducción gradual de nuevas armas y amenazas climáticas."
             ],
-            contributionsTitle: "Gameplay y Level Design",
-            contributionsIntro: "",
+            contributionsTitle: "Sistemas de Juego, Clima y Level Design",
+            contributionsIntro: "En Juan Pieza combiné la programación de gameplay con el diseño de niveles y el ritmo de progresión, asegurándome de crear una experiencia cooperativa caótica, fluida y divertida.",
             contributions: [
                 {
-                    title: "Gameplay Programming",
-                    text: "Implementación de las mecánicas y sistemas necesarios para el funcionamiento del juego."
+                    title: "Sistemas Base del Barco",
+                    text: "Programé la arquitectura principal de la nave, gestionando el sistema de vida y resistencia, así como las dinámicas de combate naval necesarias para la interacción de los jugadores."
                 },
                 {
-                    title: "Level Design",
-                    text: "Diseño y construcción de los niveles y espacios jugables."
+                    title: "Sistema de Clima Dinámico",
+                    text: "Diseñé e implementé un sistema meteorológico que varía entre niveles, alterando las condiciones del mapa para generar situaciones emergentes y capas tácticas durante la partida."
                 },
                 {
-                    title: "Iteration",
-                    text: "Pruebas, análisis del gameplay y ajustes para mejorar la experiencia del jugador."
+                    title: "Diseño y Balanceo de Oleadas",
+                    text: "Diseñé la composición y frecuencia de las oleadas enemigas por nivel, calibrando la curva de dificultad para mantener la tensión sin frustrar a la tripulación."
+                },
+                {
+                    title: "Sistema de Progresión",
+                    text: "Planifiqué la progresión de los niveles racionando la llegada de nuevos tipos de clima y armamento, garantizando un aprendizaje intuitivo y variado."
                 }
             ],
             learningTitle: "Lo que aprendí",
-            learningText: "Aprendí a transformar ideas de diseño en sistemas jugables, a detectar problemas de gameplay mediante pruebas y a iterar rápidamente en un entorno colaborativo.",
+            learningText: "Desarrollar Juan Pieza me enseñó a conectar la programación de sistemas con la sensibilidad del diseño de niveles. Aprendí a construir mecánicas sistémicas (como el clima dinámico) para generar jugabilidad emergente en juegos multijugador, a balancear encuentros mediante iteración de oleadas, y a estructurar una progresión en la que la introducción de nuevas herramientas se sienta natural y estimulante dentro de un party game.",
             playBtn: "Juega en itch.io"
         },
+
         en: {
-            tagline: "A university game project focused on gameplay programming and level design.",
-            description: "Juan Pieza is a university game project developed as part of La Mapachanda. The project allowed me to work across gameplay programming, level design and player experience.",
-            role: "My role focused on gameplay programming, level design and the implementation and iteration of the game's main systems.",
+            tagline: "A 3D multiplayer party game about naval combat, teamwork, and high-seas mayhem.",
+            description: "Juan Pieza is a 3D party game where you and your friends board a ship as crewmates, joining forces to fight, navigate, and sink enemy vessels in chaotic naval skirmishes.",
+            role: "My role focused on core gameplay programming, level design, enemy wave balancing, and overarching progression structure.",
             taskTitle: "TASK OVERVIEW",
             tasks: [
-                "Design and implementation of main mechanics.",
-                "Programming gameplay and interaction systems.",
-                "Level design and construction.",
-                "Design iteration based on playtests.",
-                "Team collaboration throughout development phases."
+                "Programmed fundamental ship mechanics, including health/damage tracking and naval combat elements.",
+                "Designed and implemented a level-dependent dynamic weather system to add strategic gameplay layers.",
+                "Designed and balanced enemy wave spawns across levels to fine-tune the difficulty curve.",
+                "Structured level progression and the gradual rollout of new weapons and weather hazards."
             ],
-            contributionsTitle: "Gameplay & Level Design",
-            contributionsIntro: "",
+            contributionsTitle: "Gameplay Systems, Weather & Level Design",
+            contributionsIntro: "In Juan Pieza, I bridged system programming with level design and progression planning, focusing on delivering a seamless, balanced, and chaotic cooperative experience.",
             contributions: [
                 {
-                    title: "Gameplay Programming",
-                    text: "Implementation of mechanics and systems needed for game performance."
+                    title: "Core Ship Systems",
+                    text: "Programmed the ship's underlying architecture, handling durability logic and combat interactions that allow crewmates to defend their vessel."
                 },
                 {
-                    title: "Level Design",
-                    text: "Design and building of playable spaces and levels."
+                    title: "Dynamic Weather System",
+                    text: "Designed and built an environmental system that alters weather conditions per level, introducing emergent challenges and dynamic hazard layers."
                 },
                 {
-                    title: "Iteration",
-                    text: "Testing, gameplay analysis, and tuning to enhance player experience."
+                    title: "Enemy Wave Balancing",
+                    text: "Designed enemy wave compositions and timings for each stage, calibrating tension to keep matches engaging without overwhelming players."
+                },
+                {
+                    title: "Progression & Pacing",
+                    text: "Planned the overarching level progression, pacing the introduction of new weapons and weather events to ensure intuitive mechanic learning."
                 }
             ],
             learningTitle: "What I Learned",
-            learningText: "I learned to translate design ideas into playable systems, spot gameplay bottlenecks through testing, and iterate quickly in a team environment.",
+            learningText: "Working on Juan Pieza taught me to bridge gameplay programming with level design sensibilities. I learned how to build systemic features like dynamic weather to foster emergent multiplayer moments, balance challenge through iterative wave design, and structure progression so that learning new mechanics feels rewarding and intuitive in a party game setting.",
             playBtn: "Play on itch.io"
         }
     }
@@ -207,7 +214,7 @@ function loadProject() {
 
     document.title = `${project.title} | MarcosRuiz Portfolio`;
 
-    /* Actualizar el texto del botón según el idioma activo (ES si es español, EN si es inglés) */
+    /* Actualizar el texto del botón según el idioma activo (ES / EN) */
     const langBtn = document.getElementById("language-button");
     if (langBtn) {
         langBtn.textContent = currentLang.toUpperCase();
