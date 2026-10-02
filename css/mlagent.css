@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - ESTILOS CON VERDE Y GRID 2x2 EN CONCLUSIONES
+   MLAGENT.CSS - TÍTULO IMPONENTE Y ESTILOS UNIFICADOS
    ========================================================= */
 
 /* OCULTAR ELEMENTOS INNECESARIOS */
@@ -7,28 +7,28 @@
     display: none !important;
 }
 
-/* TÍTULO HERO MÁS GRANDE */
+/* TÍTULO HERO "Unity AI MachineLearning" MUCHO MÁS GRANDE */
 .title-inner {
-    max-width: 980px;
+    max-width: 1050px;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
 }
 
 .game-title-hero {
-    font-size: clamp(3.0rem, 6.5vw, 4.8rem); /* Título significativamente más grande */
+    font-size: clamp(3.5rem, 7.5vw, 5.5rem); /* Título aumentado considerablemente */
     font-weight: 800;
     color: #ffffff;
-    line-height: 1.15;
-    margin-bottom: 18px;
-    letter-spacing: -0.8px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 768px) {
     .game-title-hero {
-        font-size: 2.2rem;
-        line-height: 1.25;
+        font-size: 2.4rem;
+        line-height: 1.2;
     }
 }
 
@@ -61,16 +61,16 @@
 
 .formula-content-sub {
     font-size: 0.95rem;
-    color: var(--green, #00ff88); /* Cambiado de Cyan a Verde */
+    color: var(--green, #00ff88);
     overflow-x: auto;
     padding-top: 6px;
     text-align: center;
 }
 
-/* CONCLUSIONES ORGANIZADAS EN FILAS 2 A 2 (STRICT 2-COLUMN GRID) */
+/* CONCLUSIONES EN FILAS 2 A 2 (GRID 2 COLUMNAS) */
 .conclusions-summary-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Filas 2 a 2 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-top: 10px;
 }
@@ -117,7 +117,7 @@
 }
 
 .badge-info {
-    background: rgba(0, 255, 136, 0.15); /* Cambiado a Verde */
+    background: rgba(0, 255, 136, 0.15);
     color: #00ff88;
     border: 1px solid #00ff88;
 }
@@ -132,7 +132,7 @@
 /* APRENDIZAJES CLAVE (GRID 2x2) */
 .learnings-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Filas 2 a 2 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
@@ -177,7 +177,7 @@
 /* LÍNEAS A FUTURO (GRID 2x2) */
 .future-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Filas 2 a 2 */
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
@@ -189,7 +189,7 @@
 }
 
 .future-tag {
-    color: var(--green, #00ff88); /* Cambiado de Cyan a Verde */
+    color: var(--green, #00ff88);
     font-size: 0.82rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -208,14 +208,13 @@
     .conclusions-summary-grid,
     .learnings-grid,
     .future-grid {
-        grid-template-columns: 1fr; /* Responsivo en móvil */
+        grid-template-columns: 1fr;
     }
 }
 
-/* CÓDIGO TÉCNICO EN VERDE */
 .tech-spec-table code {
     font-family: 'Fira Code', monospace;
-    color: var(--green, #00ff88); /* Cambiado de Cyan a Verde */
+    color: var(--green, #00ff88);
 }
 
 /* BOTONES Y ESTRUCTURA GENERAL */
