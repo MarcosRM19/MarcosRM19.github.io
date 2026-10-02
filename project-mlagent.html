@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Tanks Machine Learning | Marcos Ruiz Muñoz</title>
+    <title id="page-title">Unity AI MachineLearning | Marcos Ruiz Muñoz</title>
 
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/mlagent.css">
     <link rel="icon" href="data:,">
 
-    <!-- MathJax para la renderización de fórmulas matemáticas en LaTeX -->
+    <!-- MathJax para la renderización de fórmulas matemáticas -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -48,7 +48,7 @@
         </nav>
     </header>
 
-    <!-- HERO CON TÍTULO EN LETRA MÁS GRANDE (2 LÍNEAS) -->
+    <!-- HERO PRINCIPAL -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -62,15 +62,15 @@
 
             <div class="title-inner">
                 <h1 id="project-title-hero" class="game-title-hero" data-i18n="heroTitle">
-                    Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular
+                    Unity AI MachineLearning
                 </h1>
                 <p id="project-tagline" class="title-tagline" data-i18n="heroTagline">
-                    Entrenamiento mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.
+                    Entrenamiento de agentes de combate mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.
                 </p>
             </div>
         </section>
 
-        <!-- ARTÍCULO TÉCNICO COMPLETO DE LA MEMORIA -->
+        <!-- ARTÍCULO TÉCNICO -->
         <div class="tech-article-body">
             <div class="tech-container">
 
@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 01: ARQUITECTURA DEL SISTEMA Y FÍSICA -->
+                <!-- SECCIÓN 01: ARQUITECTURA CON DIAGRAMA TRADUCIBLE -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">01</span>
@@ -140,7 +140,7 @@
                         El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.
                     </p>
 
-                    <!-- DIAGRAMA SVG 1: ARQUITECTURA -->
+                    <!-- DIAGRAMA SVG 1 CON TEXTOS TRADUCIBLES -->
                     <div class="diagram-card-container">
                         <div class="diagram-top-title" data-i18n="diagram1Title">Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python</div>
                         <div class="svg-wrapper">
@@ -152,13 +152,13 @@
                                 <text x="165" y="62" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">TankMLAgent (Unity.MLAgents)</text>
                                 <line x1="40" y1="72" x2="290" y2="72" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
                                 
-                                <text x="40" y="95" fill="#38bdf8" font-size="10.5" font-weight="bold">Métodos Principales:</text>
+                                <text x="40" y="95" fill="#38bdf8" font-size="10.5" font-weight="bold" data-i18n="svgMethods">Métodos Principales:</text>
                                 <text x="40" y="115" fill="#cbd5e1" font-size="9.5">• CollectObservations(sensor) -> 21D</text>
-                                <text x="40" y="133" fill="#cbd5e1" font-size="9.5">• OnActionReceived(actions) -> Motor/Tiro</text>
+                                <text x="40" y="133" fill="#cbd5e1" font-size="9.5" data-i18n="svgOnAction">• OnActionReceived(actions) -> Motor/Tiro</text>
                                 <text x="40" y="151" fill="#cbd5e1" font-size="9.5">• OnEpisodeBegin() -> Reset &amp; Spawns</text>
                                 <text x="40" y="169" fill="#cbd5e1" font-size="9.5">• ApplyMovement() &amp; ApplyRotation()</text>
 
-                                <text x="40" y="195" fill="#38bdf8" font-size="10.5" font-weight="bold">Referencias de Control:</text>
+                                <text x="40" y="195" fill="#38bdf8" font-size="10.5" font-weight="bold" data-i18n="svgRefs">Referencias de Control:</text>
                                 <text x="40" y="215" fill="#cbd5e1" font-size="9.5">• TargetMovePosition _target</text>
                                 <text x="40" y="233" fill="#cbd5e1" font-size="9.5">• SelfPlayAreaManager _areaMgr</text>
                                 <text x="40" y="251" fill="#cbd5e1" font-size="9.5">• BulletDetection Prefab</text>
@@ -169,14 +169,14 @@
 
                                 <!-- BLOQUE 2: SOCKET TCP COMMUNICATOR -->
                                 <rect x="345" y="45" width="310" height="230" rx="10" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
-                                <text x="500" y="72" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Communicator TCP (Puerto 5004)</text>
+                                <text x="500" y="72" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold" data-i18n="svgTcpTitle">Communicator TCP (Puerto 5004)</text>
                                 <line x1="360" y1="82" x2="640" y2="82" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
                                 
-                                <text x="500" y="105" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Sincronización por Decision Period (5)</text>
-                                <text x="500" y="130" fill="#00ff88" font-size="9.5" text-anchor="middle">&rarr; Envía: Vector 21D + Recompensas</text>
-                                <text x="500" y="155" fill="#38bdf8" font-size="9.5" text-anchor="middle">&leftarrow; Recibe: Acciones [Cont(2), Disc(1)]</text>
-                                <text x="500" y="180" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Ray Perception Sensor 3D Integrado</text>
-                                <text x="500" y="210" fill="#94a3b8" font-size="9" text-anchor="middle">Fixed Timestep = 0.02s (0.1s / decisión)</text>
+                                <text x="500" y="105" fill="#cbd5e1" font-size="9.5" text-anchor="middle" data-i18n="svgSync">Sincronización por Decision Period (5)</text>
+                                <text x="500" y="130" fill="#00ff88" font-size="9.5" text-anchor="middle" data-i18n="svgSends">&rarr; Envía: Vector 21D + Recompensas</text>
+                                <text x="500" y="155" fill="#38bdf8" font-size="9.5" text-anchor="middle" data-i18n="svgReceives">&leftarrow; Recibe: Acciones [Cont(2), Disc(1)]</text>
+                                <text x="500" y="180" fill="#cbd5e1" font-size="9.5" text-anchor="middle" data-i18n="svgSensor">Ray Perception Sensor 3D Integrado</text>
+                                <text x="500" y="210" fill="#94a3b8" font-size="9" text-anchor="middle" data-i18n="svgStep">Fixed Timestep = 0.02s (0.1s / decisión)</text>
 
                                 <!-- CONECTOR 2 -->
                                 <path d="M 655 160 L 685 160" stroke="#00ff88" stroke-width="2" fill="none"/>
@@ -433,7 +433,6 @@
                         El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea $R_t$ en cada paso $t$ se formula explícitamente a continuación:
                     </p>
 
-                    <!-- CAJA DE FÓRMULA MATEMÁTICA -->
                     <div class="math-formula-box">
                         <div class="formula-header" data-i18n="formulaHeader">Ecuación General de Recompensa Instantánea ($R_t$)</div>
                         <div class="formula-content">
@@ -444,7 +443,6 @@
                         </div>
                     </div>
 
-                    <!-- TABLA 4: TABLA COMPLETA DE RECOMPENSAS -->
                     <div class="tech-table-wrapper" style="margin-top:25px;">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 4: Sistema Completo de Recompensas y Penalizaciones</h3>
                         <table class="tech-spec-table">
@@ -554,7 +552,6 @@
                         <h2 data-i18n="sec4Title">Hiperparámetros de Entrenamiento YAML (PPO)</h2>
                     </div>
 
-                    <!-- TABLA 5: HIPERPARÁMETROS YAML EXACTOS -->
                     <div class="tech-table-wrapper">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 5: Hiperparámetros Configurados en ML-Agents</h3>
                         <table class="tech-spec-table">
@@ -683,11 +680,11 @@
                         </div>
 
                         <div id="curriculum-content-panel" class="curriculum-panel">
-                            <!-- Carga vía JS -->
+                            <!-- Carga dinámica JS -->
                         </div>
                     </div>
 
-                    <!-- TABLA 6: RESULTADOS POR FASE DE CURRICULUM -->
+                    <!-- TABLA 6: RESULTADOS POR FASE -->
                     <div class="tech-table-wrapper" style="margin-top: 30px;">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 6: Resultados Históricos de Entrenamiento por Modelo Mental</h3>
                         <table class="tech-spec-table">
@@ -747,7 +744,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 06: SELF-PLAY, TABLA 7 SOBERBIA Y COMPORTAMIENTOS EMERGENTES -->
+                <!-- SECCIÓN 06: SELF-PLAY Y TABLA SIN LA PALABRA BASELINE -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">06</span>
@@ -773,7 +770,7 @@
                         </div>
                     </div>
 
-                    <!-- TABLA 7: SIN COLUMNA DE HABILIDAD Y REGISTRO DE EJES -->
+                    <!-- TABLA 7: SIN BASELINE -->
                     <div class="tech-table-wrapper" style="margin-top: 25px;">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 7: Registro Numérico del Gráfico ELO vs Iteraciones ($X \rightarrow Y$)</h3>
                         <table class="tech-spec-table">
@@ -788,7 +785,7 @@
                             <tbody>
                                 <tr>
                                     <td><code>0.0 M Steps</code></td>
-                                    <td>Punto de Partida (Baseline)</td>
+                                    <td data-i18n="t7ModelInit">Modelo Inicial / Estado Base</td>
                                     <td><code>1200 ELO</code></td>
                                     <td>50.0%</td>
                                 </tr>
@@ -859,81 +856,121 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 07: CONCLUSIONES Y LÍNEAS A FUTURO (TEXTO EXACTO DEL TFG) -->
+                <!-- SECCIÓN 07: CONCLUSIONES REESCRITAS Y RESUMIDAS PARA PORFOLIO -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">07</span>
                         <h2 data-i18n="sec7Title">Conclusiones y Líneas a Futuro</h2>
                     </div>
 
-                    <!-- SUBSECCIÓN 7.1 -->
+                    <!-- 5.1 EVALUACIÓN DE OBJETIVOS (SINTETIZADO CON BADGES) -->
                     <div class="tech-card" style="margin-bottom: 24px;">
-                        <h3 data-i18n="sec71Title" style="color: var(--green, #00ff88); margin-bottom: 14px;">5.1. Análisis Crítico del Grado de Consecución de los Objetivos</h3>
-                        <p data-i18n="sec71P1" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            El proyecto planteaba como objetivo principal el desarrollo de un agente autónomo de combate capaz de adquirir comportamientos complejos mediante aprendizaje por refuerzo, articulado en una secuencia de subobjetivos de complejidad creciente. A continuación se evalúa el grado de consecución de cada uno de ellos.
-                        </p>
-                        <p data-i18n="sec71P2" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            La <strong>aproximación, alineación y disparo sobre objetivo estático</strong> se alcanzó de forma completa y satisfactoria en la primera fase de entrenamiento. El agente convergió a una política estable con recompensa media de +11 y desviación estándar inferior a 1, demostrando un comportamiento consistente y robusto en el entorno más simple.
-                        </p>
-                        <p data-i18n="sec71P3" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            La <strong>evasión de obstáculos y recuperación de línea de visión</strong> se alcanzó de forma funcional, aunque con mayor dificultad de la esperada. El proceso de entrenamiento reveló que el diseño inicial del sistema de recompensas incentivaba inadvertidamente la parálisis del agente frente a la pared, requiriendo múltiples iteraciones de rediseño hasta obtener una señal que produjera el comportamiento de rodeo deseado. El objetivo se considera alcanzado, con la matización de que el comportamiento de evasión presentaba cierta variabilidad en función de la posición relativa del obstáculo respecto al objetivo.
-                        </p>
-                        <p data-i18n="sec71P4" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            El <strong>seguimiento de objetivo en movimiento</strong> se alcanzó con los mejores resultados del proyecto. La convergencia fue rápida gracias a la transferencia desde la fase anterior, y la desviación estándar excepcionalmente baja de la fase 3 evidenció que el agente desarrolló una política de seguimiento y disparo predictivo altamente consistente.
-                        </p>
-                        <p data-i18n="sec71P5" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75;">
-                            El <strong>self-play competitivo</strong> se alcanzó parcialmente. El sistema funcionó correctamente desde el punto de vista técnico, con el ELO alcanzando 1611 puntos y mostrando una tendencia alcista sostenida a lo largo de 1.6 millones de pasos. Sin embargo, la complejidad del entorno de combate presentaba limitaciones inherentes que condicionaron el nivel de sofisticación táctica alcanzable. La arena simétrica con una única pared de posición aleatoria y dos tanques con las mismas capacidades constituye un entorno de complejidad moderada que, si bien fue suficiente para que emergieran comportamientos tácticos genuinos como el engaño mediante movimiento y la gestión del cooldown, no ofrecía la variedad situacional necesaria para desarrollar estrategias de mayor profundidad. En entornos más complejos, con múltiples obstáculos, diferentes configuraciones de arena o agentes con capacidades asimétricas, la presión selectiva del self-play habría sido sensiblemente mayor, potencialmente produciendo comportamientos de nivel superior.
-                        </p>
+                        <h3 data-i18n="sec71Title" style="color: var(--green, #00ff88); margin-bottom: 16px;">5.1. Análisis Crítico del Grado de Consecución de Objetivos</h3>
+                        
+                        <div class="conclusions-summary-grid">
+                            <div class="conclusion-item-card">
+                                <div class="conclusion-header">
+                                    <span class="status-badge badge-success" data-i18n="badge1">100% Completado</span>
+                                    <strong data-i18n="obj1Title">Objetivo Estático (Fase 1)</strong>
+                                </div>
+                                <p data-i18n="obj1Desc">Convergencia rápida hacia una política totalmente estable ($R_{\text{mean}} = +11.0$, $\text{std} < 1.0$), demostrando un control motor y de disparo óptimo sobre escenarios simples.</p>
+                            </div>
+
+                            <div class="conclusion-item-card">
+                                <div class="conclusion-header">
+                                    <span class="status-badge badge-warning" data-i18n="badge2">Funcional / Rediseñado</span>
+                                    <strong data-i18n="obj2Title">Evasión de Cobertura (Fase 2)</strong>
+                                </div>
+                                <p data-i18n="obj2Desc">Surgió tendencia a la parálisis frente a muros. Se solucionó tras varias iteraciones de <i>reward shaping</i>, logrando un rodeo dinámico de la pared según su posición relativa.</p>
+                            </div>
+
+                            <div class="conclusion-item-card">
+                                <div class="conclusion-header">
+                                    <span class="status-badge badge-success" data-i18n="badge3">Excelente Resultado</span>
+                                    <strong data-i18n="obj3Title">Seguimiento Móvil (Fase 3)</strong>
+                                </div>
+                                <p data-i18n="obj3Desc">El mejor resultado del proyecto. Gracias a la transferencia de pesos y la bajísima varianza, el agente desarrolló un disparo predictivo certero sobre objetivos cinemáticos.</p>
+                            </div>
+
+                            <div class="conclusion-item-card">
+                                <div class="conclusion-header">
+                                    <span class="status-badge badge-info" data-i18n="badge4">Alcanzado Parcialmente</span>
+                                    <strong data-i18n="obj4Title">Self-Play Competitivo (Fase 5)</strong>
+                                </div>
+                                <p data-i18n="obj4Desc">La arquitectura técnica funcionó con éxito (tendencia alcista de ELO). No obstante, la simplicidad de la arena simétrica limitó la aparición de tácticas de mayor profundidad.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- SUBSECCIÓN 7.2 -->
+                    <!-- 5.2 APRENDIZAJES CLAVE -->
                     <div class="tech-card" style="margin-bottom: 24px;">
-                        <h3 data-i18n="sec72Title" style="color: var(--green, #00ff88); margin-bottom: 14px;">5.2. Principales Aprendizajes del Proyecto</h3>
-                        <p data-i18n="sec72P1" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            Más allá de los resultados técnicos obtenidos, el desarrollo del proyecto ha generado un conjunto de aprendizajes metodológicos de valor significativo.
-                        </p>
-                        <p data-i18n="sec72P2" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            <strong>El primero y más relevante</strong> es que el diseño de la función de recompensa es el componente más crítico y más difícil del aprendizaje por refuerzo aplicado. A diferencia del código convencional, cuya corrección es verificable de forma determinista, una función de recompensa incorrecta puede producir comportamientos aparentemente razonables que en realidad corresponden a mínimos locales explotados por el agente. La única forma de validarla es observar el comportamiento emergente durante el entrenamiento e iterar, lo que exige una comprensión profunda de la dinámica de optimización del algoritmo.
-                        </p>
-                        <p data-i18n="sec72P3" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            <strong>El segundo aprendizaje</strong> es la importancia de separar los problemas antes de combinarlos. La estrategia de curriculum learning por fases independientes no solo aceleró la convergencia sino que facilitated el diagnóstico de problemas; cuando una fase presentaba dificultades, era posible identificar exactamente qué nueva variable introducida era la responsable, sin ambigüedad. Este enfoque contrasta con la alternativa de entrenar directamente en el entorno completo, donde la atribución de los problemas de convergencia es considerablemente más difícil.
-                        </p>
-                        <p data-i18n="sec72P4" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
-                            <strong>El tercer aprendizaje</strong> es que la física del entorno y los parámetros del motor de juego tienen un impacto directo en la calidad del aprendizaje. El conflicto entre <code>transform.Rotate</code> y el <code>Rigidbody</code>, la configuración del <code>Angular Drag</code>, la orientación incorrecta del modelo 3D o la ausencia de <code>Layer Collision Matrix</code> fueron factores que produjeron comportamientos erráticos cuya causa no era evidente a primera vista. La depuración de estos problemas requirió un análisis sistemático que puso de manifiesto que en proyectos de aprendizaje por refuerzo en motores de juego, la correcta configuración del entorno físico es tan importante como el diseño del algoritmo de aprendizaje.
-                        </p>
-                        <p data-i18n="sec72P5" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75;">
-                            <strong>El cuarto aprendizaje</strong> es la naturaleza fundamentalmente empírica e iterativa del proceso de entrenamiento. Los valores de hiperparámetros, magnitudes de recompensa y parámetros de curriculum que resultaron efectivos no fueron derivados analíticamente sino a través de múltiples ciclos de entrenamiento, observación y ajuste. Esta característica implica que la experiencia acumulada en proyectos anteriores es un activo fundamental en este dominio, y que la documentación detallada de cada decisión y su justificación tiene un valor práctico directo.
-                        </p>
+                        <h3 data-i18n="sec72Title" style="color: var(--green, #00ff88); margin-bottom: 16px;">5.2. Principales Aprendizajes Metodológicos</h3>
+                        
+                        <div class="learnings-grid">
+                            <div class="learning-pill-card">
+                                <div class="learning-icon">01</div>
+                                <div class="learning-text">
+                                    <strong data-i18n="learn1Title">Diseño Crítico de Recompensas:</strong>
+                                    <span data-i18n="learn1Desc">A diferencia del software determinista, una mala función de recompensa genera mínimos locales engañosos. Validar exige observar comportamientos emergentes.</span>
+                                </div>
+                            </div>
+
+                            <div class="learning-pill-card">
+                                <div class="learning-icon">02</div>
+                                <div class="learning-text">
+                                    <strong data-i18n="learn2Title">Estrategia de Curriculum Learning:</strong>
+                                    <span data-i18n="learn2Desc">Desacoplar la dificultad por fases independientes aceleró la convergencia y facilitó el diagnóstico directo de errores al introducir nuevas variables.</span>
+                                </div>
+                            </div>
+
+                            <div class="learning-pill-card">
+                                <div class="learning-icon">03</div>
+                                <div class="learning-text">
+                                    <strong data-i18n="learn3Title">Sensibilidad a la Física del Motor:</strong>
+                                    <span data-i18n="learn3Desc">Parámetros de PhysX en Unity (Angular Drag, Rigidbody vs Transform) impactan directamente en la estabilidad del modelo tanto como los hiperparámetros.</span>
+                                </div>
+                            </div>
+
+                            <div class="learning-pill-card">
+                                <div class="learning-icon">04</div>
+                                <div class="learning-text">
+                                    <strong data-i18n="learn4Title">Proceso Empírico e Iterativo:</strong>
+                                    <span data-i18n="learn4Desc">Las soluciones óptimas surgieron de la experimentación continua y el registro detallado de decisiones, clave en proyectos de aprendizaje por refuerzo.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- SUBSECCIÓN 7.3 -->
+                    <!-- 5.3 LÍNEAS A FUTURO -->
                     <div class="tech-card">
-                        <h3 data-i18n="sec73Title" style="color: var(--green, #00ff88); margin-bottom: 14px;">5.3. Líneas a Futuro</h3>
-                        <p data-i18n="sec73P1" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:14px;">
-                            El trabajo realizado establece una base técnica sólida sobre la que es posible avanzar en varias direcciones de machine learning de interés creciente pero también deja abierta diferentes puertas a mejoras al futuro como:
-                        </p>
-                        <ul style="color:#cbd5e1; font-size:0.93rem; line-height:1.75; padding-left:20px;">
-                            <li style="margin-bottom:12px;">
-                                <strong style="color:#ffffff;" data-i18n="future1Title">Incremento de la complejidad del entorno de combate:</strong>
-                                <span data-i18n="future1Desc">La limitación más significativa del self-play desarrollado en este proyecto fue la simplicidad del entorno; una arena abierta con una única pared de posición aleatoria ofrece un espacio de situaciones tácticas reducido. Una línea de continuación directa sería el diseño de arenas con múltiples obstáculos de geometría variable, zonas de cobertura estructuradas y configuraciones asimétricas que obliguen al agente a desarrollar estrategias adaptativas en lugar de políticas fijas. Un entorno de mayor riqueza situacional sometería al self-play a una presión selectiva más intensa, potencialmente produciendo comportamientos tácticos de nivel superior a los observados en este proyecto.</span>
-                            </li>
-                            <li style="margin-bottom:12px;">
-                                <strong style="color:#ffffff;" data-i18n="future2Title">Diferenciación de tipos de agentes:</strong>
-                                <span data-i18n="future2Desc">El proyecto utilizó dos instancias del mismo agente con las mismas capacidades físicas. Una extensión natural sería introducir agentes con perfiles asimétricos como un tanque de mayor velocidad pero menor precisión frente a uno más lento pero con mayor rango de disparo, por ejemplo. Esta asimetría obligaría a cada agente a explotar sus ventajas específicas y a mitigar sus debilidades frente a un oponente con capacidades diferentes, un problema significativamente más complejo que el abordado en este proyecto y más representativo de los escenarios de combate reales en videojuegos.</span>
-                            </li>
-                            <li style="margin-bottom:12px;">
-                                <strong style="color:#ffffff;" data-i18n="future3Title">Self-play de mayor rigor competitivo:</strong>
-                                <span data-i18n="future3Desc">Los parámetros de self-play utilizados, con <code>window: 10</code> y <code>play_against_latest_model_ratio: 0.5</code>, constituyen una configuración moderada. Una línea de mejora sería aumentar el pool de modelos históricos, reducir el ratio de juego contra el modelo actual para forzar mayor diversidad de oponentes, y aumentar el <code>team_change</code> para dar más tiempo a cada equipo de desarrollar estrategias profundas antes del intercambio. Combinado con un entorno de mayor complejidad, esta configuración podría producir una coevolución de políticas significativamente más rica.</span>
-                            </li>
-                            <li style="margin-bottom:12px;">
-                                <strong style="color:#ffffff;" data-i18n="future4Title">Introducción de escenarios multiagente cooperativos:</strong>
-                                <span data-i18n="future4Desc">El framework ML-Agents soporta escenarios con más de dos agentes y distintos esquemas de recompensa compartida. Una extensión ambiciosa del proyecto sería entrenar equipos de dos o tres tanques con objetivos cooperativos, donde la recompensa del equipo dependa de la coordinación entre sus miembros. Este tipo de escenario introduciría una capa adicional de complejidad en el espacio de comportamientos emergentes, abriendo la posibilidad de observar tácticas de equipo como el flanqueo coordinado o la distracción deliberada del oponente.</span>
-                            </li>
-                            <li>
-                                <strong style="color:#ffffff;" data-i18n="future5Title">Transferencia a entornos de producción:</strong>
-                                <span data-i18n="future5Desc">Los modelos entrenados en este proyecto operan en un entorno de simulación controlado. Una línea de trabajo de interés aplicado sería evaluar la robustez de las políticas aprendidas ante perturbaciones no presentes durante el entrenamiento, variaciones en la geometría de la arena, cambios en la velocidad de los agentes o introducción de ruido en las observaciones. Este tipo de evaluación permitiría determinar en qué medida las estrategias emergentes son genuinamente generalizables o están sobreajustadas a las condiciones específicas del entorno de entrenamiento.</span>
-                            </li>
-                        </ul>
+                        <h3 data-i18n="sec73Title" style="color: var(--green, #00ff88); margin-bottom: 16px;">5.3. Líneas de Trabajo Futuro</h3>
+                        
+                        <div class="future-grid">
+                            <div class="future-card-item">
+                                <div class="future-tag" data-i18n="futureTag1">Entornos Complejos</div>
+                                <p data-i18n="future1Desc">Diseño de arenas asimétricas con múltiples coberturas destruibles para forzar mayor presión adaptativa en Self-Play.</p>
+                            </div>
+
+                            <div class="future-card-item">
+                                <div class="future-tag" data-i18n="futureTag2">Agentes Asimétricos</div>
+                                <p data-i18n="future2Desc">Incorporar clases heterogéneas (tanques ágiles de bajo daño vs vehículos pesados de largo alcance) para fomentar contraestrategias.</p>
+                            </div>
+
+                            <div class="future-card-item">
+                                <div class="future-tag" data-i18n="futureTag3">Self-Play Riguroso</div>
+                                <p data-i18n="future3Desc">Aumentar el pool de modelos históricos, reducir la tasa de enfrentamiento actual y ampliar <code>team_change</code> para elevar el nivel táctico.</p>
+                            </div>
+
+                            <div class="future-card-item">
+                                <div class="future-tag" data-i18n="futureTag4">Sistemas Multi-Agente</div>
+                                <p data-i18n="future4Desc">Entrenar escuadrones 2v2 o 3v3 con recompensas grupales para favorecer comportamientos de flanqueo coordinado y emboscadas.</p>
+                            </div>
+
+                            <div class="future-card-item">
+                                <div class="future-tag" data-i18n="futureTag5">Robustez en Producción</div>
+                                <p data-i18n="future5Desc">Evaluar la capacidad de generalización del agente ante ruido en las observaciones y cambios dinámicos de velocidad en tiempo real.</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
