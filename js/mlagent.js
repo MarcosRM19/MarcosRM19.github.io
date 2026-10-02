@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.JS - TRADUCCIÓN COMPLETA I18N, SVG DIAGRAMS Y CANVAS
+   MLAGENT.JS - TRADUCCIÓN COMPLETA Y CONTROL DE UI
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,19 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             t7ModelInit: "Modelo Inicial / Estado Base",
 
-            /* COMPORTAMIENTOS EMERGENTES */
+            /* COMPORTAMIENTOS EMERGENTES (SIN ESPERA TÁCTICA) */
             emergentTitle: "Análisis de Comportamientos Tácticos Emergentes",
             emergentIntro: "Durante las iteraciones de entrenamiento y la coevolución producida por el Self-Play, surgieron patrones tácticos complejos de forma totalmente autónoma, sin necesidad de programar reglas lógicas explícitas:",
             emBehavior1Title: "Seguimiento y Disparo Predictivo: ",
             emBehavior1Desc: "El agente calcula continuamente el vector de velocidad del oponente, anticipando su trayectoria futura para disparar con un ángulo de avance que impacta exactamente en el punto de intercepción.",
-            emBehavior2Title: "Espera Táctica en Cobertura: ",
-            emBehavior2Desc: "Aprovechando la geometría del entorno, el agente se posiciona detrás de la pared central cuando no tiene ventaja directa, aguardando pacientemente a que el rival asome por el flanco para sorprenderlo con un tiro directo.",
             emBehavior3Title: "Engaño y Amago mediante Trayectoria: ",
             emBehavior3Desc: "El agente ejecuta cambios bruscos de dirección y amagos de avance para inducir al oponente a realizar un disparo precipitadamente hacia una posición vacía.",
             emBehavior4Title: "Gestión de la Economía de Disparo y Cooldown: ",
             emBehavior4Desc: "El agente aprende el ciclo exacto de recarga (150 pasos). Evita disparar sin línea de visión clara para no quedar indefenso e inerme durante el periodo de cooldown.",
 
-            /* CONCLUSIONES FORMATO PORFOLIO */
+            /* CONCLUSIONES Y LÍNEAS A FUTURO */
             sec7Title: "Conclusiones y Líneas a Futuro",
             sec71Title: "5.1. Análisis Crítico del Grado de Consecución de Objetivos",
             badge1: "100% Completado",
@@ -124,8 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
             future3Desc: "Aumentar el pool de modelos históricos, reducir la tasa de enfrentamiento actual y ampliar team_change para elevar el nivel táctico.",
             futureTag4: "Sistemas Multi-Agente",
             future4Desc: "Entrenar escuadrones 2v2 o 3v3 con recompensas grupales para favorecer comportamientos de flanqueo coordinado y emboscadas.",
-            futureTag5: "Robustez en Producción",
-            future5Desc: "Evaluar la capacidad de generalización del agente ante ruido en las observaciones y cambios dinámicos de velocidad en tiempo real.",
 
             ctaTitle: "Descarga la Memoria Técnica Completa (PDF)",
             ctaText: "Accede al documento TFG completo de Marcos Ruiz Muñoz (40 páginas) con todos los anexos de código en C#, curvas de TensorBoard y bibliografía.",
@@ -160,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Intro: "The system is structured around five object-oriented components interacting via physics events and direct references, communicating with the Python trainer via a TCP socket on port 5004.",
             diagram1Title: "Diagram 1: C# Class Architecture & Unity-Python Communication Flow",
 
-            /* TRANSLATIONS FOR SVG DIAGRAM 1 */
+            /* SVG DIAGRAM 1 TRANSLATIONS */
             svgMethods: "Main Methods:",
             svgOnAction: "• OnActionReceived(actions) -> Drive/Shoot",
             svgRefs: "Control References:",
@@ -195,14 +191,12 @@ document.addEventListener("DOMContentLoaded", () => {
             emergentIntro: "Throughout training iterations and Self-Play co-evolution, complex tactical behaviors emerged fully autonomously without any hardcoded logic:",
             emBehavior1Title: "Predictive Lead Shooting: ",
             emBehavior1Desc: "The agent continuously estimates opponent velocity, predicting future trajectory to shoot at lead angles that strike the target upon interception.",
-            emBehavior2Title: "Tactical Waiting Under Cover: ",
-            emBehavior2Desc: "Using terrain geometry, the agent takes cover behind the center wall when lacking direct advantage, waiting for the opponent to peek before firing.",
             emBehavior3Title: "Trajectory Deception & Baiting: ",
             emBehavior3Desc: "The agent performs sharp directional changes to bait the enemy into discharging shots prematurely into empty space.",
             emBehavior4Title: "Shot Economy & Cooldown Management: ",
             emBehavior4Desc: "The agent masters the exact 150-step reload cycle, avoiding wasted shots without LOS to prevent remaining defenseless during cooldown.",
 
-            /* CONCLUSIONS PORTFOLIO FORMAT */
+            /* CONCLUSIONS 2x2 */
             sec7Title: "Conclusions & Future Lines of Work",
             sec71Title: "5.1. Critical Analysis of Objective Achievement",
             badge1: "100% Completed",
@@ -240,8 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
             future3Desc: "Expand historical model pools, reduce current model matchup ratios, and increase team_change duration.",
             futureTag4: "Multi-Agent Systems",
             future4Desc: "Train 2v2 or 3v3 squads with group rewards to encourage coordinated flanking tactics and baiting.",
-            futureTag5: "Production Robustness",
-            future5Desc: "Evaluate policy generalization against observation noise and real-time speed perturbations.",
 
             ctaTitle: "Download Full Technical Paper (PDF)",
             ctaText: "Access the complete 40-page TFG paper by Marcos Ruiz Muñoz with C# code appendixes, TensorBoard curves, and references.",
@@ -380,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       DIBUJO DEL GRÁFICO CANVAS CON EJES GRADUADOS
+       DIBUJO DEL GRÁFICO CANVAS CON EJES EN VERDE
        --------------------------------------------------------- */
     const canvas = document.getElementById("eloCanvas");
     const reloadBtn = document.getElementById("btn-reload-chart");
