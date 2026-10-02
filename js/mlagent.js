@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.JS - TRADUCCIÓN COMPLETA DE TAGLINE Y SECCIONES
+   MLAGENT.JS - CON DICCIONARIO COMPLETO Y TRADUCCIONES
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -57,10 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             sec2Title: "Arquitectura Perceptual y Espacio de Observaciones Vectoriales (27D)",
             sec2Intro: "El vector de estado St pertenece a R^27 y captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.",
-            diagramTitle: "Diagrama de Sensores 3D Raycast y Canalizado Neural Actor-Critic",
+            diagramTitle: "Diagrama 1: Flujo Perceptual 3D Raycast y Tensor de Observaciones (27D)",
             tblCol1: "Índice Vector",
             tblCol2: "Variable Observada",
-            tblCol3: "Rango Normalizado",
+            tblCol3: "Rango Mín / Máx",
             tblCol4: "Propósito Técnico",
             tblR1Name: "3D Raycast Perception",
             tblR1Desc: "Detección en abanico de muros, límites y proyectiles.",
@@ -155,10 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             sec2Title: "Perceptual Architecture & Vector Observation Space (27D)",
             sec2Intro: "State vector St belongs to R^27 and captures the spatial kinematic information of the vehicle and arena geometry in local coordinates without global variables.",
-            diagramTitle: "3D Raycast Perception Sensor Diagram and Actor-Critic Neural Pipeline",
+            diagramTitle: "Diagram 1: 3D Raycast Perception Flow and Observation Tensor (27D)",
             tblCol1: "Vector Index",
             tblCol2: "Observed Variable",
-            tblCol3: "Normalized Range",
+            tblCol3: "Min / Max Range",
             tblCol4: "Technical Purpose",
             tblR1Name: "3D Raycast Perception",
             tblR1Desc: "Fan array detection of walls, boundaries, and projectiles.",
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       2. PESTAÑAS CURRICULUM
+       2. PESTAÑAS CURRICULUM INTERACTIVO
        --------------------------------------------------------- */
     let currentCurriculumPhase = "1";
     const curriculumData = {
@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       3. GRÁFICO ELO EN CANVAS
+       3. GRÁFICO ELO ANIMADO EN CANVAS
        --------------------------------------------------------- */
     const canvas = document.getElementById("eloCanvas");
     const reloadBtn = document.getElementById("btn-reload-chart");
@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       4. COPIAR YAML
+       4. COPIAR YAML AL PORTAPAPELES
        --------------------------------------------------------- */
     const copyBtn = document.getElementById("btn-copy-code");
     const codeBlock = document.getElementById("code-yaml-block");
