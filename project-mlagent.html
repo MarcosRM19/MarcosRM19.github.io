@@ -48,7 +48,7 @@
         </nav>
     </header>
 
-    <!-- HERO LIMPIO CON TÍTULO EN 2 LÍNEAS -->
+    <!-- HERO CON TÍTULO EN LETRA MÁS GRANDE (2 LÍNEAS) -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -61,7 +61,9 @@
             <div class="title-veil"></div>
 
             <div class="title-inner">
-                <h1 id="project-title-hero" class="game-title-hero">Agente Autónomo de Combate Vehicular en Unity</h1>
+                <h1 id="project-title-hero" class="game-title-hero" data-i18n="heroTitle">
+                    Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular
+                </h1>
                 <p id="project-tagline" class="title-tagline" data-i18n="heroTagline">
                     Entrenamiento mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.
                 </p>
@@ -138,7 +140,7 @@
                         El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.
                     </p>
 
-                    <!-- DIAGRAMA SVG 1: ARQUITECTURA CORREGIDA SIN DESBORDAMIENTO -->
+                    <!-- DIAGRAMA SVG 1: ARQUITECTURA -->
                     <div class="diagram-card-container">
                         <div class="diagram-top-title" data-i18n="diagram1Title">Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python</div>
                         <div class="svg-wrapper">
@@ -165,7 +167,7 @@
                                 <path d="M 305 160 L 335 160" stroke="#38bdf8" stroke-width="2" fill="none"/>
                                 <polygon points="335,156 343,160 335,164" fill="#38bdf8"/>
 
-                                <!-- BLOQUE 2: SOCKET TCP COMMUNICATOR (AMPLIADO A 310PX) -->
+                                <!-- BLOQUE 2: SOCKET TCP COMMUNICATOR -->
                                 <rect x="345" y="45" width="310" height="230" rx="10" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
                                 <text x="500" y="72" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Communicator TCP (Puerto 5004)</text>
                                 <line x1="360" y1="82" x2="640" y2="82" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
@@ -260,7 +262,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 02: ESPACIO DE OBSERVACIONES UNIFICADO A 21D -->
+                <!-- SECCIÓN 02: ESPACIO DE OBSERVACIONES VECTORIAL 21D -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">02</span>
@@ -271,7 +273,7 @@
                         El vector de observaciones $S_t \in \mathbb{R}^{21}$ fue diseñado para permanecer estrictamente invariante entre todas las fases de curriculum para evitar tener que reiniciar los pesos de la red neuronal. Se complementa adicionalmente con el Ray Perception Sensor 3D.
                     </p>
 
-                    <!-- TABLA 2: ESPACIO DE OBSERVACIONES VECTORIALES (21D UNIFICADO) -->
+                    <!-- TABLA 2: ESPACIO DE OBSERVACIONES VECTORIALES (21D) -->
                     <div class="tech-table-wrapper">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 2: Espacio de Observaciones Vectoriales ($S \in \mathbb{R}^{21}$)</h3>
                         <table class="tech-spec-table">
@@ -428,12 +430,12 @@
                     </div>
 
                     <p data-i18n="sec3Intro">
-                        El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea $R_t$ en cada paso $t$ se formula explícitamente como la combinación lineal de señales terminales y continuas:
+                        El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea $R_t$ en cada paso $t$ se formula explícitamente a continuación:
                     </p>
 
-                    <!-- CAJA DE FÓRMULA MATEMÁTICA FORMAL -->
+                    <!-- CAJA DE FÓRMULA MATEMÁTICA -->
                     <div class="math-formula-box">
-                        <div class="formula-header">Ecuación General de Recompensa Instantánea ($R_t$)</div>
+                        <div class="formula-header" data-i18n="formulaHeader">Ecuación General de Recompensa Instantánea ($R_t$)</div>
                         <div class="formula-content">
                             $$R_t = R_{\text{impacto}} + R_{\text{alineación}} + R_{\text{LOS}} + R_{\text{posición}} - R_{\text{tiempo}} - R_{\text{colisión}}$$
                         </div>
@@ -545,7 +547,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 04: HIPERPARÁMETROS Y YAML REAL -->
+                <!-- SECCIÓN 04: HIPERPARÁMETROS YAML -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">04</span>
@@ -664,7 +666,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 05: CURRICULUM LEARNING CORREGIDO CON DATOS EXACTOS -->
+                <!-- SECCIÓN 05: CURRICULUM LEARNING -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">05</span>
@@ -681,7 +683,7 @@
                         </div>
 
                         <div id="curriculum-content-panel" class="curriculum-panel">
-                            <!-- Carga vía JS con datos corregidos -->
+                            <!-- Carga vía JS -->
                         </div>
                     </div>
 
@@ -745,7 +747,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 06: SELF-PLAY, GRÁFICO CON EJES X/Y Y TABLA DE VALORES -->
+                <!-- SECCIÓN 06: SELF-PLAY, TABLA 7 SOBERBIA Y COMPORTAMIENTOS EMERGENTES -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">06</span>
@@ -771,7 +773,7 @@
                         </div>
                     </div>
 
-                    <!-- TABLA 7: VALORES NUMÉRICOS EXPLÍCITOS DE EJES X e Y -->
+                    <!-- TABLA 7: SIN COLUMNA DE HABILIDAD Y REGISTRO DE EJES -->
                     <div class="tech-table-wrapper" style="margin-top: 25px;">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 7: Registro Numérico del Gráfico ELO vs Iteraciones ($X \rightarrow Y$)</h3>
                         <table class="tech-spec-table">
@@ -781,7 +783,6 @@
                                     <th>Eje X: Checkpoint del Modelo</th>
                                     <th>Eje Y: Puntuación ELO Exacta</th>
                                     <th>Eje Y: Ratio de Victoria Estimado</th>
-                                    <th>Habilidad Competitiva Observada</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -790,80 +791,149 @@
                                     <td>Punto de Partida (Baseline)</td>
                                     <td><code>1200 ELO</code></td>
                                     <td>50.0%</td>
-                                    <td>Agente base sin adaptación previa al juego contra sí mismo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>1.5 M Steps</code></td>
                                     <td>Checkpoint SP-1</td>
                                     <td><code>1270 ELO</code></td>
                                     <td>59.8%</td>
-                                    <td>Primeras respuestas evasivas frente a disparos frontales.</td>
                                 </tr>
                                 <tr>
                                     <td><code>3.0 M Steps</code></td>
                                     <td>Checkpoint SP-2</td>
                                     <td><code>1332 ELO</code></td>
                                     <td>68.1%</td>
-                                    <td>Uso incipiente de las paredes como cobertura física.</td>
                                 </tr>
                                 <tr>
                                     <td><code>5.0 M Steps</code></td>
                                     <td>Checkpoint SP-3</td>
                                     <td><code>1435 ELO</code></td>
                                     <td>79.4%</td>
-                                    <td>Aparición del amago de movimiento para forzar el fallo rival.</td>
                                 </tr>
                                 <tr>
                                     <td><code>7.0 M Steps</code></td>
                                     <td>Checkpoint SP-4</td>
                                     <td><code>1611 ELO</code></td>
                                     <td>91.2%</td>
-                                    <td>Dominio de la economía de tiro y disparo en punto ciego.</td>
                                 </tr>
                                 <tr>
                                     <td><code>8.5 M Steps</code></td>
                                     <td>Checkpoint SP-5</td>
                                     <td><code>1950 ELO</code></td>
                                     <td>98.5%</td>
-                                    <td>Espera táctica coordinada con tiempo de cooldown.</td>
                                 </tr>
                                 <tr>
                                     <td><code>10.0 M Steps</code></td>
                                     <td>Modelo Final 30</td>
                                     <td><code>2200+ ELO</code></td>
                                     <td>99.9%</td>
-                                    <td>Comportamiento maestro sin fallos mecánicos ni vacilaciones.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- BLOQUE DE COMPORTAMIENTOS EMERGENTES DETALLADOS -->
+                    <div class="tech-card" style="margin-top: 20px; border-left: 3px solid #38bdf8;">
+                        <h3 data-i18n="emergentTitle" style="color: #38bdf8;">Análisis de Comportamientos Tácticos Emergentes</h3>
+                        <p data-i18n="emergentIntro" style="color:#cbd5e1; font-size:0.95rem; margin-bottom:15px;">
+                            Durante las iteraciones de entrenamiento y la coevolución producida por el Self-Play, surgieron patrones tácticos complejos de forma totalmente autónoma, sin necesidad de programar reglas lógicas explícitas:
+                        </p>
+                        <ul class="emergent-list" style="color:#cbd5e1; font-size:0.92rem; line-height:1.7; padding-left:20px;">
+                            <li style="margin-bottom:10px;">
+                                <strong style="color:#ffffff;" data-i18n="emBehavior1Title">Seguimiento y Disparo Predictivo:</strong>
+                                <span data-i18n="emBehavior1Desc">El agente calcula continuamente el vector de velocidad del oponente, anticipando su trayectoria futura para disparar con un ángulo de avance que impacta exactamente en el punto de intercepción.</span>
+                            </li>
+                            <li style="margin-bottom:10px;">
+                                <strong style="color:#ffffff;" data-i18n="emBehavior2Title">Espera Táctica en Cobertura:</strong>
+                                <span data-i18n="emBehavior2Desc">Aprovechando la geometría del entorno, el agente se posiciona detrás de la pared central cuando no tiene ventaja directa, aguardando pacientemente a que el rival asome por el flanco para sorprenderlo con un tiro directo.</span>
+                            </li>
+                            <li style="margin-bottom:10px;">
+                                <strong style="color:#ffffff;" data-i18n="emBehavior3Title">Engaño y Amago mediante Trayectoria:</strong>
+                                <span data-i18n="emBehavior3Desc">El agente ejecuta cambios bruscos de dirección y amagos de avance para inducir al oponente a realizar un disparo precipitadamente hacia una posición vacía.</span>
+                            </li>
+                            <li>
+                                <strong style="color:#ffffff;" data-i18n="emBehavior4Title">Gestión de la Economía de Disparo y Cooldown:</strong>
+                                <span data-i18n="emBehavior4Desc">El agente aprende el ciclo exacto de recarga (150 pasos). Evita disparar sin línea de visión clara para no quedar indefenso e inerme durante el periodo de cooldown.</span>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
-                <!-- SECCIÓN 07: CONCLUSIONES Y TRABAJO FUTURO -->
+                <!-- SECCIÓN 07: CONCLUSIONES Y LÍNEAS A FUTURO (TEXTO EXACTO DEL TFG) -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">07</span>
-                        <h2 data-i18n="sec7Title">Conclusiones y Trabajo Futuro</h2>
+                        <h2 data-i18n="sec7Title">Conclusiones y Líneas a Futuro</h2>
                     </div>
 
-                    <div class="tech-grid-2">
-                        <div class="tech-card">
-                            <h3 data-i18n="conclusionsTitle">Conclusiones Principales</h3>
-                            <p data-i18n="conclusionsText" style="color:#cbd5e1; font-size:0.95rem; line-height:1.7;">
-                                1. <strong>Eficacia del Curriculum Learning:</strong> La división del aprendizaje en 5 fases progresivas permitió resolver un problema de espacio de estados complejo que fallaba sistemáticamente al entrenarse desde cero.<br><br>
-                                2. <strong>Emergencia sin Reglas Manuales:</strong> Tácticas avanzadas como la espera en cobertura o el amago de trayectoria surgieron de forma puramente autónoma mediante la combinación de PPO, Curiosidad y Self-Play.<br><br>
-                                3. <strong>Robustez Cinemática:</strong> El espacio de observaciones vectorial de 21D enriquecido con el Ray Perception Sensor 3D proporcionó suficiente contexto espacial sin saturar la red.
-                            </p>
-                        </div>
+                    <!-- SUBSECCIÓN 7.1 -->
+                    <div class="tech-card" style="margin-bottom: 24px;">
+                        <h3 data-i18n="sec71Title" style="color: var(--green, #00ff88); margin-bottom: 14px;">5.1. Análisis Crítico del Grado de Consecución de los Objetivos</h3>
+                        <p data-i18n="sec71P1" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            El proyecto planteaba como objetivo principal el desarrollo de un agente autónomo de combate capaz de adquirir comportamientos complejos mediante aprendizaje por refuerzo, articulado en una secuencia de subobjetivos de complejidad creciente. A continuación se evalúa el grado de consecución de cada uno de ellos.
+                        </p>
+                        <p data-i18n="sec71P2" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            La <strong>aproximación, alineación y disparo sobre objetivo estático</strong> se alcanzó de forma completa y satisfactoria en la primera fase de entrenamiento. El agente convergió a una política estable con recompensa media de +11 y desviación estándar inferior a 1, demostrando un comportamiento consistente y robusto en el entorno más simple.
+                        </p>
+                        <p data-i18n="sec71P3" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            La <strong>evasión de obstáculos y recuperación de línea de visión</strong> se alcanzó de forma funcional, aunque con mayor dificultad de la esperada. El proceso de entrenamiento reveló que el diseño inicial del sistema de recompensas incentivaba inadvertidamente la parálisis del agente frente a la pared, requiriendo múltiples iteraciones de rediseño hasta obtener una señal que produjera el comportamiento de rodeo deseado. El objetivo se considera alcanzado, con la matización de que el comportamiento de evasión presentaba cierta variabilidad en función de la posición relativa del obstáculo respecto al objetivo.
+                        </p>
+                        <p data-i18n="sec71P4" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            El <strong>seguimiento de objetivo en movimiento</strong> se alcanzó con los mejores resultados del proyecto. La convergencia fue rápida gracias a la transferencia desde la fase anterior, y la desviación estándar excepcionalmente baja de la fase 3 evidenció que el agente desarrolló una política de seguimiento y disparo predictivo altamente consistente.
+                        </p>
+                        <p data-i18n="sec71P5" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75;">
+                            El <strong>self-play competitivo</strong> se alcanzó parcialmente. El sistema funcionó correctamente desde el punto de vista técnico, con el ELO alcanzando 1611 puntos y mostrando una tendencia alcista sostenida a lo largo de 1.6 millones de pasos. Sin embargo, la complejidad del entorno de combate presentaba limitaciones inherentes que condicionaron el nivel de sofisticación táctica alcanzable. La arena simétrica con una única pared de posición aleatoria y dos tanques con las mismas capacidades constituye un entorno de complejidad moderada que, si bien fue suficiente para que emergieran comportamientos tácticos genuinos como el engaño mediante movimiento y la gestión del cooldown, no ofrecía la variedad situacional necesaria para desarrollar estrategias de mayor profundidad. En entornos más complejos, con múltiples obstáculos, diferentes configuraciones de arena o agentes con capacidades asimétricas, la presión selectiva del self-play habría sido sensiblemente mayor, potencialmente produciendo comportamientos de nivel superior.
+                        </p>
+                    </div>
 
-                        <div class="tech-card">
-                            <h3 data-i18n="futureTitle">Líneas de Trabajo Futuro</h3>
-                            <p data-i18n="futureText" style="color:#cbd5e1; font-size:0.95rem; line-height:1.7;">
-                                • <strong>Escenarios Multi-Agente (3v3):</strong> Extender el entorno para duelos por equipos utilizando arquitecturas de mapas de atención o comunicaciones entre tanques.<br><br>
-                                • <strong>Entornos Procedurales Destruibles:</strong> Generar coberturas dinámicas que puedan destruirse por impactos, forzando la reevaluación en tiempo real del mapa de riesgo.<br><br>
-                                • <strong>Terrenos Heterogéneos:</strong> Incorporar coeficientes de fricción variables (barro, nieve, asfalto) para testear la adaptación de la tracción física.
-                            </p>
-                        </div>
+                    <!-- SUBSECCIÓN 7.2 -->
+                    <div class="tech-card" style="margin-bottom: 24px;">
+                        <h3 data-i18n="sec72Title" style="color: var(--green, #00ff88); margin-bottom: 14px;">5.2. Principales Aprendizajes del Proyecto</h3>
+                        <p data-i18n="sec72P1" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            Más allá de los resultados técnicos obtenidos, el desarrollo del proyecto ha generado un conjunto de aprendizajes metodológicos de valor significativo.
+                        </p>
+                        <p data-i18n="sec72P2" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            <strong>El primero y más relevante</strong> es que el diseño de la función de recompensa es el componente más crítico y más difícil del aprendizaje por refuerzo aplicado. A diferencia del código convencional, cuya corrección es verificable de forma determinista, una función de recompensa incorrecta puede producir comportamientos aparentemente razonables que en realidad corresponden a mínimos locales explotados por el agente. La única forma de validarla es observar el comportamiento emergente durante el entrenamiento e iterar, lo que exige una comprensión profunda de la dinámica de optimización del algoritmo.
+                        </p>
+                        <p data-i18n="sec72P3" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            <strong>El segundo aprendizaje</strong> es la importancia de separar los problemas antes de combinarlos. La estrategia de curriculum learning por fases independientes no solo aceleró la convergencia sino que facilitated el diagnóstico de problemas; cuando una fase presentaba dificultades, era posible identificar exactamente qué nueva variable introducida era la responsable, sin ambigüedad. Este enfoque contrasta con la alternativa de entrenar directamente en el entorno completo, donde la atribución de los problemas de convergencia es considerablemente más difícil.
+                        </p>
+                        <p data-i18n="sec72P4" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:12px;">
+                            <strong>El tercer aprendizaje</strong> es que la física del entorno y los parámetros del motor de juego tienen un impacto directo en la calidad del aprendizaje. El conflicto entre <code>transform.Rotate</code> y el <code>Rigidbody</code>, la configuración del <code>Angular Drag</code>, la orientación incorrecta del modelo 3D o la ausencia de <code>Layer Collision Matrix</code> fueron factores que produjeron comportamientos erráticos cuya causa no era evidente a primera vista. La depuración de estos problemas requirió un análisis sistemático que puso de manifiesto que en proyectos de aprendizaje por refuerzo en motores de juego, la correcta configuración del entorno físico es tan importante como el diseño del algoritmo de aprendizaje.
+                        </p>
+                        <p data-i18n="sec72P5" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75;">
+                            <strong>El cuarto aprendizaje</strong> es la naturaleza fundamentalmente empírica e iterativa del proceso de entrenamiento. Los valores de hiperparámetros, magnitudes de recompensa y parámetros de curriculum que resultaron efectivos no fueron derivados analíticamente sino a través de múltiples ciclos de entrenamiento, observación y ajuste. Esta característica implica que la experiencia acumulada en proyectos anteriores es un activo fundamental en este dominio, y que la documentación detallada de cada decisión y su justificación tiene un valor práctico directo.
+                        </p>
+                    </div>
+
+                    <!-- SUBSECCIÓN 7.3 -->
+                    <div class="tech-card">
+                        <h3 data-i18n="sec73Title" style="color: var(--green, #00ff88); margin-bottom: 14px;">5.3. Líneas a Futuro</h3>
+                        <p data-i18n="sec73P1" style="color:#cbd5e1; font-size:0.95rem; line-height:1.75; margin-bottom:14px;">
+                            El trabajo realizado establece una base técnica sólida sobre la que es posible avanzar en varias direcciones de machine learning de interés creciente pero también deja abierta diferentes puertas a mejoras al futuro como:
+                        </p>
+                        <ul style="color:#cbd5e1; font-size:0.93rem; line-height:1.75; padding-left:20px;">
+                            <li style="margin-bottom:12px;">
+                                <strong style="color:#ffffff;" data-i18n="future1Title">Incremento de la complejidad del entorno de combate:</strong>
+                                <span data-i18n="future1Desc">La limitación más significativa del self-play desarrollado en este proyecto fue la simplicidad del entorno; una arena abierta con una única pared de posición aleatoria ofrece un espacio de situaciones tácticas reducido. Una línea de continuación directa sería el diseño de arenas con múltiples obstáculos de geometría variable, zonas de cobertura estructuradas y configuraciones asimétricas que obliguen al agente a desarrollar estrategias adaptativas en lugar de políticas fijas. Un entorno de mayor riqueza situacional sometería al self-play a una presión selectiva más intensa, potencialmente produciendo comportamientos tácticos de nivel superior a los observados en este proyecto.</span>
+                            </li>
+                            <li style="margin-bottom:12px;">
+                                <strong style="color:#ffffff;" data-i18n="future2Title">Diferenciación de tipos de agentes:</strong>
+                                <span data-i18n="future2Desc">El proyecto utilizó dos instancias del mismo agente con las mismas capacidades físicas. Una extensión natural sería introducir agentes con perfiles asimétricos como un tanque de mayor velocidad pero menor precisión frente a uno más lento pero con mayor rango de disparo, por ejemplo. Esta asimetría obligaría a cada agente a explotar sus ventajas específicas y a mitigar sus debilidades frente a un oponente con capacidades diferentes, un problema significativamente más complejo que el abordado en este proyecto y más representativo de los escenarios de combate reales en videojuegos.</span>
+                            </li>
+                            <li style="margin-bottom:12px;">
+                                <strong style="color:#ffffff;" data-i18n="future3Title">Self-play de mayor rigor competitivo:</strong>
+                                <span data-i18n="future3Desc">Los parámetros de self-play utilizados, con <code>window: 10</code> y <code>play_against_latest_model_ratio: 0.5</code>, constituyen una configuración moderada. Una línea de mejora sería aumentar el pool de modelos históricos, reducir el ratio de juego contra el modelo actual para forzar mayor diversidad de oponentes, y aumentar el <code>team_change</code> para dar más tiempo a cada equipo de desarrollar estrategias profundas antes del intercambio. Combinado con un entorno de mayor complejidad, esta configuración podría producir una coevolución de políticas significativamente más rica.</span>
+                            </li>
+                            <li style="margin-bottom:12px;">
+                                <strong style="color:#ffffff;" data-i18n="future4Title">Introducción de escenarios multiagente cooperativos:</strong>
+                                <span data-i18n="future4Desc">El framework ML-Agents soporta escenarios con más de dos agentes y distintos esquemas de recompensa compartida. Una extensión ambiciosa del proyecto sería entrenar equipos de dos o tres tanques con objetivos cooperativos, donde la recompensa del equipo dependa de la coordinación entre sus miembros. Este tipo de escenario introduciría una capa adicional de complejidad en el espacio de comportamientos emergentes, abriendo la posibilidad de observar tácticas de equipo como el flanqueo coordinado o la distracción deliberada del oponente.</span>
+                            </li>
+                            <li>
+                                <strong style="color:#ffffff;" data-i18n="future5Title">Transferencia a entornos de producción:</strong>
+                                <span data-i18n="future5Desc">Los modelos entrenados en este proyecto operan en un entorno de simulación controlado. Una línea de trabajo de interés aplicado sería evaluar la robustez de las políticas aprendidas ante perturbaciones no presentes durante el entrenamiento, variaciones en la geometría de la arena, cambios en la velocidad de los agentes o introducción de ruido en las observaciones. Este tipo de evaluación permitiría determinar en qué medida las estrategias emergentes son genuinamente generalizables o están sobreajustadas a las condiciones específicas del entorno de entrenamiento.</span>
+                            </li>
+                        </ul>
                     </div>
                 </section>
 
