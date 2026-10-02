@@ -48,7 +48,7 @@
         </nav>
     </header>
 
-    <!-- HERO PRINCIPAL -->
+    <!-- HERO PRINCIPAL CON TÍTULO MÁS GRANDE -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 01: ARQUITECTURA CON DIAGRAMA TRADUCIBLE -->
+                <!-- SECCIÓN 01: ARQUITECTURA -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">01</span>
@@ -140,7 +140,7 @@
                         El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.
                     </p>
 
-                    <!-- DIAGRAMA SVG 1 CON TEXTOS TRADUCIBLES -->
+                    <!-- DIAGRAMA SVG 1 CON VERDE VERDE -->
                     <div class="diagram-card-container">
                         <div class="diagram-top-title" data-i18n="diagram1Title">Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python</div>
                         <div class="svg-wrapper">
@@ -152,29 +152,29 @@
                                 <text x="165" y="62" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">TankMLAgent (Unity.MLAgents)</text>
                                 <line x1="40" y1="72" x2="290" y2="72" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
                                 
-                                <text x="40" y="95" fill="#38bdf8" font-size="10.5" font-weight="bold" data-i18n="svgMethods">Métodos Principales:</text>
+                                <text x="40" y="95" fill="#00ff88" font-size="10.5" font-weight="bold" data-i18n="svgMethods">Métodos Principales:</text>
                                 <text x="40" y="115" fill="#cbd5e1" font-size="9.5">• CollectObservations(sensor) -> 21D</text>
                                 <text x="40" y="133" fill="#cbd5e1" font-size="9.5" data-i18n="svgOnAction">• OnActionReceived(actions) -> Motor/Tiro</text>
                                 <text x="40" y="151" fill="#cbd5e1" font-size="9.5">• OnEpisodeBegin() -> Reset &amp; Spawns</text>
                                 <text x="40" y="169" fill="#cbd5e1" font-size="9.5">• ApplyMovement() &amp; ApplyRotation()</text>
 
-                                <text x="40" y="195" fill="#38bdf8" font-size="10.5" font-weight="bold" data-i18n="svgRefs">Referencias de Control:</text>
+                                <text x="40" y="195" fill="#00ff88" font-size="10.5" font-weight="bold" data-i18n="svgRefs">Referencias de Control:</text>
                                 <text x="40" y="215" fill="#cbd5e1" font-size="9.5">• TargetMovePosition _target</text>
                                 <text x="40" y="233" fill="#cbd5e1" font-size="9.5">• SelfPlayAreaManager _areaMgr</text>
                                 <text x="40" y="251" fill="#cbd5e1" font-size="9.5">• BulletDetection Prefab</text>
 
                                 <!-- CONECTOR 1 -->
-                                <path d="M 305 160 L 335 160" stroke="#38bdf8" stroke-width="2" fill="none"/>
-                                <polygon points="335,156 343,160 335,164" fill="#38bdf8"/>
+                                <path d="M 305 160 L 335 160" stroke="#00ff88" stroke-width="2" fill="none"/>
+                                <polygon points="335,156 343,160 335,164" fill="#00ff88"/>
 
                                 <!-- BLOQUE 2: SOCKET TCP COMMUNICATOR -->
-                                <rect x="345" y="45" width="310" height="230" rx="10" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
-                                <text x="500" y="72" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold" data-i18n="svgTcpTitle">Communicator TCP (Puerto 5004)</text>
-                                <line x1="360" y1="82" x2="640" y2="82" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
+                                <rect x="345" y="45" width="310" height="230" rx="10" fill="#020617" stroke="#00ff88" stroke-width="1.5"/>
+                                <text x="500" y="72" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold" data-i18n="svgTcpTitle">Communicator TCP (Puerto 5004)</text>
+                                <line x1="360" y1="82" x2="640" y2="82" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
                                 
                                 <text x="500" y="105" fill="#cbd5e1" font-size="9.5" text-anchor="middle" data-i18n="svgSync">Sincronización por Decision Period (5)</text>
                                 <text x="500" y="130" fill="#00ff88" font-size="9.5" text-anchor="middle" data-i18n="svgSends">&rarr; Envía: Vector 21D + Recompensas</text>
-                                <text x="500" y="155" fill="#38bdf8" font-size="9.5" text-anchor="middle" data-i18n="svgReceives">&leftarrow; Recibe: Acciones [Cont(2), Disc(1)]</text>
+                                <text x="500" y="155" fill="#00ff88" font-size="9.5" text-anchor="middle" data-i18n="svgReceives">&leftarrow; Recibe: Acciones [Cont(2), Disc(1)]</text>
                                 <text x="500" y="180" fill="#cbd5e1" font-size="9.5" text-anchor="middle" data-i18n="svgSensor">Ray Perception Sensor 3D Integrado</text>
                                 <text x="500" y="210" fill="#94a3b8" font-size="9" text-anchor="middle" data-i18n="svgStep">Fixed Timestep = 0.02s (0.1s / decisión)</text>
 
@@ -191,8 +191,8 @@
                                 <text x="835" y="105" fill="#00ff88" font-size="9.5" text-anchor="middle" font-weight="bold">PPO Algorithm (Clipped L_CLIP)</text>
                                 <text x="835" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">batch_size: 1024 | buffer_size: 40960</text>
 
-                                <rect x="710" y="145" width="250" height="50" rx="6" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
-                                <text x="835" y="165" fill="#38bdf8" font-size="9.5" text-anchor="middle" font-weight="bold">Curriculum &amp; Curiosity Manager</text>
+                                <rect x="710" y="145" width="250" height="50" rx="6" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+                                <text x="835" y="165" fill="#00ff88" font-size="9.5" text-anchor="middle" font-weight="bold">Curriculum &amp; Curiosity Manager</text>
                                 <text x="835" y="182" fill="#cbd5e1" font-size="8.5" text-anchor="middle">obstacle_offset &amp; current_level</text>
 
                                 <rect x="710" y="205" width="250" height="60" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
@@ -422,7 +422,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 03: REWARD SHAPING Y FÓRMULA MATEMÁTICA -->
+                <!-- SECCIÓN 03: REWARD SHAPING -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">03</span>
@@ -430,7 +430,7 @@
                     </div>
 
                     <p data-i18n="sec3Intro">
-                        El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea $R_t$ en cada paso $t$ se formula explícitamente a continuación:
+                        El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales. La función de recompensa total instantánea $R_t$ en cada paso $t$ se formula explícitamente a continuación:
                     </p>
 
                     <div class="math-formula-box">
@@ -744,7 +744,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 06: SELF-PLAY Y TABLA SIN LA PALABRA BASELINE -->
+                <!-- SECCIÓN 06: SELF-PLAY -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">06</span>
@@ -770,7 +770,7 @@
                         </div>
                     </div>
 
-                    <!-- TABLA 7: SIN BASELINE -->
+                    <!-- TABLA 7 -->
                     <div class="tech-table-wrapper" style="margin-top: 25px;">
                         <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 7: Registro Numérico del Gráfico ELO vs Iteraciones ($X \rightarrow Y$)</h3>
                         <table class="tech-spec-table">
@@ -829,9 +829,9 @@
                         </table>
                     </div>
 
-                    <!-- BLOQUE DE COMPORTAMIENTOS EMERGENTES DETALLADOS -->
-                    <div class="tech-card" style="margin-top: 20px; border-left: 3px solid #38bdf8;">
-                        <h3 data-i18n="emergentTitle" style="color: #38bdf8;">Análisis de Comportamientos Tácticos Emergentes</h3>
+                    <!-- BLOQUE DE COMPORTAMIENTOS EMERGENTES SIN ESPERA TÁCTICA -->
+                    <div class="tech-card" style="margin-top: 20px; border-left: 3px solid #00ff88;">
+                        <h3 data-i18n="emergentTitle" style="color: #00ff88;">Análisis de Comportamientos Tácticos Emergentes</h3>
                         <p data-i18n="emergentIntro" style="color:#cbd5e1; font-size:0.95rem; margin-bottom:15px;">
                             Durante las iteraciones de entrenamiento y la coevolución producida por el Self-Play, surgieron patrones tácticos complejos de forma totalmente autónoma, sin necesidad de programar reglas lógicas explícitas:
                         </p>
@@ -839,10 +839,6 @@
                             <li style="margin-bottom:10px;">
                                 <strong style="color:#ffffff;" data-i18n="emBehavior1Title">Seguimiento y Disparo Predictivo:</strong>
                                 <span data-i18n="emBehavior1Desc">El agente calcula continuamente el vector de velocidad del oponente, anticipando su trayectoria futura para disparar con un ángulo de avance que impacta exactamente en el punto de intercepción.</span>
-                            </li>
-                            <li style="margin-bottom:10px;">
-                                <strong style="color:#ffffff;" data-i18n="emBehavior2Title">Espera Táctica en Cobertura:</strong>
-                                <span data-i18n="emBehavior2Desc">Aprovechando la geometría del entorno, el agente se posiciona detrás de la pared central cuando no tiene ventaja directa, aguardando pacientemente a que el rival asome por el flanco para sorprenderlo con un tiro directo.</span>
                             </li>
                             <li style="margin-bottom:10px;">
                                 <strong style="color:#ffffff;" data-i18n="emBehavior3Title">Engaño y Amago mediante Trayectoria:</strong>
@@ -856,14 +852,14 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 07: CONCLUSIONES REESCRITAS Y RESUMIDAS PARA PORFOLIO -->
+                <!-- SECCIÓN 07: CONCLUSIONES EN FILAS 2 A 2 -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">07</span>
                         <h2 data-i18n="sec7Title">Conclusiones y Líneas a Futuro</h2>
                     </div>
 
-                    <!-- 5.1 EVALUACIÓN DE OBJETIVOS (SINTETIZADO CON BADGES) -->
+                    <!-- 5.1 EVALUACIÓN DE OBJETIVOS (2x2 GRID) -->
                     <div class="tech-card" style="margin-bottom: 24px;">
                         <h3 data-i18n="sec71Title" style="color: var(--green, #00ff88); margin-bottom: 16px;">5.1. Análisis Crítico del Grado de Consecución de Objetivos</h3>
                         
@@ -902,7 +898,7 @@
                         </div>
                     </div>
 
-                    <!-- 5.2 APRENDIZAJES CLAVE -->
+                    <!-- 5.2 APRENDIZAJES CLAVE (2x2 GRID) -->
                     <div class="tech-card" style="margin-bottom: 24px;">
                         <h3 data-i18n="sec72Title" style="color: var(--green, #00ff88); margin-bottom: 16px;">5.2. Principales Aprendizajes Metodológicos</h3>
                         
@@ -941,7 +937,7 @@
                         </div>
                     </div>
 
-                    <!-- 5.3 LÍNEAS A FUTURO -->
+                    <!-- 5.3 LÍNEAS A FUTURO (2x2 GRID) -->
                     <div class="tech-card">
                         <h3 data-i18n="sec73Title" style="color: var(--green, #00ff88); margin-bottom: 16px;">5.3. Líneas de Trabajo Futuro</h3>
                         
@@ -964,11 +960,6 @@
                             <div class="future-card-item">
                                 <div class="future-tag" data-i18n="futureTag4">Sistemas Multi-Agente</div>
                                 <p data-i18n="future4Desc">Entrenar escuadrones 2v2 o 3v3 con recompensas grupales para favorecer comportamientos de flanqueo coordinado y emboscadas.</p>
-                            </div>
-
-                            <div class="future-card-item">
-                                <div class="future-tag" data-i18n="futureTag5">Robustez en Producción</div>
-                                <p data-i18n="future5Desc">Evaluar la capacidad de generalización del agente ante ruido en las observaciones y cambios dinámicos de velocidad en tiempo real.</p>
                             </div>
                         </div>
                     </div>
