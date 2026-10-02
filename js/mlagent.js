@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.JS - CURRICULUM REAL Y GRÁFICO ELO CON EJES X/Y
+   MLAGENT.JS - TRADUCCIÓN COMPLETA I18N, DICCIONARIO Y CANVAS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contacto",
             moreProjects: "Más Proyectos",
             btnPdf: "Leer Memoria Técnica (PDF 40 Págs)",
+            heroTitle: "Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular",
             heroTagline: "Entrenamiento mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.",
 
             summaryTitle: "Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular en Unity",
@@ -47,7 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
             sec2Intro: "El vector de observaciones St pertenece a R^21 y fue diseñado para permanecer estrictamente invariante entre todas las fases de curriculum para evitar tener que reiniciar los pesos de la red neuronal.",
 
             sec3Title: "Ingeniería de Recompensas (Reward Shaping) y Evolución",
-            sec3Intro: "El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea Rt se formula explícitamente a continuación.",
+            sec3Intro: "El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea Rt se formula explícitamente a continuación:",
+            formulaHeader: "Ecuación General de Recompensa Instantánea (Rt)",
 
             sec4Title: "Hiperparámetros de Entrenamiento YAML (PPO)",
             btnCopyCode: "Copiar YAML",
@@ -59,11 +61,46 @@ document.addEventListener("DOMContentLoaded", () => {
             chartTitle: "Progreso ELO Rating vs Iteraciones (Self-Play)",
             btnReloadChart: "Reanimar",
 
-            sec7Title: "Conclusiones y Trabajo Futuro",
-            conclusionsTitle: "Conclusiones Principales",
-            conclusionsText: "1. Eficacia del Curriculum Learning: La división del aprendizaje en 5 fases progresivas permitió resolver un problema de espacio de estados complejo que fallaba sistemáticamente al entrenarse desde cero.\n\n2. Emergencia sin Reglas Manuales: Tácticas avanzadas como la espera en cobertura o el amago de trayectoria surgieron de forma puramente autónoma mediante la combinación de PPO, Curiosidad y Self-Play.\n\n3. Robustez Cinemática: El espacio de observaciones vectorial de 21D enriquecido con el Ray Perception Sensor 3D proporcionó suficiente contexto espacial sin saturar la red.",
-            futureTitle: "Líneas de Trabajo Futuro",
-            futureText: "• Escenarios Multi-Agente (3v3): Extender el entorno para duelos por equipos utilizando arquitecturas de mapas de atención.\n\n• Entornos Procedurales Destruibles: Generar coberturas dinámicas que puedan destruirse por impactos.\n\n• Terrenos Heterogéneos: Incorporar coeficientes de fricción variables (barro, nieve) para testear la adaptación de la tracción.",
+            /* COMPORTAMIENTOS EMERGENTES TRADUCIDOS */
+            emergentTitle: "Análisis de Comportamientos Tácticos Emergentes",
+            emergentIntro: "Durante las iteraciones de entrenamiento y la coevolución producida por el Self-Play, surgieron patrones tácticos complejos de forma totalmente autónoma, sin necesidad de programar reglas lógicas explícitas:",
+            emBehavior1Title: "Seguimiento y Disparo Predictivo: ",
+            emBehavior1Desc: "El agente calcula continuamente el vector de velocidad del oponente, anticipando su trayectoria futura para disparar con un ángulo de avance que impacta exactamente en el punto de intercepción.",
+            emBehavior2Title: "Espera Táctica en Cobertura: ",
+            emBehavior2Desc: "Aprovechando la geometría del entorno, el agente se posiciona detrás de la pared central cuando no tiene ventaja directa, aguardando pacientemente a que el rival asome por el flanco para sorprenderlo con un tiro directo.",
+            emBehavior3Title: "Engaño y Amago mediante Trayectoria: ",
+            emBehavior3Desc: "El agente ejecuta cambios bruscos de dirección y amagos de avance para inducir al oponente a realizar un disparo precipitadamente hacia una posición vacía.",
+            emBehavior4Title: "Gestión de la Economía de Disparo y Cooldown: ",
+            emBehavior4Desc: "El agente aprende el ciclo exacto de recarga (150 pasos). Evita disparar sin línea de visión clara para no quedar indefenso e inerme durante el periodo de cooldown.",
+
+            /* CONCLUSIONES TEXTO EXACTO TFG */
+            sec7Title: "Conclusiones y Líneas a Futuro",
+            sec71Title: "5.1. Análisis Crítico del Grado de Consecución de los Objetivos",
+            sec71P1: "El proyecto planteaba como objetivo principal el desarrollo de un agente autónomo de combate capaz de adquirir comportamientos complejos mediante aprendizaje por refuerzo, articulado en una secuencia de subobjetivos de complejidad creciente. A continuación se evalúa el grado de consecución de cada uno de ellos.",
+            sec71P2: "La aproximación, alineación y disparo sobre objetivo estático se alcanzó de forma completa y satisfactoria en la primera fase de entrenamiento. El agente convergió a una política estable con recompensa media de +11 y desviación estándar inferior a 1, demostrando un comportamiento consistente y robusto en el entorno más simple.",
+            sec71P3: "La evasión de obstáculos y recuperación de línea de visión se alcanzó de forma funcional, aunque con mayor dificultad de la esperada. El proceso de entrenamiento reveló que el diseño inicial del sistema de recompensas incentivaba inadvertidamente la parálisis del agente frente a la pared, requiriendo múltiples iteraciones de rediseño hasta obtener una señal que produjera el comportamiento de rodeo deseado. El objetivo se considera alcanzado, con la matización de que el comportamiento de evasión presentaba cierta variabilidad en función de la posición relativa del obstáculo respecto al objetivo.",
+            sec71P4: "El seguimiento de objetivo en movimiento se alcanzó con los mejores resultados del proyecto. La convergencia fue rápida gracias a la transferencia desde la fase anterior, y la desviación estándar excepcionalmente baja de la fase 3 evidenció que el agente desarrolló una política de seguimiento y disparo predictivo altamente consistente.",
+            sec71P5: "El self-play competitivo se alcanzó parcialmente. El sistema funcionó correctamente desde el punto de vista técnico, con el ELO alcanzando 1611 puntos y mostrando una tendencia alcista sostenida a lo largo de 1.6 millones de pasos. Sin embargo, la complejidad del entorno de combate presentaba limitaciones inherentes que condicionaron el nivel de sofisticación táctica alcanzable. La arena simétrica con una única pared de posición aleatoria y dos tanques con las mismas capacidades constituye un entorno de complejidad moderada que, si bien fue suficiente para que emergieran comportamientos tácticos genuinos como el engaño mediante movimiento y la gestión del cooldown, no ofrecía la variedad situacional necesaria para desarrollar estrategias de mayor profundidad.",
+
+            sec72Title: "5.2. Principales Aprendizajes del Proyecto",
+            sec72P1: "Más allá de los resultados técnicos obtenidos, el desarrollo del proyecto ha generado un conjunto de aprendizajes metodológicos de valor significativo.",
+            sec72P2: "El primero y más relevante es que el diseño de la función de recompensa es el componente más crítico y más difícil del aprendizaje por refuerzo aplicado. A diferencia del código convencional, una función de recompensa incorrecta puede producir comportamientos aparentemente razonables que corresponden a mínimos locales explotados por el agente. La única forma de validarla es observar el comportamiento emergente e iterar.",
+            sec72P3: "El segundo aprendizaje es la importancia de separar los problemas antes de combinarlos. La estrategia de curriculum learning por fases independientes aceleró la convergencia y facilitó el diagnóstico de problemas sin ambigüedad.",
+            sec72P4: "El tercer aprendizaje es que la física del entorno y los parámetros del motor tienen un impacto directo en el aprendizaje. El conflicto entre transform.Rotate y Rigidbody, el Angular Drag o la Layer Collision Matrix requirieron un análisis sistemático crucial.",
+            sec72P5: "El cuarto aprendizaje es la naturaleza empírica e iterativa del entrenamiento. Los hiperparámetros y recompensas efectivas se derivaron a través de ciclos continuos de observación y ajuste.",
+
+            sec73Title: "5.3. Líneas a Futuro",
+            sec73P1: "El trabajo realizado establece una base técnica sólida sobre la que es posible avanzar en varias direcciones de machine learning de interés creciente, dejando abiertas diferentes puertas a mejoras futuras:",
+            future1Title: "Incremento de la complejidad del entorno de combate: ",
+            future1Desc: "Diseño de arenas con múltiples obstáculos de geometría variable, zonas de cobertura estructuradas y configuraciones asimétricas que obliguen a desarrollar estrategias adaptativas profundas.",
+            future2Title: "Diferenciación de tipos de agentes: ",
+            future2Desc: "Introducir perfiles asimétricos (tanques veloces de menor precisión vs tanques lentos de gran alcance) obligando a explotar ventajas específicas.",
+            future3Title: "Self-play de mayor rigor competitivo: ",
+            future3Desc: "Aumentar el pool de modelos históricos, reducir el ratio de juego contra el modelo actual y ampliar el team_change para enriquecer la coevolución.",
+            future4Title: "Introducción de escenarios multiagente cooperativos: ",
+            future4Desc: "Entrenar equipos de 2v2 o 3v3 con recompensas compartidas para propiciar tácticas de flanqueo y distracción coordinada.",
+            future5Title: "Transferencia a entornos de producción: ",
+            future5Desc: "Evaluar la robustez de las políticas ante ruido en observaciones, variaciones geométricas o alteración de velocidades de agentes.",
 
             ctaTitle: "Descarga la Memoria Técnica Completa (PDF)",
             ctaText: "Accede al documento TFG completo de Marcos Ruiz Muñoz (40 páginas) con todos los anexos de código en C#, curvas de TensorBoard y bibliografía.",
@@ -78,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contact",
             moreProjects: "More Projects",
             btnPdf: "Read Technical Paper (PDF 40 Pages)",
+            heroTitle: "Development & Research of an Autonomous Vehicular Combat Agent",
             heroTagline: "Training via PPO, Curriculum Learning, and Self-Play in Unity ML-Agents.",
 
             summaryTitle: "Development & Research of an Autonomous Vehicular Combat Agent in Unity",
@@ -101,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
             sec2Intro: "The 21D state vector St was designed to remain strictly invariant across all curriculum stages to avoid resetting neural network weights.",
 
             sec3Title: "Reward Engineering (Reward Shaping) & Evolution",
-            sec3Intro: "Designing the reward function required meticulous tuning to eliminate local minima. The instant total reward function Rt is explicitly formulated below.",
+            sec3Intro: "Designing the reward function required meticulous tuning to eliminate local minima. The instant total reward function Rt is explicitly formulated below:",
+            formulaHeader: "General Instantaneous Reward Equation (Rt)",
 
             sec4Title: "YAML Training Hyperparameters (PPO)",
             btnCopyCode: "Copy YAML",
@@ -113,11 +152,46 @@ document.addEventListener("DOMContentLoaded", () => {
             chartTitle: "ELO Rating Progress vs Iterations (Self-Play)",
             btnReloadChart: "Reanimate",
 
-            sec7Title: "Conclusions & Future Work",
-            conclusionsTitle: "Key Conclusions",
-            conclusionsText: "1. Curriculum Learning Effectiveness: Splitting training into 5 progressive stages solved a complex state space problem that failed when trained from scratch.\n\n2. Emergence without Manual Rules: Advanced tactics like tactical waiting under cover or trajectory deception emerged fully autonomously via PPO, Curiosity, and Self-Play.\n\n3. Kinematic Robustness: The 21D vector observation space combined with 3D Ray Perception provided ideal spatial context.",
-            futureTitle: "Future Lines of Work",
-            futureText: "• Multi-Agent Scenarios (3v3): Extend the environment to team duels using attention map architectures.\n\n• Destructible Environments: Generate dynamic cover that breaks upon impact.\n\n• Heterogeneous Terrains: Add variable friction coefficients (mud, snow) to test physical traction adaptation.",
+            /* TRANSLATED EMERGENT BEHAVIORS */
+            emergentTitle: "Emergent Tactical Behaviors Analysis",
+            emergentIntro: "Throughout training iterations and Self-Play co-evolution, complex tactical behaviors emerged fully autonomously without any hardcoded logic:",
+            emBehavior1Title: "Predictive Lead Shooting: ",
+            emBehavior1Desc: "The agent continuously estimates opponent velocity, predicting future trajectory to shoot at lead angles that strike the target upon interception.",
+            emBehavior2Title: "Tactical Waiting Under Cover: ",
+            emBehavior2Desc: "Using terrain geometry, the agent takes cover behind the center wall when lacking direct advantage, waiting for the opponent to peek before firing.",
+            emBehavior3Title: "Trajectory Deception & Baiting: ",
+            emBehavior3Desc: "The agent performs sharp directional changes to bait the enemy into discharging shots prematurely into empty space.",
+            emBehavior4Title: "Shot Economy & Cooldown Management: ",
+            emBehavior4Desc: "The agent masters the exact 150-step reload cycle, avoiding wasted shots without LOS to prevent remaining defenseless during cooldown.",
+
+            /* SECTION 7 TRANSLATIONS */
+            sec7Title: "Conclusions & Future Lines of Work",
+            sec71Title: "5.1. Critical Analysis of Objective Achievement",
+            sec71P1: "The primary objective was to develop an autonomous combat agent capable of acquiring complex behaviors through reinforcement learning, structured across progressive sub-goals.",
+            sec71P2: "Approximation, alignment, and shooting at a static target were fully achieved in Stage 1, reaching a stable policy with +11 mean reward and std < 1.",
+            sec71P3: "Obstacle evasion and Line of Sight recovery were achieved functionally. Reward shaping required several iterations to eliminate wall paralysis.",
+            sec71P4: "Moving target tracking yielded the best overall performance, showing extremely low variance and consistent lead shooting.",
+            sec71P5: "Competitive self-play was partially achieved. The technical architecture performed flawlessly up to 1611 ELO. However, environment simplicity limited higher tactical depth.",
+
+            sec72Title: "5.2. Major Project Learnings",
+            sec72P1: "Beyond technical metrics, this research provided valuable methodological learnings.",
+            sec72P2: "First, reward function design is the most critical and challenging component of applied RL, requiring continuous observation of emergent behavior.",
+            sec72P3: "Second, problem decoupling via Curriculum Learning accelerates convergence and simplifies bug diagnosis.",
+            sec72P4: "Third, game engine physics (Rigidbody, Angular Drag, Layer Collisions) directly dictate learning stability.",
+            sec72P5: "Fourth, training is inherently empirical and iterative, making detailed decision logging an essential asset.",
+
+            sec73Title: "5.3. Future Lines of Work",
+            sec73P1: "This work establishes a solid technical foundation for several promising future directions:",
+            future1Title: "Increased Environment Complexity: ",
+            future1Desc: "Design structured multi-obstacle arenas with asymmetric cover layouts.",
+            future2Title: "Agent Differentiation & Asymmetry: ",
+            future2Desc: "Introduce fast/low-range vs slow/long-range tank classes.",
+            future3Title: "Rigorously Competitive Self-Play: ",
+            future3Desc: "Expand historical model pools and increase team_change steps.",
+            future4Title: "Multi-Agent Cooperative Scenarios: ",
+            future4Desc: "Train 2v2 or 3v3 teams with shared rewards for coordinated flanking.",
+            future5Title: "Production Transfer & Generalization: ",
+            future5Desc: "Evaluate policy robustness against observation noise and dynamic terrain changes.",
 
             ctaTitle: "Download Full Technical Paper (PDF)",
             ctaText: "Access the complete 40-page TFG paper by Marcos Ruiz Muñoz with C# code appendixes, TensorBoard curves, and references.",
@@ -153,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       INFORMACIÓN EXACTA DE LAS 5 FASES DEL CURRICULUM (TFG REAL)
+       DATOS REALES DE LAS 5 FASES DEL CURRICULUM
        --------------------------------------------------------- */
     let currentCurriculumPhase = "1";
     const curriculumData = {
@@ -192,31 +266,31 @@ document.addEventListener("DOMContentLoaded", () => {
         en: {
             "1": {
                 title: "Stage 1: Static Target without Obstacles (Model 24)",
-                desc: "First contact with the physics simulation in an open arena. The agent learns continuous movement (acceleration/torque) and discrete shooting to align and strike a stationary target.",
+                desc: "First contact with physical simulation in open space. The agent learns continuous driving and discrete shooting controls to hit a stationary target.",
                 target: "Mean Reward: +11.0 | Standard Dev < 1.0",
                 steps: "0.0M - 5.0M Simulation Steps"
             },
             "2": {
                 title: "Stage 2: Static Target with Obstacle (Model 25)",
-                desc: "A central wall is introduced blocking line of sight (LOS). Controlled via 'obstacle_offset' (1.5 -> 0.1), the agent learns to flank around the wall and re-align upon regaining LOS.",
+                desc: "A center wall blocks Line of Sight. Controlled via 'obstacle_offset' (1.5 -> 0.1), the agent learns to flank around the wall and re-align upon regaining vision.",
                 target: "Mean Reward: +9.0 to +10.0 | Proactive flanking",
                 steps: "0.0M - 8.0M Simulation Steps"
             },
             "3": {
                 title: "Stage 3: Moving Target without Obstacles (Model 26)",
-                desc: "The target moves using random kinematic trajectories. Fed with target velocity vector in its 21D observation state, the agent learns predictive lead shooting toward future position.",
+                desc: "Target moves using random kinematic trajectories. Fed with target velocity vector in its 21D state, the agent learns predictive lead shooting.",
                 target: "Mean Reward: +11.25 | Lowest Variance (Std: 0.5)",
                 steps: "0.0M - 8.0M Simulation Steps"
             },
             "4": {
                 title: "Stage 4: Moving Target with Obstacle (Model 27)",
-                desc: "Combination of a moving target and central wall. 'Tactical waiting under cover' emerges: the agent remains protected behind the wall until target trajectory guarantees a clean line of sight.",
+                desc: "Combining moving target and central wall. 'Tactical waiting under cover' emerges: the agent stays sheltered until target trajectory guarantees clear Line of Sight.",
                 target: "Mean Reward: +10.0 | Cover mastery",
                 steps: "0.0M - 8.0M Simulation Steps"
             },
             "5": {
                 title: "Stage 5: Symmetric 1v1 Self-Play (Model 30)",
-                desc: "Competitive 1v1 duels against historic checkpoints in a Model Pool. Advanced behaviors emerge: shot economy management, trajectory baiting, and high-precision sniping.",
+                desc: "Competitive 1v1 duels against historic checkpoints in a Model Pool. Shot economy, trajectory deception, and selective sniping emerge.",
                 target: "ELO Rating: 1611 to 2200+ | Continuous co-evolution",
                 steps: "0.0M - 10.0M+ Total Steps"
             }
@@ -256,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       DIBUJO DEL GRÁFICO CANVAS CON EJES X e Y DETALLADOS
+       DIBUJO DEL GRÁFICO CANVAS CON EJES GRADUADOS
        --------------------------------------------------------- */
     const canvas = document.getElementById("eloCanvas");
     const reloadBtn = document.getElementById("btn-reload-chart");
@@ -266,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let progress = 0;
         let animId;
 
-        // Puntos reales del TFG: X = M_Steps (0 a 10M), Y = ELO (1000 a 2400)
         const rawPoints = [
             { x: 0.0, y: 1200 },
             { x: 1.5, y: 1270 },
@@ -277,7 +350,6 @@ document.addEventListener("DOMContentLoaded", () => {
             { x: 10.0, y: 2200 }
         ];
 
-        // Márgenes para dibujar ejes numéricos
         const margin = { left: 50, right: 20, top: 25, bottom: 35 };
         const graphW = canvas.width - margin.left - margin.right;
         const graphH = canvas.height - margin.top - margin.bottom;
@@ -287,14 +359,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         function mapY(val) {
-            // Rango Y: 1000 a 2400
             return margin.top + graphH - ((val - 1000) / 1400) * graphH;
         }
 
         function drawChart() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // 1. Dibujar Rejilla y Eje Y (ELO Rating)
+            // Rejilla y Eje Y
             ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
             ctx.lineWidth = 1;
             ctx.fillStyle = "#94a3b8";
@@ -310,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ctx.fillText(elo.toString(), margin.left - 8, yPos + 3);
             }
 
-            // 2. Dibujar Eje X (Pasos en Millones)
+            // Eje X
             ctx.textAlign = "center";
             for (let step = 0; step <= 10; step += 2) {
                 const xPos = mapX(step);
@@ -321,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ctx.fillText(step + "M", xPos, canvas.height - margin.bottom + 15);
             }
 
-            // Etiquetas de Ejes
+            // Nombres de Ejes
             ctx.fillStyle = "#00ff88";
             ctx.font = "10px sans-serif";
             ctx.fillText("Eje X: Pasos de Simulación (Steps)", margin.left + graphW / 2, canvas.height - 5);
@@ -332,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.fillText("Eje Y: ELO Rating", 0, 0);
             ctx.restore();
 
-            // 3. Dibujar Curva Animada
+            // Curva Animada
             ctx.strokeStyle = "#00ff88";
             ctx.lineWidth = 2.5;
             ctx.beginPath();
@@ -361,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             ctx.stroke();
 
-            // Dibujar Puntos
+            // Puntos
             for (let i = 0; i < rawPoints.length; i++) {
                 if (rawPoints[i].x <= currentMaxX) {
                     const px = mapX(rawPoints[i].x);
@@ -390,9 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* ---------------------------------------------------------
-       COPIAR CÓDIGO YAML
-       --------------------------------------------------------- */
+    /* COPIAR YAML */
     const copyBtn = document.getElementById("btn-copy-code");
     const codeBlock = document.getElementById("code-yaml-block");
 
