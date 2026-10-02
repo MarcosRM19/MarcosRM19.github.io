@@ -48,7 +48,7 @@
         </nav>
     </header>
 
-    <!-- HERO PRINCIPAL CON TÍTULO MÁS GRANDE -->
+    <!-- HERO PRINCIPAL -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -77,9 +77,9 @@
                 <!-- RESUMEN Y FICHA TÉCNICA -->
                 <div class="tech-summary-box">
                     <div class="tech-badge-row">
-                        <span class="tech-pill-badge"><span class="pulse-dot"></span> Proyecto Aplicado de Videojuego (2025-2026)</span>
+                        <span class="tech-pill-badge" data-i18n="badgeAppliedProject"><span class="pulse-dot"></span> Proyecto Aplicado de Videojuego (2025-2026)</span>
                         <span class="tech-pill-tag">Universitat de Barcelona / ENTI</span>
-                        <span class="tech-pill-tag">Tutor: Lluis Gomez Bigorda</span>
+                        <span class="tech-pill-tag" data-i18n="tutorTag">Tutor: Lluis Gomez Bigorda</span>
                     </div>
 
                     <h2 class="tech-summary-heading" data-i18n="summaryTitle">
@@ -140,7 +140,7 @@
                         El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.
                     </p>
 
-                    <!-- DIAGRAMA SVG 1 CON VERDE VERDE -->
+                    <!-- DIAGRAMA SVG 1 100% TRADUCIBLE -->
                     <div class="diagram-card-container">
                         <div class="diagram-top-title" data-i18n="diagram1Title">Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python</div>
                         <div class="svg-wrapper">
@@ -153,10 +153,10 @@
                                 <line x1="40" y1="72" x2="290" y2="72" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
                                 
                                 <text x="40" y="95" fill="#00ff88" font-size="10.5" font-weight="bold" data-i18n="svgMethods">Métodos Principales:</text>
-                                <text x="40" y="115" fill="#cbd5e1" font-size="9.5">• CollectObservations(sensor) -> 21D</text>
+                                <text x="40" y="115" fill="#cbd5e1" font-size="9.5" data-i18n="svgObsMethod">• CollectObservations(sensor) -> 21D</text>
                                 <text x="40" y="133" fill="#cbd5e1" font-size="9.5" data-i18n="svgOnAction">• OnActionReceived(actions) -> Motor/Tiro</text>
-                                <text x="40" y="151" fill="#cbd5e1" font-size="9.5">• OnEpisodeBegin() -> Reset &amp; Spawns</text>
-                                <text x="40" y="169" fill="#cbd5e1" font-size="9.5">• ApplyMovement() &amp; ApplyRotation()</text>
+                                <text x="40" y="151" fill="#cbd5e1" font-size="9.5" data-i18n="svgResetMethod">• OnEpisodeBegin() -> Reset &amp; Spawns</text>
+                                <text x="40" y="169" fill="#cbd5e1" font-size="9.5" data-i18n="svgApplyMethod">• ApplyMovement() &amp; ApplyRotation()</text>
 
                                 <text x="40" y="195" fill="#00ff88" font-size="10.5" font-weight="bold" data-i18n="svgRefs">Referencias de Control:</text>
                                 <text x="40" y="215" fill="#cbd5e1" font-size="9.5">• TargetMovePosition _target</text>
@@ -192,7 +192,7 @@
                                 <text x="835" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">batch_size: 1024 | buffer_size: 40960</text>
 
                                 <rect x="710" y="145" width="250" height="50" rx="6" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
-                                <text x="835" y="165" fill="#00ff88" font-size="9.5" text-anchor="middle" font-weight="bold">Curriculum &amp; Curiosity Manager</text>
+                                <text x="835" y="165" fill="#00ff88" font-size="9.5" text-anchor="middle" font-weight="bold" data-i18n="svgCurriculumTitle">Curriculum &amp; Curiosity Manager</text>
                                 <text x="835" y="182" fill="#cbd5e1" font-size="8.5" text-anchor="middle">obstacle_offset &amp; current_level</text>
 
                                 <rect x="710" y="205" width="250" height="60" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
@@ -202,60 +202,60 @@
                         </div>
                     </div>
 
-                    <!-- TABLA CONFIGURACIÓN RIGIDBODY -->
+                    <!-- TABLA 1: RIGIDBODY PHYSX -->
                     <div class="tech-table-wrapper" style="margin-top: 25px;">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 1: Parámetros del Rigidbody de PhysX en Unity</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t1Title">Tabla 1: Parámetros del Rigidbody de PhysX en Unity</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Eje X: Parámetro Físico</th>
-                                    <th>Eje Y: Valor Configurado</th>
-                                    <th>Eje Y: Unidad / Tipo</th>
-                                    <th>Justificación Técnica en la Simulación</th>
+                                    <th data-i18n="thParam">Eje X: Parámetro Físico</th>
+                                    <th data-i18n="thVal">Eje Y: Valor Configurado</th>
+                                    <th data-i18n="thUnit">Eje Y: Unidad / Tipo</th>
+                                    <th data-i18n="thJust">Justificación Técnica en la Simulación</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>Mass</code></td>
                                     <td><code>1.0</code></td>
-                                    <td>Masa (kg)</td>
-                                    <td>Masa normalizada para simplificar el cálculo de fuerzas de aceleración.</td>
+                                    <td data-i18n="t1r1Unit">Masa (kg)</td>
+                                    <td data-i18n="t1r1Just">Masa normalizada para simplificar el cálculo de fuerzas de aceleración.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Drag</code></td>
                                     <td><code>3.0</code></td>
-                                    <td>Fricción Lineal</td>
-                                    <td>Frenado lineal suficiente para detener el tanque al soltar el input de movimiento.</td>
+                                    <td data-i18n="t1r2Unit">Fricción Lineal</td>
+                                    <td data-i18n="t1r2Just">Frenado lineal suficiente para detener el tanque al soltar el input de movimiento.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Angular Drag</code></td>
                                     <td><code>10.0</code></td>
-                                    <td>Fricción Angular</td>
-                                    <td>Amortigua drásticamente las oscilaciones de rotación generadas por <code>AddTorque</code>.</td>
+                                    <td data-i18n="t1r3Unit">Fricción Angular</td>
+                                    <td data-i18n="t1r3Just">Amortigua drásticamente las oscilaciones de rotación generadas por AddTorque.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Use Gravity</code></td>
                                     <td><code>true</code></td>
-                                    <td>Booleano</td>
-                                    <td>Mantiene el chasis anclado al suelo de la arena de $50m \times 50m$.</td>
+                                    <td data-i18n="t1r4Unit">Booleano</td>
+                                    <td data-i18n="t1r4Just">Mantiene el chasis anclado al suelo de la arena de 50m x 50m.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Freeze Position Y</code></td>
                                     <td><code>true</code></td>
-                                    <td>Restricción 3D</td>
-                                    <td>Evita desplazamientos verticales y saltos descontrolados por colisión.</td>
+                                    <td data-i18n="t1r5Unit">Restricción 3D</td>
+                                    <td data-i18n="t1r5Just">Evita desplazamientos verticales y saltos descontrolados por colisión.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Freeze Rotation X, Z</code></td>
                                     <td><code>true</code></td>
-                                    <td>Restricción 3D</td>
-                                    <td>Impide volcamientos del chasis al impactar muros u obstáculos.</td>
+                                    <td data-i18n="t1r6Unit">Restricción 3D</td>
+                                    <td data-i18n="t1r6Just">Impide volcamientos del chasis al impactar muros u obstáculos.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Collision Detection</code></td>
                                     <td><code>Continuous Speculative</code></td>
-                                    <td>Modo Físico PhysX</td>
-                                    <td>Garantiza que proyectiles a alta velocidad ($V_0$) no atraviesen la geometría.</td>
+                                    <td data-i18n="t1r7Unit">Modo Físico PhysX</td>
+                                    <td data-i18n="t1r7Just">Garantiza que proyectiles a alta velocidad no atraviesen la geometría.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -270,113 +270,113 @@
                     </div>
 
                     <p data-i18n="sec2Intro">
-                        El vector de observaciones $S_t \in \mathbb{R}^{21}$ fue diseñado para permanecer estrictamente invariante entre todas las fases de curriculum para evitar tener que reiniciar los pesos de la red neuronal. Se complementa adicionalmente con el Ray Perception Sensor 3D.
+                        El vector de observaciones $S_t \in \mathbb{R}^{21}$ fue diseñado para permanecer strictly invariante entre todas las fases de curriculum para evitar tener que reiniciar los pesos de la red neuronal. Se complementa adicionalmente con el Ray Perception Sensor 3D.
                     </p>
 
                     <!-- TABLA 2: ESPACIO DE OBSERVACIONES VECTORIALES (21D) -->
                     <div class="tech-table-wrapper">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 2: Espacio de Observaciones Vectoriales ($S \in \mathbb{R}^{21}$)</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t2Title">Tabla 2: Espacio de Observaciones Vectoriales ($S \in \mathbb{R}^{21}$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Eje X: Dimensión / Índices Vector</th>
-                                    <th>Eje X: Variable Observada</th>
-                                    <th>Eje Y: Rango Original</th>
-                                    <th>Eje Y: Normalización Aplicada</th>
-                                    <th>Propósito Técnico en la Toma de Decisiones</th>
+                                    <th data-i18n="thDim">Eje X: Dimensión / Índices Vector</th>
+                                    <th data-i18n="thVar">Eje X: Variable Observada</th>
+                                    <th data-i18n="thRange">Eje Y: Rango Original</th>
+                                    <th data-i18n="thNorm">Eje Y: Normalización Aplicada</th>
+                                    <th data-i18n="thPurpose">Propósito Técnico en la Toma de Decisiones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>[0, 1, 2]</code></td>
-                                    <td><strong>Dirección al Objetivo</strong></td>
-                                    <td>Vectores $(x, y, z)$</td>
+                                    <td><strong data-i18n="t2r1Var">Dirección al Objetivo</strong></td>
+                                    <td data-i18n="t2r1Range">Vectores $(x, y, z)$</td>
                                     <td><code>[-1.0, 1.0]</code> (normalized)</td>
-                                    <td>Guía la navegación y aproximación espacial hacia el objetivo.</td>
+                                    <td data-i18n="t2r1Purp">Guía la navegación y aproximación espacial hacia el objetivo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[3]</code></td>
-                                    <td><strong>Distancia al Objetivo</strong></td>
-                                    <td>$[0, 35]$ metros</td>
+                                    <td><strong data-i18n="t2r2Var">Distancia al Objetivo</strong></td>
+                                    <td>$[0, 35]$ m</td>
                                     <td><code>log(1 + dist) / 10.0</code></td>
-                                    <td>Suaviza la escala de distancia para evitar picos de gradiente.</td>
+                                    <td data-i18n="t2r2Purp">Suaviza la escala de distancia para evitar picos de gradiente.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[4, 5, 6]</code></td>
-                                    <td><strong>Orientación del Agente</strong></td>
+                                    <td><strong data-i18n="t2r3Var">Orientación del Agente</strong></td>
                                     <td><code>transform.forward</code></td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Informa sobre la dirección hacia la que apunta el chasis.</td>
+                                    <td data-i18n="t2r3Purp">Informa sobre la dirección hacia la que apunta el chasis.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[7]</code></td>
-                                    <td><strong>Alineación Angular</strong></td>
-                                    <td>Producto escalar $\cos\theta$</td>
+                                    <td><strong data-i18n="t2r4Var">Alineación Angular</strong></td>
+                                    <td data-i18n="t2r4Range">Producto escalar $\cos\theta$</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Determina qué tan bien alineado está el cañón con el rival.</td>
+                                    <td data-i18n="t2r4Purp">Determina qué tan bien alineado está el cañón con el rival.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[8]</code></td>
-                                    <td><strong>Cooldown de Disparo</strong></td>
-                                    <td>Booleano de recarga</td>
+                                    <td><strong data-i18n="t2r5Var">Cooldown de Disparo</strong></td>
+                                    <td data-i18n="t2r5Range">Booleano de recarga</td>
                                     <td><code>{0.0, 1.0}</code></td>
-                                    <td>Indica si el cañón está listo para ejecutar un disparo (150 steps).</td>
+                                    <td data-i18n="t2r5Purp">Indica si el cañón está listo para ejecutar un disparo (150 steps).</td>
                                 </tr>
                                 <tr>
                                     <td><code>[9]</code></td>
-                                    <td><strong>Distancia Relativa a Rango</strong></td>
+                                    <td><strong data-i18n="t2r6Var">Distancia Relativa a Rango</strong></td>
                                     <td>$[0, maxDistance]$</td>
                                     <td><code>Clamp01(dist / maxShootDist)</code></td>
-                                    <td>Evalúa si el objetivo está dentro del alcance efectivo de tiro.</td>
+                                    <td data-i18n="t2r6Purp">Evalúa si el objetivo está dentro del alcance efectivo de tiro.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[10, 11, 12]</code></td>
-                                    <td><strong>Velocidad del Objetivo</strong></td>
-                                    <td>Vector velocidad rival</td>
+                                    <td><strong data-i18n="t2r7Var">Velocidad del Objetivo</strong></td>
+                                    <td data-i18n="t2r7Range">Vector velocidad rival</td>
                                     <td><code>targetVel.normalized</code></td>
-                                    <td>Permite calcular el disparo predictivo anticipando la trayectoria.</td>
+                                    <td data-i18n="t2r7Purp">Permite calcular el disparo predictivo anticipando la trayectoria.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[13]</code></td>
-                                    <td><strong>Magnitud Velocidad Rival</strong></td>
+                                    <td><strong data-i18n="t2r8Var">Magnitud Velocidad Rival</strong></td>
                                     <td>$[0, 10]$ m/s</td>
                                     <td><code>log(1 + magnitude) / 5.0</code></td>
-                                    <td>Mide la rapidez de desplazamiento del oponente.</td>
+                                    <td data-i18n="t2r8Purp">Mide la rapidez de desplazamiento del oponente.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[14]</code></td>
-                                    <td><strong>Magnitud Velocidad Propia</strong></td>
+                                    <td><strong data-i18n="t2r9Var">Magnitud Velocidad Propia</strong></td>
                                     <td>$[0, 10]$ m/s</td>
                                     <td><code>rb.velocity.magnitude / 10.0</code></td>
-                                    <td>Permite autorregular la aceleración y el frenado.</td>
+                                    <td data-i18n="t2r9Purp">Permite autorregular la aceleración y el frenado.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[15, 16, 17]</code></td>
-                                    <td><strong>Dirección Velocidad Propia</strong></td>
-                                    <td>Vector movimiento local</td>
+                                    <td><strong data-i18n="t2r10Var">Dirección Velocidad Propia</strong></td>
+                                    <td data-i18n="t2r10Range">Vector movimiento local</td>
                                     <td><code>rb.velocity.normalized</code></td>
-                                    <td>Detección cinemática de derrapes y acercamiento a bordes.</td>
+                                    <td data-i18n="t2r10Purp">Detección cinemática de derrapes y acercamiento a bordes.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[18]</code></td>
-                                    <td><strong>Fase del Curriculum</strong></td>
-                                    <td>Nivel activo $[0, 3]$</td>
+                                    <td><strong data-i18n="t2r11Var">Fase del Curriculum</strong></td>
+                                    <td data-i18n="t2r11Range">Nivel activo $[0, 3]$</td>
                                     <td><code>currentLevel / maxLevel</code></td>
-                                    <td>Modula el comportamiento interno según la dificultad del nivel.</td>
+                                    <td data-i18n="t2r11Purp">Modula el comportamiento interno según la dificultad del nivel.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[19]</code></td>
-                                    <td><strong>Línea de Visión (LOS)</strong></td>
-                                    <td>Raycast Booleano</td>
+                                    <td><strong data-i18n="t2r12Var">Línea de Visión (LOS)</strong></td>
+                                    <td data-i18n="t2r12Range">Raycast Booleano</td>
                                     <td><code>{0.0, 1.0}</code></td>
-                                    <td>Detecta si existe visión directa sin obstáculos interpuestos.</td>
+                                    <td data-i18n="t2r12Purp">Detecta si existe visión directa sin obstáculos interpuestos.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[20]</code></td>
-                                    <td><strong>Distancia al Obstáculo</strong></td>
-                                    <td>Distancia a pared</td>
+                                    <td><strong data-i18n="t2r13Var">Distancia al Obstáculo</strong></td>
+                                    <td data-i18n="t2r13Range">Distancia a pared</td>
                                     <td><code>Clamp01(hit.distance / dist)</code></td>
-                                    <td>Informa sobre la proximidad de la pared para calcular el rodeo.</td>
+                                    <td data-i18n="t2r13Purp">Informa sobre la proximidad de la pared para calcular el rodeo.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -384,38 +384,38 @@
 
                     <!-- TABLA 3: ESPACIO DE ACCIONES HÍBRIDO -->
                     <div class="tech-table-wrapper" style="margin-top: 30px;">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 3: Espacio de Acciones Híbrido ($A \in \mathbb{R}^2 \times \{0,1\}$)</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t3Title">Tabla 3: Espacio de Acciones Híbrido ($A \in \mathbb{R}^2 \times \{0,1\}$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Eje X: Índice de Acción</th>
-                                    <th>Eje X: Tipo de Control</th>
-                                    <th>Eje Y: Rango de Salida</th>
-                                    <th>Eje Y: Mapeo Físico en Unity PhysX</th>
-                                    <th>Comportamiento Cinemático</th>
+                                    <th data-i18n="thActIndex">Eje X: Índice de Acción</th>
+                                    <th data-i18n="thCtrlType">Eje X: Tipo de Control</th>
+                                    <th data-i18n="thOutRange">Eje Y: Rango de Salida</th>
+                                    <th data-i18n="thPhysMap">Eje Y: Mapeo Físico en Unity PhysX</th>
+                                    <th data-i18n="thKinBehav">Comportamiento Cinemático</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>Continuous[0]</code></td>
-                                    <td>Acelerador / Tracción</td>
+                                    <td data-i18n="t3r1Ctrl">Acelerador / Tracción</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Proyección de fuerza en <code>transform.forward</code></td>
-                                    <td>Avanzar / Retroceder con inercia mediante <code>Vector3.Lerp</code> (factor 8f).</td>
+                                    <td data-i18n="t3r1Map">Proyección de fuerza en transform.forward</td>
+                                    <td data-i18n="t3r1Behav">Avanzar / Retroceder con inercia mediante Vector3.Lerp (factor 8f).</td>
                                 </tr>
                                 <tr>
                                     <td><code>Continuous[1]</code></td>
-                                    <td>Dirección del Chasis</td>
+                                    <td data-i18n="t3r2Ctrl">Dirección del Chasis</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Aplicación de torque con <code>AddTorque</code></td>
-                                    <td>Giro proporcional al error de velocidad angular con zona muerta dinámica (0.05 a 0.15).</td>
+                                    <td data-i18n="t3r2Map">Aplicación de torque con AddTorque</td>
+                                    <td data-i18n="t3r2Behav">Giro proporcional al error de velocidad angular con zona muerta dinámica (0.05 a 0.15).</td>
                                 </tr>
                                 <tr>
                                     <td><code>Discrete[0]</code></td>
-                                    <td>Gatillo de Disparo</td>
+                                    <td data-i18n="t3r3Ctrl">Gatillo de Disparo</td>
                                     <td><code>{0, 1}</code></td>
-                                    <td>Instanciación de prefab <code>BulletDetection</code></td>
-                                    <td>Disparo de bala rígida. Respeta un cooldown de 150 pasos de decisión (15s simulación).</td>
+                                    <td data-i18n="t3r3Map">Instanciación de prefab BulletDetection</td>
+                                    <td data-i18n="t3r3Behav">Disparo de bala rígida. Respeta un cooldown de 150 pasos de decisión (15s simulación).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -443,102 +443,103 @@
                         </div>
                     </div>
 
+                    <!-- TABLA 4: RECOMPENSAS -->
                     <div class="tech-table-wrapper" style="margin-top:25px;">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 4: Sistema Completo de Recompensas y Penalizaciones</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t4Title">Tabla 4: Sistema Completo de Recompensas y Penalizaciones</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Eje X: Evento / Acción del Agente</th>
-                                    <th>Eje X: Condición de Activación</th>
-                                    <th>Eje Y: Valor de Recompensa (R)</th>
-                                    <th>Eje Y: Tipo de Señal</th>
-                                    <th>Propósito Táctico en el Entrenamiento</th>
+                                    <th data-i18n="thEvent">Eje X: Evento / Acción del Agente</th>
+                                    <th data-i18n="thCond">Eje X: Condición de Activación</th>
+                                    <th data-i18n="thRVal">Eje Y: Valor de Recompensa (R)</th>
+                                    <th data-i18n="thSigType">Eje Y: Tipo de Señal</th>
+                                    <th data-i18n="thTacPurp">Propósito Táctico en el Entrenamiento</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Impacto al Objetivo</strong></td>
-                                    <td>Bala contacta con el rival (<code>BulletDetection</code>)</td>
+                                    <td><strong data-i18n="t4r1Ev">Impacto al Objetivo</strong></td>
+                                    <td data-i18n="t4r1Cond">Bala contacta con el rival (BulletDetection)</td>
                                     <td><code>+10.0</code></td>
-                                    <td>Terminal</td>
-                                    <td>Objetivo principal del agente. Recompensa de mayor magnitud.</td>
+                                    <td data-i18n="sigTerminal">Terminal</td>
+                                    <td data-i18n="t4r1Purp">Objetivo principal del agente. Recompensa de mayor magnitud.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Disparo bien Alineado</strong></td>
-                                    <td>Estar bien alineado al pulsar el gatillo de disparo</td>
+                                    <td><strong data-i18n="t4r2Ev">Disparo bien Alineado</strong></td>
+                                    <td data-i18n="t4r2Cond">Estar bien alineado al pulsar el gatillo de disparo</td>
                                     <td><code>+1.0</code></td>
-                                    <td>Inmediata</td>
-                                    <td>Refuerza el intento de disparo únicamente cuando está bien orientado.</td>
+                                    <td data-i18n="sigImmediate">Inmediata</td>
+                                    <td data-i18n="t4r2Purp">Refuerza el intento de disparo únicamente cuando está bien orientado.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Recuperación de LOS</strong></td>
-                                    <td><code>_hasLineOfSight &amp;&amp; !_hadLineOfSightLastStep</code></td>
+                                    <td><strong data-i18n="t4r3Ev">Recuperación de LOS</strong></td>
+                                    <td data-i18n="t4r3Cond">_hasLineOfSight &amp;&amp; !_hadLineOfSightLastStep</td>
                                     <td><code>+0.05</code></td>
-                                    <td>Inmediata</td>
-                                    <td>Premia instantáneamente el acto de asomarse tras rodear un muro.</td>
+                                    <td data-i18n="sigImmediate">Inmediata</td>
+                                    <td data-i18n="t4r3Purp">Premia instantáneamente el acto de asomarse tras rodear un muro.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Posición Perfecta con LOS</strong></td>
-                                    <td>En rango, buena distancia, alineado y con Cooldown ok</td>
+                                    <td><strong data-i18n="t4r4Ev">Posición Perfecta con LOS</strong></td>
+                                    <td data-i18n="t4r4Cond">En rango, buena distancia, alineado y con Cooldown ok</td>
                                     <td><code>+0.002 / paso</code></td>
-                                    <td>Continua</td>
-                                    <td>Incentiva mantener una posición óptima de combate listo para disparar.</td>
+                                    <td data-i18n="sigContinuous">Continua</td>
+                                    <td data-i18n="t4r4Purp">Incentiva mantener una posición óptima de combate listo para disparar.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Alineación con LOS</strong></td>
-                                    <td><code>alignment &gt; desireRotation &amp;&amp; hasLOS</code></td>
+                                    <td><strong data-i18n="t4r5Ev">Alineación con LOS</strong></td>
+                                    <td data-i18n="t4r5Cond">alignment &gt; desireRotation &amp;&amp; hasLOS</td>
                                     <td><code>+0.003 / paso</code></td>
-                                    <td>Continua</td>
-                                    <td>Guía la rotación hacia el objetivo solo si no hay muro intermedio.</td>
+                                    <td data-i18n="sigContinuous">Continua</td>
+                                    <td data-i18n="t4r5Purp">Guía la rotación hacia el objetivo solo si no hay muro intermedio.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Distancia Ideal con LOS</strong></td>
-                                    <td>Estar en distancia óptima con línea de visión directa</td>
+                                    <td><strong data-i18n="t4r6Ev">Distancia Ideal con LOS</strong></td>
+                                    <td data-i18n="t4r6Cond">Estar en distancia óptima con línea de visión directa</td>
                                     <td><code>+0.003 / paso</code></td>
-                                    <td>Continua</td>
-                                    <td>Mantiene al agente en el rango efectivo de tiro.</td>
+                                    <td data-i18n="sigContinuous">Continua</td>
+                                    <td data-i18n="t4r6Purp">Mantiene al agente en el rango efectivo de tiro.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Penalización de Tiempo</strong></td>
-                                    <td>Constante en cada paso temporal (<code>-0.5 / MaxStep</code>)</td>
+                                    <td><strong data-i18n="t4r7Ev">Penalización de Tiempo</strong></td>
+                                    <td data-i18n="t4r7Cond">Constante en cada paso temporal (-0.5 / MaxStep)</td>
                                     <td><code>-0.5 / episodio</code></td>
-                                    <td>Continua</td>
-                                    <td>Aplica presión para resolver el episodio eficientemente.</td>
+                                    <td data-i18n="sigContinuous">Continua</td>
+                                    <td data-i18n="t4r7Purp">Aplica presión para resolver el episodio eficientemente.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Disparo sin LOS</strong></td>
-                                    <td>Intentar disparar con un muro bloqueando la visión</td>
+                                    <td><strong data-i18n="t4r8Ev">Disparo sin LOS</strong></td>
+                                    <td data-i18n="t4r8Cond">Intentar disparar con un muro bloqueando la visión</td>
                                     <td><code>-0.05</code></td>
-                                    <td>Inmediata</td>
-                                    <td>Evita el desperdicio de proyectiles contra obstáculos.</td>
+                                    <td data-i18n="sigImmediate">Inmediata</td>
+                                    <td data-i18n="t4r8Purp">Evita el desperdicio de proyectiles contra obstáculos.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Sin LOS en Rango</strong></td>
-                                    <td>Estar en rango pero sin línea de visión directa</td>
+                                    <td><strong data-i18n="t4r9Ev">Sin LOS en Rango</strong></td>
+                                    <td data-i18n="t4r9Cond">Estar en rango pero sin línea de visión directa</td>
                                     <td><code>-0.003 / paso</code></td>
-                                    <td>Continua</td>
-                                    <td>Penaliza la parálisis frente a paredes.</td>
+                                    <td data-i18n="sigContinuous">Continua</td>
+                                    <td data-i18n="t4r9Purp">Penaliza la parálisis frente a paredes.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Colisión con Borde</strong></td>
-                                    <td><code>OnCollisionEnter</code> con tag <code>border</code></td>
+                                    <td><strong data-i18n="t4r10Ev">Colisión con Borde</strong></td>
+                                    <td data-i18n="t4r10Cond">OnCollisionEnter con tag border</td>
                                     <td><code>-0.3</code></td>
-                                    <td>Terminal / Castigo</td>
-                                    <td>Evita que el tanque se choque contra los límites de la arena.</td>
+                                    <td data-i18n="sigPunish">Terminal / Castigo</td>
+                                    <td data-i18n="t4r10Purp">Evita que el tanque se choque contra los límites de la arena.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Colisión con Obstáculo</strong></td>
-                                    <td><code>OnCollisionEnter</code> con tag <code>obstacle</code></td>
+                                    <td><strong data-i18n="t4r11Ev">Colisión con Obstáculo</strong></td>
+                                    <td data-i18n="t4r11Cond">OnCollisionEnter con tag obstacle</td>
                                     <td><code>-0.15</code></td>
-                                    <td>Castigo</td>
-                                    <td>Desincentiva las colisiones físicas directas contra muros.</td>
+                                    <td data-i18n="sigPunish">Castigo</td>
+                                    <td data-i18n="t4r11Purp">Desincentiva las colisiones físicas directas contra muros.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Bala Impacta Borde</strong></td>
-                                    <td>El proyectil choca contra el muro exterior</td>
+                                    <td><strong data-i18n="t4r12Ev">Bala Impacta Borde</strong></td>
+                                    <td data-i18n="t4r12Cond">El proyectil choca contra el muro exterior</td>
                                     <td><code>-1.0</code></td>
-                                    <td>Castigo</td>
-                                    <td>Penaliza los disparos fallidos hacia fuera de la arena.</td>
+                                    <td data-i18n="sigPunish">Castigo</td>
+                                    <td data-i18n="t4r12Purp">Penaliza los disparos fallidos hacia fuera de la arena.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -553,64 +554,64 @@
                     </div>
 
                     <div class="tech-table-wrapper">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 5: Hiperparámetros Configurados en ML-Agents</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t5Title">Tabla 5: Hiperparámetros Configurados en ML-Agents</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Eje X: Hiperparámetro</th>
-                                    <th>Eje X: Dominio / Tipo</th>
-                                    <th>Eje Y: Valor Configurado</th>
-                                    <th>Eje Y: Impacto Técnico en PPO</th>
+                                    <th data-i18n="thHyper">Eje X: Hiperparámetro</th>
+                                    <th data-i18n="thDomain">Eje X: Dominio / Tipo</th>
+                                    <th data-i18n="thVal">Eje Y: Valor Configurado</th>
+                                    <th data-i18n="thPpoImpact">Eje Y: Impacto Técnico en PPO</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>batch_size</code></td>
-                                    <td>Entero</td>
+                                    <td data-i18n="typeInt">Entero</td>
                                     <td><code>1024</code></td>
-                                    <td>Tamaño del lote para cada actualización del gradiente.</td>
+                                    <td data-i18n="t5r1Imp">Tamaño del lote para cada actualización del gradiente.</td>
                                 </tr>
                                 <tr>
                                     <td><code>buffer_size</code></td>
-                                    <td>Entero</td>
+                                    <td data-i18n="typeInt">Entero</td>
                                     <td><code>40960</code></td>
-                                    <td>Buffer amplio para garantizar diversidad de experiencias en curriculum.</td>
+                                    <td data-i18n="t5r2Imp">Buffer amplio para garantizar diversidad de experiencias en curriculum.</td>
                                 </tr>
                                 <tr>
                                     <td><code>learning_rate</code></td>
-                                    <td>Flotante</td>
+                                    <td data-i18n="typeFloat">Flotante</td>
                                     <td><code>0.0001</code></td>
-                                    <td>Tasa conservadora que preserva el conocimiento entre fases.</td>
+                                    <td data-i18n="t5r3Imp">Tasa conservadora que preserva el conocimiento entre fases.</td>
                                 </tr>
                                 <tr>
                                     <td><code>beta</code></td>
-                                    <td>Flotante</td>
+                                    <td data-i18n="typeFloat">Flotante</td>
                                     <td><code>0.005</code></td>
-                                    <td>Coeficiente de entropía para mantener exploración sin desestabilizar.</td>
+                                    <td data-i18n="t5r4Imp">Coeficiente de entropía para mantener exploración sin desestabilizar.</td>
                                 </tr>
                                 <tr>
                                     <td><code>epsilon</code></td>
-                                    <td>Flotante</td>
+                                    <td data-i18n="typeFloat">Flotante</td>
                                     <td><code>0.2</code></td>
-                                    <td>Margen de recorte (clipping) para acotar la actualización de política.</td>
+                                    <td data-i18n="t5r5Imp">Margen de recorte (clipping) para acotar la actualización de política.</td>
                                 </tr>
                                 <tr>
                                     <td><code>gamma</code></td>
-                                    <td>Flotante</td>
+                                    <td data-i18n="typeFloat">Flotante</td>
                                     <td><code>0.995</code></td>
-                                    <td>Factor de descuento largo ($0.995^{150} \approx 0.47$) para conectar tiro futuro.</td>
+                                    <td data-i18n="t5r6Imp">Factor de descuento largo para conectar tiro futuro.</td>
                                 </tr>
                                 <tr>
                                     <td><code>time_horizon</code></td>
-                                    <td>Entero</td>
+                                    <td data-i18n="typeInt">Entero</td>
                                     <td><code>128</code></td>
-                                    <td>Pasos para cubrir el ciclo completo de rodeo-reposicionamiento-disparo.</td>
+                                    <td data-i18n="t5r7Imp">Pasos para cubrir el ciclo completo de rodeo-reposicionamiento-disparo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>hidden_units / layers</code></td>
-                                    <td>Red Neuronal</td>
+                                    <td data-i18n="typeNN">Red Neuronal</td>
                                     <td><code>256 / 3 capas</code></td>
-                                    <td>Capacidad de la red MLP para aprender relaciones no lineales en 21D.</td>
+                                    <td data-i18n="t5r8Imp">Capacidad de la red MLP para aprender relaciones no lineales en 21D.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -672,11 +673,11 @@
 
                     <div class="interactive-curriculum-box">
                         <div class="curriculum-tabs">
-                            <button class="curr-tab-btn project-btn project-btn-outline active" data-phase="1">Fase 1: Estático sin Muro</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="2">Fase 2: Estático con Muro</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="3">Fase 3: Móvil sin Muro</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="4">Fase 4: Móvil con Muro</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="5">Fase 5: Self-Play</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline active" data-phase="1" data-i18n="tabPhase1">Fase 1: Estático sin Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="2" data-i18n="tabPhase2">Fase 2: Estático con Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="3" data-i18n="tabPhase3">Fase 3: Móvil sin Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="4" data-i18n="tabPhase4">Fase 4: Móvil con Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="5" data-i18n="tabPhase5">Fase 5: Self-Play</button>
                         </div>
 
                         <div id="curriculum-content-panel" class="curriculum-panel">
@@ -686,58 +687,58 @@
 
                     <!-- TABLA 6: RESULTADOS POR FASE -->
                     <div class="tech-table-wrapper" style="margin-top: 30px;">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 6: Resultados Históricos de Entrenamiento por Modelo Mental</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t6Title">Tabla 6: Resultados Históricos de Entrenamiento por Modelo Mental</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Fase / Modelo Mental</th>
-                                    <th>Eje X: Pasos de Simulación (Steps)</th>
-                                    <th>Eje X: Configuración del Entorno</th>
-                                    <th>Eje Y: Recompensa Media (R_mean)</th>
-                                    <th>Eje Y: Métrica de Convergencia</th>
-                                    <th>Comportamiento Emergente</th>
+                                    <th data-i18n="thPhaseModel">Fase / Modelo Mental</th>
+                                    <th data-i18n="thSimSteps">Eje X: Pasos de Simulación (Steps)</th>
+                                    <th data-i18n="thEnvCfg">Eje X: Configuración del Entorno</th>
+                                    <th data-i18n="thRMean">Eje Y: Recompensa Media (R_mean)</th>
+                                    <th data-i18n="thConvMetric">Eje Y: Métrica de Convergencia</th>
+                                    <th data-i18n="thEmBehav">Comportamiento Emergente</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>Fase 1 (Modelo 24)</code></td>
                                     <td>0 - 5.0M steps</td>
-                                    <td>Target estático en arena vacía sin obstáculos.</td>
+                                    <td data-i18n="t6r1Env">Target estático en arena vacía sin obstáculos.</td>
                                     <td><code>+11.0</code></td>
                                     <td>Std &lt; 1.0</td>
-                                    <td>Aproximación directa, alineación suave y disparo certero.</td>
+                                    <td data-i18n="t6r1Behav">Aproximación directa, alineación suave y disparo certero.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Fase 2 (Modelo 25)</code></td>
                                     <td>0 - 8.0M steps</td>
-                                    <td>Pared intermedia con <code>obstacle_offset</code> (1.5 &rarr; 0.1).</td>
+                                    <td data-i18n="t6r2Env">Pared intermedia con obstacle_offset (1.5 -> 0.1).</td>
                                     <td><code>+9.0 a +10.0</code></td>
                                     <td>Std: 3.0 - 5.0</td>
-                                    <td>Detección de bloqueo de LOS y rodeo lateral proactivo.</td>
+                                    <td data-i18n="t6r2Behav">Detección de bloqueo de LOS y rodeo lateral proactivo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Fase 3 (Modelo 26)</code></td>
                                     <td>0 - 8.0M steps</td>
-                                    <td>Target en movimiento cinemático sin muros.</td>
+                                    <td data-i18n="t6r3Env">Target en movimiento cinemático sin muros.</td>
                                     <td><code>+11.25</code></td>
-                                    <td>Std: 0.5 - 0.8 (Mínima var)</td>
-                                    <td>Seguimiento continuo y disparo predictivo guiado por $V_{target}$.</td>
+                                    <td data-i18n="t6r3Conv">Std: 0.5 - 0.8 (Mínima var)</td>
+                                    <td data-i18n="t6r3Behav">Seguimiento continuo y disparo predictivo guiado por V_target.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Fase 4 (Modelo 27)</code></td>
                                     <td>0 - 8.0M steps</td>
-                                    <td>Target en movimiento combinado con pared de obstáculo.</td>
+                                    <td data-i18n="t6r4Env">Target en movimiento combinado con pared de obstáculo.</td>
                                     <td><code>+10.0</code></td>
                                     <td>Std: 3.0 - 5.0</td>
-                                    <td><strong>Espera táctica en cobertura</strong> esperando que el rival se asome.</td>
+                                    <td data-i18n="t6r4Behav">Espera táctica en cobertura esperando que el rival se asome.</td>
                                 </tr>
                                 <tr>
                                     <td><code>Fase 5 (Modelo 30)</code></td>
                                     <td>0 - 10.0M+ steps</td>
-                                    <td>Duelo simétrico 1v1 con Self-Play y Model Pool.</td>
-                                    <td>Oscilación en Dientes de Sierra</td>
+                                    <td data-i18n="t6r5Env">Duelo simétrico 1v1 con Self-Play y Model Pool.</td>
+                                    <td data-i18n="t6r5RMean">Oscilación en Dientes de Sierra</td>
                                     <td><strong>ELO 1611 &rarr; 2200+</strong></td>
-                                    <td>Engaño mediante movimiento, gestión de cooldown y tiro selectivo.</td>
+                                    <td data-i18n="t6r5Behav">Engaño mediante movimiento, gestión de cooldown y tiro selectivo.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -770,16 +771,16 @@
                         </div>
                     </div>
 
-                    <!-- TABLA 7 -->
+                    <!-- TABLA 7: REGISTRO NUMÉRICO ELO -->
                     <div class="tech-table-wrapper" style="margin-top: 25px;">
-                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 7: Registro Numérico del Gráfico ELO vs Iteraciones ($X \rightarrow Y$)</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;" data-i18n="t7Title">Tabla 7: Registro Numérico del Gráfico ELO vs Iteraciones ($X \rightarrow Y$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Eje X: Pasos de Simulación (Iteración)</th>
-                                    <th>Eje X: Checkpoint del Modelo</th>
-                                    <th>Eje Y: Puntuación ELO Exacta</th>
-                                    <th>Eje Y: Ratio de Victoria Estimado</th>
+                                    <th data-i18n="thStepsIter">Eje X: Pasos de Simulación (Iteración)</th>
+                                    <th data-i18n="thModelCkpt">Eje X: Checkpoint del Modelo</th>
+                                    <th data-i18n="thExactElo">Eje Y: Puntuación ELO Exacta</th>
+                                    <th data-i18n="thEstWinRate">Eje Y: Ratio de Victoria Estimado</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -791,37 +792,37 @@
                                 </tr>
                                 <tr>
                                     <td><code>1.5 M Steps</code></td>
-                                    <td>Checkpoint SP-1</td>
+                                    <td data-i18n="t7Sp1">Checkpoint SP-1</td>
                                     <td><code>1270 ELO</code></td>
                                     <td>59.8%</td>
                                 </tr>
                                 <tr>
                                     <td><code>3.0 M Steps</code></td>
-                                    <td>Checkpoint SP-2</td>
+                                    <td data-i18n="t7Sp2">Checkpoint SP-2</td>
                                     <td><code>1332 ELO</code></td>
                                     <td>68.1%</td>
                                 </tr>
                                 <tr>
                                     <td><code>5.0 M Steps</code></td>
-                                    <td>Checkpoint SP-3</td>
+                                    <td data-i18n="t7Sp3">Checkpoint SP-3</td>
                                     <td><code>1435 ELO</code></td>
                                     <td>79.4%</td>
                                 </tr>
                                 <tr>
                                     <td><code>7.0 M Steps</code></td>
-                                    <td>Checkpoint SP-4</td>
+                                    <td data-i18n="t7Sp4">Checkpoint SP-4</td>
                                     <td><code>1611 ELO</code></td>
                                     <td>91.2%</td>
                                 </tr>
                                 <tr>
                                     <td><code>8.5 M Steps</code></td>
-                                    <td>Checkpoint SP-5</td>
+                                    <td data-i18n="t7Sp5">Checkpoint SP-5</td>
                                     <td><code>1950 ELO</code></td>
                                     <td>98.5%</td>
                                 </tr>
                                 <tr>
                                     <td><code>10.0 M Steps</code></td>
-                                    <td>Modelo Final 30</td>
+                                    <td data-i18n="t7ModelFinal">Modelo Final 30</td>
                                     <td><code>2200+ ELO</code></td>
                                     <td>99.9%</td>
                                 </tr>
@@ -829,7 +830,7 @@
                         </table>
                     </div>
 
-                    <!-- BLOQUE DE COMPORTAMIENTOS EMERGENTES SIN ESPERA TÁCTICA -->
+                    <!-- COMPORTAMIENTOS EMERGENTES -->
                     <div class="tech-card" style="margin-top: 20px; border-left: 3px solid #00ff88;">
                         <h3 data-i18n="emergentTitle" style="color: #00ff88;">Análisis de Comportamientos Tácticos Emergentes</h3>
                         <p data-i18n="emergentIntro" style="color:#cbd5e1; font-size:0.95rem; margin-bottom:15px;">
@@ -954,7 +955,7 @@
 
                             <div class="future-card-item">
                                 <div class="future-tag" data-i18n="futureTag3">Self-Play Riguroso</div>
-                                <p data-i18n="future3Desc">Aumentar el pool de modelos históricos, reducir la tasa de enfrentamiento actual y ampliar <code>team_change</code> para elevar el nivel táctico.</p>
+                                <p data-i18n="future3Desc">Aumentar el pool de modelos históricos, reducir la tasa de enfrentamiento actual y ampliar team_change para elevar el nivel táctico.</p>
                             </div>
 
                             <div class="future-card-item">
