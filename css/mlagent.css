@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - ESTILOS MEJORADOS, TÍTULO HERO Y FÓRMULAS
+   MLAGENT.CSS - ESTILOS LIMPIOS Y TÍTULO HERO EN 2 LÍNEAS
    ========================================================= */
 
 /* OCULTAR ELEMENTOS INNECESARIOS */
@@ -7,31 +7,32 @@
     display: none !important;
 }
 
-/* TÍTULO HERO FORMATO 2 LÍNEAS PERFECTAS */
+/* TÍTULO HERO MÁS GRANDE EN EXACTAMENTE 2 LÍNEAS */
 .title-inner {
-    max-width: 850px;
+    max-width: 960px;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
 }
 
 .game-title-hero {
-    font-size: 2.6rem;
+    font-size: clamp(2.3rem, 5.2vw, 3.8rem);
     font-weight: 800;
     color: #ffffff;
-    line-height: 1.25;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.8px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 768px) {
     .game-title-hero {
-        font-size: 1.9rem;
-        line-height: 1.3;
+        font-size: 2.0rem;
+        line-height: 1.25;
     }
 }
 
-/* FÓRMULA MATEMÁTICA EN SECCIÓN 3 */
+/* CAJA DE FÓRMULAS MATEMÁTICAS */
 .math-formula-box {
     background: rgba(2, 6, 23, 0.85);
     border: 1px solid var(--green, #00ff88);
@@ -66,7 +67,7 @@
     text-align: center;
 }
 
-/* BOTONES LIMPIOS SIN GLOW NI RESPLANDOR */
+/* BOTONES LIMPIOS */
 .project-btn {
     display: inline-flex;
     align-items: center;
