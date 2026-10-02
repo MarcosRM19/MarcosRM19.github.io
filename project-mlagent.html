@@ -44,7 +44,7 @@
         </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO LIMPIO (Vídeo de fondo sin botones ni imágenes flotantes) -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -64,11 +64,11 @@
             </div>
         </section>
 
-        <!-- ARTÍCULO TÉCNICO COMPLETO -->
+        <!-- ARTÍCULO TÉCNICO EXTENDIDO -->
         <div class="tech-article-body">
             <div class="tech-container">
 
-                <!-- RESUMEN Y OBJETIVOS -->
+                <!-- RESUMEN Y OBJETIVOS EXACTOS SOLICITADOS -->
                 <div class="tech-summary-box">
                     <div class="tech-badge-row">
                         <span class="tech-pill-badge"><span class="pulse-dot"></span> Investigación DRL / Mini-TFG</span>
@@ -79,6 +79,7 @@
                         Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo
                     </h2>
 
+                    <!-- OBJETIVOS VERBATIM -->
                     <div class="tech-objectives-box">
                         <h3 class="objectives-title" data-i18n="objectivesTitle">Objetivos del Proyecto</h3>
                         <p class="tech-summary-desc" id="project-objectives-text" data-i18n="objectivesBody">
@@ -121,7 +122,7 @@
                     </div>
                 </div>
 
-                <!-- SECCIÓN 01: FORMULACIÓN POMDP -->
+                <!-- SECCIÓN 01: FORMULACIÓN POMDP Y MARKOV -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">01</span>
@@ -167,7 +168,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 02: DIAGRAMA SVG Y ESPACIO DE OBSERVACIONES DETALLADO -->
+                <!-- SECCIÓN 02: DIAGRAMA SVG REDISEÑADO Y TABLAS CON EJES X, Y, Z -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">02</span>
@@ -175,61 +176,75 @@
                     </div>
 
                     <p data-i18n="sec2Intro">
-                        El vector de estado $S_t \in \mathbb{R}^{27}$ captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.
+                        El vector de estado St pertenece a R^27 y captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.
                     </p>
 
-                    <!-- DIAGRAMA VISUAL SVG EMBEBIDO -->
+                    <!-- DIAGRAMA SVG 1: SENSORES Y PERCEPCIÓN (CAJAS AMPLIAS SIN DESBORDAMIENTO) -->
                     <div class="diagram-card-container">
-                        <div class="diagram-top-title" data-i18n="diagramTitle">Diagrama de Sensores 3D Raycast y Canalizado Neural Actor-Critic</div>
+                        <div class="diagram-top-title" data-i18n="diagramTitle">Diagrama 1: Flujo Perceptual 3D Raycast y Tensor de Observaciones (27D)</div>
                         <div class="svg-wrapper">
-                            <svg viewBox="0 0 800 280" class="tech-svg-diagram">
-                                <rect x="10" y="10" width="780" height="260" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
+                            <svg viewBox="0 0 920 310" class="tech-svg-diagram">
+                                <rect x="10" y="10" width="900" height="290" rx="12" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
                                 
-                                <!-- Tanque Agente -->
-                                <g transform="translate(130, 140)">
-                                    <rect x="-35" y="-25" width="70" height="50" rx="6" fill="#1e293b" stroke="#00ff88" stroke-width="2"/>
-                                    <circle cx="0" cy="0" r="15" fill="#00ff88" opacity="0.3" stroke="#00ff88" stroke-width="1.5"/>
-                                    <line x1="0" y1="0" x2="35" y2="0" stroke="#00ff88" stroke-width="4" stroke-linecap="round"/>
-                                    <!-- Rays Fan -->
-                                    <path d="M 0 0 L 140 -60 M 0 0 L 150 -30 M 0 0 L 160 0 M 0 0 L 150 30 M 0 0 L 140 60" stroke="#00ff88" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.8"/>
-                                    <text x="0" y="42" fill="#00ff88" font-size="11" text-anchor="middle" font-weight="bold">Agente PPO (3D Tank)</text>
+                                <!-- BLOQUE 1: AGENTE TANQUE 3D -->
+                                <g transform="translate(130, 150)">
+                                    <rect x="-65" y="-55" width="130" height="110" rx="10" fill="#0f172a" stroke="#00ff88" stroke-width="2"/>
+                                    <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#1e293b" stroke="#00ff88" stroke-width="1.5"/>
+                                    <circle cx="0" cy="0" r="16" fill="rgba(0,255,136,0.2)" stroke="#00ff88" stroke-width="1.5"/>
+                                    <line x1="0" y1="0" x2="45" y2="0" stroke="#00ff88" stroke-width="4" stroke-linecap="round"/>
+                                    <!-- Abanico de Raycasts -->
+                                    <path d="M 0 0 L 110 -50 M 0 0 L 120 -25 M 0 0 L 130 0 M 0 0 L 120 25 M 0 0 L 110 50" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                    <text x="0" y="75" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">Agente 3D (PhysX Chassis)</text>
                                 </g>
 
-                                <!-- Conector Tensor Input -->
-                                <path d="M 290 140 L 340 140" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+                                <!-- CONECTOR 1 -->
+                                <path d="M 270 150 L 320 150" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
+                                <polygon points="320,145 330,150 320,155" fill="#38bdf8"/>
 
-                                <!-- Vector Tensor Box -->
-                                <rect x="345" y="60" width="120" height="160" rx="8" fill="#090d16" stroke="#38bdf8" stroke-width="1.5"/>
-                                <text x="405" y="85" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Vector Tensor (27D)</text>
-                                <text x="355" y="110" fill="#cbd5e1" font-size="10">• 15 Raycasts 3D</text>
-                                <text x="355" y="130" fill="#cbd5e1" font-size="10">• Vel Lineal (Vx,Vy,Vz)</text>
-                                <text x="355" y="150" fill="#cbd5e1" font-size="10">• Vel Angular (Wx,Wy,Wz)</text>
-                                <text x="355" y="170" fill="#cbd5e1" font-size="10">• Vector Rel (Dx,Dy,Dz)</text>
-                                <text x="355" y="190" fill="#cbd5e1" font-size="10">• Angle &amp; Reload State</text>
+                                <!-- BLOQUE 2: TENSOR VECTORIAL (27D) - ANCHO DE 280PX PARA AJUSTE PERFECTO -->
+                                <rect x="335" y="40" width="270" height="220" rx="10" fill="#090d16" stroke="#38bdf8" stroke-width="1.5"/>
+                                <text x="470" y="68" fill="#38bdf8" font-size="13" text-anchor="middle" font-weight="bold">Tensor de Estado (27D)</text>
+                                <line x1="355" y1="78" x2="585" y2="78" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+                                
+                                <text x="355" y="102" fill="#cbd5e1" font-size="11">• 15 Raycasts 3D (Ejes XZ)</text>
+                                <text x="355" y="127" fill="#cbd5e1" font-size="11">• Vel Lineal (Vx, Vy, Vz)</text>
+                                <text x="355" y="152" fill="#cbd5e1" font-size="11">• Vel Angular (Wx, Wy, Wz)</text>
+                                <text x="355" y="177" fill="#cbd5e1" font-size="11">• Vector Relativo (Dx, Dy, Dz)</text>
+                                <text x="355" y="202" fill="#cbd5e1" font-size="11">• Ángulo Torreta cos(θ)</text>
+                                <text x="355" y="227" fill="#cbd5e1" font-size="11">• Cooldown &amp; Salud HP</text>
 
-                                <!-- Conector PPO -->
-                                <path d="M 470 140 L 520 140" stroke="#00ff88" stroke-width="2"/>
+                                <!-- CONECTOR 2 -->
+                                <path d="M 610 150 L 650 150" stroke="#00ff88" stroke-width="2.5" fill="none"/>
+                                <polygon points="650,145 660,150 650,155" fill="#00ff88"/>
 
-                                <!-- PPO Net Box -->
-                                <rect x="525" y="60" width="235" height="160" rx="8" fill="#111827" stroke="#00ff88" stroke-width="2"/>
-                                <text x="642" y="88" fill="#ffffff" font-size="13" text-anchor="middle" font-weight="bold">PyTorch PPO Network</text>
-                                <rect x="540" y="105" width="205" height="40" rx="4" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
-                                <text x="642" y="129" fill="#00ff88" font-size="11" text-anchor="middle">Actor: 3 Continuous + 1 Discrete Action</text>
-                                <rect x="540" y="155" width="205" height="40" rx="4" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
-                                <text x="642" y="179" fill="#38bdf8" font-size="11" text-anchor="middle">Critic: State Value Baseline V(s)</text>
+                                <!-- BLOQUE 3: RED PPO ACTOR-CRITIC -->
+                                <rect x="665" y="40" width="225" height="220" rx="10" fill="#111827" stroke="#00ff88" stroke-width="2"/>
+                                <text x="777" y="68" fill="#ffffff" font-size="13" text-anchor="middle" font-weight="bold">PyTorch PPO Policy</text>
+                                <line x1="685" y1="78" x2="870" y2="78" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+
+                                <rect x="680" y="95" width="195" height="60" rx="6" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+                                <text x="777" y="118" fill="#00ff88" font-size="11" text-anchor="middle" font-weight="bold">Actor Head π(a|s)</text>
+                                <text x="777" y="138" fill="#cbd5e1" font-size="10" text-anchor="middle">3 Cont. (Throttle, Steering, Turret)</text>
+
+                                <rect x="680" y="175" width="195" height="60" rx="6" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
+                                <text x="777" y="198" fill="#38bdf8" font-size="11" text-anchor="middle" font-weight="bold">Critic Head V(s)</text>
+                                <text x="777" y="218" fill="#cbd5e1" font-size="10" text-anchor="middle">Estimación de Valor de Estado</text>
                             </svg>
                         </div>
                     </div>
 
-                    <!-- TABLA COMPLETA CON EJES X, Y, Z Y RANGOS -->
+                    <!-- TABLA 1: DESGLOSE COMPLETO DE OBSERVACIONES CON VALORES DE EJES X, Y, Z Y RANGOS -->
                     <div class="tech-table-wrapper">
+                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 1: Espacio de Observaciones Vectoriales con Coordenadas Cartesianas ($S \in \mathbb{R}^{27}$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
                                     <th data-i18n="tblCol1">Índice Vector</th>
                                     <th data-i18n="tblCol2">Variable Observada</th>
-                                    <th>Eje / Componente</th>
-                                    <th data-i18n="tblCol3">Rango Normalizado</th>
+                                    <th>Eje X ($x$) / Horizontal</th>
+                                    <th>Eje Y ($y$) / Vertical</th>
+                                    <th>Eje Z ($z$) / Profundidad</th>
+                                    <th data-i18n="tblCol3">Rango Mín / Máx</th>
                                     <th data-i18n="tblCol4">Propósito Técnico</th>
                                 </tr>
                             </thead>
@@ -237,63 +252,99 @@
                                 <tr>
                                     <td><code>[0 - 14]</code></td>
                                     <td><strong data-i18n="tblR1Name">3D Raycast Perception</strong></td>
-                                    <td>Abanico 3D horizontal (XZ)</td>
+                                    <td>Abanico Local X [-15°, +15°]</td>
+                                    <td>Eje Y constante (1.2m)</td>
+                                    <td>Distancia Z [0m, 25m]</td>
                                     <td><code>[0.0, 1.0]</code></td>
                                     <td data-i18n="tblR1Desc">Detección en abanico de muros, límites y proyectiles.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[15]</code></td>
-                                    <td><strong>Velocidad Lineal Local $V_x$</strong></td>
-                                    <td>Eje X (Lateral)</td>
+                                    <td><strong>Velocidad Lineal $V_x$</strong></td>
+                                    <td>Vector Lateral $V_x$</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
                                     <td><code>[-1.0, 1.0]</code></td>
                                     <td>Inercia de derrape o desplazamiento lateral.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[16]</code></td>
-                                    <td><strong>Velocidad Lineal Local $V_y$</strong></td>
-                                    <td>Eje Y (Vertical)</td>
+                                    <td><strong>Velocidad Lineal $V_y$</strong></td>
+                                    <td>N/A</td>
+                                    <td>Vector Elevación $V_y$</td>
+                                    <td>N/A</td>
                                     <td><code>[-1.0, 1.0]</code></td>
                                     <td>Detección de saltos o desniveles de terreno.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[17]</code></td>
-                                    <td><strong>Velocidad Lineal Local $V_z$</strong></td>
-                                    <td>Eje Z (Frontal)</td>
+                                    <td><strong>Velocidad Lineal $V_z$</strong></td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                    <td>Vector Frontal $V_z$</td>
                                     <td><code>[-1.0, 1.0]</code></td>
                                     <td>Aceleración y velocidad de avance/retroceso.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>[18 - 20]</code></td>
-                                    <td><strong data-i18n="tblR3Name">Velocidad Angular $\vec{\omega}$</strong></td>
-                                    <td>Ejes $W_x, W_y, W_z$</td>
+                                    <td><code>[18]</code></td>
+                                    <td><strong>Velocidad Angular $\omega_x$</strong></td>
+                                    <td>Pitch Pitching ($W_x$)</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td data-i18n="tblR3Desc">Velocidad de rotación al maniobrar el vehículo.</td>
+                                    <td>Inclinación frontal del chasis al acelerar.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[19]</code></td>
+                                    <td><strong>Velocidad Angular $\omega_y$</strong></td>
+                                    <td>N/A</td>
+                                    <td>Yaw Rate ($W_y$)</td>
+                                    <td>N/A</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Velocidad de giro del chasis al maniobrar.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[20]</code></td>
+                                    <td><strong>Velocidad Angular $\omega_z$</strong></td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                    <td>Roll Rolling ($W_z$)</td>
+                                    <td><code>[-1.0, 1.0]</code></td>
+                                    <td>Balanceo lateral al tomar curvas cerradas.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[21]</code></td>
                                     <td><strong>Posición Relativa $\Delta X$</strong></td>
-                                    <td>Desplazamiento X al enemigo</td>
+                                    <td>$X_{target} - X_{self}$</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Coordenada relativa X normalizada por el diámetro de la arena.</td>
+                                    <td>Desplazamiento horizontal relativo en la arena.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[22]</code></td>
                                     <td><strong>Posición Relativa $\Delta Y$</strong></td>
-                                    <td>Desplazamiento Y al enemigo</td>
+                                    <td>N/A</td>
+                                    <td>$Y_{target} - Y_{self}$</td>
+                                    <td>N/A</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Diferencia de altura vertical con el objetivo.</td>
+                                    <td>Diferencia de elevación vertical con el rival.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[23]</code></td>
                                     <td><strong>Posición Relativa $\Delta Z$</strong></td>
-                                    <td>Desplazamiento Z al enemigo</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                    <td>$Z_{target} - Z_{self}$</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Distancia frontal/trasera relativa al oponente.</td>
+                                    <td>Distancia longitudinal frontal hacia el rival.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[24]</code></td>
                                     <td><strong data-i18n="tblR5Name">Alineación Torreta</strong></td>
-                                    <td>$\cos(\theta_{turret})$</td>
+                                    <td>Ángulo Azimut $\theta_{turret}$</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
                                     <td><code>[-1.0, 1.0]</code></td>
                                     <td data-i18n="tblR5Desc">Diferencial angular entre el cañón y el objetivo.</td>
                                 </tr>
@@ -301,13 +352,17 @@
                                     <td><code>[25]</code></td>
                                     <td><strong data-i18n="tblR6Name">Cooldown de Disparo</strong></td>
                                     <td>Timer $T_{reload}$</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
                                     <td><code>[0.0, 1.0]</code></td>
                                     <td data-i18n="tblR6Desc">Estado de recarga del cañón principal.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[26]</code></td>
                                     <td><strong data-i18n="tblR7Name">Salud / Blindaje</strong></td>
-                                    <td>HP / MaxHP</td>
+                                    <td>Ratio $HP / HP_{max}$</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
                                     <td><code>[0.0, 1.0]</code></td>
                                     <td data-i18n="tblR7Desc">Porcentaje de salud restante del vehículo.</td>
                                 </tr>
@@ -315,58 +370,113 @@
                         </table>
                     </div>
 
-                    <!-- TABLA DEL ESPACIO DE ACCIONES -->
-                    <div class="tech-table-wrapper" style="margin-top: 30px;">
-                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Espacio de Acciones Híbrido ($A \in \mathbb{R}^3 \times \{0,1\}$)</h3>
+                    <!-- TABLA 2: ESPACIO DE ACCIONES HÍBRIDO -->
+                    <div class="tech-table-wrapper" style="margin-top: 35px;">
+                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 2: Espacio de Acciones Híbrido ($A \in \mathbb{R}^3 \times \{0,1\}$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
                                     <th>Índice Acción</th>
-                                    <th>Mapeo de Control</th>
+                                    <th>Control Cinemático</th>
+                                    <th>Eje X ($x$) / Giro</th>
+                                    <th>Eje Y ($y$) / Fuerza</th>
                                     <th>Tipo de Acción</th>
                                     <th>Rango / Dominio</th>
-                                    <th>Efecto Cinemático en Unity PhysX</th>
+                                    <th>Mapeo Físico en Unity PhysX</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>Acción Continuo [0]</code></td>
-                                    <td>Acelerador / Freno</td>
+                                    <td><code>Continuo [0]</code></td>
+                                    <td>Tracción / Acelerador</td>
+                                    <td>N/A</td>
+                                    <td>Vector Longitudinal $Y_{force}$</td>
                                     <td>Continuo (Gaussiano)</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Aplica fuerza motriz longitudinal en las orugas.</td>
+                                    <td>Fuerza motriz sobre las orugas (Avanzar/Retroceder).</td>
                                 </tr>
                                 <tr>
-                                    <td><code>Acción Continuo [1]</code></td>
+                                    <td><code>Continuo [1]</code></td>
                                     <td>Dirección del Chasis</td>
+                                    <td>Torque Angular $X_{torque}$</td>
+                                    <td>N/A</td>
                                     <td>Continuo (Gaussiano)</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Aplica torque de rotación diferencial sobre el vehículo.</td>
+                                    <td>Giro diferencial de orugas (Rotación del chasis).</td>
                                 </tr>
                                 <tr>
-                                    <td><code>Acción Continuo [2]</code></td>
+                                    <td><code>Continuo [2]</code></td>
                                     <td>Giro de Torreta</td>
+                                    <td>Azimut Torreta $X_{turret}$</td>
+                                    <td>N/A</td>
                                     <td>Continuo (Gaussiano)</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Rotación independiente de la torreta a 180°/s.</td>
+                                    <td>Rotación independiente del cañón (180°/segundo).</td>
                                 </tr>
                                 <tr>
-                                    <td><code>Acción Discreta [0]</code></td>
+                                    <td><code>Discreto [0]</code></td>
                                     <td>Gatillo de Cañón</td>
+                                    <td>N/A</td>
+                                    <td>Disparo Pulso $Y_{trigger}$</td>
                                     <td>Discreto (Bernoulli)</td>
-                                    <td><code>{0: Esperar, 1: Disparar}</code></td>
-                                    <td>Instancia un proyectil físico con velocidad inicial $V_0$.</td>
+                                    <td><code>{0, 1}</code></td>
+                                    <td>Instanciación de proyectil rígido a $V_0 = 45 m/s$.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 03: ARQUITECTURA PPO -->
+                <!-- SECCIÓN 03: ARQUITECTURA PPO Y DIAGRAMA NEURONAL -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">03</span>
                         <h2 data-i18n="sec3Title">Algoritmo PPO y Arquitectura Actor-Critic</h2>
+                    </div>
+
+                    <!-- DIAGRAMA SVG 2: ARQUITECTURA ACTOR-CRITIC -->
+                    <div class="diagram-card-container">
+                        <div class="diagram-top-title">Diagrama 2: Arquitectura de Red Neuronal Actor-Critic y Función de Pérdida PPO</div>
+                        <div class="svg-wrapper">
+                            <svg viewBox="0 0 920 280" class="tech-svg-diagram">
+                                <rect x="10" y="10" width="900" height="260" rx="12" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
+
+                                <!-- ENTRADA (27D) -->
+                                <rect x="30" y="70" width="160" height="140" rx="8" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
+                                <text x="110" y="100" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Input Vector (27D)</text>
+                                <text x="110" y="130" fill="#cbd5e1" font-size="10" text-anchor="middle">Normalización Online</text>
+                                <text x="110" y="150" fill="#cbd5e1" font-size="10" text-anchor="middle">Mean / Std Variance</text>
+
+                                <!-- CONECTOR 1 -->
+                                <line x1="190" y1="140" x2="240" y2="140" stroke="#38bdf8" stroke-width="2"/>
+                                <polygon points="240,135 250,140 240,145" fill="#38bdf8"/>
+
+                                <!-- CAPAS OCULTAS -->
+                                <rect x="250" y="50" width="220" height="180" rx="8" fill="#0f172a" stroke="#00ff88" stroke-width="1.5"/>
+                                <text x="360" y="80" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">Shared Hidden Layers</text>
+                                <rect x="270" y="100" width="180" height="40" rx="5" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+                                <text x="360" y="124" fill="#ffffff" font-size="11" text-anchor="middle">Dense Layer 1 (256 Swish)</text>
+                                <rect x="270" y="155" width="180" height="40" rx="5" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+                                <text x="360" y="179" fill="#ffffff" font-size="11" text-anchor="middle">Dense Layer 2 (256 Swish)</text>
+
+                                <!-- CONECTOR RAMIFICADO -->
+                                <path d="M 470 140 L 510 140 L 510 85 L 540 85" stroke="#00ff88" stroke-width="2" fill="none"/>
+                                <polygon points="540,80 550,85 540,90" fill="#00ff88"/>
+
+                                <path d="M 470 140 L 510 140 L 510 195 L 540 195" stroke="#38bdf8" stroke-width="2" fill="none"/>
+                                <polygon points="540,190 550,195 540,200" fill="#38bdf8"/>
+
+                                <!-- HEAD ACTOR -->
+                                <rect x="550" y="45" width="330" height="80" rx="8" fill="#1e293b" stroke="#00ff88" stroke-width="1.5"/>
+                                <text x="715" y="72" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">Actor Head: Policy Distribution π_θ(a|s)</text>
+                                <text x="715" y="95" fill="#cbd5e1" font-size="10" text-anchor="middle">Continuous (3 Gaussians: μ, σ) + Discrete (Bernoulli p)</text>
+
+                                <!-- HEAD CRITIC -->
+                                <rect x="550" y="155" width="330" height="80" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                                <text x="715" y="182" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Critic Head: State Value Function V_φ(s)</text>
+                                <text x="715" y="205" fill="#cbd5e1" font-size="10" text-anchor="middle">Linear Output (Expected Cumulative Return Baseline)</text>
+                            </svg>
+                        </div>
                     </div>
 
                     <div class="tech-grid-2">
@@ -419,7 +529,7 @@
                     </div>
                 </section>
 
-                <!-- SECCIÓN 05: CURRICULUM LEARNING -->
+                <!-- SECCIÓN 05: CURRICULUM LEARNING Y TABLA DE FASES CON EJES X, Y -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">05</span>
@@ -438,9 +548,55 @@
                             <!-- Carga vía JS -->
                         </div>
                     </div>
+
+                    <!-- TABLA 3: MATRIZ DE CURRICULUM CON PARAMETROS DE PASOS (X) Y RECOMPENSA/WINRATE (Y) -->
+                    <div class="tech-table-wrapper" style="margin-top: 30px;">
+                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 3: Matriz de Progresión Cuantitativa del Curriculum Learning</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Fase</th>
+                                    <th>Eje X: Pasos de Simulación ($10^6$)</th>
+                                    <th>Eje Y: Umbral Recompensa / Winrate</th>
+                                    <th>Configuración Espacial del Entorno</th>
+                                    <th>Criterio de Graduación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Fase 1: Locomoción</code></td>
+                                    <td>Pasos $X \in [0, 0.5M]$</td>
+                                    <td>Recompensa $Y \ge 0.85$ acumulada</td>
+                                    <td>Arena vacía de $30m \times 30m$ sin muros. Objetivo estático.</td>
+                                    <td>Completar recorrido en $T < 5.0s$ en el 90% de episodios.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 2: Balística</code></td>
+                                    <td>Pasos $X \in [0.5M, 1.7M]$</td>
+                                    <td>Precisión Disparo $Y \ge 80\%$</td>
+                                    <td>Objetivo móvil no hostil a velocidad $V = 6m/s$. Torreta activa.</td>
+                                    <td>Mantener alineación $\cos\theta > 0.9$ durante el 85% del tiempo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 3: Coberturas</code></td>
+                                    <td>Pasos $X \in [1.7M, 3.2M]$</td>
+                                    <td>Tasa de Colisión $Y \le 5\%$</td>
+                                    <td>Inclusión de 6 bloques opacos de hormigón. Rival con IA heurística.</td>
+                                    <td>Navegación fluida bordeando esquinas usando Raycasts 3D.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 4: Duelo Activo</code></td>
+                                    <td>Pasos $X \in [3.2M, 5.0M]$</td>
+                                    <td>ELO Rating $Y \ge 1800$</td>
+                                    <td>Entorno simétrico competitivo contra versiones pasadas del Model Pool.</td>
+                                    <td>Dominio del peek-a-boo y disparo con evasión dinámica.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
-                <!-- SECCIÓN 06: SELF-PLAY -->
+                <!-- SECCIÓN 06: SELF-PLAY Y TABLA ELO vs PASOS X/Y -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">06</span>
@@ -465,16 +621,115 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- TABLA 4: EVOLUCIÓN HISTÓRICA ELO VS ITERACIONES (EJES X e Y) -->
+                    <div class="tech-table-wrapper" style="margin-top: 30px;">
+                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 4: Evolución del ELO Rating vs Pasos Globales de Entrenamiento</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Checkpoint</th>
+                                    <th>Eje X: Pasos Totales ($10^6$)</th>
+                                    <th>Eje Y: ELO Rating Acumulado</th>
+                                    <th>Eje Y: Winrate vs Baseline Heurístico (%)</th>
+                                    <th>Táctica Emergente Detectada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Checkpoint 01</code></td>
+                                    <td>$X = 1.0M$</td>
+                                    <td>$Y = 1200$ ELO</td>
+                                    <td>$Y_{win} = 35.0\%$</td>
+                                    <td>Conducción agresiva frontal sin uso de coberturas.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Checkpoint 02</code></td>
+                                    <td>$X = 2.0M$</td>
+                                    <td>$Y = 1420$ ELO</td>
+                                    <td>$Y_{win} = 58.5\%$</td>
+                                    <td>Giro continuo de torreta antes de asomarse en esquinas.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Checkpoint 03</code></td>
+                                    <td>$X = 3.5M$</td>
+                                    <td>$Y = 1680$ ELO</td>
+                                    <td>$Y_{win} = 76.2\%$</td>
+                                    <td>Táctica Peek-a-Boo: disparar y retroceder tras muros.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Checkpoint 04 (Peak)</code></td>
+                                    <td>$X = 5.0M$</td>
+                                    <td>$Y = 1820$ ELO</td>
+                                    <td>$Y_{win} = 89.4\%$</td>
+                                    <td>Maniobras evasivas sinusoidales mientras recarga.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
-                <!-- SECCIÓN 07: YAML DE CONFIGURACIÓN -->
+                <!-- SECCIÓN 07: YAML Y TABLA DE HIPERPARÁMETROS -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">07</span>
                         <h2 data-i18n="sec7Title">Configuración YAML de Entrenamiento</h2>
                     </div>
 
-                    <div class="tech-code-box">
+                    <!-- TABLA 5: HIPERPARÁMETROS CON RANGOS X/Y Y PROPÓSITO -->
+                    <div class="tech-table-wrapper">
+                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 5: Hiperparámetros de Optimización PPO en Unity ML-Agents</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Hiperparámetro</th>
+                                    <th>Valor Configurado</th>
+                                    <th>Rango Óptimo ($X_{min} \to Y_{max}$)</th>
+                                    <th>Efecto Técnico en la Convergencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>batch_size</code></td>
+                                    <td><code>2048</code></td>
+                                    <td>$[1024, 4096]$</td>
+                                    <td>Número de experiencias para cada actualización de gradiente.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>buffer_size</code></td>
+                                    <td><code>20480</code></td>
+                                    <td>$[10240, 40960]$</td>
+                                    <td>Tamaño del buffer de experiencia reunida antes de optimizar.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>learning_rate</code></td>
+                                    <td><code>0.0003</code></td>
+                                    <td>$[1e-4, 1e-3]$</td>
+                                    <td>Tasa de aprendizaje del optimizador Adam.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>beta (Entropía)</code></td>
+                                    <td><code>0.005</code></td>
+                                    <td>$[1e-3, 1e-2]$</td>
+                                    <td>Fuerza de regularización para incentivar la exploración.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>epsilon (Clipping)</code></td>
+                                    <td><code>0.2</code></td>
+                                    <td>$[0.1, 0.3]$</td>
+                                    <td>Margen de recorte para acotar la actualización de política.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>gamma (Descuento)</code></td>
+                                    <td><code>0.99</code></td>
+                                    <td>$[0.98, 0.999]$</td>
+                                    <td>Factor de descuento para recompensas futuras a largo plazo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tech-code-box" style="margin-top:20px;">
                         <div class="code-box-header">
                             <span>trainer_config_tank_ppo.yaml</span>
                             <button id="btn-copy-code" class="project-btn project-btn-outline" style="padding: 4px 12px; font-size:0.75rem;" data-i18n="btnCopyCode">Copiar YAML</button>
