@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Unity AI MachineLearning | MarcosRuiz Portfolio</title>
+    <title id="page-title">Tanks Machine Learning | Marcos Ruiz Muñoz</title>
 
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +20,11 @@
 
 <body>
 
-    <!-- NAVBAR ORIGINAL -->
+    <!-- NAVBAR -->
     <header>
         <nav class="navbar">
             <a href="index.html#inicio" class="logo" id="logo">
-                MarcosRuiz Portfolio
+                Marcos Ruiz Portfolio
             </a>
 
             <div class="nav-links">
@@ -38,13 +38,13 @@
             <div class="nav-actions">
                 <button id="language-button" type="button" class="project-btn project-btn-outline">EN</button>
                 <a href="index.html#contacto" class="contact-button" id="contact-button" data-i18n="contactButton">
-                    Contact me
+                    Contacto
                 </a>
             </div>
         </nav>
     </header>
 
-    <!-- HERO LIMPIO (Vídeo de fondo sin botones ni imágenes flotantes) -->
+    <!-- HERO LIMPIO -->
     <main id="project-content">
 
         <section class="title-hero">
@@ -57,673 +57,544 @@
             <div class="title-veil"></div>
 
             <div class="title-inner">
-                <h1 id="project-title-hero" class="game-title-hero">Unity AI MachineLearning</h1>
+                <h1 id="project-title-hero" class="game-title-hero">Tanks Machine Learning</h1>
                 <p id="project-tagline" class="title-tagline" data-i18n="heroTagline">
-                    Agente de combate autónomo nativo del motor desarrollado con Unity ML-Agents y PPO para simulación 3D de tanques.
+                    Entrenamiento de un agente de combate 3D mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.
                 </p>
             </div>
         </section>
 
-        <!-- ARTÍCULO TÉCNICO EXTENDIDO -->
+        <!-- ARTÍCULO TÉCNICO COMPLETO DE LA MEMORIA -->
         <div class="tech-article-body">
             <div class="tech-container">
 
-                <!-- RESUMEN Y OBJETIVOS EXACTOS SOLICITADOS -->
+                <!-- RESUMEN Y FICHA TÉCNICA -->
                 <div class="tech-summary-box">
                     <div class="tech-badge-row">
-                        <span class="tech-pill-badge"><span class="pulse-dot"></span> Investigación DRL / Mini-TFG</span>
-                        <span class="tech-pill-tag">Unity ML-Agents v2.0 + PyTorch</span>
+                        <span class="tech-pill-badge"><span class="pulse-dot"></span> Proyecto Aplicado de Videojuego (2025-2026)</span>
+                        <span class="tech-pill-tag">Universitat de Barcelona / ENTI</span>
+                        <span class="tech-pill-tag">Tutor: Lluis Gomez Bigorda</span>
                     </div>
 
                     <h2 class="tech-summary-heading" data-i18n="summaryTitle">
-                        Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo
+                        Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular en Unity
                     </h2>
 
-                    <!-- OBJETIVOS VERBATIM -->
+                    <!-- OBJETIVOS DEL PROYECTO -->
                     <div class="tech-objectives-box">
                         <h3 class="objectives-title" data-i18n="objectivesTitle">Objetivos del Proyecto</h3>
                         <p class="tech-summary-desc" id="project-objectives-text" data-i18n="objectivesBody">
-                            El objetivo de este proyecto es el de desarrollar un agente capaz de dominar las mecánicas de un simple juego de tanques 3D mediante la herramienta de ML-Agent. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin la necesidad de programar comportamientos lógicos manuales o sistemas basados en reglas.
+                            El objetivo de este proyecto es desarrollar un agente capaz de dominar las mecánicas de un juego de tanques 3D mediante la herramienta ML-Agents. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin programar comportamientos lógicos manuales ni máquinas de estados tradicionales.
                             <br><br>
-                            A su vez se pretende investigar como el Self-Play permite la emergencia de estrategias tácticas complejas en el entorno que serían complejas de codificar de manera tradicional. Enfatizando en una IA que evoluciona adaptándose durante el proceso de entrenamiento.
+                            A su vez, se investiga cómo el <strong>Self-Play</strong> permite la emergencia de estrategias tácticas complejas (como la gestión de la economía del disparo, la espera táctica en cobertura y el engaño mediante trayectoria) que serían muy difíciles de codificar explícitamente, enfatizando una IA que coevoluciona durante el proceso de entrenamiento.
                         </p>
                     </div>
 
                     <div class="tech-stats-grid">
                         <div class="tech-stat-card">
-                            <span class="stat-label" data-i18n="statStepsLabel">Environment Steps</span>
-                            <span class="stat-value">5.0M</span>
+                            <span class="stat-label" data-i18n="statStepsLabel">Pasos Totales</span>
+                            <span class="stat-value">10.0M+</span>
                             <span class="stat-sub" data-i18n="statStepsSub">Pasos de simulación física</span>
                         </div>
                         <div class="tech-stat-card">
-                            <span class="stat-label" data-i18n="statEloLabel">Peak ELO Rating</span>
-                            <span class="stat-value">1820</span>
-                            <span class="stat-sub" data-i18n="statEloSub">Vs pool histórico de modelos</span>
+                            <span class="stat-label" data-i18n="statEloLabel">Máximo ELO Alcanzado</span>
+                            <span class="stat-value">1611 - 2200+</span>
+                            <span class="stat-sub" data-i18n="statEloSub">En fase de Self-Play (Modelo 30)</span>
                         </div>
                         <div class="tech-stat-card">
-                            <span class="stat-label" data-i18n="statRaycastsLabel">Perception Sensors</span>
-                            <span class="stat-value">15 Rays</span>
-                            <span class="stat-sub" data-i18n="statRaycastsSub">Abanico 3D en tiempo real</span>
+                            <span class="stat-label" data-i18n="statRaycastsLabel">Observaciones</span>
+                            <span class="stat-value">21D Vectorial</span>
+                            <span class="stat-sub" data-i18n="statRaycastsSub">+ Ray Perception Sensor 3D</span>
                         </div>
                         <div class="tech-stat-card">
-                            <span class="stat-label" data-i18n="statCurriculumLabel">Curriculum Stages</span>
-                            <span class="stat-value">4 Fases</span>
-                            <span class="stat-sub" data-i18n="statCurriculumSub">Progresión jerárquica</span>
+                            <span class="stat-label" data-i18n="statCurriculumLabel">Curriculum Learning</span>
+                            <span class="stat-value">5 Fases</span>
+                            <span class="stat-sub" data-i18n="statCurriculumSub">Modelos mentales 24 al 30</span>
                         </div>
                     </div>
 
                     <div class="tech-action-row">
                         <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="project-btn project-btn-solid" data-i18n="btnPdf">
-                            Leer Memoria Técnica (PDF)
+                            Leer Memoria Técnica (PDF 40 Págs)
                         </a>
                         <a href="index.html#proyectos" class="project-btn project-btn-outline" data-i18n="moreProjects">
-                            Más proyectos
+                            Más Proyectos
                         </a>
                     </div>
                 </div>
 
-                <!-- SECCIÓN 01: FORMULACIÓN POMDP Y MARKOV -->
+                <!-- SECCIÓN 01: ARQUITECTURA DEL SISTEMA Y FÍSICA -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">01</span>
-                        <h2 data-i18n="sec1Title">Formulación del Problema y Proceso de Decisión de Markov (POMDP)</h2>
+                        <h2 data-i18n="sec1Title">Arquitectura del Sistema y Configuración Física en Unity</h2>
                     </div>
 
                     <p data-i18n="sec1Intro">
-                        Para lograr que el agente aprenda sin reglas codificadas a mano, el escenario de combate vehicular se modeló rigurosamente como un Proceso de Decisión de Markov Parcialmente Observable (POMDP) definido por la tupla &lt;S, A, P, R, &gamma;&gt;:
+                        El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.
                     </p>
 
-                    <div class="tech-grid-2">
-                        <div class="tech-card">
-                            <h3 data-i18n="sec1MdpTitle">Formulación del Entorno</h3>
-                            <ul class="tech-clean-list">
-                                <li>
-                                    <strong data-i18n="sec1Mdp1Label">Espacio de Estados (S):</strong> 
-                                    <span data-i18n="sec1Mdp1Desc">Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.</span>
-                                </li>
-                                <li>
-                                    <strong data-i18n="sec1Mdp2Label">Espacio de Acciones (A):</strong> 
-                                    <span data-i18n="sec1Mdp2Desc">Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).</span>
-                                </li>
-                                <li>
-                                    <strong data-i18n="sec1Mdp3Label">Transiciones (P):</strong> 
-                                    <span data-i18n="sec1Mdp3Desc">Dinámica física de tracción en Unity acelerada para entrenamiento masivo.</span>
-                                </li>
-                                <li>
-                                    <strong data-i18n="sec1Mdp4Label">Recompensas (R):</strong> 
-                                    <span data-i18n="sec1Mdp4Desc">Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <!-- DIAGRAMA SVG 1: ARQUITECTURA DE CLASES (SIN DESBORDAMIENTO) -->
+                    <div class="diagram-card-container">
+                        <div class="diagram-top-title" data-i18n="diagram1Title">Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python</div>
+                        <div class="svg-wrapper">
+                            <svg viewBox="0 0 960 320" class="tech-svg-diagram">
+                                <rect x="10" y="10" width="940" height="300" rx="12" fill="rgba(15, 23, 42, 0.95)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
 
-                        <div class="tech-card">
-                            <h3 data-i18n="sec1OptTitle">Objetivo de Optimización</h3>
-                            <p data-i18n="sec1OptText">
-                                El agente optimiza una política estocástica parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:
-                            </p>
-                            <div class="math-block">
-                                J(&theta;) = E [ &Sigma; &gamma;^t R(s_t, a_t) ] con &gamma; = 0.99
-                            </div>
+                                <!-- BLOQUE 1: TankMLAgent -->
+                                <rect x="30" y="35" width="280" height="250" rx="10" fill="#090d16" stroke="#00ff88" stroke-width="1.5"/>
+                                <text x="170" y="62" fill="#00ff88" font-size="13" text-anchor="middle" font-weight="bold">TankMLAgent (Unity.MLAgents)</text>
+                                <line x1="45" y1="72" x2="295" y2="72" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
+                                
+                                <text x="45" y="95" fill="#38bdf8" font-size="11" font-weight="bold">Métodos Principales:</text>
+                                <text x="45" y="115" fill="#cbd5e1" font-size="10">• CollectObservations(sensor) -> 21D</text>
+                                <text x="45" y="133" fill="#cbd5e1" font-size="10">• OnActionReceived(actions) -> Motor/Tiro</text>
+                                <text x="45" y="151" fill="#cbd5e1" font-size="10">• OnEpisodeBegin() -> Reset &amp; Spawns</text>
+                                <text x="45" y="169" fill="#cbd5e1" font-size="10">• ApplyMovement() &amp; ApplyRotation()</text>
+
+                                <text x="45" y="195" fill="#38bdf8" font-size="11" font-weight="bold">Referencias de Control:</text>
+                                <text x="45" y="215" fill="#cbd5e1" font-size="10">• TargetMovePosition _target</text>
+                                <text x="45" y="233" fill="#cbd5e1" font-size="10">• SelfPlayAreaManager _areaMgr</text>
+                                <text x="45" y="251" fill="#cbd5e1" font-size="10">• Instantiate BulletDetection</text>
+
+                                <!-- CONECTOR 1 -->
+                                <path d="M 310 160 L 350 160" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
+                                <polygon points="350,155 360,160 350,165" fill="#38bdf8"/>
+
+                                <!-- BLOQUE 2: SOCKET TCP COMMUNICATOR -->
+                                <rect x="360" y="70" width="230" height="180" rx="10" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
+                                <text x="475" y="98" fill="#38bdf8" font-size="13" text-anchor="middle" font-weight="bold">Communicator TCP (Port 5004)</text>
+                                <line x1="375" y1="108" x2="575" y2="108" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
+                                <text x="475" y="135" fill="#cbd5e1" font-size="10" text-anchor="middle">Sincronización por Decision Period (5)</text>
+                                <text x="475" y="155" fill="#00ff88" font-size="10" text-anchor="middle">&rarr; Envía: Vector 21D + Rewards</text>
+                                <text x="475" y="175" fill="#38bdf8" font-size="10" text-anchor="middle">&leftarrow; Recibe: Acciones [Cont(2), Disc(1)]</text>
+                                <text x="475" y="200" fill="#94a3b8" font-size="10" text-anchor="middle">Fixed Timestep = 0.02s (0.1s / decisión)</text>
+
+                                <!-- CONECTOR 2 -->
+                                <path d="M 590 160 L 630 160" stroke="#00ff88" stroke-width="2.5" fill="none"/>
+                                <polygon points="630,155 640,160 630,165" fill="#00ff88"/>
+
+                                <!-- BLOQUE 3: PYTHON TRAINER -->
+                                <rect x="640" y="35" width="290" height="250" rx="10" fill="#111827" stroke="#00ff88" stroke-width="1.5"/>
+                                <text x="785" y="62" fill="#ffffff" font-size="13" text-anchor="middle" font-weight="bold">Python Trainer (ML-Agents PyTorch)</text>
+                                <line x1="655" y1="72" x2="915" y2="72" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
+
+                                <rect x="655" y="85" width="260" height="50" rx="6" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
+                                <text x="785" y="105" fill="#00ff88" font-size="10" text-anchor="middle" font-weight="bold">PPO Algorithm (Clipped L_CLIP)</text>
+                                <text x="785" y="122" fill="#cbd5e1" font-size="9" text-anchor="middle">batch_size: 1024 | buffer_size: 40960</text>
+
+                                <rect x="655" y="145" width="260" height="50" rx="6" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
+                                <text x="785" y="165" fill="#38bdf8" font-size="10" text-anchor="middle" font-weight="bold">Curriculum &amp; Curiosity Manager</text>
+                                <text x="785" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">obstacle_offset &amp; current_level</text>
+
+                                <rect x="655" y="205" width="260" height="60" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <text x="785" y="225" fill="#ffffff" font-size="10" text-anchor="middle" font-weight="bold">Self-Play Controller</text>
+                                <text x="785" y="242" fill="#cbd5e1" font-size="9" text-anchor="middle">save_steps: 50k | team_change: 100k | ELO System</text>
+                            </svg>
                         </div>
+                    </div>
+
+                    <!-- TABLA CONFIGURACIÓN RIGIDBODY -->
+                    <div class="tech-table-wrapper" style="margin-top: 25px;">
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 1: Parámetros del Rigidbody de PhysX en Unity</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Eje X: Parámetro Físico</th>
+                                    <th>Eje Y: Valor Configurado</th>
+                                    <th>Eje Y: Unidad / Tipo</th>
+                                    <th>Justificación Técnica en la Simulación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Mass</code></td>
+                                    <td><code>1.0</code></td>
+                                    <td>Masa (kg)</td>
+                                    <td>Masa normalizada para simplificar el cálculo de fuerzas de aceleración.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Drag</code></td>
+                                    <td><code>3.0</code></td>
+                                    <td>Fricción Lineal</td>
+                                    <td>Frenado lineal suficiente para detener el tanque al soltar el input de movimiento.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Angular Drag</code></td>
+                                    <td><code>10.0</code></td>
+                                    <td>Fricción Angular</td>
+                                    <td>Amortigua drásticamente las oscilaciones de rotación generadas por <code>AddTorque</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Use Gravity</code></td>
+                                    <td><code>true</code></td>
+                                    <td>Booleano</td>
+                                    <td>Mantiene el chasis anclado al suelo de la arena de $50m \times 50m$.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Freeze Position Y</code></td>
+                                    <td><code>true</code></td>
+                                    <td>Restricción 3D</td>
+                                    <td>Evita desplazamientos verticales y saltos descontrolados por colisión.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Freeze Rotation X, Z</code></td>
+                                    <td><code>true</code></td>
+                                    <td>Restricción 3D</td>
+                                    <td>Impide volcamientos del chasis al impactar muros u obstáculos.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Collision Detection</code></td>
+                                    <td><code>Continuous Speculative</code></td>
+                                    <td>Modo Físico PhysX</td>
+                                    <td>Garantiza que proyectiles a alta velocidad ($V_0$) no atraviesen la geometría.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 02: DIAGRAMA SVG REDISEÑADO Y TABLAS CON EJES X, Y, Z -->
+                <!-- SECCIÓN 02: ESPACIO DE OBSERVACIONES Y ACCIONES -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">02</span>
-                        <h2 data-i18n="sec2Title">Arquitectura Perceptual y Espacio de Observaciones Vectoriales (27D)</h2>
+                        <h2 data-i18n="sec2Title">Diseño del Espacio de Observación (21D) y Acción Híbrido</h2>
                     </div>
 
                     <p data-i18n="sec2Intro">
-                        El vector de estado St pertenece a R^27 y captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.
+                        El vector de observaciones $S_t \in \mathbb{R}^{21}$ fue diseñado para permanecer invariante entre fases de curriculum para evitar tener que reiniciar la red desde cero. Se complementa con un sensor perceptual autónomo de rayos.
                     </p>
 
-                    <!-- DIAGRAMA SVG 1: SENSORES Y PERCEPCIÓN (CAJAS AMPLIAS SIN DESBORDAMIENTO) -->
-                    <div class="diagram-card-container">
-                        <div class="diagram-top-title" data-i18n="diagramTitle">Diagrama 1: Flujo Perceptual 3D Raycast y Tensor de Observaciones (27D)</div>
-                        <div class="svg-wrapper">
-                            <svg viewBox="0 0 920 310" class="tech-svg-diagram">
-                                <rect x="10" y="10" width="900" height="290" rx="12" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
-                                
-                                <!-- BLOQUE 1: AGENTE TANQUE 3D -->
-                                <g transform="translate(130, 150)">
-                                    <rect x="-65" y="-55" width="130" height="110" rx="10" fill="#0f172a" stroke="#00ff88" stroke-width="2"/>
-                                    <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#1e293b" stroke="#00ff88" stroke-width="1.5"/>
-                                    <circle cx="0" cy="0" r="16" fill="rgba(0,255,136,0.2)" stroke="#00ff88" stroke-width="1.5"/>
-                                    <line x1="0" y1="0" x2="45" y2="0" stroke="#00ff88" stroke-width="4" stroke-linecap="round"/>
-                                    <!-- Abanico de Raycasts -->
-                                    <path d="M 0 0 L 110 -50 M 0 0 L 120 -25 M 0 0 L 130 0 M 0 0 L 120 25 M 0 0 L 110 50" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="4,3"/>
-                                    <text x="0" y="75" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">Agente 3D (PhysX Chassis)</text>
-                                </g>
-
-                                <!-- CONECTOR 1 -->
-                                <path d="M 270 150 L 320 150" stroke="#38bdf8" stroke-width="2.5" fill="none"/>
-                                <polygon points="320,145 330,150 320,155" fill="#38bdf8"/>
-
-                                <!-- BLOQUE 2: TENSOR VECTORIAL (27D) - ANCHO DE 280PX PARA AJUSTE PERFECTO -->
-                                <rect x="335" y="40" width="270" height="220" rx="10" fill="#090d16" stroke="#38bdf8" stroke-width="1.5"/>
-                                <text x="470" y="68" fill="#38bdf8" font-size="13" text-anchor="middle" font-weight="bold">Tensor de Estado (27D)</text>
-                                <line x1="355" y1="78" x2="585" y2="78" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
-                                
-                                <text x="355" y="102" fill="#cbd5e1" font-size="11">• 15 Raycasts 3D (Ejes XZ)</text>
-                                <text x="355" y="127" fill="#cbd5e1" font-size="11">• Vel Lineal (Vx, Vy, Vz)</text>
-                                <text x="355" y="152" fill="#cbd5e1" font-size="11">• Vel Angular (Wx, Wy, Wz)</text>
-                                <text x="355" y="177" fill="#cbd5e1" font-size="11">• Vector Relativo (Dx, Dy, Dz)</text>
-                                <text x="355" y="202" fill="#cbd5e1" font-size="11">• Ángulo Torreta cos(θ)</text>
-                                <text x="355" y="227" fill="#cbd5e1" font-size="11">• Cooldown &amp; Salud HP</text>
-
-                                <!-- CONECTOR 2 -->
-                                <path d="M 610 150 L 650 150" stroke="#00ff88" stroke-width="2.5" fill="none"/>
-                                <polygon points="650,145 660,150 650,155" fill="#00ff88"/>
-
-                                <!-- BLOQUE 3: RED PPO ACTOR-CRITIC -->
-                                <rect x="665" y="40" width="225" height="220" rx="10" fill="#111827" stroke="#00ff88" stroke-width="2"/>
-                                <text x="777" y="68" fill="#ffffff" font-size="13" text-anchor="middle" font-weight="bold">PyTorch PPO Policy</text>
-                                <line x1="685" y1="78" x2="870" y2="78" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
-
-                                <rect x="680" y="95" width="195" height="60" rx="6" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
-                                <text x="777" y="118" fill="#00ff88" font-size="11" text-anchor="middle" font-weight="bold">Actor Head π(a|s)</text>
-                                <text x="777" y="138" fill="#cbd5e1" font-size="10" text-anchor="middle">3 Cont. (Throttle, Steering, Turret)</text>
-
-                                <rect x="680" y="175" width="195" height="60" rx="6" fill="rgba(56,189,248,0.1)" stroke="#38bdf8" stroke-width="1"/>
-                                <text x="777" y="198" fill="#38bdf8" font-size="11" text-anchor="middle" font-weight="bold">Critic Head V(s)</text>
-                                <text x="777" y="218" fill="#cbd5e1" font-size="10" text-anchor="middle">Estimación de Valor de Estado</text>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- TABLA 1: DESGLOSE COMPLETO DE OBSERVACIONES CON VALORES DE EJES X, Y, Z Y RANGOS -->
+                    <!-- TABLA 2: ESPACIO DE OBSERVACIONES VECTORIALES (21D REAL) -->
                     <div class="tech-table-wrapper">
-                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 1: Espacio de Observaciones Vectoriales con Coordenadas Cartesianas ($S \in \mathbb{R}^{27}$)</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 2: Espacio de Observaciones Vectoriales ($S \in \mathbb{R}^{21}$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th data-i18n="tblCol1">Índice Vector</th>
-                                    <th data-i18n="tblCol2">Variable Observada</th>
-                                    <th>Eje X ($x$) / Horizontal</th>
-                                    <th>Eje Y ($y$) / Vertical</th>
-                                    <th>Eje Z ($z$) / Profundidad</th>
-                                    <th data-i18n="tblCol3">Rango Mín / Máx</th>
-                                    <th data-i18n="tblCol4">Propósito Técnico</th>
+                                    <th>Eje X: Dimensión / Índices Vector</th>
+                                    <th>Eje X: Variable Observada</th>
+                                    <th>Eje Y: Rango Original</th>
+                                    <th>Eje Y: Normalización Aplicada</th>
+                                    <th>Propósito Técnico en la Toma de Decisiones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>[0 - 14]</code></td>
-                                    <td><strong data-i18n="tblR1Name">3D Raycast Perception</strong></td>
-                                    <td>Abanico Local X [-15°, +15°]</td>
-                                    <td>Eje Y constante (1.2m)</td>
-                                    <td>Distancia Z [0m, 25m]</td>
-                                    <td><code>[0.0, 1.0]</code></td>
-                                    <td data-i18n="tblR1Desc">Detección en abanico de muros, límites y proyectiles.</td>
+                                    <td><code>[0, 1, 2]</code></td>
+                                    <td><strong>Dirección al Objetivo</strong></td>
+                                    <td>Vectores $(x, y, z)$</td>
+                                    <td><code>[-1.0, 1.0]</code> (normalized)</td>
+                                    <td>Guía la navegación y aproximación espacial hacia el objetivo.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>[15]</code></td>
-                                    <td><strong>Velocidad Lineal $V_x$</strong></td>
-                                    <td>Vector Lateral $V_x$</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Inercia de derrape o desplazamiento lateral.</td>
+                                    <td><code>[3]</code></td>
+                                    <td><strong>Distancia al Objetivo</strong></td>
+                                    <td>$[0, 35]$ metros</td>
+                                    <td><code>log(1 + dist) / 10.0</code></td>
+                                    <td>Suaviza la escala de distancia para evitar picos de gradiente.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>[16]</code></td>
-                                    <td><strong>Velocidad Lineal $V_y$</strong></td>
-                                    <td>N/A</td>
-                                    <td>Vector Elevación $V_y$</td>
-                                    <td>N/A</td>
+                                    <td><code>[4, 5, 6]</code></td>
+                                    <td><strong>Orientación del Agente</strong></td>
+                                    <td><code>transform.forward</code></td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Detección de saltos o desniveles de terreno.</td>
+                                    <td>Informa sobre la dirección hacia la que apunta el chasis.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>[17]</code></td>
-                                    <td><strong>Velocidad Lineal $V_z$</strong></td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>Vector Frontal $V_z$</td>
+                                    <td><code>[7]</code></td>
+                                    <td><strong>Alineación Angular</strong></td>
+                                    <td>Producto escalar $\cos\theta$</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Aceleración y velocidad de avance/retroceso.</td>
+                                    <td>Determina qué tan bien alineado está el cañón con el rival.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[8]</code></td>
+                                    <td><strong>Cooldown de Disparo</strong></td>
+                                    <td>Booleano de recarga</td>
+                                    <td><code>{0.0, 1.0}</code></td>
+                                    <td>Indica si el cañón está listo para ejecutar un disparo (150 steps).</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[9]</code></td>
+                                    <td><strong>Distancia Relativa a Rango</strong></td>
+                                    <td>$[0, maxDistance]$</td>
+                                    <td><code>Clamp01(dist / maxShootDist)</code></td>
+                                    <td>Evalúa si el objetivo está dentro del alcance efectivo de tiro.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[10, 11, 12]</code></td>
+                                    <td><strong>Velocidad del Objetivo</strong></td>
+                                    <td>Vector velocidad rival</td>
+                                    <td><code>targetVel.normalized</code></td>
+                                    <td>Permite calcular el disparo predictivo anticipando la trayectoria.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[13]</code></td>
+                                    <td><strong>Magnitud Velocidad Rival</strong></td>
+                                    <td>$[0, 10]$ m/s</td>
+                                    <td><code>log(1 + magnitude) / 5.0</code></td>
+                                    <td>Mide la rapidez de desplazamiento del oponente.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[14]</code></td>
+                                    <td><strong>Magnitud Velocidad Propia</strong></td>
+                                    <td>$[0, 10]$ m/s</td>
+                                    <td><code>rb.velocity.magnitude / 10.0</code></td>
+                                    <td>Permite autorregular la aceleración y el frenado.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>[15, 16, 17]</code></td>
+                                    <td><strong>Dirección Velocidad Propia</strong></td>
+                                    <td>Vector movimiento local</td>
+                                    <td><code>rb.velocity.normalized</code></td>
+                                    <td>Detección cinemática de derrapes y acercamiento a bordes.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[18]</code></td>
-                                    <td><strong>Velocidad Angular $\omega_x$</strong></td>
-                                    <td>Pitch Pitching ($W_x$)</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Inclinación frontal del chasis al acelerar.</td>
+                                    <td><strong>Fase del Curriculum</strong></td>
+                                    <td>Nivel activo $[0, 3]$</td>
+                                    <td><code>currentLevel / maxLevel</code></td>
+                                    <td>Modula el comportamiento interno según la dificultad del nivel.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[19]</code></td>
-                                    <td><strong>Velocidad Angular $\omega_y$</strong></td>
-                                    <td>N/A</td>
-                                    <td>Yaw Rate ($W_y$)</td>
-                                    <td>N/A</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Velocidad de giro del chasis al maniobrar.</td>
+                                    <td><strong>Línea de Visión (LOS)</strong></td>
+                                    <td>Raycast Booleano</td>
+                                    <td><code>{0.0, 1.0}</code></td>
+                                    <td>Detecta si existe visión directa sin obstáculos interpuestos.</td>
                                 </tr>
                                 <tr>
                                     <td><code>[20]</code></td>
-                                    <td><strong>Velocidad Angular $\omega_z$</strong></td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>Roll Rolling ($W_z$)</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Balanceo lateral al tomar curvas cerradas.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>[21]</code></td>
-                                    <td><strong>Posición Relativa $\Delta X$</strong></td>
-                                    <td>$X_{target} - X_{self}$</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Desplazamiento horizontal relativo en la arena.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>[22]</code></td>
-                                    <td><strong>Posición Relativa $\Delta Y$</strong></td>
-                                    <td>N/A</td>
-                                    <td>$Y_{target} - Y_{self}$</td>
-                                    <td>N/A</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Diferencia de elevación vertical con el rival.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>[23]</code></td>
-                                    <td><strong>Posición Relativa $\Delta Z$</strong></td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>$Z_{target} - Z_{self}$</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Distancia longitudinal frontal hacia el rival.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>[24]</code></td>
-                                    <td><strong data-i18n="tblR5Name">Alineación Torreta</strong></td>
-                                    <td>Ángulo Azimut $\theta_{turret}$</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td data-i18n="tblR5Desc">Diferencial angular entre el cañón y el objetivo.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>[25]</code></td>
-                                    <td><strong data-i18n="tblR6Name">Cooldown de Disparo</strong></td>
-                                    <td>Timer $T_{reload}$</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td><code>[0.0, 1.0]</code></td>
-                                    <td data-i18n="tblR6Desc">Estado de recarga del cañón principal.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>[26]</code></td>
-                                    <td><strong data-i18n="tblR7Name">Salud / Blindaje</strong></td>
-                                    <td>Ratio $HP / HP_{max}$</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td><code>[0.0, 1.0]</code></td>
-                                    <td data-i18n="tblR7Desc">Porcentaje de salud restante del vehículo.</td>
+                                    <td><strong>Distancia al Obstáculo</strong></td>
+                                    <td>Distancia a pared</td>
+                                    <td><code>Clamp01(hit.distance / dist)</code></td>
+                                    <td>Informa sobre la proximidad de la pared para calcular el rodeo.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <!-- TABLA 2: ESPACIO DE ACCIONES HÍBRIDO -->
-                    <div class="tech-table-wrapper" style="margin-top: 35px;">
-                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 2: Espacio de Acciones Híbrido ($A \in \mathbb{R}^3 \times \{0,1\}$)</h3>
+                    <!-- TABLA 3: ESPACIO DE ACCIONES HÍBRIDO -->
+                    <div class="tech-table-wrapper" style="margin-top: 30px;">
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 3: Espacio de Acciones Híbrido ($A \in \mathbb{R}^2 \times \{0,1\}$)</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Índice Acción</th>
-                                    <th>Control Cinemático</th>
-                                    <th>Eje X ($x$) / Giro</th>
-                                    <th>Eje Y ($y$) / Fuerza</th>
-                                    <th>Tipo de Acción</th>
-                                    <th>Rango / Dominio</th>
-                                    <th>Mapeo Físico en Unity PhysX</th>
+                                    <th>Eje X: Índice de Acción</th>
+                                    <th>Eje X: Tipo de Control</th>
+                                    <th>Eje Y: Rango de Salida</th>
+                                    <th>Eje Y: Mapeo Físico en Unity PhysX</th>
+                                    <th>Comportamiento Cinemático</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><code>Continuo [0]</code></td>
-                                    <td>Tracción / Acelerador</td>
-                                    <td>N/A</td>
-                                    <td>Vector Longitudinal $Y_{force}$</td>
-                                    <td>Continuo (Gaussiano)</td>
+                                    <td><code>Continuous[0]</code></td>
+                                    <td>Acelerador / Tracción</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Fuerza motriz sobre las orugas (Avanzar/Retroceder).</td>
+                                    <td>Proyección de fuerza en <code>transform.forward</code></td>
+                                    <td>Avanzar / Retroceder con inercia mediante <code>Vector3.Lerp</code> (factor 8f).</td>
                                 </tr>
                                 <tr>
-                                    <td><code>Continuo [1]</code></td>
+                                    <td><code>Continuous[1]</code></td>
                                     <td>Dirección del Chasis</td>
-                                    <td>Torque Angular $X_{torque}$</td>
-                                    <td>N/A</td>
-                                    <td>Continuo (Gaussiano)</td>
                                     <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Giro diferencial de orugas (Rotación del chasis).</td>
+                                    <td>Aplicación de torque con <code>AddTorque</code></td>
+                                    <td>Giro proporcional al error de velocidad angular con zona muerta dinámica (0.05 a 0.15).</td>
                                 </tr>
                                 <tr>
-                                    <td><code>Continuo [2]</code></td>
-                                    <td>Giro de Torreta</td>
-                                    <td>Azimut Torreta $X_{turret}$</td>
-                                    <td>N/A</td>
-                                    <td>Continuo (Gaussiano)</td>
-                                    <td><code>[-1.0, 1.0]</code></td>
-                                    <td>Rotación independiente del cañón (180°/segundo).</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Discreto [0]</code></td>
-                                    <td>Gatillo de Cañón</td>
-                                    <td>N/A</td>
-                                    <td>Disparo Pulso $Y_{trigger}$</td>
-                                    <td>Discreto (Bernoulli)</td>
+                                    <td><code>Discrete[0]</code></td>
+                                    <td>Gatillo de Disparo</td>
                                     <td><code>{0, 1}</code></td>
-                                    <td>Instanciación de proyectil rígido a $V_0 = 45 m/s$.</td>
+                                    <td>Instanciación de prefab <code>BulletDetection</code></td>
+                                    <td>Disparo de bala rígida. Respeta un cooldown de 150 pasos de decisión (15s simulación).</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 03: ARQUITECTURA PPO Y DIAGRAMA NEURONAL -->
+                <!-- SECCIÓN 03: REWARD SHAPING COMPLETO -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">03</span>
-                        <h2 data-i18n="sec3Title">Algoritmo PPO y Arquitectura Actor-Critic</h2>
+                        <h2 data-i18n="sec3Title">Ingeniería de Recompensas (Reward Shaping) y Evolución</h2>
                     </div>
 
-                    <!-- DIAGRAMA SVG 2: ARQUITECTURA ACTOR-CRITIC -->
-                    <div class="diagram-card-container">
-                        <div class="diagram-top-title">Diagrama 2: Arquitectura de Red Neuronal Actor-Critic y Función de Pérdida PPO</div>
-                        <div class="svg-wrapper">
-                            <svg viewBox="0 0 920 280" class="tech-svg-diagram">
-                                <rect x="10" y="10" width="900" height="260" rx="12" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5"/>
+                    <p data-i18n="sec3Intro">
+                        El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). A continuación se muestra la matriz final de recompensas.
+                    </p>
 
-                                <!-- ENTRADA (27D) -->
-                                <rect x="30" y="70" width="160" height="140" rx="8" fill="#020617" stroke="#38bdf8" stroke-width="1.5"/>
-                                <text x="110" y="100" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Input Vector (27D)</text>
-                                <text x="110" y="130" fill="#cbd5e1" font-size="10" text-anchor="middle">Normalización Online</text>
-                                <text x="110" y="150" fill="#cbd5e1" font-size="10" text-anchor="middle">Mean / Std Variance</text>
-
-                                <!-- CONECTOR 1 -->
-                                <line x1="190" y1="140" x2="240" y2="140" stroke="#38bdf8" stroke-width="2"/>
-                                <polygon points="240,135 250,140 240,145" fill="#38bdf8"/>
-
-                                <!-- CAPAS OCULTAS -->
-                                <rect x="250" y="50" width="220" height="180" rx="8" fill="#0f172a" stroke="#00ff88" stroke-width="1.5"/>
-                                <text x="360" y="80" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">Shared Hidden Layers</text>
-                                <rect x="270" y="100" width="180" height="40" rx="5" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
-                                <text x="360" y="124" fill="#ffffff" font-size="11" text-anchor="middle">Dense Layer 1 (256 Swish)</text>
-                                <rect x="270" y="155" width="180" height="40" rx="5" fill="rgba(0,255,136,0.1)" stroke="#00ff88" stroke-width="1"/>
-                                <text x="360" y="179" fill="#ffffff" font-size="11" text-anchor="middle">Dense Layer 2 (256 Swish)</text>
-
-                                <!-- CONECTOR RAMIFICADO -->
-                                <path d="M 470 140 L 510 140 L 510 85 L 540 85" stroke="#00ff88" stroke-width="2" fill="none"/>
-                                <polygon points="540,80 550,85 540,90" fill="#00ff88"/>
-
-                                <path d="M 470 140 L 510 140 L 510 195 L 540 195" stroke="#38bdf8" stroke-width="2" fill="none"/>
-                                <polygon points="540,190 550,195 540,200" fill="#38bdf8"/>
-
-                                <!-- HEAD ACTOR -->
-                                <rect x="550" y="45" width="330" height="80" rx="8" fill="#1e293b" stroke="#00ff88" stroke-width="1.5"/>
-                                <text x="715" y="72" fill="#00ff88" font-size="12" text-anchor="middle" font-weight="bold">Actor Head: Policy Distribution π_θ(a|s)</text>
-                                <text x="715" y="95" fill="#cbd5e1" font-size="10" text-anchor="middle">Continuous (3 Gaussians: μ, σ) + Discrete (Bernoulli p)</text>
-
-                                <!-- HEAD CRITIC -->
-                                <rect x="550" y="155" width="330" height="80" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-                                <text x="715" y="182" fill="#38bdf8" font-size="12" text-anchor="middle" font-weight="bold">Critic Head: State Value Function V_φ(s)</text>
-                                <text x="715" y="205" fill="#cbd5e1" font-size="10" text-anchor="middle">Linear Output (Expected Cumulative Return Baseline)</text>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="tech-grid-2">
-                        <div class="tech-card">
-                            <h3 data-i18n="sec3MlpTitle">Red Neuronal Multicapa (MLP)</h3>
-                            <ul class="tech-clean-list">
-                                <li>
-                                    <strong data-i18n="sec3Mlp1Label">Input:</strong> 
-                                    <span data-i18n="sec3Mlp1Desc">Vector normalizado de 27 observaciones.</span>
-                                </li>
-                                <li>
-                                    <strong data-i18n="sec3Mlp2Label">Capas Ocultas:</strong> 
-                                    <span data-i18n="sec3Mlp2Desc">2 capas densas de 256 neuronas cada una.</span>
-                                </li>
-                                <li>
-                                    <strong data-i18n="sec3Mlp3Label">Actor:</strong> 
-                                    <span data-i18n="sec3Mlp3Desc">Genera acciones continuas de conducción y decisión discreta de disparo.</span>
-                                </li>
-                                <li>
-                                    <strong data-i18n="sec3Mlp4Label">Critic:</strong> 
-                                    <span data-i18n="sec3Mlp4Desc">Estima el valor del estado para calcular ventajas acumuladas.</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="tech-card">
-                            <h3 data-i18n="sec3PpoTitle">Optimización PPO Clipped</h3>
-                            <p data-i18n="sec3PpoText">
-                                PPO acota las actualizaciones mediante un margen &epsilon; = 0.2 para garantizar que el entrenamiento no destruya comportamientos útiles previamente consolidados:
-                            </p>
-                            <div class="math-block">
-                                L_CLIP(&theta;) = E [ min(r_t A_t, clip(r_t, 1-&epsilon;, 1+&epsilon;) A_t) ]
-                            </div>
-                        </div>
+                    <!-- TABLA 4: TABLA COMPLETA DE RECOMPENSAS -->
+                    <div class="tech-table-wrapper">
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 4: Sistema Completo de Recompensas y Penalizaciones</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Eje X: Evento / Acción del Agente</th>
+                                    <th>Eje X: Condición de Activación</th>
+                                    <th>Eje Y: Valor de Recompensa (R)</th>
+                                    <th>Eje Y: Tipo de Señal</th>
+                                    <th>Propósito Táctico en el Entrenamiento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Impacto al Objetivo</strong></td>
+                                    <td>Bala contacta con el rival (<code>BulletDetection</code>)</td>
+                                    <td><code>+10.0</code></td>
+                                    <td>Terminal</td>
+                                    <td>Objetivo principal del agente. Recompensa de mayor magnitud.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Disparo bien Alineado</strong></td>
+                                    <td>Estar bien alineado al pulsar el gatillo de disparo</td>
+                                    <td><code>+1.0</code></td>
+                                    <td>Inmediata</td>
+                                    <td>Refuerza el intento de disparo únicamente cuando está bien orientado.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Recuperación de LOS</strong></td>
+                                    <td><code>_hasLineOfSight &amp;&amp; !_hadLineOfSightLastStep</code></td>
+                                    <td><code>+0.05</code></td>
+                                    <td>Inmediata</td>
+                                    <td>Premia instantáneamente el acto de asomarse tras rodear un muro.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Posición Perfecta con LOS</strong></td>
+                                    <td>En rango, buena distancia, alineado y con Cooldown ok</td>
+                                    <td><code>+0.002 / paso</code></td>
+                                    <td>Continua</td>
+                                    <td>Incentiva mantener una posición óptima de combate listo para disparar.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Alineación con LOS</strong></td>
+                                    <td><code>alignment &gt; desireRotation &amp;&amp; hasLOS</code></td>
+                                    <td><code>+0.003 / paso</code></td>
+                                    <td>Continua</td>
+                                    <td>Guía la rotación hacia el objetivo solo si no hay muro intermedio.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Distancia Ideal con LOS</strong></td>
+                                    <td>Estar en distancia óptima con línea de visión directa</td>
+                                    <td><code>+0.003 / paso</code></td>
+                                    <td>Continua</td>
+                                    <td>Mantiene al agente en el rango efectivo de tiro.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Penalización de Tiempo</strong></td>
+                                    <td>Constante en cada paso temporal (<code>-0.5 / MaxStep</code>)</td>
+                                    <td><code>-0.5 / episodio</code></td>
+                                    <td>Continua</td>
+                                    <td>Aplica presión para resolver el episodio eficientemente.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Disparo sin LOS</strong></td>
+                                    <td>Intentar disparar con un muro bloqueando la visión</td>
+                                    <td><code>-0.05</code></td>
+                                    <td>Inmediata</td>
+                                    <td>Evita el desperdicio de proyectiles contra obstáculos.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sin LOS en Rango</strong></td>
+                                    <td>Estar en rango pero sin línea de visión directa</td>
+                                    <td><code>-0.003 / paso</code></td>
+                                    <td>Continua</td>
+                                    <td>Penaliza la parálisis frente a paredes.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Colisión con Borde</strong></td>
+                                    <td><code>OnCollisionEnter</code> con tag <code>border</code></td>
+                                    <td><code>-0.3</code></td>
+                                    <td>Terminal / Castigo</td>
+                                    <td>Evita que el tanque se choque contra los límites de la arena.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Colisión con Obstáculo</strong></td>
+                                    <td><code>OnCollisionEnter</code> con tag <code>obstacle</code></td>
+                                    <td><code>-0.15</code></td>
+                                    <td>Castigo</td>
+                                    <td>Desincentiva las colisiones físicas directas contra muros.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Bala Impacta Borde</strong></td>
+                                    <td>El proyectil choca contra el muro exterior</td>
+                                    <td><code>-1.0</code></td>
+                                    <td>Castigo</td>
+                                    <td>Penaliza los disparos fallidos hacia fuera de la arena.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
-                <!-- SECCIÓN 04: REWARD SHAPING -->
+                <!-- SECCIÓN 04: HIPERPARÁMETROS Y YAML REAL -->
                 <section class="tech-section">
                     <div class="tech-section-title">
                         <span class="section-num">04</span>
-                        <h2 data-i18n="sec4Title">Ingeniería de Recompensas (Reward Shaping)</h2>
+                        <h2 data-i18n="sec4Title">Hiperparámetros de Entrenamiento YAML (PPO)</h2>
                     </div>
 
-                    <div class="math-formula-card">
-                        <div class="formula-title" data-i18n="formulaTitle">Función de Recompensa General</div>
-                        <div class="formula-body">
-                            R_total = R_impacto (+1.0) + R_alineación (+0.05 * cos&theta;) - R_tiempo (-0.001) - R_muro (-0.25) - R_fallo (-0.05)
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN 05: CURRICULUM LEARNING Y TABLA DE FASES CON EJES X, Y -->
-                <section class="tech-section">
-                    <div class="tech-section-title">
-                        <span class="section-num">05</span>
-                        <h2 data-i18n="sec5Title">Pipeline de Curriculum Learning (4 Fases)</h2>
-                    </div>
-
-                    <div class="interactive-curriculum-box">
-                        <div class="curriculum-tabs">
-                            <button class="curr-tab-btn project-btn project-btn-outline active" data-phase="1" data-i18n="phase1Btn">Fase 1: Locomoción</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="2" data-i18n="phase2Btn">Fase 2: Balística</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="3" data-i18n="phase3Btn">Fase 3: Coberturas</button>
-                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="4" data-i18n="phase4Btn">Fase 4: Duelo Activo</button>
-                        </div>
-
-                        <div id="curriculum-content-panel" class="curriculum-panel">
-                            <!-- Carga vía JS -->
-                        </div>
-                    </div>
-
-                    <!-- TABLA 3: MATRIZ DE CURRICULUM CON PARAMETROS DE PASOS (X) Y RECOMPENSA/WINRATE (Y) -->
-                    <div class="tech-table-wrapper" style="margin-top: 30px;">
-                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 3: Matriz de Progresión Cuantitativa del Curriculum Learning</h3>
-                        <table class="tech-spec-table">
-                            <thead>
-                                <tr>
-                                    <th>Fase</th>
-                                    <th>Eje X: Pasos de Simulación ($10^6$)</th>
-                                    <th>Eje Y: Umbral Recompensa / Winrate</th>
-                                    <th>Configuración Espacial del Entorno</th>
-                                    <th>Criterio de Graduación</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>Fase 1: Locomoción</code></td>
-                                    <td>Pasos $X \in [0, 0.5M]$</td>
-                                    <td>Recompensa $Y \ge 0.85$ acumulada</td>
-                                    <td>Arena vacía de $30m \times 30m$ sin muros. Objetivo estático.</td>
-                                    <td>Completar recorrido en $T < 5.0s$ en el 90% de episodios.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Fase 2: Balística</code></td>
-                                    <td>Pasos $X \in [0.5M, 1.7M]$</td>
-                                    <td>Precisión Disparo $Y \ge 80\%$</td>
-                                    <td>Objetivo móvil no hostil a velocidad $V = 6m/s$. Torreta activa.</td>
-                                    <td>Mantener alineación $\cos\theta > 0.9$ durante el 85% del tiempo.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Fase 3: Coberturas</code></td>
-                                    <td>Pasos $X \in [1.7M, 3.2M]$</td>
-                                    <td>Tasa de Colisión $Y \le 5\%$</td>
-                                    <td>Inclusión de 6 bloques opacos de hormigón. Rival con IA heurística.</td>
-                                    <td>Navegación fluida bordeando esquinas usando Raycasts 3D.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Fase 4: Duelo Activo</code></td>
-                                    <td>Pasos $X \in [3.2M, 5.0M]$</td>
-                                    <td>ELO Rating $Y \ge 1800$</td>
-                                    <td>Entorno simétrico competitivo contra versiones pasadas del Model Pool.</td>
-                                    <td>Dominio del peek-a-boo y disparo con evasión dinámica.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN 06: SELF-PLAY Y TABLA ELO vs PASOS X/Y -->
-                <section class="tech-section">
-                    <div class="tech-section-title">
-                        <span class="section-num">06</span>
-                        <h2 data-i18n="sec6Title">Competitive Self-Play y Ranking ELO</h2>
-                    </div>
-
-                    <div class="tech-grid-2">
-                        <div class="tech-card">
-                            <h3 data-i18n="selfplayTitle">Emergencia de Estrategias con Self-Play</h3>
-                            <p data-i18n="selfplayText">
-                                Al enfrentar al agente contra un "Model Pool" de sus versiones pasadas, se evita la memorización de patrones rígidos. Esto permite la aparición autónoma de tácticas avanzadas como disparar tras muros (peek-a-boo) y mantener ángulos de evasión.
-                            </p>
-                        </div>
-
-                        <div class="tech-card chart-card">
-                            <div class="chart-header">
-                                <h4 data-i18n="chartTitle">Progreso ELO Rating vs Iteraciones</h4>
-                                <button id="btn-reload-chart" class="project-btn project-btn-outline" style="padding: 4px 10px; font-size:0.75rem;" data-i18n="btnReloadChart">Reanimar</button>
-                            </div>
-                            <div class="canvas-wrapper">
-                                <canvas id="eloCanvas" width="480" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- TABLA 4: EVOLUCIÓN HISTÓRICA ELO VS ITERACIONES (EJES X e Y) -->
-                    <div class="tech-table-wrapper" style="margin-top: 30px;">
-                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 4: Evolución del ELO Rating vs Pasos Globales de Entrenamiento</h3>
-                        <table class="tech-spec-table">
-                            <thead>
-                                <tr>
-                                    <th>Checkpoint</th>
-                                    <th>Eje X: Pasos Totales ($10^6$)</th>
-                                    <th>Eje Y: ELO Rating Acumulado</th>
-                                    <th>Eje Y: Winrate vs Baseline Heurístico (%)</th>
-                                    <th>Táctica Emergente Detectada</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>Checkpoint 01</code></td>
-                                    <td>$X = 1.0M$</td>
-                                    <td>$Y = 1200$ ELO</td>
-                                    <td>$Y_{win} = 35.0\%$</td>
-                                    <td>Conducción agresiva frontal sin uso de coberturas.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Checkpoint 02</code></td>
-                                    <td>$X = 2.0M$</td>
-                                    <td>$Y = 1420$ ELO</td>
-                                    <td>$Y_{win} = 58.5\%$</td>
-                                    <td>Giro continuo de torreta antes de asomarse en esquinas.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Checkpoint 03</code></td>
-                                    <td>$X = 3.5M$</td>
-                                    <td>$Y = 1680$ ELO</td>
-                                    <td>$Y_{win} = 76.2\%$</td>
-                                    <td>Táctica Peek-a-Boo: disparar y retroceder tras muros.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>Checkpoint 04 (Peak)</code></td>
-                                    <td>$X = 5.0M$</td>
-                                    <td>$Y = 1820$ ELO</td>
-                                    <td>$Y_{win} = 89.4\%$</td>
-                                    <td>Maniobras evasivas sinusoidales mientras recarga.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <!-- SECCIÓN 07: YAML Y TABLA DE HIPERPARÁMETROS -->
-                <section class="tech-section">
-                    <div class="tech-section-title">
-                        <span class="section-num">07</span>
-                        <h2 data-i18n="sec7Title">Configuración YAML de Entrenamiento</h2>
-                    </div>
-
-                    <!-- TABLA 5: HIPERPARÁMETROS CON RANGOS X/Y Y PROPÓSITO -->
+                    <!-- TABLA 5: HIPERPARÁMETROS YAML EXACTOS -->
                     <div class="tech-table-wrapper">
-                        <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:12px;">Tabla 5: Hiperparámetros de Optimización PPO en Unity ML-Agents</h3>
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 5: Hiperparámetros Configurados en ML-Agents</h3>
                         <table class="tech-spec-table">
                             <thead>
                                 <tr>
-                                    <th>Hiperparámetro</th>
-                                    <th>Valor Configurado</th>
-                                    <th>Rango Óptimo ($X_{min} \to Y_{max}$)</th>
-                                    <th>Efecto Técnico en la Convergencia</th>
+                                    <th>Eje X: Hiperparámetro</th>
+                                    <th>Eje X: Dominio / Tipo</th>
+                                    <th>Eje Y: Valor Configurado</th>
+                                    <th>Eje Y: Impacto Técnico en PPO</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>batch_size</code></td>
-                                    <td><code>2048</code></td>
-                                    <td>$[1024, 4096]$</td>
-                                    <td>Número de experiencias para cada actualización de gradiente.</td>
+                                    <td>Entero</td>
+                                    <td><code>1024</code></td>
+                                    <td>Tamaño del lote para cada actualización del gradiente.</td>
                                 </tr>
                                 <tr>
                                     <td><code>buffer_size</code></td>
-                                    <td><code>20480</code></td>
-                                    <td>$[10240, 40960]$</td>
-                                    <td>Tamaño del buffer de experiencia reunida antes de optimizar.</td>
+                                    <td>Entero</td>
+                                    <td><code>40960</code></td>
+                                    <td>Buffer amplio para garantizar diversidad de experiencias en curriculum.</td>
                                 </tr>
                                 <tr>
                                     <td><code>learning_rate</code></td>
-                                    <td><code>0.0003</code></td>
-                                    <td>$[1e-4, 1e-3]$</td>
-                                    <td>Tasa de aprendizaje del optimizador Adam.</td>
+                                    <td>Flotante</td>
+                                    <td><code>0.0001</code></td>
+                                    <td>Tasa conservadora que preserva el conocimiento entre fases.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>beta (Entropía)</code></td>
+                                    <td><code>beta</code></td>
+                                    <td>Flotante</td>
                                     <td><code>0.005</code></td>
-                                    <td>$[1e-3, 1e-2]$</td>
-                                    <td>Fuerza de regularización para incentivar la exploración.</td>
+                                    <td>Coeficiente de entropía para mantener exploración sin desestabilizar.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>epsilon (Clipping)</code></td>
+                                    <td><code>epsilon</code></td>
+                                    <td>Flotante</td>
                                     <td><code>0.2</code></td>
-                                    <td>$[0.1, 0.3]$</td>
-                                    <td>Margen de recorte para acotar la actualización de política.</td>
+                                    <td>Margen de recorte (clipping) para acotar la actualización de política.</td>
                                 </tr>
                                 <tr>
-                                    <td><code>gamma (Descuento)</code></td>
-                                    <td><code>0.99</code></td>
-                                    <td>$[0.98, 0.999]$</td>
-                                    <td>Factor de descuento para recompensas futuras a largo plazo.</td>
+                                    <td><code>gamma</code></td>
+                                    <td>Flotante</td>
+                                    <td><code>0.995</code></td>
+                                    <td>Factor de descuento largo ($0.995^{150} \approx 0.47$) para conectar tiro futuro.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>time_horizon</code></td>
+                                    <td>Entero</td>
+                                    <td><code>128</code></td>
+                                    <td>Pasos para cubrir el ciclo completo de rodeo-reposicionamiento-disparo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>hidden_units / layers</code></td>
+                                    <td>Red Neuronal</td>
+                                    <td><code>256 / 3 capas</code></td>
+                                    <td>Capacidad de la red MLP para aprender relaciones no lineales en 21D.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -735,29 +606,152 @@
                             <button id="btn-copy-code" class="project-btn project-btn-outline" style="padding: 4px 12px; font-size:0.75rem;" data-i18n="btnCopyCode">Copiar YAML</button>
                         </div>
                         <pre><code id="code-yaml-block">behaviors:
-  TankAgent:
+  Testml:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 2048
-      buffer_size: 20480
-      learning_rate: 0.0003
+      batch_size: 1024
+      buffer_size: 40960
+      learning_rate: 0.0001
       beta: 0.005
       epsilon: 0.2
       lambd: 0.95
       num_epoch: 3
+      learning_rate_schedule: linear
     network_settings:
       normalize: true
       hidden_units: 256
-      num_layers: 2
+      num_layers: 3
+      vis_encode_type: simple
     reward_signals:
       extrinsic:
-        gamma: 0.99
+        gamma: 0.995
         strength: 1.0
+      curiosity:
+        gamma: 0.99
+        strength: 0.001
+        network_settings:
+          hidden_units: 64
+          learning_rate: 0.0001
     self_play:
       save_steps: 50000
-      team_change: 200000
+      team_change: 100000
       swap_steps: 2000
-      window: 10</code></pre>
+      window: 10
+      play_against_latest_model_ratio: 0.5
+      initial_elo: 1200
+    keep_checkpoints: 10
+    max_steps: 10000000
+    time_horizon: 128
+    summary_freq: 12000
+    threaded: true</code></pre>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 05: CURRICULUM LEARNING Y RESULTADOS -->
+                <section class="tech-section">
+                    <div class="tech-section-title">
+                        <span class="section-num">05</span>
+                        <h2 data-i18n="sec5Title">Pipeline de Curriculum Learning (5 Fases) y Resultados</h2>
+                    </div>
+
+                    <div class="interactive-curriculum-box">
+                        <div class="curriculum-tabs">
+                            <button class="curr-tab-btn project-btn project-btn-outline active" data-phase="1">Fase 1: Estático sin Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="2">Fase 2: Estático con Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="3">Fase 3: Móvil sin Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="4">Fase 4: Móvil con Muro</button>
+                            <button class="curr-tab-btn project-btn project-btn-outline" data-phase="5">Fase 5: Self-Play</button>
+                        </div>
+
+                        <div id="curriculum-content-panel" class="curriculum-panel">
+                            <!-- Carga vía JS -->
+                        </div>
+                    </div>
+
+                    <!-- TABLA 6: RESULTADOS POR FASE DE CURRICULUM -->
+                    <div class="tech-table-wrapper" style="margin-top: 30px;">
+                        <h3 style="color:#ffffff; font-size:1.1rem; margin-bottom:12px;">Tabla 6: Resultados Históricos de Entrenamiento por Modelo Mental</h3>
+                        <table class="tech-spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Fase / Modelo Mental</th>
+                                    <th>Eje X: Pasos de Simulación (Steps)</th>
+                                    <th>Eje X: Configuración del Entorno</th>
+                                    <th>Eje Y: Recompensa Media (R_mean)</th>
+                                    <th>Eje Y: Métrica de Convergencia</th>
+                                    <th>Comportamiento Emergente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>Fase 1 (Modelo 24)</code></td>
+                                    <td>0 - 5.0M steps</td>
+                                    <td>Target estático en arena vacía sin obstáculos.</td>
+                                    <td><code>+11.0</code></td>
+                                    <td>Std &lt; 1.0</td>
+                                    <td>Aproximación directa, alineación suave y disparo certero.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 2 (Modelo 25)</code></td>
+                                    <td>0 - 8.0M steps</td>
+                                    <td>Pared intermedia con <code>obstacle_offset</code> (1.5 &rarr; 0.1).</td>
+                                    <td><code>+9.0 a +10.0</code></td>
+                                    <td>Std: 3.0 - 5.0</td>
+                                    <td>Detección de bloqueo de LOS y rodeo lateral proactivo.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 3 (Modelo 26)</code></td>
+                                    <td>0 - 8.0M steps</td>
+                                    <td>Target en movimiento cinemático sin muros.</td>
+                                    <td><code>+11.25</code></td>
+                                    <td>Std: 0.5 - 0.8 (Mínima var)</td>
+                                    <td>Seguimiento continuo y disparo predictivo guiado por $V_{target}$.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 4 (Modelo 27)</code></td>
+                                    <td>0 - 8.0M steps</td>
+                                    <td>Target en movimiento combinado con pared de obstáculo.</td>
+                                    <td><code>+10.0</code></td>
+                                    <td>Std: 3.0 - 5.0</td>
+                                    <td><strong>Espera táctica en cobertura</strong> esperando que el rival se asome.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>Fase 5 (Modelo 30)</code></td>
+                                    <td>0 - 10.0M+ steps</td>
+                                    <td>Duelo simétrico 1v1 con Self-Play y Model Pool.</td>
+                                    <td>Oscilación en Dientes de Sierra</td>
+                                    <td><strong>ELO 1611 &rarr; 2200+</strong></td>
+                                    <td>Engaño mediante movimiento, gestión de cooldown y tiro selectivo.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 06: SELF-PLAY Y GRÁFICO ELO -->
+                <section class="tech-section">
+                    <div class="tech-section-title">
+                        <span class="section-num">06</span>
+                        <h2 data-i18n="sec6Title">Análisis del Self-Play y Evolución del Sistema ELO</h2>
+                    </div>
+
+                    <div class="tech-grid-2">
+                        <div class="tech-card">
+                            <h3 data-i18n="selfplayTitle">Coevolución y Dientes de Sierra</h3>
+                            <p data-i18n="selfplayText">
+                                Al intercambiar los roles de los equipos cada 100.000 pasos (<code>team_change</code>), la curva de recompensa presenta un patrón característico en dientes de sierra. Cada valle representa la fase donde el nuevo equipo se adapta al oponente congelado, mientras que los picos crecientes de ELO confirman que el modelo se vuelve progresivamente superior.
+                            </p>
+                        </div>
+
+                        <div class="tech-card chart-card">
+                            <div class="chart-header">
+                                <h4 data-i18n="chartTitle">Progreso ELO Rating vs Iteraciones (Self-Play)</h4>
+                                <button id="btn-reload-chart" class="project-btn project-btn-outline" style="padding: 4px 10px; font-size:0.75rem;" data-i18n="btnReloadChart">Reanimar</button>
+                            </div>
+                            <div class="canvas-wrapper">
+                                <canvas id="eloCanvas" width="480" height="200"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -765,10 +759,10 @@
                 <div class="tech-download-cta">
                     <h2 data-i18n="ctaTitle">Descarga la Memoria Técnica Completa (PDF)</h2>
                     <p data-i18n="ctaText">
-                        Accede al documento académico con todo el desglose gráfico, curvas de pérdida de TensorBoard y anexos de código en C#.
+                        Accede al documento TFG completo de Marcos Ruiz Muñoz (40 páginas) con todos los anexos de código en C#, curvas de TensorBoard y bibliografía.
                     </p>
                     <a href="https://marcosrm19.github.io/documents/MLAgent.pdf" target="_blank" class="project-btn project-btn-solid" data-i18n="ctaBtn">
-                        Ver Documento PDF Completo &rarr;
+                        Ver Documento PDF Completo (40 Págs) &rarr;
                     </a>
                 </div>
 
@@ -777,20 +771,7 @@
 
     </main>
 
-    <!-- LIGHTBOX OCULTO -->
-    <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
-        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
-        <button class="lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">‹</button>
-
-        <div class="lightbox-content">
-            <img id="lightbox-image" src="" alt="">
-            <p id="lightbox-caption"></p>
-        </div>
-
-        <button class="lightbox-next" id="lightbox-next" type="button" aria-label="Next image">›</button>
-    </div>
-
-    <!-- FOOTER ORIGINAL -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-navigation">
             <a href="index.html#inicio" data-i18n="home">Inicio</a>
@@ -807,7 +788,7 @@
         </div>
 
         <p class="footer-copyright">
-            © 2026 Marcos RM19
+            © 2026 Marcos Ruiz Muñoz - Universitat de Barcelona / ENTI
         </p>
     </footer>
 
