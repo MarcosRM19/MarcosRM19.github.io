@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.JS - DICCIONARIO TRADUCCIÓN COMPLETA DE TABLAS Y DIAGRAMAS
+   MLAGENT.JS - TRADUCCIÓN COMPLETA DE DIAGRAMAS SVG Y TABLAS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,22 +47,28 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Intro: "El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.",
             diagram1Title: "Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python",
 
-            /* DIAGRAMA SVG 1 */
+            /* DIAGRAMA SVG 1 COMPLETO */
             svgMethods: "Métodos Principales:",
             svgObsMethod: "• CollectObservations(sensor) -> 21D",
             svgOnAction: "• OnActionReceived(actions) -> Motor/Tiro",
-            svgResetMethod: "• OnEpisodeBegin() -> Reset & Spawns",
-            svgApplyMethod: "• ApplyMovement() & ApplyRotation()",
+            svgResetMethod: "• OnEpisodeBegin() -> Reinicio y Spawns",
+            svgApplyMethod: "• ApplyMovement() y ApplyRotation()",
             svgRefs: "Referencias de Control:",
-            svgTcpTitle: "Communicator TCP (Puerto 5004)",
-            svgSync: "Sincronización por Decision Period (5)",
+            svgTargetRef: "• Posición Objetivo _target",
+            svgAreaRef: "• Gestor de Área _areaMgr",
+            svgBulletRef: "• Prefabricado Bala BulletDetection",
+            svgTcpTitle: "Comunicador TCP (Puerto 5004)",
+            svgSync: "Sincronización por Periodo de Decisión (5)",
             svgSends: "→ Envía: Vector 21D + Recompensas",
             svgReceives: "← Recibe: Acciones [Cont(2), Disc(1)]",
-            svgSensor: "Ray Perception Sensor 3D Integrado",
-            svgStep: "Fixed Timestep = 0.02s (0.1s / decisión)",
-            svgCurriculumTitle: "Curriculum & Curiosity Manager",
+            svgSensor: "Sensor Ray Perception 3D Integrado",
+            svgStep: "Paso Fijo = 0.02s (0.1s / decisión)",
+            svgPpoTitle: "Algoritmo PPO (L_CLIP Recortado)",
+            svgCurriculumTitle: "Gestor de Curriculum y Curiosidad",
+            svgSelfPlayTitle: "Controlador de Self-Play",
+            svgSelfPlaySub: "guardado: 50k | cambio_equipo: 100k | Sistema ELO",
 
-            /* ENCABEZADOS COMUNES DE TABLA */
+            /* ENCABEZADOS DE TABLA */
             thParam: "Eje X: Parámetro Físico",
             thVal: "Eje Y: Valor Configurado",
             thUnit: "Eje Y: Unidad / Tipo",
@@ -350,20 +356,26 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Intro: "The system is structured around five object-oriented components interacting via physics events and direct references, communicating with the Python trainer via a TCP socket on port 5004.",
             diagram1Title: "Diagram 1: C# Class Architecture & Unity-Python Communication Flow",
 
-            /* DIAGRAM SVG 1 */
+            /* FULL DIAGRAM SVG 1 */
             svgMethods: "Main Methods:",
             svgObsMethod: "• CollectObservations(sensor) -> 21D",
             svgOnAction: "• OnActionReceived(actions) -> Drive/Shoot",
             svgResetMethod: "• OnEpisodeBegin() -> Reset & Spawns",
             svgApplyMethod: "• ApplyMovement() & ApplyRotation()",
             svgRefs: "Control References:",
+            svgTargetRef: "• Target Position _target",
+            svgAreaRef: "• Area Manager _areaMgr",
+            svgBulletRef: "• Bullet Prefab BulletDetection",
             svgTcpTitle: "TCP Communicator (Port 5004)",
             svgSync: "Decision Period Synchronization (5)",
             svgSends: "→ Sends: 21D Vector + Rewards",
             svgReceives: "← Receives: Actions [Cont(2), Disc(1)]",
             svgSensor: "Integrated 3D Ray Perception Sensor",
             svgStep: "Fixed Timestep = 0.02s (0.1s / decision)",
+            svgPpoTitle: "PPO Algorithm (Clipped L_CLIP)",
             svgCurriculumTitle: "Curriculum & Curiosity Manager",
+            svgSelfPlayTitle: "Self-Play Controller",
+            svgSelfPlaySub: "save: 50k | team_change: 100k | ELO System",
 
             /* COMMON TABLE HEADERS */
             thParam: "Axis X: Physical Parameter",
@@ -631,7 +643,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("[data-i18n]").forEach(el => {
             const key = el.getAttribute("data-i18n");
             if (langData[key]) {
-                el.innerText = langData[key];
+                el.textContent = langData[key];
             }
         });
     }
@@ -682,7 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             "5": {
                 title: "Fase 5: Duelo Simétrico 1v1 con Self-Play (Modelo 30)",
-                desc: "Entrenamiento altamente competitivo enfrentando al agente contra versiones anteriores de sí mismo (Model Pool) en un entorno 1v1 simétrico. Emergen tácticas complejas como la gestión del cooldown de disparo, amagos de trayectoria y tiros selectivos.",
+                desc: "Entrenamiento highly competitivo enfrentando al agente contra versiones anteriores de sí mismo (Model Pool) en un entorno 1v1 simétrico. Emergen tácticas complejas como la gestión del cooldown de disparo, amagos de trayectoria y tiros selectivos.",
                 target: "ELO Rating: 1611 a 2200+ | Coevolución ilimitada",
                 steps: "0.0M - 10.0M+ Pasos Totales"
             }
