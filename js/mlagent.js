@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.JS - TRADUCCIÓN COMPLETA I18N, DICCIONARIO Y CANVAS
+   MLAGENT.JS - TRADUCCIÓN COMPLETA I18N, SVG DIAGRAMS Y CANVAS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contacto",
             moreProjects: "Más Proyectos",
             btnPdf: "Leer Memoria Técnica (PDF 40 Págs)",
-            heroTitle: "Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular",
-            heroTagline: "Entrenamiento mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.",
+            heroTitle: "Unity AI MachineLearning",
+            heroTagline: "Entrenamiento de agentes de combate mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.",
 
             summaryTitle: "Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular en Unity",
             objectivesTitle: "Objetivos del Proyecto",
@@ -44,11 +44,22 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Intro: "El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.",
             diagram1Title: "Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python",
 
+            /* TRADUCCIONES SVG DIAGRAMA 1 */
+            svgMethods: "Métodos Principales:",
+            svgOnAction: "• OnActionReceived(actions) -> Motor/Tiro",
+            svgRefs: "Referencias de Control:",
+            svgTcpTitle: "Communicator TCP (Puerto 5004)",
+            svgSync: "Sincronización por Decision Period (5)",
+            svgSends: "→ Envía: Vector 21D + Recompensas",
+            svgReceives: "← Recibe: Acciones [Cont(2), Disc(1)]",
+            svgSensor: "Ray Perception Sensor 3D Integrado",
+            svgStep: "Fixed Timestep = 0.02s (0.1s / decisión)",
+
             sec2Title: "Diseño del Espacio de Observación (21D) y Acción Híbrido",
             sec2Intro: "El vector de observaciones St pertenece a R^21 y fue diseñado para permanecer estrictamente invariante entre todas las fases de curriculum para evitar tener que reiniciar los pesos de la red neuronal.",
 
             sec3Title: "Ingeniería de Recompensas (Reward Shaping) y Evolución",
-            sec3Intro: "El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). La función de recompensa total instantánea Rt se formula explícitamente a continuación:",
+            sec3Intro: "El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales. La función de recompensa total instantánea Rt se formula explícitamente a continuación:",
             formulaHeader: "Ecuación General de Recompensa Instantánea (Rt)",
 
             sec4Title: "Hiperparámetros de Entrenamiento YAML (PPO)",
@@ -61,7 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
             chartTitle: "Progreso ELO Rating vs Iteraciones (Self-Play)",
             btnReloadChart: "Reanimar",
 
-            /* COMPORTAMIENTOS EMERGENTES TRADUCIDOS */
+            t7ModelInit: "Modelo Inicial / Estado Base",
+
+            /* COMPORTAMIENTOS EMERGENTES */
             emergentTitle: "Análisis de Comportamientos Tácticos Emergentes",
             emergentIntro: "Durante las iteraciones de entrenamiento y la coevolución producida por el Self-Play, surgieron patrones tácticos complejos de forma totalmente autónoma, sin necesidad de programar reglas lógicas explícitas:",
             emBehavior1Title: "Seguimiento y Disparo Predictivo: ",
@@ -73,34 +86,46 @@ document.addEventListener("DOMContentLoaded", () => {
             emBehavior4Title: "Gestión de la Economía de Disparo y Cooldown: ",
             emBehavior4Desc: "El agente aprende el ciclo exacto de recarga (150 pasos). Evita disparar sin línea de visión clara para no quedar indefenso e inerme durante el periodo de cooldown.",
 
-            /* CONCLUSIONES TEXTO EXACTO TFG */
+            /* CONCLUSIONES FORMATO PORFOLIO */
             sec7Title: "Conclusiones y Líneas a Futuro",
-            sec71Title: "5.1. Análisis Crítico del Grado de Consecución de los Objetivos",
-            sec71P1: "El proyecto planteaba como objetivo principal el desarrollo de un agente autónomo de combate capaz de adquirir comportamientos complejos mediante aprendizaje por refuerzo, articulado en una secuencia de subobjetivos de complejidad creciente. A continuación se evalúa el grado de consecución de cada uno de ellos.",
-            sec71P2: "La aproximación, alineación y disparo sobre objetivo estático se alcanzó de forma completa y satisfactoria en la primera fase de entrenamiento. El agente convergió a una política estable con recompensa media de +11 y desviación estándar inferior a 1, demostrando un comportamiento consistente y robusto en el entorno más simple.",
-            sec71P3: "La evasión de obstáculos y recuperación de línea de visión se alcanzó de forma funcional, aunque con mayor dificultad de la esperada. El proceso de entrenamiento reveló que el diseño inicial del sistema de recompensas incentivaba inadvertidamente la parálisis del agente frente a la pared, requiriendo múltiples iteraciones de rediseño hasta obtener una señal que produjera el comportamiento de rodeo deseado. El objetivo se considera alcanzado, con la matización de que el comportamiento de evasión presentaba cierta variabilidad en función de la posición relativa del obstáculo respecto al objetivo.",
-            sec71P4: "El seguimiento de objetivo en movimiento se alcanzó con los mejores resultados del proyecto. La convergencia fue rápida gracias a la transferencia desde la fase anterior, y la desviación estándar excepcionalmente baja de la fase 3 evidenció que el agente desarrolló una política de seguimiento y disparo predictivo altamente consistente.",
-            sec71P5: "El self-play competitivo se alcanzó parcialmente. El sistema funcionó correctamente desde el punto de vista técnico, con el ELO alcanzando 1611 puntos y mostrando una tendencia alcista sostenida a lo largo de 1.6 millones de pasos. Sin embargo, la complejidad del entorno de combate presentaba limitaciones inherentes que condicionaron el nivel de sofisticación táctica alcanzable. La arena simétrica con una única pared de posición aleatoria y dos tanques con las mismas capacidades constituye un entorno de complejidad moderada que, si bien fue suficiente para que emergieran comportamientos tácticos genuinos como el engaño mediante movimiento y la gestión del cooldown, no ofrecía la variedad situacional necesaria para desarrollar estrategias de mayor profundidad.",
+            sec71Title: "5.1. Análisis Crítico del Grado de Consecución de Objetivos",
+            badge1: "100% Completado",
+            obj1Title: "Objetivo Estático (Fase 1)",
+            obj1Desc: "Convergencia rápida hacia una política totalmente estable (R_mean = +11.0, std < 1.0), demostrando un control motor y de disparo óptimo sobre escenarios simples.",
+            
+            badge2: "Funcional / Rediseñado",
+            obj2Title: "Evasión de Cobertura (Fase 2)",
+            obj2Desc: "Surgió tendencia a la parálisis frente a muros. Se solucionó tras varias iteraciones de reward shaping, logrando un rodeo dinámico de la pared según su posición relativa.",
+            
+            badge3: "Excelente Resultado",
+            obj3Title: "Seguimiento Móvil (Fase 3)",
+            obj3Desc: "El mejor resultado del proyecto. Gracias a la transferencia de pesos y la bajísima varianza, el agente desarrolló un disparo predictivo certero sobre objetivos cinemáticos.",
+            
+            badge4: "Alcanzado Parcialmente",
+            obj4Title: "Self-Play Competitivo (Fase 5)",
+            obj4Desc: "La arquitectura técnica funcionó con éxito (tendencia alcista de ELO). No obstante, la simplicidad de la arena simétrica limitó la aparición de tácticas de mayor profundidad.",
 
-            sec72Title: "5.2. Principales Aprendizajes del Proyecto",
-            sec72P1: "Más allá de los resultados técnicos obtenidos, el desarrollo del proyecto ha generado un conjunto de aprendizajes metodológicos de valor significativo.",
-            sec72P2: "El primero y más relevante es que el diseño de la función de recompensa es el componente más crítico y más difícil del aprendizaje por refuerzo aplicado. A diferencia del código convencional, una función de recompensa incorrecta puede producir comportamientos aparentemente razonables que corresponden a mínimos locales explotados por el agente. La única forma de validarla es observar el comportamiento emergente e iterar.",
-            sec72P3: "El segundo aprendizaje es la importancia de separar los problemas antes de combinarlos. La estrategia de curriculum learning por fases independientes aceleró la convergencia y facilitó el diagnóstico de problemas sin ambigüedad.",
-            sec72P4: "El tercer aprendizaje es que la física del entorno y los parámetros del motor tienen un impacto directo en el aprendizaje. El conflicto entre transform.Rotate y Rigidbody, el Angular Drag o la Layer Collision Matrix requirieron un análisis sistemático crucial.",
-            sec72P5: "El cuarto aprendizaje es la naturaleza empírica e iterativa del entrenamiento. Los hiperparámetros y recompensas efectivas se derivaron a través de ciclos continuos de observación y ajuste.",
+            sec72Title: "5.2. Principales Aprendizajes Metodológicos",
+            learn1Title: "Diseño Crítico de Recompensas:",
+            learn1Desc: "A diferencia del software determinista, una mala función de recompensa genera mínimos locales engañosos. Validar exige observar comportamientos emergentes.",
+            learn2Title: "Estrategia de Curriculum Learning:",
+            learn2Desc: "Desacoplar la dificultad por fases independientes aceleró la convergencia y facilitó el diagnóstico directo de errores al introducir nuevas variables.",
+            learn3Title: "Sensibilidad a la Física del Motor:",
+            learn3Desc: "Parámetros de PhysX en Unity (Angular Drag, Rigidbody vs Transform) impactan directamente en la estabilidad del modelo tanto como los hiperparámetros.",
+            learn4Title: "Proceso Empírico e Iterativo:",
+            learn4Desc: "Las soluciones óptimas surgieron de la experimentación continua y el registro detallado de decisiones, clave en proyectos de aprendizaje por refuerzo.",
 
-            sec73Title: "5.3. Líneas a Futuro",
-            sec73P1: "El trabajo realizado establece una base técnica sólida sobre la que es posible avanzar en varias direcciones de machine learning de interés creciente, dejando abiertas diferentes puertas a mejoras futuras:",
-            future1Title: "Incremento de la complejidad del entorno de combate: ",
-            future1Desc: "Diseño de arenas con múltiples obstáculos de geometría variable, zonas de cobertura estructuradas y configuraciones asimétricas que obliguen a desarrollar estrategias adaptativas profundas.",
-            future2Title: "Diferenciación de tipos de agentes: ",
-            future2Desc: "Introducir perfiles asimétricos (tanques veloces de menor precisión vs tanques lentos de gran alcance) obligando a explotar ventajas específicas.",
-            future3Title: "Self-play de mayor rigor competitivo: ",
-            future3Desc: "Aumentar el pool de modelos históricos, reducir el ratio de juego contra el modelo actual y ampliar el team_change para enriquecer la coevolución.",
-            future4Title: "Introducción de escenarios multiagente cooperativos: ",
-            future4Desc: "Entrenar equipos de 2v2 o 3v3 con recompensas compartidas para propiciar tácticas de flanqueo y distracción coordinada.",
-            future5Title: "Transferencia a entornos de producción: ",
-            future5Desc: "Evaluar la robustez de las políticas ante ruido en observaciones, variaciones geométricas o alteración de velocidades de agentes.",
+            sec73Title: "5.3. Líneas de Trabajo Futuro",
+            futureTag1: "Entornos Complejos",
+            future1Desc: "Diseño de arenas asimétricas con múltiples coberturas destruibles para forzar mayor presión adaptativa en Self-Play.",
+            futureTag2: "Agentes Asimétricos",
+            future2Desc: "Incorporar clases heterogéneas (tanques ágiles de bajo daño vs vehículos pesados de largo alcance) para fomentar contraestrategias.",
+            futureTag3: "Self-Play Riguroso",
+            future3Desc: "Aumentar el pool de modelos históricos, reducir la tasa de enfrentamiento actual y ampliar team_change para elevar el nivel táctico.",
+            futureTag4: "Sistemas Multi-Agente",
+            future4Desc: "Entrenar escuadrones 2v2 o 3v3 con recompensas grupales para favorecer comportamientos de flanqueo coordinado y emboscadas.",
+            futureTag5: "Robustez en Producción",
+            future5Desc: "Evaluar la capacidad de generalización del agente ante ruido en las observaciones y cambios dinámicos de velocidad en tiempo real.",
 
             ctaTitle: "Descarga la Memoria Técnica Completa (PDF)",
             ctaText: "Accede al documento TFG completo de Marcos Ruiz Muñoz (40 páginas) con todos los anexos de código en C#, curvas de TensorBoard y bibliografía.",
@@ -115,8 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
             contactButton: "Contact",
             moreProjects: "More Projects",
             btnPdf: "Read Technical Paper (PDF 40 Pages)",
-            heroTitle: "Development & Research of an Autonomous Vehicular Combat Agent",
-            heroTagline: "Training via PPO, Curriculum Learning, and Self-Play in Unity ML-Agents.",
+            heroTitle: "Unity AI MachineLearning",
+            heroTagline: "Combat agent training via PPO, Curriculum Learning, and Self-Play in Unity ML-Agents.",
 
             summaryTitle: "Development & Research of an Autonomous Vehicular Combat Agent in Unity",
             objectivesTitle: "Project Objectives",
@@ -135,6 +160,17 @@ document.addEventListener("DOMContentLoaded", () => {
             sec1Intro: "The system is structured around five object-oriented components interacting via physics events and direct references, communicating with the Python trainer via a TCP socket on port 5004.",
             diagram1Title: "Diagram 1: C# Class Architecture & Unity-Python Communication Flow",
 
+            /* TRANSLATIONS FOR SVG DIAGRAM 1 */
+            svgMethods: "Main Methods:",
+            svgOnAction: "• OnActionReceived(actions) -> Drive/Shoot",
+            svgRefs: "Control References:",
+            svgTcpTitle: "TCP Communicator (Port 5004)",
+            svgSync: "Decision Period Synchronization (5)",
+            svgSends: "→ Sends: 21D Vector + Rewards",
+            svgReceives: "← Receives: Actions [Cont(2), Disc(1)]",
+            svgSensor: "Integrated 3D Ray Perception Sensor",
+            svgStep: "Fixed Timestep = 0.02s (0.1s / decision)",
+
             sec2Title: "Observation Space Design (21D) & Hybrid Action Space",
             sec2Intro: "The 21D state vector St was designed to remain strictly invariant across all curriculum stages to avoid resetting neural network weights.",
 
@@ -152,7 +188,9 @@ document.addEventListener("DOMContentLoaded", () => {
             chartTitle: "ELO Rating Progress vs Iterations (Self-Play)",
             btnReloadChart: "Reanimate",
 
-            /* TRANSLATED EMERGENT BEHAVIORS */
+            t7ModelInit: "Initial Model / Base State",
+
+            /* EMERGENT BEHAVIORS */
             emergentTitle: "Emergent Tactical Behaviors Analysis",
             emergentIntro: "Throughout training iterations and Self-Play co-evolution, complex tactical behaviors emerged fully autonomously without any hardcoded logic:",
             emBehavior1Title: "Predictive Lead Shooting: ",
@@ -164,34 +202,46 @@ document.addEventListener("DOMContentLoaded", () => {
             emBehavior4Title: "Shot Economy & Cooldown Management: ",
             emBehavior4Desc: "The agent masters the exact 150-step reload cycle, avoiding wasted shots without LOS to prevent remaining defenseless during cooldown.",
 
-            /* SECTION 7 TRANSLATIONS */
+            /* CONCLUSIONS PORTFOLIO FORMAT */
             sec7Title: "Conclusions & Future Lines of Work",
             sec71Title: "5.1. Critical Analysis of Objective Achievement",
-            sec71P1: "The primary objective was to develop an autonomous combat agent capable of acquiring complex behaviors through reinforcement learning, structured across progressive sub-goals.",
-            sec71P2: "Approximation, alignment, and shooting at a static target were fully achieved in Stage 1, reaching a stable policy with +11 mean reward and std < 1.",
-            sec71P3: "Obstacle evasion and Line of Sight recovery were achieved functionally. Reward shaping required several iterations to eliminate wall paralysis.",
-            sec71P4: "Moving target tracking yielded the best overall performance, showing extremely low variance and consistent lead shooting.",
-            sec71P5: "Competitive self-play was partially achieved. The technical architecture performed flawlessly up to 1611 ELO. However, environment simplicity limited higher tactical depth.",
+            badge1: "100% Completed",
+            obj1Title: "Static Target (Stage 1)",
+            obj1Desc: "Fast convergence to a fully stable policy (R_mean = +11.0, std < 1.0), showing optimal driving and shooting control in simple settings.",
+            
+            badge2: "Functional / Redesigned",
+            obj2Title: "Cover Evasion (Stage 2)",
+            obj2Desc: "Identified wall paralysis tendency. Fixed through reward shaping iterations, achieving dynamic wall flanking based on relative positioning.",
+            
+            badge3: "Excellent Result",
+            obj3Title: "Moving Pursuit (Stage 3)",
+            obj3Desc: "Best overall performance. Thanks to weight transfer and ultra-low variance, the agent developed highly accurate lead shooting on kinematic targets.",
+            
+            badge4: "Partially Achieved",
+            obj4Title: "Competitive Self-Play (Stage 5)",
+            obj4Desc: "Technical architecture succeeded (upward ELO trend). However, arena simplicity limited the emergence of higher tactical depth.",
 
-            sec72Title: "5.2. Major Project Learnings",
-            sec72P1: "Beyond technical metrics, this research provided valuable methodological learnings.",
-            sec72P2: "First, reward function design is the most critical and challenging component of applied RL, requiring continuous observation of emergent behavior.",
-            sec72P3: "Second, problem decoupling via Curriculum Learning accelerates convergence and simplifies bug diagnosis.",
-            sec72P4: "Third, game engine physics (Rigidbody, Angular Drag, Layer Collisions) directly dictate learning stability.",
-            sec72P5: "Fourth, training is inherently empirical and iterative, making detailed decision logging an essential asset.",
+            sec72Title: "5.2. Major Methodological Learnings",
+            learn1Title: "Critical Reward Design:",
+            learn1Desc: "Unlike deterministic software, a flawed reward function creates deceptive local minima. Validation requires observing emergent behavior.",
+            learn2Title: "Curriculum Learning Strategy:",
+            learn2Desc: "Decoupling difficulty into independent stages accelerated convergence and simplified bug isolation upon introducing new variables.",
+            learn3Title: "Engine Physics Sensitivity:",
+            learn3Desc: "Unity PhysX parameters (Angular Drag, Rigidbody vs Transform) directly dictate neural model stability alongside hyperparameters.",
+            learn4Title: "Empirical & Iterative Nature:",
+            learn4Desc: "Optimal policies resulted from continuous experimentation and rigorous decision logging, essential in reinforcement learning.",
 
             sec73Title: "5.3. Future Lines of Work",
-            sec73P1: "This work establishes a solid technical foundation for several promising future directions:",
-            future1Title: "Increased Environment Complexity: ",
-            future1Desc: "Design structured multi-obstacle arenas with asymmetric cover layouts.",
-            future2Title: "Agent Differentiation & Asymmetry: ",
-            future2Desc: "Introduce fast/low-range vs slow/long-range tank classes.",
-            future3Title: "Rigorously Competitive Self-Play: ",
-            future3Desc: "Expand historical model pools and increase team_change steps.",
-            future4Title: "Multi-Agent Cooperative Scenarios: ",
-            future4Desc: "Train 2v2 or 3v3 teams with shared rewards for coordinated flanking.",
-            future5Title: "Production Transfer & Generalization: ",
-            future5Desc: "Evaluate policy robustness against observation noise and dynamic terrain changes.",
+            futureTag1: "Complex Environments",
+            future1Desc: "Design asymmetric arenas with destructible cover to force greater adaptive pressure during Self-Play.",
+            futureTag2: "Asymmetric Agents",
+            future2Desc: "Introduce heterogeneous classes (fast low-damage vs slow long-range tanks) to foster counter-strategies.",
+            futureTag3: "Rigorously Competitive Self-Play",
+            future3Desc: "Expand historical model pools, reduce current model matchup ratios, and increase team_change duration.",
+            futureTag4: "Multi-Agent Systems",
+            future4Desc: "Train 2v2 or 3v3 squads with group rewards to encourage coordinated flanking tactics and baiting.",
+            futureTag5: "Production Robustness",
+            future5Desc: "Evaluate policy generalization against observation noise and real-time speed perturbations.",
 
             ctaTitle: "Download Full Technical Paper (PDF)",
             ctaText: "Access the complete 40-page TFG paper by Marcos Ruiz Muñoz with C# code appendixes, TensorBoard curves, and references.",
@@ -227,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       DATOS REALES DE LAS 5 FASES DEL CURRICULUM
+       DATOS REALES DEL CURRICULUM (5 FASES)
        --------------------------------------------------------- */
     let currentCurriculumPhase = "1";
     const curriculumData = {
@@ -461,7 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* COPIAR YAML */
+    /* COPIAR CÓDIGO YAML */
     const copyBtn = document.getElementById("btn-copy-code");
     const codeBlock = document.getElementById("code-yaml-block");
 
