@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - ESTILOS LIMPIOS Y DIAGRAMAS CONTENIDOS
+   MLAGENT.CSS - ESTILOS MEJORADOS, TÍTULO HERO Y FÓRMULAS
    ========================================================= */
 
 /* OCULTAR ELEMENTOS INNECESARIOS */
@@ -7,7 +7,66 @@
     display: none !important;
 }
 
-/* BOTONES LIMPIOS SIN GLOW NI RESPLANDOR NEÓN */
+/* TÍTULO HERO FORMATO 2 LÍNEAS PERFECTAS */
+.title-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.game-title-hero {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+    .game-title-hero {
+        font-size: 1.9rem;
+        line-height: 1.3;
+    }
+}
+
+/* FÓRMULA MATEMÁTICA EN SECCIÓN 3 */
+.math-formula-box {
+    background: rgba(2, 6, 23, 0.85);
+    border: 1px solid var(--green, #00ff88);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0 30px 0;
+    box-shadow: none !important;
+}
+
+.formula-header {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--green, #00ff88);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.formula-content {
+    font-size: 1.15rem;
+    color: #ffffff;
+    overflow-x: auto;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.formula-content-sub {
+    font-size: 0.95rem;
+    color: #38bdf8;
+    overflow-x: auto;
+    padding-top: 6px;
+    text-align: center;
+}
+
+/* BOTONES LIMPIOS SIN GLOW NI RESPLANDOR */
 .project-btn {
     display: inline-flex;
     align-items: center;
@@ -20,7 +79,7 @@
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     cursor: pointer;
     border: 1px solid transparent;
-    box-shadow: none !important; /* Eliminado brillo de caja */
+    box-shadow: none !important;
 }
 
 .project-btn-solid {
@@ -29,7 +88,7 @@
 }
 
 .project-btn-solid:hover {
-    background-color: #ffffff !important; /* Hover limpio en blanco */
+    background-color: #ffffff !important;
     color: #0b0f17 !important;
     border-color: #ffffff !important;
     box-shadow: none !important;
@@ -47,7 +106,7 @@
     box-shadow: none !important;
 }
 
-/* CONTENEDOR DE DIAGRAMAS SVG DE ANCHO COMPLETO Y AJUSTADO */
+/* CONTENEDOR DE DIAGRAMAS SVG */
 .diagram-card-container {
     background: rgba(15, 23, 42, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -72,12 +131,12 @@
 
 .tech-svg-diagram {
     width: 100%;
-    min-width: 800px; /* Ancho suficiente para evitar solapamiento de texto */
+    min-width: 850px;
     height: auto;
     display: block;
 }
 
-/* ARTÍCULO TÉCNICO */
+/* ESTRUCTURA TÉCNICA */
 .tech-container {
     max-width: 1100px;
     margin: 0 auto;
