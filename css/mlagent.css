@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - ESTILOS LIMPIOS Y SECCIÓN CONCLUSIONES EN PORFOLIO
+   MLAGENT.CSS - ESTILOS CON VERDE Y GRID 2x2 EN CONCLUSIONES
    ========================================================= */
 
 /* OCULTAR ELEMENTOS INNECESARIOS */
@@ -7,16 +7,16 @@
     display: none !important;
 }
 
-/* TÍTULO HERO "Unity AI MachineLearning" EN MÁXIMO 2 LÍNEAS */
+/* TÍTULO HERO MÁS GRANDE */
 .title-inner {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
 }
 
 .game-title-hero {
-    font-size: clamp(2.5rem, 5.5vw, 4.0rem);
+    font-size: clamp(3.0rem, 6.5vw, 4.8rem); /* Título significativamente más grande */
     font-weight: 800;
     color: #ffffff;
     line-height: 1.15;
@@ -27,7 +27,7 @@
 
 @media (max-width: 768px) {
     .game-title-hero {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
         line-height: 1.25;
     }
 }
@@ -61,16 +61,16 @@
 
 .formula-content-sub {
     font-size: 0.95rem;
-    color: #38bdf8;
+    color: var(--green, #00ff88); /* Cambiado de Cyan a Verde */
     overflow-x: auto;
     padding-top: 6px;
     text-align: center;
 }
 
-/* CONCLUSIONES RESUMIDAS Y RESALTADAS */
+/* CONCLUSIONES ORGANIZADAS EN FILAS 2 A 2 (STRICT 2-COLUMN GRID) */
 .conclusions-summary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Filas 2 a 2 */
     gap: 16px;
     margin-top: 10px;
 }
@@ -117,9 +117,9 @@
 }
 
 .badge-info {
-    background: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
-    border: 1px solid #38bdf8;
+    background: rgba(0, 255, 136, 0.15); /* Cambiado a Verde */
+    color: #00ff88;
+    border: 1px solid #00ff88;
 }
 
 .conclusion-item-card p {
@@ -129,10 +129,10 @@
     margin: 0;
 }
 
-/* APRENDIZAJES CLAVE */
+/* APRENDIZAJES CLAVE (GRID 2x2) */
 .learnings-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Filas 2 a 2 */
     gap: 16px;
 }
 
@@ -174,11 +174,11 @@
     display: block;
 }
 
-/* LÍNEAS A FUTURO */
+/* LÍNEAS A FUTURO (GRID 2x2) */
 .future-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr); /* Filas 2 a 2 */
+    gap: 16px;
 }
 
 .future-card-item {
@@ -189,7 +189,7 @@
 }
 
 .future-tag {
-    color: #38bdf8;
+    color: var(--green, #00ff88); /* Cambiado de Cyan a Verde */
     font-size: 0.82rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -202,6 +202,20 @@
     color: #cbd5e1;
     line-height: 1.5;
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .conclusions-summary-grid,
+    .learnings-grid,
+    .future-grid {
+        grid-template-columns: 1fr; /* Responsivo en móvil */
+    }
+}
+
+/* CÓDIGO TÉCNICO EN VERDE */
+.tech-spec-table code {
+    font-family: 'Fira Code', monospace;
+    color: var(--green, #00ff88); /* Cambiado de Cyan a Verde */
 }
 
 /* BOTONES Y ESTRUCTURA GENERAL */
@@ -479,11 +493,6 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.75rem;
-}
-
-.tech-spec-table code {
-    font-family: 'Fira Code', monospace;
-    color: #38bdf8;
 }
 
 .interactive-curriculum-box {
