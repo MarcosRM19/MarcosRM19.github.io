@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.CSS - ESTILOS LIMPIOS Y TÍTULO HERO EN 2 LÍNEAS
+   MLAGENT.CSS - ESTILOS LIMPIOS Y SECCIÓN CONCLUSIONES EN PORFOLIO
    ========================================================= */
 
 /* OCULTAR ELEMENTOS INNECESARIOS */
@@ -7,16 +7,16 @@
     display: none !important;
 }
 
-/* TÍTULO HERO MÁS GRANDE EN EXACTAMENTE 2 LÍNEAS */
+/* TÍTULO HERO "Unity AI MachineLearning" EN MÁXIMO 2 LÍNEAS */
 .title-inner {
-    max-width: 960px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
 }
 
 .game-title-hero {
-    font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+    font-size: clamp(2.5rem, 5.5vw, 4.0rem);
     font-weight: 800;
     color: #ffffff;
     line-height: 1.15;
@@ -27,7 +27,7 @@
 
 @media (max-width: 768px) {
     .game-title-hero {
-        font-size: 2.0rem;
+        font-size: 2.1rem;
         line-height: 1.25;
     }
 }
@@ -67,7 +67,144 @@
     text-align: center;
 }
 
-/* BOTONES LIMPIOS */
+/* CONCLUSIONES RESUMIDAS Y RESALTADAS */
+.conclusions-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.conclusion-item-card {
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.conclusion-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.conclusion-header strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.status-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-success {
+    background: rgba(0, 255, 136, 0.15);
+    color: #00ff88;
+    border: 1px solid #00ff88;
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid #f59e0b;
+}
+
+.badge-info {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+}
+
+.conclusion-item-card p {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* APRENDIZAJES CLAVE */
+.learnings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+.learning-pill-card {
+    display: flex;
+    gap: 14px;
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.learning-icon {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green, #00ff88);
+    background: rgba(0, 255, 136, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.learning-text strong {
+    display: block;
+    color: #ffffff;
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+}
+
+.learning-text span {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    display: block;
+}
+
+/* LÍNEAS A FUTURO */
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.future-card-item {
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.future-tag {
+    color: #38bdf8;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.future-card-item p {
+    font-size: 0.86rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* BOTONES Y ESTRUCTURA GENERAL */
 .project-btn {
     display: inline-flex;
     align-items: center;
@@ -107,7 +244,6 @@
     box-shadow: none !important;
 }
 
-/* CONTENEDOR DE DIAGRAMAS SVG */
 .diagram-card-container {
     background: rgba(15, 23, 42, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -137,7 +273,6 @@
     display: block;
 }
 
-/* ESTRUCTURA TÉCNICA */
 .tech-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -263,7 +398,6 @@
     flex-wrap: wrap;
 }
 
-/* SECCIONES Y TABLAS */
 .tech-section {
     margin-bottom: 60px;
 }
@@ -352,7 +486,6 @@
     color: #38bdf8;
 }
 
-/* PESTAÑAS CURRICULUM */
 .interactive-curriculum-box {
     background: rgba(15, 23, 42, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -386,7 +519,6 @@
     padding: 24px;
 }
 
-/* CÓDIGO Y CTA */
 .tech-code-box {
     background: #020617;
     border: 1px solid rgba(255, 255, 255, 0.08);
