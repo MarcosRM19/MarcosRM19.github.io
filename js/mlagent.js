@@ -1,5 +1,5 @@
 /* =========================================================
-   MLAGENT.JS - CON DICCIONARIO COMPLETO Y TRADUCCIONES
+   MLAGENT.JS - LÓGICA DE DICCIONARIOS Y CURRICULUM REAL
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,96 +22,46 @@ document.addEventListener("DOMContentLoaded", () => {
             projects: "Proyectos",
             documents: "Documentos",
             contactButton: "Contacto",
-            moreProjects: "Más proyectos",
-            btnPdf: "Leer Memoria Técnica (PDF)",
-            heroTagline: "Agente de combate autónomo nativo del motor desarrollado con Unity ML-Agents y PPO para simulación 3D de tanques.",
+            moreProjects: "Más Proyectos",
+            btnPdf: "Leer Memoria Técnica (PDF 40 Págs)",
+            heroTagline: "Entrenamiento de un agente de combate 3D mediante PPO, Curriculum Learning y Self-Play en Unity ML-Agents.",
 
-            summaryTitle: "Agente Autónomo de Combate 3D mediante Aprendizaje por Refuerzo Profundo",
+            summaryTitle: "Desarrollo e Investigación de un Agente Autónomo de Combate Vehicular en Unity",
             objectivesTitle: "Objetivos del Proyecto",
-            objectivesBody: "El objetivo de este proyecto es el de desarrollar un agente capaz de dominar las mecánicas de un simple juego de tanques 3D mediante la herramienta de ML-Agent. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin la necesidad de programar comportamientos lógicos manuales o sistemas basados en reglas.\n\nA su vez se pretende investigar como el Self-Play permite la emergencia de estrategias tácticas complejas en el entorno que serían complejas de codificar de manera tradicional. Enfatizando en una IA que evoluciona adaptándose durante el proceso de entrenamiento.",
+            objectivesBody: "El objetivo de este proyecto es desarrollar un agente capaz de dominar las mecánicas de un juego de tanques 3D mediante la herramienta ML-Agents. El reto reside en que el agente adquiera habilidades competitivas de forma autónoma, sin programar comportamientos lógicos manuales ni máquinas de estados tradicionales.\n\nA su vez, se investiga cómo el Self-Play permite la emergencia de estrategias tácticas complejas (como la gestión de la economía del disparo, la espera táctica en cobertura y el engaño mediante trayectoria) que serían muy difíciles de codificar explícitamente, enfatizando una IA que coevoluciona durante el proceso de entrenamiento.",
 
-            statStepsLabel: "Environment Steps",
+            statStepsLabel: "Pasos Totales",
             statStepsSub: "Pasos de simulación física",
-            statEloLabel: "Peak ELO Rating",
-            statEloSub: "Vs pool histórico de modelos",
-            statRaycastsLabel: "Perception Sensors",
-            statRaycastsSub: "Abanico 3D en tiempo real",
-            statCurriculumLabel: "Curriculum Stages",
-            statCurriculumSub: "Progresión jerárquica",
+            statEloLabel: "Máximo ELO Alcanzado",
+            statEloSub: "En fase de Self-Play (Modelo 30)",
+            statRaycastsLabel: "Observaciones",
+            statRaycastsSub: "+ Ray Perception Sensor 3D",
+            statCurriculumLabel: "Curriculum Learning",
+            statCurriculumSub: "Modelos mentales 24 al 30",
 
-            sec1Title: "Formulación del Problema y Proceso de Decisión de Markov (POMDP)",
-            sec1Intro: "Para lograr que el agente aprenda sin reglas codificadas a mano, el escenario de combate vehicular se modeló rigurosamente como un Proceso de Decisión de Markov Parcialmente Observable (POMDP) definido por la tupla <S, A, P, R, gamma>:",
-            sec1MdpTitle: "Formulación del Entorno",
-            
-            sec1Mdp1Label: "Espacio de Estados (S):",
-            sec1Mdp1Desc: "Representación continua multidimensional con cinemática local, Raycasts y sensores de orientación.",
-            sec1Mdp2Label: "Espacio de Acciones (A):",
-            sec1Mdp2Desc: "Control híbrido de 3 continuas (tracción, dirección, torreta) y 1 discreta (disparo).",
-            sec1Mdp3Label: "Transiciones (P):",
-            sec1Mdp3Desc: "Dinámica física de tracción en Unity acelerada para entrenamiento masivo.",
-            sec1Mdp4Label: "Recompensas (R):",
-            sec1Mdp4Desc: "Función de ajuste continuo mediante ingeniería de recompensas (Reward Shaping).",
+            sec1Title: "Arquitectura del Sistema y Configuración Física en Unity",
+            sec1Intro: "El sistema se articula en torno a cinco componentes orientados a objetos que interactúan mediante eventos de física y referencias directas, comunicándose con el trainer de Python mediante un socket TCP en el puerto 5004.",
+            diagram1Title: "Diagrama 1: Arquitectura de Clases C# y Flujo de Comunicación Unity - Python",
 
-            sec1OptTitle: "Objetivo de Optimización",
-            sec1OptText: "El agente optimiza una política estocástica parametrizada mediante una red neuronal para maximizar la recompensa acumulada con descuento temporal:",
+            sec2Title: "Diseño del Espacio de Observación (21D) y Acción Híbrido",
+            sec2Intro: "El vector de observaciones St pertenece a R^21 y fue diseñado para permanecer invariante entre fases de curriculum para evitar tener que reiniciar la red desde cero. Se complementa con un sensor perceptual autónomo de rayos.",
 
-            sec2Title: "Arquitectura Perceptual y Espacio de Observaciones Vectoriales (27D)",
-            sec2Intro: "El vector de estado St pertenece a R^27 y captura la información espacial cinemática del vehículo y la geometría de la arena en coordenadas locales sin recurrir a variables globales.",
-            diagramTitle: "Diagrama 1: Flujo Perceptual 3D Raycast y Tensor de Observaciones (27D)",
-            tblCol1: "Índice Vector",
-            tblCol2: "Variable Observada",
-            tblCol3: "Rango Mín / Máx",
-            tblCol4: "Propósito Técnico",
-            tblR1Name: "3D Raycast Perception",
-            tblR1Desc: "Detección en abanico de muros, límites y proyectiles.",
-            tblR2Name: "Velocidad Lineal Local",
-            tblR2Desc: "Inercia cinemática del chasis en ejes locales.",
-            tblR3Name: "Velocidad Angular",
-            tblR3Desc: "Velocidad de rotación al maniobrar el vehículo.",
-            tblR4Name: "Posición Relativa",
-            tblR4Desc: "Distancia y vector de posición hacia el oponente.",
-            tblR5Name: "Alineación Torreta",
-            tblR5Desc: "Diferencial angular entre el cañón y el objetivo.",
-            tblR6Name: "Cooldown de Disparo",
-            tblR6Desc: "Estado de recarga del cañón principal.",
-            tblR7Name: "Salud / Blindaje",
-            tblR7Desc: "Porcentaje de salud restante del vehículo.",
+            sec3Title: "Ingeniería de Recompensas (Reward Shaping) y Evolución",
+            sec3Intro: "El diseño de la función de recompensa requirió un ajuste minucioso para evitar mínimos locales (como quedarse inmóvil oscilando o la parálisis ante muros). A continuación se muestra la matriz final de recompensas.",
 
-            sec3Title: "Algoritmo PPO y Arquitectura Actor-Critic",
-            sec3MlpTitle: "Red Neuronal Multicapa (MLP)",
-            sec3Mlp1Label: "Input:",
-            sec3Mlp1Desc: "Vector normalizado de 27 observaciones.",
-            sec3Mlp2Label: "Capas Ocultas:",
-            sec3Mlp2Desc: "2 capas densas de 256 neuronas cada una.",
-            sec3Mlp3Label: "Actor:",
-            sec3Mlp3Desc: "Genera acciones continuas de conducción y decisión discreta de disparo.",
-            sec3Mlp4Label: "Critic:",
-            sec3Mlp4Desc: "Estima el valor del estado para calcular ventajas acumuladas.",
-
-            sec3PpoTitle: "Optimización PPO Clipped",
-            sec3PpoText: "PPO acota las actualizaciones mediante un margen epsilon = 0.2 para garantizar que el entrenamiento no destruya comportamientos útiles previamente consolidados:",
-
-            sec4Title: "Ingeniería de Recompensas (Reward Shaping)",
-            formulaTitle: "Función de Recompensa General",
-
-            sec5Title: "Pipeline de Curriculum Learning (4 Fases)",
-            phase1Btn: "Fase 1: Locomoción",
-            phase2Btn: "Fase 2: Balística",
-            phase3Btn: "Fase 3: Coberturas",
-            phase4Btn: "Fase 4: Duelo Activo",
-
-            sec6Title: "Competitive Self-Play y Ranking ELO",
-            selfplayTitle: "Emergencia de Estrategias con Self-Play",
-            selfplayText: "Al enfrentar al agente contra un 'Model Pool' de sus versiones pasadas, se evita la memorización de patrones rígidos. Esto permite la aparición autónoma de tácticas avanzadas como disparar tras muros (peek-a-boo) y mantener ángulos de evasión.",
-            chartTitle: "Progreso ELO Rating vs Iteraciones",
-            btnReloadChart: "Reanimar",
-
-            sec7Title: "Configuración YAML de Entrenamiento",
+            sec4Title: "Hiperparámetros de Entrenamiento YAML (PPO)",
             btnCopyCode: "Copiar YAML",
 
+            sec5Title: "Pipeline de Curriculum Learning (5 Fases) y Resultados",
+            sec6Title: "Análisis del Self-Play y Evolución del Sistema ELO",
+            selfplayTitle: "Coevolución y Dientes de Sierra",
+            selfplayText: "Al intercambiar los roles de los equipos cada 100.000 pasos (team_change), la curva de recompensa presenta un patrón característico en dientes de sierra. Cada valle representa la fase donde el nuevo equipo se adapta al oponente congelado, mientras que los picos crecientes de ELO confirman que el modelo se vuelve progresivamente superior.",
+            chartTitle: "Progreso ELO Rating vs Iteraciones (Self-Play)",
+            btnReloadChart: "Reanimar",
+
             ctaTitle: "Descarga la Memoria Técnica Completa (PDF)",
-            ctaText: "Accede al documento académico con todo el desglose gráfico, curvas de pérdida de TensorBoard y anexos de código en C#.",
-            ctaBtn: "Ver Documento PDF Completo →"
+            ctaText: "Accede al documento TFG completo de Marcos Ruiz Muñoz (40 páginas) con todos los anexos de código en C#, curvas de TensorBoard y bibliografía.",
+            ctaBtn: "Ver Documento PDF Completo (40 Págs) →"
         },
         en: {
             home: "Home",
@@ -119,97 +69,47 @@ document.addEventListener("DOMContentLoaded", () => {
             experience: "Experience",
             projects: "Projects",
             documents: "Documents",
-            contactButton: "Contact me",
-            moreProjects: "More projects",
-            btnPdf: "Read Technical Paper (PDF)",
-            heroTagline: "Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation.",
+            contactButton: "Contact",
+            moreProjects: "More Projects",
+            btnPdf: "Read Technical Paper (PDF 40 Pages)",
+            heroTagline: "Training an autonomous 3D combat agent using PPO, Curriculum Learning, and Self-Play in Unity ML-Agents.",
 
-            summaryTitle: "3D Autonomous Combat Agent via Deep Reinforcement Learning",
+            summaryTitle: "Development & Research of an Autonomous Vehicular Combat Agent in Unity",
             objectivesTitle: "Project Objectives",
-            objectivesBody: "The objective of this project is to develop an agent capable of mastering the mechanics of a simple 3D tank game using the ML-Agents toolkit. The challenge lies in enabling the agent to acquire competitive skills autonomously, without hardcoding logical behaviors or rule-based systems.\n\nFurthermore, it aims to investigate how Self-Play facilitates the emergence of complex tactical strategies that would be difficult to code traditionally, emphasizing an AI that adapts and evolves throughout training.",
+            objectivesBody: "The objective of this project is to develop an agent capable of mastering 3D tank mechanics using Unity ML-Agents. The challenge lies in enabling the agent to acquire competitive skills autonomously, without hardcoding manual rules or traditional state machines.\n\nFurthermore, it investigates how Self-Play facilitates the emergence of complex tactical behaviors (such as shot economy management, tactical waiting under cover, and trajectory deception) that would be extremely difficult to code manually, highlighting an AI that co-evolves throughout training.",
 
-            statStepsLabel: "Environment Steps",
+            statStepsLabel: "Total Steps",
             statStepsSub: "Physical simulation steps",
             statEloLabel: "Peak ELO Rating",
-            statEloSub: "Vs historical model pool",
-            statRaycastsLabel: "Perception Sensors",
-            statRaycastsSub: "Real-time 3D Raycasts",
-            statCurriculumLabel: "Curriculum Stages",
-            statCurriculumSub: "Hierarchical progression",
+            statEloSub: "Self-Play stage (Model 30)",
+            statRaycastsLabel: "Observations",
+            statRaycastsSub: "+ Ray Perception Sensor 3D",
+            statCurriculumLabel: "Curriculum Learning",
+            statCurriculumSub: "Mental models 24 to 30",
 
-            sec1Title: "Problem Formulation & Markov Decision Process (POMDP)",
-            sec1Intro: "To enable the agent to learn without manual rules, the vehicular duel was formally modeled as a Partially Observable Markov Decision Process (POMDP) defined by <S, A, P, R, gamma>:",
-            sec1MdpTitle: "Environment Formulation",
+            sec1Title: "System Architecture & Physical Setup in Unity",
+            sec1Intro: "The system is structured around five object-oriented components interacting via physics events and direct references, communicating with the Python trainer via a TCP socket on port 5004.",
+            diagram1Title: "Diagram 1: C# Class Architecture & Unity-Python Communication Flow",
 
-            sec1Mdp1Label: "State Space (S):",
-            sec1Mdp1Desc: "Multidimensional continuous representation with local kinematics, Raycasts, and orientation sensors.",
-            sec1Mdp2Label: "Action Space (A):",
-            sec1Mdp2Desc: "Hybrid control of 3 continuous actions (drive, steer, turret) and 1 discrete (fire).",
-            sec1Mdp3Label: "Transitions (P):",
-            sec1Mdp3Desc: "Physical traction dynamics in Unity accelerated for mass training.",
-            sec1Mdp4Label: "Rewards (R):",
-            sec1Mdp4Desc: "Continuous shaping function via Reward Shaping engineering.",
+            sec2Title: "Observation Space Design (21D) & Hybrid Action Space",
+            sec2Intro: "The 21D state vector St was designed to remain invariant across curriculum stages to prevent resetting network weights. It is complemented by an autonomous ray perception sensor.",
 
-            sec1OptTitle: "Optimization Objective",
-            sec1OptText: "The agent optimizes a parameterized stochastic policy via a neural network to maximize discounted cumulative return:",
+            sec3Title: "Reward Engineering (Reward Shaping) & Evolution",
+            sec3Intro: "Designing the reward function required meticulous tuning to eliminate local minima (such as stationary oscillation or wall paralysis). Below is the final reward matrix.",
 
-            sec2Title: "Perceptual Architecture & Vector Observation Space (27D)",
-            sec2Intro: "State vector St belongs to R^27 and captures the spatial kinematic information of the vehicle and arena geometry in local coordinates without global variables.",
-            diagramTitle: "Diagram 1: 3D Raycast Perception Flow and Observation Tensor (27D)",
-            tblCol1: "Vector Index",
-            tblCol2: "Observed Variable",
-            tblCol3: "Min / Max Range",
-            tblCol4: "Technical Purpose",
-            tblR1Name: "3D Raycast Perception",
-            tblR1Desc: "Fan array detection of walls, boundaries, and projectiles.",
-            tblR2Name: "Local Linear Velocity",
-            tblR2Desc: "Kinematic inertia of the chassis on local axes.",
-            tblR3Name: "Angular Velocity",
-            tblR3Desc: "Rotational velocity when maneuvering the vehicle.",
-            tblR4Name: "Relative Position",
-            tblR4Desc: "Distance and position vector relative to the opponent.",
-            tblR5Name: "Turret Alignment",
-            tblR5Desc: "Angular differential between cannon and target.",
-            tblR6Name: "Shot Cooldown",
-            tblR6Desc: "Reload state of the main cannon.",
-            tblR7Name: "Health / Armor",
-            tblR7Desc: "Percentage of remaining vehicle health.",
-
-            sec3Title: "PPO Algorithm & Actor-Critic Architecture",
-            sec3MlpTitle: "Multilayer Perceptron (MLP)",
-            sec3Mlp1Label: "Input:",
-            sec3Mlp1Desc: "Normalized vector of 27 observations.",
-            sec3Mlp2Label: "Hidden Layers:",
-            sec3Mlp2Desc: "2 dense layers of 256 units each.",
-            sec3Mlp3Label: "Actor:",
-            sec3Mlp3Desc: "Outputs continuous driving actions and discrete firing decision.",
-            sec3Mlp4Label: "Critic:",
-            sec3Mlp4Desc: "Estimates state value to calculate advantage functions.",
-
-            sec3PpoTitle: "Clipped PPO Optimization",
-            sec3PpoText: "PPO constrains policy updates within an epsilon = 0.2 margin to ensure training does not destroy previously consolidated behaviors:",
-
-            sec4Title: "Reward Engineering (Reward Shaping)",
-            formulaTitle: "General Reward Function",
-
-            sec5Title: "Progressive Curriculum Learning Pipeline (4 Stages)",
-            phase1Btn: "Stage 1: Locomotion",
-            phase2Btn: "Stage 2: Ballistics",
-            phase3Btn: "Stage 3: Cover",
-            phase4Btn: "Stage 4: Active Duel",
-
-            sec6Title: "Competitive Self-Play & ELO Ranking",
-            selfplayTitle: "Emergence of Strategies with Self-Play",
-            selfplayText: "By matching the agent against a Model Pool of past snapshots, pattern memorization is prevented. This enables the autonomous emergence of advanced tactics like peek-a-boo shooting and evasion angles.",
-            chartTitle: "ELO Rating Progress vs Iterations",
-            btnReloadChart: "Reanimate",
-
-            sec7Title: "YAML Training Configuration",
+            sec4Title: "YAML Training Hyperparameters (PPO)",
             btnCopyCode: "Copy YAML",
 
-            ctaTitle: "Download the Full Technical Paper (PDF)",
-            ctaText: "Access the academic document complete with TensorBoard loss curves, training diagrams, and C# code appendixes.",
-            ctaBtn: "View Full PDF Document →"
+            sec5Title: "Progressive Curriculum Learning Pipeline (5 Stages) & Results",
+            sec6Title: "Self-Play Analysis & ELO Rating Progress",
+            selfplayTitle: "Co-evolution & Sawtooth Pattern",
+            selfplayText: "Swapping team roles every 100,000 steps (team_change) produces a characteristic sawtooth reward pattern. Each valley represents the adaptation phase of the new team, while rising ELO peaks confirm that the agent becomes steadily superior.",
+            chartTitle: "ELO Rating Progress vs Iterations (Self-Play)",
+            btnReloadChart: "Reanimate",
+
+            ctaTitle: "Download Full Technical Paper (PDF)",
+            ctaText: "Access the complete 40-page TFG paper by Marcos Ruiz Muñoz with C# code appendixes, TensorBoard curves, and references.",
+            ctaBtn: "View Full PDF Document (40 Pages) →"
         }
     };
 
@@ -241,60 +141,72 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       2. PESTAÑAS CURRICULUM INTERACTIVO
+       DATOS REALES DEL CURRICULUM (5 FASES)
        --------------------------------------------------------- */
     let currentCurriculumPhase = "1";
     const curriculumData = {
         es: {
             "1": {
-                title: "Fase 01: Locomoción y Orientación Básica",
-                desc: "Objetivo estático sin muros. El agente aprende aceleración, tracción y giro diferencial del chasis.",
-                target: "Llegar al objetivo en < 5s",
-                steps: "0.5M Steps"
+                title: "Fase 01: Objetivo Estático sin Obstáculo (Modelo 24)",
+                desc: "Entrenamiento inicial en arena de 50m x 50m sin muros. El agente aprende aproximación, alineación suave y disparo certero a la distancia adecuada.",
+                target: "Recompensa Media: +11.0 | Desviación Estándar < 1.0",
+                steps: "5.0M Environment Steps"
             },
             "2": {
-                title: "Fase 02: Apuntado y Balística Dinámica",
-                desc: "Torreta orientable 360°. El objetivo se mueve de forma no hostil para aprender predicción de disparo.",
-                target: "Alineación > 85% del tiempo",
-                steps: "1.2M Steps"
+                title: "Fase 02: Objetivo Estático con Obstáculo (Modelo 25)",
+                desc: "Se introduce una pared intermedia gestionada por obstacle_offset (WallEasy 1.5 -> WallMedium 0.8 -> WallHard 0.3 -> WallFull 0.1). El agente aprende a detectar la pérdida de LOS y rodear el muro.",
+                target: "Recompensa Media: +9.0 a +10.0 | Rodeo consistente",
+                steps: "8.0M Environment Steps"
             },
             "3": {
-                title: "Fase 03: Evasión de Obstáculos y Cobertura",
-                desc: "Muros opacos en la arena. El agente utiliza los 15 Raycasts 3D para bordear esquinas y buscar tiro.",
-                target: "Evitar colisiones > 90% partidas",
-                steps: "2.5M Steps"
+                title: "Fase 03: Objetivo en Movimiento sin Obstáculo (Modelo 26)",
+                desc: "El objetivo se mueve mediante Rigidbody.MovePosition. Al observar la velocidad del objetivo (obs 10-13), el agente desarrolla capacidad de disparo predictivo.",
+                target: "Recompensa Media: +11.25 | Std: 0.5 - 0.8 (Mínima variabilidad)",
+                steps: "8.0M Environment Steps"
             },
             "4": {
-                title: "Fase 04: Duelo Activo y Self-Play",
-                desc: "Combate libre simétrico contra versiones pasadas del modelo extraídas del pool histórico.",
-                target: "Winrate > 65% en Self-Play",
-                steps: "5.0M Steps"
+                title: "Fase 04: Objetivo en Movimiento con Obstáculo (Modelo 27)",
+                desc: "Combinación de movimiento y pared. Surge el comportamiento emergente de 'espera táctica en cobertura', manteniéndose en posición hasta que el rival asoma por un flanco.",
+                target: "Recompensa Media: +10.0 | Dominio de cobertura",
+                steps: "8.0M Environment Steps"
+            },
+            "5": {
+                title: "Fase 05: Self-Play Competitivo 1v1 (Modelo 30)",
+                desc: "Dos tanques compiten en escenario simétrico contra un Model Pool histórico. Surge la gestión de economía de disparo, engaño por trayectoria y tiro selectivo.",
+                target: "ELO Pico: 1611 a 2200+ | Coevolución continua",
+                steps: "10.0M+ Environment Steps"
             }
         },
         en: {
             "1": {
-                title: "Stage 01: Locomotion & Basic Orientation",
-                desc: "Static target without walls. The agent learns throttle, steering, and chassis traction.",
-                target: "Reach target in < 5s",
-                steps: "0.5M Steps"
+                title: "Stage 01: Static Target without Obstacles (Model 24)",
+                desc: "Initial training in a 50m x 50m arena without walls. The agent learns target pursuit, smooth rotational alignment, and precise shooting at effective range.",
+                target: "Mean Reward: +11.0 | Std Deviation < 1.0",
+                steps: "5.0M Environment Steps"
             },
             "2": {
-                title: "Stage 02: Aiming & Dynamic Ballistics",
-                desc: "360° turret control. Target moves non-hostilely to learn leading shots.",
-                target: "Alignment > 85% of time",
-                steps: "1.2M Steps"
+                title: "Stage 02: Static Target with Obstacle (Model 25)",
+                desc: "An intermediate wall is added, controlled by obstacle_offset (1.5 -> 0.1). The agent learns to detect LOS blocking and proactively flank obstacles.",
+                target: "Mean Reward: +9.0 to +10.0 | Consistent cover navigation",
+                steps: "8.0M Environment Steps"
             },
             "3": {
-                title: "Stage 03: Obstacle Avoidance & Cover",
-                desc: "Opaque walls in the arena. Agent uses 15 3D Raycasts to corner and seek line of sight.",
-                target: "Avoid collisions > 90% matches",
-                steps: "2.5M Steps"
+                title: "Stage 03: Moving Target without Obstacles (Model 26)",
+                desc: "Target moves via Rigidbody.MovePosition. Observing target velocity (obs 10-13) enables the agent to develop predictive lead shooting.",
+                target: "Mean Reward: +11.25 | Std: 0.5 - 0.8 (Lowest variance)",
+                steps: "8.0M Environment Steps"
             },
             "4": {
-                title: "Stage 04: Active Duel & Self-Play",
-                desc: "Full symmetric combat against historical model pool snapshots.",
-                target: "Winrate > 65% in Self-Play",
-                steps: "5.0M Steps"
+                title: "Stage 04: Moving Target with Obstacle (Model 27)",
+                desc: "Combined movement and obstacle. 'Tactical waiting under cover' emerges naturally, holding position until the opponent peeks around the wall.",
+                target: "Mean Reward: +10.0 | Cover mastery",
+                steps: "8.0M Environment Steps"
+            },
+            "5": {
+                title: "Stage 05: Competitive 1v1 Self-Play (Model 30)",
+                desc: "Two tanks duel in a symmetric arena against a historical Model Pool. Shot economy management, trajectory deception, and selective shooting emerge.",
+                target: "Peak ELO: 1611 to 2200+ | Continuous co-evolution",
+                steps: "10.0M+ Environment Steps"
             }
         }
     };
@@ -308,15 +220,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (panel && data) {
             panel.innerHTML = `
                 <h3 style="color:#ffffff; font-size:1.15rem; margin-bottom:8px;">${data.title}</h3>
-                <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:16px;">${data.desc}</p>
+                <p style="color:#cbd5e1; font-size:0.95rem; margin-bottom:16px; line-height:1.6;">${data.desc}</p>
                 <div class="tech-stats-grid">
                     <div class="tech-stat-card">
-                        <span class="stat-label">Criterio</span>
-                        <span class="stat-sub" style="color:#00ff88; font-weight:bold;">${data.target}</span>
+                        <span class="stat-label">Métrica de Objetivo</span>
+                        <span class="stat-sub" style="color:#00ff88; font-weight:bold; font-size:0.9rem;">${data.target}</span>
                     </div>
                     <div class="tech-stat-card">
-                        <span class="stat-label">Pasos</span>
-                        <span class="stat-sub" style="color:#ffffff; font-weight:bold;">${data.steps}</span>
+                        <span class="stat-label">Volumen de Pasos</span>
+                        <span class="stat-sub" style="color:#ffffff; font-weight:bold; font-size:0.9rem;">${data.steps}</span>
                     </div>
                 </div>
             `;
@@ -332,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* ---------------------------------------------------------
-       3. GRÁFICO ELO ANIMADO EN CANVAS
+       GRÁFICO ELO EN CANVAS
        --------------------------------------------------------- */
     const canvas = document.getElementById("eloCanvas");
     const reloadBtn = document.getElementById("btn-reload-chart");
@@ -342,17 +254,21 @@ document.addEventListener("DOMContentLoaded", () => {
         let progress = 0;
         let animId;
 
-        const ppoPoints = [
-            { x: 10, y: 170 },
-            { x: 120, y: 140 },
-            { x: 230, y: 95 },
-            { x: 350, y: 50 },
-            { x: 460, y: 25 }
+        // Puntos basados en los logs de ELO del anexo
+        const eloPoints = [
+            { x: 10, y: 160 },   // 1200
+            { x: 100, y: 145 },  // 1270
+            { x: 180, y: 130 },  // 1332
+            { x: 260, y: 110 },  // 1435
+            { x: 340, y: 75 },   // 1611
+            { x: 420, y: 45 },   // 1950
+            { x: 460, y: 20 }    // 2200+
         ];
 
         function drawChart() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+            // Guías horizontales
             ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
             ctx.lineWidth = 1;
             for (let y = 20; y < canvas.height; y += 35) {
@@ -362,20 +278,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 ctx.stroke();
             }
 
+            // Dibuja la curva
             ctx.strokeStyle = "#00ff88";
             ctx.lineWidth = 2.5;
             ctx.beginPath();
 
             const currentX = 10 + (450 * progress);
-            ctx.moveTo(ppoPoints[0].x, ppoPoints[0].y);
+            ctx.moveTo(eloPoints[0].x, eloPoints[0].y);
 
-            for (let i = 1; i < ppoPoints.length; i++) {
-                if (ppoPoints[i].x <= currentX) {
-                    ctx.lineTo(ppoPoints[i].x, ppoPoints[i].y);
+            for (let i = 1; i < eloPoints.length; i++) {
+                if (eloPoints[i].x <= currentX) {
+                    ctx.lineTo(eloPoints[i].x, eloPoints[i].y);
                 } else {
-                    const prev = ppoPoints[i - 1];
-                    const factor = (currentX - prev.x) / (ppoPoints[i].x - prev.x);
-                    const interpY = prev.y + factor * (ppoPoints[i].y - prev.y);
+                    const prev = eloPoints[i - 1];
+                    const factor = (currentX - prev.x) / (eloPoints[i].x - prev.x);
+                    const interpY = prev.y + factor * (eloPoints[i].y - prev.y);
                     ctx.lineTo(currentX, interpY);
                     break;
                 }
@@ -383,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.stroke();
 
             if (progress < 1) {
-                progress += 0.03;
+                progress += 0.02;
                 animId = requestAnimationFrame(drawChart);
             }
         }
@@ -400,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
-       4. COPIAR YAML AL PORTAPAPELES
+       COPIAR YAML
        --------------------------------------------------------- */
     const copyBtn = document.getElementById("btn-copy-code");
     const codeBlock = document.getElementById("code-yaml-block");
