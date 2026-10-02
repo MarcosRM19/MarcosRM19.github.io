@@ -1,8 +1,8 @@
 /* =========================================================
-   MLAGENT.CSS - SIN GLOW/RESPLANDOR EN HOVER
+   MLAGENT.CSS - SIN GLOW / SIN BOX-SHADOW EN HOVER
    ========================================================= */
 
-/* OCULTAR LIGHTBOX PARA EVITAR FLECHAS EN EL FOOTER */
+/* OCULTAR LIGHTBOX Y ELIMINAR FLECHAS EN EL FOOTER */
 .project-lightbox {
     display: none !important;
     position: fixed;
@@ -18,7 +18,7 @@
     display: flex !important;
 }
 
-/* BOTONES SIN GLOW NI SHADOWS EN HOVER */
+/* BOTONES LIMPIOS SIN GLOW NI RESPLANDOR NEÓN */
 .project-btn {
     display: inline-flex;
     align-items: center;
@@ -31,7 +31,7 @@
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     cursor: pointer;
     border: 1px solid transparent;
-    box-shadow: none !important; /* Eliminado brillo/sombra */
+    box-shadow: none !important; /* Eliminado brillo/glow */
 }
 
 .project-btn-solid {
@@ -40,8 +40,9 @@
 }
 
 .project-btn-solid:hover {
-    background-color: #ffffff !important; /* Hover en blanco sin resplandor */
+    background-color: #ffffff !important; /* Hover limpio en blanco */
     color: #0b0f17 !important;
+    border-color: #ffffff !important;
     box-shadow: none !important;
 }
 
@@ -57,22 +58,22 @@
     box-shadow: none !important;
 }
 
-/* ESTILOS DEL DIAGRAMA SVG */
+/* DIAGRAMAS SVG CONTENIDOS */
 .diagram-card-container {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 20px;
-    margin: 25px 0;
+    padding: 24px;
+    margin: 30px 0;
 }
 
 .diagram-top-title {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 700;
     color: var(--green, #00ff88);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .svg-wrapper {
@@ -82,11 +83,12 @@
 
 .tech-svg-diagram {
     width: 100%;
-    min-width: 650px;
+    min-width: 750px;
     height: auto;
+    display: block;
 }
 
-/* CONTENEDOR TÉCNICO */
+/* ARTÍCULO TÉCNICO Y ESTRUCTURA */
 .tech-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -97,7 +99,6 @@
     padding: 40px 0 80px 0;
 }
 
-/* RESUMEN Y OBJETIVOS */
 .tech-summary-box {
     background: rgba(15, 23, 42, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -213,7 +214,7 @@
     flex-wrap: wrap;
 }
 
-/* SECCIONES Y TARJETAS */
+/* SECCIONES Y LISTAS */
 .tech-section {
     margin-bottom: 60px;
 }
@@ -391,7 +392,7 @@
     padding: 24px;
 }
 
-/* CANVAS Y CODE */
+/* CANVAS Y CÓDIGO */
 .chart-card {
     display: flex;
     flex-direction: column;
