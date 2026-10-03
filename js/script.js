@@ -178,6 +178,9 @@ const translations = {
         personalProject:
             "Personal Project",
 
+        tankDescription:
+            "Engine-native autonomous combat agent built with Unity ML-Agents and PPO for a 3D tank combat simulation. Trained through curriculum learning and competitive self-play.",
+
         universityProject:
             "La Mapachanda / University Project / 2024 - 2025",
 
@@ -504,6 +507,9 @@ const translations = {
         personalProject:
             "Proyecto Personal",
 
+        tankDescription:
+            "Agente de combate autónomo nativo del motor desarrollado con Unity ML-Agents y PPO para una simulación de combate de tanques en 3D. Entrenado mediante curriculum learning y self-play competitivo.",
+
         universityProject:
             "La Mapachanda / Proyecto Universitario / 2024 - 2025",
 
@@ -779,7 +785,6 @@ updateLanguage();
    MODAL DE CONTACTO Y FUNCIONES GLOBALES
    ========================================================= */
 
-// Definición global para evitar referencias no definidas
 window.closeContactModal = function () {
     const contactModal = document.getElementById("contact-modal");
     if (contactModal) {
@@ -812,9 +817,7 @@ window.resetContactForm = function () {
     }
 };
 
-// Listeners de interacción cuando el DOM está listo
 document.addEventListener("DOMContentLoaded", () => {
-    // Abrir modal SOLO en elementos con la clase .open-contact
     const openContactBtns = document.querySelectorAll(".open-contact");
     openContactBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
@@ -823,7 +826,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Cerrar modal al hacer clic en la 'X'
     const closeContactBtn = document.getElementById("close-contact");
     if (closeContactBtn) {
         closeContactBtn.addEventListener("click", () => {
@@ -832,7 +834,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Cerrar al hacer clic fuera del modal
     const contactModal = document.getElementById("contact-modal");
     if (contactModal) {
         contactModal.addEventListener("click", (e) => {
@@ -843,7 +844,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Cerrar al presionar la tecla Escape
     document.addEventListener("keydown", (e) => {
         if (
             e.key === "Escape" &&
@@ -855,7 +855,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Envío asíncrono con Formspree
     const contactForm = document.getElementById("contact-form");
     const contactStatus = document.getElementById("contact-status");
 
