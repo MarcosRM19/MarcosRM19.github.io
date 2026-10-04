@@ -557,14 +557,14 @@ section {
 
 .about-image {
     position: relative;
-    max-width: 360px; /* Reduce y controla el tamaño máximo para que no se vea gigante */
     width: 100%;
+    max-width: 480px; /* Tamaño medio equilibrado (ni gigante ni muy pequeño) */
     margin: 0 auto;
     padding: 10px;
     background: rgba(15, 23, 42, 0.75);
-    border: 2px solid #16a34a; /* Verde estándar/normal sólido (sin neón) */
+    border: 2px solid var(--green); /* El verde principal de tu portfolio */
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra oscura tradicional sin luces ni brillos */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Únicamente sombra oscura tradicional */
 }
 
 .about-image img {
