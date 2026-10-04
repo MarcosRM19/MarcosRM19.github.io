@@ -552,22 +552,19 @@ section {
 /* ---------- FOTO ---------- */
 
 /* =========================================================
-   MARCO PARA LA IMAGEN DE LA SECCIÓN QUIÉN SOY
-   ========================================================= */
-
-/* =========================================================
-   MARCO PARA LA IMAGEN DE LA SECCIÓN QUIÉN SOY
+   MARCO Y TAMAÑO DE IMAGEN - SECCIÓN QUIÉN SOY
    ========================================================= */
 
 .about-image {
     position: relative;
+    max-width: 360px; /* Reduce y controla el tamaño máximo para que no se vea gigante */
+    width: 100%;
+    margin: 0 auto;
     padding: 10px;
     background: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(34, 197, 94, 0.4); /* Verde estándar (suave) */
+    border: 2px solid #16a34a; /* Verde estándar/normal sólido (sin neón) */
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
-                0 0 15px rgba(34, 197, 94, 0.12); /* Resplandor sutil */
-    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra oscura tradicional sin luces ni brillos */
 }
 
 .about-image img {
