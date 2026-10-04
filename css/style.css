@@ -557,45 +557,28 @@ section {
 
 .about-image {
     position: relative;
-    z-index: 1;
-    display: inline-block;
-    max-width: 100%;
+    padding: 10px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(0, 255, 136, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(0, 255, 136, 0.15);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Marco exterior desplazado hacia la derecha/abajo */
-.about-image::before {
-    content: "";
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--green, #00ff88);
-    border-radius: 14px;
-    z-index: -1;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-/* Imagen principal con sombra y borde sutil */
 .about-image img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-    background-color: #0f172a;
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Efecto hover interactivo */
-.about-image:hover::before {
-    transform: translate(-4px, -4px);
-    border-color: #ffffff;
-}
-
-.about-image:hover img {
-    transform: translate(2px, 2px);
+.about-image:hover {
+    border-color: var(--green, #00ff88);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(0, 255, 136, 0.3);
 }
 
 /* =========================================================
